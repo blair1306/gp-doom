@@ -1,0 +1,16 @@
+<dec f='codebrowser/hu_stuff.h' l='30'/>
+<doc f='codebrowser/hu_stuff.h' l='27'>//
+// Globally visible constants.
+//</doc>
+<use f='codebrowser/f_finale.c' l='313' u='c'/>
+<use f='codebrowser/f_finale.c' l='540' u='c'/>
+<use f='codebrowser/f_finale.c' l='559' u='c'/>
+<use f='codebrowser/hu_stuff.c' l='405' u='c'/>
+<use f='codebrowser/hu_stuff.c' l='438' u='c'/>
+<use f='codebrowser/hu_stuff.c' l='444' u='c'/>
+<use f='codebrowser/hu_stuff.c' l='476' u='c'/>
+<use f='codebrowser/m_menu.c' l='1263' u='c'/>
+<use f='codebrowser/m_menu.c' l='1325' u='c'/>
+<use f='codebrowser/m_menu.c' l='1479' u='c'/>
+<use f='codebrowser/m_menu.c' l='1479' u='c'/>
+<use f='codebrowser/m_misc.c' l='81' u='c'/>

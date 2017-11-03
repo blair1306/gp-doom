@@ -1,0 +1,14 @@
+<dec f='codebrowser/p_local.h' l='151' type='union (anonymous union at /home/jon/workspace/id-software/DOOM/linuxdoom-1.10/p_local.h:148:5)'/>
+<offset>64</offset>
+<use f='codebrowser/p_map.c' l='643' u='m' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='827' u='m' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='863' u='m' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='917' u='m' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='975' u='m' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1005' u='m' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1099' u='m' c='PTR_UseTraverse'/>
+<use f='codebrowser/p_map.c' l='1101' u='m' c='PTR_UseTraverse'/>
+<use f='codebrowser/p_map.c' l='1114' u='m' c='PTR_UseTraverse'/>
+<use f='codebrowser/p_map.c' l='1119' u='m' c='PTR_UseTraverse'/>
+<use f='codebrowser/p_maputl.c' l='605' u='m' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='670' u='m' c='PIT_AddThingIntercepts'/>

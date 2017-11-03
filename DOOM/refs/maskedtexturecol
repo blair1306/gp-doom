@@ -1,0 +1,7 @@
+<def f='codebrowser/r_segs.c' l='95' type='short *'/>
+<use f='codebrowser/r_segs.c' l='136' u='w' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='165' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='182' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='185' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='356' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='611' u='w' c='R_StoreWallRange'/>

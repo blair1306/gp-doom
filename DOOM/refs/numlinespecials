@@ -1,0 +1,15 @@
+<dec f='codebrowser/p_spec.c' l='143' type='short'/>
+<use f='codebrowser/p_spec.c' l='1114' u='r' c='P_UpdateSpecials'/>
+<def f='codebrowser/p_spec.c' l='1234' type='short'/>
+<use f='codebrowser/p_spec.c' l='1336' u='w' c='P_SpawnSpecials'/>
+<use f='codebrowser/p_spec.c' l='1343' u='r' c='P_SpawnSpecials'/>
+<use f='codebrowser/p_spec.c' l='1344' u='w' c='P_SpawnSpecials'/>
+<doc f='codebrowser/p_spec.c' l='1225'>//
+// SPECIAL SPAWNING
+//
+
+//
+// P_SpawnSpecials
+// After the map has been loaded, scan for specials
+//  that spawn thinkers
+//</doc>

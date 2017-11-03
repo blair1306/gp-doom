@@ -1,0 +1,11 @@
+<def f='codebrowser/p_sight.c' l='54' ll='99' type='int P_DivlineSide(fixed_t x, fixed_t y, divline_t * node)'/>
+<use f='codebrowser/p_sight.c' l='178' u='c' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='179' u='c' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='189' u='c' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='190' u='c' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='273' u='c' c='P_CrossBSPNode'/>
+<use f='codebrowser/p_sight.c' l='282' u='c' c='P_CrossBSPNode'/>
+<doc f='codebrowser/p_sight.c' l='50'>//
+// P_DivlineSide
+// Returns side 0 (front), 1 (back), or 2 (on).
+//</doc>

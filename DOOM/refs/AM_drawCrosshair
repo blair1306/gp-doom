@@ -1,0 +1,2 @@
+<def f='codebrowser/am_map.c' l='1326' ll='1330' type='void AM_drawCrosshair(int color)'/>
+<use f='codebrowser/am_map.c' l='1343' u='c' c='AM_Drawer'/>

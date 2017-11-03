@@ -1,0 +1,8 @@
+<dec f='codebrowser/doomdata.h' l='209' type='short'/>
+<offset>64</offset>
+<use f='codebrowser/p_mobj.c' l='402' u='r' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='740' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_mobj.c' l='750' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_mobj.c' l='795' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_setup.c' l='344' u='w' c='P_LoadThings'/>
+<use f='codebrowser/p_setup.c' l='344' u='r' c='P_LoadThings'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/i_sound.h' l='31' type='FILE *'/>
+<def f='codebrowser/i_sound.c' l='66' type='FILE *'/>
+<use f='codebrowser/i_sound.c' l='484' u='r' c='I_StartSound'/>
+<use f='codebrowser/i_sound.c' l='486' u='r' c='I_StartSound'/>
+<use f='codebrowser/i_sound.c' l='487' u='r' c='I_StartSound'/>
+<use f='codebrowser/i_sound.c' l='697' u='r' c='I_ShutdownSound'/>
+<use f='codebrowser/i_sound.c' l='700' u='r' c='I_ShutdownSound'/>
+<use f='codebrowser/i_sound.c' l='701' u='r' c='I_ShutdownSound'/>
+<use f='codebrowser/i_sound.c' l='755' u='w' c='I_InitSound'/>
+<doc f='codebrowser/i_sound.c' l='65'>// Separate sound server process.</doc>

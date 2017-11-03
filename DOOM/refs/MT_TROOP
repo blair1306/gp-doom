@@ -1,0 +1,6 @@
+<dec f='codebrowser/info.h' l='1175' type='11'/>
+<use f='codebrowser/f_finale.c' l='344'/>
+<use f='codebrowser/f_finale.c' l='344'/>
+<use f='codebrowser/f_finale.c' l='344'/>
+<use f='codebrowser/f_finale.c' l='344'/>
+<use f='codebrowser/p_enemy.c' l='1959' u='r' c='A_SpawnFly'/>

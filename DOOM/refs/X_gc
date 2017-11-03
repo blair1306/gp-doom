@@ -1,0 +1,4 @@
+<def f='codebrowser/i_video.c' l='66' type='GC'/>
+<use f='codebrowser/i_video.c' l='488' u='r' c='I_FinishUpdate'/>
+<use f='codebrowser/i_video.c' l='510' u='r' c='I_FinishUpdate'/>
+<use f='codebrowser/i_video.c' l='825' u='w' c='I_InitGraphics'/>

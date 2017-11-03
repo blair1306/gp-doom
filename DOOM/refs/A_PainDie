@@ -1,0 +1,10 @@
+<dec f='codebrowser/info.c' l='123' type='void A_PainDie()'/>
+<use f='codebrowser/info.c' l='854'/>
+<use f='codebrowser/info.c' l='854'/>
+<use f='codebrowser/info.c' l='854'/>
+<use f='codebrowser/info.c' l='854'/>
+<use f='codebrowser/info.c' l='854'/>
+<use f='codebrowser/info.c' l='854'/>
+<use f='codebrowser/info.c' l='854'/>
+<use f='codebrowser/info.c' l='854'/>
+<def f='codebrowser/p_enemy.c' l='1522' ll='1528' type='void A_PainDie(mobj_t * actor)'/>

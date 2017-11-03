@@ -1,0 +1,16 @@
+<dec f='codebrowser/d_ticcmd.h' l='38' type='char'/>
+<offset>0</offset>
+<doc f='codebrowser/d_ticcmd.h' l='38'>// *2048 for move</doc>
+<use f='codebrowser/g_game.c' l='422' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='672' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1499' u='w' c='G_ReadDemoTiccmd'/>
+<use f='codebrowser/g_game.c' l='1510' u='r' c='G_WriteDemoTiccmd'/>
+<use f='codebrowser/i_net.c' l='140' u='w' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='140' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='211' u='w' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='211' u='r' c='PacketGet'/>
+<use f='codebrowser/p_mobj.c' l='226' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_user.c' l='160' u='r' c='P_MovePlayer'/>
+<use f='codebrowser/p_user.c' l='161' u='r' c='P_MovePlayer'/>
+<use f='codebrowser/p_user.c' l='166' u='r' c='P_MovePlayer'/>
+<use f='codebrowser/p_user.c' l='252' u='w' c='P_PlayerThink'/>

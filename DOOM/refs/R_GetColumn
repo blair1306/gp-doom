@@ -1,0 +1,11 @@
+<dec f='codebrowser/r_data.h' l='36' type='byte * R_GetColumn(int tex, int col)'/>
+<doc f='codebrowser/r_data.h' l='34'>// Retrieve column data for span blitting.</doc>
+<def f='codebrowser/r_data.c' l='382' ll='401' type='byte * R_GetColumn(int tex, int col)'/>
+<doc f='codebrowser/r_data.c' l='379'>//
+// R_GetColumn
+//</doc>
+<use f='codebrowser/r_plane.c' l='415' u='c' c='R_DrawPlanes'/>
+<use f='codebrowser/r_segs.c' l='182' u='c' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='286' u='c' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='308' u='c' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='337' u='c' c='R_RenderSegLoop'/>

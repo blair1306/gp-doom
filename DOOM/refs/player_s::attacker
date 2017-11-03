@@ -1,0 +1,13 @@
+<dec f='codebrowser/d_player.h' l='147' type='mobj_t *'/>
+<offset>1920</offset>
+<doc f='codebrowser/d_player.h' l='146'>// Who did damage (NULL for floors/ceilings).</doc>
+<use f='codebrowser/p_inter.c' l='874' u='w' c='P_DamageMobj'/>
+<use f='codebrowser/p_saveg.c' l='97' u='w' c='P_UnArchivePlayers'/>
+<use f='codebrowser/p_user.c' l='200' u='r' c='P_DeathThink'/>
+<use f='codebrowser/p_user.c' l='200' u='r' c='P_DeathThink'/>
+<use f='codebrowser/p_user.c' l='204' u='r' c='P_DeathThink'/>
+<use f='codebrowser/p_user.c' l='205' u='r' c='P_DeathThink'/>
+<use f='codebrowser/st_stuff.c' l='801' u='r' c='ST_updateFaceWidget'/>
+<use f='codebrowser/st_stuff.c' l='802' u='r' c='ST_updateFaceWidget'/>
+<use f='codebrowser/st_stuff.c' l='816' u='r' c='ST_updateFaceWidget'/>
+<use f='codebrowser/st_stuff.c' l='817' u='r' c='ST_updateFaceWidget'/>

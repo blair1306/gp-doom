@@ -1,0 +1,29 @@
+<dec f='codebrowser/r_main.h' l='69'/>
+<use f='codebrowser/r_main.h' l='77' u='c'/>
+<use f='codebrowser/r_main.h' l='79' u='c'/>
+<doc f='codebrowser/r_main.h' l='61'>//
+// Lighting LUT.
+// Used for z-depth cuing per column/row,
+//  and other lighting effects (sector ambient, flash).
+//
+
+// Lighting constants.
+// Now why not 32 levels here?</doc>
+<use f='codebrowser/r_main.c' l='116' u='c'/>
+<use f='codebrowser/r_main.c' l='118' u='c'/>
+<use f='codebrowser/r_main.c' l='624' u='c'/>
+<use f='codebrowser/r_main.c' l='626' u='c'/>
+<use f='codebrowser/r_main.c' l='626' u='c'/>
+<use f='codebrowser/r_main.c' l='745' u='c'/>
+<use f='codebrowser/r_main.c' l='747' u='c'/>
+<use f='codebrowser/r_main.c' l='747' u='c'/>
+<use f='codebrowser/r_plane.c' l='430' u='c'/>
+<use f='codebrowser/r_plane.c' l='431' u='c'/>
+<use f='codebrowser/r_segs.c' l='131' u='c'/>
+<use f='codebrowser/r_segs.c' l='132' u='c'/>
+<use f='codebrowser/r_segs.c' l='653' u='c'/>
+<use f='codebrowser/r_segs.c' l='654' u='c'/>
+<use f='codebrowser/r_things.c' l='632' u='c'/>
+<use f='codebrowser/r_things.c' l='633' u='c'/>
+<use f='codebrowser/r_things.c' l='759' u='c'/>
+<use f='codebrowser/r_things.c' l='760' u='c'/>

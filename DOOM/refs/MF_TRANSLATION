@@ -1,0 +1,7 @@
+<dec f='codebrowser/p_mobj.h' l='199' type='201326592'/>
+<doc f='codebrowser/p_mobj.h' l='195'>// Player sprites in multiplayer modes are modified
+    //  using an internal color lookup table for re-indexing.
+    // If 0x4 0x8 or 0xc,
+    //  use a translation table for player colormaps</doc>
+<use f='codebrowser/r_things.c' l='417' u='r' c='R_DrawVisSprite'/>
+<use f='codebrowser/r_things.c' l='421' u='r' c='R_DrawVisSprite'/>

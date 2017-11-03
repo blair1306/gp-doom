@@ -1,0 +1,10 @@
+<def f='codebrowser/r_segs.c' l='70' type='fixed_t'/>
+<use f='codebrowser/r_segs.c' l='269' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='276' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='360' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='419' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='426' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='684' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='687' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='696' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='702' u='r' c='R_StoreWallRange'/>

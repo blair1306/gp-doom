@@ -1,0 +1,7 @@
+<dec f='codebrowser/p_spec.h' l='355' type='int'/>
+<offset>416</offset>
+<doc f='codebrowser/p_spec.h' l='354'>// tics to wait at the top</doc>
+<use f='codebrowser/p_doors.c' l='182' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='291' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='466' u='w' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='548' u='w' c='P_SpawnDoorRaiseIn5Mins'/>

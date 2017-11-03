@@ -1,0 +1,12 @@
+<dec f='codebrowser/d_ticcmd.h' l='41' type='short'/>
+<offset>32</offset>
+<doc f='codebrowser/d_ticcmd.h' l='41'>// checks for net game</doc>
+<use f='codebrowser/g_game.c' l='252' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='684' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='687' u='r' c='G_Ticker'/>
+<use f='codebrowser/i_net.c' l='143' u='w' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='143' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='143' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='214' u='w' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='214' u='r' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='214' u='r' c='PacketGet'/>

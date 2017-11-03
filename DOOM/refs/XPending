@@ -1,0 +1,2 @@
+<dec f='include/X11/Xlib.h' l='2881' type='int XPending(Display * )'/>
+<use f='codebrowser/i_video.c' l='315' u='c' c='I_StartTic'/>

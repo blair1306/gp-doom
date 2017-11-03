@@ -1,0 +1,10 @@
+<def f='codebrowser/r_things.c' l='95' type='int'/>
+<use f='codebrowser/r_things.c' l='118' u='r' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='119' u='w' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='212' u='w' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='241' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='247' u='w' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='249' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='275' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='277' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='278' u='r' c='R_InitSpriteDefs'/>

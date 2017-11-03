@@ -1,0 +1,27 @@
+<dec f='include/stdio.h' l='170' type='struct _IO_FILE *'/>
+<use f='codebrowser/am_map.c' l='1000' macro='1' u='r'/>
+<doc f='include/stdio.h' l='170'>/* Standard error output stream.  */</doc>
+<use f='codebrowser/g_game.c' l='1591' macro='1' u='r'/>
+<use f='codebrowser/i_sound.c' l='172' macro='1' u='r'/>
+<use f='codebrowser/i_sound.c' l='173' macro='1' u='r'/>
+<use f='codebrowser/i_sound.c' l='758' macro='1' u='r'/>
+<use f='codebrowser/i_sound.c' l='974' macro='1' u='r'/>
+<use f='codebrowser/i_sound.c' l='985' macro='1' u='r'/>
+<use f='codebrowser/i_system.c' l='168' macro='1' u='r'/>
+<use f='codebrowser/i_system.c' l='169' macro='1' u='r'/>
+<use f='codebrowser/i_system.c' l='170' macro='1' u='r'/>
+<use f='codebrowser/i_system.c' l='173' macro='1' u='r'/>
+<use f='codebrowser/i_video.c' l='617' macro='1' u='r'/>
+<use f='codebrowser/i_video.c' l='627' macro='1' u='r'/>
+<use f='codebrowser/i_video.c' l='643' macro='1' u='r'/>
+<use f='codebrowser/i_video.c' l='650' macro='1' u='r'/>
+<use f='codebrowser/i_video.c' l='669' macro='1' u='r'/>
+<use f='codebrowser/i_video.c' l='687' macro='1' u='r'/>
+<use f='codebrowser/i_video.c' l='790' macro='1' u='r'/>
+<use f='codebrowser/m_menu.c' l='933' macro='1' u='r'/>
+<use f='codebrowser/m_menu.c' l='1137' macro='1' u='r'/>
+<use f='codebrowser/p_spec.c' l='357' macro='1' u='r'/>
+<use f='codebrowser/s_sound.c' l='167' macro='1' u='r'/>
+<use f='codebrowser/v_video.c' l='228' macro='1' u='r'/>
+<use f='codebrowser/v_video.c' l='230' macro='1' u='r'/>
+<use f='codebrowser/v_video.c' l='295' macro='1' u='r'/>

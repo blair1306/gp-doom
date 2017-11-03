@@ -1,0 +1,17 @@
+<dec f='codebrowser/d_player.h' l='92' type='fixed_t'/>
+<offset>160</offset>
+<doc f='codebrowser/d_player.h' l='89'>// Determine POV,
+    //  including viewpoint bobbing during movement.
+    // Focal origin above r.z</doc>
+<use f='codebrowser/g_game.c' l='885' u='r' c='G_CheckSpot'/>
+<use f='codebrowser/p_setup.c' l='604' u='w' c='P_SetupLevel'/>
+<use f='codebrowser/p_telept.c' l='108' u='w' c='EV_Teleport'/>
+<use f='codebrowser/p_tick.c' l='142' u='r' c='P_Ticker'/>
+<use f='codebrowser/p_user.c' l='99' u='w' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='101' u='r' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='102' u='w' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='104' u='w' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='137' u='w' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='139' u='r' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='140' u='w' c='P_CalcHeight'/>
+<use f='codebrowser/r_main.c' l='840' u='r' c='R_SetupFrame'/>

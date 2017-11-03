@@ -1,0 +1,741 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>d_englsh.h source code [codebrowser/d_englsh.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/d_englsh.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='d_englsh.h.html'>d_englsh.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>// DESCRIPTION:</i></td></tr>
+<tr><th id="18">18</th><td><i>//	Printed strings for translation.</i></td></tr>
+<tr><th id="19">19</th><td><i>//	English language support (default).</i></td></tr>
+<tr><th id="20">20</th><td><i>//</i></td></tr>
+<tr><th id="21">21</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="23">ifndef</span> <span class="macro" data-ref="_M/__D_ENGLSH__">__D_ENGLSH__</span></u></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/__D_ENGLSH__" data-ref="_M/__D_ENGLSH__">__D_ENGLSH__</dfn></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><i>//</i></td></tr>
+<tr><th id="27">27</th><td><i>//	Printed strings for translation</i></td></tr>
+<tr><th id="28">28</th><td><i>//</i></td></tr>
+<tr><th id="29">29</th><td><i></i></td></tr>
+<tr><th id="30">30</th><td><i>//</i></td></tr>
+<tr><th id="31">31</th><td><i>// D_Main.C</i></td></tr>
+<tr><th id="32">32</th><td><i>//</i></td></tr>
+<tr><th id="33">33</th><td><u>#define <dfn class="macro" id="_M/D_DEVSTR" data-ref="_M/D_DEVSTR">D_DEVSTR</dfn>	"Development mode ON.\n"</u></td></tr>
+<tr><th id="34">34</th><td><u>#define <dfn class="macro" id="_M/D_CDROM" data-ref="_M/D_CDROM">D_CDROM</dfn>	"CD-ROM Version: default.cfg from c:\\doomdata\n"</u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><i>//</i></td></tr>
+<tr><th id="37">37</th><td><i>//	M_Menu.C</i></td></tr>
+<tr><th id="38">38</th><td><i>//</i></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/PRESSKEY" data-ref="_M/PRESSKEY">PRESSKEY</dfn> 	"press a key."</u></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/PRESSYN" data-ref="_M/PRESSYN">PRESSYN</dfn> 	"press y or n."</u></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/QUITMSG" data-ref="_M/QUITMSG">QUITMSG</dfn>	"are you sure you want to\nquit this great game?"</u></td></tr>
+<tr><th id="42">42</th><td><u>#define <dfn class="macro" id="_M/LOADNET" data-ref="_M/LOADNET">LOADNET</dfn> 	"you can't do load while in a net game!\n\n"PRESSKEY</u></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/QLOADNET" data-ref="_M/QLOADNET">QLOADNET</dfn>	"you can't quickload during a netgame!\n\n"PRESSKEY</u></td></tr>
+<tr><th id="44">44</th><td><u>#define <dfn class="macro" id="_M/QSAVESPOT" data-ref="_M/QSAVESPOT">QSAVESPOT</dfn>	"you haven't picked a quicksave slot yet!\n\n"PRESSKEY</u></td></tr>
+<tr><th id="45">45</th><td><u>#define <dfn class="macro" id="_M/SAVEDEAD" data-ref="_M/SAVEDEAD">SAVEDEAD</dfn> 	"you can't save if you aren't playing!\n\n"PRESSKEY</u></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/QSPROMPT" data-ref="_M/QSPROMPT">QSPROMPT</dfn> 	"quicksave over your game named\n\n'%s'?\n\n"PRESSYN</u></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/QLPROMPT" data-ref="_M/QLPROMPT">QLPROMPT</dfn>	"do you want to quickload the game named\n\n'%s'?\n\n"PRESSYN</u></td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><u>#define <dfn class="macro" id="_M/NEWGAME" data-ref="_M/NEWGAME">NEWGAME</dfn>	\</u></td></tr>
+<tr><th id="50">50</th><td><u>"you can't start a new game\n"\</u></td></tr>
+<tr><th id="51">51</th><td><u>"while in a network game.\n\n"PRESSKEY</u></td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><u>#define <dfn class="macro" id="_M/NIGHTMARE" data-ref="_M/NIGHTMARE">NIGHTMARE</dfn>	\</u></td></tr>
+<tr><th id="54">54</th><td><u>"are you sure? this skill level\n"\</u></td></tr>
+<tr><th id="55">55</th><td><u>"isn't even remotely fair.\n\n"PRESSYN</u></td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><u>#define <dfn class="macro" id="_M/SWSTRING" data-ref="_M/SWSTRING">SWSTRING</dfn>	\</u></td></tr>
+<tr><th id="58">58</th><td><u>"this is the shareware version of doom.\n\n"\</u></td></tr>
+<tr><th id="59">59</th><td><u>"you need to order the entire trilogy.\n\n"PRESSKEY</u></td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><u>#define <dfn class="macro" id="_M/MSGOFF" data-ref="_M/MSGOFF">MSGOFF</dfn>	"Messages OFF"</u></td></tr>
+<tr><th id="62">62</th><td><u>#define <dfn class="macro" id="_M/MSGON" data-ref="_M/MSGON">MSGON</dfn>		"Messages ON"</u></td></tr>
+<tr><th id="63">63</th><td><u>#define <dfn class="macro" id="_M/NETEND" data-ref="_M/NETEND">NETEND</dfn>	"you can't end a netgame!\n\n"PRESSKEY</u></td></tr>
+<tr><th id="64">64</th><td><u>#define <dfn class="macro" id="_M/ENDGAME" data-ref="_M/ENDGAME">ENDGAME</dfn>	"are you sure you want to end the game?\n\n"PRESSYN</u></td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td><u>#define <dfn class="macro" id="_M/DOSY" data-ref="_M/DOSY">DOSY</dfn>		"(press y to quit)"</u></td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td><u>#define <dfn class="macro" id="_M/DETAILHI" data-ref="_M/DETAILHI">DETAILHI</dfn>	"High detail"</u></td></tr>
+<tr><th id="69">69</th><td><u>#define <dfn class="macro" id="_M/DETAILLO" data-ref="_M/DETAILLO">DETAILLO</dfn>	"Low detail"</u></td></tr>
+<tr><th id="70">70</th><td><u>#define <dfn class="macro" id="_M/GAMMALVL0" data-ref="_M/GAMMALVL0">GAMMALVL0</dfn>	"Gamma correction OFF"</u></td></tr>
+<tr><th id="71">71</th><td><u>#define <dfn class="macro" id="_M/GAMMALVL1" data-ref="_M/GAMMALVL1">GAMMALVL1</dfn>	"Gamma correction level 1"</u></td></tr>
+<tr><th id="72">72</th><td><u>#define <dfn class="macro" id="_M/GAMMALVL2" data-ref="_M/GAMMALVL2">GAMMALVL2</dfn>	"Gamma correction level 2"</u></td></tr>
+<tr><th id="73">73</th><td><u>#define <dfn class="macro" id="_M/GAMMALVL3" data-ref="_M/GAMMALVL3">GAMMALVL3</dfn>	"Gamma correction level 3"</u></td></tr>
+<tr><th id="74">74</th><td><u>#define <dfn class="macro" id="_M/GAMMALVL4" data-ref="_M/GAMMALVL4">GAMMALVL4</dfn>	"Gamma correction level 4"</u></td></tr>
+<tr><th id="75">75</th><td><u>#define <dfn class="macro" id="_M/EMPTYSTRING" data-ref="_M/EMPTYSTRING">EMPTYSTRING</dfn>	"empty slot"</u></td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td><i>//</i></td></tr>
+<tr><th id="78">78</th><td><i>//	P_inter.C</i></td></tr>
+<tr><th id="79">79</th><td><i>//</i></td></tr>
+<tr><th id="80">80</th><td><u>#define <dfn class="macro" id="_M/GOTARMOR" data-ref="_M/GOTARMOR">GOTARMOR</dfn>	"Picked up the armor."</u></td></tr>
+<tr><th id="81">81</th><td><u>#define <dfn class="macro" id="_M/GOTMEGA" data-ref="_M/GOTMEGA">GOTMEGA</dfn>	"Picked up the MegaArmor!"</u></td></tr>
+<tr><th id="82">82</th><td><u>#define <dfn class="macro" id="_M/GOTHTHBONUS" data-ref="_M/GOTHTHBONUS">GOTHTHBONUS</dfn>	"Picked up a health bonus."</u></td></tr>
+<tr><th id="83">83</th><td><u>#define <dfn class="macro" id="_M/GOTARMBONUS" data-ref="_M/GOTARMBONUS">GOTARMBONUS</dfn>	"Picked up an armor bonus."</u></td></tr>
+<tr><th id="84">84</th><td><u>#define <dfn class="macro" id="_M/GOTSTIM" data-ref="_M/GOTSTIM">GOTSTIM</dfn>	"Picked up a stimpack."</u></td></tr>
+<tr><th id="85">85</th><td><u>#define <dfn class="macro" id="_M/GOTMEDINEED" data-ref="_M/GOTMEDINEED">GOTMEDINEED</dfn>	"Picked up a medikit that you REALLY need!"</u></td></tr>
+<tr><th id="86">86</th><td><u>#define <dfn class="macro" id="_M/GOTMEDIKIT" data-ref="_M/GOTMEDIKIT">GOTMEDIKIT</dfn>	"Picked up a medikit."</u></td></tr>
+<tr><th id="87">87</th><td><u>#define <dfn class="macro" id="_M/GOTSUPER" data-ref="_M/GOTSUPER">GOTSUPER</dfn>	"Supercharge!"</u></td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td><u>#define <dfn class="macro" id="_M/GOTBLUECARD" data-ref="_M/GOTBLUECARD">GOTBLUECARD</dfn>	"Picked up a blue keycard."</u></td></tr>
+<tr><th id="90">90</th><td><u>#define <dfn class="macro" id="_M/GOTYELWCARD" data-ref="_M/GOTYELWCARD">GOTYELWCARD</dfn>	"Picked up a yellow keycard."</u></td></tr>
+<tr><th id="91">91</th><td><u>#define <dfn class="macro" id="_M/GOTREDCARD" data-ref="_M/GOTREDCARD">GOTREDCARD</dfn>	"Picked up a red keycard."</u></td></tr>
+<tr><th id="92">92</th><td><u>#define <dfn class="macro" id="_M/GOTBLUESKUL" data-ref="_M/GOTBLUESKUL">GOTBLUESKUL</dfn>	"Picked up a blue skull key."</u></td></tr>
+<tr><th id="93">93</th><td><u>#define <dfn class="macro" id="_M/GOTYELWSKUL" data-ref="_M/GOTYELWSKUL">GOTYELWSKUL</dfn>	"Picked up a yellow skull key."</u></td></tr>
+<tr><th id="94">94</th><td><u>#define <dfn class="macro" id="_M/GOTREDSKULL" data-ref="_M/GOTREDSKULL">GOTREDSKULL</dfn>	"Picked up a red skull key."</u></td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td><u>#define <dfn class="macro" id="_M/GOTINVUL" data-ref="_M/GOTINVUL">GOTINVUL</dfn>	"Invulnerability!"</u></td></tr>
+<tr><th id="97">97</th><td><u>#define <dfn class="macro" id="_M/GOTBERSERK" data-ref="_M/GOTBERSERK">GOTBERSERK</dfn>	"Berserk!"</u></td></tr>
+<tr><th id="98">98</th><td><u>#define <dfn class="macro" id="_M/GOTINVIS" data-ref="_M/GOTINVIS">GOTINVIS</dfn>	"Partial Invisibility"</u></td></tr>
+<tr><th id="99">99</th><td><u>#define <dfn class="macro" id="_M/GOTSUIT" data-ref="_M/GOTSUIT">GOTSUIT</dfn>	"Radiation Shielding Suit"</u></td></tr>
+<tr><th id="100">100</th><td><u>#define <dfn class="macro" id="_M/GOTMAP" data-ref="_M/GOTMAP">GOTMAP</dfn>	"Computer Area Map"</u></td></tr>
+<tr><th id="101">101</th><td><u>#define <dfn class="macro" id="_M/GOTVISOR" data-ref="_M/GOTVISOR">GOTVISOR</dfn>	"Light Amplification Visor"</u></td></tr>
+<tr><th id="102">102</th><td><u>#define <dfn class="macro" id="_M/GOTMSPHERE" data-ref="_M/GOTMSPHERE">GOTMSPHERE</dfn>	"MegaSphere!"</u></td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><u>#define <dfn class="macro" id="_M/GOTCLIP" data-ref="_M/GOTCLIP">GOTCLIP</dfn>	"Picked up a clip."</u></td></tr>
+<tr><th id="105">105</th><td><u>#define <dfn class="macro" id="_M/GOTCLIPBOX" data-ref="_M/GOTCLIPBOX">GOTCLIPBOX</dfn>	"Picked up a box of bullets."</u></td></tr>
+<tr><th id="106">106</th><td><u>#define <dfn class="macro" id="_M/GOTROCKET" data-ref="_M/GOTROCKET">GOTROCKET</dfn>	"Picked up a rocket."</u></td></tr>
+<tr><th id="107">107</th><td><u>#define <dfn class="macro" id="_M/GOTROCKBOX" data-ref="_M/GOTROCKBOX">GOTROCKBOX</dfn>	"Picked up a box of rockets."</u></td></tr>
+<tr><th id="108">108</th><td><u>#define <dfn class="macro" id="_M/GOTCELL" data-ref="_M/GOTCELL">GOTCELL</dfn>	"Picked up an energy cell."</u></td></tr>
+<tr><th id="109">109</th><td><u>#define <dfn class="macro" id="_M/GOTCELLBOX" data-ref="_M/GOTCELLBOX">GOTCELLBOX</dfn>	"Picked up an energy cell pack."</u></td></tr>
+<tr><th id="110">110</th><td><u>#define <dfn class="macro" id="_M/GOTSHELLS" data-ref="_M/GOTSHELLS">GOTSHELLS</dfn>	"Picked up 4 shotgun shells."</u></td></tr>
+<tr><th id="111">111</th><td><u>#define <dfn class="macro" id="_M/GOTSHELLBOX" data-ref="_M/GOTSHELLBOX">GOTSHELLBOX</dfn>	"Picked up a box of shotgun shells."</u></td></tr>
+<tr><th id="112">112</th><td><u>#define <dfn class="macro" id="_M/GOTBACKPACK" data-ref="_M/GOTBACKPACK">GOTBACKPACK</dfn>	"Picked up a backpack full of ammo!"</u></td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td><u>#define <dfn class="macro" id="_M/GOTBFG9000" data-ref="_M/GOTBFG9000">GOTBFG9000</dfn>	"You got the BFG9000!  Oh, yes."</u></td></tr>
+<tr><th id="115">115</th><td><u>#define <dfn class="macro" id="_M/GOTCHAINGUN" data-ref="_M/GOTCHAINGUN">GOTCHAINGUN</dfn>	"You got the chaingun!"</u></td></tr>
+<tr><th id="116">116</th><td><u>#define <dfn class="macro" id="_M/GOTCHAINSAW" data-ref="_M/GOTCHAINSAW">GOTCHAINSAW</dfn>	"A chainsaw!  Find some meat!"</u></td></tr>
+<tr><th id="117">117</th><td><u>#define <dfn class="macro" id="_M/GOTLAUNCHER" data-ref="_M/GOTLAUNCHER">GOTLAUNCHER</dfn>	"You got the rocket launcher!"</u></td></tr>
+<tr><th id="118">118</th><td><u>#define <dfn class="macro" id="_M/GOTPLASMA" data-ref="_M/GOTPLASMA">GOTPLASMA</dfn>	"You got the plasma gun!"</u></td></tr>
+<tr><th id="119">119</th><td><u>#define <dfn class="macro" id="_M/GOTSHOTGUN" data-ref="_M/GOTSHOTGUN">GOTSHOTGUN</dfn>	"You got the shotgun!"</u></td></tr>
+<tr><th id="120">120</th><td><u>#define <dfn class="macro" id="_M/GOTSHOTGUN2" data-ref="_M/GOTSHOTGUN2">GOTSHOTGUN2</dfn>	"You got the super shotgun!"</u></td></tr>
+<tr><th id="121">121</th><td></td></tr>
+<tr><th id="122">122</th><td><i>//</i></td></tr>
+<tr><th id="123">123</th><td><i>// P_Doors.C</i></td></tr>
+<tr><th id="124">124</th><td><i>//</i></td></tr>
+<tr><th id="125">125</th><td><u>#define <dfn class="macro" id="_M/PD_BLUEO" data-ref="_M/PD_BLUEO">PD_BLUEO</dfn>	"You need a blue key to activate this object"</u></td></tr>
+<tr><th id="126">126</th><td><u>#define <dfn class="macro" id="_M/PD_REDO" data-ref="_M/PD_REDO">PD_REDO</dfn>	"You need a red key to activate this object"</u></td></tr>
+<tr><th id="127">127</th><td><u>#define <dfn class="macro" id="_M/PD_YELLOWO" data-ref="_M/PD_YELLOWO">PD_YELLOWO</dfn>	"You need a yellow key to activate this object"</u></td></tr>
+<tr><th id="128">128</th><td><u>#define <dfn class="macro" id="_M/PD_BLUEK" data-ref="_M/PD_BLUEK">PD_BLUEK</dfn>	"You need a blue key to open this door"</u></td></tr>
+<tr><th id="129">129</th><td><u>#define <dfn class="macro" id="_M/PD_REDK" data-ref="_M/PD_REDK">PD_REDK</dfn>	"You need a red key to open this door"</u></td></tr>
+<tr><th id="130">130</th><td><u>#define <dfn class="macro" id="_M/PD_YELLOWK" data-ref="_M/PD_YELLOWK">PD_YELLOWK</dfn>	"You need a yellow key to open this door"</u></td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><i>//</i></td></tr>
+<tr><th id="133">133</th><td><i>//	G_game.C</i></td></tr>
+<tr><th id="134">134</th><td><i>//</i></td></tr>
+<tr><th id="135">135</th><td><u>#define <dfn class="macro" id="_M/GGSAVED" data-ref="_M/GGSAVED">GGSAVED</dfn>	"game saved."</u></td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td><i>//</i></td></tr>
+<tr><th id="138">138</th><td><i>//	HU_stuff.C</i></td></tr>
+<tr><th id="139">139</th><td><i>//</i></td></tr>
+<tr><th id="140">140</th><td><u>#define <dfn class="macro" id="_M/HUSTR_MSGU" data-ref="_M/HUSTR_MSGU">HUSTR_MSGU</dfn>	"[Message unsent]"</u></td></tr>
+<tr><th id="141">141</th><td></td></tr>
+<tr><th id="142">142</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E1M1" data-ref="_M/HUSTR_E1M1">HUSTR_E1M1</dfn>	"E1M1: Hangar"</u></td></tr>
+<tr><th id="143">143</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E1M2" data-ref="_M/HUSTR_E1M2">HUSTR_E1M2</dfn>	"E1M2: Nuclear Plant"</u></td></tr>
+<tr><th id="144">144</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E1M3" data-ref="_M/HUSTR_E1M3">HUSTR_E1M3</dfn>	"E1M3: Toxin Refinery"</u></td></tr>
+<tr><th id="145">145</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E1M4" data-ref="_M/HUSTR_E1M4">HUSTR_E1M4</dfn>	"E1M4: Command Control"</u></td></tr>
+<tr><th id="146">146</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E1M5" data-ref="_M/HUSTR_E1M5">HUSTR_E1M5</dfn>	"E1M5: Phobos Lab"</u></td></tr>
+<tr><th id="147">147</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E1M6" data-ref="_M/HUSTR_E1M6">HUSTR_E1M6</dfn>	"E1M6: Central Processing"</u></td></tr>
+<tr><th id="148">148</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E1M7" data-ref="_M/HUSTR_E1M7">HUSTR_E1M7</dfn>	"E1M7: Computer Station"</u></td></tr>
+<tr><th id="149">149</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E1M8" data-ref="_M/HUSTR_E1M8">HUSTR_E1M8</dfn>	"E1M8: Phobos Anomaly"</u></td></tr>
+<tr><th id="150">150</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E1M9" data-ref="_M/HUSTR_E1M9">HUSTR_E1M9</dfn>	"E1M9: Military Base"</u></td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E2M1" data-ref="_M/HUSTR_E2M1">HUSTR_E2M1</dfn>	"E2M1: Deimos Anomaly"</u></td></tr>
+<tr><th id="153">153</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E2M2" data-ref="_M/HUSTR_E2M2">HUSTR_E2M2</dfn>	"E2M2: Containment Area"</u></td></tr>
+<tr><th id="154">154</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E2M3" data-ref="_M/HUSTR_E2M3">HUSTR_E2M3</dfn>	"E2M3: Refinery"</u></td></tr>
+<tr><th id="155">155</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E2M4" data-ref="_M/HUSTR_E2M4">HUSTR_E2M4</dfn>	"E2M4: Deimos Lab"</u></td></tr>
+<tr><th id="156">156</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E2M5" data-ref="_M/HUSTR_E2M5">HUSTR_E2M5</dfn>	"E2M5: Command Center"</u></td></tr>
+<tr><th id="157">157</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E2M6" data-ref="_M/HUSTR_E2M6">HUSTR_E2M6</dfn>	"E2M6: Halls of the Damned"</u></td></tr>
+<tr><th id="158">158</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E2M7" data-ref="_M/HUSTR_E2M7">HUSTR_E2M7</dfn>	"E2M7: Spawning Vats"</u></td></tr>
+<tr><th id="159">159</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E2M8" data-ref="_M/HUSTR_E2M8">HUSTR_E2M8</dfn>	"E2M8: Tower of Babel"</u></td></tr>
+<tr><th id="160">160</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E2M9" data-ref="_M/HUSTR_E2M9">HUSTR_E2M9</dfn>	"E2M9: Fortress of Mystery"</u></td></tr>
+<tr><th id="161">161</th><td></td></tr>
+<tr><th id="162">162</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E3M1" data-ref="_M/HUSTR_E3M1">HUSTR_E3M1</dfn>	"E3M1: Hell Keep"</u></td></tr>
+<tr><th id="163">163</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E3M2" data-ref="_M/HUSTR_E3M2">HUSTR_E3M2</dfn>	"E3M2: Slough of Despair"</u></td></tr>
+<tr><th id="164">164</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E3M3" data-ref="_M/HUSTR_E3M3">HUSTR_E3M3</dfn>	"E3M3: Pandemonium"</u></td></tr>
+<tr><th id="165">165</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E3M4" data-ref="_M/HUSTR_E3M4">HUSTR_E3M4</dfn>	"E3M4: House of Pain"</u></td></tr>
+<tr><th id="166">166</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E3M5" data-ref="_M/HUSTR_E3M5">HUSTR_E3M5</dfn>	"E3M5: Unholy Cathedral"</u></td></tr>
+<tr><th id="167">167</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E3M6" data-ref="_M/HUSTR_E3M6">HUSTR_E3M6</dfn>	"E3M6: Mt. Erebus"</u></td></tr>
+<tr><th id="168">168</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E3M7" data-ref="_M/HUSTR_E3M7">HUSTR_E3M7</dfn>	"E3M7: Limbo"</u></td></tr>
+<tr><th id="169">169</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E3M8" data-ref="_M/HUSTR_E3M8">HUSTR_E3M8</dfn>	"E3M8: Dis"</u></td></tr>
+<tr><th id="170">170</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E3M9" data-ref="_M/HUSTR_E3M9">HUSTR_E3M9</dfn>	"E3M9: Warrens"</u></td></tr>
+<tr><th id="171">171</th><td></td></tr>
+<tr><th id="172">172</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E4M1" data-ref="_M/HUSTR_E4M1">HUSTR_E4M1</dfn>	"E4M1: Hell Beneath"</u></td></tr>
+<tr><th id="173">173</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E4M2" data-ref="_M/HUSTR_E4M2">HUSTR_E4M2</dfn>	"E4M2: Perfect Hatred"</u></td></tr>
+<tr><th id="174">174</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E4M3" data-ref="_M/HUSTR_E4M3">HUSTR_E4M3</dfn>	"E4M3: Sever The Wicked"</u></td></tr>
+<tr><th id="175">175</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E4M4" data-ref="_M/HUSTR_E4M4">HUSTR_E4M4</dfn>	"E4M4: Unruly Evil"</u></td></tr>
+<tr><th id="176">176</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E4M5" data-ref="_M/HUSTR_E4M5">HUSTR_E4M5</dfn>	"E4M5: They Will Repent"</u></td></tr>
+<tr><th id="177">177</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E4M6" data-ref="_M/HUSTR_E4M6">HUSTR_E4M6</dfn>	"E4M6: Against Thee Wickedly"</u></td></tr>
+<tr><th id="178">178</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E4M7" data-ref="_M/HUSTR_E4M7">HUSTR_E4M7</dfn>	"E4M7: And Hell Followed"</u></td></tr>
+<tr><th id="179">179</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E4M8" data-ref="_M/HUSTR_E4M8">HUSTR_E4M8</dfn>	"E4M8: Unto The Cruel"</u></td></tr>
+<tr><th id="180">180</th><td><u>#define <dfn class="macro" id="_M/HUSTR_E4M9" data-ref="_M/HUSTR_E4M9">HUSTR_E4M9</dfn>	"E4M9: Fear"</u></td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td><u>#define <dfn class="macro" id="_M/HUSTR_1" data-ref="_M/HUSTR_1">HUSTR_1</dfn>	"level 1: entryway"</u></td></tr>
+<tr><th id="183">183</th><td><u>#define <dfn class="macro" id="_M/HUSTR_2" data-ref="_M/HUSTR_2">HUSTR_2</dfn>	"level 2: underhalls"</u></td></tr>
+<tr><th id="184">184</th><td><u>#define <dfn class="macro" id="_M/HUSTR_3" data-ref="_M/HUSTR_3">HUSTR_3</dfn>	"level 3: the gantlet"</u></td></tr>
+<tr><th id="185">185</th><td><u>#define <dfn class="macro" id="_M/HUSTR_4" data-ref="_M/HUSTR_4">HUSTR_4</dfn>	"level 4: the focus"</u></td></tr>
+<tr><th id="186">186</th><td><u>#define <dfn class="macro" id="_M/HUSTR_5" data-ref="_M/HUSTR_5">HUSTR_5</dfn>	"level 5: the waste tunnels"</u></td></tr>
+<tr><th id="187">187</th><td><u>#define <dfn class="macro" id="_M/HUSTR_6" data-ref="_M/HUSTR_6">HUSTR_6</dfn>	"level 6: the crusher"</u></td></tr>
+<tr><th id="188">188</th><td><u>#define <dfn class="macro" id="_M/HUSTR_7" data-ref="_M/HUSTR_7">HUSTR_7</dfn>	"level 7: dead simple"</u></td></tr>
+<tr><th id="189">189</th><td><u>#define <dfn class="macro" id="_M/HUSTR_8" data-ref="_M/HUSTR_8">HUSTR_8</dfn>	"level 8: tricks and traps"</u></td></tr>
+<tr><th id="190">190</th><td><u>#define <dfn class="macro" id="_M/HUSTR_9" data-ref="_M/HUSTR_9">HUSTR_9</dfn>	"level 9: the pit"</u></td></tr>
+<tr><th id="191">191</th><td><u>#define <dfn class="macro" id="_M/HUSTR_10" data-ref="_M/HUSTR_10">HUSTR_10</dfn>	"level 10: refueling base"</u></td></tr>
+<tr><th id="192">192</th><td><u>#define <dfn class="macro" id="_M/HUSTR_11" data-ref="_M/HUSTR_11">HUSTR_11</dfn>	"level 11: 'o' of destruction!"</u></td></tr>
+<tr><th id="193">193</th><td></td></tr>
+<tr><th id="194">194</th><td><u>#define <dfn class="macro" id="_M/HUSTR_12" data-ref="_M/HUSTR_12">HUSTR_12</dfn>	"level 12: the factory"</u></td></tr>
+<tr><th id="195">195</th><td><u>#define <dfn class="macro" id="_M/HUSTR_13" data-ref="_M/HUSTR_13">HUSTR_13</dfn>	"level 13: downtown"</u></td></tr>
+<tr><th id="196">196</th><td><u>#define <dfn class="macro" id="_M/HUSTR_14" data-ref="_M/HUSTR_14">HUSTR_14</dfn>	"level 14: the inmost dens"</u></td></tr>
+<tr><th id="197">197</th><td><u>#define <dfn class="macro" id="_M/HUSTR_15" data-ref="_M/HUSTR_15">HUSTR_15</dfn>	"level 15: industrial zone"</u></td></tr>
+<tr><th id="198">198</th><td><u>#define <dfn class="macro" id="_M/HUSTR_16" data-ref="_M/HUSTR_16">HUSTR_16</dfn>	"level 16: suburbs"</u></td></tr>
+<tr><th id="199">199</th><td><u>#define <dfn class="macro" id="_M/HUSTR_17" data-ref="_M/HUSTR_17">HUSTR_17</dfn>	"level 17: tenements"</u></td></tr>
+<tr><th id="200">200</th><td><u>#define <dfn class="macro" id="_M/HUSTR_18" data-ref="_M/HUSTR_18">HUSTR_18</dfn>	"level 18: the courtyard"</u></td></tr>
+<tr><th id="201">201</th><td><u>#define <dfn class="macro" id="_M/HUSTR_19" data-ref="_M/HUSTR_19">HUSTR_19</dfn>	"level 19: the citadel"</u></td></tr>
+<tr><th id="202">202</th><td><u>#define <dfn class="macro" id="_M/HUSTR_20" data-ref="_M/HUSTR_20">HUSTR_20</dfn>	"level 20: gotcha!"</u></td></tr>
+<tr><th id="203">203</th><td></td></tr>
+<tr><th id="204">204</th><td><u>#define <dfn class="macro" id="_M/HUSTR_21" data-ref="_M/HUSTR_21">HUSTR_21</dfn>	"level 21: nirvana"</u></td></tr>
+<tr><th id="205">205</th><td><u>#define <dfn class="macro" id="_M/HUSTR_22" data-ref="_M/HUSTR_22">HUSTR_22</dfn>	"level 22: the catacombs"</u></td></tr>
+<tr><th id="206">206</th><td><u>#define <dfn class="macro" id="_M/HUSTR_23" data-ref="_M/HUSTR_23">HUSTR_23</dfn>	"level 23: barrels o' fun"</u></td></tr>
+<tr><th id="207">207</th><td><u>#define <dfn class="macro" id="_M/HUSTR_24" data-ref="_M/HUSTR_24">HUSTR_24</dfn>	"level 24: the chasm"</u></td></tr>
+<tr><th id="208">208</th><td><u>#define <dfn class="macro" id="_M/HUSTR_25" data-ref="_M/HUSTR_25">HUSTR_25</dfn>	"level 25: bloodfalls"</u></td></tr>
+<tr><th id="209">209</th><td><u>#define <dfn class="macro" id="_M/HUSTR_26" data-ref="_M/HUSTR_26">HUSTR_26</dfn>	"level 26: the abandoned mines"</u></td></tr>
+<tr><th id="210">210</th><td><u>#define <dfn class="macro" id="_M/HUSTR_27" data-ref="_M/HUSTR_27">HUSTR_27</dfn>	"level 27: monster condo"</u></td></tr>
+<tr><th id="211">211</th><td><u>#define <dfn class="macro" id="_M/HUSTR_28" data-ref="_M/HUSTR_28">HUSTR_28</dfn>	"level 28: the spirit world"</u></td></tr>
+<tr><th id="212">212</th><td><u>#define <dfn class="macro" id="_M/HUSTR_29" data-ref="_M/HUSTR_29">HUSTR_29</dfn>	"level 29: the living end"</u></td></tr>
+<tr><th id="213">213</th><td><u>#define <dfn class="macro" id="_M/HUSTR_30" data-ref="_M/HUSTR_30">HUSTR_30</dfn>	"level 30: icon of sin"</u></td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td><u>#define <dfn class="macro" id="_M/HUSTR_31" data-ref="_M/HUSTR_31">HUSTR_31</dfn>	"level 31: wolfenstein"</u></td></tr>
+<tr><th id="216">216</th><td><u>#define <dfn class="macro" id="_M/HUSTR_32" data-ref="_M/HUSTR_32">HUSTR_32</dfn>	"level 32: grosse"</u></td></tr>
+<tr><th id="217">217</th><td></td></tr>
+<tr><th id="218">218</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_1" data-ref="_M/PHUSTR_1">PHUSTR_1</dfn>	"level 1: congo"</u></td></tr>
+<tr><th id="219">219</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_2" data-ref="_M/PHUSTR_2">PHUSTR_2</dfn>	"level 2: well of souls"</u></td></tr>
+<tr><th id="220">220</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_3" data-ref="_M/PHUSTR_3">PHUSTR_3</dfn>	"level 3: aztec"</u></td></tr>
+<tr><th id="221">221</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_4" data-ref="_M/PHUSTR_4">PHUSTR_4</dfn>	"level 4: caged"</u></td></tr>
+<tr><th id="222">222</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_5" data-ref="_M/PHUSTR_5">PHUSTR_5</dfn>	"level 5: ghost town"</u></td></tr>
+<tr><th id="223">223</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_6" data-ref="_M/PHUSTR_6">PHUSTR_6</dfn>	"level 6: baron's lair"</u></td></tr>
+<tr><th id="224">224</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_7" data-ref="_M/PHUSTR_7">PHUSTR_7</dfn>	"level 7: caughtyard"</u></td></tr>
+<tr><th id="225">225</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_8" data-ref="_M/PHUSTR_8">PHUSTR_8</dfn>	"level 8: realm"</u></td></tr>
+<tr><th id="226">226</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_9" data-ref="_M/PHUSTR_9">PHUSTR_9</dfn>	"level 9: abattoire"</u></td></tr>
+<tr><th id="227">227</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_10" data-ref="_M/PHUSTR_10">PHUSTR_10</dfn>	"level 10: onslaught"</u></td></tr>
+<tr><th id="228">228</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_11" data-ref="_M/PHUSTR_11">PHUSTR_11</dfn>	"level 11: hunted"</u></td></tr>
+<tr><th id="229">229</th><td></td></tr>
+<tr><th id="230">230</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_12" data-ref="_M/PHUSTR_12">PHUSTR_12</dfn>	"level 12: speed"</u></td></tr>
+<tr><th id="231">231</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_13" data-ref="_M/PHUSTR_13">PHUSTR_13</dfn>	"level 13: the crypt"</u></td></tr>
+<tr><th id="232">232</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_14" data-ref="_M/PHUSTR_14">PHUSTR_14</dfn>	"level 14: genesis"</u></td></tr>
+<tr><th id="233">233</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_15" data-ref="_M/PHUSTR_15">PHUSTR_15</dfn>	"level 15: the twilight"</u></td></tr>
+<tr><th id="234">234</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_16" data-ref="_M/PHUSTR_16">PHUSTR_16</dfn>	"level 16: the omen"</u></td></tr>
+<tr><th id="235">235</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_17" data-ref="_M/PHUSTR_17">PHUSTR_17</dfn>	"level 17: compound"</u></td></tr>
+<tr><th id="236">236</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_18" data-ref="_M/PHUSTR_18">PHUSTR_18</dfn>	"level 18: neurosphere"</u></td></tr>
+<tr><th id="237">237</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_19" data-ref="_M/PHUSTR_19">PHUSTR_19</dfn>	"level 19: nme"</u></td></tr>
+<tr><th id="238">238</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_20" data-ref="_M/PHUSTR_20">PHUSTR_20</dfn>	"level 20: the death domain"</u></td></tr>
+<tr><th id="239">239</th><td></td></tr>
+<tr><th id="240">240</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_21" data-ref="_M/PHUSTR_21">PHUSTR_21</dfn>	"level 21: slayer"</u></td></tr>
+<tr><th id="241">241</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_22" data-ref="_M/PHUSTR_22">PHUSTR_22</dfn>	"level 22: impossible mission"</u></td></tr>
+<tr><th id="242">242</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_23" data-ref="_M/PHUSTR_23">PHUSTR_23</dfn>	"level 23: tombstone"</u></td></tr>
+<tr><th id="243">243</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_24" data-ref="_M/PHUSTR_24">PHUSTR_24</dfn>	"level 24: the final frontier"</u></td></tr>
+<tr><th id="244">244</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_25" data-ref="_M/PHUSTR_25">PHUSTR_25</dfn>	"level 25: the temple of darkness"</u></td></tr>
+<tr><th id="245">245</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_26" data-ref="_M/PHUSTR_26">PHUSTR_26</dfn>	"level 26: bunker"</u></td></tr>
+<tr><th id="246">246</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_27" data-ref="_M/PHUSTR_27">PHUSTR_27</dfn>	"level 27: anti-christ"</u></td></tr>
+<tr><th id="247">247</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_28" data-ref="_M/PHUSTR_28">PHUSTR_28</dfn>	"level 28: the sewers"</u></td></tr>
+<tr><th id="248">248</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_29" data-ref="_M/PHUSTR_29">PHUSTR_29</dfn>	"level 29: odyssey of noises"</u></td></tr>
+<tr><th id="249">249</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_30" data-ref="_M/PHUSTR_30">PHUSTR_30</dfn>	"level 30: the gateway of hell"</u></td></tr>
+<tr><th id="250">250</th><td></td></tr>
+<tr><th id="251">251</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_31" data-ref="_M/PHUSTR_31">PHUSTR_31</dfn>	"level 31: cyberden"</u></td></tr>
+<tr><th id="252">252</th><td><u>#define <dfn class="macro" id="_M/PHUSTR_32" data-ref="_M/PHUSTR_32">PHUSTR_32</dfn>	"level 32: go 2 it"</u></td></tr>
+<tr><th id="253">253</th><td></td></tr>
+<tr><th id="254">254</th><td><u>#define <dfn class="macro" id="_M/THUSTR_1" data-ref="_M/THUSTR_1">THUSTR_1</dfn>	"level 1: system control"</u></td></tr>
+<tr><th id="255">255</th><td><u>#define <dfn class="macro" id="_M/THUSTR_2" data-ref="_M/THUSTR_2">THUSTR_2</dfn>	"level 2: human bbq"</u></td></tr>
+<tr><th id="256">256</th><td><u>#define <dfn class="macro" id="_M/THUSTR_3" data-ref="_M/THUSTR_3">THUSTR_3</dfn>	"level 3: power control"</u></td></tr>
+<tr><th id="257">257</th><td><u>#define <dfn class="macro" id="_M/THUSTR_4" data-ref="_M/THUSTR_4">THUSTR_4</dfn>	"level 4: wormhole"</u></td></tr>
+<tr><th id="258">258</th><td><u>#define <dfn class="macro" id="_M/THUSTR_5" data-ref="_M/THUSTR_5">THUSTR_5</dfn>	"level 5: hanger"</u></td></tr>
+<tr><th id="259">259</th><td><u>#define <dfn class="macro" id="_M/THUSTR_6" data-ref="_M/THUSTR_6">THUSTR_6</dfn>	"level 6: open season"</u></td></tr>
+<tr><th id="260">260</th><td><u>#define <dfn class="macro" id="_M/THUSTR_7" data-ref="_M/THUSTR_7">THUSTR_7</dfn>	"level 7: prison"</u></td></tr>
+<tr><th id="261">261</th><td><u>#define <dfn class="macro" id="_M/THUSTR_8" data-ref="_M/THUSTR_8">THUSTR_8</dfn>	"level 8: metal"</u></td></tr>
+<tr><th id="262">262</th><td><u>#define <dfn class="macro" id="_M/THUSTR_9" data-ref="_M/THUSTR_9">THUSTR_9</dfn>	"level 9: stronghold"</u></td></tr>
+<tr><th id="263">263</th><td><u>#define <dfn class="macro" id="_M/THUSTR_10" data-ref="_M/THUSTR_10">THUSTR_10</dfn>	"level 10: redemption"</u></td></tr>
+<tr><th id="264">264</th><td><u>#define <dfn class="macro" id="_M/THUSTR_11" data-ref="_M/THUSTR_11">THUSTR_11</dfn>	"level 11: storage facility"</u></td></tr>
+<tr><th id="265">265</th><td></td></tr>
+<tr><th id="266">266</th><td><u>#define <dfn class="macro" id="_M/THUSTR_12" data-ref="_M/THUSTR_12">THUSTR_12</dfn>	"level 12: crater"</u></td></tr>
+<tr><th id="267">267</th><td><u>#define <dfn class="macro" id="_M/THUSTR_13" data-ref="_M/THUSTR_13">THUSTR_13</dfn>	"level 13: nukage processing"</u></td></tr>
+<tr><th id="268">268</th><td><u>#define <dfn class="macro" id="_M/THUSTR_14" data-ref="_M/THUSTR_14">THUSTR_14</dfn>	"level 14: steel works"</u></td></tr>
+<tr><th id="269">269</th><td><u>#define <dfn class="macro" id="_M/THUSTR_15" data-ref="_M/THUSTR_15">THUSTR_15</dfn>	"level 15: dead zone"</u></td></tr>
+<tr><th id="270">270</th><td><u>#define <dfn class="macro" id="_M/THUSTR_16" data-ref="_M/THUSTR_16">THUSTR_16</dfn>	"level 16: deepest reaches"</u></td></tr>
+<tr><th id="271">271</th><td><u>#define <dfn class="macro" id="_M/THUSTR_17" data-ref="_M/THUSTR_17">THUSTR_17</dfn>	"level 17: processing area"</u></td></tr>
+<tr><th id="272">272</th><td><u>#define <dfn class="macro" id="_M/THUSTR_18" data-ref="_M/THUSTR_18">THUSTR_18</dfn>	"level 18: mill"</u></td></tr>
+<tr><th id="273">273</th><td><u>#define <dfn class="macro" id="_M/THUSTR_19" data-ref="_M/THUSTR_19">THUSTR_19</dfn>	"level 19: shipping/respawning"</u></td></tr>
+<tr><th id="274">274</th><td><u>#define <dfn class="macro" id="_M/THUSTR_20" data-ref="_M/THUSTR_20">THUSTR_20</dfn>	"level 20: central processing"</u></td></tr>
+<tr><th id="275">275</th><td></td></tr>
+<tr><th id="276">276</th><td><u>#define <dfn class="macro" id="_M/THUSTR_21" data-ref="_M/THUSTR_21">THUSTR_21</dfn>	"level 21: administration center"</u></td></tr>
+<tr><th id="277">277</th><td><u>#define <dfn class="macro" id="_M/THUSTR_22" data-ref="_M/THUSTR_22">THUSTR_22</dfn>	"level 22: habitat"</u></td></tr>
+<tr><th id="278">278</th><td><u>#define <dfn class="macro" id="_M/THUSTR_23" data-ref="_M/THUSTR_23">THUSTR_23</dfn>	"level 23: lunar mining project"</u></td></tr>
+<tr><th id="279">279</th><td><u>#define <dfn class="macro" id="_M/THUSTR_24" data-ref="_M/THUSTR_24">THUSTR_24</dfn>	"level 24: quarry"</u></td></tr>
+<tr><th id="280">280</th><td><u>#define <dfn class="macro" id="_M/THUSTR_25" data-ref="_M/THUSTR_25">THUSTR_25</dfn>	"level 25: baron's den"</u></td></tr>
+<tr><th id="281">281</th><td><u>#define <dfn class="macro" id="_M/THUSTR_26" data-ref="_M/THUSTR_26">THUSTR_26</dfn>	"level 26: ballistyx"</u></td></tr>
+<tr><th id="282">282</th><td><u>#define <dfn class="macro" id="_M/THUSTR_27" data-ref="_M/THUSTR_27">THUSTR_27</dfn>	"level 27: mount pain"</u></td></tr>
+<tr><th id="283">283</th><td><u>#define <dfn class="macro" id="_M/THUSTR_28" data-ref="_M/THUSTR_28">THUSTR_28</dfn>	"level 28: heck"</u></td></tr>
+<tr><th id="284">284</th><td><u>#define <dfn class="macro" id="_M/THUSTR_29" data-ref="_M/THUSTR_29">THUSTR_29</dfn>	"level 29: river styx"</u></td></tr>
+<tr><th id="285">285</th><td><u>#define <dfn class="macro" id="_M/THUSTR_30" data-ref="_M/THUSTR_30">THUSTR_30</dfn>	"level 30: last call"</u></td></tr>
+<tr><th id="286">286</th><td></td></tr>
+<tr><th id="287">287</th><td><u>#define <dfn class="macro" id="_M/THUSTR_31" data-ref="_M/THUSTR_31">THUSTR_31</dfn>	"level 31: pharaoh"</u></td></tr>
+<tr><th id="288">288</th><td><u>#define <dfn class="macro" id="_M/THUSTR_32" data-ref="_M/THUSTR_32">THUSTR_32</dfn>	"level 32: caribbean"</u></td></tr>
+<tr><th id="289">289</th><td></td></tr>
+<tr><th id="290">290</th><td><i>// #define HUSTR_CHATMACRO1	"I'm ready to kick butt!"</i></td></tr>
+<tr><th id="291">291</th><td><i>// #define HUSTR_CHATMACRO2	"I'm OK."</i></td></tr>
+<tr><th id="292">292</th><td><i>// #define HUSTR_CHATMACRO3	"I'm not looking too good!"</i></td></tr>
+<tr><th id="293">293</th><td><i>// #define HUSTR_CHATMACRO4	"Help!"</i></td></tr>
+<tr><th id="294">294</th><td><i>// #define HUSTR_CHATMACRO5	"You suck!"</i></td></tr>
+<tr><th id="295">295</th><td><i>// #define HUSTR_CHATMACRO6	"Next time, scumbag..."</i></td></tr>
+<tr><th id="296">296</th><td><i>// #define HUSTR_CHATMACRO7	"Come here!"</i></td></tr>
+<tr><th id="297">297</th><td><i>// #define HUSTR_CHATMACRO8	"I'll take care of it."</i></td></tr>
+<tr><th id="298">298</th><td><i>// #define HUSTR_CHATMACRO9	"Yes"</i></td></tr>
+<tr><th id="299">299</th><td><i>// #define HUSTR_CHATMACRO0	"No"</i></td></tr>
+<tr><th id="300">300</th><td><i></i></td></tr>
+<tr><th id="301">301</th><td><i>// #define HUSTR_CHATMACRO1	"I'm ready to kick butt!"</i></td></tr>
+<tr><th id="302">302</th><td><i>// #define HUSTR_CHATMACRO2	"I'm OK."</i></td></tr>
+<tr><th id="303">303</th><td><i>// #define HUSTR_CHATMACRO3	"I'm not looking too good!"</i></td></tr>
+<tr><th id="304">304</th><td><i>// #define HUSTR_CHATMACRO4	"Help!"</i></td></tr>
+<tr><th id="305">305</th><td><i>// #define HUSTR_CHATMACRO5	"You suck!"</i></td></tr>
+<tr><th id="306">306</th><td><i>// #define HUSTR_CHATMACRO6	"Next time, scumbag..."</i></td></tr>
+<tr><th id="307">307</th><td><i>// #define HUSTR_CHATMACRO7	"Come here!"</i></td></tr>
+<tr><th id="308">308</th><td><i>// #define HUSTR_CHATMACRO8	"I'll take care of it."</i></td></tr>
+<tr><th id="309">309</th><td><i>// #define HUSTR_CHATMACRO9	"Yes"</i></td></tr>
+<tr><th id="310">310</th><td><i>// #define HUSTR_CHATMACRO0	"No"</i></td></tr>
+<tr><th id="311">311</th><td></td></tr>
+<tr><th id="312">312</th><td><u>#define <dfn class="macro" id="_M/HUSTR_CHATMACRO1" data-ref="_M/HUSTR_CHATMACRO1">HUSTR_CHATMACRO1</dfn>	1</u></td></tr>
+<tr><th id="313">313</th><td><u>#define <dfn class="macro" id="_M/HUSTR_CHATMACRO2" data-ref="_M/HUSTR_CHATMACRO2">HUSTR_CHATMACRO2</dfn>	2</u></td></tr>
+<tr><th id="314">314</th><td><u>#define <dfn class="macro" id="_M/HUSTR_CHATMACRO3" data-ref="_M/HUSTR_CHATMACRO3">HUSTR_CHATMACRO3</dfn>	3</u></td></tr>
+<tr><th id="315">315</th><td><u>#define <dfn class="macro" id="_M/HUSTR_CHATMACRO4" data-ref="_M/HUSTR_CHATMACRO4">HUSTR_CHATMACRO4</dfn>	4</u></td></tr>
+<tr><th id="316">316</th><td><u>#define <dfn class="macro" id="_M/HUSTR_CHATMACRO5" data-ref="_M/HUSTR_CHATMACRO5">HUSTR_CHATMACRO5</dfn>	5</u></td></tr>
+<tr><th id="317">317</th><td><u>#define <dfn class="macro" id="_M/HUSTR_CHATMACRO6" data-ref="_M/HUSTR_CHATMACRO6">HUSTR_CHATMACRO6</dfn>	6</u></td></tr>
+<tr><th id="318">318</th><td><u>#define <dfn class="macro" id="_M/HUSTR_CHATMACRO7" data-ref="_M/HUSTR_CHATMACRO7">HUSTR_CHATMACRO7</dfn>	7</u></td></tr>
+<tr><th id="319">319</th><td><u>#define <dfn class="macro" id="_M/HUSTR_CHATMACRO8" data-ref="_M/HUSTR_CHATMACRO8">HUSTR_CHATMACRO8</dfn>	8</u></td></tr>
+<tr><th id="320">320</th><td><u>#define <dfn class="macro" id="_M/HUSTR_CHATMACRO9" data-ref="_M/HUSTR_CHATMACRO9">HUSTR_CHATMACRO9</dfn>	9</u></td></tr>
+<tr><th id="321">321</th><td><u>#define <dfn class="macro" id="_M/HUSTR_CHATMACRO0" data-ref="_M/HUSTR_CHATMACRO0">HUSTR_CHATMACRO0</dfn>	0</u></td></tr>
+<tr><th id="322">322</th><td></td></tr>
+<tr><th id="323">323</th><td><u>#define <dfn class="macro" id="_M/HUSTR_TALKTOSELF1" data-ref="_M/HUSTR_TALKTOSELF1">HUSTR_TALKTOSELF1</dfn>	"You mumble to yourself"</u></td></tr>
+<tr><th id="324">324</th><td><u>#define <dfn class="macro" id="_M/HUSTR_TALKTOSELF2" data-ref="_M/HUSTR_TALKTOSELF2">HUSTR_TALKTOSELF2</dfn>	"Who's there?"</u></td></tr>
+<tr><th id="325">325</th><td><u>#define <dfn class="macro" id="_M/HUSTR_TALKTOSELF3" data-ref="_M/HUSTR_TALKTOSELF3">HUSTR_TALKTOSELF3</dfn>	"You scare yourself"</u></td></tr>
+<tr><th id="326">326</th><td><u>#define <dfn class="macro" id="_M/HUSTR_TALKTOSELF4" data-ref="_M/HUSTR_TALKTOSELF4">HUSTR_TALKTOSELF4</dfn>	"You start to rave"</u></td></tr>
+<tr><th id="327">327</th><td><u>#define <dfn class="macro" id="_M/HUSTR_TALKTOSELF5" data-ref="_M/HUSTR_TALKTOSELF5">HUSTR_TALKTOSELF5</dfn>	"You've lost it..."</u></td></tr>
+<tr><th id="328">328</th><td></td></tr>
+<tr><th id="329">329</th><td><u>#define <dfn class="macro" id="_M/HUSTR_MESSAGESENT" data-ref="_M/HUSTR_MESSAGESENT">HUSTR_MESSAGESENT</dfn>	"[Message Sent]"</u></td></tr>
+<tr><th id="330">330</th><td></td></tr>
+<tr><th id="331">331</th><td><i>// The following should NOT be changed unless it seems</i></td></tr>
+<tr><th id="332">332</th><td><i>// just AWFULLY necessary</i></td></tr>
+<tr><th id="333">333</th><td></td></tr>
+<tr><th id="334">334</th><td><u>#define <dfn class="macro" id="_M/HUSTR_PLRGREEN" data-ref="_M/HUSTR_PLRGREEN">HUSTR_PLRGREEN</dfn>	"Green: "</u></td></tr>
+<tr><th id="335">335</th><td><u>#define <dfn class="macro" id="_M/HUSTR_PLRINDIGO" data-ref="_M/HUSTR_PLRINDIGO">HUSTR_PLRINDIGO</dfn>	"Indigo: "</u></td></tr>
+<tr><th id="336">336</th><td><u>#define <dfn class="macro" id="_M/HUSTR_PLRBROWN" data-ref="_M/HUSTR_PLRBROWN">HUSTR_PLRBROWN</dfn>	"Brown: "</u></td></tr>
+<tr><th id="337">337</th><td><u>#define <dfn class="macro" id="_M/HUSTR_PLRRED" data-ref="_M/HUSTR_PLRRED">HUSTR_PLRRED</dfn>		"Red: "</u></td></tr>
+<tr><th id="338">338</th><td></td></tr>
+<tr><th id="339">339</th><td><u>#define <dfn class="macro" id="_M/HUSTR_KEYGREEN" data-ref="_M/HUSTR_KEYGREEN">HUSTR_KEYGREEN</dfn>	'g'</u></td></tr>
+<tr><th id="340">340</th><td><u>#define <dfn class="macro" id="_M/HUSTR_KEYINDIGO" data-ref="_M/HUSTR_KEYINDIGO">HUSTR_KEYINDIGO</dfn>	'i'</u></td></tr>
+<tr><th id="341">341</th><td><u>#define <dfn class="macro" id="_M/HUSTR_KEYBROWN" data-ref="_M/HUSTR_KEYBROWN">HUSTR_KEYBROWN</dfn>	'b'</u></td></tr>
+<tr><th id="342">342</th><td><u>#define <dfn class="macro" id="_M/HUSTR_KEYRED" data-ref="_M/HUSTR_KEYRED">HUSTR_KEYRED</dfn>	'r'</u></td></tr>
+<tr><th id="343">343</th><td></td></tr>
+<tr><th id="344">344</th><td><i>//</i></td></tr>
+<tr><th id="345">345</th><td><i>//	AM_map.C</i></td></tr>
+<tr><th id="346">346</th><td><i>//</i></td></tr>
+<tr><th id="347">347</th><td></td></tr>
+<tr><th id="348">348</th><td><u>#define <dfn class="macro" id="_M/AMSTR_FOLLOWON" data-ref="_M/AMSTR_FOLLOWON">AMSTR_FOLLOWON</dfn>	"Follow Mode ON"</u></td></tr>
+<tr><th id="349">349</th><td><u>#define <dfn class="macro" id="_M/AMSTR_FOLLOWOFF" data-ref="_M/AMSTR_FOLLOWOFF">AMSTR_FOLLOWOFF</dfn>	"Follow Mode OFF"</u></td></tr>
+<tr><th id="350">350</th><td></td></tr>
+<tr><th id="351">351</th><td><u>#define <dfn class="macro" id="_M/AMSTR_GRIDON" data-ref="_M/AMSTR_GRIDON">AMSTR_GRIDON</dfn>	"Grid ON"</u></td></tr>
+<tr><th id="352">352</th><td><u>#define <dfn class="macro" id="_M/AMSTR_GRIDOFF" data-ref="_M/AMSTR_GRIDOFF">AMSTR_GRIDOFF</dfn>	"Grid OFF"</u></td></tr>
+<tr><th id="353">353</th><td></td></tr>
+<tr><th id="354">354</th><td><u>#define <dfn class="macro" id="_M/AMSTR_MARKEDSPOT" data-ref="_M/AMSTR_MARKEDSPOT">AMSTR_MARKEDSPOT</dfn>	"Marked Spot"</u></td></tr>
+<tr><th id="355">355</th><td><u>#define <dfn class="macro" id="_M/AMSTR_MARKSCLEARED" data-ref="_M/AMSTR_MARKSCLEARED">AMSTR_MARKSCLEARED</dfn>	"All Marks Cleared"</u></td></tr>
+<tr><th id="356">356</th><td></td></tr>
+<tr><th id="357">357</th><td><i>//</i></td></tr>
+<tr><th id="358">358</th><td><i>//	ST_stuff.C</i></td></tr>
+<tr><th id="359">359</th><td><i>//</i></td></tr>
+<tr><th id="360">360</th><td></td></tr>
+<tr><th id="361">361</th><td><u>#define <dfn class="macro" id="_M/STSTR_MUS" data-ref="_M/STSTR_MUS">STSTR_MUS</dfn>		"Music Change"</u></td></tr>
+<tr><th id="362">362</th><td><u>#define <dfn class="macro" id="_M/STSTR_NOMUS" data-ref="_M/STSTR_NOMUS">STSTR_NOMUS</dfn>		"IMPOSSIBLE SELECTION"</u></td></tr>
+<tr><th id="363">363</th><td><u>#define <dfn class="macro" id="_M/STSTR_DQDON" data-ref="_M/STSTR_DQDON">STSTR_DQDON</dfn>		"Degreelessness Mode On"</u></td></tr>
+<tr><th id="364">364</th><td><u>#define <dfn class="macro" id="_M/STSTR_DQDOFF" data-ref="_M/STSTR_DQDOFF">STSTR_DQDOFF</dfn>	"Degreelessness Mode Off"</u></td></tr>
+<tr><th id="365">365</th><td></td></tr>
+<tr><th id="366">366</th><td><u>#define <dfn class="macro" id="_M/STSTR_KFAADDED" data-ref="_M/STSTR_KFAADDED">STSTR_KFAADDED</dfn>	"Very Happy Ammo Added"</u></td></tr>
+<tr><th id="367">367</th><td><u>#define <dfn class="macro" id="_M/STSTR_FAADDED" data-ref="_M/STSTR_FAADDED">STSTR_FAADDED</dfn>	"Ammo (no keys) Added"</u></td></tr>
+<tr><th id="368">368</th><td></td></tr>
+<tr><th id="369">369</th><td><u>#define <dfn class="macro" id="_M/STSTR_NCON" data-ref="_M/STSTR_NCON">STSTR_NCON</dfn>		"No Clipping Mode ON"</u></td></tr>
+<tr><th id="370">370</th><td><u>#define <dfn class="macro" id="_M/STSTR_NCOFF" data-ref="_M/STSTR_NCOFF">STSTR_NCOFF</dfn>		"No Clipping Mode OFF"</u></td></tr>
+<tr><th id="371">371</th><td></td></tr>
+<tr><th id="372">372</th><td><u>#define <dfn class="macro" id="_M/STSTR_BEHOLD" data-ref="_M/STSTR_BEHOLD">STSTR_BEHOLD</dfn>	"inVuln, Str, Inviso, Rad, Allmap, or Lite-amp"</u></td></tr>
+<tr><th id="373">373</th><td><u>#define <dfn class="macro" id="_M/STSTR_BEHOLDX" data-ref="_M/STSTR_BEHOLDX">STSTR_BEHOLDX</dfn>	"Power-up Toggled"</u></td></tr>
+<tr><th id="374">374</th><td></td></tr>
+<tr><th id="375">375</th><td><u>#define <dfn class="macro" id="_M/STSTR_CHOPPERS" data-ref="_M/STSTR_CHOPPERS">STSTR_CHOPPERS</dfn>	"... doesn't suck - GM"</u></td></tr>
+<tr><th id="376">376</th><td><u>#define <dfn class="macro" id="_M/STSTR_CLEV" data-ref="_M/STSTR_CLEV">STSTR_CLEV</dfn>		"Changing Level..."</u></td></tr>
+<tr><th id="377">377</th><td></td></tr>
+<tr><th id="378">378</th><td><i>//</i></td></tr>
+<tr><th id="379">379</th><td><i>//	F_Finale.C</i></td></tr>
+<tr><th id="380">380</th><td><i>//</i></td></tr>
+<tr><th id="381">381</th><td><u>#define <dfn class="macro" id="_M/E1TEXT" data-ref="_M/E1TEXT">E1TEXT</dfn> \</u></td></tr>
+<tr><th id="382">382</th><td><u>"Once you beat the big badasses and\n"\</u></td></tr>
+<tr><th id="383">383</th><td><u>"clean out the moon base you're supposed\n"\</u></td></tr>
+<tr><th id="384">384</th><td><u>"to win, aren't you? Aren't you? Where's\n"\</u></td></tr>
+<tr><th id="385">385</th><td><u>"your fat reward and ticket home? What\n"\</u></td></tr>
+<tr><th id="386">386</th><td><u>"the hell is this? It's not supposed to\n"\</u></td></tr>
+<tr><th id="387">387</th><td><u>"end this way!\n"\</u></td></tr>
+<tr><th id="388">388</th><td><u>"\n" \</u></td></tr>
+<tr><th id="389">389</th><td><u>"It stinks like rotten meat, but looks\n"\</u></td></tr>
+<tr><th id="390">390</th><td><u>"like the lost Deimos base.  Looks like\n"\</u></td></tr>
+<tr><th id="391">391</th><td><u>"you're stuck on The Shores of Hell.\n"\</u></td></tr>
+<tr><th id="392">392</th><td><u>"The only way out is through.\n"\</u></td></tr>
+<tr><th id="393">393</th><td><u>"\n"\</u></td></tr>
+<tr><th id="394">394</th><td><u>"To continue the DOOM experience, play\n"\</u></td></tr>
+<tr><th id="395">395</th><td><u>"The Shores of Hell and its amazing\n"\</u></td></tr>
+<tr><th id="396">396</th><td><u>"sequel, Inferno!\n"</u></td></tr>
+<tr><th id="397">397</th><td></td></tr>
+<tr><th id="398">398</th><td></td></tr>
+<tr><th id="399">399</th><td><u>#define <dfn class="macro" id="_M/E2TEXT" data-ref="_M/E2TEXT">E2TEXT</dfn> \</u></td></tr>
+<tr><th id="400">400</th><td><u>"You've done it! The hideous cyber-\n"\</u></td></tr>
+<tr><th id="401">401</th><td><u>"demon lord that ruled the lost Deimos\n"\</u></td></tr>
+<tr><th id="402">402</th><td><u>"moon base has been slain and you\n"\</u></td></tr>
+<tr><th id="403">403</th><td><u>"are triumphant! But ... where are\n"\</u></td></tr>
+<tr><th id="404">404</th><td><u>"you? You clamber to the edge of the\n"\</u></td></tr>
+<tr><th id="405">405</th><td><u>"moon and look down to see the awful\n"\</u></td></tr>
+<tr><th id="406">406</th><td><u>"truth.\n" \</u></td></tr>
+<tr><th id="407">407</th><td><u>"\n"\</u></td></tr>
+<tr><th id="408">408</th><td><u>"Deimos floats above Hell itself!\n"\</u></td></tr>
+<tr><th id="409">409</th><td><u>"You've never heard of anyone escaping\n"\</u></td></tr>
+<tr><th id="410">410</th><td><u>"from Hell, but you'll make the bastards\n"\</u></td></tr>
+<tr><th id="411">411</th><td><u>"sorry they ever heard of you! Quickly,\n"\</u></td></tr>
+<tr><th id="412">412</th><td><u>"you rappel down to  the surface of\n"\</u></td></tr>
+<tr><th id="413">413</th><td><u>"Hell.\n"\</u></td></tr>
+<tr><th id="414">414</th><td><u>"\n" \</u></td></tr>
+<tr><th id="415">415</th><td><u>"Now, it's on to the final chapter of\n"\</u></td></tr>
+<tr><th id="416">416</th><td><u>"DOOM! -- Inferno."</u></td></tr>
+<tr><th id="417">417</th><td></td></tr>
+<tr><th id="418">418</th><td></td></tr>
+<tr><th id="419">419</th><td><u>#define <dfn class="macro" id="_M/E3TEXT" data-ref="_M/E3TEXT">E3TEXT</dfn> \</u></td></tr>
+<tr><th id="420">420</th><td><u>"The loathsome spiderdemon that\n"\</u></td></tr>
+<tr><th id="421">421</th><td><u>"masterminded the invasion of the moon\n"\</u></td></tr>
+<tr><th id="422">422</th><td><u>"bases and caused so much death has had\n"\</u></td></tr>
+<tr><th id="423">423</th><td><u>"its ass kicked for all time.\n"\</u></td></tr>
+<tr><th id="424">424</th><td><u>"\n"\</u></td></tr>
+<tr><th id="425">425</th><td><u>"A hidden doorway opens and you enter.\n"\</u></td></tr>
+<tr><th id="426">426</th><td><u>"You've proven too tough for Hell to\n"\</u></td></tr>
+<tr><th id="427">427</th><td><u>"contain, and now Hell at last plays\n"\</u></td></tr>
+<tr><th id="428">428</th><td><u>"fair -- for you emerge from the door\n"\</u></td></tr>
+<tr><th id="429">429</th><td><u>"to see the green fields of Earth!\n"\</u></td></tr>
+<tr><th id="430">430</th><td><u>"Home at last.\n" \</u></td></tr>
+<tr><th id="431">431</th><td><u>"\n"\</u></td></tr>
+<tr><th id="432">432</th><td><u>"You wonder what's been happening on\n"\</u></td></tr>
+<tr><th id="433">433</th><td><u>"Earth while you were battling evil\n"\</u></td></tr>
+<tr><th id="434">434</th><td><u>"unleashed. It's good that no Hell-\n"\</u></td></tr>
+<tr><th id="435">435</th><td><u>"spawn could have come through that\n"\</u></td></tr>
+<tr><th id="436">436</th><td><u>"door with you ..."</u></td></tr>
+<tr><th id="437">437</th><td></td></tr>
+<tr><th id="438">438</th><td></td></tr>
+<tr><th id="439">439</th><td><u>#define <dfn class="macro" id="_M/E4TEXT" data-ref="_M/E4TEXT">E4TEXT</dfn> \</u></td></tr>
+<tr><th id="440">440</th><td><u>"the spider mastermind must have sent forth\n"\</u></td></tr>
+<tr><th id="441">441</th><td><u>"its legions of hellspawn before your\n"\</u></td></tr>
+<tr><th id="442">442</th><td><u>"final confrontation with that terrible\n"\</u></td></tr>
+<tr><th id="443">443</th><td><u>"beast from hell.  but you stepped forward\n"\</u></td></tr>
+<tr><th id="444">444</th><td><u>"and brought forth eternal damnation and\n"\</u></td></tr>
+<tr><th id="445">445</th><td><u>"suffering upon the horde as a true hero\n"\</u></td></tr>
+<tr><th id="446">446</th><td><u>"would in the face of something so evil.\n"\</u></td></tr>
+<tr><th id="447">447</th><td><u>"\n"\</u></td></tr>
+<tr><th id="448">448</th><td><u>"besides, someone was gonna pay for what\n"\</u></td></tr>
+<tr><th id="449">449</th><td><u>"happened to daisy, your pet rabbit.\n"\</u></td></tr>
+<tr><th id="450">450</th><td><u>"\n"\</u></td></tr>
+<tr><th id="451">451</th><td><u>"but now, you see spread before you more\n"\</u></td></tr>
+<tr><th id="452">452</th><td><u>"potential pain and gibbitude as a nation\n"\</u></td></tr>
+<tr><th id="453">453</th><td><u>"of demons run amok among our cities.\n"\</u></td></tr>
+<tr><th id="454">454</th><td><u>"\n"\</u></td></tr>
+<tr><th id="455">455</th><td><u>"next stop, hell on earth!"</u></td></tr>
+<tr><th id="456">456</th><td></td></tr>
+<tr><th id="457">457</th><td></td></tr>
+<tr><th id="458">458</th><td><i>// after level 6, put this:</i></td></tr>
+<tr><th id="459">459</th><td></td></tr>
+<tr><th id="460">460</th><td><u>#define <dfn class="macro" id="_M/C1TEXT" data-ref="_M/C1TEXT">C1TEXT</dfn> \</u></td></tr>
+<tr><th id="461">461</th><td><u>"YOU HAVE ENTERED DEEPLY INTO THE INFESTED\n" \</u></td></tr>
+<tr><th id="462">462</th><td><u>"STARPORT. BUT SOMETHING IS WRONG. THE\n" \</u></td></tr>
+<tr><th id="463">463</th><td><u>"MONSTERS HAVE BROUGHT THEIR OWN REALITY\n" \</u></td></tr>
+<tr><th id="464">464</th><td><u>"WITH THEM, AND THE STARPORT'S TECHNOLOGY\n" \</u></td></tr>
+<tr><th id="465">465</th><td><u>"IS BEING SUBVERTED BY THEIR PRESENCE.\n" \</u></td></tr>
+<tr><th id="466">466</th><td><u>"\n"\</u></td></tr>
+<tr><th id="467">467</th><td><u>"AHEAD, YOU SEE AN OUTPOST OF HELL, A\n" \</u></td></tr>
+<tr><th id="468">468</th><td><u>"FORTIFIED ZONE. IF YOU CAN GET PAST IT,\n" \</u></td></tr>
+<tr><th id="469">469</th><td><u>"YOU CAN PENETRATE INTO THE HAUNTED HEART\n" \</u></td></tr>
+<tr><th id="470">470</th><td><u>"OF THE STARBASE AND FIND THE CONTROLLING\n" \</u></td></tr>
+<tr><th id="471">471</th><td><u>"SWITCH WHICH HOLDS EARTH'S POPULATION\n" \</u></td></tr>
+<tr><th id="472">472</th><td><u>"HOSTAGE."</u></td></tr>
+<tr><th id="473">473</th><td></td></tr>
+<tr><th id="474">474</th><td><i>// After level 11, put this:</i></td></tr>
+<tr><th id="475">475</th><td></td></tr>
+<tr><th id="476">476</th><td><u>#define <dfn class="macro" id="_M/C2TEXT" data-ref="_M/C2TEXT">C2TEXT</dfn> \</u></td></tr>
+<tr><th id="477">477</th><td><u>"YOU HAVE WON! YOUR VICTORY HAS ENABLED\n" \</u></td></tr>
+<tr><th id="478">478</th><td><u>"HUMANKIND TO EVACUATE EARTH AND ESCAPE\n"\</u></td></tr>
+<tr><th id="479">479</th><td><u>"THE NIGHTMARE.  NOW YOU ARE THE ONLY\n"\</u></td></tr>
+<tr><th id="480">480</th><td><u>"HUMAN LEFT ON THE FACE OF THE PLANET.\n"\</u></td></tr>
+<tr><th id="481">481</th><td><u>"CANNIBAL MUTATIONS, CARNIVOROUS ALIENS,\n"\</u></td></tr>
+<tr><th id="482">482</th><td><u>"AND EVIL SPIRITS ARE YOUR ONLY NEIGHBORS.\n"\</u></td></tr>
+<tr><th id="483">483</th><td><u>"YOU SIT BACK AND WAIT FOR DEATH, CONTENT\n"\</u></td></tr>
+<tr><th id="484">484</th><td><u>"THAT YOU HAVE SAVED YOUR SPECIES.\n"\</u></td></tr>
+<tr><th id="485">485</th><td><u>"\n"\</u></td></tr>
+<tr><th id="486">486</th><td><u>"BUT THEN, EARTH CONTROL BEAMS DOWN A\n"\</u></td></tr>
+<tr><th id="487">487</th><td><u>"MESSAGE FROM SPACE: \"SENSORS HAVE LOCATED\n"\</u></td></tr>
+<tr><th id="488">488</th><td><u>"THE SOURCE OF THE ALIEN INVASION. IF YOU\n"\</u></td></tr>
+<tr><th id="489">489</th><td><u>"GO THERE, YOU MAY BE ABLE TO BLOCK THEIR\n"\</u></td></tr>
+<tr><th id="490">490</th><td><u>"ENTRY.  THE ALIEN BASE IS IN THE HEART OF\n"\</u></td></tr>
+<tr><th id="491">491</th><td><u>"YOUR OWN HOME CITY, NOT FAR FROM THE\n"\</u></td></tr>
+<tr><th id="492">492</th><td><u>"STARPORT.\" SLOWLY AND PAINFULLY YOU GET\n"\</u></td></tr>
+<tr><th id="493">493</th><td><u>"UP AND RETURN TO THE FRAY."</u></td></tr>
+<tr><th id="494">494</th><td></td></tr>
+<tr><th id="495">495</th><td></td></tr>
+<tr><th id="496">496</th><td><i>// After level 20, put this:</i></td></tr>
+<tr><th id="497">497</th><td></td></tr>
+<tr><th id="498">498</th><td><u>#define <dfn class="macro" id="_M/C3TEXT" data-ref="_M/C3TEXT">C3TEXT</dfn> \</u></td></tr>
+<tr><th id="499">499</th><td><u>"YOU ARE AT THE CORRUPT HEART OF THE CITY,\n"\</u></td></tr>
+<tr><th id="500">500</th><td><u>"SURROUNDED BY THE CORPSES OF YOUR ENEMIES.\n"\</u></td></tr>
+<tr><th id="501">501</th><td><u>"YOU SEE NO WAY TO DESTROY THE CREATURES'\n"\</u></td></tr>
+<tr><th id="502">502</th><td><u>"ENTRYWAY ON THIS SIDE, SO YOU CLENCH YOUR\n"\</u></td></tr>
+<tr><th id="503">503</th><td><u>"TEETH AND PLUNGE THROUGH IT.\n"\</u></td></tr>
+<tr><th id="504">504</th><td><u>"\n"\</u></td></tr>
+<tr><th id="505">505</th><td><u>"THERE MUST BE A WAY TO CLOSE IT ON THE\n"\</u></td></tr>
+<tr><th id="506">506</th><td><u>"OTHER SIDE. WHAT DO YOU CARE IF YOU'VE\n"\</u></td></tr>
+<tr><th id="507">507</th><td><u>"GOT TO GO THROUGH HELL TO GET TO IT?"</u></td></tr>
+<tr><th id="508">508</th><td></td></tr>
+<tr><th id="509">509</th><td></td></tr>
+<tr><th id="510">510</th><td><i>// After level 29, put this:</i></td></tr>
+<tr><th id="511">511</th><td></td></tr>
+<tr><th id="512">512</th><td><u>#define <dfn class="macro" id="_M/C4TEXT" data-ref="_M/C4TEXT">C4TEXT</dfn> \</u></td></tr>
+<tr><th id="513">513</th><td><u>"THE HORRENDOUS VISAGE OF THE BIGGEST\n"\</u></td></tr>
+<tr><th id="514">514</th><td><u>"DEMON YOU'VE EVER SEEN CRUMBLES BEFORE\n"\</u></td></tr>
+<tr><th id="515">515</th><td><u>"YOU, AFTER YOU PUMP YOUR ROCKETS INTO\n"\</u></td></tr>
+<tr><th id="516">516</th><td><u>"HIS EXPOSED BRAIN. THE MONSTER SHRIVELS\n"\</u></td></tr>
+<tr><th id="517">517</th><td><u>"UP AND DIES, ITS THRASHING LIMBS\n"\</u></td></tr>
+<tr><th id="518">518</th><td><u>"DEVASTATING UNTOLD MILES OF HELL'S\n"\</u></td></tr>
+<tr><th id="519">519</th><td><u>"SURFACE.\n"\</u></td></tr>
+<tr><th id="520">520</th><td><u>"\n"\</u></td></tr>
+<tr><th id="521">521</th><td><u>"YOU'VE DONE IT. THE INVASION IS OVER.\n"\</u></td></tr>
+<tr><th id="522">522</th><td><u>"EARTH IS SAVED. HELL IS A WRECK. YOU\n"\</u></td></tr>
+<tr><th id="523">523</th><td><u>"WONDER WHERE BAD FOLKS WILL GO WHEN THEY\n"\</u></td></tr>
+<tr><th id="524">524</th><td><u>"DIE, NOW. WIPING THE SWEAT FROM YOUR\n"\</u></td></tr>
+<tr><th id="525">525</th><td><u>"FOREHEAD YOU BEGIN THE LONG TREK BACK\n"\</u></td></tr>
+<tr><th id="526">526</th><td><u>"HOME. REBUILDING EARTH OUGHT TO BE A\n"\</u></td></tr>
+<tr><th id="527">527</th><td><u>"LOT MORE FUN THAN RUINING IT WAS.\n"</u></td></tr>
+<tr><th id="528">528</th><td></td></tr>
+<tr><th id="529">529</th><td></td></tr>
+<tr><th id="530">530</th><td></td></tr>
+<tr><th id="531">531</th><td><i>// Before level 31, put this:</i></td></tr>
+<tr><th id="532">532</th><td></td></tr>
+<tr><th id="533">533</th><td><u>#define <dfn class="macro" id="_M/C5TEXT" data-ref="_M/C5TEXT">C5TEXT</dfn> \</u></td></tr>
+<tr><th id="534">534</th><td><u>"CONGRATULATIONS, YOU'VE FOUND THE SECRET\n"\</u></td></tr>
+<tr><th id="535">535</th><td><u>"LEVEL! LOOKS LIKE IT'S BEEN BUILT BY\n"\</u></td></tr>
+<tr><th id="536">536</th><td><u>"HUMANS, RATHER THAN DEMONS. YOU WONDER\n"\</u></td></tr>
+<tr><th id="537">537</th><td><u>"WHO THE INMATES OF THIS CORNER OF HELL\n"\</u></td></tr>
+<tr><th id="538">538</th><td><u>"WILL BE."</u></td></tr>
+<tr><th id="539">539</th><td></td></tr>
+<tr><th id="540">540</th><td></td></tr>
+<tr><th id="541">541</th><td><i>// Before level 32, put this:</i></td></tr>
+<tr><th id="542">542</th><td></td></tr>
+<tr><th id="543">543</th><td><u>#define <dfn class="macro" id="_M/C6TEXT" data-ref="_M/C6TEXT">C6TEXT</dfn> \</u></td></tr>
+<tr><th id="544">544</th><td><u>"CONGRATULATIONS, YOU'VE FOUND THE\n"\</u></td></tr>
+<tr><th id="545">545</th><td><u>"SUPER SECRET LEVEL!  YOU'D BETTER\n"\</u></td></tr>
+<tr><th id="546">546</th><td><u>"BLAZE THROUGH THIS ONE!\n"</u></td></tr>
+<tr><th id="547">547</th><td></td></tr>
+<tr><th id="548">548</th><td></td></tr>
+<tr><th id="549">549</th><td><i>// after map 06	</i></td></tr>
+<tr><th id="550">550</th><td></td></tr>
+<tr><th id="551">551</th><td><u>#define <dfn class="macro" id="_M/P1TEXT" data-ref="_M/P1TEXT">P1TEXT</dfn>  \</u></td></tr>
+<tr><th id="552">552</th><td><u>"You gloat over the steaming carcass of the\n"\</u></td></tr>
+<tr><th id="553">553</th><td><u>"Guardian.  With its death, you've wrested\n"\</u></td></tr>
+<tr><th id="554">554</th><td><u>"the Accelerator from the stinking claws\n"\</u></td></tr>
+<tr><th id="555">555</th><td><u>"of Hell.  You relax and glance around the\n"\</u></td></tr>
+<tr><th id="556">556</th><td><u>"room.  Damn!  There was supposed to be at\n"\</u></td></tr>
+<tr><th id="557">557</th><td><u>"least one working prototype, but you can't\n"\</u></td></tr>
+<tr><th id="558">558</th><td><u>"see it. The demons must have taken it.\n"\</u></td></tr>
+<tr><th id="559">559</th><td><u>"\n"\</u></td></tr>
+<tr><th id="560">560</th><td><u>"You must find the prototype, or all your\n"\</u></td></tr>
+<tr><th id="561">561</th><td><u>"struggles will have been wasted. Keep\n"\</u></td></tr>
+<tr><th id="562">562</th><td><u>"moving, keep fighting, keep killing.\n"\</u></td></tr>
+<tr><th id="563">563</th><td><u>"Oh yes, keep living, too."</u></td></tr>
+<tr><th id="564">564</th><td></td></tr>
+<tr><th id="565">565</th><td></td></tr>
+<tr><th id="566">566</th><td><i>// after map 11</i></td></tr>
+<tr><th id="567">567</th><td></td></tr>
+<tr><th id="568">568</th><td><u>#define <dfn class="macro" id="_M/P2TEXT" data-ref="_M/P2TEXT">P2TEXT</dfn> \</u></td></tr>
+<tr><th id="569">569</th><td><u>"Even the deadly Arch-Vile labyrinth could\n"\</u></td></tr>
+<tr><th id="570">570</th><td><u>"not stop you, and you've gotten to the\n"\</u></td></tr>
+<tr><th id="571">571</th><td><u>"prototype Accelerator which is soon\n"\</u></td></tr>
+<tr><th id="572">572</th><td><u>"efficiently and permanently deactivated.\n"\</u></td></tr>
+<tr><th id="573">573</th><td><u>"\n"\</u></td></tr>
+<tr><th id="574">574</th><td><u>"You're good at that kind of thing."</u></td></tr>
+<tr><th id="575">575</th><td></td></tr>
+<tr><th id="576">576</th><td></td></tr>
+<tr><th id="577">577</th><td><i>// after map 20</i></td></tr>
+<tr><th id="578">578</th><td></td></tr>
+<tr><th id="579">579</th><td><u>#define <dfn class="macro" id="_M/P3TEXT" data-ref="_M/P3TEXT">P3TEXT</dfn> \</u></td></tr>
+<tr><th id="580">580</th><td><u>"You've bashed and battered your way into\n"\</u></td></tr>
+<tr><th id="581">581</th><td><u>"the heart of the devil-hive.  Time for a\n"\</u></td></tr>
+<tr><th id="582">582</th><td><u>"Search-and-Destroy mission, aimed at the\n"\</u></td></tr>
+<tr><th id="583">583</th><td><u>"Gatekeeper, whose foul offspring is\n"\</u></td></tr>
+<tr><th id="584">584</th><td><u>"cascading to Earth.  Yeah, he's bad. But\n"\</u></td></tr>
+<tr><th id="585">585</th><td><u>"you know who's worse!\n"\</u></td></tr>
+<tr><th id="586">586</th><td><u>"\n"\</u></td></tr>
+<tr><th id="587">587</th><td><u>"Grinning evilly, you check your gear, and\n"\</u></td></tr>
+<tr><th id="588">588</th><td><u>"get ready to give the bastard a little Hell\n"\</u></td></tr>
+<tr><th id="589">589</th><td><u>"of your own making!"</u></td></tr>
+<tr><th id="590">590</th><td></td></tr>
+<tr><th id="591">591</th><td><i>// after map 30</i></td></tr>
+<tr><th id="592">592</th><td></td></tr>
+<tr><th id="593">593</th><td><u>#define <dfn class="macro" id="_M/P4TEXT" data-ref="_M/P4TEXT">P4TEXT</dfn> \</u></td></tr>
+<tr><th id="594">594</th><td><u>"The Gatekeeper's evil face is splattered\n"\</u></td></tr>
+<tr><th id="595">595</th><td><u>"all over the place.  As its tattered corpse\n"\</u></td></tr>
+<tr><th id="596">596</th><td><u>"collapses, an inverted Gate forms and\n"\</u></td></tr>
+<tr><th id="597">597</th><td><u>"sucks down the shards of the last\n"\</u></td></tr>
+<tr><th id="598">598</th><td><u>"prototype Accelerator, not to mention the\n"\</u></td></tr>
+<tr><th id="599">599</th><td><u>"few remaining demons.  You're done. Hell\n"\</u></td></tr>
+<tr><th id="600">600</th><td><u>"has gone back to pounding bad dead folks \n"\</u></td></tr>
+<tr><th id="601">601</th><td><u>"instead of good live ones.  Remember to\n"\</u></td></tr>
+<tr><th id="602">602</th><td><u>"tell your grandkids to put a rocket\n"\</u></td></tr>
+<tr><th id="603">603</th><td><u>"launcher in your coffin. If you go to Hell\n"\</u></td></tr>
+<tr><th id="604">604</th><td><u>"when you die, you'll need it for some\n"\</u></td></tr>
+<tr><th id="605">605</th><td><u>"final cleaning-up ..."</u></td></tr>
+<tr><th id="606">606</th><td></td></tr>
+<tr><th id="607">607</th><td><i>// before map 31</i></td></tr>
+<tr><th id="608">608</th><td></td></tr>
+<tr><th id="609">609</th><td><u>#define <dfn class="macro" id="_M/P5TEXT" data-ref="_M/P5TEXT">P5TEXT</dfn> \</u></td></tr>
+<tr><th id="610">610</th><td><u>"You've found the second-hardest level we\n"\</u></td></tr>
+<tr><th id="611">611</th><td><u>"got. Hope you have a saved game a level or\n"\</u></td></tr>
+<tr><th id="612">612</th><td><u>"two previous.  If not, be prepared to die\n"\</u></td></tr>
+<tr><th id="613">613</th><td><u>"aplenty. For master marines only."</u></td></tr>
+<tr><th id="614">614</th><td></td></tr>
+<tr><th id="615">615</th><td><i>// before map 32</i></td></tr>
+<tr><th id="616">616</th><td></td></tr>
+<tr><th id="617">617</th><td><u>#define <dfn class="macro" id="_M/P6TEXT" data-ref="_M/P6TEXT">P6TEXT</dfn> \</u></td></tr>
+<tr><th id="618">618</th><td><u>"Betcha wondered just what WAS the hardest\n"\</u></td></tr>
+<tr><th id="619">619</th><td><u>"level we had ready for ya?  Now you know.\n"\</u></td></tr>
+<tr><th id="620">620</th><td><u>"No one gets out alive."</u></td></tr>
+<tr><th id="621">621</th><td></td></tr>
+<tr><th id="622">622</th><td></td></tr>
+<tr><th id="623">623</th><td><u>#define <dfn class="macro" id="_M/T1TEXT" data-ref="_M/T1TEXT">T1TEXT</dfn> \</u></td></tr>
+<tr><th id="624">624</th><td><u>"You've fought your way out of the infested\n"\</u></td></tr>
+<tr><th id="625">625</th><td><u>"experimental labs.   It seems that UAC has\n"\</u></td></tr>
+<tr><th id="626">626</th><td><u>"once again gulped it down.  With their\n"\</u></td></tr>
+<tr><th id="627">627</th><td><u>"high turnover, it must be hard for poor\n"\</u></td></tr>
+<tr><th id="628">628</th><td><u>"old UAC to buy corporate health insurance\n"\</u></td></tr>
+<tr><th id="629">629</th><td><u>"nowadays..\n"\</u></td></tr>
+<tr><th id="630">630</th><td><u>"\n"\</u></td></tr>
+<tr><th id="631">631</th><td><u>"Ahead lies the military complex, now\n"\</u></td></tr>
+<tr><th id="632">632</th><td><u>"swarming with diseased horrors hot to get\n"\</u></td></tr>
+<tr><th id="633">633</th><td><u>"their teeth into you. With luck, the\n"\</u></td></tr>
+<tr><th id="634">634</th><td><u>"complex still has some warlike ordnance\n"\</u></td></tr>
+<tr><th id="635">635</th><td><u>"laying around."</u></td></tr>
+<tr><th id="636">636</th><td></td></tr>
+<tr><th id="637">637</th><td></td></tr>
+<tr><th id="638">638</th><td><u>#define <dfn class="macro" id="_M/T2TEXT" data-ref="_M/T2TEXT">T2TEXT</dfn> \</u></td></tr>
+<tr><th id="639">639</th><td><u>"You hear the grinding of heavy machinery\n"\</u></td></tr>
+<tr><th id="640">640</th><td><u>"ahead.  You sure hope they're not stamping\n"\</u></td></tr>
+<tr><th id="641">641</th><td><u>"out new hellspawn, but you're ready to\n"\</u></td></tr>
+<tr><th id="642">642</th><td><u>"ream out a whole herd if you have to.\n"\</u></td></tr>
+<tr><th id="643">643</th><td><u>"They might be planning a blood feast, but\n"\</u></td></tr>
+<tr><th id="644">644</th><td><u>"you feel about as mean as two thousand\n"\</u></td></tr>
+<tr><th id="645">645</th><td><u>"maniacs packed into one mad killer.\n"\</u></td></tr>
+<tr><th id="646">646</th><td><u>"\n"\</u></td></tr>
+<tr><th id="647">647</th><td><u>"You don't plan to go down easy."</u></td></tr>
+<tr><th id="648">648</th><td></td></tr>
+<tr><th id="649">649</th><td></td></tr>
+<tr><th id="650">650</th><td><u>#define <dfn class="macro" id="_M/T3TEXT" data-ref="_M/T3TEXT">T3TEXT</dfn> \</u></td></tr>
+<tr><th id="651">651</th><td><u>"The vista opening ahead looks real damn\n"\</u></td></tr>
+<tr><th id="652">652</th><td><u>"familiar. Smells familiar, too -- like\n"\</u></td></tr>
+<tr><th id="653">653</th><td><u>"fried excrement. You didn't like this\n"\</u></td></tr>
+<tr><th id="654">654</th><td><u>"place before, and you sure as hell ain't\n"\</u></td></tr>
+<tr><th id="655">655</th><td><u>"planning to like it now. The more you\n"\</u></td></tr>
+<tr><th id="656">656</th><td><u>"brood on it, the madder you get.\n"\</u></td></tr>
+<tr><th id="657">657</th><td><u>"Hefting your gun, an evil grin trickles\n"\</u></td></tr>
+<tr><th id="658">658</th><td><u>"onto your face. Time to take some names."</u></td></tr>
+<tr><th id="659">659</th><td></td></tr>
+<tr><th id="660">660</th><td><u>#define <dfn class="macro" id="_M/T4TEXT" data-ref="_M/T4TEXT">T4TEXT</dfn> \</u></td></tr>
+<tr><th id="661">661</th><td><u>"Suddenly, all is silent, from one horizon\n"\</u></td></tr>
+<tr><th id="662">662</th><td><u>"to the other. The agonizing echo of Hell\n"\</u></td></tr>
+<tr><th id="663">663</th><td><u>"fades away, the nightmare sky turns to\n"\</u></td></tr>
+<tr><th id="664">664</th><td><u>"blue, the heaps of monster corpses start \n"\</u></td></tr>
+<tr><th id="665">665</th><td><u>"to evaporate along with the evil stench \n"\</u></td></tr>
+<tr><th id="666">666</th><td><u>"that filled the air. Jeeze, maybe you've\n"\</u></td></tr>
+<tr><th id="667">667</th><td><u>"done it. Have you really won?\n"\</u></td></tr>
+<tr><th id="668">668</th><td><u>"\n"\</u></td></tr>
+<tr><th id="669">669</th><td><u>"Something rumbles in the distance.\n"\</u></td></tr>
+<tr><th id="670">670</th><td><u>"A blue light begins to glow inside the\n"\</u></td></tr>
+<tr><th id="671">671</th><td><u>"ruined skull of the demon-spitter."</u></td></tr>
+<tr><th id="672">672</th><td></td></tr>
+<tr><th id="673">673</th><td></td></tr>
+<tr><th id="674">674</th><td><u>#define <dfn class="macro" id="_M/T5TEXT" data-ref="_M/T5TEXT">T5TEXT</dfn> \</u></td></tr>
+<tr><th id="675">675</th><td><u>"What now? Looks totally different. Kind\n"\</u></td></tr>
+<tr><th id="676">676</th><td><u>"of like King Tut's condo. Well,\n"\</u></td></tr>
+<tr><th id="677">677</th><td><u>"whatever's here can't be any worse\n"\</u></td></tr>
+<tr><th id="678">678</th><td><u>"than usual. Can it?  Or maybe it's best\n"\</u></td></tr>
+<tr><th id="679">679</th><td><u>"to let sleeping gods lie.."</u></td></tr>
+<tr><th id="680">680</th><td></td></tr>
+<tr><th id="681">681</th><td></td></tr>
+<tr><th id="682">682</th><td><u>#define <dfn class="macro" id="_M/T6TEXT" data-ref="_M/T6TEXT">T6TEXT</dfn> \</u></td></tr>
+<tr><th id="683">683</th><td><u>"Time for a vacation. You've burst the\n"\</u></td></tr>
+<tr><th id="684">684</th><td><u>"bowels of hell and by golly you're ready\n"\</u></td></tr>
+<tr><th id="685">685</th><td><u>"for a break. You mutter to yourself,\n"\</u></td></tr>
+<tr><th id="686">686</th><td><u>"Maybe someone else can kick Hell's ass\n"\</u></td></tr>
+<tr><th id="687">687</th><td><u>"next time around. Ahead lies a quiet town,\n"\</u></td></tr>
+<tr><th id="688">688</th><td><u>"with peaceful flowing water, quaint\n"\</u></td></tr>
+<tr><th id="689">689</th><td><u>"buildings, and presumably no Hellspawn.\n"\</u></td></tr>
+<tr><th id="690">690</th><td><u>"\n"\</u></td></tr>
+<tr><th id="691">691</th><td><u>"As you step off the transport, you hear\n"\</u></td></tr>
+<tr><th id="692">692</th><td><u>"the stomp of a cyberdemon's iron shoe."</u></td></tr>
+<tr><th id="693">693</th><td></td></tr>
+<tr><th id="694">694</th><td></td></tr>
+<tr><th id="695">695</th><td></td></tr>
+<tr><th id="696">696</th><td><i>//</i></td></tr>
+<tr><th id="697">697</th><td><i>// Character cast strings F_FINALE.C</i></td></tr>
+<tr><th id="698">698</th><td><i>//</i></td></tr>
+<tr><th id="699">699</th><td><u>#define <dfn class="macro" id="_M/CC_ZOMBIE" data-ref="_M/CC_ZOMBIE">CC_ZOMBIE</dfn>	"ZOMBIEMAN"</u></td></tr>
+<tr><th id="700">700</th><td><u>#define <dfn class="macro" id="_M/CC_SHOTGUN" data-ref="_M/CC_SHOTGUN">CC_SHOTGUN</dfn>	"SHOTGUN GUY"</u></td></tr>
+<tr><th id="701">701</th><td><u>#define <dfn class="macro" id="_M/CC_HEAVY" data-ref="_M/CC_HEAVY">CC_HEAVY</dfn>	"HEAVY WEAPON DUDE"</u></td></tr>
+<tr><th id="702">702</th><td><u>#define <dfn class="macro" id="_M/CC_IMP" data-ref="_M/CC_IMP">CC_IMP</dfn>	"IMP"</u></td></tr>
+<tr><th id="703">703</th><td><u>#define <dfn class="macro" id="_M/CC_DEMON" data-ref="_M/CC_DEMON">CC_DEMON</dfn>	"DEMON"</u></td></tr>
+<tr><th id="704">704</th><td><u>#define <dfn class="macro" id="_M/CC_LOST" data-ref="_M/CC_LOST">CC_LOST</dfn>	"LOST SOUL"</u></td></tr>
+<tr><th id="705">705</th><td><u>#define <dfn class="macro" id="_M/CC_CACO" data-ref="_M/CC_CACO">CC_CACO</dfn>	"CACODEMON"</u></td></tr>
+<tr><th id="706">706</th><td><u>#define <dfn class="macro" id="_M/CC_HELL" data-ref="_M/CC_HELL">CC_HELL</dfn>	"HELL KNIGHT"</u></td></tr>
+<tr><th id="707">707</th><td><u>#define <dfn class="macro" id="_M/CC_BARON" data-ref="_M/CC_BARON">CC_BARON</dfn>	"BARON OF HELL"</u></td></tr>
+<tr><th id="708">708</th><td><u>#define <dfn class="macro" id="_M/CC_ARACH" data-ref="_M/CC_ARACH">CC_ARACH</dfn>	"ARACHNOTRON"</u></td></tr>
+<tr><th id="709">709</th><td><u>#define <dfn class="macro" id="_M/CC_PAIN" data-ref="_M/CC_PAIN">CC_PAIN</dfn>	"PAIN ELEMENTAL"</u></td></tr>
+<tr><th id="710">710</th><td><u>#define <dfn class="macro" id="_M/CC_REVEN" data-ref="_M/CC_REVEN">CC_REVEN</dfn>	"REVENANT"</u></td></tr>
+<tr><th id="711">711</th><td><u>#define <dfn class="macro" id="_M/CC_MANCU" data-ref="_M/CC_MANCU">CC_MANCU</dfn>	"MANCUBUS"</u></td></tr>
+<tr><th id="712">712</th><td><u>#define <dfn class="macro" id="_M/CC_ARCH" data-ref="_M/CC_ARCH">CC_ARCH</dfn>	"ARCH-VILE"</u></td></tr>
+<tr><th id="713">713</th><td><u>#define <dfn class="macro" id="_M/CC_SPIDER" data-ref="_M/CC_SPIDER">CC_SPIDER</dfn>	"THE SPIDER MASTERMIND"</u></td></tr>
+<tr><th id="714">714</th><td><u>#define <dfn class="macro" id="_M/CC_CYBER" data-ref="_M/CC_CYBER">CC_CYBER</dfn>	"THE CYBERDEMON"</u></td></tr>
+<tr><th id="715">715</th><td><u>#define <dfn class="macro" id="_M/CC_HERO" data-ref="_M/CC_HERO">CC_HERO</dfn>	"OUR HERO"</u></td></tr>
+<tr><th id="716">716</th><td></td></tr>
+<tr><th id="717">717</th><td></td></tr>
+<tr><th id="718">718</th><td><u>#<span data-ppcond="23">endif</span></u></td></tr>
+<tr><th id="719">719</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="720">720</th><td><i>//</i></td></tr>
+<tr><th id="721">721</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="722">722</th><td><i>//</i></td></tr>
+<tr><th id="723">723</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="724">724</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='am_map.c.html'>codebrowser/am_map.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

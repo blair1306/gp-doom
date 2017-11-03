@@ -1,0 +1,4 @@
+<dec f='codebrowser/st_stuff.h' l='54' type='void ST_Init()'/>
+<doc f='codebrowser/st_stuff.h' l='53'>// Called by startup code.</doc>
+<use f='codebrowser/d_main.c' l='1113' u='c' c='D_DoomMain'/>
+<def f='codebrowser/st_stuff.c' l='1466' ll='1471' type='void ST_Init()'/>

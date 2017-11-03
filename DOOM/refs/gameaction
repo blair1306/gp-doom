@@ -1,0 +1,31 @@
+<dec f='codebrowser/d_event.h' l='114' type='gameaction_t'/>
+<use f='codebrowser/d_main.c' l='460' u='w' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='527' u='w' c='D_StartTitle'/>
+<use f='codebrowser/d_main.c' l='1161' u='r' c='D_DoomMain'/>
+<use f='codebrowser/f_finale.c' l='98' u='w' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='225' u='w' c='F_Ticker'/>
+<def f='codebrowser/g_game.c' l='97' type='gameaction_t'/>
+<use f='codebrowser/g_game.c' l='487' u='w' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='521' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='617' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='619' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='647' u='w' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='719' u='w' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='931' u='w' c='G_DoReborn'/>
+<use f='codebrowser/g_game.c' l='972' u='w' c='G_ScreenShot'/>
+<use f='codebrowser/g_game.c' l='1005' u='w' c='G_ExitLevel'/>
+<use f='codebrowser/g_game.c' l='1017' u='w' c='G_SecretExitLevel'/>
+<use f='codebrowser/g_game.c' l='1024' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1037' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1050' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1149' u='w' c='G_WorldDone'/>
+<use f='codebrowser/g_game.c' l='1177' u='w' c='G_DoWorldDone'/>
+<use f='codebrowser/g_game.c' l='1195' u='w' c='G_LoadGame'/>
+<use f='codebrowser/g_game.c' l='1208' u='w' c='G_DoLoadGame'/>
+<use f='codebrowser/g_game.c' l='1313' u='w' c='G_DoSaveGame'/>
+<use f='codebrowser/g_game.c' l='1341' u='w' c='G_DeferedInitNew'/>
+<use f='codebrowser/g_game.c' l='1357' u='w' c='G_DoNewGame'/>
+<use f='codebrowser/g_game.c' l='1579' u='w' c='G_DeferedPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1587' u='w' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1592' u='w' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1633' u='w' c='G_TimeDemo'/>

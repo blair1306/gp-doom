@@ -1,0 +1,14 @@
+<dec f='codebrowser/r_state.h' l='75' type='int'/>
+<doc f='codebrowser/r_state.h' l='72'>//
+// Lookup tables for map data.
+//</doc>
+<use f='codebrowser/r_data.c' l='819' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='820' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='829' u='r' c='R_PrecacheLevel'/>
+<def f='codebrowser/r_things.c' l='92' type='int'/>
+<use f='codebrowser/r_things.c' l='194' u='w' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='196' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='199' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='207' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='507' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='660' u='r' c='R_DrawPSprite'/>

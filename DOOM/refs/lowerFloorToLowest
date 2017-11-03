@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_spec.h' l='543' type='1'/>
+<doc f='codebrowser/p_spec.h' l='542'>// lower floor to lowest surrounding floor</doc>
+<use f='codebrowser/p_enemy.c' l='1715' u='r' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='1733' u='r' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='1748' u='r' c='A_BossDeath'/>
+<use f='codebrowser/p_floor.c' l='299' c='EV_DoFloor'/>
+<use f='codebrowser/p_spec.c' l='654' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='667' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='834' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='397' u='r' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='534' u='r' c='P_UseSpecialLine'/>

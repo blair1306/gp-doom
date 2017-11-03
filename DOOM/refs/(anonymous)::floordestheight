@@ -1,0 +1,25 @@
+<dec f='codebrowser/p_spec.h' l='593' type='fixed_t'/>
+<offset>416</offset>
+<use f='codebrowser/p_floor.c' l='215' u='r' c='T_MoveFloor'/>
+<use f='codebrowser/p_floor.c' l='295' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='303' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='311' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='313' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='314' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='323' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='325' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='326' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='327' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='335' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='343' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='351' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='358' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='366' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='398' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='407' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='419' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='430' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='504' u='w' c='EV_BuildStairs'/>
+<use f='codebrowser/p_floor.c' l='547' u='w' c='EV_BuildStairs'/>
+<use f='codebrowser/p_spec.c' l='1204' u='w' c='EV_DoDonut'/>
+<use f='codebrowser/p_spec.c' l='1216' u='w' c='EV_DoDonut'/>

@@ -1,0 +1,9 @@
+<def f='codebrowser/m_menu.c' l='388' ll='396' type='menu_t'/>
+<use f='codebrowser/m_menu.c' l='412' u='a'/>
+<use f='codebrowser/m_menu.c' l='412' u='a'/>
+<use f='codebrowser/m_menu.c' l='925' u='a' c='M_Episode'/>
+<use f='codebrowser/m_menu.c' l='1033' u='a' c='M_ReadThis'/>
+<use f='codebrowser/m_menu.c' l='1542' u='a' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1874' u='m' c='M_Init'/>
+<use f='codebrowser/m_menu.c' l='1875' u='m' c='M_Init'/>
+<use f='codebrowser/m_menu.c' l='1876' u='m' c='M_Init'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_spec.h' l='485' type='3'/>
+<use f='codebrowser/p_ceilng.c' l='94' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='130' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='152' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='189' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='221' c='EV_DoCeiling'/>
+<use f='codebrowser/p_spec.c' l='623' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='794' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='421' u='r' c='P_UseSpecialLine'/>

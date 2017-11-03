@@ -1,0 +1,13 @@
+<dec f='codebrowser/doomdata.h' l='194' type='unsigned short [2]'/>
+<dec f='codebrowser/r_defs.h' l='277' type='unsigned short [2]'/>
+<offset>384</offset>
+<doc f='codebrowser/r_defs.h' l='276'>// If NF_SUBSECTOR its a subsector.</doc>
+<doc f='codebrowser/doomdata.h' l='192'>// If NF_SUBSECTOR its a subsector,
+  // else it&apos;s a node of another subtree.</doc>
+<use f='codebrowser/p_setup.c' l='288' u='w' c='P_LoadNodes'/>
+<use f='codebrowser/p_setup.c' l='288' u='r' c='P_LoadNodes'/>
+<use f='codebrowser/p_sight.c' l='278' u='r' c='P_CrossBSPNode'/>
+<use f='codebrowser/p_sight.c' l='289' u='r' c='P_CrossBSPNode'/>
+<use f='codebrowser/r_bsp.c' l='573' u='r' c='R_RenderBSPNode'/>
+<use f='codebrowser/r_bsp.c' l='577' u='r' c='R_RenderBSPNode'/>
+<use f='codebrowser/r_main.c' l='819' u='r' c='R_PointInSubsector'/>

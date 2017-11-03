@@ -1,0 +1,7 @@
+<def f='codebrowser/d_net.c' l='90' ll='93' type='int NetbufferSize()'/>
+<use f='codebrowser/d_net.c' l='110' u='c' c='NetbufferChecksum'/>
+<use f='codebrowser/d_net.c' l='164' u='c' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='214' u='c' c='HGetPacket'/>
+<doc f='codebrowser/d_net.c' l='87'>//
+//
+//</doc>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/r_draw.h' l='36' type='fixed_t'/>
+<def f='codebrowser/r_draw.c' l='89' type='fixed_t'/>
+<use f='codebrowser/r_draw.c' l='132' u='r' c='R_DrawColumn'/>
+<use f='codebrowser/r_draw.c' l='241' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='346' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='431' u='r' c='R_DrawTranslatedColumn'/>
+<use f='codebrowser/r_plane.c' l='398' u='w' c='R_DrawPlanes'/>
+<use f='codebrowser/r_segs.c' l='178' u='w' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='276' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_things.c' l='424' u='w' c='R_DrawVisSprite'/>

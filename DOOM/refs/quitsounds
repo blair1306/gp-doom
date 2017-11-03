@@ -1,0 +1,5 @@
+<def f='codebrowser/m_menu.c' l='1054' ll='1064' type='int [8]'/>
+<use f='codebrowser/m_menu.c' l='1089' u='r' c='M_QuitResponse'/>
+<doc f='codebrowser/m_menu.c' l='1051'>//
+// M_QuitDOOM
+//</doc>

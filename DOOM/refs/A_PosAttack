@@ -1,0 +1,13 @@
+<dec f='codebrowser/info.c' l='90' type='void A_PosAttack()'/>
+<use f='codebrowser/info.c' l='321'/>
+<use f='codebrowser/info.c' l='321'/>
+<use f='codebrowser/info.c' l='321'/>
+<use f='codebrowser/info.c' l='321'/>
+<use f='codebrowser/info.c' l='321'/>
+<use f='codebrowser/info.c' l='321'/>
+<use f='codebrowser/info.c' l='321'/>
+<use f='codebrowser/info.c' l='321'/>
+<def f='codebrowser/p_enemy.c' l='802' ll='819' type='void A_PosAttack(mobj_t * actor)'/>
+<doc f='codebrowser/p_enemy.c' l='799'>//
+// A_PosAttack
+//</doc>

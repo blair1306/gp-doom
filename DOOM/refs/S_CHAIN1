@@ -1,0 +1,6 @@
+<dec f='codebrowser/info.h' l='228' type='52'/>
+<use f='codebrowser/d_items.c' l='82'/>
+<use f='codebrowser/d_items.c' l='82'/>
+<use f='codebrowser/d_items.c' l='82'/>
+<use f='codebrowser/d_items.c' l='82'/>
+<use f='codebrowser/p_pspr.c' l='749' u='a' c='A_FireCGun'/>

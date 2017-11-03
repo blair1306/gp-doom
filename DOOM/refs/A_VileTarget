@@ -1,0 +1,14 @@
+<dec f='codebrowser/info.c' l='95' type='void A_VileTarget()'/>
+<use f='codebrowser/info.c' l='393'/>
+<use f='codebrowser/info.c' l='393'/>
+<use f='codebrowser/info.c' l='393'/>
+<use f='codebrowser/info.c' l='393'/>
+<use f='codebrowser/info.c' l='393'/>
+<use f='codebrowser/info.c' l='393'/>
+<use f='codebrowser/info.c' l='393'/>
+<use f='codebrowser/info.c' l='393'/>
+<def f='codebrowser/p_enemy.c' l='1285' ll='1302' type='void A_VileTarget(mobj_t * actor)'/>
+<doc f='codebrowser/p_enemy.c' l='1281'>//
+// A_VileTarget
+// Spawn the hellfire
+//</doc>

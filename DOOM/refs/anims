@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_spec.c' l='85' type='anim_t [32]'/>
+<def f='codebrowser/p_spec.c' l='134' type='anim_t [32]'/>
+<use f='codebrowser/p_spec.c' l='154' u='r' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='1100' u='r' c='P_UpdateSpecials'/>

@@ -1,0 +1,20 @@
+<dec f='codebrowser/r_defs.h' l='192' type='short'/>
+<offset>224</offset>
+<use f='codebrowser/p_ceilng.c' l='298' u='r' c='P_ActivateInStasisCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='323' u='r' c='EV_CeilingCrushStop'/>
+<use f='codebrowser/p_enemy.c' l='591' u='w' c='A_KeenDie'/>
+<use f='codebrowser/p_enemy.c' l='1714' u='w' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='1721' u='w' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='1732' u='w' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='1741' u='w' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='1747' u='w' c='A_BossDeath'/>
+<use f='codebrowser/p_lights.c' l='249' u='r' c='EV_TurnTagLightsOff'/>
+<use f='codebrowser/p_lights.c' l='285' u='r' c='EV_LightTurnOn'/>
+<use f='codebrowser/p_plats.c' l='157' u='r' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='181' u='r' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='280' u='r' c='EV_StopPlat'/>
+<use f='codebrowser/p_saveg.c' l='143' u='r' c='P_ArchiveWorld'/>
+<use f='codebrowser/p_saveg.c' l='197' u='w' c='P_UnArchiveWorld'/>
+<use f='codebrowser/p_setup.c' l='377' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_spec.c' l='441' u='r' c='P_FindSectorFromLineTag'/>
+<use f='codebrowser/p_telept.c' l='74' u='r' c='EV_Teleport'/>

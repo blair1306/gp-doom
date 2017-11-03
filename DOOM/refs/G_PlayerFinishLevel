@@ -1,0 +1,6 @@
+<def f='codebrowser/g_game.c' l='779' ll='792' type='void G_PlayerFinishLevel(int player)'/>
+<use f='codebrowser/g_game.c' l='1028' u='c' c='G_DoCompleted'/>
+<doc f='codebrowser/g_game.c' l='775'>//
+// G_PlayerFinishLevel
+// Can when a player completes a level.
+//</doc>

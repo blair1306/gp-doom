@@ -1,0 +1,2 @@
+<def f='codebrowser/i_video.c' l='538' ll='577' type='void UploadNewPalette(Colormap cmap, byte * palette)'/>
+<use f='codebrowser/i_video.c' l='584' u='c' c='I_SetPalette'/>

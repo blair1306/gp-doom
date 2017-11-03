@@ -1,0 +1,6 @@
+<dec f='codebrowser/z_zone.h' l='51' type='void Z_DumpHeap(int lowtag, int hightag)'/>
+<def f='codebrowser/z_zone.c' l='326' ll='360' type='void Z_DumpHeap(int lowtag, int hightag)'/>
+<doc f='codebrowser/z_zone.c' l='322'>//
+// Z_DumpHeap
+// Note: TFileDumpHeap( stdout ) ?
+//</doc>

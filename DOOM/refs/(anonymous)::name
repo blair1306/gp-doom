@@ -1,0 +1,22 @@
+<dec f='codebrowser/w_wad.h' l='49' type='char [8]'/>
+<dec f='codebrowser/w_wad.h' l='58' type='char [8]'/>
+<offset>0</offset>
+<dec f='codebrowser/sounds.h' l='73' type='char *'/>
+<offset>0</offset>
+<doc f='codebrowser/sounds.h' l='72'>// up to 6-character name</doc>
+<dec f='include/X11/Xlib.h' l='1031' type='Atom'/>
+<offset>0</offset>
+<use f='codebrowser/r_things.c' l='219' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='221' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='222' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='225' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='231' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='233' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='234' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/s_sound.c' l='674' u='r' c='S_ChangeMusic'/>
+<use f='codebrowser/w_wad.c' l='178' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='221' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='221' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='381' u='r' c='W_CheckNumForName'/>
+<use f='codebrowser/w_wad.c' l='382' u='a' c='W_CheckNumForName'/>
+<use f='codebrowser/w_wad.c' l='558' u='r' c='W_Profile'/>

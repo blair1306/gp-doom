@@ -1,0 +1,8 @@
+<dec f='codebrowser/p_mobj.h' l='170' type='524288'/>
+<doc f='codebrowser/p_mobj.h' l='168'>// Flag: don&apos;t bleed when shot (use puff),
+    //  barrels and shootable furniture shall not bleed.</doc>
+<use f='codebrowser/info.c' l='1910' u='r'/>
+<use f='codebrowser/info.c' l='1910' u='r'/>
+<use f='codebrowser/info.c' l='1910' u='r'/>
+<use f='codebrowser/info.c' l='1910' u='r'/>
+<use f='codebrowser/p_map.c' l='1005' u='r' c='PTR_ShootTraverse'/>

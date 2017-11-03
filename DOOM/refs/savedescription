@@ -1,0 +1,6 @@
+<def f='codebrowser/g_game.c' l='207' type='char [32]'/>
+<use f='codebrowser/g_game.c' l='715' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='716' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1266' u='r' c='G_SaveGame'/>
+<use f='codebrowser/g_game.c' l='1282' u='r' c='G_DoSaveGame'/>
+<use f='codebrowser/g_game.c' l='1314' u='w' c='G_DoSaveGame'/>

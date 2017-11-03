@@ -1,0 +1,14 @@
+<dec f='codebrowser/doomdef.h' l='208' type='5'/>
+<doc f='codebrowser/doomdef.h' l='208'>// Unlimited for chainsaw / fist.	</doc>
+<use f='codebrowser/d_items.c' l='51'/>
+<use f='codebrowser/d_items.c' l='51'/>
+<use f='codebrowser/d_items.c' l='114'/>
+<use f='codebrowser/d_items.c' l='114'/>
+<use f='codebrowser/d_items.c' l='51'/>
+<use f='codebrowser/d_items.c' l='51'/>
+<use f='codebrowser/d_items.c' l='114'/>
+<use f='codebrowser/d_items.c' l='114'/>
+<use f='codebrowser/p_inter.c' l='81' u='r' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='198' u='r' c='P_GiveWeapon'/>
+<use f='codebrowser/p_pspr.c' l='178' u='r' c='P_CheckAmmo'/>
+<use f='codebrowser/st_stuff.c' l='932' u='r' c='ST_updateWidgets'/>

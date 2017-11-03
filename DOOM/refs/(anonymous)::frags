@@ -1,0 +1,9 @@
+<dec f='codebrowser/d_player.h' l='182' type='int [4]'/>
+<offset>160</offset>
+<use f='codebrowser/g_game.c' l='1129' u='r' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1130' u='r' c='G_DoCompleted'/>
+<use f='codebrowser/wi_stuff.c' l='828' u='r' c='WI_fragSum'/>
+<use f='codebrowser/wi_stuff.c' l='834' u='r' c='WI_fragSum'/>
+<use f='codebrowser/wi_stuff.c' l='898' u='r' c='WI_updateDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='924' u='r' c='WI_updateDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='926' u='r' c='WI_updateDeathmatchStats'/>

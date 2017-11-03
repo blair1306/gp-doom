@@ -1,0 +1,5 @@
+<def f='codebrowser/m_menu.c' l='947' type='char [2][9]'/>
+<use f='codebrowser/m_menu.c' l='956' u='r' c='M_DrawOptions'/>
+<doc f='codebrowser/m_menu.c' l='944'>//
+// M_Options
+//</doc>

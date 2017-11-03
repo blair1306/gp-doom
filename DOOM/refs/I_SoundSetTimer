@@ -1,0 +1,3 @@
+<def f='codebrowser/i_sound.c' l='942' ll='977' type='int I_SoundSetTimer(int duration_of_tick)'/>
+<use f='codebrowser/i_sound.c' l='984' u='c' c='I_SoundDelTimer'/>
+<doc f='codebrowser/i_sound.c' l='941'>// Get the interrupt. Set duration in millisecs.</doc>

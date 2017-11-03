@@ -1,0 +1,23 @@
+<dec f='codebrowser/d_net.h' l='97' type='short'/>
+<offset>128</offset>
+<doc f='codebrowser/d_net.h' l='95'>// Info common to all nodes.
+    // Console is allways node 0.</doc>
+<use f='codebrowser/d_net.c' l='417' u='r' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='514' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='542' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='545' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='588' u='r' c='D_CheckNetGame'/>
+<use f='codebrowser/d_net.c' l='592' u='r' c='D_CheckNetGame'/>
+<use f='codebrowser/d_net.c' l='617' u='r' c='D_QuitNetGame'/>
+<use f='codebrowser/d_net.c' l='657' u='r' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='720' u='r' c='TryRunTics'/>
+<use f='codebrowser/i_net.c' l='188' u='r' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='192' u='r' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='287' u='w' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='300' u='w' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='305' u='r' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='306' u='r' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='309' u='r' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='317' u='r' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='320' u='w' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='324' u='r' c='I_InitNetwork'/>

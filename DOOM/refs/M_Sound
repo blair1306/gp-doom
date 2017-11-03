@@ -1,0 +1,6 @@
+<dec f='codebrowser/m_menu.c' l='201' type='void M_Sound(int choice)'/>
+<use f='codebrowser/m_menu.c' l='361'/>
+<use f='codebrowser/m_menu.c' l='361'/>
+<use f='codebrowser/m_menu.c' l='361'/>
+<use f='codebrowser/m_menu.c' l='361'/>
+<def f='codebrowser/m_menu.c' l='811' ll='814' type='void M_Sound(int choice)'/>

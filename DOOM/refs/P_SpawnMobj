@@ -1,0 +1,29 @@
+<dec f='codebrowser/p_local.h' l='110' type='mobj_t * P_SpawnMobj(fixed_t x, fixed_t y, fixed_t z, mobjtype_t type)'/>
+<use f='codebrowser/g_game.c' l='881' u='c' c='G_CheckSpot'/>
+<use f='codebrowser/p_enemy.c' l='1035' u='c' c='A_Tracer'/>
+<use f='codebrowser/p_enemy.c' l='1294' u='c' c='A_VileTarget'/>
+<use f='codebrowser/p_enemy.c' l='1493' u='c' c='A_PainShootSkull'/>
+<use f='codebrowser/p_enemy.c' l='1860' u='c' c='A_BrainScream'/>
+<use f='codebrowser/p_enemy.c' l='1885' u='c' c='A_BrainExplode'/>
+<use f='codebrowser/p_enemy.c' l='1950' u='c' c='A_SpawnFly'/>
+<use f='codebrowser/p_enemy.c' l='1981' u='c' c='A_SpawnFly'/>
+<use f='codebrowser/p_inter.c' l='756' u='c' c='P_KillMobj'/>
+<use f='codebrowser/p_map.c' l='1303' u='c' c='PIT_ChangeSector'/>
+<use f='codebrowser/p_mobj.c' l='375' u='c' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='384' u='c' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='398' u='c' c='P_NightmareRespawn'/>
+<def f='codebrowser/p_mobj.c' l='479' ll='534' type='mobj_t * P_SpawnMobj(fixed_t x, fixed_t y, fixed_t z, mobjtype_t type)'/>
+<use f='codebrowser/p_mobj.c' l='609' u='c' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='625' u='c' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='665' u='c' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_mobj.c' l='784' u='c' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_mobj.c' l='821' u='c' c='P_SpawnPuff'/>
+<use f='codebrowser/p_mobj.c' l='848' u='c' c='P_SpawnBlood'/>
+<use f='codebrowser/p_mobj.c' l='898' u='c' c='P_SpawnMissile'/>
+<use f='codebrowser/p_mobj.c' l='973' u='c' c='P_SpawnPlayerMissile'/>
+<doc f='codebrowser/p_mobj.c' l='476'>//
+// P_SpawnMobj
+//</doc>
+<use f='codebrowser/p_pspr.c' l='800' u='c' c='A_BFGSpray'/>
+<use f='codebrowser/p_telept.c' l='111' u='c' c='EV_Teleport'/>
+<use f='codebrowser/p_telept.c' l='114' u='c' c='EV_Teleport'/>

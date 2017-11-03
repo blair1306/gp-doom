@@ -1,0 +1,10 @@
+<dec f='include/x86_64-linux-gnu/bits/errno.h' l='54'/>
+<use f='include/errno.h' l='45' u='a'/>
+<use f='codebrowser/i_net.c' l='97' u='c'/>
+<use f='codebrowser/i_net.c' l='120' u='c'/>
+<use f='codebrowser/i_net.c' l='174' u='c'/>
+<use f='codebrowser/i_net.c' l='175' u='c'/>
+<use f='codebrowser/i_net.c' l='231' u='c'/>
+<doc f='include/x86_64-linux-gnu/bits/errno.h' l='53'>/* When using threads, errno is a per-thread value.  */</doc>
+<use f='codebrowser/i_sound.c' l='173' u='c'/>
+<use f='codebrowser/i_video.c' l='669' u='c'/>

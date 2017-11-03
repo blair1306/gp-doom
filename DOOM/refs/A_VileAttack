@@ -1,0 +1,13 @@
+<dec f='codebrowser/info.c' l='96' type='void A_VileAttack()'/>
+<use f='codebrowser/info.c' l='400'/>
+<use f='codebrowser/info.c' l='400'/>
+<use f='codebrowser/info.c' l='400'/>
+<use f='codebrowser/info.c' l='400'/>
+<use f='codebrowser/info.c' l='400'/>
+<use f='codebrowser/info.c' l='400'/>
+<use f='codebrowser/info.c' l='400'/>
+<use f='codebrowser/info.c' l='400'/>
+<def f='codebrowser/p_enemy.c' l='1310' ll='1338' type='void A_VileAttack(mobj_t * actor)'/>
+<doc f='codebrowser/p_enemy.c' l='1307'>//
+// A_VileAttack
+//</doc>

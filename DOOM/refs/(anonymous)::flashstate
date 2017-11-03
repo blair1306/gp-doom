@@ -1,0 +1,8 @@
+<dec f='codebrowser/d_items.h' l='41' type='int'/>
+<offset>160</offset>
+<use f='codebrowser/p_pspr.c' l='454' u='r' c='A_GunFlash'/>
+<use f='codebrowser/p_pspr.c' l='586' u='r' c='A_FirePlasma'/>
+<use f='codebrowser/p_pspr.c' l='658' u='r' c='A_FirePistol'/>
+<use f='codebrowser/p_pspr.c' l='682' u='r' c='A_FireShotgun'/>
+<use f='codebrowser/p_pspr.c' l='712' u='r' c='A_FireShotgun2'/>
+<use f='codebrowser/p_pspr.c' l='747' u='r' c='A_FireCGun'/>

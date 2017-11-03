@@ -1,0 +1,2 @@
+<def f='codebrowser/i_sound.c' l='981' ll='986' type='void I_SoundDelTimer()'/>
+<doc f='codebrowser/i_sound.c' l='980'>// Remove the interrupt. Set duration to zero.</doc>

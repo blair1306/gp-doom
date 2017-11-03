@@ -1,0 +1,4 @@
+<def f='codebrowser/g_game.c' l='112' type='int'/>
+<use f='codebrowser/g_game.c' l='486' u='w' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='1655' u='r' c='G_CheckDemoStatus'/>
+<doc f='codebrowser/g_game.c' l='112'>// for comparative timing purposes  	 </doc>

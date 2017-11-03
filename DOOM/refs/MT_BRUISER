@@ -1,0 +1,9 @@
+<dec f='codebrowser/info.h' l='1179' type='15'/>
+<use f='codebrowser/f_finale.c' l='349'/>
+<use f='codebrowser/f_finale.c' l='349'/>
+<use f='codebrowser/f_finale.c' l='349'/>
+<use f='codebrowser/f_finale.c' l='349'/>
+<use f='codebrowser/p_enemy.c' l='1633' u='r' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='1979' u='r' c='A_SpawnFly'/>
+<use f='codebrowser/p_map.c' l='301' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='302' u='r' c='PIT_CheckThing'/>

@@ -1,0 +1,18 @@
+<dec f='codebrowser/doomstat.h' l='255' type='int'/>
+<use f='codebrowser/g_game.c' l='579' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='580' u='r' c='G_Responder'/>
+<def f='codebrowser/m_menu.c' l='76' type='int'/>
+<use f='codebrowser/m_menu.c' l='962' u='r' c='M_DrawOptions'/>
+<use f='codebrowser/m_menu.c' l='1118' u='r' c='M_ChangeSensitivity'/>
+<use f='codebrowser/m_menu.c' l='1119' u='w' c='M_ChangeSensitivity'/>
+<use f='codebrowser/m_menu.c' l='1122' u='r' c='M_ChangeSensitivity'/>
+<use f='codebrowser/m_menu.c' l='1123' u='w' c='M_ChangeSensitivity'/>
+<doc f='codebrowser/m_menu.c' l='73'>//
+// defaulted values
+//</doc>
+<doc f='codebrowser/m_menu.c' l='76'>// has default</doc>
+<dec f='codebrowser/m_misc.c' l='197' type='int'/>
+<use f='codebrowser/m_misc.c' l='236' u='a'/>
+<use f='codebrowser/m_misc.c' l='236' u='a'/>
+<use f='codebrowser/m_misc.c' l='236' u='a'/>
+<use f='codebrowser/m_misc.c' l='236' u='a'/>

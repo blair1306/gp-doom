@@ -1,0 +1,3 @@
+<dec f='codebrowser/doomdef.h' l='266'/>
+<use f='codebrowser/i_video.c' l='120' u='c'/>
+<use f='codebrowser/m_menu.c' l='1592' u='c'/>

@@ -1,0 +1,2 @@
+<def f='codebrowser/r_bsp.c' l='381' ll='487' type='boolean R_CheckBBox(fixed_t * bspcoord)'/>
+<use f='codebrowser/r_bsp.c' l='576' u='c' c='R_RenderBSPNode'/>

@@ -1,0 +1,3 @@
+<dec f='codebrowser/hu_stuff.h' l='51' type='void HU_Start()'/>
+<def f='codebrowser/hu_stuff.c' l='419' ll='484' type='void HU_Start()'/>
+<use f='codebrowser/p_mobj.c' l='698' u='c' c='P_SpawnPlayer'/>

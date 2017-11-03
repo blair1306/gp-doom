@@ -1,0 +1,4 @@
+<dec f='codebrowser/m_bbox.h' l='41' type='void M_ClearBox(fixed_t * box)'/>
+<def f='codebrowser/m_bbox.c' l='39' ll='43' type='void M_ClearBox(fixed_t * box)'/>
+<doc f='codebrowser/m_bbox.h' l='40'>// Bounding box functions.</doc>
+<use f='codebrowser/p_setup.c' l='540' u='c' c='P_GroupLines'/>

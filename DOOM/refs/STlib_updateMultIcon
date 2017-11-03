@@ -1,0 +1,5 @@
+<dec f='codebrowser/st_lib.h' l='201' type='void STlib_updateMultIcon(st_multicon_t * mi, boolean refresh)'/>
+<def f='codebrowser/st_lib.c' l='211' ll='240' type='void STlib_updateMultIcon(st_multicon_t * mi, boolean refresh)'/>
+<use f='codebrowser/st_stuff.c' l='1078' u='c' c='ST_drawWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1080' u='c' c='ST_drawWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1083' u='c' c='ST_drawWidgets'/>

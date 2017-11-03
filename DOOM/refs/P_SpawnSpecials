@@ -1,0 +1,5 @@
+<dec f='codebrowser/p_spec.h' l='45' type='void P_SpawnSpecials()'/>
+<doc f='codebrowser/p_spec.h' l='44'>// at map load</doc>
+<use f='codebrowser/p_setup.c' l='682' u='c' c='P_SetupLevel'/>
+<def f='codebrowser/p_spec.c' l='1239' ll='1362' type='void P_SpawnSpecials()'/>
+<doc f='codebrowser/p_spec.c' l='1238'>// Parses command line parameters.</doc>

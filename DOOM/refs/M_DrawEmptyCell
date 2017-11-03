@@ -1,0 +1,2 @@
+<dec f='codebrowser/m_menu.c' l='223' type='void M_DrawEmptyCell(menu_t * menu, int item)'/>
+<def f='codebrowser/m_menu.c' l='1208' ll='1215' type='void M_DrawEmptyCell(menu_t * menu, int item)'/>

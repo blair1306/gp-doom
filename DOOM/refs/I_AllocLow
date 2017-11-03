@@ -1,0 +1,5 @@
+<dec f='codebrowser/i_system.h' l='84' type='byte * I_AllocLow(int length)'/>
+<doc f='codebrowser/i_system.h' l='82'>// Allocates from low memory under dos,
+// just mallocs under unix</doc>
+<def f='codebrowser/i_system.c' l='147' ll='154' type='byte * I_AllocLow(int length)'/>
+<use f='codebrowser/v_video.c' l='489' u='c' c='V_Init'/>

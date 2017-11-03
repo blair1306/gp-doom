@@ -1,0 +1,5 @@
+<dec f='codebrowser/p_local.h' l='33'/>
+<use f='codebrowser/g_game.c' l='824' u='c'/>
+<use f='codebrowser/p_inter.c' l='233' u='c'/>
+<use f='codebrowser/p_inter.c' l='237' u='c'/>
+<use f='codebrowser/p_inter.c' l='238' u='c'/>

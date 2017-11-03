@@ -1,0 +1,4 @@
+<dec f='codebrowser/r_defs.h' l='170' type='0'/>
+<use f='codebrowser/p_map.c' l='596' u='r' c='P_HitSlideLine'/>
+<use f='codebrowser/p_maputl.c' l='119' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_setup.c' l='386' u='r' c='P_LoadLineDefs'/>

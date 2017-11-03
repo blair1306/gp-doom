@@ -1,0 +1,6 @@
+<dec f='codebrowser/d_net.h' l='101' type='short'/>
+<offset>160</offset>
+<doc f='codebrowser/d_net.h' l='100'>// Flag: 1 = send a backup tic in every packet.</doc>
+<use f='codebrowser/d_net.c' l='425' u='r' c='NetUpdate'/>
+<use f='codebrowser/i_net.c' l='268' u='w' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='270' u='w' c='I_InitNetwork'/>

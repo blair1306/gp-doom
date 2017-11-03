@@ -1,0 +1,11 @@
+<dec f='codebrowser/doomstat.h' l='53' type='boolean'/>
+<doc f='codebrowser/doomstat.h' l='53'>// DEBUG: launched with -devparm</doc>
+<def f='codebrowser/d_main.c' l='95' type='boolean'/>
+<use f='codebrowser/d_main.c' l='620' u='w' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='631' u='w' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='643' u='w' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='811' u='w' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='874' u='r' c='D_DoomMain'/>
+<doc f='codebrowser/d_main.c' l='95'>// started game with -devparm</doc>
+<use f='codebrowser/i_video.c' l='361' u='r' c='I_FinishUpdate'/>
+<use f='codebrowser/m_menu.c' l='1511' u='r' c='M_Responder'/>

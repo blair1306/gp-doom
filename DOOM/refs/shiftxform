@@ -1,0 +1,5 @@
+<def f='codebrowser/hu_stuff.c' l='286' type='const char *'/>
+<use f='codebrowser/hu_stuff.c' l='400' u='w' c='HU_Init'/>
+<use f='codebrowser/hu_stuff.c' l='402' u='w' c='HU_Init'/>
+<use f='codebrowser/hu_stuff.c' l='550' u='r' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='733' u='r' c='HU_Responder'/>

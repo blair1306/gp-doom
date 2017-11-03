@@ -1,0 +1,15 @@
+<dec f='codebrowser/r_main.h' l='77' type='lighttable_t *[16][48]'/>
+<def f='codebrowser/r_main.c' l='116' type='lighttable_t *[16][48]'/>
+<use f='codebrowser/r_main.c' l='758' u='w' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_segs.c' l='130' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='132' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='134' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='652' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='654' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='656' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_things.c' l='631' u='r' c='R_AddSprites'/>
+<use f='codebrowser/r_things.c' l='633' u='r' c='R_AddSprites'/>
+<use f='codebrowser/r_things.c' l='635' u='r' c='R_AddSprites'/>
+<use f='codebrowser/r_things.c' l='758' u='r' c='R_DrawPlayerSprites'/>
+<use f='codebrowser/r_things.c' l='760' u='r' c='R_DrawPlayerSprites'/>
+<use f='codebrowser/r_things.c' l='762' u='r' c='R_DrawPlayerSprites'/>

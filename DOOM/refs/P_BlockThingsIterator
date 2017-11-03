@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_local.h' l='176' type='boolean P_BlockThingsIterator(int x, int y, boolean (*)(mobj_t *) func)'/>
+<use f='codebrowser/p_enemy.c' l='1201' u='c' c='A_VileChase'/>
+<use f='codebrowser/p_map.c' l='162' u='c' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='427' u='c' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='1232' u='c' c='P_RadiusAttack'/>
+<use f='codebrowser/p_map.c' l='1334' u='c' c='P_ChangeSector'/>
+<def f='codebrowser/p_maputl.c' l='512' ll='537' type='boolean P_BlockThingsIterator(int x, int y, boolean (*)(mobj_t *) func)'/>
+<use f='codebrowser/p_maputl.c' l='856' u='c' c='P_PathTraverse'/>
+<doc f='codebrowser/p_maputl.c' l='509'>//
+// P_BlockThingsIterator
+//</doc>

@@ -1,0 +1,7 @@
+<def f='codebrowser/g_game.c' l='190' type='int'/>
+<use f='codebrowser/g_game.c' l='407' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='409' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='411' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='493' u='w' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='579' u='w' c='G_Responder'/>
+<doc f='codebrowser/g_game.c' l='189'>// mouse values are used once </doc>

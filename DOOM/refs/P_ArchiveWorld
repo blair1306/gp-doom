@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_saveg.h' l='36' type='void P_ArchiveWorld()'/>
+<use f='codebrowser/g_game.c' l='1303' u='c' c='G_DoSaveGame'/>
+<def f='codebrowser/p_saveg.c' l='114' ll='160' type='void P_ArchiveWorld()'/>
+<doc f='codebrowser/p_saveg.c' l='111'>//
+// P_ArchiveWorld
+//</doc>

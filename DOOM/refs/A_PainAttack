@@ -1,0 +1,14 @@
+<dec f='codebrowser/info.c' l='122' type='void A_PainAttack()'/>
+<use f='codebrowser/info.c' l='847'/>
+<use f='codebrowser/info.c' l='847'/>
+<use f='codebrowser/info.c' l='847'/>
+<use f='codebrowser/info.c' l='847'/>
+<use f='codebrowser/info.c' l='847'/>
+<use f='codebrowser/info.c' l='847'/>
+<use f='codebrowser/info.c' l='847'/>
+<use f='codebrowser/info.c' l='847'/>
+<def f='codebrowser/p_enemy.c' l='1512' ll='1519' type='void A_PainAttack(mobj_t * actor)'/>
+<doc f='codebrowser/p_enemy.c' l='1508'>//
+// A_PainAttack
+// Spawn a lost soul and launch it at the target
+// </doc>

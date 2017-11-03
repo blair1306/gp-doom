@@ -1,0 +1,11 @@
+<def f='codebrowser/f_finale.c' l='54' type='int'/>
+<use f='codebrowser/f_finale.c' l='189' u='w' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='213' u='r' c='F_Ticker'/>
+<use f='codebrowser/f_finale.c' l='230' u='w' c='F_Ticker'/>
+<use f='codebrowser/f_finale.c' l='241' u='r' c='F_Ticker'/>
+<use f='codebrowser/f_finale.c' l='243' u='w' c='F_Ticker'/>
+<use f='codebrowser/f_finale.c' l='298' u='r' c='F_TextWrite'/>
+<use f='codebrowser/f_finale.c' l='659' u='r' c='F_BunnyScroll'/>
+<use f='codebrowser/f_finale.c' l='673' u='r' c='F_BunnyScroll'/>
+<use f='codebrowser/f_finale.c' l='675' u='r' c='F_BunnyScroll'/>
+<use f='codebrowser/f_finale.c' l='683' u='r' c='F_BunnyScroll'/>

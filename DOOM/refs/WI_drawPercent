@@ -1,0 +1,7 @@
+<def f='codebrowser/wi_stuff.c' l='668' ll='679' type='void WI_drawPercent(int x, int y, int p)'/>
+<use f='codebrowser/wi_stuff.c' l='1304' u='c' c='WI_drawNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1305' u='c' c='WI_drawNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1306' u='c' c='WI_drawNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1451' u='c' c='WI_drawStats'/>
+<use f='codebrowser/wi_stuff.c' l='1454' u='c' c='WI_drawStats'/>
+<use f='codebrowser/wi_stuff.c' l='1457' u='c' c='WI_drawStats'/>

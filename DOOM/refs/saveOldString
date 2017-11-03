@@ -1,0 +1,4 @@
+<def f='codebrowser/m_menu.c' l='123' type='char [24]'/>
+<use f='codebrowser/m_menu.c' l='650' u='r' c='M_SaveSelect'/>
+<use f='codebrowser/m_menu.c' l='1467' u='r' c='M_Responder'/>
+<doc f='codebrowser/m_menu.c' l='122'>// old save description before edit</doc>

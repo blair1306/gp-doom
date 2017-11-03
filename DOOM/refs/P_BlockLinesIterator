@@ -1,0 +1,21 @@
+<dec f='codebrowser/p_local.h' l='175' type='boolean P_BlockLinesIterator(int x, int y, boolean (*)(line_t *) func)'/>
+<use f='codebrowser/p_map.c' l='438' u='c' c='P_CheckPosition'/>
+<def f='codebrowser/p_maputl.c' l='471' ll='506' type='boolean P_BlockLinesIterator(int x, int y, boolean (*)(line_t *) func)'/>
+<use f='codebrowser/p_maputl.c' l='850' u='c' c='P_PathTraverse'/>
+<doc f='codebrowser/p_maputl.c' l='454'>//
+// BLOCK MAP ITERATORS
+// For each line/thing in the given mapblock,
+// call the passed PIT_* function.
+// If the function returns false,
+// exit with false without checking anything else.
+//
+
+
+//
+// P_BlockLinesIterator
+// The validcount flags are used to avoid checking lines
+// that are marked in multiple mapblocks,
+// so increment validcount before the first call
+// to P_BlockLinesIterator, then make one or more calls
+// to it.
+//</doc>

@@ -1,0 +1,16 @@
+<dec f='codebrowser/i_sound.h' l='44' type='void I_UpdateSound()'/>
+<doc f='codebrowser/i_sound.h' l='43'>// ... update sound buffer and audio device at runtime...</doc>
+<def f='codebrowser/i_sound.c' l='540' ll='655' type='void I_UpdateSound()'/>
+<doc f='codebrowser/i_sound.c' l='527'>//
+// This function loops all active (internal) sound
+//  channels, retrieves a given number of samples
+//  from the raw sound data, modifies it according
+//  to the current (internal) channel parameters,
+//  mixes the per channel samples into the global
+//  mixbuffer, clamping it to the allowed range,
+//  and sets up everything for transferring the
+//  contents of the mixbuffer to the (two)
+//  hardware channels (left and right, that is).
+//
+// This function currently supports only 16bit.
+//</doc>

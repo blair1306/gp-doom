@@ -1,0 +1,4 @@
+<dec f='codebrowser/g_game.c' l='676' type='char *[4]'/>
+<use f='codebrowser/g_game.c' l='677' u='r' c='G_Ticker'/>
+<def f='codebrowser/hu_stuff.c' l='79' ll='85' type='char *[4]'/>
+<use f='codebrowser/hu_stuff.c' l='559' u='r' c='HU_Ticker'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/z_zone.h' l='43'/>
+<doc f='codebrowser/z_zone.h' l='42'>// Tags &gt;= 100 are purgable whenever needed.</doc>
+<use f='codebrowser/p_setup.c' l='618' u='c'/>
+<use f='codebrowser/w_wad.c' l='544' u='c'/>
+<use f='codebrowser/z_zone.c' l='225' u='c'/>
+<use f='codebrowser/z_zone.c' l='275' u='c'/>
+<use f='codebrowser/z_zone.c' l='440' u='c'/>
+<use f='codebrowser/z_zone.c' l='462' u='c'/>

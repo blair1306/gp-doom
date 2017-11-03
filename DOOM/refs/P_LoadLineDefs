@@ -1,0 +1,6 @@
+<def f='codebrowser/p_setup.c' l='357' ll='432' type='void P_LoadLineDefs(int lump)'/>
+<use f='codebrowser/p_setup.c' l='654' u='c' c='P_SetupLevel'/>
+<doc f='codebrowser/p_setup.c' l='353'>//
+// P_LoadLineDefs
+// Also counts secret lines for intermissions.
+//</doc>

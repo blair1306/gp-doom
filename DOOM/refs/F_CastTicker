@@ -1,0 +1,6 @@
+<dec f='codebrowser/f_finale.c' l='89' type='void F_CastTicker()'/>
+<use f='codebrowser/f_finale.c' l='234' u='c' c='F_Ticker'/>
+<def f='codebrowser/f_finale.c' l='395' ll='495' type='void F_CastTicker()'/>
+<doc f='codebrowser/f_finale.c' l='392'>//
+// F_CastTicker
+//</doc>

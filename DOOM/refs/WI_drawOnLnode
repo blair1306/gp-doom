@@ -1,0 +1,4 @@
+<def f='codebrowser/wi_stuff.c' l='455' ll='499' type='void WI_drawOnLnode(int n, patch_t ** c)'/>
+<use f='codebrowser/wi_stuff.c' l='794' u='c' c='WI_drawShowNextLoc'/>
+<use f='codebrowser/wi_stuff.c' l='798' u='c' c='WI_drawShowNextLoc'/>
+<use f='codebrowser/wi_stuff.c' l='802' u='c' c='WI_drawShowNextLoc'/>

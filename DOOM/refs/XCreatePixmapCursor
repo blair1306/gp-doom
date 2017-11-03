@@ -1,0 +1,2 @@
+<dec f='include/X11/Xlib.h' l='1558' type='Cursor XCreatePixmapCursor(Display * , Pixmap , Pixmap , XColor * , XColor * , unsigned int , unsigned int )'/>
+<use f='codebrowser/i_video.c' l='299' u='c' c='createnullcursor'/>

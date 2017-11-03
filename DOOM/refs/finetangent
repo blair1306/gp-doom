@@ -1,0 +1,9 @@
+<dec f='codebrowser/tables.h' l='65' type='fixed_t [4096]'/>
+<doc f='codebrowser/tables.h' l='64'>// Effective size is 4096.</doc>
+<use f='codebrowser/r_main.c' l='558' u='r' c='R_InitTextureMapping'/>
+<use f='codebrowser/r_main.c' l='562' u='r' c='R_InitTextureMapping'/>
+<use f='codebrowser/r_main.c' l='564' u='r' c='R_InitTextureMapping'/>
+<use f='codebrowser/r_main.c' l='568' u='r' c='R_InitTextureMapping'/>
+<use f='codebrowser/r_main.c' l='593' u='r' c='R_InitTextureMapping'/>
+<use f='codebrowser/r_segs.c' l='266' u='r' c='R_RenderSegLoop'/>
+<def f='codebrowser/tables.c' l='67' ll='581' type='int [4096]'/>

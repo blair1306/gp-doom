@@ -1,0 +1,17 @@
+<dec f='codebrowser/doomstat.h' l='183' type='boolean'/>
+<doc f='codebrowser/doomstat.h' l='182'>//?</doc>
+<use f='codebrowser/d_net.c' l='156' u='r' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='205' u='r' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='609' u='r' c='D_QuitNetGame'/>
+<use f='codebrowser/d_net.c' l='686' u='r' c='TryRunTics'/>
+<def f='codebrowser/g_game.c' l='129' type='boolean'/>
+<use f='codebrowser/g_game.c' l='522' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='666' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1347' u='w' c='G_DoNewGame'/>
+<use f='codebrowser/g_game.c' l='1445' u='w' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1619' u='w' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1658' u='r' c='G_CheckDemoStatus'/>
+<use f='codebrowser/g_game.c' l='1664' u='w' c='G_CheckDemoStatus'/>
+<use f='codebrowser/m_menu.c' l='875' u='r' c='M_NewGame'/>
+<use f='codebrowser/p_tick.c' l='141' u='r' c='P_Ticker'/>
+<use f='codebrowser/r_data.c' l='758' u='r' c='R_PrecacheLevel'/>

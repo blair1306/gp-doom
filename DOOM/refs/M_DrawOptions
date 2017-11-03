@@ -1,0 +1,4 @@
+<dec f='codebrowser/m_menu.c' l='215' type='void M_DrawOptions()'/>
+<use f='codebrowser/m_menu.c' l='369'/>
+<use f='codebrowser/m_menu.c' l='369'/>
+<def f='codebrowser/m_menu.c' l='951' ll='966' type='void M_DrawOptions()'/>

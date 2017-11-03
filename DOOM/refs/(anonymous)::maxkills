@@ -1,0 +1,11 @@
+<dec f='codebrowser/d_player.h' l='198' type='int'/>
+<offset>128</offset>
+<use f='codebrowser/g_game.c' l='1112' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/wi_stuff.c' l='1125' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1150' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1151' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1338' u='r' c='WI_updateStats'/>
+<use f='codebrowser/wi_stuff.c' l='1354' u='r' c='WI_updateStats'/>
+<use f='codebrowser/wi_stuff.c' l='1356' u='r' c='WI_updateStats'/>
+<use f='codebrowser/wi_stuff.c' l='1824' u='r' c='WI_initVariables'/>
+<use f='codebrowser/wi_stuff.c' l='1825' u='w' c='WI_initVariables'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/i_video.h' l='40' type='void I_ShutdownGraphics()'/>
+<use f='codebrowser/i_system.c' l='122' u='c' c='I_Quit'/>
+<use f='codebrowser/i_system.c' l='180' u='c' c='I_Error'/>
+<def f='codebrowser/i_video.c' l='164' ll='176' type='void I_ShutdownGraphics()'/>

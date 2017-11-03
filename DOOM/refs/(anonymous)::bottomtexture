@@ -1,0 +1,18 @@
+<dec f='codebrowser/doomdata.h' l='74' type='char [8]'/>
+<dec f='codebrowser/r_defs.h' l='155' type='short'/>
+<offset>80</offset>
+<use f='codebrowser/p_floor.c' l='385' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='386' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='389' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='391' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='392' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='395' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_saveg.c' l='154' u='r' c='P_ArchiveWorld'/>
+<use f='codebrowser/p_saveg.c' l='206' u='w' c='P_UnArchiveWorld'/>
+<use f='codebrowser/p_setup.c' l='457' u='w' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_setup.c' l='457' u='r' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_spec.c' l='1147' u='w' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_switch.c' l='216' u='r' c='P_ChangeSwitchTexture'/>
+<use f='codebrowser/p_switch.c' l='253' u='w' c='P_ChangeSwitchTexture'/>
+<use f='codebrowser/r_data.c' l='791' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_segs.c' l='592' u='r' c='R_StoreWallRange'/>

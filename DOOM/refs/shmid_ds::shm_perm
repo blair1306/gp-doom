@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/bits/shm.h' l='51' type='struct ipc_perm'/>
+<use f='codebrowser/i_video.c' l='623' u='m' c='grabsharedmemory'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/bits/shm.h' l='51'>/* operation permission struct */</doc>

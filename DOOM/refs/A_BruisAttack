@@ -1,0 +1,18 @@
+<dec f='codebrowser/info.c' l='114' type='void A_BruisAttack()'/>
+<use f='codebrowser/info.c' l='675'/>
+<use f='codebrowser/info.c' l='675'/>
+<use f='codebrowser/info.c' l='675'/>
+<use f='codebrowser/info.c' l='675'/>
+<use f='codebrowser/info.c' l='704'/>
+<use f='codebrowser/info.c' l='704'/>
+<use f='codebrowser/info.c' l='704'/>
+<use f='codebrowser/info.c' l='704'/>
+<use f='codebrowser/info.c' l='675'/>
+<use f='codebrowser/info.c' l='675'/>
+<use f='codebrowser/info.c' l='675'/>
+<use f='codebrowser/info.c' l='675'/>
+<use f='codebrowser/info.c' l='704'/>
+<use f='codebrowser/info.c' l='704'/>
+<use f='codebrowser/info.c' l='704'/>
+<use f='codebrowser/info.c' l='704'/>
+<def f='codebrowser/p_enemy.c' l='979' ll='996' type='void A_BruisAttack(mobj_t * actor)'/>

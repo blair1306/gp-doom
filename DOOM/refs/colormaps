@@ -1,0 +1,13 @@
+<dec f='codebrowser/r_state.h' l='52' type='lighttable_t *'/>
+<def f='codebrowser/r_data.c' l='162' type='lighttable_t *'/>
+<use f='codebrowser/r_data.c' l='641' u='w' c='R_InitColormaps'/>
+<use f='codebrowser/r_data.c' l='642' u='w' c='R_InitColormaps'/>
+<use f='codebrowser/r_data.c' l='642' u='r' c='R_InitColormaps'/>
+<use f='codebrowser/r_data.c' l='643' u='r' c='R_InitColormaps'/>
+<use f='codebrowser/r_draw.c' l='358' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_main.c' l='639' u='r' c='R_InitLightTables'/>
+<use f='codebrowser/r_main.c' l='758' u='r' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_main.c' l='850' u='r' c='R_SetupFrame'/>
+<use f='codebrowser/r_plane.c' l='404' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_things.c' l='591' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='730' u='r' c='R_DrawPSprite'/>

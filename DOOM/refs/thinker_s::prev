@@ -1,0 +1,10 @@
+<dec f='codebrowser/d_think.h' l='66' type='struct thinker_s *'/>
+<offset>0</offset>
+<use f='codebrowser/p_tick.c' l='55' u='w' c='P_InitThinkers'/>
+<use f='codebrowser/p_tick.c' l='67' u='r' c='P_AddThinker'/>
+<use f='codebrowser/p_tick.c' l='69' u='w' c='P_AddThinker'/>
+<use f='codebrowser/p_tick.c' l='69' u='r' c='P_AddThinker'/>
+<use f='codebrowser/p_tick.c' l='70' u='w' c='P_AddThinker'/>
+<use f='codebrowser/p_tick.c' l='111' u='w' c='P_RunThinkers'/>
+<use f='codebrowser/p_tick.c' l='111' u='r' c='P_RunThinkers'/>
+<use f='codebrowser/p_tick.c' l='112' u='r' c='P_RunThinkers'/>

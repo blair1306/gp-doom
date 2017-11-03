@@ -1,0 +1,15 @@
+<dec f='codebrowser/doomdef.h' l='204' type='1'/>
+<doc f='codebrowser/doomdef.h' l='204'>// Shotgun / double barreled shotgun.</doc>
+<use f='codebrowser/d_items.c' l='69'/>
+<use f='codebrowser/d_items.c' l='69'/>
+<use f='codebrowser/d_items.c' l='123'/>
+<use f='codebrowser/d_items.c' l='123'/>
+<use f='codebrowser/d_items.c' l='69'/>
+<use f='codebrowser/d_items.c' l='69'/>
+<use f='codebrowser/d_items.c' l='123'/>
+<use f='codebrowser/d_items.c' l='123'/>
+<use f='codebrowser/p_inter.c' l='131' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='578' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='584' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_pspr.c' l='192' u='r' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='203' u='r' c='P_CheckAmmo'/>

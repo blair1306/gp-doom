@@ -1,0 +1,5 @@
+<dec f='codebrowser/p_local.h' l='248' type='short *'/>
+<use f='codebrowser/p_maputl.c' l='491' u='r' c='P_BlockLinesIterator'/>
+<def f='codebrowser/p_setup.c' l='88' type='short *'/>
+<use f='codebrowser/p_setup.c' l='475' u='w' c='P_LoadBlockMap'/>
+<doc f='codebrowser/p_setup.c' l='88'>// int for larger maps</doc>

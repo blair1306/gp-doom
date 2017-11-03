@@ -1,0 +1,11 @@
+<dec f='codebrowser/r_bsp.h' l='38' type='int'/>
+<def f='codebrowser/r_segs.c' l='66' type='int'/>
+<use f='codebrowser/r_segs.c' l='219' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='416' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='612' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='709' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='712' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='721' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='723' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='729' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='731' u='r' c='R_StoreWallRange'/>

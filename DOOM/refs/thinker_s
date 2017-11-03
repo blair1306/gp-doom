@@ -1,0 +1,6 @@
+<def f='codebrowser/d_think.h' l='64' ll='70'/>
+<size>24</size>
+<doc f='codebrowser/d_think.h' l='63'>// Doubly linked list of actors.</doc>
+<mbr r='thinker_s::prev' o='0' t='struct thinker_s *'/>
+<mbr r='thinker_s::next' o='64' t='struct thinker_s *'/>
+<mbr r='thinker_s::function' o='128' t='think_t'/>

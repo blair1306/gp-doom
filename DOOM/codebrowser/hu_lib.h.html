@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>hu_lib.h source code [codebrowser/hu_lib.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/hu_lib.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='hu_lib.h.html'>hu_lib.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>// DESCRIPTION:  none</i></td></tr>
+<tr><th id="18">18</th><td><i>//</i></td></tr>
+<tr><th id="19">19</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><u>#<span data-ppcond="21">ifndef</span> <span class="macro" data-ref="_M/__HULIB__">__HULIB__</span></u></td></tr>
+<tr><th id="22">22</th><td><u>#define <dfn class="macro" id="_M/__HULIB__" data-ref="_M/__HULIB__">__HULIB__</dfn></u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><i>// We are referring to patches.</i></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="r_defs.h.html">"r_defs.h"</a></u></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><i>// background and foreground screen numbers</i></td></tr>
+<tr><th id="29">29</th><td><i>// different from other modules.</i></td></tr>
+<tr><th id="30">30</th><td><u>#define <dfn class="macro" id="_M/BG" data-ref="_M/BG">BG</dfn>			1</u></td></tr>
+<tr><th id="31">31</th><td><u>#define <dfn class="macro" id="_M/FG" data-ref="_M/FG">FG</dfn>			0</u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><i>// font stuff</i></td></tr>
+<tr><th id="34">34</th><td><u>#define <dfn class="macro" id="_M/HU_CHARERASE" data-ref="_M/HU_CHARERASE">HU_CHARERASE</dfn>	KEY_BACKSPACE</u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><u>#define <dfn class="macro" id="_M/HU_MAXLINES" data-ref="_M/HU_MAXLINES">HU_MAXLINES</dfn>		4</u></td></tr>
+<tr><th id="37">37</th><td><u>#define <dfn class="macro" id="_M/HU_MAXLINELENGTH" data-ref="_M/HU_MAXLINELENGTH">HU_MAXLINELENGTH</dfn>	80</u></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><i>//</i></td></tr>
+<tr><th id="40">40</th><td><i>// Typedefs of widgets</i></td></tr>
+<tr><th id="41">41</th><td><i>//</i></td></tr>
+<tr><th id="42">42</th><td><i></i></td></tr>
+<tr><th id="43">43</th><td><i>// Text Line widget</i></td></tr>
+<tr><th id="44">44</th><td><i>//  (parent of Scrolling Text and Input Text widgets)</i></td></tr>
+<tr><th id="45">45</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="46">46</th><td>{</td></tr>
+<tr><th id="47">47</th><td>    <i>// left-justified position of scrolling text window</i></td></tr>
+<tr><th id="48">48</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</dfn>;</td></tr>
+<tr><th id="49">49</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</dfn>;</td></tr>
+<tr><th id="50">50</th><td>    </td></tr>
+<tr><th id="51">51</th><td>    <a class="typedef" href="r_defs.h.html#patch_t" title='patch_t' data-type='struct patch_t' data-ref="patch_t">patch_t</a>**	<dfn class="decl" id="(anonymous)::f" title='(anonymous struct)::f' data-ref="(anonymous)::f">f</dfn>;			<i>// font</i></td></tr>
+<tr><th id="52">52</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::sc" title='(anonymous struct)::sc' data-ref="(anonymous)::sc">sc</dfn>;			<i>// start character</i></td></tr>
+<tr><th id="53">53</th><td>    <em>char</em>	<dfn class="decl" id="(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</dfn>[<a class="macro" href="#37" title="80" data-ref="_M/HU_MAXLINELENGTH">HU_MAXLINELENGTH</a>+<var>1</var>];	<i>// line of text</i></td></tr>
+<tr><th id="54">54</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::len" title='(anonymous struct)::len' data-ref="(anonymous)::len">len</dfn>;		      	<i>// current line length</i></td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td>    <i>// whether this line needs to be udpated</i></td></tr>
+<tr><th id="57">57</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::needsupdate" title='(anonymous struct)::needsupdate' data-ref="(anonymous)::needsupdate">needsupdate</dfn>;	      </td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td>} <dfn class="typedef" id="hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</dfn>;</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><i>// Scrolling Text window widget</i></td></tr>
+<tr><th id="64">64</th><td><i>//  (child of Text Line widget)</i></td></tr>
+<tr><th id="65">65</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="66">66</th><td>{</td></tr>
+<tr><th id="67">67</th><td>    <a class="typedef" href="#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a>	<dfn class="decl" id="(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</dfn>[<a class="macro" href="#36" title="4" data-ref="_M/HU_MAXLINES">HU_MAXLINES</a>];	<i>// text lines to draw</i></td></tr>
+<tr><th id="68">68</th><td>    <em>int</em>			<dfn class="decl" id="(anonymous)::h" title='(anonymous struct)::h' data-ref="(anonymous)::h">h</dfn>;		<i>// height in lines</i></td></tr>
+<tr><th id="69">69</th><td>    <em>int</em>			<dfn class="decl" id="(anonymous)::cl" title='(anonymous struct)::cl' data-ref="(anonymous)::cl">cl</dfn>;		<i>// current line number</i></td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td>    <i>// pointer to boolean stating whether to update window</i></td></tr>
+<tr><th id="72">72</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>*		<dfn class="decl" id="(anonymous)::on" title='(anonymous struct)::on' data-ref="(anonymous)::on">on</dfn>;</td></tr>
+<tr><th id="73">73</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="decl" id="(anonymous)::laston" title='(anonymous struct)::laston' data-ref="(anonymous)::laston">laston</dfn>;		<i>// last value of *-&gt;on.</i></td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td>} <dfn class="typedef" id="hu_stext_t" title='hu_stext_t' data-type='struct hu_stext_t' data-ref="hu_stext_t">hu_stext_t</dfn>;</td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><i>// Input Text Line widget</i></td></tr>
+<tr><th id="80">80</th><td><i>//  (child of Text Line widget)</i></td></tr>
+<tr><th id="81">81</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="82">82</th><td>{</td></tr>
+<tr><th id="83">83</th><td>    <a class="typedef" href="#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a>	<dfn class="decl" id="(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</dfn>;		<i>// text line to input on</i></td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td>     <i>// left margin past which I am not to delete characters</i></td></tr>
+<tr><th id="86">86</th><td>    <em>int</em>			<dfn class="decl" id="(anonymous)::lm" title='(anonymous struct)::lm' data-ref="(anonymous)::lm">lm</dfn>;</td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td>    <i>// pointer to boolean stating whether to update window</i></td></tr>
+<tr><th id="89">89</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>*		<dfn class="decl" id="(anonymous)::on" title='(anonymous struct)::on' data-ref="(anonymous)::on">on</dfn>; </td></tr>
+<tr><th id="90">90</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="decl" id="(anonymous)::laston" title='(anonymous struct)::laston' data-ref="(anonymous)::laston">laston</dfn>; <i>// last value of *-&gt;on;</i></td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td>} <dfn class="typedef" id="hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</dfn>;</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td><i>//</i></td></tr>
+<tr><th id="96">96</th><td><i>// Widget creation, access, and update routines</i></td></tr>
+<tr><th id="97">97</th><td><i>//</i></td></tr>
+<tr><th id="98">98</th><td><i></i></td></tr>
+<tr><th id="99">99</th><td><i>// initializes heads-up widget library</i></td></tr>
+<tr><th id="100">100</th><td><em>void</em> <a class="decl" href="hu_lib.c.html#HUlib_init" title='HUlib_init' data-ref="HUlib_init" id="HUlib_init">HUlib_init</a>(<em>void</em>);</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td><i>//</i></td></tr>
+<tr><th id="103">103</th><td><i>// textline code</i></td></tr>
+<tr><th id="104">104</th><td><i>//</i></td></tr>
+<tr><th id="105">105</th><td><i></i></td></tr>
+<tr><th id="106">106</th><td><i>// clear a line of text</i></td></tr>
+<tr><th id="107">107</th><td><em>void</em>	<a class="decl" href="hu_lib.c.html#HUlib_clearTextLine" title='HUlib_clearTextLine' data-ref="HUlib_clearTextLine" id="HUlib_clearTextLine">HUlib_clearTextLine</a>(<a class="typedef" href="#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a> *<dfn class="local col1 decl" id="1t" title='t' data-type='hu_textline_t *' data-ref="1t">t</dfn>);</td></tr>
+<tr><th id="108">108</th><td></td></tr>
+<tr><th id="109">109</th><td><em>void</em>	<a class="decl" href="hu_lib.c.html#HUlib_initTextLine" title='HUlib_initTextLine' data-ref="HUlib_initTextLine" id="HUlib_initTextLine">HUlib_initTextLine</a>(<a class="typedef" href="#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a> *<dfn class="local col2 decl" id="2t" title='t' data-type='hu_textline_t *' data-ref="2t">t</dfn>, <em>int</em> <dfn class="local col3 decl" id="3x" title='x' data-type='int' data-ref="3x">x</dfn>, <em>int</em> <dfn class="local col4 decl" id="4y" title='y' data-type='int' data-ref="4y">y</dfn>, <a class="typedef" href="r_defs.h.html#patch_t" title='patch_t' data-type='struct patch_t' data-ref="patch_t">patch_t</a> **<dfn class="local col5 decl" id="5f" title='f' data-type='patch_t **' data-ref="5f">f</dfn>, <em>int</em> <dfn class="local col6 decl" id="6sc" title='sc' data-type='int' data-ref="6sc">sc</dfn>);</td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td><i>// returns success</i></td></tr>
+<tr><th id="112">112</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a> <a class="decl" href="hu_lib.c.html#HUlib_addCharToTextLine" title='HUlib_addCharToTextLine' data-ref="HUlib_addCharToTextLine" id="HUlib_addCharToTextLine">HUlib_addCharToTextLine</a>(<a class="typedef" href="#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a> *<dfn class="local col7 decl" id="7t" title='t' data-type='hu_textline_t *' data-ref="7t">t</dfn>, <em>char</em> <dfn class="local col8 decl" id="8ch" title='ch' data-type='char' data-ref="8ch">ch</dfn>);</td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td><i>// returns success</i></td></tr>
+<tr><th id="115">115</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a> <a class="decl" href="hu_lib.c.html#HUlib_delCharFromTextLine" title='HUlib_delCharFromTextLine' data-ref="HUlib_delCharFromTextLine" id="HUlib_delCharFromTextLine">HUlib_delCharFromTextLine</a>(<a class="typedef" href="#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a> *<dfn class="local col9 decl" id="9t" title='t' data-type='hu_textline_t *' data-ref="9t">t</dfn>);</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><i>// draws tline</i></td></tr>
+<tr><th id="118">118</th><td><em>void</em>	<a class="decl" href="hu_lib.c.html#HUlib_drawTextLine" title='HUlib_drawTextLine' data-ref="HUlib_drawTextLine" id="HUlib_drawTextLine">HUlib_drawTextLine</a>(<a class="typedef" href="#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a> *<dfn class="local col0 decl" id="10l" title='l' data-type='hu_textline_t *' data-ref="10l">l</dfn>, <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a> <dfn class="local col1 decl" id="11drawcursor" title='drawcursor' data-type='boolean' data-ref="11drawcursor">drawcursor</dfn>);</td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td><i>// erases text line</i></td></tr>
+<tr><th id="121">121</th><td><em>void</em>	<a class="decl" href="hu_lib.c.html#HUlib_eraseTextLine" title='HUlib_eraseTextLine' data-ref="HUlib_eraseTextLine" id="HUlib_eraseTextLine">HUlib_eraseTextLine</a>(<a class="typedef" href="#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a> *<dfn class="local col2 decl" id="12l" title='l' data-type='hu_textline_t *' data-ref="12l">l</dfn>); </td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><i>//</i></td></tr>
+<tr><th id="125">125</th><td><i>// Scrolling Text window widget routines</i></td></tr>
+<tr><th id="126">126</th><td><i>//</i></td></tr>
+<tr><th id="127">127</th><td><i></i></td></tr>
+<tr><th id="128">128</th><td><i>// ?</i></td></tr>
+<tr><th id="129">129</th><td><em>void</em></td></tr>
+<tr><th id="130">130</th><td><a class="decl" href="hu_lib.c.html#HUlib_initSText" title='HUlib_initSText' data-ref="HUlib_initSText" id="HUlib_initSText">HUlib_initSText</a></td></tr>
+<tr><th id="131">131</th><td>( <a class="typedef" href="#hu_stext_t" title='hu_stext_t' data-type='struct hu_stext_t' data-ref="hu_stext_t">hu_stext_t</a>*	<dfn class="local col3 decl" id="13s" title='s' data-type='hu_stext_t *' data-ref="13s">s</dfn>,</td></tr>
+<tr><th id="132">132</th><td>  <em>int</em>		<dfn class="local col4 decl" id="14x" title='x' data-type='int' data-ref="14x">x</dfn>,</td></tr>
+<tr><th id="133">133</th><td>  <em>int</em>		<dfn class="local col5 decl" id="15y" title='y' data-type='int' data-ref="15y">y</dfn>,</td></tr>
+<tr><th id="134">134</th><td>  <em>int</em>		<dfn class="local col6 decl" id="16h" title='h' data-type='int' data-ref="16h">h</dfn>,</td></tr>
+<tr><th id="135">135</th><td>  <a class="typedef" href="r_defs.h.html#patch_t" title='patch_t' data-type='struct patch_t' data-ref="patch_t">patch_t</a>**	<dfn class="local col7 decl" id="17font" title='font' data-type='patch_t **' data-ref="17font">font</dfn>,</td></tr>
+<tr><th id="136">136</th><td>  <em>int</em>		<dfn class="local col8 decl" id="18startchar" title='startchar' data-type='int' data-ref="18startchar">startchar</dfn>,</td></tr>
+<tr><th id="137">137</th><td>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>*	<dfn class="local col9 decl" id="19on" title='on' data-type='boolean *' data-ref="19on">on</dfn> );</td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td><i>// add a new line</i></td></tr>
+<tr><th id="140">140</th><td><em>void</em> <a class="decl" href="hu_lib.c.html#HUlib_addLineToSText" title='HUlib_addLineToSText' data-ref="HUlib_addLineToSText" id="HUlib_addLineToSText">HUlib_addLineToSText</a>(<a class="typedef" href="#hu_stext_t" title='hu_stext_t' data-type='struct hu_stext_t' data-ref="hu_stext_t">hu_stext_t</a>* <dfn class="local col0 decl" id="20s" title='s' data-type='hu_stext_t *' data-ref="20s">s</dfn>);  </td></tr>
+<tr><th id="141">141</th><td></td></tr>
+<tr><th id="142">142</th><td><i>// ?</i></td></tr>
+<tr><th id="143">143</th><td><em>void</em></td></tr>
+<tr><th id="144">144</th><td><a class="decl" href="hu_lib.c.html#HUlib_addMessageToSText" title='HUlib_addMessageToSText' data-ref="HUlib_addMessageToSText" id="HUlib_addMessageToSText">HUlib_addMessageToSText</a></td></tr>
+<tr><th id="145">145</th><td>( <a class="typedef" href="#hu_stext_t" title='hu_stext_t' data-type='struct hu_stext_t' data-ref="hu_stext_t">hu_stext_t</a>*	<dfn class="local col1 decl" id="21s" title='s' data-type='hu_stext_t *' data-ref="21s">s</dfn>,</td></tr>
+<tr><th id="146">146</th><td>  <em>char</em>*		<dfn class="local col2 decl" id="22prefix" title='prefix' data-type='char *' data-ref="22prefix">prefix</dfn>,</td></tr>
+<tr><th id="147">147</th><td>  <em>char</em>*		<dfn class="local col3 decl" id="23msg" title='msg' data-type='char *' data-ref="23msg">msg</dfn> );</td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><i>// draws stext</i></td></tr>
+<tr><th id="150">150</th><td><em>void</em> <a class="decl" href="hu_lib.c.html#HUlib_drawSText" title='HUlib_drawSText' data-ref="HUlib_drawSText" id="HUlib_drawSText">HUlib_drawSText</a>(<a class="typedef" href="#hu_stext_t" title='hu_stext_t' data-type='struct hu_stext_t' data-ref="hu_stext_t">hu_stext_t</a>* <dfn class="local col4 decl" id="24s" title='s' data-type='hu_stext_t *' data-ref="24s">s</dfn>);</td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td><i>// erases all stext lines</i></td></tr>
+<tr><th id="153">153</th><td><em>void</em> <a class="decl" href="hu_lib.c.html#HUlib_eraseSText" title='HUlib_eraseSText' data-ref="HUlib_eraseSText" id="HUlib_eraseSText">HUlib_eraseSText</a>(<a class="typedef" href="#hu_stext_t" title='hu_stext_t' data-type='struct hu_stext_t' data-ref="hu_stext_t">hu_stext_t</a>* <dfn class="local col5 decl" id="25s" title='s' data-type='hu_stext_t *' data-ref="25s">s</dfn>); </td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td><i>// Input Text Line widget routines</i></td></tr>
+<tr><th id="156">156</th><td><em>void</em></td></tr>
+<tr><th id="157">157</th><td><a class="decl" href="hu_lib.c.html#HUlib_initIText" title='HUlib_initIText' data-ref="HUlib_initIText" id="HUlib_initIText">HUlib_initIText</a></td></tr>
+<tr><th id="158">158</th><td>( <a class="typedef" href="#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>*	<dfn class="local col6 decl" id="26it" title='it' data-type='hu_itext_t *' data-ref="26it">it</dfn>,</td></tr>
+<tr><th id="159">159</th><td>  <em>int</em>		<dfn class="local col7 decl" id="27x" title='x' data-type='int' data-ref="27x">x</dfn>,</td></tr>
+<tr><th id="160">160</th><td>  <em>int</em>		<dfn class="local col8 decl" id="28y" title='y' data-type='int' data-ref="28y">y</dfn>,</td></tr>
+<tr><th id="161">161</th><td>  <a class="typedef" href="r_defs.h.html#patch_t" title='patch_t' data-type='struct patch_t' data-ref="patch_t">patch_t</a>**	<dfn class="local col9 decl" id="29font" title='font' data-type='patch_t **' data-ref="29font">font</dfn>,</td></tr>
+<tr><th id="162">162</th><td>  <em>int</em>		<dfn class="local col0 decl" id="30startchar" title='startchar' data-type='int' data-ref="30startchar">startchar</dfn>,</td></tr>
+<tr><th id="163">163</th><td>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>*	<dfn class="local col1 decl" id="31on" title='on' data-type='boolean *' data-ref="31on">on</dfn> );</td></tr>
+<tr><th id="164">164</th><td></td></tr>
+<tr><th id="165">165</th><td><i>// enforces left margin</i></td></tr>
+<tr><th id="166">166</th><td><em>void</em> <a class="decl" href="hu_lib.c.html#HUlib_delCharFromIText" title='HUlib_delCharFromIText' data-ref="HUlib_delCharFromIText" id="HUlib_delCharFromIText">HUlib_delCharFromIText</a>(<a class="typedef" href="#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>* <dfn class="local col2 decl" id="32it" title='it' data-type='hu_itext_t *' data-ref="32it">it</dfn>);</td></tr>
+<tr><th id="167">167</th><td></td></tr>
+<tr><th id="168">168</th><td><i>// enforces left margin</i></td></tr>
+<tr><th id="169">169</th><td><em>void</em> <a class="decl" href="hu_lib.c.html#HUlib_eraseLineFromIText" title='HUlib_eraseLineFromIText' data-ref="HUlib_eraseLineFromIText" id="HUlib_eraseLineFromIText">HUlib_eraseLineFromIText</a>(<a class="typedef" href="#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>* <dfn class="local col3 decl" id="33it" title='it' data-type='hu_itext_t *' data-ref="33it">it</dfn>);</td></tr>
+<tr><th id="170">170</th><td></td></tr>
+<tr><th id="171">171</th><td><i>// resets line and left margin</i></td></tr>
+<tr><th id="172">172</th><td><em>void</em> <a class="decl" href="hu_lib.c.html#HUlib_resetIText" title='HUlib_resetIText' data-ref="HUlib_resetIText" id="HUlib_resetIText">HUlib_resetIText</a>(<a class="typedef" href="#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>* <dfn class="local col4 decl" id="34it" title='it' data-type='hu_itext_t *' data-ref="34it">it</dfn>);</td></tr>
+<tr><th id="173">173</th><td></td></tr>
+<tr><th id="174">174</th><td><i>// left of left-margin</i></td></tr>
+<tr><th id="175">175</th><td><em>void</em></td></tr>
+<tr><th id="176">176</th><td><a class="decl" href="hu_lib.c.html#HUlib_addPrefixToIText" title='HUlib_addPrefixToIText' data-ref="HUlib_addPrefixToIText" id="HUlib_addPrefixToIText">HUlib_addPrefixToIText</a></td></tr>
+<tr><th id="177">177</th><td>( <a class="typedef" href="#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>*	<dfn class="local col5 decl" id="35it" title='it' data-type='hu_itext_t *' data-ref="35it">it</dfn>,</td></tr>
+<tr><th id="178">178</th><td>  <em>char</em>*		<dfn class="local col6 decl" id="36str" title='str' data-type='char *' data-ref="36str">str</dfn> );</td></tr>
+<tr><th id="179">179</th><td></td></tr>
+<tr><th id="180">180</th><td><i>// whether eaten</i></td></tr>
+<tr><th id="181">181</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a></td></tr>
+<tr><th id="182">182</th><td><a class="decl" href="hu_lib.c.html#HUlib_keyInIText" title='HUlib_keyInIText' data-ref="HUlib_keyInIText" id="HUlib_keyInIText">HUlib_keyInIText</a></td></tr>
+<tr><th id="183">183</th><td>( <a class="typedef" href="#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>*	<dfn class="local col7 decl" id="37it" title='it' data-type='hu_itext_t *' data-ref="37it">it</dfn>,</td></tr>
+<tr><th id="184">184</th><td>  <em>unsigned</em> <em>char</em> <dfn class="local col8 decl" id="38ch" title='ch' data-type='unsigned char' data-ref="38ch">ch</dfn> );</td></tr>
+<tr><th id="185">185</th><td></td></tr>
+<tr><th id="186">186</th><td><em>void</em> <a class="decl" href="hu_lib.c.html#HUlib_drawIText" title='HUlib_drawIText' data-ref="HUlib_drawIText" id="HUlib_drawIText">HUlib_drawIText</a>(<a class="typedef" href="#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>* <dfn class="local col9 decl" id="39it" title='it' data-type='hu_itext_t *' data-ref="39it">it</dfn>);</td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td><i>// erases all itext lines</i></td></tr>
+<tr><th id="189">189</th><td><em>void</em> <a class="decl" href="hu_lib.c.html#HUlib_eraseIText" title='HUlib_eraseIText' data-ref="HUlib_eraseIText" id="HUlib_eraseIText">HUlib_eraseIText</a>(<a class="typedef" href="#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>* <dfn class="local col0 decl" id="40it" title='it' data-type='hu_itext_t *' data-ref="40it">it</dfn>); </td></tr>
+<tr><th id="190">190</th><td></td></tr>
+<tr><th id="191">191</th><td><u>#<span data-ppcond="21">endif</span></u></td></tr>
+<tr><th id="192">192</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="193">193</th><td><i>//</i></td></tr>
+<tr><th id="194">194</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="195">195</th><td><i>//</i></td></tr>
+<tr><th id="196">196</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="197">197</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='hu_lib.c.html'>codebrowser/hu_lib.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

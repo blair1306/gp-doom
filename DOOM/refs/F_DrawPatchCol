@@ -1,0 +1,6 @@
+<def f='codebrowser/f_finale.c' l='609' ll='638' type='void F_DrawPatchCol(int x, patch_t * patch, int col)'/>
+<use f='codebrowser/f_finale.c' l='668' u='c' c='F_BunnyScroll'/>
+<use f='codebrowser/f_finale.c' l='670' u='c' c='F_BunnyScroll'/>
+<doc f='codebrowser/f_finale.c' l='606'>//
+// F_DrawPatchCol
+//</doc>

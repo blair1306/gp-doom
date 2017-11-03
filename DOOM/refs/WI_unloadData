@@ -1,0 +1,3 @@
+<dec f='codebrowser/wi_stuff.c' l='726' type='void WI_unloadData()'/>
+<use f='codebrowser/wi_stuff.c' l='727' u='c' c='WI_End'/>
+<def f='codebrowser/wi_stuff.c' l='1708' ll='1770' type='void WI_unloadData()'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/info.h' l='1301' type='137'/>
+<use f='codebrowser/info.h' l='1333'/>
+<use f='codebrowser/info.c' l='1106'/>
+<use f='codebrowser/p_mobj.c' l='613' u='r' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='754' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_mobj.c' l='758' u='r' c='P_SpawnMapThing'/>

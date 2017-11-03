@@ -1,0 +1,5 @@
+<def f='codebrowser/p_setup.c' l='202' ll='224' type='void P_LoadSubsectors(int lump)'/>
+<use f='codebrowser/p_setup.c' l='655' u='c' c='P_SetupLevel'/>
+<doc f='codebrowser/p_setup.c' l='199'>//
+// P_LoadSubsectors
+//</doc>

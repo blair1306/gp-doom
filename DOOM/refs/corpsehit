@@ -1,0 +1,21 @@
+<def f='codebrowser/p_enemy.c' l='1124' type='mobj_t *'/>
+<use f='codebrowser/p_enemy.c' l='1149' u='w' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1150' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1150' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1151' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1152' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1152' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1152' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1153' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1205' u='r' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1210' u='r' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1211' u='r' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1213' u='r' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1214' u='r' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1215' u='r' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1216' u='r' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1217' u='r' c='A_VileChase'/>
+<doc f='codebrowser/p_enemy.c' l='1120'>//
+// PIT_VileCheck
+// Detect a corpse that could be raised.
+//</doc>

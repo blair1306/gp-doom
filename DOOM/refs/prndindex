@@ -1,0 +1,5 @@
+<def f='codebrowser/m_random.c' l='54' type='int'/>
+<use f='codebrowser/m_random.c' l='59' u='w' c='P_Random'/>
+<use f='codebrowser/m_random.c' l='59' u='r' c='P_Random'/>
+<use f='codebrowser/m_random.c' l='60' u='r' c='P_Random'/>
+<use f='codebrowser/m_random.c' l='71' u='w' c='M_ClearRandom'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/i_sound.h' l='101' type='int I_RegisterSong(void * data)'/>
+<doc f='codebrowser/i_sound.h' l='100'>// Registers a song handle to song data.</doc>
+<def f='codebrowser/i_sound.c' l='876' ll='882' type='int I_RegisterSong(void * data)'/>
+<use f='codebrowser/s_sound.c' l='680' u='c' c='S_ChangeMusic'/>

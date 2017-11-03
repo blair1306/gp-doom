@@ -1,0 +1,5 @@
+<def f='codebrowser/i_net.c' l='127' ll='155' type='void PacketSend()'/>
+<use f='codebrowser/i_net.c' l='293' u='r' c='I_InitNetwork'/>
+<doc f='codebrowser/i_net.c' l='124'>//
+// PacketSend
+//</doc>

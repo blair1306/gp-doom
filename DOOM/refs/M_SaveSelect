@@ -1,0 +1,29 @@
+<dec f='codebrowser/m_menu.c' l='205' type='void M_SaveSelect(int choice)'/>
+<use f='codebrowser/m_menu.c' l='488'/>
+<use f='codebrowser/m_menu.c' l='488'/>
+<use f='codebrowser/m_menu.c' l='489'/>
+<use f='codebrowser/m_menu.c' l='489'/>
+<use f='codebrowser/m_menu.c' l='490'/>
+<use f='codebrowser/m_menu.c' l='490'/>
+<use f='codebrowser/m_menu.c' l='491'/>
+<use f='codebrowser/m_menu.c' l='491'/>
+<use f='codebrowser/m_menu.c' l='492'/>
+<use f='codebrowser/m_menu.c' l='492'/>
+<use f='codebrowser/m_menu.c' l='493'/>
+<use f='codebrowser/m_menu.c' l='493'/>
+<use f='codebrowser/m_menu.c' l='488'/>
+<use f='codebrowser/m_menu.c' l='488'/>
+<use f='codebrowser/m_menu.c' l='489'/>
+<use f='codebrowser/m_menu.c' l='489'/>
+<use f='codebrowser/m_menu.c' l='490'/>
+<use f='codebrowser/m_menu.c' l='490'/>
+<use f='codebrowser/m_menu.c' l='491'/>
+<use f='codebrowser/m_menu.c' l='491'/>
+<use f='codebrowser/m_menu.c' l='492'/>
+<use f='codebrowser/m_menu.c' l='492'/>
+<use f='codebrowser/m_menu.c' l='493'/>
+<use f='codebrowser/m_menu.c' l='493'/>
+<def f='codebrowser/m_menu.c' l='644' ll='654' type='void M_SaveSelect(int choice)'/>
+<doc f='codebrowser/m_menu.c' l='641'>//
+// User wants to save. Start string input for M_Responder
+//</doc>

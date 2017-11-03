@@ -1,0 +1,5 @@
+<def f='codebrowser/p_setup.c' l='469' ll='490' type='void P_LoadBlockMap(int lump)'/>
+<use f='codebrowser/p_setup.c' l='649' u='c' c='P_SetupLevel'/>
+<doc f='codebrowser/p_setup.c' l='466'>//
+// P_LoadBlockMap
+//</doc>

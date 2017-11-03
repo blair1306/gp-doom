@@ -1,0 +1,15 @@
+<def f='codebrowser/p_map.c' l='799' type='fixed_t'/>
+<use f='codebrowser/p_map.c' l='844' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='851' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='872' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='877' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='932' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='939' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='954' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='984' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='989' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1001' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1036' u='w' c='P_AimLineAttack'/>
+<use f='codebrowser/p_map.c' l='1078' u='w' c='P_LineAttack'/>
+<doc f='codebrowser/p_map.c' l='797'>// Height if not aiming up or down
+// ???: use slope for monsters?</doc>

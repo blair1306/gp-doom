@@ -1,0 +1,14 @@
+<dec f='codebrowser/p_spec.h' l='182' type='void T_LightFlash(lightflash_t * flash)'/>
+<def f='codebrowser/p_lights.c' l='98' ll='114' type='void T_LightFlash(lightflash_t * flash)'/>
+<use f='codebrowser/p_lights.c' l='135' u='r' c='P_SpawnLightFlash'/>
+<doc f='codebrowser/p_lights.c' l='89'>//
+// BROKEN LIGHT FLASHING
+//
+
+
+//
+// T_LightFlash
+// Do flashing lights.
+//</doc>
+<use f='codebrowser/p_saveg.c' l='432' u='r' c='P_ArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='554' u='r' c='P_UnArchiveSpecials'/>

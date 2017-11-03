@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>m_fixed.c source code [codebrowser/m_fixed.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/m_fixed.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='m_fixed.c.html'>m_fixed.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION:</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//	Fixed point implementation.</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="22">22</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><em>static</em> <em>const</em> <em>char</em></td></tr>
+<tr><th id="26">26</th><td><dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [49]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id: m_bbox.c,v 1.1 1997/02/03 22:45:10 b1 Exp $"</q>;</td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="../include/stdlib.h.html">"stdlib.h"</a></u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#include <a href="doomtype.h.html">"doomtype.h"</a></u></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="i_system.h.html">"i_system.h"</a></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><u>#<span data-ppcond="33">ifdef</span> <span class="macro" data-ref="_M/__GNUG__">__GNUG__</span></u></td></tr>
+<tr><th id="34">34</th><td><u>#pragma implementation "m_fixed.h"</u></td></tr>
+<tr><th id="35">35</th><td><u>#<span data-ppcond="33">endif</span></u></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="m_fixed.h.html">"m_fixed.h"</a></u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><i>// Fixme. __USE_C_FIXED__ or something.</i></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a></td></tr>
+<tr><th id="44">44</th><td><dfn class="decl def" id="FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</dfn></td></tr>
+<tr><th id="45">45</th><td>( <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col1 decl" id="1a" title='a' data-type='fixed_t' data-ref="1a">a</dfn>,</td></tr>
+<tr><th id="46">46</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col2 decl" id="2b" title='b' data-type='fixed_t' data-ref="2b">b</dfn> )</td></tr>
+<tr><th id="47">47</th><td>{</td></tr>
+<tr><th id="48">48</th><td>    <b>return</b> ((<em>long</em> <em>long</em>) <a class="local col1 ref" href="#1a" title='a' data-ref="1a">a</a> * (<em>long</em> <em>long</em>) <a class="local col2 ref" href="#2b" title='b' data-ref="2b">b</a>) &gt;&gt; <a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>;</td></tr>
+<tr><th id="49">49</th><td>}</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><i>//</i></td></tr>
+<tr><th id="54">54</th><td><i>// FixedDiv, C version.</i></td></tr>
+<tr><th id="55">55</th><td><i>//</i></td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a></td></tr>
+<tr><th id="58">58</th><td><dfn class="decl def" id="FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</dfn></td></tr>
+<tr><th id="59">59</th><td>( <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col3 decl" id="3a" title='a' data-type='fixed_t' data-ref="3a">a</dfn>,</td></tr>
+<tr><th id="60">60</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col4 decl" id="4b" title='b' data-type='fixed_t' data-ref="4b">b</dfn> )</td></tr>
+<tr><th id="61">61</th><td>{</td></tr>
+<tr><th id="62">62</th><td>    <b>if</b> ( (<a class="ref" href="../include/stdlib.h.html#abs" title='abs' data-ref="abs">abs</a>(<a class="local col3 ref" href="#3a" title='a' data-ref="3a">a</a>)&gt;&gt;<var>14</var>) &gt;= <a class="ref" href="../include/stdlib.h.html#abs" title='abs' data-ref="abs">abs</a>(<a class="local col4 ref" href="#4b" title='b' data-ref="4b">b</a>))</td></tr>
+<tr><th id="63">63</th><td>	<b>return</b> (<a class="local col3 ref" href="#3a" title='a' data-ref="3a">a</a>^<a class="local col4 ref" href="#4b" title='b' data-ref="4b">b</a>)&lt;<var>0</var> ? <a class="macro" href="../include/values.h.html#40" title="(-2147483647 -1)" data-ref="_M/MININT">MININT</a> : <a class="macro" href="../include/values.h.html#44" title="2147483647" data-ref="_M/MAXINT">MAXINT</a>;</td></tr>
+<tr><th id="64">64</th><td>    <b>return</b> <a class="ref" href="#FixedDiv2" title='FixedDiv2' data-ref="FixedDiv2">FixedDiv2</a> (<a class="local col3 ref" href="#3a" title='a' data-ref="3a">a</a>,<a class="local col4 ref" href="#4b" title='b' data-ref="4b">b</a>);</td></tr>
+<tr><th id="65">65</th><td>}</td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a></td></tr>
+<tr><th id="70">70</th><td><dfn class="decl def" id="FixedDiv2" title='FixedDiv2' data-ref="FixedDiv2">FixedDiv2</dfn></td></tr>
+<tr><th id="71">71</th><td>( <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col5 decl" id="5a" title='a' data-type='fixed_t' data-ref="5a">a</dfn>,</td></tr>
+<tr><th id="72">72</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col6 decl" id="6b" title='b' data-type='fixed_t' data-ref="6b">b</dfn> )</td></tr>
+<tr><th id="73">73</th><td>{</td></tr>
+<tr><th id="74">74</th><td><u>#<span data-ppcond="74">if</span> 0</u></td></tr>
+<tr><th id="75">75</th><td>    <em>long</em> <em>long</em> c;</td></tr>
+<tr><th id="76">76</th><td>    c = ((<em>long</em> <em>long</em>)a&lt;&lt;<var>16</var>) / ((<em>long</em> <em>long</em>)b);</td></tr>
+<tr><th id="77">77</th><td>    <b>return</b> (fixed_t) c;</td></tr>
+<tr><th id="78">78</th><td><u>#<span data-ppcond="74">endif</span></u></td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td>    <em>double</em> <dfn class="local col7 decl" id="7c" title='c' data-type='double' data-ref="7c">c</dfn>;</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td>    <a class="local col7 ref" href="#7c" title='c' data-ref="7c">c</a> = ((<em>double</em>)<a class="local col5 ref" href="#5a" title='a' data-ref="5a">a</a>) / ((<em>double</em>)<a class="local col6 ref" href="#6b" title='b' data-ref="6b">b</a>) * <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td>    <b>if</b> (<a class="local col7 ref" href="#7c" title='c' data-ref="7c">c</a> &gt;= <var>2147483648.0</var> || <a class="local col7 ref" href="#7c" title='c' data-ref="7c">c</a> &lt; -<var>2147483648.0</var>)</td></tr>
+<tr><th id="85">85</th><td>	<a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a>(<q>"FixedDiv: divide by zero"</q>);</td></tr>
+<tr><th id="86">86</th><td>    <b>return</b> (<a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>) <a class="local col7 ref" href="#7c" title='c' data-ref="7c">c</a>;</td></tr>
+<tr><th id="87">87</th><td>}</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

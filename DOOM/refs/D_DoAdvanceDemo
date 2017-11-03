@@ -1,0 +1,9 @@
+<dec f='codebrowser/d_main.c' l='132' type='void D_DoAdvanceDemo()'/>
+<use f='codebrowser/d_main.c' l='381' u='c' c='D_DoomLoop'/>
+<def f='codebrowser/d_main.c' l='454' ll='518' type='void D_DoAdvanceDemo()'/>
+<doc f='codebrowser/d_main.c' l='450'>//
+// This cycles through the demo sequences.
+// FIXME - version dependend demo numbers?
+//</doc>
+<dec f='codebrowser/d_net.c' l='80' type='void D_DoAdvanceDemo()'/>
+<use f='codebrowser/d_net.c' l='743' u='c' c='TryRunTics'/>

@@ -1,0 +1,101 @@
+<dec f='codebrowser/p_mobj.h' l='124' type='4'/>
+<doc f='codebrowser/p_mobj.h' l='123'>// Can be hit.</doc>
+<use f='codebrowser/info.c' l='1130' u='r'/>
+<use f='codebrowser/info.c' l='1130' u='r'/>
+<use f='codebrowser/info.c' l='1156' u='r'/>
+<use f='codebrowser/info.c' l='1156' u='r'/>
+<use f='codebrowser/info.c' l='1182' u='r'/>
+<use f='codebrowser/info.c' l='1182' u='r'/>
+<use f='codebrowser/info.c' l='1208' u='r'/>
+<use f='codebrowser/info.c' l='1208' u='r'/>
+<use f='codebrowser/info.c' l='1260' u='r'/>
+<use f='codebrowser/info.c' l='1260' u='r'/>
+<use f='codebrowser/info.c' l='1338' u='r'/>
+<use f='codebrowser/info.c' l='1338' u='r'/>
+<use f='codebrowser/info.c' l='1390' u='r'/>
+<use f='codebrowser/info.c' l='1390' u='r'/>
+<use f='codebrowser/info.c' l='1416' u='r'/>
+<use f='codebrowser/info.c' l='1416' u='r'/>
+<use f='codebrowser/info.c' l='1442' u='r'/>
+<use f='codebrowser/info.c' l='1442' u='r'/>
+<use f='codebrowser/info.c' l='1468' u='r'/>
+<use f='codebrowser/info.c' l='1468' u='r'/>
+<use f='codebrowser/info.c' l='1494' u='r'/>
+<use f='codebrowser/info.c' l='1494' u='r'/>
+<use f='codebrowser/info.c' l='1520' u='r'/>
+<use f='codebrowser/info.c' l='1520' u='r'/>
+<use f='codebrowser/info.c' l='1572' u='r'/>
+<use f='codebrowser/info.c' l='1572' u='r'/>
+<use f='codebrowser/info.c' l='1598' u='r'/>
+<use f='codebrowser/info.c' l='1598' u='r'/>
+<use f='codebrowser/info.c' l='1624' u='r'/>
+<use f='codebrowser/info.c' l='1624' u='r'/>
+<use f='codebrowser/info.c' l='1650' u='r'/>
+<use f='codebrowser/info.c' l='1650' u='r'/>
+<use f='codebrowser/info.c' l='1676' u='r'/>
+<use f='codebrowser/info.c' l='1676' u='r'/>
+<use f='codebrowser/info.c' l='1702' u='r'/>
+<use f='codebrowser/info.c' l='1702' u='r'/>
+<use f='codebrowser/info.c' l='1728' u='r'/>
+<use f='codebrowser/info.c' l='1728' u='r'/>
+<use f='codebrowser/info.c' l='1754' u='r'/>
+<use f='codebrowser/info.c' l='1754' u='r'/>
+<use f='codebrowser/info.c' l='1780' u='r'/>
+<use f='codebrowser/info.c' l='1780' u='r'/>
+<use f='codebrowser/info.c' l='1910' u='r'/>
+<use f='codebrowser/info.c' l='1910' u='r'/>
+<use f='codebrowser/info.c' l='1130' u='r'/>
+<use f='codebrowser/info.c' l='1130' u='r'/>
+<use f='codebrowser/info.c' l='1156' u='r'/>
+<use f='codebrowser/info.c' l='1156' u='r'/>
+<use f='codebrowser/info.c' l='1182' u='r'/>
+<use f='codebrowser/info.c' l='1182' u='r'/>
+<use f='codebrowser/info.c' l='1208' u='r'/>
+<use f='codebrowser/info.c' l='1208' u='r'/>
+<use f='codebrowser/info.c' l='1260' u='r'/>
+<use f='codebrowser/info.c' l='1260' u='r'/>
+<use f='codebrowser/info.c' l='1338' u='r'/>
+<use f='codebrowser/info.c' l='1338' u='r'/>
+<use f='codebrowser/info.c' l='1390' u='r'/>
+<use f='codebrowser/info.c' l='1390' u='r'/>
+<use f='codebrowser/info.c' l='1416' u='r'/>
+<use f='codebrowser/info.c' l='1416' u='r'/>
+<use f='codebrowser/info.c' l='1442' u='r'/>
+<use f='codebrowser/info.c' l='1442' u='r'/>
+<use f='codebrowser/info.c' l='1468' u='r'/>
+<use f='codebrowser/info.c' l='1468' u='r'/>
+<use f='codebrowser/info.c' l='1494' u='r'/>
+<use f='codebrowser/info.c' l='1494' u='r'/>
+<use f='codebrowser/info.c' l='1520' u='r'/>
+<use f='codebrowser/info.c' l='1520' u='r'/>
+<use f='codebrowser/info.c' l='1572' u='r'/>
+<use f='codebrowser/info.c' l='1572' u='r'/>
+<use f='codebrowser/info.c' l='1598' u='r'/>
+<use f='codebrowser/info.c' l='1598' u='r'/>
+<use f='codebrowser/info.c' l='1624' u='r'/>
+<use f='codebrowser/info.c' l='1624' u='r'/>
+<use f='codebrowser/info.c' l='1650' u='r'/>
+<use f='codebrowser/info.c' l='1650' u='r'/>
+<use f='codebrowser/info.c' l='1676' u='r'/>
+<use f='codebrowser/info.c' l='1676' u='r'/>
+<use f='codebrowser/info.c' l='1702' u='r'/>
+<use f='codebrowser/info.c' l='1702' u='r'/>
+<use f='codebrowser/info.c' l='1728' u='r'/>
+<use f='codebrowser/info.c' l='1728' u='r'/>
+<use f='codebrowser/info.c' l='1754' u='r'/>
+<use f='codebrowser/info.c' l='1754' u='r'/>
+<use f='codebrowser/info.c' l='1780' u='r'/>
+<use f='codebrowser/info.c' l='1780' u='r'/>
+<use f='codebrowser/info.c' l='1910' u='r'/>
+<use f='codebrowser/info.c' l='1910' u='r'/>
+<use f='codebrowser/p_enemy.c' l='612' u='r' c='A_Look'/>
+<use f='codebrowser/p_enemy.c' l='705' u='r' c='A_Chase'/>
+<use f='codebrowser/p_inter.c' l='675' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='787' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_map.c' l='85' u='r' c='PIT_StompThing'/>
+<use f='codebrowser/p_map.c' l='258' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='316' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='867' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='979' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1170' u='r' c='PIT_RadiusAttack'/>
+<use f='codebrowser/p_map.c' l='1290' u='r' c='PIT_ChangeSector'/>

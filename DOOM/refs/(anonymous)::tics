@@ -1,0 +1,18 @@
+<dec f='codebrowser/info.h' l='1151' type='long'/>
+<dec f='codebrowser/p_pspr.h' l='71' type='int'/>
+<offset>64</offset>
+<use f='codebrowser/f_finale.c' l='382' u='r' c='F_StartCast'/>
+<use f='codebrowser/f_finale.c' l='403' u='r' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='492' u='r' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='513' u='r' c='F_CastResponder'/>
+<use f='codebrowser/g_game.c' l='1424' u='w' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1432' u='w' c='G_InitNew'/>
+<use f='codebrowser/p_enemy.c' l='1920' u='r' c='A_BrainSpit'/>
+<use f='codebrowser/p_mobj.c' l='71' u='r' c='P_SetMobjState'/>
+<use f='codebrowser/p_mobj.c' l='512' u='r' c='P_SpawnMobj'/>
+<use f='codebrowser/p_pspr.c' l='80' u='w' c='P_SetPsprite'/>
+<use f='codebrowser/p_pspr.c' l='80' u='r' c='P_SetPsprite'/>
+<use f='codebrowser/p_pspr.c' l='100' u='r' c='P_SetPsprite'/>
+<use f='codebrowser/p_pspr.c' l='866' u='r' c='P_MovePsprites'/>
+<use f='codebrowser/p_pspr.c' l='868' u='w' c='P_MovePsprites'/>
+<use f='codebrowser/p_pspr.c' l='869' u='r' c='P_MovePsprites'/>

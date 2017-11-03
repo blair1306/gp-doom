@@ -1,0 +1,8 @@
+<dec f='codebrowser/i_sound.h' l='59' type='int I_GetSfxLumpNum(sfxinfo_t * sfxinfo)'/>
+<doc f='codebrowser/i_sound.h' l='58'>// Get raw data lump index for sound descriptor.</doc>
+<def f='codebrowser/i_sound.c' l='452' ll='457' type='int I_GetSfxLumpNum(sfxinfo_t * sfx)'/>
+<doc f='codebrowser/i_sound.c' l='448'>//
+// Retrieve the raw data lump index
+//  for a given SFX name.
+//</doc>
+<use f='codebrowser/s_sound.c' l='365' u='c' c='S_StartSoundAtVolume'/>

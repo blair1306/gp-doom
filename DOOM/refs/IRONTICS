@@ -1,0 +1,2 @@
+<dec f='codebrowser/doomdef.h' l='238' type='2100'/>
+<use f='codebrowser/p_inter.c' l='315' u='r' c='P_GivePower'/>

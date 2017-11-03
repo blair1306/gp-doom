@@ -1,0 +1,3 @@
+<dec f='codebrowser/doomdef.h' l='56' type='3'/>
+<doc f='codebrowser/doomdef.h' l='56'>// Plutonia pack</doc>
+<use f='codebrowser/g_game.c' l='460' u='r' c='G_DoLoadLevel'/>

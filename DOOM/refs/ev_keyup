@@ -1,0 +1,9 @@
+<dec f='codebrowser/d_event.h' l='38' type='1'/>
+<use f='codebrowser/am_map.c' l='461' u='r' c='AM_initVariables'/>
+<use f='codebrowser/am_map.c' l='461' u='r' c='AM_initVariables'/>
+<use f='codebrowser/am_map.c' l='562' u='r' c='AM_Stop'/>
+<use f='codebrowser/am_map.c' l='562' u='r' c='AM_Stop'/>
+<use f='codebrowser/am_map.c' l='708' u='r' c='AM_Responder'/>
+<use f='codebrowser/g_game.c' l='570' c='G_Responder'/>
+<use f='codebrowser/i_video.c' l='210' u='r' c='I_GetEvent'/>
+<use f='codebrowser/st_stuff.c' l='523' u='r' c='ST_Responder'/>

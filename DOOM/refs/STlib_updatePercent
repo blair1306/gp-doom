@@ -1,0 +1,4 @@
+<dec f='codebrowser/st_lib.h' l='184' type='void STlib_updatePercent(st_percent_t * per, int refresh)'/>
+<def f='codebrowser/st_lib.c' l='179' ll='188' type='void STlib_updatePercent(st_percent_t * per, int refresh)'/>
+<use f='codebrowser/st_stuff.c' l='1072' u='c' c='ST_drawWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1073' u='c' c='ST_drawWidgets'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/r_defs.h' l='186' type='fixed_t'/>
+<offset>128</offset>
+<doc f='codebrowser/r_defs.h' l='185'>// Precalculated v2 - v1 for side checking.</doc>
+<use f='codebrowser/p_map.c' l='610' u='r' c='P_HitSlideLine'/>
+<use f='codebrowser/p_maputl.c' l='76' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='86' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='88' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='95' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='122' u='r' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='217' u='r' c='P_MakeDivline'/>
+<use f='codebrowser/p_setup.c' l='380' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='383' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='389' u='r' c='P_LoadLineDefs'/>

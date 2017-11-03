@@ -1,0 +1,3 @@
+<def f='codebrowser/f_wipe.c' l='140' ll='169' type='int wipe_initMelt(int width, int height, int ticks)'/>
+<use f='codebrowser/f_wipe.c' l='274' u='r' c='wipe_ScreenWipe'/>
+<use f='codebrowser/f_wipe.c' l='274' u='r' c='wipe_ScreenWipe'/>

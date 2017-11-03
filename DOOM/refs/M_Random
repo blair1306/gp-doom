@@ -1,0 +1,12 @@
+<dec f='codebrowser/m_random.h' l='33' type='int M_Random()'/>
+<use f='codebrowser/f_wipe.c' l='159' u='c' c='wipe_initMelt'/>
+<use f='codebrowser/f_wipe.c' l='162' u='c' c='wipe_initMelt'/>
+<doc f='codebrowser/m_random.h' l='31'>// Returns a number from 0 to 255,
+// from a lookup table.</doc>
+<def f='codebrowser/m_random.c' l='63' ll='67' type='int M_Random()'/>
+<use f='codebrowser/s_sound.c' l='330' u='c' c='S_StartSoundAtVolume'/>
+<use f='codebrowser/s_sound.c' l='340' u='c' c='S_StartSoundAtVolume'/>
+<use f='codebrowser/st_stuff.c' l='992' u='c' c='ST_Ticker'/>
+<use f='codebrowser/wi_stuff.c' l='523' u='c' c='WI_initAnimatedBack'/>
+<use f='codebrowser/wi_stuff.c' l='525' u='c' c='WI_initAnimatedBack'/>
+<use f='codebrowser/wi_stuff.c' l='561' u='c' c='WI_updateAnimatedBack'/>

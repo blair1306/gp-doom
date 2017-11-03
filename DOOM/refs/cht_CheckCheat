@@ -1,0 +1,18 @@
+<dec f='codebrowser/m_cheat.h' l='42' type='int cht_CheckCheat(cheatseq_t * cht, char key)'/>
+<use f='codebrowser/am_map.c' l='701' u='c' c='AM_Responder'/>
+<def f='codebrowser/m_cheat.c' l='42' ll='75' type='int cht_CheckCheat(cheatseq_t * cht, char key)'/>
+<doc f='codebrowser/m_cheat.c' l='38'>//
+// Called in st_stuff module, which handles the input.
+// Returns a 1 if the cheat was successful, 0 if failed.
+//</doc>
+<use f='codebrowser/st_stuff.c' l='549' u='c' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='564' u='c' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='578' u='c' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='595' u='c' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='625' u='c' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='626' u='c' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='638' u='c' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='652' u='c' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='657' u='c' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='664' u='c' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='676' u='c' c='ST_Responder'/>

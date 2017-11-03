@@ -1,0 +1,12 @@
+<dec f='codebrowser/p_spec.h' l='99' type='int P_FindSectorFromLineTag(line_t * line, int start)'/>
+<use f='codebrowser/p_ceilng.c' l='195' u='c' c='EV_DoCeiling'/>
+<use f='codebrowser/p_doors.c' l='275' u='c' c='EV_DoDoor'/>
+<use f='codebrowser/p_floor.c' l='272' u='c' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='475' u='c' c='EV_BuildStairs'/>
+<use f='codebrowser/p_lights.c' l='221' u='c' c='EV_StartLightStrobing'/>
+<use f='codebrowser/p_plats.c' l='164' u='c' c='EV_DoPlat'/>
+<def f='codebrowser/p_spec.c' l='433' ll='445' type='int P_FindSectorFromLineTag(line_t * line, int start)'/>
+<use f='codebrowser/p_spec.c' l='1175' u='c' c='EV_DoDonut'/>
+<doc f='codebrowser/p_spec.c' l='430'>//
+// RETURN NEXT SECTOR # THAT LINE TAG REFERS TO
+//</doc>

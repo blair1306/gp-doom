@@ -1,0 +1,9 @@
+<def f='codebrowser/r_bsp.c' l='196' ll='238' type='void R_ClipPassWallSegment(int first, int last)'/>
+<use f='codebrowser/r_bsp.c' l='351' u='c' c='R_AddLine'/>
+<doc f='codebrowser/r_bsp.c' l='189'>//
+// R_ClipPassWallSegment
+// Clips the given range of columns,
+//  but does not includes it in the clip list.
+// Does handle windows,
+//  e.g. LineDefs with upper and lower texture.
+//</doc>

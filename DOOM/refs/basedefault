@@ -1,0 +1,14 @@
+<dec f='codebrowser/doomstat.h' l='244' type='char [1024]'/>
+<doc f='codebrowser/doomstat.h' l='239'>//-----------------------------------------
+// Internal parameters, used for engine.
+//
+
+// File handling stuff.</doc>
+<def f='codebrowser/d_main.c' l='126' type='char [1024]'/>
+<use f='codebrowser/d_main.c' l='614' u='r' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='624' u='r' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='636' u='r' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='654' u='r' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='881' u='r' c='D_DoomMain'/>
+<doc f='codebrowser/d_main.c' l='126'>// default file</doc>
+<use f='codebrowser/m_misc.c' l='367' u='r' c='M_LoadDefaults'/>

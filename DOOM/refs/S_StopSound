@@ -1,0 +1,5 @@
+<dec f='codebrowser/s_sound.h' l='74' type='void S_StopSound(void * origin)'/>
+<doc f='codebrowser/s_sound.h' l='73'>// Stop sound for thing at &lt;origin&gt;</doc>
+<use f='codebrowser/p_mobj.c' l='566' u='c' c='P_RemoveMobj'/>
+<use f='codebrowser/s_sound.c' l='349' u='c' c='S_StartSoundAtVolume'/>
+<def f='codebrowser/s_sound.c' l='471' ll='484' type='void S_StopSound(void * origin)'/>

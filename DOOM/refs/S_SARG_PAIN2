@@ -1,0 +1,7 @@
+<dec f='codebrowser/info.h' l='665' type='489'/>
+<use f='codebrowser/g_game.c' l='1423' u='r' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1431' u='r' c='G_InitNew'/>
+<use f='codebrowser/info.c' l='624'/>
+<use f='codebrowser/info.c' l='624'/>
+<use f='codebrowser/info.c' l='624'/>
+<use f='codebrowser/info.c' l='624'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_spec.h' l='241'/>
+<doc f='codebrowser/p_spec.h' l='240'>// max # of wall switches in a level</doc>
+<use f='codebrowser/p_switch.c' l='99' u='c'/>
+<use f='codebrowser/p_switch.c' l='121' u='c'/>

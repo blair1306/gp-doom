@@ -1,0 +1,10 @@
+<dec f='codebrowser/d_event.h' l='112' type='int'/>
+<def f='codebrowser/d_main.c' l='143' type='int'/>
+<use f='codebrowser/d_main.c' l='170' u='r' c='D_ProcessEvents'/>
+<use f='codebrowser/d_main.c' l='170' u='w' c='D_ProcessEvents'/>
+<use f='codebrowser/d_main.c' l='170' u='w' c='D_ProcessEvents'/>
+<use f='codebrowser/d_main.c' l='172' u='r' c='D_ProcessEvents'/>
+<use f='codebrowser/d_net.c' l='463' u='r' c='CheckAbort'/>
+<use f='codebrowser/d_net.c' l='464' u='w' c='CheckAbort'/>
+<use f='codebrowser/d_net.c' l='464' u='w' c='CheckAbort'/>
+<use f='codebrowser/d_net.c' l='466' u='r' c='CheckAbort'/>

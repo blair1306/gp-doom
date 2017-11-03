@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/bits/shm.h' l='67' type='shmatt_t'/>
+<use f='codebrowser/i_video.c' l='615' u='r' c='grabsharedmemory'/>
+<offset>704</offset>
+<doc f='include/x86_64-linux-gnu/bits/shm.h' l='67'>/* number of current attaches */</doc>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/d_event.h' l='80' type='128'/>
+<doc f='codebrowser/d_event.h' l='79'>// Flag: game events, not really buttons.</doc>
+<use f='codebrowser/d_net.c' l='760' u='r' c='TryRunTics'/>
+<use f='codebrowser/g_game.c' l='429' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='435' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='702' u='r' c='G_Ticker'/>
+<use f='codebrowser/p_user.c' l='280' u='r' c='P_PlayerThink'/>

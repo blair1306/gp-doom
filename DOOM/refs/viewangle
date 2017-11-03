@@ -1,0 +1,16 @@
+<dec f='codebrowser/r_state.h' l='107' type='angle_t'/>
+<use f='codebrowser/r_bsp.c' l='284' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='285' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='428' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='429' u='r' c='R_CheckBBox'/>
+<def f='codebrowser/r_main.c' l='79' type='angle_t'/>
+<use f='codebrowser/r_main.c' l='480' u='r' c='R_ScaleFromGlobalAngle'/>
+<use f='codebrowser/r_main.c' l='837' u='w' c='R_SetupFrame'/>
+<use f='codebrowser/r_main.c' l='842' u='r' c='R_SetupFrame'/>
+<use f='codebrowser/r_main.c' l='843' u='r' c='R_SetupFrame'/>
+<use f='codebrowser/r_plane.c' l='156' u='r' c='R_MapPlane'/>
+<use f='codebrowser/r_plane.c' l='204' u='r' c='R_ClearPlanes'/>
+<use f='codebrowser/r_plane.c' l='413' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_segs.c' l='420' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='424' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='636' u='r' c='R_StoreWallRange'/>

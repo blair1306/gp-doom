@@ -1,0 +1,9 @@
+<dec f='codebrowser/hu_lib.h' l='51' type='patch_t **'/>
+<use f='codebrowser/hu_lib.c' l='63' u='w' c='HUlib_initTextLine'/>
+<use f='codebrowser/hu_lib.c' l='119' u='r' c='HUlib_drawTextLine'/>
+<use f='codebrowser/hu_lib.c' l='122' u='r' c='HUlib_drawTextLine'/>
+<use f='codebrowser/hu_lib.c' l='135' u='r' c='HUlib_drawTextLine'/>
+<use f='codebrowser/hu_lib.c' l='137' u='r' c='HUlib_drawTextLine'/>
+<use f='codebrowser/hu_lib.c' l='157' u='r' c='HUlib_eraseTextLine'/>
+<offset>64</offset>
+<doc f='codebrowser/hu_lib.h' l='51'>// font</doc>

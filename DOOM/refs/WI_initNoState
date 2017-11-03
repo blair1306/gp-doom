@@ -1,0 +1,5 @@
+<def f='codebrowser/wi_stuff.c' l='730' ll='735' type='void WI_initNoState()'/>
+<use f='codebrowser/wi_stuff.c' l='766' u='c' c='WI_updateShowNextLoc'/>
+<use f='codebrowser/wi_stuff.c' l='964' u='c' c='WI_updateDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1244' u='c' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1420' u='c' c='WI_updateStats'/>

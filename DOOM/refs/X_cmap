@@ -1,0 +1,4 @@
+<def f='codebrowser/i_video.c' l='64' type='Colormap'/>
+<use f='codebrowser/i_video.c' l='584' u='r' c='I_SetPalette'/>
+<use f='codebrowser/i_video.c' l='793' u='w' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='804' u='r' c='I_InitGraphics'/>

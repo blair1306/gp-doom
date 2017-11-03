@@ -1,0 +1,16 @@
+<dec f='codebrowser/r_state.h' l='79' type='vertex_t *'/>
+<use f='codebrowser/am_map.c' l='400' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='401' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='402' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='403' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='405' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='406' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='407' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='408' u='r' c='AM_findMinMaxBoundaries'/>
+<def f='codebrowser/p_setup.c' l='57' type='vertex_t *'/>
+<use f='codebrowser/p_setup.c' l='134' u='w' c='P_LoadVertexes'/>
+<use f='codebrowser/p_setup.c' l='140' u='r' c='P_LoadVertexes'/>
+<use f='codebrowser/p_setup.c' l='178' u='r' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='179' u='r' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='378' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='379' u='r' c='P_LoadLineDefs'/>

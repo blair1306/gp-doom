@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>d_player.h source code [codebrowser/d_player.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="player_s "/>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/d_player.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='d_player.h.html'>d_player.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>// DESCRIPTION:</i></td></tr>
+<tr><th id="18">18</th><td><i>//</i></td></tr>
+<tr><th id="19">19</th><td><i>//</i></td></tr>
+<tr><th id="20">20</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="23">ifndef</span> <span class="macro" data-ref="_M/__D_PLAYER__">__D_PLAYER__</span></u></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/__D_PLAYER__" data-ref="_M/__D_PLAYER__">__D_PLAYER__</dfn></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><i>// The player data structure depends on a number</i></td></tr>
+<tr><th id="28">28</th><td><i>// of other structs: items (internal inventory),</i></td></tr>
+<tr><th id="29">29</th><td><i>// animation states (closely tied to the sprites</i></td></tr>
+<tr><th id="30">30</th><td><i>// used to represent them, unfortunately).</i></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="d_items.h.html">"d_items.h"</a></u></td></tr>
+<tr><th id="32">32</th><td><u>#include <a href="p_pspr.h.html">"p_pspr.h"</a></u></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><i>// In addition, the player is just a special</i></td></tr>
+<tr><th id="35">35</th><td><i>// case of the generic moving object/actor.</i></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="p_mobj.h.html">"p_mobj.h"</a></u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><i>// Finally, for odd reasons, the player input</i></td></tr>
+<tr><th id="39">39</th><td><i>// is buffered within the player data struct,</i></td></tr>
+<tr><th id="40">40</th><td><i>// as commands per game tick.</i></td></tr>
+<tr><th id="41">41</th><td><u>#include <a href="d_ticcmd.h.html">"d_ticcmd.h"</a></u></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><u>#<span data-ppcond="43">ifdef</span> <span class="macro" data-ref="_M/__GNUG__">__GNUG__</span></u></td></tr>
+<tr><th id="44">44</th><td><u>#pragma interface</u></td></tr>
+<tr><th id="45">45</th><td><u>#<span data-ppcond="43">endif</span></u></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><i>//</i></td></tr>
+<tr><th id="51">51</th><td><i>// Player states.</i></td></tr>
+<tr><th id="52">52</th><td><i>//</i></td></tr>
+<tr><th id="53">53</th><td><b>typedef</b> <b>enum</b></td></tr>
+<tr><th id="54">54</th><td>{</td></tr>
+<tr><th id="55">55</th><td>    <i>// Playing or camping.</i></td></tr>
+<tr><th id="56">56</th><td>    <dfn class="enum" id="PST_LIVE" title='PST_LIVE' data-ref="PST_LIVE">PST_LIVE</dfn>,</td></tr>
+<tr><th id="57">57</th><td>    <i>// Dead on the ground, view follows killer.</i></td></tr>
+<tr><th id="58">58</th><td>    <dfn class="enum" id="PST_DEAD" title='PST_DEAD' data-ref="PST_DEAD">PST_DEAD</dfn>,</td></tr>
+<tr><th id="59">59</th><td>    <i>// Ready to restart/respawn???</i></td></tr>
+<tr><th id="60">60</th><td>    <dfn class="enum" id="PST_REBORN" title='PST_REBORN' data-ref="PST_REBORN">PST_REBORN</dfn>		</td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td>} <dfn class="typedef" id="playerstate_t" title='playerstate_t' data-type='enum playerstate_t' data-ref="playerstate_t">playerstate_t</dfn>;</td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><i>//</i></td></tr>
+<tr><th id="66">66</th><td><i>// Player internal flags, for cheats and debug.</i></td></tr>
+<tr><th id="67">67</th><td><i>//</i></td></tr>
+<tr><th id="68">68</th><td><b>typedef</b> <b>enum</b></td></tr>
+<tr><th id="69">69</th><td>{</td></tr>
+<tr><th id="70">70</th><td>    <i>// No clipping, walk through barriers.</i></td></tr>
+<tr><th id="71">71</th><td>    <dfn class="enum" id="CF_NOCLIP" title='CF_NOCLIP' data-ref="CF_NOCLIP">CF_NOCLIP</dfn>		= <var>1</var>,</td></tr>
+<tr><th id="72">72</th><td>    <i>// No damage, no health loss.</i></td></tr>
+<tr><th id="73">73</th><td>    <dfn class="enum" id="CF_GODMODE" title='CF_GODMODE' data-ref="CF_GODMODE">CF_GODMODE</dfn>		= <var>2</var>,</td></tr>
+<tr><th id="74">74</th><td>    <i>// Not really a cheat, just a debug aid.</i></td></tr>
+<tr><th id="75">75</th><td>    <dfn class="enum" id="CF_NOMOMENTUM" title='CF_NOMOMENTUM' data-ref="CF_NOMOMENTUM">CF_NOMOMENTUM</dfn>	= <var>4</var></td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td>} <dfn class="typedef" id="cheat_t" title='cheat_t' data-type='enum cheat_t' data-ref="cheat_t">cheat_t</dfn>;</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><i>//</i></td></tr>
+<tr><th id="81">81</th><td><i>// Extended player object info: player_t</i></td></tr>
+<tr><th id="82">82</th><td><i>//</i></td></tr>
+<tr><th id="83">83</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="player_s" title='player_s' data-ref="player_s"><a class="type" href="#player_s" title='player_s' data-ref="player_s">player_s</a></dfn></td></tr>
+<tr><th id="84">84</th><td>{</td></tr>
+<tr><th id="85">85</th><td>    <a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>*		<dfn class="decl" id="player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</dfn>;</td></tr>
+<tr><th id="86">86</th><td>    <a class="typedef" href="#playerstate_t" title='playerstate_t' data-type='enum playerstate_t' data-ref="playerstate_t">playerstate_t</a>	<dfn class="decl" id="player_s::playerstate" title='player_s::playerstate' data-ref="player_s::playerstate">playerstate</dfn>;</td></tr>
+<tr><th id="87">87</th><td>    <a class="typedef" href="d_ticcmd.h.html#ticcmd_t" title='ticcmd_t' data-type='struct ticcmd_t' data-ref="ticcmd_t">ticcmd_t</a>		<dfn class="decl" id="player_s::cmd" title='player_s::cmd' data-ref="player_s::cmd">cmd</dfn>;</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td>    <i>// Determine POV,</i></td></tr>
+<tr><th id="90">90</th><td><i>    //  including viewpoint bobbing during movement.</i></td></tr>
+<tr><th id="91">91</th><td><i>    // Focal origin above r.z</i></td></tr>
+<tr><th id="92">92</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="decl" id="player_s::viewz" title='player_s::viewz' data-ref="player_s::viewz">viewz</dfn>;</td></tr>
+<tr><th id="93">93</th><td>    <i>// Base height above floor for viewz.</i></td></tr>
+<tr><th id="94">94</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="decl" id="player_s::viewheight" title='player_s::viewheight' data-ref="player_s::viewheight">viewheight</dfn>;</td></tr>
+<tr><th id="95">95</th><td>    <i>// Bob/squat speed.</i></td></tr>
+<tr><th id="96">96</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>         	<dfn class="decl" id="player_s::deltaviewheight" title='player_s::deltaviewheight' data-ref="player_s::deltaviewheight">deltaviewheight</dfn>;</td></tr>
+<tr><th id="97">97</th><td>    <i>// bounded/scaled total momentum.</i></td></tr>
+<tr><th id="98">98</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>         	<dfn class="decl" id="player_s::bob" title='player_s::bob' data-ref="player_s::bob">bob</dfn>;	</td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td>    <i>// This is only used between levels,</i></td></tr>
+<tr><th id="101">101</th><td><i>    // mo-&gt;health is used during levels.</i></td></tr>
+<tr><th id="102">102</th><td>    <em>int</em>			<dfn class="decl" id="player_s::health" title='player_s::health' data-ref="player_s::health">health</dfn>;	</td></tr>
+<tr><th id="103">103</th><td>    <em>int</em>			<dfn class="decl" id="player_s::armorpoints" title='player_s::armorpoints' data-ref="player_s::armorpoints">armorpoints</dfn>;</td></tr>
+<tr><th id="104">104</th><td>    <i>// Armor type is 0-2.</i></td></tr>
+<tr><th id="105">105</th><td>    <em>int</em>			<dfn class="decl" id="player_s::armortype" title='player_s::armortype' data-ref="player_s::armortype">armortype</dfn>;	</td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td>    <i>// Power ups. invinc and invis are tic counters.</i></td></tr>
+<tr><th id="108">108</th><td>    <em>int</em>			<dfn class="decl" id="player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</dfn>[<a class="enum" href="doomdef.h.html#NUMPOWERS" title='NUMPOWERS' data-ref="NUMPOWERS">NUMPOWERS</a>];</td></tr>
+<tr><th id="109">109</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="decl" id="player_s::cards" title='player_s::cards' data-ref="player_s::cards">cards</dfn>[<a class="enum" href="doomdef.h.html#NUMCARDS" title='NUMCARDS' data-ref="NUMCARDS">NUMCARDS</a>];</td></tr>
+<tr><th id="110">110</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="decl" id="player_s::backpack" title='player_s::backpack' data-ref="player_s::backpack">backpack</dfn>;</td></tr>
+<tr><th id="111">111</th><td>    </td></tr>
+<tr><th id="112">112</th><td>    <i>// Frags, kills of other players.</i></td></tr>
+<tr><th id="113">113</th><td>    <em>int</em>			<dfn class="decl" id="player_s::frags" title='player_s::frags' data-ref="player_s::frags">frags</dfn>[<a class="macro" href="doomdef.h.html#119" title="4" data-ref="_M/MAXPLAYERS">MAXPLAYERS</a>];</td></tr>
+<tr><th id="114">114</th><td>    <a class="typedef" href="doomdef.h.html#weapontype_t" title='weapontype_t' data-type='enum weapontype_t' data-ref="weapontype_t">weapontype_t</a>	<dfn class="decl" id="player_s::readyweapon" title='player_s::readyweapon' data-ref="player_s::readyweapon">readyweapon</dfn>;</td></tr>
+<tr><th id="115">115</th><td>    </td></tr>
+<tr><th id="116">116</th><td>    <i>// Is wp_nochange if not changing.</i></td></tr>
+<tr><th id="117">117</th><td>    <a class="typedef" href="doomdef.h.html#weapontype_t" title='weapontype_t' data-type='enum weapontype_t' data-ref="weapontype_t">weapontype_t</a>	<dfn class="decl" id="player_s::pendingweapon" title='player_s::pendingweapon' data-ref="player_s::pendingweapon">pendingweapon</dfn>;</td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="decl" id="player_s::weaponowned" title='player_s::weaponowned' data-ref="player_s::weaponowned">weaponowned</dfn>[<a class="enum" href="doomdef.h.html#NUMWEAPONS" title='NUMWEAPONS' data-ref="NUMWEAPONS">NUMWEAPONS</a>];</td></tr>
+<tr><th id="120">120</th><td>    <em>int</em>			<dfn class="decl" id="player_s::ammo" title='player_s::ammo' data-ref="player_s::ammo">ammo</dfn>[<a class="enum" href="doomdef.h.html#NUMAMMO" title='NUMAMMO' data-ref="NUMAMMO">NUMAMMO</a>];</td></tr>
+<tr><th id="121">121</th><td>    <em>int</em>			<dfn class="decl" id="player_s::maxammo" title='player_s::maxammo' data-ref="player_s::maxammo">maxammo</dfn>[<a class="enum" href="doomdef.h.html#NUMAMMO" title='NUMAMMO' data-ref="NUMAMMO">NUMAMMO</a>];</td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td>    <i>// True if button down last tic.</i></td></tr>
+<tr><th id="124">124</th><td>    <em>int</em>			<dfn class="decl" id="player_s::attackdown" title='player_s::attackdown' data-ref="player_s::attackdown">attackdown</dfn>;</td></tr>
+<tr><th id="125">125</th><td>    <em>int</em>			<dfn class="decl" id="player_s::usedown" title='player_s::usedown' data-ref="player_s::usedown">usedown</dfn>;</td></tr>
+<tr><th id="126">126</th><td></td></tr>
+<tr><th id="127">127</th><td>    <i>// Bit flags, for cheats and debug.</i></td></tr>
+<tr><th id="128">128</th><td><i>    // See cheat_t, above.</i></td></tr>
+<tr><th id="129">129</th><td>    <em>int</em>			<dfn class="decl" id="player_s::cheats" title='player_s::cheats' data-ref="player_s::cheats">cheats</dfn>;		</td></tr>
+<tr><th id="130">130</th><td></td></tr>
+<tr><th id="131">131</th><td>    <i>// Refired shots are less accurate.</i></td></tr>
+<tr><th id="132">132</th><td>    <em>int</em>			<dfn class="decl" id="player_s::refire" title='player_s::refire' data-ref="player_s::refire">refire</dfn>;		</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td>     <i>// For intermission stats.</i></td></tr>
+<tr><th id="135">135</th><td>    <em>int</em>			<dfn class="decl" id="player_s::killcount" title='player_s::killcount' data-ref="player_s::killcount">killcount</dfn>;</td></tr>
+<tr><th id="136">136</th><td>    <em>int</em>			<dfn class="decl" id="player_s::itemcount" title='player_s::itemcount' data-ref="player_s::itemcount">itemcount</dfn>;</td></tr>
+<tr><th id="137">137</th><td>    <em>int</em>			<dfn class="decl" id="player_s::secretcount" title='player_s::secretcount' data-ref="player_s::secretcount">secretcount</dfn>;</td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td>    <i>// Hint messages.</i></td></tr>
+<tr><th id="140">140</th><td>    <em>char</em>*		<dfn class="decl" id="player_s::message" title='player_s::message' data-ref="player_s::message">message</dfn>;	</td></tr>
+<tr><th id="141">141</th><td>    </td></tr>
+<tr><th id="142">142</th><td>    <i>// For screen flashing (red or bright).</i></td></tr>
+<tr><th id="143">143</th><td>    <em>int</em>			<dfn class="decl" id="player_s::damagecount" title='player_s::damagecount' data-ref="player_s::damagecount">damagecount</dfn>;</td></tr>
+<tr><th id="144">144</th><td>    <em>int</em>			<dfn class="decl" id="player_s::bonuscount" title='player_s::bonuscount' data-ref="player_s::bonuscount">bonuscount</dfn>;</td></tr>
+<tr><th id="145">145</th><td></td></tr>
+<tr><th id="146">146</th><td>    <i>// Who did damage (NULL for floors/ceilings).</i></td></tr>
+<tr><th id="147">147</th><td>    <a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>*		<dfn class="decl" id="player_s::attacker" title='player_s::attacker' data-ref="player_s::attacker">attacker</dfn>;</td></tr>
+<tr><th id="148">148</th><td>    </td></tr>
+<tr><th id="149">149</th><td>    <i>// So gun flashes light up areas.</i></td></tr>
+<tr><th id="150">150</th><td>    <em>int</em>			<dfn class="decl" id="player_s::extralight" title='player_s::extralight' data-ref="player_s::extralight">extralight</dfn>;</td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td>    <i>// Current PLAYPAL, ???</i></td></tr>
+<tr><th id="153">153</th><td><i>    //  can be set to REDCOLORMAP for pain, etc.</i></td></tr>
+<tr><th id="154">154</th><td>    <em>int</em>			<dfn class="decl" id="player_s::fixedcolormap" title='player_s::fixedcolormap' data-ref="player_s::fixedcolormap">fixedcolormap</dfn>;</td></tr>
+<tr><th id="155">155</th><td></td></tr>
+<tr><th id="156">156</th><td>    <i>// Player skin colorshift,</i></td></tr>
+<tr><th id="157">157</th><td><i>    //  0-3 for which color to draw player.</i></td></tr>
+<tr><th id="158">158</th><td>    <em>int</em>			<dfn class="decl" id="player_s::colormap" title='player_s::colormap' data-ref="player_s::colormap">colormap</dfn>;	</td></tr>
+<tr><th id="159">159</th><td></td></tr>
+<tr><th id="160">160</th><td>    <i>// Overlay view sprites (gun, etc).</i></td></tr>
+<tr><th id="161">161</th><td>    <a class="typedef" href="p_pspr.h.html#pspdef_t" title='pspdef_t' data-type='struct pspdef_t' data-ref="pspdef_t">pspdef_t</a>		<dfn class="decl" id="player_s::psprites" title='player_s::psprites' data-ref="player_s::psprites">psprites</dfn>[<a class="enum" href="p_pspr.h.html#NUMPSPRITES" title='NUMPSPRITES' data-ref="NUMPSPRITES">NUMPSPRITES</a>];</td></tr>
+<tr><th id="162">162</th><td></td></tr>
+<tr><th id="163">163</th><td>    <i>// True if secret level has been done.</i></td></tr>
+<tr><th id="164">164</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="decl" id="player_s::didsecret" title='player_s::didsecret' data-ref="player_s::didsecret">didsecret</dfn>;	</td></tr>
+<tr><th id="165">165</th><td></td></tr>
+<tr><th id="166">166</th><td>} <dfn class="typedef" id="player_t" title='player_t' data-type='struct player_s' data-ref="player_t">player_t</dfn>;</td></tr>
+<tr><th id="167">167</th><td></td></tr>
+<tr><th id="168">168</th><td></td></tr>
+<tr><th id="169">169</th><td><i>//</i></td></tr>
+<tr><th id="170">170</th><td><i>// INTERMISSION</i></td></tr>
+<tr><th id="171">171</th><td><i>// Structure passed e.g. to WI_Start(wb)</i></td></tr>
+<tr><th id="172">172</th><td><i>//</i></td></tr>
+<tr><th id="173">173</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="174">174</th><td>{</td></tr>
+<tr><th id="175">175</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>	<dfn class="decl" id="(anonymous)::in" title='(anonymous struct)::in' data-ref="(anonymous)::in">in</dfn>;	<i>// whether the player is in game</i></td></tr>
+<tr><th id="176">176</th><td>    </td></tr>
+<tr><th id="177">177</th><td>    <i>// Player stats, kills, collected items etc.</i></td></tr>
+<tr><th id="178">178</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::skills" title='(anonymous struct)::skills' data-ref="(anonymous)::skills">skills</dfn>;</td></tr>
+<tr><th id="179">179</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::sitems" title='(anonymous struct)::sitems' data-ref="(anonymous)::sitems">sitems</dfn>;</td></tr>
+<tr><th id="180">180</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::ssecret" title='(anonymous struct)::ssecret' data-ref="(anonymous)::ssecret">ssecret</dfn>;</td></tr>
+<tr><th id="181">181</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::stime" title='(anonymous struct)::stime' data-ref="(anonymous)::stime">stime</dfn>; </td></tr>
+<tr><th id="182">182</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::frags" title='(anonymous struct)::frags' data-ref="(anonymous)::frags">frags</dfn>[<var>4</var>];</td></tr>
+<tr><th id="183">183</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::score" title='(anonymous struct)::score' data-ref="(anonymous)::score">score</dfn>;	<i>// current score on entry, modified on return</i></td></tr>
+<tr><th id="184">184</th><td>  </td></tr>
+<tr><th id="185">185</th><td>} <dfn class="typedef" id="wbplayerstruct_t" title='wbplayerstruct_t' data-type='struct wbplayerstruct_t' data-ref="wbplayerstruct_t">wbplayerstruct_t</dfn>;</td></tr>
+<tr><th id="186">186</th><td></td></tr>
+<tr><th id="187">187</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="188">188</th><td>{</td></tr>
+<tr><th id="189">189</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::epsd" title='(anonymous struct)::epsd' data-ref="(anonymous)::epsd">epsd</dfn>;	<i>// episode # (0-2)</i></td></tr>
+<tr><th id="190">190</th><td></td></tr>
+<tr><th id="191">191</th><td>    <i>// if true, splash the secret level</i></td></tr>
+<tr><th id="192">192</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>	<dfn class="decl" id="(anonymous)::didsecret" title='(anonymous struct)::didsecret' data-ref="(anonymous)::didsecret">didsecret</dfn>;</td></tr>
+<tr><th id="193">193</th><td>    </td></tr>
+<tr><th id="194">194</th><td>    <i>// previous and next levels, origin 0</i></td></tr>
+<tr><th id="195">195</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::last" title='(anonymous struct)::last' data-ref="(anonymous)::last">last</dfn>;</td></tr>
+<tr><th id="196">196</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::next" title='(anonymous struct)::next' data-ref="(anonymous)::next">next</dfn>;	</td></tr>
+<tr><th id="197">197</th><td>    </td></tr>
+<tr><th id="198">198</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::maxkills" title='(anonymous struct)::maxkills' data-ref="(anonymous)::maxkills">maxkills</dfn>;</td></tr>
+<tr><th id="199">199</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::maxitems" title='(anonymous struct)::maxitems' data-ref="(anonymous)::maxitems">maxitems</dfn>;</td></tr>
+<tr><th id="200">200</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::maxsecret" title='(anonymous struct)::maxsecret' data-ref="(anonymous)::maxsecret">maxsecret</dfn>;</td></tr>
+<tr><th id="201">201</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::maxfrags" title='(anonymous struct)::maxfrags' data-ref="(anonymous)::maxfrags">maxfrags</dfn>;</td></tr>
+<tr><th id="202">202</th><td></td></tr>
+<tr><th id="203">203</th><td>    <i>// the par time</i></td></tr>
+<tr><th id="204">204</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::partime" title='(anonymous struct)::partime' data-ref="(anonymous)::partime">partime</dfn>;</td></tr>
+<tr><th id="205">205</th><td>    </td></tr>
+<tr><th id="206">206</th><td>    <i>// index of this player in game</i></td></tr>
+<tr><th id="207">207</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::pnum" title='(anonymous struct)::pnum' data-ref="(anonymous)::pnum">pnum</dfn>;	</td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td>    <a class="typedef" href="#wbplayerstruct_t" title='wbplayerstruct_t' data-type='struct wbplayerstruct_t' data-ref="wbplayerstruct_t">wbplayerstruct_t</a>	<dfn class="decl" id="(anonymous)::plyr" title='(anonymous struct)::plyr' data-ref="(anonymous)::plyr">plyr</dfn>[<a class="macro" href="doomdef.h.html#119" title="4" data-ref="_M/MAXPLAYERS">MAXPLAYERS</a>];</td></tr>
+<tr><th id="210">210</th><td></td></tr>
+<tr><th id="211">211</th><td>} <dfn class="typedef" id="wbstartstruct_t" title='wbstartstruct_t' data-type='struct wbstartstruct_t' data-ref="wbstartstruct_t">wbstartstruct_t</dfn>;</td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td></td></tr>
+<tr><th id="214">214</th><td><u>#<span data-ppcond="23">endif</span></u></td></tr>
+<tr><th id="215">215</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="216">216</th><td><i>//</i></td></tr>
+<tr><th id="217">217</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="218">218</th><td><i>//</i></td></tr>
+<tr><th id="219">219</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="220">220</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='am_map.c.html'>codebrowser/am_map.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,3 @@
+<dec f='codebrowser/g_game.c' l='91' type='void G_DoCompleted()'/>
+<use f='codebrowser/g_game.c' l='637' u='c' c='G_Ticker'/>
+<def f='codebrowser/g_game.c' l='1020' ll='1141' type='void G_DoCompleted()'/>

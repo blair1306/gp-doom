@@ -1,0 +1,5 @@
+<dec f='codebrowser/p_spec.h' l='267' type='3'/>
+<use f='codebrowser/p_plats.c' l='128' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='265' u='r' c='P_ActivateInStasis'/>
+<use f='codebrowser/p_plats.c' l='279' u='r' c='EV_StopPlat'/>
+<use f='codebrowser/p_plats.c' l='283' u='r' c='EV_StopPlat'/>

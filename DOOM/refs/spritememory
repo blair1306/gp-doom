@@ -1,0 +1,3 @@
+<def f='codebrowser/r_data.c' l='741' type='int'/>
+<use f='codebrowser/r_data.c' l='828' u='w' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='840' u='w' c='R_PrecacheLevel'/>

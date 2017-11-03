@@ -1,0 +1,7 @@
+<def f='codebrowser/p_user.c' l='58' ll='68' type='void P_Thrust(player_t * player, angle_t angle, fixed_t move)'/>
+<use f='codebrowser/p_user.c' l='161' u='c' c='P_MovePlayer'/>
+<use f='codebrowser/p_user.c' l='164' u='c' c='P_MovePlayer'/>
+<doc f='codebrowser/p_user.c' l='54'>//
+// P_Thrust
+// Moves the given origin along a given angle.
+//</doc>

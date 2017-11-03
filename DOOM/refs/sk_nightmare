@@ -1,0 +1,13 @@
+<dec f='codebrowser/doomdef.h' l='153' type='4'/>
+<use f='codebrowser/g_game.c' l='1379' u='r' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1380' u='r' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1416' u='r' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1421' u='r' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1421' u='r' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1429' u='r' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1429' u='r' c='G_InitNew'/>
+<use f='codebrowser/p_enemy.c' l='719' u='r' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='738' u='r' c='A_Chase'/>
+<use f='codebrowser/p_inter.c' l='96' u='r' c='P_GiveAmmo'/>
+<use f='codebrowser/p_mobj.c' l='503' u='r' c='P_SpawnMobj'/>
+<use f='codebrowser/p_mobj.c' l='745' u='r' c='P_SpawnMapThing'/>

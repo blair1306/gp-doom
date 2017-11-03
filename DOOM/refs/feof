@@ -1,0 +1,3 @@
+<dec f='include/stdio.h' l='828' type='int feof(FILE * __stream)'/>
+<doc f='include/stdio.h' l='827'>/* Return the EOF indicator for STREAM.  */</doc>
+<use f='codebrowser/m_misc.c' l='373' u='c' c='M_LoadDefaults'/>

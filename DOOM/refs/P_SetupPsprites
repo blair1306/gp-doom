@@ -1,0 +1,10 @@
+<dec f='codebrowser/p_local.h' l='81' type='void P_SetupPsprites(player_t * curplayer)'/>
+<doc f='codebrowser/p_local.h' l='78'>//
+// P_PSPR
+//</doc>
+<use f='codebrowser/p_mobj.c' l='686' u='c' c='P_SpawnPlayer'/>
+<def f='codebrowser/p_pspr.c' l='831' ll='842' type='void P_SetupPsprites(player_t * player)'/>
+<doc f='codebrowser/p_pspr.c' l='827'>//
+// P_SetupPsprites
+// Called at start of level for each player.
+//</doc>

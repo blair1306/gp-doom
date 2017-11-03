@@ -1,0 +1,12 @@
+<dec f='include/ctype.h' l='127' type='int toupper(int __c)'/>
+<use f='codebrowser/f_finale.c' l='313' u='c' c='F_TextWrite'/>
+<use f='codebrowser/f_finale.c' l='540' u='c' c='F_CastPrint'/>
+<use f='codebrowser/f_finale.c' l='559' u='c' c='F_CastPrint'/>
+<doc f='include/ctype.h' l='126'>/* Return the uppercase version of C.  */</doc>
+<use f='codebrowser/hu_lib.c' l='114' u='c' c='HUlib_drawTextLine'/>
+<use f='codebrowser/m_menu.c' l='1263' u='c' c='M_StringWidth'/>
+<use f='codebrowser/m_menu.c' l='1325' u='c' c='M_WriteText'/>
+<use f='codebrowser/m_menu.c' l='1477' u='c' c='M_Responder'/>
+<use f='codebrowser/m_misc.c' l='81' u='c' c='M_DrawText'/>
+<use f='codebrowser/w_wad.c' l='71' u='c' c='strupr'/>
+<use f='codebrowser/w_wad.c' l='112' u='c' c='ExtractFileBase'/>

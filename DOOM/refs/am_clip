@@ -1,0 +1,17 @@
+<dec f='codebrowser/doomdef.h' l='203' type='0'/>
+<doc f='codebrowser/doomdef.h' l='203'>// Pistol / chaingun ammo.</doc>
+<use f='codebrowser/d_items.c' l='60'/>
+<use f='codebrowser/d_items.c' l='60'/>
+<use f='codebrowser/d_items.c' l='78'/>
+<use f='codebrowser/d_items.c' l='78'/>
+<use f='codebrowser/d_items.c' l='60'/>
+<use f='codebrowser/d_items.c' l='60'/>
+<use f='codebrowser/d_items.c' l='78'/>
+<use f='codebrowser/d_items.c' l='78'/>
+<use f='codebrowser/g_game.c' l='828' u='w' c='G_PlayerReborn'/>
+<use f='codebrowser/p_inter.c' l='121' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='536' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='541' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='548' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_pspr.c' l='198' u='r' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='207' u='r' c='P_CheckAmmo'/>

@@ -1,0 +1,10 @@
+<def f='codebrowser/p_enemy.c' l='498' ll='558' type='boolean P_LookForPlayers(mobj_t * actor, boolean allaround)'/>
+<use f='codebrowser/p_enemy.c' l='626' u='c' c='A_Look'/>
+<use f='codebrowser/p_enemy.c' l='708' u='c' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='759' u='c' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='1982' u='c' c='A_SpawnFly'/>
+<doc f='codebrowser/p_enemy.c' l='493'>//
+// P_LookForPlayers
+// If allaround is false, only look 180 degrees in front.
+// Returns true if a player is targeted.
+//</doc>

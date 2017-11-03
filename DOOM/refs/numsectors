@@ -1,0 +1,17 @@
+<dec f='codebrowser/r_state.h' l='84' type='int'/>
+<use f='codebrowser/am_map.c' l='1292' u='r' c='AM_drawThings'/>
+<use f='codebrowser/p_lights.c' l='247' u='r' c='EV_TurnTagLightsOff'/>
+<use f='codebrowser/p_lights.c' l='283' u='r' c='EV_LightTurnOn'/>
+<use f='codebrowser/p_saveg.c' l='126' u='r' c='P_ArchiveWorld'/>
+<use f='codebrowser/p_saveg.c' l='179' u='r' c='P_UnArchiveWorld'/>
+<def f='codebrowser/p_setup.c' l='62' type='int'/>
+<use f='codebrowser/p_setup.c' l='238' u='w' c='P_LoadSectors'/>
+<use f='codebrowser/p_setup.c' l='239' u='r' c='P_LoadSectors'/>
+<use f='codebrowser/p_setup.c' l='240' u='r' c='P_LoadSectors'/>
+<use f='codebrowser/p_setup.c' l='245' u='r' c='P_LoadSectors'/>
+<use f='codebrowser/p_setup.c' l='538' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_sight.c' l='315' u='r' c='P_CheckSight'/>
+<use f='codebrowser/p_spec.c' l='440' u='r' c='P_FindSectorFromLineTag'/>
+<use f='codebrowser/p_spec.c' l='1271' u='r' c='P_SpawnSpecials'/>
+<use f='codebrowser/p_telept.c' l='75' u='r' c='EV_Teleport'/>
+<use f='codebrowser/r_data.c' l='765' u='r' c='R_PrecacheLevel'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_local.h' l='149' type='mobj_t *'/>
+<offset>0</offset>
+<use f='codebrowser/p_map.c' l='863' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='975' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1005' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_maputl.c' l='670' u='w' c='PIT_AddThingIntercepts'/>

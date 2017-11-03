@@ -1,0 +1,7 @@
+<dec f='codebrowser/r_things.h' l='44' type='short *'/>
+<use f='codebrowser/r_segs.c' l='141' u='w' c='R_RenderMaskedSegRange'/>
+<def f='codebrowser/r_things.c' l='346' type='short *'/>
+<use f='codebrowser/r_things.c' l='371' u='r' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='372' u='r' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='766' u='w' c='R_DrawPlayerSprites'/>
+<use f='codebrowser/r_things.c' l='948' u='w' c='R_DrawSprite'/>

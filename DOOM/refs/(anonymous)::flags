@@ -1,0 +1,20 @@
+<dec f='codebrowser/doomdata.h' l='88' type='short'/>
+<dec f='codebrowser/info.h' l='1328' type='int'/>
+<offset>672</offset>
+<dec f='include/X11/Xlib.h' l='413' type='char'/>
+<dec f='include/X11/Xutil.h' l='82' type='long'/>
+<dec f='include/X11/Xutil.h' l='120' type='long'/>
+<use f='codebrowser/i_video.c' l='298' u='w' c='createnullcursor'/>
+<use f='codebrowser/i_video.c' l='558' u='w' c='UploadNewPalette'/>
+<offset>0</offset>
+<doc f='include/X11/Xlib.h' l='413'>/* do_red, do_green, do_blue */</doc>
+<doc f='include/X11/Xutil.h' l='82'>/* marks which fields in this structure are defined */</doc>
+<doc f='include/X11/Xutil.h' l='120'>/* marks which fields in this structure are defined */</doc>
+<use f='codebrowser/p_enemy.c' l='1215' u='r' c='A_VileChase'/>
+<use f='codebrowser/p_mobj.c' l='392' u='r' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='500' u='r' c='P_SpawnMobj'/>
+<use f='codebrowser/p_mobj.c' l='620' u='r' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='764' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_mobj.c' l='770' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_mobj.c' l='779' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_setup.c' l='375' u='r' c='P_LoadLineDefs'/>

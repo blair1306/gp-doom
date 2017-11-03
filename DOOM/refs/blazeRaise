@@ -1,0 +1,10 @@
+<dec f='codebrowser/p_spec.h' l='335' type='5'/>
+<use f='codebrowser/p_doors.c' l='75' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='128' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='179' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='320' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='486' u='r' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_spec.c' l='726' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='916' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='463' u='r' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='600' u='r' c='P_UseSpecialLine'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/i_video.h' l='37' type='void I_InitGraphics()'/>
+<use f='codebrowser/d_main.c' l='367' u='c' c='D_DoomLoop'/>
+<doc f='codebrowser/i_video.h' l='34'>// Called by D_DoomMain,
+// determines the hardware configuration
+// and sets up the video mode</doc>
+<def f='codebrowser/i_video.c' l='691' ll='914' type='void I_InitGraphics()'/>

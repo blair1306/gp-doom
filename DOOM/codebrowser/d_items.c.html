@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>d_items.c source code [codebrowser/d_items.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/d_items.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='d_items.c.html'>d_items.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION:</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><em>static</em> <em>const</em> <em>char</em></td></tr>
+<tr><th id="24">24</th><td><dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [6]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id:$"</q>;</td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><i>// We are referring to sprite numbers.</i></td></tr>
+<tr><th id="27">27</th><td><u>#include <a href="info.h.html">"info.h"</a></u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#<span data-ppcond="29">ifdef</span> <span class="macro" data-ref="_M/__GNUG__">__GNUG__</span></u></td></tr>
+<tr><th id="30">30</th><td><u>#pragma implementation "d_items.h"</u></td></tr>
+<tr><th id="31">31</th><td><u>#<span data-ppcond="29">endif</span></u></td></tr>
+<tr><th id="32">32</th><td><u>#include <a href="d_items.h.html">"d_items.h"</a></u></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><i>//</i></td></tr>
+<tr><th id="36">36</th><td><i>// PSPRITE ACTIONS for waepons.</i></td></tr>
+<tr><th id="37">37</th><td><i>// This struct controls the weapon animations.</i></td></tr>
+<tr><th id="38">38</th><td><i>//</i></td></tr>
+<tr><th id="39">39</th><td><i>// Each entry is:</i></td></tr>
+<tr><th id="40">40</th><td><i>//   ammo/amunition type</i></td></tr>
+<tr><th id="41">41</th><td><i>//  upstate</i></td></tr>
+<tr><th id="42">42</th><td><i>//  downstate</i></td></tr>
+<tr><th id="43">43</th><td><i>// readystate</i></td></tr>
+<tr><th id="44">44</th><td><i>// atkstate, i.e. attack/fire/hit frame</i></td></tr>
+<tr><th id="45">45</th><td><i>// flashstate, muzzle flash</i></td></tr>
+<tr><th id="46">46</th><td><i>//</i></td></tr>
+<tr><th id="47">47</th><td><a class="typedef" href="d_items.h.html#weaponinfo_t" title='weaponinfo_t' data-type='struct weaponinfo_t' data-ref="weaponinfo_t">weaponinfo_t</a>	<dfn class="decl def" id="weaponinfo" title='weaponinfo' data-ref="weaponinfo">weaponinfo</dfn>[<a class="enum" href="doomdef.h.html#NUMWEAPONS" title='NUMWEAPONS' data-ref="NUMWEAPONS">NUMWEAPONS</a>] =</td></tr>
+<tr><th id="48">48</th><td>{</td></tr>
+<tr><th id="49">49</th><td>    {</td></tr>
+<tr><th id="50">50</th><td>	<i>// fist</i></td></tr>
+<tr><th id="51">51</th><td>	<a class="enum" href="doomdef.h.html#am_noammo" title='am_noammo' data-ref="am_noammo">am_noammo</a>,</td></tr>
+<tr><th id="52">52</th><td>	<a class="enum" href="info.h.html#S_PUNCHUP" title='S_PUNCHUP' data-ref="S_PUNCHUP">S_PUNCHUP</a>,</td></tr>
+<tr><th id="53">53</th><td>	<a class="enum" href="info.h.html#S_PUNCHDOWN" title='S_PUNCHDOWN' data-ref="S_PUNCHDOWN">S_PUNCHDOWN</a>,</td></tr>
+<tr><th id="54">54</th><td>	<a class="enum" href="info.h.html#S_PUNCH" title='S_PUNCH' data-ref="S_PUNCH">S_PUNCH</a>,</td></tr>
+<tr><th id="55">55</th><td>	<a class="enum" href="info.h.html#S_PUNCH1" title='S_PUNCH1' data-ref="S_PUNCH1">S_PUNCH1</a>,</td></tr>
+<tr><th id="56">56</th><td>	<a class="enum" href="info.h.html#S_NULL" title='S_NULL' data-ref="S_NULL">S_NULL</a></td></tr>
+<tr><th id="57">57</th><td>    },	</td></tr>
+<tr><th id="58">58</th><td>    {</td></tr>
+<tr><th id="59">59</th><td>	<i>// pistol</i></td></tr>
+<tr><th id="60">60</th><td>	<a class="enum" href="doomdef.h.html#am_clip" title='am_clip' data-ref="am_clip">am_clip</a>,</td></tr>
+<tr><th id="61">61</th><td>	<a class="enum" href="info.h.html#S_PISTOLUP" title='S_PISTOLUP' data-ref="S_PISTOLUP">S_PISTOLUP</a>,</td></tr>
+<tr><th id="62">62</th><td>	<a class="enum" href="info.h.html#S_PISTOLDOWN" title='S_PISTOLDOWN' data-ref="S_PISTOLDOWN">S_PISTOLDOWN</a>,</td></tr>
+<tr><th id="63">63</th><td>	<a class="enum" href="info.h.html#S_PISTOL" title='S_PISTOL' data-ref="S_PISTOL">S_PISTOL</a>,</td></tr>
+<tr><th id="64">64</th><td>	<a class="enum" href="info.h.html#S_PISTOL1" title='S_PISTOL1' data-ref="S_PISTOL1">S_PISTOL1</a>,</td></tr>
+<tr><th id="65">65</th><td>	<a class="enum" href="info.h.html#S_PISTOLFLASH" title='S_PISTOLFLASH' data-ref="S_PISTOLFLASH">S_PISTOLFLASH</a></td></tr>
+<tr><th id="66">66</th><td>    },	</td></tr>
+<tr><th id="67">67</th><td>    {</td></tr>
+<tr><th id="68">68</th><td>	<i>// shotgun</i></td></tr>
+<tr><th id="69">69</th><td>	<a class="enum" href="doomdef.h.html#am_shell" title='am_shell' data-ref="am_shell">am_shell</a>,</td></tr>
+<tr><th id="70">70</th><td>	<a class="enum" href="info.h.html#S_SGUNUP" title='S_SGUNUP' data-ref="S_SGUNUP">S_SGUNUP</a>,</td></tr>
+<tr><th id="71">71</th><td>	<a class="enum" href="info.h.html#S_SGUNDOWN" title='S_SGUNDOWN' data-ref="S_SGUNDOWN">S_SGUNDOWN</a>,</td></tr>
+<tr><th id="72">72</th><td>	<a class="enum" href="info.h.html#S_SGUN" title='S_SGUN' data-ref="S_SGUN">S_SGUN</a>,</td></tr>
+<tr><th id="73">73</th><td>	<a class="enum" href="info.h.html#S_SGUN1" title='S_SGUN1' data-ref="S_SGUN1">S_SGUN1</a>,</td></tr>
+<tr><th id="74">74</th><td>	<a class="enum" href="info.h.html#S_SGUNFLASH1" title='S_SGUNFLASH1' data-ref="S_SGUNFLASH1">S_SGUNFLASH1</a></td></tr>
+<tr><th id="75">75</th><td>    },</td></tr>
+<tr><th id="76">76</th><td>    {</td></tr>
+<tr><th id="77">77</th><td>	<i>// chaingun</i></td></tr>
+<tr><th id="78">78</th><td>	<a class="enum" href="doomdef.h.html#am_clip" title='am_clip' data-ref="am_clip">am_clip</a>,</td></tr>
+<tr><th id="79">79</th><td>	<a class="enum" href="info.h.html#S_CHAINUP" title='S_CHAINUP' data-ref="S_CHAINUP">S_CHAINUP</a>,</td></tr>
+<tr><th id="80">80</th><td>	<a class="enum" href="info.h.html#S_CHAINDOWN" title='S_CHAINDOWN' data-ref="S_CHAINDOWN">S_CHAINDOWN</a>,</td></tr>
+<tr><th id="81">81</th><td>	<a class="enum" href="info.h.html#S_CHAIN" title='S_CHAIN' data-ref="S_CHAIN">S_CHAIN</a>,</td></tr>
+<tr><th id="82">82</th><td>	<a class="enum" href="info.h.html#S_CHAIN1" title='S_CHAIN1' data-ref="S_CHAIN1">S_CHAIN1</a>,</td></tr>
+<tr><th id="83">83</th><td>	<a class="enum" href="info.h.html#S_CHAINFLASH1" title='S_CHAINFLASH1' data-ref="S_CHAINFLASH1">S_CHAINFLASH1</a></td></tr>
+<tr><th id="84">84</th><td>    },</td></tr>
+<tr><th id="85">85</th><td>    {</td></tr>
+<tr><th id="86">86</th><td>	<i>// missile launcher</i></td></tr>
+<tr><th id="87">87</th><td>	<a class="enum" href="doomdef.h.html#am_misl" title='am_misl' data-ref="am_misl">am_misl</a>,</td></tr>
+<tr><th id="88">88</th><td>	<a class="enum" href="info.h.html#S_MISSILEUP" title='S_MISSILEUP' data-ref="S_MISSILEUP">S_MISSILEUP</a>,</td></tr>
+<tr><th id="89">89</th><td>	<a class="enum" href="info.h.html#S_MISSILEDOWN" title='S_MISSILEDOWN' data-ref="S_MISSILEDOWN">S_MISSILEDOWN</a>,</td></tr>
+<tr><th id="90">90</th><td>	<a class="enum" href="info.h.html#S_MISSILE" title='S_MISSILE' data-ref="S_MISSILE">S_MISSILE</a>,</td></tr>
+<tr><th id="91">91</th><td>	<a class="enum" href="info.h.html#S_MISSILE1" title='S_MISSILE1' data-ref="S_MISSILE1">S_MISSILE1</a>,</td></tr>
+<tr><th id="92">92</th><td>	<a class="enum" href="info.h.html#S_MISSILEFLASH1" title='S_MISSILEFLASH1' data-ref="S_MISSILEFLASH1">S_MISSILEFLASH1</a></td></tr>
+<tr><th id="93">93</th><td>    },</td></tr>
+<tr><th id="94">94</th><td>    {</td></tr>
+<tr><th id="95">95</th><td>	<i>// plasma rifle</i></td></tr>
+<tr><th id="96">96</th><td>	<a class="enum" href="doomdef.h.html#am_cell" title='am_cell' data-ref="am_cell">am_cell</a>,</td></tr>
+<tr><th id="97">97</th><td>	<a class="enum" href="info.h.html#S_PLASMAUP" title='S_PLASMAUP' data-ref="S_PLASMAUP">S_PLASMAUP</a>,</td></tr>
+<tr><th id="98">98</th><td>	<a class="enum" href="info.h.html#S_PLASMADOWN" title='S_PLASMADOWN' data-ref="S_PLASMADOWN">S_PLASMADOWN</a>,</td></tr>
+<tr><th id="99">99</th><td>	<a class="enum" href="info.h.html#S_PLASMA" title='S_PLASMA' data-ref="S_PLASMA">S_PLASMA</a>,</td></tr>
+<tr><th id="100">100</th><td>	<a class="enum" href="info.h.html#S_PLASMA1" title='S_PLASMA1' data-ref="S_PLASMA1">S_PLASMA1</a>,</td></tr>
+<tr><th id="101">101</th><td>	<a class="enum" href="info.h.html#S_PLASMAFLASH1" title='S_PLASMAFLASH1' data-ref="S_PLASMAFLASH1">S_PLASMAFLASH1</a></td></tr>
+<tr><th id="102">102</th><td>    },</td></tr>
+<tr><th id="103">103</th><td>    {</td></tr>
+<tr><th id="104">104</th><td>	<i>// bfg 9000</i></td></tr>
+<tr><th id="105">105</th><td>	<a class="enum" href="doomdef.h.html#am_cell" title='am_cell' data-ref="am_cell">am_cell</a>,</td></tr>
+<tr><th id="106">106</th><td>	<a class="enum" href="info.h.html#S_BFGUP" title='S_BFGUP' data-ref="S_BFGUP">S_BFGUP</a>,</td></tr>
+<tr><th id="107">107</th><td>	<a class="enum" href="info.h.html#S_BFGDOWN" title='S_BFGDOWN' data-ref="S_BFGDOWN">S_BFGDOWN</a>,</td></tr>
+<tr><th id="108">108</th><td>	<a class="enum" href="info.h.html#S_BFG" title='S_BFG' data-ref="S_BFG">S_BFG</a>,</td></tr>
+<tr><th id="109">109</th><td>	<a class="enum" href="info.h.html#S_BFG1" title='S_BFG1' data-ref="S_BFG1">S_BFG1</a>,</td></tr>
+<tr><th id="110">110</th><td>	<a class="enum" href="info.h.html#S_BFGFLASH1" title='S_BFGFLASH1' data-ref="S_BFGFLASH1">S_BFGFLASH1</a></td></tr>
+<tr><th id="111">111</th><td>    },</td></tr>
+<tr><th id="112">112</th><td>    {</td></tr>
+<tr><th id="113">113</th><td>	<i>// chainsaw</i></td></tr>
+<tr><th id="114">114</th><td>	<a class="enum" href="doomdef.h.html#am_noammo" title='am_noammo' data-ref="am_noammo">am_noammo</a>,</td></tr>
+<tr><th id="115">115</th><td>	<a class="enum" href="info.h.html#S_SAWUP" title='S_SAWUP' data-ref="S_SAWUP">S_SAWUP</a>,</td></tr>
+<tr><th id="116">116</th><td>	<a class="enum" href="info.h.html#S_SAWDOWN" title='S_SAWDOWN' data-ref="S_SAWDOWN">S_SAWDOWN</a>,</td></tr>
+<tr><th id="117">117</th><td>	<a class="enum" href="info.h.html#S_SAW" title='S_SAW' data-ref="S_SAW">S_SAW</a>,</td></tr>
+<tr><th id="118">118</th><td>	<a class="enum" href="info.h.html#S_SAW1" title='S_SAW1' data-ref="S_SAW1">S_SAW1</a>,</td></tr>
+<tr><th id="119">119</th><td>	<a class="enum" href="info.h.html#S_NULL" title='S_NULL' data-ref="S_NULL">S_NULL</a></td></tr>
+<tr><th id="120">120</th><td>    },</td></tr>
+<tr><th id="121">121</th><td>    {</td></tr>
+<tr><th id="122">122</th><td>	<i>// super shotgun</i></td></tr>
+<tr><th id="123">123</th><td>	<a class="enum" href="doomdef.h.html#am_shell" title='am_shell' data-ref="am_shell">am_shell</a>,</td></tr>
+<tr><th id="124">124</th><td>	<a class="enum" href="info.h.html#S_DSGUNUP" title='S_DSGUNUP' data-ref="S_DSGUNUP">S_DSGUNUP</a>,</td></tr>
+<tr><th id="125">125</th><td>	<a class="enum" href="info.h.html#S_DSGUNDOWN" title='S_DSGUNDOWN' data-ref="S_DSGUNDOWN">S_DSGUNDOWN</a>,</td></tr>
+<tr><th id="126">126</th><td>	<a class="enum" href="info.h.html#S_DSGUN" title='S_DSGUN' data-ref="S_DSGUN">S_DSGUN</a>,</td></tr>
+<tr><th id="127">127</th><td>	<a class="enum" href="info.h.html#S_DSGUN1" title='S_DSGUN1' data-ref="S_DSGUN1">S_DSGUN1</a>,</td></tr>
+<tr><th id="128">128</th><td>	<a class="enum" href="info.h.html#S_DSGUNFLASH1" title='S_DSGUNFLASH1' data-ref="S_DSGUNFLASH1">S_DSGUNFLASH1</a></td></tr>
+<tr><th id="129">129</th><td>    },	</td></tr>
+<tr><th id="130">130</th><td>};</td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td></td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td></td></tr>
+<tr><th id="135">135</th><td></td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td></td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

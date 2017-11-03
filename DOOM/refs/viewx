@@ -1,0 +1,14 @@
+<dec f='codebrowser/r_state.h' l='103' type='fixed_t'/>
+<doc f='codebrowser/r_state.h' l='100'>//
+// POV data.
+//</doc>
+<use f='codebrowser/r_bsp.c' l='404' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='406' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='570' u='r' c='R_RenderBSPNode'/>
+<def f='codebrowser/r_main.c' l='75' type='fixed_t'/>
+<use f='codebrowser/r_main.c' l='296' u='r' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='384' u='w' c='R_PointToAngle2'/>
+<use f='codebrowser/r_main.c' l='402' u='r' c='R_PointToDist'/>
+<use f='codebrowser/r_main.c' l='835' u='w' c='R_SetupFrame'/>
+<use f='codebrowser/r_plane.c' l='157' u='r' c='R_MapPlane'/>
+<use f='codebrowser/r_things.c' l='483' u='r' c='R_ProjectSprite'/>

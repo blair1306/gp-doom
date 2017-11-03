@@ -1,0 +1,4 @@
+<dec f='codebrowser/info.h' l='1320' type='int'/>
+<offset>416</offset>
+<use f='codebrowser/p_inter.c' l='720' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='722' u='r' c='P_KillMobj'/>

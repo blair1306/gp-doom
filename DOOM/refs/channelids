@@ -1,0 +1,5 @@
+<def f='codebrowser/i_sound.c' l='143' type='int [8]'/>
+<use f='codebrowser/i_sound.c' l='298' u='r' c='addsfx'/>
+<use f='codebrowser/i_sound.c' l='378' u='w' c='addsfx'/>
+<doc f='codebrowser/i_sound.c' l='141'>// SFX id of the playing sound effect.
+// Used to catch duplicates (like chainsaw).</doc>

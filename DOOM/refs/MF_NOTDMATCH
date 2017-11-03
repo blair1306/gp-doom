@@ -1,0 +1,32 @@
+<dec f='codebrowser/p_mobj.h' l='193' type='33554432'/>
+<doc f='codebrowser/p_mobj.h' l='191'>// Don&apos;t spawn this object
+    //  in death match mode (e.g. key cards).</doc>
+<use f='codebrowser/info.c' l='1130' u='r'/>
+<use f='codebrowser/info.c' l='1130' u='r'/>
+<use f='codebrowser/info.c' l='2352' u='r'/>
+<use f='codebrowser/info.c' l='2352' u='r'/>
+<use f='codebrowser/info.c' l='2378' u='r'/>
+<use f='codebrowser/info.c' l='2378' u='r'/>
+<use f='codebrowser/info.c' l='2404' u='r'/>
+<use f='codebrowser/info.c' l='2404' u='r'/>
+<use f='codebrowser/info.c' l='2430' u='r'/>
+<use f='codebrowser/info.c' l='2430' u='r'/>
+<use f='codebrowser/info.c' l='2456' u='r'/>
+<use f='codebrowser/info.c' l='2456' u='r'/>
+<use f='codebrowser/info.c' l='2482' u='r'/>
+<use f='codebrowser/info.c' l='2482' u='r'/>
+<use f='codebrowser/info.c' l='1130' u='r'/>
+<use f='codebrowser/info.c' l='1130' u='r'/>
+<use f='codebrowser/info.c' l='2352' u='r'/>
+<use f='codebrowser/info.c' l='2352' u='r'/>
+<use f='codebrowser/info.c' l='2378' u='r'/>
+<use f='codebrowser/info.c' l='2378' u='r'/>
+<use f='codebrowser/info.c' l='2404' u='r'/>
+<use f='codebrowser/info.c' l='2404' u='r'/>
+<use f='codebrowser/info.c' l='2430' u='r'/>
+<use f='codebrowser/info.c' l='2430' u='r'/>
+<use f='codebrowser/info.c' l='2456' u='r'/>
+<use f='codebrowser/info.c' l='2456' u='r'/>
+<use f='codebrowser/info.c' l='2482' u='r'/>
+<use f='codebrowser/info.c' l='2482' u='r'/>
+<use f='codebrowser/p_mobj.c' l='764' u='r' c='P_SpawnMapThing'/>

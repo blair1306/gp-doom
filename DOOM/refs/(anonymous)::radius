@@ -1,0 +1,8 @@
+<dec f='codebrowser/info.h' l='1323' type='int'/>
+<offset>512</offset>
+<use f='codebrowser/p_enemy.c' l='185' u='r' c='P_CheckMeleeRange'/>
+<use f='codebrowser/p_enemy.c' l='1143' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1143' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1487' u='r' c='A_PainShootSkull'/>
+<use f='codebrowser/p_enemy.c' l='1487' u='r' c='A_PainShootSkull'/>
+<use f='codebrowser/p_mobj.c' l='498' u='r' c='P_SpawnMobj'/>

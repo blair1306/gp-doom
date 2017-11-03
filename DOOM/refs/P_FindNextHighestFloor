@@ -1,0 +1,5 @@
+<dec f='codebrowser/p_spec.h' l='91' type='fixed_t P_FindNextHighestFloor(sector_t * sec, int currentheight)'/>
+<use f='codebrowser/p_floor.c' l='336' u='c' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='344' u='c' c='EV_DoFloor'/>
+<use f='codebrowser/p_plats.c' l='188' u='c' c='EV_DoPlat'/>
+<def f='codebrowser/p_spec.c' l='328' ll='375' type='fixed_t P_FindNextHighestFloor(sector_t * sec, int currentheight)'/>

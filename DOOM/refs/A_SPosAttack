@@ -1,0 +1,26 @@
+<dec f='codebrowser/info.c' l='92' type='void A_SPosAttack()'/>
+<use f='codebrowser/info.c' l='354'/>
+<use f='codebrowser/info.c' l='354'/>
+<use f='codebrowser/info.c' l='354'/>
+<use f='codebrowser/info.c' l='354'/>
+<use f='codebrowser/info.c' l='752'/>
+<use f='codebrowser/info.c' l='752'/>
+<use f='codebrowser/info.c' l='752'/>
+<use f='codebrowser/info.c' l='752'/>
+<use f='codebrowser/info.c' l='753'/>
+<use f='codebrowser/info.c' l='753'/>
+<use f='codebrowser/info.c' l='753'/>
+<use f='codebrowser/info.c' l='753'/>
+<use f='codebrowser/info.c' l='354'/>
+<use f='codebrowser/info.c' l='354'/>
+<use f='codebrowser/info.c' l='354'/>
+<use f='codebrowser/info.c' l='354'/>
+<use f='codebrowser/info.c' l='752'/>
+<use f='codebrowser/info.c' l='752'/>
+<use f='codebrowser/info.c' l='752'/>
+<use f='codebrowser/info.c' l='752'/>
+<use f='codebrowser/info.c' l='753'/>
+<use f='codebrowser/info.c' l='753'/>
+<use f='codebrowser/info.c' l='753'/>
+<use f='codebrowser/info.c' l='753'/>
+<def f='codebrowser/p_enemy.c' l='821' ll='843' type='void A_SPosAttack(mobj_t * actor)'/>

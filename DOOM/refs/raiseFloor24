@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_spec.h' l='561' type='7'/>
+<use f='codebrowser/p_floor.c' l='347' c='EV_DoFloor'/>
+<use f='codebrowser/p_spec.c' l='708' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='879' u='r' c='P_CrossSpecialLine'/>

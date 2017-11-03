@@ -1,0 +1,6 @@
+<dec f='codebrowser/d_player.h' l='56' type='0'/>
+<doc f='codebrowser/d_player.h' l='55'>// Playing or camping.</doc>
+<use f='codebrowser/d_main.c' l='456' u='r' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/g_game.c' l='823' u='r' c='G_PlayerReborn'/>
+<use f='codebrowser/p_mobj.c' l='676' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_user.c' l='113' u='r' c='P_CalcHeight'/>

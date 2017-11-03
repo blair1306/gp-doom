@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_mobj.h' l='173' type='1048576'/>
+<doc f='codebrowser/p_mobj.h' l='171'>// Don&apos;t stop moving halfway off a step,
+    //  that is, have dead bodies slide down all the way.</doc>
+<use f='codebrowser/p_enemy.c' l='1134' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_inter.c' l='680' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_mobj.c' l='207' u='r' c='P_XYMovement'/>

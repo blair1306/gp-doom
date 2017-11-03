@@ -1,0 +1,16 @@
+<dec f='codebrowser/d_event.h' l='55' type='0'/>
+<use f='codebrowser/d_main.c' l='460' u='r' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='527' u='r' c='D_StartTitle'/>
+<use f='codebrowser/f_finale.c' l='98' u='r' c='F_StartFinale'/>
+<use f='codebrowser/g_game.c' l='487' u='r' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='521' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='617' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='647' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='649' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1024' u='r' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1177' u='r' c='G_DoWorldDone'/>
+<use f='codebrowser/g_game.c' l='1208' u='r' c='G_DoLoadGame'/>
+<use f='codebrowser/g_game.c' l='1313' u='r' c='G_DoSaveGame'/>
+<use f='codebrowser/g_game.c' l='1357' u='r' c='G_DoNewGame'/>
+<use f='codebrowser/g_game.c' l='1587' u='r' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1592' u='r' c='G_DoPlayDemo'/>

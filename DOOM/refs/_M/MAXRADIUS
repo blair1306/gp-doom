@@ -1,0 +1,21 @@
+<dec f='codebrowser/p_local.h' l='51'/>
+<doc f='codebrowser/p_local.h' l='48'>// MAXRADIUS is for precalculated sector block boxes
+// the spider demon is larger,
+// but we do not have any moving sectors nearby</doc>
+<use f='codebrowser/p_enemy.c' l='1188' u='c'/>
+<use f='codebrowser/p_enemy.c' l='1189' u='c'/>
+<use f='codebrowser/p_enemy.c' l='1190' u='c'/>
+<use f='codebrowser/p_enemy.c' l='1191' u='c'/>
+<use f='codebrowser/p_map.c' l='155' u='c'/>
+<use f='codebrowser/p_map.c' l='156' u='c'/>
+<use f='codebrowser/p_map.c' l='157' u='c'/>
+<use f='codebrowser/p_map.c' l='158' u='c'/>
+<use f='codebrowser/p_map.c' l='420' u='c'/>
+<use f='codebrowser/p_map.c' l='421' u='c'/>
+<use f='codebrowser/p_map.c' l='422' u='c'/>
+<use f='codebrowser/p_map.c' l='423' u='c'/>
+<use f='codebrowser/p_map.c' l='1221' u='c'/>
+<use f='codebrowser/p_setup.c' l='560' u='c'/>
+<use f='codebrowser/p_setup.c' l='564' u='c'/>
+<use f='codebrowser/p_setup.c' l='568' u='c'/>
+<use f='codebrowser/p_setup.c' l='572' u='c'/>

@@ -1,0 +1,6 @@
+<def f='codebrowser/p_pspr.c' l='109' type='fixed_t'/>
+<use f='codebrowser/p_pspr.c' l='124' u='w' c='P_CalcSwing'/>
+<use f='codebrowser/p_pspr.c' l='127' u='r' c='P_CalcSwing'/>
+<doc f='codebrowser/p_pspr.c' l='106'>//
+// P_CalcSwing
+//	</doc>

@@ -1,0 +1,11 @@
+<def f='codebrowser/p_pspr.c' l='598' type='fixed_t'/>
+<use f='codebrowser/p_pspr.c' l='607' u='w' c='P_BulletSlope'/>
+<use f='codebrowser/p_pspr.c' l='612' u='w' c='P_BulletSlope'/>
+<use f='codebrowser/p_pspr.c' l='616' u='w' c='P_BulletSlope'/>
+<use f='codebrowser/p_pspr.c' l='639' u='r' c='P_GunShot'/>
+<use f='codebrowser/p_pspr.c' l='724' u='r' c='A_FireShotgun2'/>
+<doc f='codebrowser/p_pspr.c' l='593'>//
+// P_BulletSlope
+// Sets a slope so a near miss is at aproximately
+// the height of the intended target
+//</doc>

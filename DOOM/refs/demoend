@@ -1,0 +1,3 @@
+<def f='codebrowser/g_game.c' l='133' type='byte *'/>
+<use f='codebrowser/g_game.c' l='1515' u='r' c='G_WriteDemoTiccmd'/>
+<use f='codebrowser/g_game.c' l='1543' u='w' c='G_RecordDemo'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/p_local.h' l='30'/>
+<use f='codebrowser/p_enemy.c' l='302' u='c'/>
+<use f='codebrowser/p_enemy.c' l='304' u='c'/>
+<use f='codebrowser/p_mobj.c' l='276' u='c'/>
+<use f='codebrowser/p_mobj.c' l='278' u='c'/>

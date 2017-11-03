@@ -1,0 +1,782 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>p_doors.c source code [codebrowser/p_doors.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/p_doors.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='p_doors.c.html'>p_doors.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION: Door animation code (opening/closing)</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><em>static</em> <em>const</em> <em>char</em></td></tr>
+<tr><th id="24">24</th><td><dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [50]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id: p_doors.c,v 1.4 1997/02/03 16:47:53 b1 Exp $"</q>;</td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><u>#include <a href="z_zone.h.html">"z_zone.h"</a></u></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="doomdef.h.html">"doomdef.h"</a></u></td></tr>
+<tr><th id="29">29</th><td><u>#include <a href="p_local.h.html">"p_local.h"</a></u></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="s_sound.h.html">"s_sound.h"</a></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><i>// State.</i></td></tr>
+<tr><th id="35">35</th><td><u>#include <a href="doomstat.h.html">"doomstat.h"</a></u></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="r_state.h.html">"r_state.h"</a></u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><i>// Data.</i></td></tr>
+<tr><th id="39">39</th><td><u>#include <a href="dstrings.h.html">"dstrings.h"</a></u></td></tr>
+<tr><th id="40">40</th><td><u>#include <a href="sounds.h.html">"sounds.h"</a></u></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><u>#<span data-ppcond="42">if</span> 0</u></td></tr>
+<tr><th id="43">43</th><td><i>//</i></td></tr>
+<tr><th id="44">44</th><td><i>// Sliding door frame information</i></td></tr>
+<tr><th id="45">45</th><td><i>//</i></td></tr>
+<tr><th id="46">46</th><td>slidename_t	slideFrameNames[MAXSLIDEDOORS] =</td></tr>
+<tr><th id="47">47</th><td>{</td></tr>
+<tr><th id="48">48</th><td>    {<q>"GDOORF1"</q>,<q>"GDOORF2"</q>,<q>"GDOORF3"</q>,<q>"GDOORF4"</q>,	<i>// front</i></td></tr>
+<tr><th id="49">49</th><td>     <q>"GDOORB1"</q>,<q>"GDOORB2"</q>,<q>"GDOORB3"</q>,<q>"GDOORB4"</q>},	<i>// back</i></td></tr>
+<tr><th id="50">50</th><td>	 </td></tr>
+<tr><th id="51">51</th><td>    {<q>"\0"</q>,<q>"\0"</q>,<q>"\0"</q>,<q>"\0"</q>}</td></tr>
+<tr><th id="52">52</th><td>};</td></tr>
+<tr><th id="53">53</th><td><u>#<span data-ppcond="42">endif</span></u></td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><i>//</i></td></tr>
+<tr><th id="57">57</th><td><i>// VERTICAL DOORS</i></td></tr>
+<tr><th id="58">58</th><td><i>//</i></td></tr>
+<tr><th id="59">59</th><td><i></i></td></tr>
+<tr><th id="60">60</th><td><i>//</i></td></tr>
+<tr><th id="61">61</th><td><i>// T_VerticalDoor</i></td></tr>
+<tr><th id="62">62</th><td><i>//</i></td></tr>
+<tr><th id="63">63</th><td><em>void</em> <dfn class="decl def" id="T_VerticalDoor" title='T_VerticalDoor' data-ref="T_VerticalDoor">T_VerticalDoor</dfn> (<a class="typedef" href="p_spec.h.html#vldoor_t" title='vldoor_t' data-type='struct vldoor_t' data-ref="vldoor_t">vldoor_t</a>* <dfn class="local col1 decl" id="1door" title='door' data-type='vldoor_t *' data-ref="1door">door</dfn>)</td></tr>
+<tr><th id="64">64</th><td>{</td></tr>
+<tr><th id="65">65</th><td>    <a class="typedef" href="p_spec.h.html#result_e" title='result_e' data-type='enum result_e' data-ref="result_e">result_e</a>	<dfn class="local col2 decl" id="2res" title='res' data-type='result_e' data-ref="2res">res</dfn>;</td></tr>
+<tr><th id="66">66</th><td>	</td></tr>
+<tr><th id="67">67</th><td>    <b>switch</b>(<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a>)</td></tr>
+<tr><th id="68">68</th><td>    {</td></tr>
+<tr><th id="69">69</th><td>      <b>case</b> <var>0</var>:</td></tr>
+<tr><th id="70">70</th><td>	<i>// WAITING</i></td></tr>
+<tr><th id="71">71</th><td>	<b>if</b> (!--<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topcountdown" title='(anonymous struct)::topcountdown' data-ref="(anonymous)::topcountdown">topcountdown</a>)</td></tr>
+<tr><th id="72">72</th><td>	{</td></tr>
+<tr><th id="73">73</th><td>	    <b>switch</b>(<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a>)</td></tr>
+<tr><th id="74">74</th><td>	    {</td></tr>
+<tr><th id="75">75</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#blazeRaise" title='blazeRaise' data-ref="blazeRaise">blazeRaise</a>:</td></tr>
+<tr><th id="76">76</th><td>		<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = -<var>1</var>; <i>// time to go back down</i></td></tr>
+<tr><th id="77">77</th><td>		<a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>((<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)&amp;<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::soundorg" title='(anonymous struct)::soundorg' data-ref="(anonymous)::soundorg">soundorg</a>,</td></tr>
+<tr><th id="78">78</th><td>			     <a class="enum" href="sounds.h.html#sfx_bdcls" title='sfx_bdcls' data-ref="sfx_bdcls">sfx_bdcls</a>);</td></tr>
+<tr><th id="79">79</th><td>		<b>break</b>;</td></tr>
+<tr><th id="80">80</th><td>		</td></tr>
+<tr><th id="81">81</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#normal" title='normal' data-ref="normal">normal</a>:</td></tr>
+<tr><th id="82">82</th><td>		<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = -<var>1</var>; <i>// time to go back down</i></td></tr>
+<tr><th id="83">83</th><td>		<a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>((<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)&amp;<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::soundorg" title='(anonymous struct)::soundorg' data-ref="(anonymous)::soundorg">soundorg</a>,</td></tr>
+<tr><th id="84">84</th><td>			     <a class="enum" href="sounds.h.html#sfx_dorcls" title='sfx_dorcls' data-ref="sfx_dorcls">sfx_dorcls</a>);</td></tr>
+<tr><th id="85">85</th><td>		<b>break</b>;</td></tr>
+<tr><th id="86">86</th><td>		</td></tr>
+<tr><th id="87">87</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#close30ThenOpen" title='close30ThenOpen' data-ref="close30ThenOpen">close30ThenOpen</a>:</td></tr>
+<tr><th id="88">88</th><td>		<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = <var>1</var>;</td></tr>
+<tr><th id="89">89</th><td>		<a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>((<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)&amp;<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::soundorg" title='(anonymous struct)::soundorg' data-ref="(anonymous)::soundorg">soundorg</a>,</td></tr>
+<tr><th id="90">90</th><td>			     <a class="enum" href="sounds.h.html#sfx_doropn" title='sfx_doropn' data-ref="sfx_doropn">sfx_doropn</a>);</td></tr>
+<tr><th id="91">91</th><td>		<b>break</b>;</td></tr>
+<tr><th id="92">92</th><td>		</td></tr>
+<tr><th id="93">93</th><td>	      <b>default</b>:</td></tr>
+<tr><th id="94">94</th><td>		<b>break</b>;</td></tr>
+<tr><th id="95">95</th><td>	    }</td></tr>
+<tr><th id="96">96</th><td>	}</td></tr>
+<tr><th id="97">97</th><td>	<b>break</b>;</td></tr>
+<tr><th id="98">98</th><td>	</td></tr>
+<tr><th id="99">99</th><td>      <b>case</b> <var>2</var>:</td></tr>
+<tr><th id="100">100</th><td>	<i>//  INITIAL WAIT</i></td></tr>
+<tr><th id="101">101</th><td>	<b>if</b> (!--<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topcountdown" title='(anonymous struct)::topcountdown' data-ref="(anonymous)::topcountdown">topcountdown</a>)</td></tr>
+<tr><th id="102">102</th><td>	{</td></tr>
+<tr><th id="103">103</th><td>	    <b>switch</b>(<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a>)</td></tr>
+<tr><th id="104">104</th><td>	    {</td></tr>
+<tr><th id="105">105</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#raiseIn5Mins" title='raiseIn5Mins' data-ref="raiseIn5Mins">raiseIn5Mins</a>:</td></tr>
+<tr><th id="106">106</th><td>		<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = <var>1</var>;</td></tr>
+<tr><th id="107">107</th><td>		<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a> = <a class="enum" href="p_spec.h.html#normal" title='normal' data-ref="normal">normal</a>;</td></tr>
+<tr><th id="108">108</th><td>		<a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>((<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)&amp;<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::soundorg" title='(anonymous struct)::soundorg' data-ref="(anonymous)::soundorg">soundorg</a>,</td></tr>
+<tr><th id="109">109</th><td>			     <a class="enum" href="sounds.h.html#sfx_doropn" title='sfx_doropn' data-ref="sfx_doropn">sfx_doropn</a>);</td></tr>
+<tr><th id="110">110</th><td>		<b>break</b>;</td></tr>
+<tr><th id="111">111</th><td>		</td></tr>
+<tr><th id="112">112</th><td>	      <b>default</b>:</td></tr>
+<tr><th id="113">113</th><td>		<b>break</b>;</td></tr>
+<tr><th id="114">114</th><td>	    }</td></tr>
+<tr><th id="115">115</th><td>	}</td></tr>
+<tr><th id="116">116</th><td>	<b>break</b>;</td></tr>
+<tr><th id="117">117</th><td>	</td></tr>
+<tr><th id="118">118</th><td>      <b>case</b> -<var>1</var>:</td></tr>
+<tr><th id="119">119</th><td>	<i>// DOWN</i></td></tr>
+<tr><th id="120">120</th><td>	<a class="local col2 ref" href="#2res" title='res' data-ref="2res">res</a> = <a class="ref" href="p_spec.h.html#T_MovePlane" title='T_MovePlane' data-ref="T_MovePlane">T_MovePlane</a>(<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>,</td></tr>
+<tr><th id="121">121</th><td>			  <a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::speed" title='(anonymous struct)::speed' data-ref="(anonymous)::speed">speed</a>,</td></tr>
+<tr><th id="122">122</th><td>			  <a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::floorheight" title='(anonymous struct)::floorheight' data-ref="(anonymous)::floorheight">floorheight</a>,</td></tr>
+<tr><th id="123">123</th><td>			  <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>,<var>1</var>,<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a>);</td></tr>
+<tr><th id="124">124</th><td>	<b>if</b> (<a class="local col2 ref" href="#2res" title='res' data-ref="2res">res</a> == <a class="enum" href="p_spec.h.html#pastdest" title='pastdest' data-ref="pastdest">pastdest</a>)</td></tr>
+<tr><th id="125">125</th><td>	{</td></tr>
+<tr><th id="126">126</th><td>	    <b>switch</b>(<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a>)</td></tr>
+<tr><th id="127">127</th><td>	    {</td></tr>
+<tr><th id="128">128</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#blazeRaise" title='blazeRaise' data-ref="blazeRaise">blazeRaise</a>:</td></tr>
+<tr><th id="129">129</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#blazeClose" title='blazeClose' data-ref="blazeClose">blazeClose</a>:</td></tr>
+<tr><th id="130">130</th><td>		<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::specialdata" title='(anonymous struct)::specialdata' data-ref="(anonymous)::specialdata">specialdata</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="131">131</th><td>		<a class="ref" href="p_local.h.html#P_RemoveThinker" title='P_RemoveThinker' data-ref="P_RemoveThinker">P_RemoveThinker</a> (&amp;<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::thinker" title='(anonymous struct)::thinker' data-ref="(anonymous)::thinker">thinker</a>);  <i>// unlink and free</i></td></tr>
+<tr><th id="132">132</th><td>		<a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>((<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)&amp;<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::soundorg" title='(anonymous struct)::soundorg' data-ref="(anonymous)::soundorg">soundorg</a>,</td></tr>
+<tr><th id="133">133</th><td>			     <a class="enum" href="sounds.h.html#sfx_bdcls" title='sfx_bdcls' data-ref="sfx_bdcls">sfx_bdcls</a>);</td></tr>
+<tr><th id="134">134</th><td>		<b>break</b>;</td></tr>
+<tr><th id="135">135</th><td>		</td></tr>
+<tr><th id="136">136</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#normal" title='normal' data-ref="normal">normal</a>:</td></tr>
+<tr><th id="137">137</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#close" title='close' data-ref="close">close</a>:</td></tr>
+<tr><th id="138">138</th><td>		<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::specialdata" title='(anonymous struct)::specialdata' data-ref="(anonymous)::specialdata">specialdata</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="139">139</th><td>		<a class="ref" href="p_local.h.html#P_RemoveThinker" title='P_RemoveThinker' data-ref="P_RemoveThinker">P_RemoveThinker</a> (&amp;<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::thinker" title='(anonymous struct)::thinker' data-ref="(anonymous)::thinker">thinker</a>);  <i>// unlink and free</i></td></tr>
+<tr><th id="140">140</th><td>		<b>break</b>;</td></tr>
+<tr><th id="141">141</th><td>		</td></tr>
+<tr><th id="142">142</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#close30ThenOpen" title='close30ThenOpen' data-ref="close30ThenOpen">close30ThenOpen</a>:</td></tr>
+<tr><th id="143">143</th><td>		<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = <var>0</var>;</td></tr>
+<tr><th id="144">144</th><td>		<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topcountdown" title='(anonymous struct)::topcountdown' data-ref="(anonymous)::topcountdown">topcountdown</a> = <var>35</var>*<var>30</var>;</td></tr>
+<tr><th id="145">145</th><td>		<b>break</b>;</td></tr>
+<tr><th id="146">146</th><td>		</td></tr>
+<tr><th id="147">147</th><td>	      <b>default</b>:</td></tr>
+<tr><th id="148">148</th><td>		<b>break</b>;</td></tr>
+<tr><th id="149">149</th><td>	    }</td></tr>
+<tr><th id="150">150</th><td>	}</td></tr>
+<tr><th id="151">151</th><td>	<b>else</b> <b>if</b> (<a class="local col2 ref" href="#2res" title='res' data-ref="2res">res</a> == <a class="enum" href="p_spec.h.html#crushed" title='crushed' data-ref="crushed">crushed</a>)</td></tr>
+<tr><th id="152">152</th><td>	{</td></tr>
+<tr><th id="153">153</th><td>	    <b>switch</b>(<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a>)</td></tr>
+<tr><th id="154">154</th><td>	    {</td></tr>
+<tr><th id="155">155</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#blazeClose" title='blazeClose' data-ref="blazeClose">blazeClose</a>:</td></tr>
+<tr><th id="156">156</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#close" title='close' data-ref="close">close</a>:		<i>// DO NOT GO BACK UP!</i></td></tr>
+<tr><th id="157">157</th><td>		<b>break</b>;</td></tr>
+<tr><th id="158">158</th><td>		</td></tr>
+<tr><th id="159">159</th><td>	      <b>default</b>:</td></tr>
+<tr><th id="160">160</th><td>		<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = <var>1</var>;</td></tr>
+<tr><th id="161">161</th><td>		<a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>((<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)&amp;<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::soundorg" title='(anonymous struct)::soundorg' data-ref="(anonymous)::soundorg">soundorg</a>,</td></tr>
+<tr><th id="162">162</th><td>			     <a class="enum" href="sounds.h.html#sfx_doropn" title='sfx_doropn' data-ref="sfx_doropn">sfx_doropn</a>);</td></tr>
+<tr><th id="163">163</th><td>		<b>break</b>;</td></tr>
+<tr><th id="164">164</th><td>	    }</td></tr>
+<tr><th id="165">165</th><td>	}</td></tr>
+<tr><th id="166">166</th><td>	<b>break</b>;</td></tr>
+<tr><th id="167">167</th><td>	</td></tr>
+<tr><th id="168">168</th><td>      <b>case</b> <var>1</var>:</td></tr>
+<tr><th id="169">169</th><td>	<i>// UP</i></td></tr>
+<tr><th id="170">170</th><td>	<a class="local col2 ref" href="#2res" title='res' data-ref="2res">res</a> = <a class="ref" href="p_spec.h.html#T_MovePlane" title='T_MovePlane' data-ref="T_MovePlane">T_MovePlane</a>(<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>,</td></tr>
+<tr><th id="171">171</th><td>			  <a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::speed" title='(anonymous struct)::speed' data-ref="(anonymous)::speed">speed</a>,</td></tr>
+<tr><th id="172">172</th><td>			  <a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a>,</td></tr>
+<tr><th id="173">173</th><td>			  <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>,<var>1</var>,<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a>);</td></tr>
+<tr><th id="174">174</th><td>	</td></tr>
+<tr><th id="175">175</th><td>	<b>if</b> (<a class="local col2 ref" href="#2res" title='res' data-ref="2res">res</a> == <a class="enum" href="p_spec.h.html#pastdest" title='pastdest' data-ref="pastdest">pastdest</a>)</td></tr>
+<tr><th id="176">176</th><td>	{</td></tr>
+<tr><th id="177">177</th><td>	    <b>switch</b>(<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a>)</td></tr>
+<tr><th id="178">178</th><td>	    {</td></tr>
+<tr><th id="179">179</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#blazeRaise" title='blazeRaise' data-ref="blazeRaise">blazeRaise</a>:</td></tr>
+<tr><th id="180">180</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#normal" title='normal' data-ref="normal">normal</a>:</td></tr>
+<tr><th id="181">181</th><td>		<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = <var>0</var>; <i>// wait at top</i></td></tr>
+<tr><th id="182">182</th><td>		<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topcountdown" title='(anonymous struct)::topcountdown' data-ref="(anonymous)::topcountdown">topcountdown</a> = <a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topwait" title='(anonymous struct)::topwait' data-ref="(anonymous)::topwait">topwait</a>;</td></tr>
+<tr><th id="183">183</th><td>		<b>break</b>;</td></tr>
+<tr><th id="184">184</th><td>		</td></tr>
+<tr><th id="185">185</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#close30ThenOpen" title='close30ThenOpen' data-ref="close30ThenOpen">close30ThenOpen</a>:</td></tr>
+<tr><th id="186">186</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#blazeOpen" title='blazeOpen' data-ref="blazeOpen">blazeOpen</a>:</td></tr>
+<tr><th id="187">187</th><td>	      <b>case</b> <a class="enum" href="p_spec.h.html#open" title='open' data-ref="open">open</a>:</td></tr>
+<tr><th id="188">188</th><td>		<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::specialdata" title='(anonymous struct)::specialdata' data-ref="(anonymous)::specialdata">specialdata</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="189">189</th><td>		<a class="ref" href="p_local.h.html#P_RemoveThinker" title='P_RemoveThinker' data-ref="P_RemoveThinker">P_RemoveThinker</a> (&amp;<a class="local col1 ref" href="#1door" title='door' data-ref="1door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::thinker" title='(anonymous struct)::thinker' data-ref="(anonymous)::thinker">thinker</a>);  <i>// unlink and free</i></td></tr>
+<tr><th id="190">190</th><td>		<b>break</b>;</td></tr>
+<tr><th id="191">191</th><td>		</td></tr>
+<tr><th id="192">192</th><td>	      <b>default</b>:</td></tr>
+<tr><th id="193">193</th><td>		<b>break</b>;</td></tr>
+<tr><th id="194">194</th><td>	    }</td></tr>
+<tr><th id="195">195</th><td>	}</td></tr>
+<tr><th id="196">196</th><td>	<b>break</b>;</td></tr>
+<tr><th id="197">197</th><td>    }</td></tr>
+<tr><th id="198">198</th><td>}</td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td></td></tr>
+<tr><th id="201">201</th><td><i>//</i></td></tr>
+<tr><th id="202">202</th><td><i>// EV_DoLockedDoor</i></td></tr>
+<tr><th id="203">203</th><td><i>// Move a locked door up/down</i></td></tr>
+<tr><th id="204">204</th><td><i>//</i></td></tr>
+<tr><th id="205">205</th><td></td></tr>
+<tr><th id="206">206</th><td><em>int</em></td></tr>
+<tr><th id="207">207</th><td><dfn class="decl def" id="EV_DoLockedDoor" title='EV_DoLockedDoor' data-ref="EV_DoLockedDoor">EV_DoLockedDoor</dfn></td></tr>
+<tr><th id="208">208</th><td>( <a class="typedef" href="r_defs.h.html#line_t" title='line_t' data-type='struct line_s' data-ref="line_t">line_t</a>*	<dfn class="local col3 decl" id="3line" title='line' data-type='line_t *' data-ref="3line">line</dfn>,</td></tr>
+<tr><th id="209">209</th><td>  <a class="typedef" href="p_spec.h.html#vldoor_e" title='vldoor_e' data-type='enum vldoor_e' data-ref="vldoor_e">vldoor_e</a>	<dfn class="local col4 decl" id="4type" title='type' data-type='vldoor_e' data-ref="4type">type</dfn>,</td></tr>
+<tr><th id="210">210</th><td>  <a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>*	<dfn class="local col5 decl" id="5thing" title='thing' data-type='mobj_t *' data-ref="5thing">thing</dfn> )</td></tr>
+<tr><th id="211">211</th><td>{</td></tr>
+<tr><th id="212">212</th><td>    <a class="typedef" href="d_player.h.html#player_t" title='player_t' data-type='struct player_s' data-ref="player_t">player_t</a>*	<dfn class="local col6 decl" id="6p" title='p' data-type='player_t *' data-ref="6p">p</dfn>;</td></tr>
+<tr><th id="213">213</th><td>	</td></tr>
+<tr><th id="214">214</th><td>    <a class="local col6 ref" href="#6p" title='p' data-ref="6p">p</a> = <a class="local col5 ref" href="#5thing" title='thing' data-ref="5thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::player" title='mobj_s::player' data-ref="mobj_s::player">player</a>;</td></tr>
+<tr><th id="215">215</th><td>	</td></tr>
+<tr><th id="216">216</th><td>    <b>if</b> (!<a class="local col6 ref" href="#6p" title='p' data-ref="6p">p</a>)</td></tr>
+<tr><th id="217">217</th><td>	<b>return</b> <var>0</var>;</td></tr>
+<tr><th id="218">218</th><td>		</td></tr>
+<tr><th id="219">219</th><td>    <b>switch</b>(<a class="local col3 ref" href="#3line" title='line' data-ref="3line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::special" title='line_s::special' data-ref="line_s::special">special</a>)</td></tr>
+<tr><th id="220">220</th><td>    {</td></tr>
+<tr><th id="221">221</th><td>      <b>case</b> <var>99</var>:	<i>// Blue Lock</i></td></tr>
+<tr><th id="222">222</th><td>      <b>case</b> <var>133</var>:</td></tr>
+<tr><th id="223">223</th><td>	<b>if</b> ( !<a class="local col6 ref" href="#6p" title='p' data-ref="6p">p</a> )</td></tr>
+<tr><th id="224">224</th><td>	    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="225">225</th><td>	<b>if</b> (!<a class="local col6 ref" href="#6p" title='p' data-ref="6p">p</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cards" title='player_s::cards' data-ref="player_s::cards">cards</a>[<a class="enum" href="doomdef.h.html#it_bluecard" title='it_bluecard' data-ref="it_bluecard">it_bluecard</a>] &amp;&amp; !<a class="local col6 ref" href="#6p" title='p' data-ref="6p">p</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cards" title='player_s::cards' data-ref="player_s::cards">cards</a>[<a class="enum" href="doomdef.h.html#it_blueskull" title='it_blueskull' data-ref="it_blueskull">it_blueskull</a>])</td></tr>
+<tr><th id="226">226</th><td>	{</td></tr>
+<tr><th id="227">227</th><td>	    <a class="local col6 ref" href="#6p" title='p' data-ref="6p">p</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <a class="macro" href="d_englsh.h.html#125" title="&quot;You need a blue key to activate this object&quot;" data-ref="_M/PD_BLUEO">PD_BLUEO</a>;</td></tr>
+<tr><th id="228">228</th><td>	    <a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,<a class="enum" href="sounds.h.html#sfx_oof" title='sfx_oof' data-ref="sfx_oof">sfx_oof</a>);</td></tr>
+<tr><th id="229">229</th><td>	    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="230">230</th><td>	}</td></tr>
+<tr><th id="231">231</th><td>	<b>break</b>;</td></tr>
+<tr><th id="232">232</th><td>	</td></tr>
+<tr><th id="233">233</th><td>      <b>case</b> <var>134</var>: <i>// Red Lock</i></td></tr>
+<tr><th id="234">234</th><td>      <b>case</b> <var>135</var>:</td></tr>
+<tr><th id="235">235</th><td>	<b>if</b> ( !<a class="local col6 ref" href="#6p" title='p' data-ref="6p">p</a> )</td></tr>
+<tr><th id="236">236</th><td>	    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="237">237</th><td>	<b>if</b> (!<a class="local col6 ref" href="#6p" title='p' data-ref="6p">p</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cards" title='player_s::cards' data-ref="player_s::cards">cards</a>[<a class="enum" href="doomdef.h.html#it_redcard" title='it_redcard' data-ref="it_redcard">it_redcard</a>] &amp;&amp; !<a class="local col6 ref" href="#6p" title='p' data-ref="6p">p</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cards" title='player_s::cards' data-ref="player_s::cards">cards</a>[<a class="enum" href="doomdef.h.html#it_redskull" title='it_redskull' data-ref="it_redskull">it_redskull</a>])</td></tr>
+<tr><th id="238">238</th><td>	{</td></tr>
+<tr><th id="239">239</th><td>	    <a class="local col6 ref" href="#6p" title='p' data-ref="6p">p</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <a class="macro" href="d_englsh.h.html#126" title="&quot;You need a red key to activate this object&quot;" data-ref="_M/PD_REDO">PD_REDO</a>;</td></tr>
+<tr><th id="240">240</th><td>	    <a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,<a class="enum" href="sounds.h.html#sfx_oof" title='sfx_oof' data-ref="sfx_oof">sfx_oof</a>);</td></tr>
+<tr><th id="241">241</th><td>	    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="242">242</th><td>	}</td></tr>
+<tr><th id="243">243</th><td>	<b>break</b>;</td></tr>
+<tr><th id="244">244</th><td>	</td></tr>
+<tr><th id="245">245</th><td>      <b>case</b> <var>136</var>:	<i>// Yellow Lock</i></td></tr>
+<tr><th id="246">246</th><td>      <b>case</b> <var>137</var>:</td></tr>
+<tr><th id="247">247</th><td>	<b>if</b> ( !<a class="local col6 ref" href="#6p" title='p' data-ref="6p">p</a> )</td></tr>
+<tr><th id="248">248</th><td>	    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="249">249</th><td>	<b>if</b> (!<a class="local col6 ref" href="#6p" title='p' data-ref="6p">p</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cards" title='player_s::cards' data-ref="player_s::cards">cards</a>[<a class="enum" href="doomdef.h.html#it_yellowcard" title='it_yellowcard' data-ref="it_yellowcard">it_yellowcard</a>] &amp;&amp;</td></tr>
+<tr><th id="250">250</th><td>	    !<a class="local col6 ref" href="#6p" title='p' data-ref="6p">p</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cards" title='player_s::cards' data-ref="player_s::cards">cards</a>[<a class="enum" href="doomdef.h.html#it_yellowskull" title='it_yellowskull' data-ref="it_yellowskull">it_yellowskull</a>])</td></tr>
+<tr><th id="251">251</th><td>	{</td></tr>
+<tr><th id="252">252</th><td>	    <a class="local col6 ref" href="#6p" title='p' data-ref="6p">p</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <a class="macro" href="d_englsh.h.html#127" title="&quot;You need a yellow key to activate this object&quot;" data-ref="_M/PD_YELLOWO">PD_YELLOWO</a>;</td></tr>
+<tr><th id="253">253</th><td>	    <a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,<a class="enum" href="sounds.h.html#sfx_oof" title='sfx_oof' data-ref="sfx_oof">sfx_oof</a>);</td></tr>
+<tr><th id="254">254</th><td>	    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="255">255</th><td>	}</td></tr>
+<tr><th id="256">256</th><td>	<b>break</b>;	</td></tr>
+<tr><th id="257">257</th><td>    }</td></tr>
+<tr><th id="258">258</th><td></td></tr>
+<tr><th id="259">259</th><td>    <b>return</b> <a class="ref" href="#EV_DoDoor" title='EV_DoDoor' data-ref="EV_DoDoor">EV_DoDoor</a>(<a class="local col3 ref" href="#3line" title='line' data-ref="3line">line</a>,<a class="local col4 ref" href="#4type" title='type' data-ref="4type">type</a>);</td></tr>
+<tr><th id="260">260</th><td>}</td></tr>
+<tr><th id="261">261</th><td></td></tr>
+<tr><th id="262">262</th><td></td></tr>
+<tr><th id="263">263</th><td><em>int</em></td></tr>
+<tr><th id="264">264</th><td><dfn class="decl def" id="EV_DoDoor" title='EV_DoDoor' data-ref="EV_DoDoor">EV_DoDoor</dfn></td></tr>
+<tr><th id="265">265</th><td>( <a class="typedef" href="r_defs.h.html#line_t" title='line_t' data-type='struct line_s' data-ref="line_t">line_t</a>*	<dfn class="local col7 decl" id="7line" title='line' data-type='line_t *' data-ref="7line">line</dfn>,</td></tr>
+<tr><th id="266">266</th><td>  <a class="typedef" href="p_spec.h.html#vldoor_e" title='vldoor_e' data-type='enum vldoor_e' data-ref="vldoor_e">vldoor_e</a>	<dfn class="local col8 decl" id="8type" title='type' data-type='vldoor_e' data-ref="8type">type</dfn> )</td></tr>
+<tr><th id="267">267</th><td>{</td></tr>
+<tr><th id="268">268</th><td>    <em>int</em>		<dfn class="local col9 decl" id="9secnum" title='secnum' data-type='int' data-ref="9secnum">secnum</dfn>,<dfn class="local col0 decl" id="10rtn" title='rtn' data-type='int' data-ref="10rtn">rtn</dfn>;</td></tr>
+<tr><th id="269">269</th><td>    <a class="typedef" href="r_defs.h.html#sector_t" title='sector_t' data-type='struct sector_t' data-ref="sector_t">sector_t</a>*	<dfn class="local col1 decl" id="11sec" title='sec' data-type='sector_t *' data-ref="11sec">sec</dfn>;</td></tr>
+<tr><th id="270">270</th><td>    <a class="typedef" href="p_spec.h.html#vldoor_t" title='vldoor_t' data-type='struct vldoor_t' data-ref="vldoor_t">vldoor_t</a>*	<dfn class="local col2 decl" id="12door" title='door' data-type='vldoor_t *' data-ref="12door">door</dfn>;</td></tr>
+<tr><th id="271">271</th><td>	</td></tr>
+<tr><th id="272">272</th><td>    <a class="local col9 ref" href="#9secnum" title='secnum' data-ref="9secnum">secnum</a> = -<var>1</var>;</td></tr>
+<tr><th id="273">273</th><td>    <a class="local col0 ref" href="#10rtn" title='rtn' data-ref="10rtn">rtn</a> = <var>0</var>;</td></tr>
+<tr><th id="274">274</th><td>    </td></tr>
+<tr><th id="275">275</th><td>    <b>while</b> ((<a class="local col9 ref" href="#9secnum" title='secnum' data-ref="9secnum">secnum</a> = <a class="ref" href="p_spec.h.html#P_FindSectorFromLineTag" title='P_FindSectorFromLineTag' data-ref="P_FindSectorFromLineTag">P_FindSectorFromLineTag</a>(<a class="local col7 ref" href="#7line" title='line' data-ref="7line">line</a>,<a class="local col9 ref" href="#9secnum" title='secnum' data-ref="9secnum">secnum</a>)) &gt;= <var>0</var>)</td></tr>
+<tr><th id="276">276</th><td>    {</td></tr>
+<tr><th id="277">277</th><td>	<a class="local col1 ref" href="#11sec" title='sec' data-ref="11sec">sec</a> = &amp;<a class="ref" href="r_state.h.html#sectors" title='sectors' data-ref="sectors">sectors</a>[<a class="local col9 ref" href="#9secnum" title='secnum' data-ref="9secnum">secnum</a>];</td></tr>
+<tr><th id="278">278</th><td>	<b>if</b> (<a class="local col1 ref" href="#11sec" title='sec' data-ref="11sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::specialdata" title='(anonymous struct)::specialdata' data-ref="(anonymous)::specialdata">specialdata</a>)</td></tr>
+<tr><th id="279">279</th><td>	    <b>continue</b>;</td></tr>
+<tr><th id="280">280</th><td>		</td></tr>
+<tr><th id="281">281</th><td>	</td></tr>
+<tr><th id="282">282</th><td>	<i>// new door thinker</i></td></tr>
+<tr><th id="283">283</th><td>	<a class="local col0 ref" href="#10rtn" title='rtn' data-ref="10rtn">rtn</a> = <var>1</var>;</td></tr>
+<tr><th id="284">284</th><td>	<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a> = <a class="ref" href="z_zone.h.html#Z_Malloc" title='Z_Malloc' data-ref="Z_Malloc">Z_Malloc</a> (<b>sizeof</b>(*<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>), <a class="macro" href="z_zone.h.html#41" title="51" data-ref="_M/PU_LEVSPEC">PU_LEVSPEC</a>, <var>0</var>);</td></tr>
+<tr><th id="285">285</th><td>	<a class="ref" href="p_local.h.html#P_AddThinker" title='P_AddThinker' data-ref="P_AddThinker">P_AddThinker</a> (&amp;<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::thinker" title='(anonymous struct)::thinker' data-ref="(anonymous)::thinker">thinker</a>);</td></tr>
+<tr><th id="286">286</th><td>	<a class="local col1 ref" href="#11sec" title='sec' data-ref="11sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::specialdata" title='(anonymous struct)::specialdata' data-ref="(anonymous)::specialdata">specialdata</a> = <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>;</td></tr>
+<tr><th id="287">287</th><td></td></tr>
+<tr><th id="288">288</th><td>	<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::thinker" title='(anonymous struct)::thinker' data-ref="(anonymous)::thinker">thinker</a>.<a class="ref" href="d_think.h.html#thinker_s::function" title='thinker_s::function' data-ref="thinker_s::function">function</a>.<a class="ref" href="d_think.h.html#(anonymous)::acp1" title='(anonymous union)::acp1' data-ref="(anonymous)::acp1">acp1</a> = (<a class="typedef" href="d_think.h.html#actionf_p1" title='actionf_p1' data-type='void (*)(void *)' data-ref="actionf_p1">actionf_p1</a>) <a class="ref" href="#T_VerticalDoor" title='T_VerticalDoor' data-ref="T_VerticalDoor">T_VerticalDoor</a>;</td></tr>
+<tr><th id="289">289</th><td>	<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a> = <a class="local col1 ref" href="#11sec" title='sec' data-ref="11sec">sec</a>;</td></tr>
+<tr><th id="290">290</th><td>	<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a> = <a class="local col8 ref" href="#8type" title='type' data-ref="8type">type</a>;</td></tr>
+<tr><th id="291">291</th><td>	<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topwait" title='(anonymous struct)::topwait' data-ref="(anonymous)::topwait">topwait</a> = <a class="macro" href="p_spec.h.html#365" title="150" data-ref="_M/VDOORWAIT">VDOORWAIT</a>;</td></tr>
+<tr><th id="292">292</th><td>	<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::speed" title='(anonymous struct)::speed' data-ref="(anonymous)::speed">speed</a> = <a class="macro" href="p_spec.h.html#364" title="(1&lt;&lt;16)*2" data-ref="_M/VDOORSPEED">VDOORSPEED</a>;</td></tr>
+<tr><th id="293">293</th><td>		</td></tr>
+<tr><th id="294">294</th><td>	<b>switch</b>(<a class="local col8 ref" href="#8type" title='type' data-ref="8type">type</a>)</td></tr>
+<tr><th id="295">295</th><td>	{</td></tr>
+<tr><th id="296">296</th><td>	  <b>case</b> <a class="enum" href="p_spec.h.html#blazeClose" title='blazeClose' data-ref="blazeClose">blazeClose</a>:</td></tr>
+<tr><th id="297">297</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> = <a class="ref" href="p_spec.h.html#P_FindLowestCeilingSurrounding" title='P_FindLowestCeilingSurrounding' data-ref="P_FindLowestCeilingSurrounding">P_FindLowestCeilingSurrounding</a>(<a class="local col1 ref" href="#11sec" title='sec' data-ref="11sec">sec</a>);</td></tr>
+<tr><th id="298">298</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> -= <var>4</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="299">299</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = -<var>1</var>;</td></tr>
+<tr><th id="300">300</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::speed" title='(anonymous struct)::speed' data-ref="(anonymous)::speed">speed</a> = <a class="macro" href="p_spec.h.html#364" title="(1&lt;&lt;16)*2" data-ref="_M/VDOORSPEED">VDOORSPEED</a> * <var>4</var>;</td></tr>
+<tr><th id="301">301</th><td>	    <a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>((<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)&amp;<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::soundorg" title='(anonymous struct)::soundorg' data-ref="(anonymous)::soundorg">soundorg</a>,</td></tr>
+<tr><th id="302">302</th><td>			 <a class="enum" href="sounds.h.html#sfx_bdcls" title='sfx_bdcls' data-ref="sfx_bdcls">sfx_bdcls</a>);</td></tr>
+<tr><th id="303">303</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="304">304</th><td>	    </td></tr>
+<tr><th id="305">305</th><td>	  <b>case</b> <a class="enum" href="p_spec.h.html#close" title='close' data-ref="close">close</a>:</td></tr>
+<tr><th id="306">306</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> = <a class="ref" href="p_spec.h.html#P_FindLowestCeilingSurrounding" title='P_FindLowestCeilingSurrounding' data-ref="P_FindLowestCeilingSurrounding">P_FindLowestCeilingSurrounding</a>(<a class="local col1 ref" href="#11sec" title='sec' data-ref="11sec">sec</a>);</td></tr>
+<tr><th id="307">307</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> -= <var>4</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="308">308</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = -<var>1</var>;</td></tr>
+<tr><th id="309">309</th><td>	    <a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>((<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)&amp;<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::soundorg" title='(anonymous struct)::soundorg' data-ref="(anonymous)::soundorg">soundorg</a>,</td></tr>
+<tr><th id="310">310</th><td>			 <a class="enum" href="sounds.h.html#sfx_dorcls" title='sfx_dorcls' data-ref="sfx_dorcls">sfx_dorcls</a>);</td></tr>
+<tr><th id="311">311</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="312">312</th><td>	    </td></tr>
+<tr><th id="313">313</th><td>	  <b>case</b> <a class="enum" href="p_spec.h.html#close30ThenOpen" title='close30ThenOpen' data-ref="close30ThenOpen">close30ThenOpen</a>:</td></tr>
+<tr><th id="314">314</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> = <a class="local col1 ref" href="#11sec" title='sec' data-ref="11sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::ceilingheight" title='(anonymous struct)::ceilingheight' data-ref="(anonymous)::ceilingheight">ceilingheight</a>;</td></tr>
+<tr><th id="315">315</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = -<var>1</var>;</td></tr>
+<tr><th id="316">316</th><td>	    <a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>((<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)&amp;<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::soundorg" title='(anonymous struct)::soundorg' data-ref="(anonymous)::soundorg">soundorg</a>,</td></tr>
+<tr><th id="317">317</th><td>			 <a class="enum" href="sounds.h.html#sfx_dorcls" title='sfx_dorcls' data-ref="sfx_dorcls">sfx_dorcls</a>);</td></tr>
+<tr><th id="318">318</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="319">319</th><td>	    </td></tr>
+<tr><th id="320">320</th><td>	  <b>case</b> <a class="enum" href="p_spec.h.html#blazeRaise" title='blazeRaise' data-ref="blazeRaise">blazeRaise</a>:</td></tr>
+<tr><th id="321">321</th><td>	  <b>case</b> <a class="enum" href="p_spec.h.html#blazeOpen" title='blazeOpen' data-ref="blazeOpen">blazeOpen</a>:</td></tr>
+<tr><th id="322">322</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = <var>1</var>;</td></tr>
+<tr><th id="323">323</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> = <a class="ref" href="p_spec.h.html#P_FindLowestCeilingSurrounding" title='P_FindLowestCeilingSurrounding' data-ref="P_FindLowestCeilingSurrounding">P_FindLowestCeilingSurrounding</a>(<a class="local col1 ref" href="#11sec" title='sec' data-ref="11sec">sec</a>);</td></tr>
+<tr><th id="324">324</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> -= <var>4</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="325">325</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::speed" title='(anonymous struct)::speed' data-ref="(anonymous)::speed">speed</a> = <a class="macro" href="p_spec.h.html#364" title="(1&lt;&lt;16)*2" data-ref="_M/VDOORSPEED">VDOORSPEED</a> * <var>4</var>;</td></tr>
+<tr><th id="326">326</th><td>	    <b>if</b> (<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> != <a class="local col1 ref" href="#11sec" title='sec' data-ref="11sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::ceilingheight" title='(anonymous struct)::ceilingheight' data-ref="(anonymous)::ceilingheight">ceilingheight</a>)</td></tr>
+<tr><th id="327">327</th><td>		<a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>((<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)&amp;<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::soundorg" title='(anonymous struct)::soundorg' data-ref="(anonymous)::soundorg">soundorg</a>,</td></tr>
+<tr><th id="328">328</th><td>			     <a class="enum" href="sounds.h.html#sfx_bdopn" title='sfx_bdopn' data-ref="sfx_bdopn">sfx_bdopn</a>);</td></tr>
+<tr><th id="329">329</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="330">330</th><td>	    </td></tr>
+<tr><th id="331">331</th><td>	  <b>case</b> <a class="enum" href="p_spec.h.html#normal" title='normal' data-ref="normal">normal</a>:</td></tr>
+<tr><th id="332">332</th><td>	  <b>case</b> <a class="enum" href="p_spec.h.html#open" title='open' data-ref="open">open</a>:</td></tr>
+<tr><th id="333">333</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = <var>1</var>;</td></tr>
+<tr><th id="334">334</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> = <a class="ref" href="p_spec.h.html#P_FindLowestCeilingSurrounding" title='P_FindLowestCeilingSurrounding' data-ref="P_FindLowestCeilingSurrounding">P_FindLowestCeilingSurrounding</a>(<a class="local col1 ref" href="#11sec" title='sec' data-ref="11sec">sec</a>);</td></tr>
+<tr><th id="335">335</th><td>	    <a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> -= <var>4</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="336">336</th><td>	    <b>if</b> (<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> != <a class="local col1 ref" href="#11sec" title='sec' data-ref="11sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::ceilingheight" title='(anonymous struct)::ceilingheight' data-ref="(anonymous)::ceilingheight">ceilingheight</a>)</td></tr>
+<tr><th id="337">337</th><td>		<a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>((<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)&amp;<a class="local col2 ref" href="#12door" title='door' data-ref="12door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::soundorg" title='(anonymous struct)::soundorg' data-ref="(anonymous)::soundorg">soundorg</a>,</td></tr>
+<tr><th id="338">338</th><td>			     <a class="enum" href="sounds.h.html#sfx_doropn" title='sfx_doropn' data-ref="sfx_doropn">sfx_doropn</a>);</td></tr>
+<tr><th id="339">339</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="340">340</th><td>	    </td></tr>
+<tr><th id="341">341</th><td>	  <b>default</b>:</td></tr>
+<tr><th id="342">342</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="343">343</th><td>	}</td></tr>
+<tr><th id="344">344</th><td>		</td></tr>
+<tr><th id="345">345</th><td>    }</td></tr>
+<tr><th id="346">346</th><td>    <b>return</b> <a class="local col0 ref" href="#10rtn" title='rtn' data-ref="10rtn">rtn</a>;</td></tr>
+<tr><th id="347">347</th><td>}</td></tr>
+<tr><th id="348">348</th><td></td></tr>
+<tr><th id="349">349</th><td></td></tr>
+<tr><th id="350">350</th><td><i>//</i></td></tr>
+<tr><th id="351">351</th><td><i>// EV_VerticalDoor : open a door manually, no tag value</i></td></tr>
+<tr><th id="352">352</th><td><i>//</i></td></tr>
+<tr><th id="353">353</th><td><em>void</em></td></tr>
+<tr><th id="354">354</th><td><dfn class="decl def" id="EV_VerticalDoor" title='EV_VerticalDoor' data-ref="EV_VerticalDoor">EV_VerticalDoor</dfn></td></tr>
+<tr><th id="355">355</th><td>( <a class="typedef" href="r_defs.h.html#line_t" title='line_t' data-type='struct line_s' data-ref="line_t">line_t</a>*	<dfn class="local col3 decl" id="13line" title='line' data-type='line_t *' data-ref="13line">line</dfn>,</td></tr>
+<tr><th id="356">356</th><td>  <a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>*	<dfn class="local col4 decl" id="14thing" title='thing' data-type='mobj_t *' data-ref="14thing">thing</dfn> )</td></tr>
+<tr><th id="357">357</th><td>{</td></tr>
+<tr><th id="358">358</th><td>    <a class="typedef" href="d_player.h.html#player_t" title='player_t' data-type='struct player_s' data-ref="player_t">player_t</a>*	<dfn class="local col5 decl" id="15player" title='player' data-type='player_t *' data-ref="15player">player</dfn>;</td></tr>
+<tr><th id="359">359</th><td>    <em>int</em>		<dfn class="local col6 decl" id="16secnum" title='secnum' data-type='int' data-ref="16secnum">secnum</dfn>;</td></tr>
+<tr><th id="360">360</th><td>    <a class="typedef" href="r_defs.h.html#sector_t" title='sector_t' data-type='struct sector_t' data-ref="sector_t">sector_t</a>*	<dfn class="local col7 decl" id="17sec" title='sec' data-type='sector_t *' data-ref="17sec">sec</dfn>;</td></tr>
+<tr><th id="361">361</th><td>    <a class="typedef" href="p_spec.h.html#vldoor_t" title='vldoor_t' data-type='struct vldoor_t' data-ref="vldoor_t">vldoor_t</a>*	<dfn class="local col8 decl" id="18door" title='door' data-type='vldoor_t *' data-ref="18door">door</dfn>;</td></tr>
+<tr><th id="362">362</th><td>    <em>int</em>		<dfn class="local col9 decl" id="19side" title='side' data-type='int' data-ref="19side">side</dfn>;</td></tr>
+<tr><th id="363">363</th><td>	</td></tr>
+<tr><th id="364">364</th><td>    <a class="local col9 ref" href="#19side" title='side' data-ref="19side">side</a> = <var>0</var>;	<i>// only front sides can be used</i></td></tr>
+<tr><th id="365">365</th><td></td></tr>
+<tr><th id="366">366</th><td>    <i>//	Check for locks</i></td></tr>
+<tr><th id="367">367</th><td>    <a class="local col5 ref" href="#15player" title='player' data-ref="15player">player</a> = <a class="local col4 ref" href="#14thing" title='thing' data-ref="14thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::player" title='mobj_s::player' data-ref="mobj_s::player">player</a>;</td></tr>
+<tr><th id="368">368</th><td>		</td></tr>
+<tr><th id="369">369</th><td>    <b>switch</b>(<a class="local col3 ref" href="#13line" title='line' data-ref="13line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::special" title='line_s::special' data-ref="line_s::special">special</a>)</td></tr>
+<tr><th id="370">370</th><td>    {</td></tr>
+<tr><th id="371">371</th><td>      <b>case</b> <var>26</var>: <i>// Blue Lock</i></td></tr>
+<tr><th id="372">372</th><td>      <b>case</b> <var>32</var>:</td></tr>
+<tr><th id="373">373</th><td>	<b>if</b> ( !<a class="local col5 ref" href="#15player" title='player' data-ref="15player">player</a> )</td></tr>
+<tr><th id="374">374</th><td>	    <b>return</b>;</td></tr>
+<tr><th id="375">375</th><td>	</td></tr>
+<tr><th id="376">376</th><td>	<b>if</b> (!<a class="local col5 ref" href="#15player" title='player' data-ref="15player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cards" title='player_s::cards' data-ref="player_s::cards">cards</a>[<a class="enum" href="doomdef.h.html#it_bluecard" title='it_bluecard' data-ref="it_bluecard">it_bluecard</a>] &amp;&amp; !<a class="local col5 ref" href="#15player" title='player' data-ref="15player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cards" title='player_s::cards' data-ref="player_s::cards">cards</a>[<a class="enum" href="doomdef.h.html#it_blueskull" title='it_blueskull' data-ref="it_blueskull">it_blueskull</a>])</td></tr>
+<tr><th id="377">377</th><td>	{</td></tr>
+<tr><th id="378">378</th><td>	    <a class="local col5 ref" href="#15player" title='player' data-ref="15player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <a class="macro" href="d_englsh.h.html#128" title="&quot;You need a blue key to open this door&quot;" data-ref="_M/PD_BLUEK">PD_BLUEK</a>;</td></tr>
+<tr><th id="379">379</th><td>	    <a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,<a class="enum" href="sounds.h.html#sfx_oof" title='sfx_oof' data-ref="sfx_oof">sfx_oof</a>);</td></tr>
+<tr><th id="380">380</th><td>	    <b>return</b>;</td></tr>
+<tr><th id="381">381</th><td>	}</td></tr>
+<tr><th id="382">382</th><td>	<b>break</b>;</td></tr>
+<tr><th id="383">383</th><td>	</td></tr>
+<tr><th id="384">384</th><td>      <b>case</b> <var>27</var>: <i>// Yellow Lock</i></td></tr>
+<tr><th id="385">385</th><td>      <b>case</b> <var>34</var>:</td></tr>
+<tr><th id="386">386</th><td>	<b>if</b> ( !<a class="local col5 ref" href="#15player" title='player' data-ref="15player">player</a> )</td></tr>
+<tr><th id="387">387</th><td>	    <b>return</b>;</td></tr>
+<tr><th id="388">388</th><td>	</td></tr>
+<tr><th id="389">389</th><td>	<b>if</b> (!<a class="local col5 ref" href="#15player" title='player' data-ref="15player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cards" title='player_s::cards' data-ref="player_s::cards">cards</a>[<a class="enum" href="doomdef.h.html#it_yellowcard" title='it_yellowcard' data-ref="it_yellowcard">it_yellowcard</a>] &amp;&amp;</td></tr>
+<tr><th id="390">390</th><td>	    !<a class="local col5 ref" href="#15player" title='player' data-ref="15player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cards" title='player_s::cards' data-ref="player_s::cards">cards</a>[<a class="enum" href="doomdef.h.html#it_yellowskull" title='it_yellowskull' data-ref="it_yellowskull">it_yellowskull</a>])</td></tr>
+<tr><th id="391">391</th><td>	{</td></tr>
+<tr><th id="392">392</th><td>	    <a class="local col5 ref" href="#15player" title='player' data-ref="15player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <a class="macro" href="d_englsh.h.html#130" title="&quot;You need a yellow key to open this door&quot;" data-ref="_M/PD_YELLOWK">PD_YELLOWK</a>;</td></tr>
+<tr><th id="393">393</th><td>	    <a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,<a class="enum" href="sounds.h.html#sfx_oof" title='sfx_oof' data-ref="sfx_oof">sfx_oof</a>);</td></tr>
+<tr><th id="394">394</th><td>	    <b>return</b>;</td></tr>
+<tr><th id="395">395</th><td>	}</td></tr>
+<tr><th id="396">396</th><td>	<b>break</b>;</td></tr>
+<tr><th id="397">397</th><td>	</td></tr>
+<tr><th id="398">398</th><td>      <b>case</b> <var>28</var>: <i>// Red Lock</i></td></tr>
+<tr><th id="399">399</th><td>      <b>case</b> <var>33</var>:</td></tr>
+<tr><th id="400">400</th><td>	<b>if</b> ( !<a class="local col5 ref" href="#15player" title='player' data-ref="15player">player</a> )</td></tr>
+<tr><th id="401">401</th><td>	    <b>return</b>;</td></tr>
+<tr><th id="402">402</th><td>	</td></tr>
+<tr><th id="403">403</th><td>	<b>if</b> (!<a class="local col5 ref" href="#15player" title='player' data-ref="15player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cards" title='player_s::cards' data-ref="player_s::cards">cards</a>[<a class="enum" href="doomdef.h.html#it_redcard" title='it_redcard' data-ref="it_redcard">it_redcard</a>] &amp;&amp; !<a class="local col5 ref" href="#15player" title='player' data-ref="15player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cards" title='player_s::cards' data-ref="player_s::cards">cards</a>[<a class="enum" href="doomdef.h.html#it_redskull" title='it_redskull' data-ref="it_redskull">it_redskull</a>])</td></tr>
+<tr><th id="404">404</th><td>	{</td></tr>
+<tr><th id="405">405</th><td>	    <a class="local col5 ref" href="#15player" title='player' data-ref="15player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <a class="macro" href="d_englsh.h.html#129" title="&quot;You need a red key to open this door&quot;" data-ref="_M/PD_REDK">PD_REDK</a>;</td></tr>
+<tr><th id="406">406</th><td>	    <a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,<a class="enum" href="sounds.h.html#sfx_oof" title='sfx_oof' data-ref="sfx_oof">sfx_oof</a>);</td></tr>
+<tr><th id="407">407</th><td>	    <b>return</b>;</td></tr>
+<tr><th id="408">408</th><td>	}</td></tr>
+<tr><th id="409">409</th><td>	<b>break</b>;</td></tr>
+<tr><th id="410">410</th><td>    }</td></tr>
+<tr><th id="411">411</th><td>	</td></tr>
+<tr><th id="412">412</th><td>    <i>// if the sector has an active thinker, use it</i></td></tr>
+<tr><th id="413">413</th><td>    <a class="local col7 ref" href="#17sec" title='sec' data-ref="17sec">sec</a> = <a class="ref" href="r_state.h.html#sides" title='sides' data-ref="sides">sides</a>[ <a class="local col3 ref" href="#13line" title='line' data-ref="13line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::sidenum" title='line_s::sidenum' data-ref="line_s::sidenum">sidenum</a>[<a class="local col9 ref" href="#19side" title='side' data-ref="19side">side</a>^<var>1</var>]] .<a class="ref" href="r_defs.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a>;</td></tr>
+<tr><th id="414">414</th><td>    <a class="local col6 ref" href="#16secnum" title='secnum' data-ref="16secnum">secnum</a> = <a class="local col7 ref" href="#17sec" title='sec' data-ref="17sec">sec</a>-<a class="ref" href="r_state.h.html#sectors" title='sectors' data-ref="sectors">sectors</a>;</td></tr>
+<tr><th id="415">415</th><td></td></tr>
+<tr><th id="416">416</th><td>    <b>if</b> (<a class="local col7 ref" href="#17sec" title='sec' data-ref="17sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::specialdata" title='(anonymous struct)::specialdata' data-ref="(anonymous)::specialdata">specialdata</a>)</td></tr>
+<tr><th id="417">417</th><td>    {</td></tr>
+<tr><th id="418">418</th><td>	<a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a> = <a class="local col7 ref" href="#17sec" title='sec' data-ref="17sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::specialdata" title='(anonymous struct)::specialdata' data-ref="(anonymous)::specialdata">specialdata</a>;</td></tr>
+<tr><th id="419">419</th><td>	<b>switch</b>(<a class="local col3 ref" href="#13line" title='line' data-ref="13line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::special" title='line_s::special' data-ref="line_s::special">special</a>)</td></tr>
+<tr><th id="420">420</th><td>	{</td></tr>
+<tr><th id="421">421</th><td>	  <b>case</b>	<var>1</var>: <i>// ONLY FOR "RAISE" DOORS, NOT "OPEN"s</i></td></tr>
+<tr><th id="422">422</th><td>	  <b>case</b>	<var>26</var>:</td></tr>
+<tr><th id="423">423</th><td>	  <b>case</b>	<var>27</var>:</td></tr>
+<tr><th id="424">424</th><td>	  <b>case</b>	<var>28</var>:</td></tr>
+<tr><th id="425">425</th><td>	  <b>case</b>	<var>117</var>:</td></tr>
+<tr><th id="426">426</th><td>	    <b>if</b> (<a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> == -<var>1</var>)</td></tr>
+<tr><th id="427">427</th><td>		<a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = <var>1</var>;	<i>// go back up</i></td></tr>
+<tr><th id="428">428</th><td>	    <b>else</b></td></tr>
+<tr><th id="429">429</th><td>	    {</td></tr>
+<tr><th id="430">430</th><td>		<b>if</b> (!<a class="local col4 ref" href="#14thing" title='thing' data-ref="14thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::player" title='mobj_s::player' data-ref="mobj_s::player">player</a>)</td></tr>
+<tr><th id="431">431</th><td>		    <b>return</b>;		<i>// JDC: bad guys never close doors</i></td></tr>
+<tr><th id="432">432</th><td>		</td></tr>
+<tr><th id="433">433</th><td>		<a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = -<var>1</var>;	<i>// start going down immediately</i></td></tr>
+<tr><th id="434">434</th><td>	    }</td></tr>
+<tr><th id="435">435</th><td>	    <b>return</b>;</td></tr>
+<tr><th id="436">436</th><td>	}</td></tr>
+<tr><th id="437">437</th><td>    }</td></tr>
+<tr><th id="438">438</th><td>	</td></tr>
+<tr><th id="439">439</th><td>    <i>// for proper sound</i></td></tr>
+<tr><th id="440">440</th><td>    <b>switch</b>(<a class="local col3 ref" href="#13line" title='line' data-ref="13line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::special" title='line_s::special' data-ref="line_s::special">special</a>)</td></tr>
+<tr><th id="441">441</th><td>    {</td></tr>
+<tr><th id="442">442</th><td>      <b>case</b> <var>117</var>:	<i>// BLAZING DOOR RAISE</i></td></tr>
+<tr><th id="443">443</th><td>      <b>case</b> <var>118</var>:	<i>// BLAZING DOOR OPEN</i></td></tr>
+<tr><th id="444">444</th><td>	<a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>((<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)&amp;<a class="local col7 ref" href="#17sec" title='sec' data-ref="17sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::soundorg" title='(anonymous struct)::soundorg' data-ref="(anonymous)::soundorg">soundorg</a>,<a class="enum" href="sounds.h.html#sfx_bdopn" title='sfx_bdopn' data-ref="sfx_bdopn">sfx_bdopn</a>);</td></tr>
+<tr><th id="445">445</th><td>	<b>break</b>;</td></tr>
+<tr><th id="446">446</th><td>	</td></tr>
+<tr><th id="447">447</th><td>      <b>case</b> <var>1</var>:	<i>// NORMAL DOOR SOUND</i></td></tr>
+<tr><th id="448">448</th><td>      <b>case</b> <var>31</var>:</td></tr>
+<tr><th id="449">449</th><td>	<a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>((<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)&amp;<a class="local col7 ref" href="#17sec" title='sec' data-ref="17sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::soundorg" title='(anonymous struct)::soundorg' data-ref="(anonymous)::soundorg">soundorg</a>,<a class="enum" href="sounds.h.html#sfx_doropn" title='sfx_doropn' data-ref="sfx_doropn">sfx_doropn</a>);</td></tr>
+<tr><th id="450">450</th><td>	<b>break</b>;</td></tr>
+<tr><th id="451">451</th><td>	</td></tr>
+<tr><th id="452">452</th><td>      <b>default</b>:	<i>// LOCKED DOOR SOUND</i></td></tr>
+<tr><th id="453">453</th><td>	<a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>((<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)&amp;<a class="local col7 ref" href="#17sec" title='sec' data-ref="17sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::soundorg" title='(anonymous struct)::soundorg' data-ref="(anonymous)::soundorg">soundorg</a>,<a class="enum" href="sounds.h.html#sfx_doropn" title='sfx_doropn' data-ref="sfx_doropn">sfx_doropn</a>);</td></tr>
+<tr><th id="454">454</th><td>	<b>break</b>;</td></tr>
+<tr><th id="455">455</th><td>    }</td></tr>
+<tr><th id="456">456</th><td>	</td></tr>
+<tr><th id="457">457</th><td>    </td></tr>
+<tr><th id="458">458</th><td>    <i>// new door thinker</i></td></tr>
+<tr><th id="459">459</th><td>    <a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a> = <a class="ref" href="z_zone.h.html#Z_Malloc" title='Z_Malloc' data-ref="Z_Malloc">Z_Malloc</a> (<b>sizeof</b>(*<a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>), <a class="macro" href="z_zone.h.html#41" title="51" data-ref="_M/PU_LEVSPEC">PU_LEVSPEC</a>, <var>0</var>);</td></tr>
+<tr><th id="460">460</th><td>    <a class="ref" href="p_local.h.html#P_AddThinker" title='P_AddThinker' data-ref="P_AddThinker">P_AddThinker</a> (&amp;<a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::thinker" title='(anonymous struct)::thinker' data-ref="(anonymous)::thinker">thinker</a>);</td></tr>
+<tr><th id="461">461</th><td>    <a class="local col7 ref" href="#17sec" title='sec' data-ref="17sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::specialdata" title='(anonymous struct)::specialdata' data-ref="(anonymous)::specialdata">specialdata</a> = <a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>;</td></tr>
+<tr><th id="462">462</th><td>    <a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::thinker" title='(anonymous struct)::thinker' data-ref="(anonymous)::thinker">thinker</a>.<a class="ref" href="d_think.h.html#thinker_s::function" title='thinker_s::function' data-ref="thinker_s::function">function</a>.<a class="ref" href="d_think.h.html#(anonymous)::acp1" title='(anonymous union)::acp1' data-ref="(anonymous)::acp1">acp1</a> = (<a class="typedef" href="d_think.h.html#actionf_p1" title='actionf_p1' data-type='void (*)(void *)' data-ref="actionf_p1">actionf_p1</a>) <a class="ref" href="#T_VerticalDoor" title='T_VerticalDoor' data-ref="T_VerticalDoor">T_VerticalDoor</a>;</td></tr>
+<tr><th id="463">463</th><td>    <a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a> = <a class="local col7 ref" href="#17sec" title='sec' data-ref="17sec">sec</a>;</td></tr>
+<tr><th id="464">464</th><td>    <a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = <var>1</var>;</td></tr>
+<tr><th id="465">465</th><td>    <a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::speed" title='(anonymous struct)::speed' data-ref="(anonymous)::speed">speed</a> = <a class="macro" href="p_spec.h.html#364" title="(1&lt;&lt;16)*2" data-ref="_M/VDOORSPEED">VDOORSPEED</a>;</td></tr>
+<tr><th id="466">466</th><td>    <a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topwait" title='(anonymous struct)::topwait' data-ref="(anonymous)::topwait">topwait</a> = <a class="macro" href="p_spec.h.html#365" title="150" data-ref="_M/VDOORWAIT">VDOORWAIT</a>;</td></tr>
+<tr><th id="467">467</th><td></td></tr>
+<tr><th id="468">468</th><td>    <b>switch</b>(<a class="local col3 ref" href="#13line" title='line' data-ref="13line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::special" title='line_s::special' data-ref="line_s::special">special</a>)</td></tr>
+<tr><th id="469">469</th><td>    {</td></tr>
+<tr><th id="470">470</th><td>      <b>case</b> <var>1</var>:</td></tr>
+<tr><th id="471">471</th><td>      <b>case</b> <var>26</var>:</td></tr>
+<tr><th id="472">472</th><td>      <b>case</b> <var>27</var>:</td></tr>
+<tr><th id="473">473</th><td>      <b>case</b> <var>28</var>:</td></tr>
+<tr><th id="474">474</th><td>	<a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a> = <a class="enum" href="p_spec.h.html#normal" title='normal' data-ref="normal">normal</a>;</td></tr>
+<tr><th id="475">475</th><td>	<b>break</b>;</td></tr>
+<tr><th id="476">476</th><td>	</td></tr>
+<tr><th id="477">477</th><td>      <b>case</b> <var>31</var>:</td></tr>
+<tr><th id="478">478</th><td>      <b>case</b> <var>32</var>:</td></tr>
+<tr><th id="479">479</th><td>      <b>case</b> <var>33</var>:</td></tr>
+<tr><th id="480">480</th><td>      <b>case</b> <var>34</var>:</td></tr>
+<tr><th id="481">481</th><td>	<a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a> = <a class="enum" href="p_spec.h.html#open" title='open' data-ref="open">open</a>;</td></tr>
+<tr><th id="482">482</th><td>	<a class="local col3 ref" href="#13line" title='line' data-ref="13line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::special" title='line_s::special' data-ref="line_s::special">special</a> = <var>0</var>;</td></tr>
+<tr><th id="483">483</th><td>	<b>break</b>;</td></tr>
+<tr><th id="484">484</th><td>	</td></tr>
+<tr><th id="485">485</th><td>      <b>case</b> <var>117</var>:	<i>// blazing door raise</i></td></tr>
+<tr><th id="486">486</th><td>	<a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a> = <a class="enum" href="p_spec.h.html#blazeRaise" title='blazeRaise' data-ref="blazeRaise">blazeRaise</a>;</td></tr>
+<tr><th id="487">487</th><td>	<a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::speed" title='(anonymous struct)::speed' data-ref="(anonymous)::speed">speed</a> = <a class="macro" href="p_spec.h.html#364" title="(1&lt;&lt;16)*2" data-ref="_M/VDOORSPEED">VDOORSPEED</a>*<var>4</var>;</td></tr>
+<tr><th id="488">488</th><td>	<b>break</b>;</td></tr>
+<tr><th id="489">489</th><td>      <b>case</b> <var>118</var>:	<i>// blazing door open</i></td></tr>
+<tr><th id="490">490</th><td>	<a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a> = <a class="enum" href="p_spec.h.html#blazeOpen" title='blazeOpen' data-ref="blazeOpen">blazeOpen</a>;</td></tr>
+<tr><th id="491">491</th><td>	<a class="local col3 ref" href="#13line" title='line' data-ref="13line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::special" title='line_s::special' data-ref="line_s::special">special</a> = <var>0</var>;</td></tr>
+<tr><th id="492">492</th><td>	<a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::speed" title='(anonymous struct)::speed' data-ref="(anonymous)::speed">speed</a> = <a class="macro" href="p_spec.h.html#364" title="(1&lt;&lt;16)*2" data-ref="_M/VDOORSPEED">VDOORSPEED</a>*<var>4</var>;</td></tr>
+<tr><th id="493">493</th><td>	<b>break</b>;</td></tr>
+<tr><th id="494">494</th><td>    }</td></tr>
+<tr><th id="495">495</th><td>    </td></tr>
+<tr><th id="496">496</th><td>    <i>// find the top and bottom of the movement range</i></td></tr>
+<tr><th id="497">497</th><td>    <a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> = <a class="ref" href="p_spec.h.html#P_FindLowestCeilingSurrounding" title='P_FindLowestCeilingSurrounding' data-ref="P_FindLowestCeilingSurrounding">P_FindLowestCeilingSurrounding</a>(<a class="local col7 ref" href="#17sec" title='sec' data-ref="17sec">sec</a>);</td></tr>
+<tr><th id="498">498</th><td>    <a class="local col8 ref" href="#18door" title='door' data-ref="18door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> -= <var>4</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="499">499</th><td>}</td></tr>
+<tr><th id="500">500</th><td></td></tr>
+<tr><th id="501">501</th><td></td></tr>
+<tr><th id="502">502</th><td><i>//</i></td></tr>
+<tr><th id="503">503</th><td><i>// Spawn a door that closes after 30 seconds</i></td></tr>
+<tr><th id="504">504</th><td><i>//</i></td></tr>
+<tr><th id="505">505</th><td><em>void</em> <dfn class="decl def" id="P_SpawnDoorCloseIn30" title='P_SpawnDoorCloseIn30' data-ref="P_SpawnDoorCloseIn30">P_SpawnDoorCloseIn30</dfn> (<a class="typedef" href="r_defs.h.html#sector_t" title='sector_t' data-type='struct sector_t' data-ref="sector_t">sector_t</a>* <dfn class="local col0 decl" id="20sec" title='sec' data-type='sector_t *' data-ref="20sec">sec</dfn>)</td></tr>
+<tr><th id="506">506</th><td>{</td></tr>
+<tr><th id="507">507</th><td>    <a class="typedef" href="p_spec.h.html#vldoor_t" title='vldoor_t' data-type='struct vldoor_t' data-ref="vldoor_t">vldoor_t</a>*	<dfn class="local col1 decl" id="21door" title='door' data-type='vldoor_t *' data-ref="21door">door</dfn>;</td></tr>
+<tr><th id="508">508</th><td>	</td></tr>
+<tr><th id="509">509</th><td>    <a class="local col1 ref" href="#21door" title='door' data-ref="21door">door</a> = <a class="ref" href="z_zone.h.html#Z_Malloc" title='Z_Malloc' data-ref="Z_Malloc">Z_Malloc</a> ( <b>sizeof</b>(*<a class="local col1 ref" href="#21door" title='door' data-ref="21door">door</a>), <a class="macro" href="z_zone.h.html#41" title="51" data-ref="_M/PU_LEVSPEC">PU_LEVSPEC</a>, <var>0</var>);</td></tr>
+<tr><th id="510">510</th><td></td></tr>
+<tr><th id="511">511</th><td>    <a class="ref" href="p_local.h.html#P_AddThinker" title='P_AddThinker' data-ref="P_AddThinker">P_AddThinker</a> (&amp;<a class="local col1 ref" href="#21door" title='door' data-ref="21door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::thinker" title='(anonymous struct)::thinker' data-ref="(anonymous)::thinker">thinker</a>);</td></tr>
+<tr><th id="512">512</th><td></td></tr>
+<tr><th id="513">513</th><td>    <a class="local col0 ref" href="#20sec" title='sec' data-ref="20sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::specialdata" title='(anonymous struct)::specialdata' data-ref="(anonymous)::specialdata">specialdata</a> = <a class="local col1 ref" href="#21door" title='door' data-ref="21door">door</a>;</td></tr>
+<tr><th id="514">514</th><td>    <a class="local col0 ref" href="#20sec" title='sec' data-ref="20sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::special" title='(anonymous struct)::special' data-ref="(anonymous)::special">special</a> = <var>0</var>;</td></tr>
+<tr><th id="515">515</th><td></td></tr>
+<tr><th id="516">516</th><td>    <a class="local col1 ref" href="#21door" title='door' data-ref="21door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::thinker" title='(anonymous struct)::thinker' data-ref="(anonymous)::thinker">thinker</a>.<a class="ref" href="d_think.h.html#thinker_s::function" title='thinker_s::function' data-ref="thinker_s::function">function</a>.<a class="ref" href="d_think.h.html#(anonymous)::acp1" title='(anonymous union)::acp1' data-ref="(anonymous)::acp1">acp1</a> = (<a class="typedef" href="d_think.h.html#actionf_p1" title='actionf_p1' data-type='void (*)(void *)' data-ref="actionf_p1">actionf_p1</a>)<a class="ref" href="#T_VerticalDoor" title='T_VerticalDoor' data-ref="T_VerticalDoor">T_VerticalDoor</a>;</td></tr>
+<tr><th id="517">517</th><td>    <a class="local col1 ref" href="#21door" title='door' data-ref="21door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a> = <a class="local col0 ref" href="#20sec" title='sec' data-ref="20sec">sec</a>;</td></tr>
+<tr><th id="518">518</th><td>    <a class="local col1 ref" href="#21door" title='door' data-ref="21door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = <var>0</var>;</td></tr>
+<tr><th id="519">519</th><td>    <a class="local col1 ref" href="#21door" title='door' data-ref="21door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a> = <a class="enum" href="p_spec.h.html#normal" title='normal' data-ref="normal">normal</a>;</td></tr>
+<tr><th id="520">520</th><td>    <a class="local col1 ref" href="#21door" title='door' data-ref="21door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::speed" title='(anonymous struct)::speed' data-ref="(anonymous)::speed">speed</a> = <a class="macro" href="p_spec.h.html#364" title="(1&lt;&lt;16)*2" data-ref="_M/VDOORSPEED">VDOORSPEED</a>;</td></tr>
+<tr><th id="521">521</th><td>    <a class="local col1 ref" href="#21door" title='door' data-ref="21door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topcountdown" title='(anonymous struct)::topcountdown' data-ref="(anonymous)::topcountdown">topcountdown</a> = <var>30</var> * <var>35</var>;</td></tr>
+<tr><th id="522">522</th><td>}</td></tr>
+<tr><th id="523">523</th><td></td></tr>
+<tr><th id="524">524</th><td><i>//</i></td></tr>
+<tr><th id="525">525</th><td><i>// Spawn a door that opens after 5 minutes</i></td></tr>
+<tr><th id="526">526</th><td><i>//</i></td></tr>
+<tr><th id="527">527</th><td><em>void</em></td></tr>
+<tr><th id="528">528</th><td><dfn class="decl def" id="P_SpawnDoorRaiseIn5Mins" title='P_SpawnDoorRaiseIn5Mins' data-ref="P_SpawnDoorRaiseIn5Mins">P_SpawnDoorRaiseIn5Mins</dfn></td></tr>
+<tr><th id="529">529</th><td>( <a class="typedef" href="r_defs.h.html#sector_t" title='sector_t' data-type='struct sector_t' data-ref="sector_t">sector_t</a>*	<dfn class="local col2 decl" id="22sec" title='sec' data-type='sector_t *' data-ref="22sec">sec</dfn>,</td></tr>
+<tr><th id="530">530</th><td>  <em>int</em>		<dfn class="local col3 decl" id="23secnum" title='secnum' data-type='int' data-ref="23secnum">secnum</dfn> )</td></tr>
+<tr><th id="531">531</th><td>{</td></tr>
+<tr><th id="532">532</th><td>    <a class="typedef" href="p_spec.h.html#vldoor_t" title='vldoor_t' data-type='struct vldoor_t' data-ref="vldoor_t">vldoor_t</a>*	<dfn class="local col4 decl" id="24door" title='door' data-type='vldoor_t *' data-ref="24door">door</dfn>;</td></tr>
+<tr><th id="533">533</th><td>	</td></tr>
+<tr><th id="534">534</th><td>    <a class="local col4 ref" href="#24door" title='door' data-ref="24door">door</a> = <a class="ref" href="z_zone.h.html#Z_Malloc" title='Z_Malloc' data-ref="Z_Malloc">Z_Malloc</a> ( <b>sizeof</b>(*<a class="local col4 ref" href="#24door" title='door' data-ref="24door">door</a>), <a class="macro" href="z_zone.h.html#41" title="51" data-ref="_M/PU_LEVSPEC">PU_LEVSPEC</a>, <var>0</var>);</td></tr>
+<tr><th id="535">535</th><td>    </td></tr>
+<tr><th id="536">536</th><td>    <a class="ref" href="p_local.h.html#P_AddThinker" title='P_AddThinker' data-ref="P_AddThinker">P_AddThinker</a> (&amp;<a class="local col4 ref" href="#24door" title='door' data-ref="24door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::thinker" title='(anonymous struct)::thinker' data-ref="(anonymous)::thinker">thinker</a>);</td></tr>
+<tr><th id="537">537</th><td></td></tr>
+<tr><th id="538">538</th><td>    <a class="local col2 ref" href="#22sec" title='sec' data-ref="22sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::specialdata" title='(anonymous struct)::specialdata' data-ref="(anonymous)::specialdata">specialdata</a> = <a class="local col4 ref" href="#24door" title='door' data-ref="24door">door</a>;</td></tr>
+<tr><th id="539">539</th><td>    <a class="local col2 ref" href="#22sec" title='sec' data-ref="22sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::special" title='(anonymous struct)::special' data-ref="(anonymous)::special">special</a> = <var>0</var>;</td></tr>
+<tr><th id="540">540</th><td></td></tr>
+<tr><th id="541">541</th><td>    <a class="local col4 ref" href="#24door" title='door' data-ref="24door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::thinker" title='(anonymous struct)::thinker' data-ref="(anonymous)::thinker">thinker</a>.<a class="ref" href="d_think.h.html#thinker_s::function" title='thinker_s::function' data-ref="thinker_s::function">function</a>.<a class="ref" href="d_think.h.html#(anonymous)::acp1" title='(anonymous union)::acp1' data-ref="(anonymous)::acp1">acp1</a> = (<a class="typedef" href="d_think.h.html#actionf_p1" title='actionf_p1' data-type='void (*)(void *)' data-ref="actionf_p1">actionf_p1</a>)<a class="ref" href="#T_VerticalDoor" title='T_VerticalDoor' data-ref="T_VerticalDoor">T_VerticalDoor</a>;</td></tr>
+<tr><th id="542">542</th><td>    <a class="local col4 ref" href="#24door" title='door' data-ref="24door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</a> = <a class="local col2 ref" href="#22sec" title='sec' data-ref="22sec">sec</a>;</td></tr>
+<tr><th id="543">543</th><td>    <a class="local col4 ref" href="#24door" title='door' data-ref="24door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::direction" title='(anonymous struct)::direction' data-ref="(anonymous)::direction">direction</a> = <var>2</var>;</td></tr>
+<tr><th id="544">544</th><td>    <a class="local col4 ref" href="#24door" title='door' data-ref="24door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a> = <a class="enum" href="p_spec.h.html#raiseIn5Mins" title='raiseIn5Mins' data-ref="raiseIn5Mins">raiseIn5Mins</a>;</td></tr>
+<tr><th id="545">545</th><td>    <a class="local col4 ref" href="#24door" title='door' data-ref="24door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::speed" title='(anonymous struct)::speed' data-ref="(anonymous)::speed">speed</a> = <a class="macro" href="p_spec.h.html#364" title="(1&lt;&lt;16)*2" data-ref="_M/VDOORSPEED">VDOORSPEED</a>;</td></tr>
+<tr><th id="546">546</th><td>    <a class="local col4 ref" href="#24door" title='door' data-ref="24door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> = <a class="ref" href="p_spec.h.html#P_FindLowestCeilingSurrounding" title='P_FindLowestCeilingSurrounding' data-ref="P_FindLowestCeilingSurrounding">P_FindLowestCeilingSurrounding</a>(<a class="local col2 ref" href="#22sec" title='sec' data-ref="22sec">sec</a>);</td></tr>
+<tr><th id="547">547</th><td>    <a class="local col4 ref" href="#24door" title='door' data-ref="24door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topheight" title='(anonymous struct)::topheight' data-ref="(anonymous)::topheight">topheight</a> -= <var>4</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="548">548</th><td>    <a class="local col4 ref" href="#24door" title='door' data-ref="24door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topwait" title='(anonymous struct)::topwait' data-ref="(anonymous)::topwait">topwait</a> = <a class="macro" href="p_spec.h.html#365" title="150" data-ref="_M/VDOORWAIT">VDOORWAIT</a>;</td></tr>
+<tr><th id="549">549</th><td>    <a class="local col4 ref" href="#24door" title='door' data-ref="24door">door</a>-&gt;<a class="ref" href="p_spec.h.html#(anonymous)::topcountdown" title='(anonymous struct)::topcountdown' data-ref="(anonymous)::topcountdown">topcountdown</a> = <var>5</var> * <var>60</var> * <var>35</var>;</td></tr>
+<tr><th id="550">550</th><td>}</td></tr>
+<tr><th id="551">551</th><td></td></tr>
+<tr><th id="552">552</th><td></td></tr>
+<tr><th id="553">553</th><td></td></tr>
+<tr><th id="554">554</th><td><i>// UNUSED</i></td></tr>
+<tr><th id="555">555</th><td><i>// Separate into p_slidoor.c?</i></td></tr>
+<tr><th id="556">556</th><td></td></tr>
+<tr><th id="557">557</th><td><u>#<span data-ppcond="557">if</span> 0		// ABANDONED TO THE MISTS OF TIME!!!</u></td></tr>
+<tr><th id="558">558</th><td><i>//</i></td></tr>
+<tr><th id="559">559</th><td><i>// EV_SlidingDoor : slide a door horizontally</i></td></tr>
+<tr><th id="560">560</th><td><i>// (animate midtexture, then set noblocking line)</i></td></tr>
+<tr><th id="561">561</th><td><i>//</i></td></tr>
+<tr><th id="562">562</th><td></td></tr>
+<tr><th id="563">563</th><td></td></tr>
+<tr><th id="564">564</th><td>slideframe_t slideFrames[MAXSLIDEDOORS];</td></tr>
+<tr><th id="565">565</th><td></td></tr>
+<tr><th id="566">566</th><td><em>void</em> P_InitSlidingDoorFrames(<em>void</em>)</td></tr>
+<tr><th id="567">567</th><td>{</td></tr>
+<tr><th id="568">568</th><td>    <em>int</em>		i;</td></tr>
+<tr><th id="569">569</th><td>    <em>int</em>		f1;</td></tr>
+<tr><th id="570">570</th><td>    <em>int</em>		f2;</td></tr>
+<tr><th id="571">571</th><td>    <em>int</em>		f3;</td></tr>
+<tr><th id="572">572</th><td>    <em>int</em>		f4;</td></tr>
+<tr><th id="573">573</th><td>	</td></tr>
+<tr><th id="574">574</th><td>    <i>// DOOM II ONLY...</i></td></tr>
+<tr><th id="575">575</th><td>    <b>if</b> ( gamemode != commercial)</td></tr>
+<tr><th id="576">576</th><td>	<b>return</b>;</td></tr>
+<tr><th id="577">577</th><td>	</td></tr>
+<tr><th id="578">578</th><td>    <b>for</b> (i = <var>0</var>;i &lt; MAXSLIDEDOORS; i++)</td></tr>
+<tr><th id="579">579</th><td>    {</td></tr>
+<tr><th id="580">580</th><td>	<b>if</b> (!slideFrameNames[i].frontFrame1[<var>0</var>])</td></tr>
+<tr><th id="581">581</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="582">582</th><td>			</td></tr>
+<tr><th id="583">583</th><td>	f1 = R_TextureNumForName(slideFrameNames[i].frontFrame1);</td></tr>
+<tr><th id="584">584</th><td>	f2 = R_TextureNumForName(slideFrameNames[i].frontFrame2);</td></tr>
+<tr><th id="585">585</th><td>	f3 = R_TextureNumForName(slideFrameNames[i].frontFrame3);</td></tr>
+<tr><th id="586">586</th><td>	f4 = R_TextureNumForName(slideFrameNames[i].frontFrame4);</td></tr>
+<tr><th id="587">587</th><td></td></tr>
+<tr><th id="588">588</th><td>	slideFrames[i].frontFrames[<var>0</var>] = f1;</td></tr>
+<tr><th id="589">589</th><td>	slideFrames[i].frontFrames[<var>1</var>] = f2;</td></tr>
+<tr><th id="590">590</th><td>	slideFrames[i].frontFrames[<var>2</var>] = f3;</td></tr>
+<tr><th id="591">591</th><td>	slideFrames[i].frontFrames[<var>3</var>] = f4;</td></tr>
+<tr><th id="592">592</th><td>		</td></tr>
+<tr><th id="593">593</th><td>	f1 = R_TextureNumForName(slideFrameNames[i].backFrame1);</td></tr>
+<tr><th id="594">594</th><td>	f2 = R_TextureNumForName(slideFrameNames[i].backFrame2);</td></tr>
+<tr><th id="595">595</th><td>	f3 = R_TextureNumForName(slideFrameNames[i].backFrame3);</td></tr>
+<tr><th id="596">596</th><td>	f4 = R_TextureNumForName(slideFrameNames[i].backFrame4);</td></tr>
+<tr><th id="597">597</th><td></td></tr>
+<tr><th id="598">598</th><td>	slideFrames[i].backFrames[<var>0</var>] = f1;</td></tr>
+<tr><th id="599">599</th><td>	slideFrames[i].backFrames[<var>1</var>] = f2;</td></tr>
+<tr><th id="600">600</th><td>	slideFrames[i].backFrames[<var>2</var>] = f3;</td></tr>
+<tr><th id="601">601</th><td>	slideFrames[i].backFrames[<var>3</var>] = f4;</td></tr>
+<tr><th id="602">602</th><td>    }</td></tr>
+<tr><th id="603">603</th><td>}</td></tr>
+<tr><th id="604">604</th><td></td></tr>
+<tr><th id="605">605</th><td></td></tr>
+<tr><th id="606">606</th><td><i>//</i></td></tr>
+<tr><th id="607">607</th><td><i>// Return index into "slideFrames" array</i></td></tr>
+<tr><th id="608">608</th><td><i>// for which door type to use</i></td></tr>
+<tr><th id="609">609</th><td><i>//</i></td></tr>
+<tr><th id="610">610</th><td><em>int</em> P_FindSlidingDoorType(line_t*	line)</td></tr>
+<tr><th id="611">611</th><td>{</td></tr>
+<tr><th id="612">612</th><td>    <em>int</em>		i;</td></tr>
+<tr><th id="613">613</th><td>    <em>int</em>		val;</td></tr>
+<tr><th id="614">614</th><td>	</td></tr>
+<tr><th id="615">615</th><td>    <b>for</b> (i = <var>0</var>;i &lt; MAXSLIDEDOORS;i++)</td></tr>
+<tr><th id="616">616</th><td>    {</td></tr>
+<tr><th id="617">617</th><td>	val = sides[line-&gt;sidenum[<var>0</var>]].midtexture;</td></tr>
+<tr><th id="618">618</th><td>	<b>if</b> (val == slideFrames[i].frontFrames[<var>0</var>])</td></tr>
+<tr><th id="619">619</th><td>	    <b>return</b> i;</td></tr>
+<tr><th id="620">620</th><td>    }</td></tr>
+<tr><th id="621">621</th><td>	</td></tr>
+<tr><th id="622">622</th><td>    <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="623">623</th><td>}</td></tr>
+<tr><th id="624">624</th><td></td></tr>
+<tr><th id="625">625</th><td><em>void</em> T_SlidingDoor (slidedoor_t*	door)</td></tr>
+<tr><th id="626">626</th><td>{</td></tr>
+<tr><th id="627">627</th><td>    <b>switch</b>(door-&gt;status)</td></tr>
+<tr><th id="628">628</th><td>    {</td></tr>
+<tr><th id="629">629</th><td>      <b>case</b> sd_opening:</td></tr>
+<tr><th id="630">630</th><td>	<b>if</b> (!door-&gt;timer--)</td></tr>
+<tr><th id="631">631</th><td>	{</td></tr>
+<tr><th id="632">632</th><td>	    <b>if</b> (++door-&gt;frame == SNUMFRAMES)</td></tr>
+<tr><th id="633">633</th><td>	    {</td></tr>
+<tr><th id="634">634</th><td>		<i>// IF DOOR IS DONE OPENING...</i></td></tr>
+<tr><th id="635">635</th><td>		sides[door-&gt;line-&gt;sidenum[<var>0</var>]].midtexture = <var>0</var>;</td></tr>
+<tr><th id="636">636</th><td>		sides[door-&gt;line-&gt;sidenum[<var>1</var>]].midtexture = <var>0</var>;</td></tr>
+<tr><th id="637">637</th><td>		door-&gt;line-&gt;flags &amp;= ML_BLOCKING^<var>0xff</var>;</td></tr>
+<tr><th id="638">638</th><td>					</td></tr>
+<tr><th id="639">639</th><td>		<b>if</b> (door-&gt;type == sdt_openOnly)</td></tr>
+<tr><th id="640">640</th><td>		{</td></tr>
+<tr><th id="641">641</th><td>		    door-&gt;frontsector-&gt;specialdata = NULL;</td></tr>
+<tr><th id="642">642</th><td>		    P_RemoveThinker (&amp;door-&gt;thinker);</td></tr>
+<tr><th id="643">643</th><td>		    <b>break</b>;</td></tr>
+<tr><th id="644">644</th><td>		}</td></tr>
+<tr><th id="645">645</th><td>					</td></tr>
+<tr><th id="646">646</th><td>		door-&gt;timer = SDOORWAIT;</td></tr>
+<tr><th id="647">647</th><td>		door-&gt;status = sd_waiting;</td></tr>
+<tr><th id="648">648</th><td>	    }</td></tr>
+<tr><th id="649">649</th><td>	    <b>else</b></td></tr>
+<tr><th id="650">650</th><td>	    {</td></tr>
+<tr><th id="651">651</th><td>		<i>// IF DOOR NEEDS TO ANIMATE TO NEXT FRAME...</i></td></tr>
+<tr><th id="652">652</th><td>		door-&gt;timer = SWAITTICS;</td></tr>
+<tr><th id="653">653</th><td>					</td></tr>
+<tr><th id="654">654</th><td>		sides[door-&gt;line-&gt;sidenum[<var>0</var>]].midtexture =</td></tr>
+<tr><th id="655">655</th><td>		    slideFrames[door-&gt;whichDoorIndex].</td></tr>
+<tr><th id="656">656</th><td>		    frontFrames[door-&gt;frame];</td></tr>
+<tr><th id="657">657</th><td>		sides[door-&gt;line-&gt;sidenum[<var>1</var>]].midtexture =</td></tr>
+<tr><th id="658">658</th><td>		    slideFrames[door-&gt;whichDoorIndex].</td></tr>
+<tr><th id="659">659</th><td>		    backFrames[door-&gt;frame];</td></tr>
+<tr><th id="660">660</th><td>	    }</td></tr>
+<tr><th id="661">661</th><td>	}</td></tr>
+<tr><th id="662">662</th><td>	<b>break</b>;</td></tr>
+<tr><th id="663">663</th><td>			</td></tr>
+<tr><th id="664">664</th><td>      <b>case</b> sd_waiting:</td></tr>
+<tr><th id="665">665</th><td>	<i>// IF DOOR IS DONE WAITING...</i></td></tr>
+<tr><th id="666">666</th><td>	<b>if</b> (!door-&gt;timer--)</td></tr>
+<tr><th id="667">667</th><td>	{</td></tr>
+<tr><th id="668">668</th><td>	    <i>// CAN DOOR CLOSE?</i></td></tr>
+<tr><th id="669">669</th><td>	    <b>if</b> (door-&gt;frontsector-&gt;thinglist != NULL ||</td></tr>
+<tr><th id="670">670</th><td>		door-&gt;backsector-&gt;thinglist != NULL)</td></tr>
+<tr><th id="671">671</th><td>	    {</td></tr>
+<tr><th id="672">672</th><td>		door-&gt;timer = SDOORWAIT;</td></tr>
+<tr><th id="673">673</th><td>		<b>break</b>;</td></tr>
+<tr><th id="674">674</th><td>	    }</td></tr>
+<tr><th id="675">675</th><td></td></tr>
+<tr><th id="676">676</th><td>	    <i>//door-&gt;frame = SNUMFRAMES-1;</i></td></tr>
+<tr><th id="677">677</th><td>	    door-&gt;status = sd_closing;</td></tr>
+<tr><th id="678">678</th><td>	    door-&gt;timer = SWAITTICS;</td></tr>
+<tr><th id="679">679</th><td>	}</td></tr>
+<tr><th id="680">680</th><td>	<b>break</b>;</td></tr>
+<tr><th id="681">681</th><td>			</td></tr>
+<tr><th id="682">682</th><td>      <b>case</b> sd_closing:</td></tr>
+<tr><th id="683">683</th><td>	<b>if</b> (!door-&gt;timer--)</td></tr>
+<tr><th id="684">684</th><td>	{</td></tr>
+<tr><th id="685">685</th><td>	    <b>if</b> (--door-&gt;frame &lt; <var>0</var>)</td></tr>
+<tr><th id="686">686</th><td>	    {</td></tr>
+<tr><th id="687">687</th><td>		<i>// IF DOOR IS DONE CLOSING...</i></td></tr>
+<tr><th id="688">688</th><td>		door-&gt;line-&gt;flags |= ML_BLOCKING;</td></tr>
+<tr><th id="689">689</th><td>		door-&gt;frontsector-&gt;specialdata = NULL;</td></tr>
+<tr><th id="690">690</th><td>		P_RemoveThinker (&amp;door-&gt;thinker);</td></tr>
+<tr><th id="691">691</th><td>		<b>break</b>;</td></tr>
+<tr><th id="692">692</th><td>	    }</td></tr>
+<tr><th id="693">693</th><td>	    <b>else</b></td></tr>
+<tr><th id="694">694</th><td>	    {</td></tr>
+<tr><th id="695">695</th><td>		<i>// IF DOOR NEEDS TO ANIMATE TO NEXT FRAME...</i></td></tr>
+<tr><th id="696">696</th><td>		door-&gt;timer = SWAITTICS;</td></tr>
+<tr><th id="697">697</th><td>					</td></tr>
+<tr><th id="698">698</th><td>		sides[door-&gt;line-&gt;sidenum[<var>0</var>]].midtexture =</td></tr>
+<tr><th id="699">699</th><td>		    slideFrames[door-&gt;whichDoorIndex].</td></tr>
+<tr><th id="700">700</th><td>		    frontFrames[door-&gt;frame];</td></tr>
+<tr><th id="701">701</th><td>		sides[door-&gt;line-&gt;sidenum[<var>1</var>]].midtexture =</td></tr>
+<tr><th id="702">702</th><td>		    slideFrames[door-&gt;whichDoorIndex].</td></tr>
+<tr><th id="703">703</th><td>		    backFrames[door-&gt;frame];</td></tr>
+<tr><th id="704">704</th><td>	    }</td></tr>
+<tr><th id="705">705</th><td>	}</td></tr>
+<tr><th id="706">706</th><td>	<b>break</b>;</td></tr>
+<tr><th id="707">707</th><td>    }</td></tr>
+<tr><th id="708">708</th><td>}</td></tr>
+<tr><th id="709">709</th><td></td></tr>
+<tr><th id="710">710</th><td></td></tr>
+<tr><th id="711">711</th><td></td></tr>
+<tr><th id="712">712</th><td><em>void</em></td></tr>
+<tr><th id="713">713</th><td>EV_SlidingDoor</td></tr>
+<tr><th id="714">714</th><td>( line_t*	line,</td></tr>
+<tr><th id="715">715</th><td>  mobj_t*	thing )</td></tr>
+<tr><th id="716">716</th><td>{</td></tr>
+<tr><th id="717">717</th><td>    sector_t*		sec;</td></tr>
+<tr><th id="718">718</th><td>    slidedoor_t*	door;</td></tr>
+<tr><th id="719">719</th><td>	</td></tr>
+<tr><th id="720">720</th><td>    <i>// DOOM II ONLY...</i></td></tr>
+<tr><th id="721">721</th><td>    <b>if</b> (gamemode != commercial)</td></tr>
+<tr><th id="722">722</th><td>	<b>return</b>;</td></tr>
+<tr><th id="723">723</th><td>    </td></tr>
+<tr><th id="724">724</th><td>    <i>// Make sure door isn't already being animated</i></td></tr>
+<tr><th id="725">725</th><td>    sec = line-&gt;frontsector;</td></tr>
+<tr><th id="726">726</th><td>    door = NULL;</td></tr>
+<tr><th id="727">727</th><td>    <b>if</b> (sec-&gt;specialdata)</td></tr>
+<tr><th id="728">728</th><td>    {</td></tr>
+<tr><th id="729">729</th><td>	<b>if</b> (!thing-&gt;player)</td></tr>
+<tr><th id="730">730</th><td>	    <b>return</b>;</td></tr>
+<tr><th id="731">731</th><td>			</td></tr>
+<tr><th id="732">732</th><td>	door = sec-&gt;specialdata;</td></tr>
+<tr><th id="733">733</th><td>	<b>if</b> (door-&gt;type == sdt_openAndClose)</td></tr>
+<tr><th id="734">734</th><td>	{</td></tr>
+<tr><th id="735">735</th><td>	    <b>if</b> (door-&gt;status == sd_waiting)</td></tr>
+<tr><th id="736">736</th><td>		door-&gt;status = sd_closing;</td></tr>
+<tr><th id="737">737</th><td>	}</td></tr>
+<tr><th id="738">738</th><td>	<b>else</b></td></tr>
+<tr><th id="739">739</th><td>	    <b>return</b>;</td></tr>
+<tr><th id="740">740</th><td>    }</td></tr>
+<tr><th id="741">741</th><td>    </td></tr>
+<tr><th id="742">742</th><td>    <i>// Init sliding door vars</i></td></tr>
+<tr><th id="743">743</th><td>    <b>if</b> (!door)</td></tr>
+<tr><th id="744">744</th><td>    {</td></tr>
+<tr><th id="745">745</th><td>	door = Z_Malloc (<b>sizeof</b>(*door), PU_LEVSPEC, <var>0</var>);</td></tr>
+<tr><th id="746">746</th><td>	P_AddThinker (&amp;door-&gt;thinker);</td></tr>
+<tr><th id="747">747</th><td>	sec-&gt;specialdata = door;</td></tr>
+<tr><th id="748">748</th><td>		</td></tr>
+<tr><th id="749">749</th><td>	door-&gt;type = sdt_openAndClose;</td></tr>
+<tr><th id="750">750</th><td>	door-&gt;status = sd_opening;</td></tr>
+<tr><th id="751">751</th><td>	door-&gt;whichDoorIndex = P_FindSlidingDoorType(line);</td></tr>
+<tr><th id="752">752</th><td></td></tr>
+<tr><th id="753">753</th><td>	<b>if</b> (door-&gt;whichDoorIndex &lt; <var>0</var>)</td></tr>
+<tr><th id="754">754</th><td>	    I_Error(<q>"EV_SlidingDoor: Can't use texture for sliding door!"</q>);</td></tr>
+<tr><th id="755">755</th><td>			</td></tr>
+<tr><th id="756">756</th><td>	door-&gt;frontsector = sec;</td></tr>
+<tr><th id="757">757</th><td>	door-&gt;backsector = line-&gt;backsector;</td></tr>
+<tr><th id="758">758</th><td>	door-&gt;thinker.function = T_SlidingDoor;</td></tr>
+<tr><th id="759">759</th><td>	door-&gt;timer = SWAITTICS;</td></tr>
+<tr><th id="760">760</th><td>	door-&gt;frame = <var>0</var>;</td></tr>
+<tr><th id="761">761</th><td>	door-&gt;line = line;</td></tr>
+<tr><th id="762">762</th><td>    }</td></tr>
+<tr><th id="763">763</th><td>}</td></tr>
+<tr><th id="764">764</th><td><u>#<span data-ppcond="557">endif</span></u></td></tr>
+<tr><th id="765">765</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

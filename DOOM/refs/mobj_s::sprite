@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_mobj.h' l='223' type='spritenum_t'/>
+<offset>480</offset>
+<doc f='codebrowser/p_mobj.h' l='223'>// used to find patch_t and flip value</doc>
+<use f='codebrowser/p_inter.c' l='367' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_mobj.c' l='72' u='w' c='P_SetMobjState'/>
+<use f='codebrowser/p_mobj.c' l='513' u='w' c='P_SpawnMobj'/>
+<use f='codebrowser/r_data.c' l='825' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_things.c' l='507' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='509' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='511' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='515' u='r' c='R_ProjectSprite'/>

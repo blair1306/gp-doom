@@ -1,0 +1,17 @@
+<dec f='codebrowser/doomstat.h' l='184' type='boolean'/>
+<dec f='codebrowser/d_main.c' l='352' type='boolean'/>
+<use f='codebrowser/d_main.c' l='356' u='r' c='D_DoomLoop'/>
+<doc f='codebrowser/d_main.c' l='349'>//
+//  D_DoomLoop
+//</doc>
+<use f='codebrowser/d_net.c' l='292' u='r' c='GetPackets'/>
+<def f='codebrowser/g_game.c' l='128' type='boolean'/>
+<use f='codebrowser/g_game.c' l='668' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1545' u='w' c='G_RecordDemo'/>
+<use f='codebrowser/g_game.c' l='1677' u='r' c='G_CheckDemoStatus'/>
+<use f='codebrowser/g_game.c' l='1682' u='w' c='G_CheckDemoStatus'/>
+<dec f='codebrowser/i_system.c' l='160' type='boolean'/>
+<use f='codebrowser/i_system.c' l='176' u='r' c='I_Error'/>
+<doc f='codebrowser/i_system.c' l='157'>//
+// I_Error
+//</doc>

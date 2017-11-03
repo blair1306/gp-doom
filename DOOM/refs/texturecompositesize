@@ -1,0 +1,7 @@
+<def f='codebrowser/r_data.c' l='148' type='int *'/>
+<use f='codebrowser/r_data.c' l='244' u='r' c='R_GenerateComposite'/>
+<use f='codebrowser/r_data.c' l='314' u='r' c='R_GenerateLookup'/>
+<use f='codebrowser/r_data.c' l='363' u='r' c='R_GenerateLookup'/>
+<use f='codebrowser/r_data.c' l='365' u='r' c='R_GenerateLookup'/>
+<use f='codebrowser/r_data.c' l='371' u='r' c='R_GenerateLookup'/>
+<use f='codebrowser/r_data.c' l='486' u='w' c='R_InitTextures'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/r_defs.h' l='230' type='short'/>
+<offset>64</offset>
+<use f='codebrowser/p_setup.c' l='219' u='w' c='P_LoadSubsectors'/>
+<use f='codebrowser/p_sight.c' l='163' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/r_bsp.c' l='513' u='r' c='R_Subsector'/>

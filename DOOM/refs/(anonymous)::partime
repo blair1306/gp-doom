@@ -1,0 +1,9 @@
+<dec f='codebrowser/d_player.h' l='204' type='int'/>
+<offset>256</offset>
+<doc f='codebrowser/d_player.h' l='203'>// the par time</doc>
+<use f='codebrowser/g_game.c' l='1117' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1119' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/p_setup.c' l='595' u='w' c='P_SetupLevel'/>
+<use f='codebrowser/wi_stuff.c' l='1342' u='r' c='WI_updateStats'/>
+<use f='codebrowser/wi_stuff.c' l='1402' u='r' c='WI_updateStats'/>
+<use f='codebrowser/wi_stuff.c' l='1404' u='r' c='WI_updateStats'/>

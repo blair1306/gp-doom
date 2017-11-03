@@ -1,0 +1,5 @@
+<def f='codebrowser/p_user.c' l='148' ll='171' type='void P_MovePlayer(player_t * player)'/>
+<use f='codebrowser/p_user.c' l='270' u='c' c='P_PlayerThink'/>
+<doc f='codebrowser/p_user.c' l='145'>//
+// P_MovePlayer
+//</doc>

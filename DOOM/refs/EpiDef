@@ -1,0 +1,5 @@
+<def f='codebrowser/m_menu.c' l='292' ll='300' type='menu_t'/>
+<use f='codebrowser/m_menu.c' l='327' u='a'/>
+<use f='codebrowser/m_menu.c' l='327' u='a'/>
+<use f='codebrowser/m_menu.c' l='884' u='a' c='M_NewGame'/>
+<use f='codebrowser/m_menu.c' l='1884' u='m' c='M_Init'/>

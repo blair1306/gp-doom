@@ -1,0 +1,5 @@
+<def f='codebrowser/p_mobj.c' l='356' ll='409' type='void P_NightmareRespawn(mobj_t * mobj)'/>
+<use f='codebrowser/p_mobj.c' l='470' u='c' c='P_MobjThinker'/>
+<doc f='codebrowser/p_mobj.c' l='353'>//
+// P_NightmareRespawn
+//</doc>

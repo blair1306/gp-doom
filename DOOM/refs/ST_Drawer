@@ -1,0 +1,4 @@
+<dec f='codebrowser/st_stuff.h' l='48' type='void ST_Drawer(boolean fullscreen, boolean refresh)'/>
+<doc f='codebrowser/st_stuff.h' l='47'>// Called by main loop.</doc>
+<use f='codebrowser/d_main.c' l='246' u='c' c='D_Display'/>
+<def f='codebrowser/st_stuff.c' l='1108' ll='1122' type='void ST_Drawer(boolean fullscreen, boolean refresh)'/>

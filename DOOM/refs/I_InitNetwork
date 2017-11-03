@@ -1,0 +1,7 @@
+<dec f='codebrowser/i_net.h' l='36' type='void I_InitNetwork()'/>
+<use f='codebrowser/d_net.c' l='568' u='c' c='D_CheckNetGame'/>
+<doc f='codebrowser/i_net.h' l='33'>// Called by D_DoomMain.</doc>
+<def f='codebrowser/i_net.c' l='244' ll='332' type='void I_InitNetwork()'/>
+<doc f='codebrowser/i_net.c' l='241'>//
+// I_InitNetwork
+//</doc>

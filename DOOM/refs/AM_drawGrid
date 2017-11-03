@@ -1,0 +1,5 @@
+<def f='codebrowser/am_map.c' l='1071' ll='1111' type='void AM_drawGrid(int color)'/>
+<use f='codebrowser/am_map.c' l='1338' u='c' c='AM_Drawer'/>
+<doc f='codebrowser/am_map.c' l='1068'>//
+// Draws flat (floor/ceiling tile) aligned grid lines.
+//</doc>

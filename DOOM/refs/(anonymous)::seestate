@@ -1,0 +1,12 @@
+<dec f='codebrowser/info.h' l='1310' type='int'/>
+<offset>96</offset>
+<use f='codebrowser/f_finale.c' l='381' u='r' c='F_StartCast'/>
+<use f='codebrowser/f_finale.c' l='412' u='r' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='483' u='r' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='488' u='r' c='F_CastTicker'/>
+<use f='codebrowser/p_enemy.c' l='663' u='r' c='A_Look'/>
+<use f='codebrowser/p_enemy.c' l='877' u='r' c='A_CPosRefire'/>
+<use f='codebrowser/p_enemy.c' l='894' u='r' c='A_SpidRefire'/>
+<use f='codebrowser/p_enemy.c' l='1983' u='r' c='A_SpawnFly'/>
+<use f='codebrowser/p_inter.c' l='913' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='914' u='r' c='P_DamageMobj'/>

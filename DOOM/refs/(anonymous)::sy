@@ -1,0 +1,14 @@
+<dec f='codebrowser/p_pspr.h' l='73' type='fixed_t'/>
+<offset>128</offset>
+<use f='codebrowser/p_pspr.c' l='86' u='w' c='P_SetPsprite'/>
+<use f='codebrowser/p_pspr.c' l='151' u='w' c='P_BringUpWeapon'/>
+<use f='codebrowser/p_pspr.c' l='333' u='w' c='A_WeaponReady'/>
+<use f='codebrowser/p_pspr.c' l='389' u='w' c='A_Lower'/>
+<use f='codebrowser/p_pspr.c' l='392' u='r' c='A_Lower'/>
+<use f='codebrowser/p_pspr.c' l='398' u='w' c='A_Lower'/>
+<use f='codebrowser/p_pspr.c' l='429' u='w' c='A_Raise'/>
+<use f='codebrowser/p_pspr.c' l='431' u='r' c='A_Raise'/>
+<use f='codebrowser/p_pspr.c' l='434' u='w' c='A_Raise'/>
+<use f='codebrowser/p_pspr.c' l='876' u='w' c='P_MovePsprites'/>
+<use f='codebrowser/p_pspr.c' l='876' u='r' c='P_MovePsprites'/>
+<use f='codebrowser/r_things.c' l='695' u='r' c='R_DrawPSprite'/>

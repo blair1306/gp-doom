@@ -1,0 +1,3 @@
+<dec f='codebrowser/sounds.h' l='211' type='32'/>
+<use f='codebrowser/p_inter.c' l='358' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/s_sound.c' l='337' u='r' c='S_StartSoundAtVolume'/>

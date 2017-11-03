@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_event.h' l='61' type='6'/>
+<use f='codebrowser/g_game.c' l='636' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1005' u='r' c='G_ExitLevel'/>
+<use f='codebrowser/g_game.c' l='1017' u='r' c='G_SecretExitLevel'/>

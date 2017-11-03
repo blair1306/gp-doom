@@ -1,0 +1,12 @@
+<dec f='codebrowser/doomstat.h' l='224' type='mapthing_t [4]'/>
+<doc f='codebrowser/doomstat.h' l='223'>// Player spawn spots.</doc>
+<use f='codebrowser/g_game.c' l='918' u='a' c='G_DeathMatchSpawnPlayer'/>
+<use f='codebrowser/g_game.c' l='947' u='a' c='G_DoReborn'/>
+<use f='codebrowser/g_game.c' l='949' u='a' c='G_DoReborn'/>
+<use f='codebrowser/g_game.c' l='956' u='a' c='G_DoReborn'/>
+<use f='codebrowser/g_game.c' l='958' u='m' c='G_DoReborn'/>
+<use f='codebrowser/g_game.c' l='959' u='a' c='G_DoReborn'/>
+<use f='codebrowser/g_game.c' l='960' u='m' c='G_DoReborn'/>
+<use f='codebrowser/g_game.c' l='965' u='a' c='G_DoReborn'/>
+<use f='codebrowser/p_mobj.c' l='732' u='w' c='P_SpawnMapThing'/>
+<def f='codebrowser/p_setup.c' l='113' type='mapthing_t [4]'/>

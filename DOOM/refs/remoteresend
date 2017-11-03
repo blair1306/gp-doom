@@ -1,0 +1,6 @@
+<def f='codebrowser/d_net.c' l='65' type='boolean [8]'/>
+<use f='codebrowser/d_net.c' l='336' u='w' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='344' u='w' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='431' u='r' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='563' u='w' c='D_CheckNetGame'/>
+<doc f='codebrowser/d_net.c' l='65'>// set when local needs tics</doc>

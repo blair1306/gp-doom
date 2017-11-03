@@ -1,0 +1,16 @@
+<dec f='codebrowser/w_wad.h' l='72' type='int W_CheckNumForName(char * name)'/>
+<use f='codebrowser/d_main.c' l='167' u='c' c='D_ProcessEvents'/>
+<use f='codebrowser/d_main.c' l='1045' u='c' c='D_DoomMain'/>
+<use f='codebrowser/g_game.c' l='1013' u='c' c='G_SecretExitLevel'/>
+<use f='codebrowser/i_sound.c' l='214' u='c' c='getsfx'/>
+<use f='codebrowser/p_spec.c' l='168' u='c' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='1246' u='c' c='P_SpawnSpecials'/>
+<use f='codebrowser/r_data.c' l='456' u='c' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='468' u='c' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='677' u='c' c='R_FlatNumForName'/>
+<def f='codebrowser/w_wad.c' l='351' ll='390' type='int W_CheckNumForName(char * name)'/>
+<use f='codebrowser/w_wad.c' l='403' u='c' c='W_GetNumForName'/>
+<doc f='codebrowser/w_wad.c' l='346'>//
+// W_CheckNumForName
+// Returns -1 if name not found.
+//</doc>

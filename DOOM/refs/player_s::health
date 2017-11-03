@@ -1,0 +1,39 @@
+<dec f='codebrowser/d_player.h' l='102' type='int'/>
+<offset>288</offset>
+<doc f='codebrowser/d_player.h' l='100'>// This is only used between levels,
+    // mo-&gt;health is used during levels.</doc>
+<use f='codebrowser/g_game.c' l='824' u='w' c='G_PlayerReborn'/>
+<use f='codebrowser/p_enemy.c' l='529' u='r' c='P_LookForPlayers'/>
+<use f='codebrowser/p_enemy.c' l='1684' u='r' c='A_BossDeath'/>
+<use f='codebrowser/p_inter.c' l='233' u='r' c='P_GiveBody'/>
+<use f='codebrowser/p_inter.c' l='236' u='w' c='P_GiveBody'/>
+<use f='codebrowser/p_inter.c' l='237' u='r' c='P_GiveBody'/>
+<use f='codebrowser/p_inter.c' l='238' u='w' c='P_GiveBody'/>
+<use f='codebrowser/p_inter.c' l='239' u='r' c='P_GiveBody'/>
+<use f='codebrowser/p_inter.c' l='384' u='w' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='385' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='386' u='w' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='387' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='401' u='w' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='402' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='403' u='w' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='404' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='412' u='w' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='413' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='480' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='870' u='w' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='871' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='872' u='w' c='P_DamageMobj'/>
+<use f='codebrowser/p_mobj.c' l='673' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_pspr.c' l='304' u='r' c='A_WeaponReady'/>
+<use f='codebrowser/p_pspr.c' l='352' u='r' c='A_ReFire'/>
+<use f='codebrowser/p_pspr.c' l='406' u='r' c='A_Lower'/>
+<use f='codebrowser/p_spec.c' l='1061' u='r' c='P_PlayerInSpecialSector'/>
+<use f='codebrowser/st_stuff.c' l='557' u='w' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='735' u='r' c='ST_calcPainOffset'/>
+<use f='codebrowser/st_stuff.c' l='735' u='r' c='ST_calcPainOffset'/>
+<use f='codebrowser/st_stuff.c' l='764' u='r' c='ST_updateFaceWidget'/>
+<use f='codebrowser/st_stuff.c' l='807' u='r' c='ST_updateFaceWidget'/>
+<use f='codebrowser/st_stuff.c' l='860' u='r' c='ST_updateFaceWidget'/>
+<use f='codebrowser/st_stuff.c' l='994' u='r' c='ST_Ticker'/>
+<use f='codebrowser/st_stuff.c' l='1304' u='a' c='ST_createWidgets'/>

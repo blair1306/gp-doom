@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_think.h' l='49' type='actionf_p2'/>
+<offset>0</offset>
+<use f='codebrowser/p_pspr.c' l='91' u='r' c='P_SetPsprite'/>
+<use f='codebrowser/p_pspr.c' l='93' u='r' c='P_SetPsprite'/>

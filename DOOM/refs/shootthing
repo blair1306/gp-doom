@@ -1,0 +1,8 @@
+<def f='codebrowser/p_map.c' l='795' type='mobj_t *'/>
+<use f='codebrowser/p_map.c' l='864' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='920' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='976' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1011' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1011' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1032' u='w' c='P_AimLineAttack'/>
+<use f='codebrowser/p_map.c' l='1074' u='w' c='P_LineAttack'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/hu_lib.h' l='118' type='void HUlib_drawTextLine(hu_textline_t * l, boolean drawcursor)'/>
+<def f='codebrowser/hu_lib.c' l='99' ll='139' type='void HUlib_drawTextLine(hu_textline_t * l, boolean drawcursor)'/>
+<use f='codebrowser/hu_lib.c' l='249' u='c' c='HUlib_drawSText'/>
+<use f='codebrowser/hu_lib.c' l='343' u='c' c='HUlib_drawIText'/>
+<doc f='codebrowser/hu_lib.h' l='117'>// draws tline</doc>
+<use f='codebrowser/hu_stuff.c' l='492' u='c' c='HU_Drawer'/>

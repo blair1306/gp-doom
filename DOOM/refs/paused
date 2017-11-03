@@ -1,0 +1,12 @@
+<dec f='codebrowser/doomstat.h' l='134' type='boolean'/>
+<doc f='codebrowser/doomstat.h' l='134'>// Game Pause?</doc>
+<use f='codebrowser/d_main.c' l='303' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='459' u='w' c='D_DoAdvanceDemo'/>
+<def f='codebrowser/g_game.c' l='104' type='boolean'/>
+<use f='codebrowser/g_game.c' l='494' u='w' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='707' u='w' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='708' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1372' u='r' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1374' u='w' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1444' u='w' c='G_InitNew'/>
+<use f='codebrowser/p_tick.c' l='135' u='r' c='P_Ticker'/>

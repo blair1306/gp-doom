@@ -1,0 +1,2 @@
+<dec f='include/values.h' l='65'/>
+<doc f='include/values.h' l='64'>/* Some systems define this name instead of CHAR_BIT or CHARBITS.  */</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/hu_lib.h' l='157' type='void HUlib_initIText(hu_itext_t * it, int x, int y, patch_t ** font, int startchar, boolean * on)'/>
+<def f='codebrowser/hu_lib.c' l='269' ll='282' type='void HUlib_initIText(hu_itext_t * it, int x, int y, patch_t ** font, int startchar, boolean * on)'/>
+<doc f='codebrowser/hu_lib.h' l='155'>// Input Text Line widget routines</doc>
+<use f='codebrowser/hu_stuff.c' l='473' u='c' c='HU_Start'/>
+<use f='codebrowser/hu_stuff.c' l='480' u='c' c='HU_Start'/>

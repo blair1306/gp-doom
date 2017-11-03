@@ -1,0 +1,17 @@
+<dec f='codebrowser/g_game.h' l='61' type='boolean G_CheckDemoStatus()'/>
+<use f='codebrowser/d_net.c' l='293' u='c' c='GetPackets'/>
+<dec f='codebrowser/g_game.c' l='79' type='boolean G_CheckDemoStatus()'/>
+<use f='codebrowser/g_game.c' l='1496' u='c' c='G_ReadDemoTiccmd'/>
+<use f='codebrowser/g_game.c' l='1509' u='c' c='G_WriteDemoTiccmd'/>
+<use f='codebrowser/g_game.c' l='1518' u='c' c='G_WriteDemoTiccmd'/>
+<def f='codebrowser/g_game.c' l='1647' ll='1687' type='boolean G_CheckDemoStatus()'/>
+<doc f='codebrowser/g_game.c' l='1637'>/* 
+=================== 
+= 
+= G_CheckDemoStatus 
+= 
+= Called after a death or level completion to allow demos to be cleaned up 
+= Returns true if a new demo loop action will take place 
+=================== 
+*/</doc>
+<use f='codebrowser/i_system.c' l='177' u='c' c='I_Error'/>

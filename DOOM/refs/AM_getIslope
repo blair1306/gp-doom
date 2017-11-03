@@ -1,0 +1,4 @@
+<def f='codebrowser/am_map.c' l='308' ll='322' type='void AM_getIslope(mline_t * ml, islope_t * is)'/>
+<doc f='codebrowser/am_map.c' l='304'>// Calculates the slope and slope according to the x-axis of a line
+// segment in map coordinates (with the upright y-axis n&apos; all) so
+// that it can be used with the brain-dead drawing stuff.</doc>

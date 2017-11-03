@@ -1,0 +1,6 @@
+<dec f='codebrowser/g_game.h' l='47' type='void G_LoadGame(char * name)'/>
+<use f='codebrowser/d_main.c' l='1157' u='c' c='D_DoomMain'/>
+<doc f='codebrowser/g_game.h' l='45'>// Can be called by the startup code or M_Responder,
+// calls P_SetupLevel or W_EnterWorld.</doc>
+<def f='codebrowser/g_game.c' l='1192' ll='1196' type='void G_LoadGame(char * name)'/>
+<use f='codebrowser/m_menu.c' l='587' u='c' c='M_LoadSelect'/>

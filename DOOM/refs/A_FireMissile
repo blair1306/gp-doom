@@ -1,0 +1,13 @@
+<dec f='codebrowser/info.c' l='76' type='void A_FireMissile()'/>
+<use f='codebrowser/info.c' l='197'/>
+<use f='codebrowser/info.c' l='197'/>
+<use f='codebrowser/info.c' l='197'/>
+<use f='codebrowser/info.c' l='197'/>
+<use f='codebrowser/info.c' l='197'/>
+<use f='codebrowser/info.c' l='197'/>
+<use f='codebrowser/info.c' l='197'/>
+<use f='codebrowser/info.c' l='197'/>
+<def f='codebrowser/p_pspr.c' l='550' ll='557' type='void A_FireMissile(player_t * player, pspdef_t * psp)'/>
+<doc f='codebrowser/p_pspr.c' l='547'>//
+// A_FireMissile
+//</doc>

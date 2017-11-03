@@ -1,0 +1,9 @@
+<def f='codebrowser/p_pspr.c' l='138' ll='154' type='void P_BringUpWeapon(player_t * player)'/>
+<use f='codebrowser/p_pspr.c' l='415' u='c' c='A_Lower'/>
+<use f='codebrowser/p_pspr.c' l='841' u='c' c='P_SetupPsprites'/>
+<doc f='codebrowser/p_pspr.c' l='132'>//
+// P_BringUpWeapon
+// Starts bringing the pending weapon up
+// from the bottom of the screen.
+// Uses player
+//</doc>

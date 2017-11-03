@@ -1,0 +1,15 @@
+<dec f='codebrowser/p_spec.c' l='86' type='anim_t *'/>
+<def f='codebrowser/p_spec.c' l='135' type='anim_t *'/>
+<use f='codebrowser/p_spec.c' l='154' u='w' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='163' u='r' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='164' u='r' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='171' u='r' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='172' u='r' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='175' u='r' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='176' u='r' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='176' u='r' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='176' u='r' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='178' u='r' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='183' u='r' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='184' u='w' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='1100' u='r' c='P_UpdateSpecials'/>

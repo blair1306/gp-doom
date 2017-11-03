@@ -1,0 +1,4 @@
+<dec f='codebrowser/i_sound.h' l='113' type='void I_UnRegisterSong(int handle)'/>
+<doc f='codebrowser/i_sound.h' l='112'>// See above (register), then think backwards</doc>
+<def f='codebrowser/i_sound.c' l='870' ll='874' type='void I_UnRegisterSong(int handle)'/>
+<use f='codebrowser/s_sound.c' l='697' u='c' c='S_StopMusic'/>

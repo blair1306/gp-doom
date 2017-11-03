@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_spec.h' l='96' type='fixed_t P_FindHighestCeilingSurrounding(sector_t * sec)'/>
+<use f='codebrowser/p_ceilng.c' l='234' u='c' c='EV_DoCeiling'/>
+<def f='codebrowser/p_spec.c' l='407' ll='426' type='fixed_t P_FindHighestCeilingSurrounding(sector_t * sec)'/>
+<doc f='codebrowser/p_spec.c' l='404'>//
+// FIND HIGHEST CEILING IN THE SURROUNDING SECTORS
+//</doc>

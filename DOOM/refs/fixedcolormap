@@ -1,0 +1,15 @@
+<dec f='codebrowser/r_main.h' l='82' type='lighttable_t *'/>
+<def f='codebrowser/r_main.c' l='58' type='lighttable_t *'/>
+<use f='codebrowser/r_main.c' l='849' u='w' c='R_SetupFrame'/>
+<use f='codebrowser/r_main.c' l='856' u='r' c='R_SetupFrame'/>
+<use f='codebrowser/r_main.c' l='859' u='w' c='R_SetupFrame'/>
+<use f='codebrowser/r_plane.c' l='160' u='r' c='R_MapPlane'/>
+<use f='codebrowser/r_plane.c' l='161' u='r' c='R_MapPlane'/>
+<use f='codebrowser/r_segs.c' l='158' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='159' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='167' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='642' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_things.c' l='583' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='586' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='722' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='725' u='r' c='R_DrawPSprite'/>

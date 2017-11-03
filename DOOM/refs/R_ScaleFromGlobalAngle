@@ -1,0 +1,11 @@
+<dec f='codebrowser/r_main.h' l='139' type='fixed_t R_ScaleFromGlobalAngle(angle_t visangle)'/>
+<def f='codebrowser/r_main.c' l='453' ll='502' type='fixed_t R_ScaleFromGlobalAngle(angle_t visangle)'/>
+<doc f='codebrowser/r_main.c' l='446'>//
+// R_ScaleFromGlobalAngle
+// Returns the texture mapping scale
+//  for the current line (horizontal span)
+//  at the given angle.
+// rw_distance must be calculated first.
+//</doc>
+<use f='codebrowser/r_segs.c' l='420' u='c' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='424' u='c' c='R_StoreWallRange'/>

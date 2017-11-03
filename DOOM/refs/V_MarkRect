@@ -1,0 +1,24 @@
+<dec f='codebrowser/v_video.h' l='108' type='void V_MarkRect(int x, int y, int width, int height)'/>
+<dec f='codebrowser/am_map.c' l='298' type='void V_MarkRect(int x, int y, int width, int height)'/>
+<use f='codebrowser/am_map.c' l='1347' u='c' c='AM_Drawer'/>
+<doc f='codebrowser/am_map.c' l='293'>//extern byte screens[][SCREENWIDTH*SCREENHEIGHT];</doc>
+<use f='codebrowser/f_finale.c' l='291' u='c' c='F_TextWrite'/>
+<use f='codebrowser/f_finale.c' l='657' u='c' c='F_BunnyScroll'/>
+<dec f='codebrowser/f_wipe.c' l='277' type='void V_MarkRect(int , int , int , int )'/>
+<use f='codebrowser/f_wipe.c' l='289' u='c' c='wipe_ScreenWipe'/>
+<dec f='codebrowser/r_draw.c' l='837' type='void V_MarkRect(int x, int y, int width, int height)'/>
+<use f='codebrowser/r_draw.c' l='874' u='c' c='R_DrawViewBorder'/>
+<doc f='codebrowser/r_draw.c' l='831'>//
+// R_DrawViewBorder
+// Draws the border around the view
+//  for different size windows?
+//</doc>
+<def f='codebrowser/v_video.c' l='142' ll='151' type='void V_MarkRect(int x, int y, int width, int height)'/>
+<use f='codebrowser/v_video.c' l='185' u='c' c='V_CopyRect'/>
+<use f='codebrowser/v_video.c' l='236' u='c' c='V_DrawPatch'/>
+<use f='codebrowser/v_video.c' l='301' u='c' c='V_DrawPatchFlipped'/>
+<use f='codebrowser/v_video.c' l='426' u='c' c='V_DrawBlock'/>
+<doc f='codebrowser/v_video.c' l='139'>//
+// V_MarkRect 
+// </doc>
+<use f='codebrowser/wi_stuff.c' l='409' u='c' c='WI_slamBackground'/>

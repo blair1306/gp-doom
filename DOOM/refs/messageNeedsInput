@@ -1,0 +1,4 @@
+<def f='codebrowser/m_menu.c' l='103' type='boolean'/>
+<use f='codebrowser/m_menu.c' l='1237' u='w' c='M_StartMessage'/>
+<use f='codebrowser/m_menu.c' l='1497' u='r' c='M_Responder'/>
+<doc f='codebrowser/m_menu.c' l='102'>// timed message = no input from user</doc>

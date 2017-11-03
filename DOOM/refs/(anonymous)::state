@@ -1,0 +1,51 @@
+<dec f='codebrowser/p_pspr.h' l='70' type='state_t *'/>
+<offset>0</offset>
+<doc f='codebrowser/p_pspr.h' l='70'>// a NULL state means not active</doc>
+<dec f='include/X11/Xlib.h' l='568' type='unsigned int'/>
+<dec f='include/X11/Xlib.h' l='586' type='unsigned int'/>
+<dec f='include/X11/Xlib.h' l='604' type='unsigned int'/>
+<dec f='include/X11/Xlib.h' l='629' type='unsigned int'/>
+<dec f='include/X11/Xlib.h' l='702' type='int'/>
+<dec f='include/X11/Xlib.h' l='844' type='int'/>
+<dec f='include/X11/Xlib.h' l='894' type='int'/>
+<use f='codebrowser/i_video.c' l='218' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='219' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='220' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='231' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='232' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='233' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='247' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='248' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='249' u='r' c='I_GetEvent'/>
+<offset>416</offset>
+<doc f='include/X11/Xlib.h' l='568'>/* key or button mask */</doc>
+<doc f='include/X11/Xlib.h' l='586'>/* key or button mask */</doc>
+<doc f='include/X11/Xlib.h' l='604'>/* key or button mask */</doc>
+<doc f='include/X11/Xlib.h' l='629'>/* key or button mask */</doc>
+<doc f='include/X11/Xlib.h' l='702'>/* Visibility state */</doc>
+<doc f='include/X11/Xlib.h' l='844'>/* NewValue, Deleted */</doc>
+<doc f='include/X11/Xlib.h' l='894'>/* ColormapInstalled, ColormapUninstalled */</doc>
+<use f='codebrowser/p_pspr.c' l='74' u='w' c='P_SetPsprite'/>
+<use f='codebrowser/p_pspr.c' l='79' u='w' c='P_SetPsprite'/>
+<use f='codebrowser/p_pspr.c' l='94' u='r' c='P_SetPsprite'/>
+<use f='codebrowser/p_pspr.c' l='98' u='r' c='P_SetPsprite'/>
+<use f='codebrowser/p_pspr.c' l='297' u='r' c='A_WeaponReady'/>
+<use f='codebrowser/p_pspr.c' l='748' u='r' c='A_FireCGun'/>
+<use f='codebrowser/p_pspr.c' l='837' u='w' c='P_SetupPsprites'/>
+<use f='codebrowser/p_pspr.c' l='861' u='r' c='P_MovePsprites'/>
+<use f='codebrowser/p_pspr.c' l='870' u='r' c='P_MovePsprites'/>
+<use f='codebrowser/p_saveg.c' l='65' u='r' c='P_ArchivePlayers'/>
+<use f='codebrowser/p_saveg.c' l='67' u='w' c='P_ArchivePlayers'/>
+<use f='codebrowser/p_saveg.c' l='68' u='r' c='P_ArchivePlayers'/>
+<use f='codebrowser/p_saveg.c' l='101' u='r' c='P_UnArchivePlayers'/>
+<use f='codebrowser/p_saveg.c' l='103' u='w' c='P_UnArchivePlayers'/>
+<use f='codebrowser/p_saveg.c' l='104' u='r' c='P_UnArchivePlayers'/>
+<use f='codebrowser/r_things.c' l='660' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='662' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='664' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='666' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='668' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='668' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='670' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='727' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='773' u='r' c='R_DrawPlayerSprites'/>

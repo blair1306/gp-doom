@@ -1,0 +1,6 @@
+<dec f='codebrowser/sounds.h' l='203' type='24'/>
+<use f='codebrowser/m_menu.c' l='686' u='r' c='M_QuickSaveResponse'/>
+<use f='codebrowser/m_menu.c' l='723' u='r' c='M_QuickLoadResponse'/>
+<use f='codebrowser/m_menu.c' l='1507' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1683' u='r' c='M_Responder'/>
+<use f='codebrowser/p_switch.c' l='222' u='r' c='P_ChangeSwitchTexture'/>

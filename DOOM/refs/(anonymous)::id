@@ -1,0 +1,6 @@
+<dec f='codebrowser/d_net.h' l='82' type='long'/>
+<offset>0</offset>
+<doc f='codebrowser/d_net.h' l='81'>// Supposed to be DOOMCOM_ID?</doc>
+<use f='codebrowser/d_net.c' l='569' u='r' c='D_CheckNetGame'/>
+<use f='codebrowser/i_net.c' l='286' u='w' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='323' u='w' c='I_InitNetwork'/>

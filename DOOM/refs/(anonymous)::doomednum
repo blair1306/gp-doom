@@ -1,0 +1,4 @@
+<dec f='codebrowser/info.h' l='1307' type='int'/>
+<offset>0</offset>
+<use f='codebrowser/p_mobj.c' l='615' u='r' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='755' u='r' c='P_SpawnMapThing'/>

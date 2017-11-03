@@ -1,0 +1,8 @@
+<dec f='codebrowser/doomdef.h' l='132' type='3'/>
+<use f='codebrowser/d_main.c' l='188'/>
+<use f='codebrowser/d_main.c' l='258' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='474' u='r' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='486' u='r' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='493' u='r' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/g_game.c' l='522' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='744' c='G_Ticker'/>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_local.h' l='260' type='int [4]'/>
+<dec f='codebrowser/doomstat.h' l='233' type='int [4]'/>
+<doc f='codebrowser/p_local.h' l='257'>//
+// P_INTER
+//</doc>
+<doc f='codebrowser/doomstat.h' l='231'>// LUT of ammunition limits for each kind.
+// This doubles with BackPack powerup item.</doc>
+<use f='codebrowser/g_game.c' l='831' u='r' c='G_PlayerReborn'/>
+<def f='codebrowser/p_inter.c' l='58' type='int [4]'/>
+<doc f='codebrowser/p_inter.c' l='56'>// a weapon is found with two clip loads,
+// a big item has five clip loads</doc>

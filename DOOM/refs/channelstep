@@ -1,0 +1,4 @@
+<def f='codebrowser/i_sound.c' l='118' type='unsigned int [8]'/>
+<use f='codebrowser/i_sound.c' l='345' u='w' c='addsfx'/>
+<use f='codebrowser/i_sound.c' l='600' u='r' c='I_UpdateSound'/>
+<doc f='codebrowser/i_sound.c' l='117'>// The channel step amount...</doc>

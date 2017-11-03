@@ -1,0 +1,9 @@
+<dec f='codebrowser/r_data.h' l='55' type='int R_CheckTextureNumForName(char * name)'/>
+<use f='codebrowser/p_spec.c' l='160' u='c' c='P_InitPicAnims'/>
+<def f='codebrowser/r_data.c' l='696' ll='709' type='int R_CheckTextureNumForName(char * name)'/>
+<use f='codebrowser/r_data.c' l='722' u='c' c='R_TextureNumForName'/>
+<doc f='codebrowser/r_data.c' l='691'>//
+// R_CheckTextureNumForName
+// Check whether texture is available.
+// Filter out NoTexture indicator.
+//</doc>

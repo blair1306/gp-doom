@@ -1,0 +1,10 @@
+<def f='codebrowser/i_video.c' l='72' type='int'/>
+<use f='codebrowser/i_video.c' l='258' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='330' u='r' c='I_StartTic'/>
+<use f='codebrowser/i_video.c' l='492' u='r' c='I_FinishUpdate'/>
+<use f='codebrowser/i_video.c' l='514' u='r' c='I_FinishUpdate'/>
+<use f='codebrowser/i_video.c' l='728' u='w' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='811' u='r' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='865' u='r' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='902' u='r' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='903' u='r' c='I_InitGraphics'/>

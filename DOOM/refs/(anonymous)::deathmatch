@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_net.h' l='103' type='short'/>
+<offset>176</offset>
+<doc f='codebrowser/d_net.h' l='102'>// Flag: 1 = deathmatch.</doc>
+<use f='codebrowser/i_net.c' l='288' u='w' c='I_InitNetwork'/>

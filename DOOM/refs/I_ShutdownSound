@@ -1,0 +1,4 @@
+<dec f='codebrowser/i_sound.h' l='48' type='void I_ShutdownSound()'/>
+<doc f='codebrowser/i_sound.h' l='47'>// ... shut down and relase at program termination.</doc>
+<def f='codebrowser/i_sound.c' l='694' ll='731' type='void I_ShutdownSound()'/>
+<use f='codebrowser/i_system.c' l='119' u='c' c='I_Quit'/>

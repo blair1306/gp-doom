@@ -1,0 +1,26 @@
+<dec f='codebrowser/r_bsp.h' l='31' type='seg_t *'/>
+<def f='codebrowser/r_bsp.c' l='47' type='seg_t *'/>
+<use f='codebrowser/r_bsp.c' l='268' u='w' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='344' u='r' c='R_AddLine'/>
+<doc f='codebrowser/r_bsp.c' l='43'>//#include &quot;r_local.h&quot;</doc>
+<use f='codebrowser/r_segs.c' l='117' u='w' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='118' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='119' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='120' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='124' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='124' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='126' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='126' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='144' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='156' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='394' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='395' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='401' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='408' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='408' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='415' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='635' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='646' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='646' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='648' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='648' u='r' c='R_StoreWallRange'/>

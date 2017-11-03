@@ -1,0 +1,11 @@
+<dec f='codebrowser/i_system.h' l='74' type='ticcmd_t * I_BaseTiccmd()'/>
+<doc f='codebrowser/i_system.h' l='66'>// Asynchronous interrupt functions should maintain private queues
+// that are read by the synchronous functions
+// to be converted into events.
+
+// Either returns a null ticcmd,
+// or calls a loadable driver to build it.
+// This ticcmd will then be modified by the gameloop
+// for normal input.</doc>
+<use f='codebrowser/g_game.c' l='249' u='c' c='G_BuildTiccmd'/>
+<def f='codebrowser/i_system.c' l='65' ll='68' type='ticcmd_t * I_BaseTiccmd()'/>

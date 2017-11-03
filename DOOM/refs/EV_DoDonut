@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_spec.h' l='117' type='int EV_DoDonut(line_t * line)'/>
+<doc f='codebrowser/p_spec.h' l='114'>//
+// SPECIAL
+//</doc>
+<def f='codebrowser/p_spec.c' l='1163' ll='1221' type='int EV_DoDonut(line_t * line)'/>
+<doc f='codebrowser/p_spec.c' l='1160'>//
+// Special Stuff that can not be categorized
+//</doc>
+<use f='codebrowser/p_switch.c' l='355' u='c' c='P_UseSpecialLine'/>

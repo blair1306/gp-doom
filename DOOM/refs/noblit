@@ -1,0 +1,4 @@
+<dec f='codebrowser/doomstat.h' l='140' type='boolean'/>
+<def f='codebrowser/g_game.c' l='111' type='boolean'/>
+<use f='codebrowser/g_game.c' l='1628' u='w' c='G_TimeDemo'/>
+<doc f='codebrowser/g_game.c' l='111'>// for comparative timing purposes </doc>

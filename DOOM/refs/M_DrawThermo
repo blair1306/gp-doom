@@ -1,0 +1,9 @@
+<dec f='codebrowser/m_menu.c' l='222' type='void M_DrawThermo(int x, int y, int thermWidth, int thermDot)'/>
+<use f='codebrowser/m_menu.c' l='804' u='c' c='M_DrawSound'/>
+<use f='codebrowser/m_menu.c' l='807' u='c' c='M_DrawSound'/>
+<use f='codebrowser/m_menu.c' l='961' u='c' c='M_DrawOptions'/>
+<use f='codebrowser/m_menu.c' l='964' u='c' c='M_DrawOptions'/>
+<def f='codebrowser/m_menu.c' l='1182' ll='1204' type='void M_DrawThermo(int x, int y, int thermWidth, int thermDot)'/>
+<doc f='codebrowser/m_menu.c' l='1179'>//
+//      Menu Functions
+//</doc>

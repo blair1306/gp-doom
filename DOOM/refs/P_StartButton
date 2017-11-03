@@ -1,0 +1,7 @@
+<def f='codebrowser/p_switch.c' l='154' ll='190' type='void P_StartButton(line_t * line, bwhere_e w, int texture, int time)'/>
+<use f='codebrowser/p_switch.c' l='232' u='c' c='P_ChangeSwitchTexture'/>
+<use f='codebrowser/p_switch.c' l='244' u='c' c='P_ChangeSwitchTexture'/>
+<use f='codebrowser/p_switch.c' l='256' u='c' c='P_ChangeSwitchTexture'/>
+<doc f='codebrowser/p_switch.c' l='151'>//
+// Start a button counting down till it turns off.
+//</doc>

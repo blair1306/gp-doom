@@ -1,0 +1,18 @@
+<dec f='codebrowser/info.c' l='110' type='void A_CPosRefire()'/>
+<use f='codebrowser/info.c' l='555'/>
+<use f='codebrowser/info.c' l='555'/>
+<use f='codebrowser/info.c' l='555'/>
+<use f='codebrowser/info.c' l='555'/>
+<use f='codebrowser/info.c' l='877'/>
+<use f='codebrowser/info.c' l='877'/>
+<use f='codebrowser/info.c' l='877'/>
+<use f='codebrowser/info.c' l='877'/>
+<use f='codebrowser/info.c' l='555'/>
+<use f='codebrowser/info.c' l='555'/>
+<use f='codebrowser/info.c' l='555'/>
+<use f='codebrowser/info.c' l='555'/>
+<use f='codebrowser/info.c' l='877'/>
+<use f='codebrowser/info.c' l='877'/>
+<use f='codebrowser/info.c' l='877'/>
+<use f='codebrowser/info.c' l='877'/>
+<def f='codebrowser/p_enemy.c' l='865' ll='879' type='void A_CPosRefire(mobj_t * actor)'/>

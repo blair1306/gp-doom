@@ -1,0 +1,18 @@
+<dec f='codebrowser/info.c' l='99' type='void A_FireCrackle()'/>
+<use f='codebrowser/info.c' l='421'/>
+<use f='codebrowser/info.c' l='421'/>
+<use f='codebrowser/info.c' l='421'/>
+<use f='codebrowser/info.c' l='421'/>
+<use f='codebrowser/info.c' l='435'/>
+<use f='codebrowser/info.c' l='435'/>
+<use f='codebrowser/info.c' l='435'/>
+<use f='codebrowser/info.c' l='435'/>
+<use f='codebrowser/info.c' l='421'/>
+<use f='codebrowser/info.c' l='421'/>
+<use f='codebrowser/info.c' l='421'/>
+<use f='codebrowser/info.c' l='421'/>
+<use f='codebrowser/info.c' l='435'/>
+<use f='codebrowser/info.c' l='435'/>
+<use f='codebrowser/info.c' l='435'/>
+<use f='codebrowser/info.c' l='435'/>
+<def f='codebrowser/p_enemy.c' l='1251' ll='1255' type='void A_FireCrackle(mobj_t * actor)'/>

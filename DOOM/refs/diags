@@ -1,0 +1,2 @@
+<def f='codebrowser/p_enemy.c' l='76' ll='79' type='dirtype_t [4]'/>
+<use f='codebrowser/p_enemy.c' l='402' u='r' c='P_NewChaseDir'/>

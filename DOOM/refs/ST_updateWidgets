@@ -1,0 +1,2 @@
+<def f='codebrowser/st_stuff.c' l='924' ll='986' type='void ST_updateWidgets()'/>
+<use f='codebrowser/st_stuff.c' l='993' u='c' c='ST_Ticker'/>

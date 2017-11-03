@@ -1,0 +1,128 @@
+<dec f='codebrowser/doomdata.h' l='63' type='short'/>
+<dec f='codebrowser/doomdata.h' l='184' type='short'/>
+<dec f='codebrowser/doomdata.h' l='206' type='short'/>
+<dec f='codebrowser/r_defs.h' l='74' type='fixed_t'/>
+<dec f='codebrowser/r_defs.h' l='92' type='fixed_t'/>
+<dec f='codebrowser/r_defs.h' l='269' type='fixed_t'/>
+<dec f='codebrowser/p_local.h' l='138' type='fixed_t'/>
+<use f='codebrowser/am_map.c' l='405' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='406' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='407' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='408' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='1125' u='r' c='AM_drawWalls'/>
+<use f='codebrowser/am_map.c' l='1127' u='r' c='AM_drawWalls'/>
+<offset>32</offset>
+<use f='codebrowser/g_game.c' l='860' u='r' c='G_CheckSpot'/>
+<use f='codebrowser/g_game.c' l='866' u='r' c='G_CheckSpot'/>
+<dec f='codebrowser/hu_lib.h' l='49' type='int'/>
+<use f='codebrowser/hu_lib.c' l='62' u='w' c='HUlib_initTextLine'/>
+<use f='codebrowser/hu_lib.c' l='122' u='r' c='HUlib_drawTextLine'/>
+<use f='codebrowser/hu_lib.c' l='137' u='r' c='HUlib_drawTextLine'/>
+<use f='codebrowser/hu_lib.c' l='158' u='r' c='HUlib_eraseTextLine'/>
+<use f='codebrowser/hu_lib.c' l='158' u='r' c='HUlib_eraseTextLine'/>
+<offset>32</offset>
+<dec f='include/X11/Xlib.h' l='309' type='int'/>
+<dec f='include/X11/Xlib.h' l='400' type='int'/>
+<dec f='include/X11/Xlib.h' l='427' type='short'/>
+<dec f='include/X11/Xlib.h' l='431' type='short'/>
+<dec f='include/X11/Xlib.h' l='436' type='short'/>
+<dec f='include/X11/Xlib.h' l='470' type='short'/>
+<dec f='include/X11/Xlib.h' l='566' type='int'/>
+<dec f='include/X11/Xlib.h' l='584' type='int'/>
+<dec f='include/X11/Xlib.h' l='602' type='int'/>
+<dec f='include/X11/Xlib.h' l='619' type='int'/>
+<dec f='include/X11/Xlib.h' l='668' type='int'/>
+<dec f='include/X11/Xlib.h' l='679' type='int'/>
+<dec f='include/X11/Xlib.h' l='712' type='int'/>
+<dec f='include/X11/Xlib.h' l='764' type='int'/>
+<dec f='include/X11/Xlib.h' l='775' type='int'/>
+<dec f='include/X11/Xlib.h' l='789' type='int'/>
+<dec f='include/X11/Xlib.h' l='808' type='int'/>
+<dec f='include/X11/Xutil.h' l='83' type='int'/>
+<use f='codebrowser/i_video.c' l='251' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='256' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='258' u='r' c='I_GetEvent'/>
+<offset>96</offset>
+<use f='codebrowser/p_map.c' l='953' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1000' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_maputl.c' l='85' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='92' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='120' u='r' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='121' u='r' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='180' u='r' c='P_PointOnDivlineSide'/>
+<use f='codebrowser/p_maputl.c' l='187' u='r' c='P_PointOnDivlineSide'/>
+<use f='codebrowser/p_maputl.c' l='216' u='w' c='P_MakeDivline'/>
+<use f='codebrowser/p_maputl.c' l='216' u='r' c='P_MakeDivline'/>
+<use f='codebrowser/p_maputl.c' l='248' u='r' c='P_InterceptVector'/>
+<use f='codebrowser/p_maputl.c' l='248' u='r' c='P_InterceptVector'/>
+<use f='codebrowser/p_maputl.c' l='575' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='576' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='580' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='581' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='659' u='w' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='784' u='w' c='P_PathTraverse'/>
+<use f='codebrowser/p_mobj.c' l='367' u='r' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='605' u='r' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='663' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_mobj.c' l='761' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_mobj.c' l='777' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_setup.c' l='147' u='w' c='P_LoadVertexes'/>
+<use f='codebrowser/p_setup.c' l='147' u='r' c='P_LoadVertexes'/>
+<use f='codebrowser/p_setup.c' l='283' u='w' c='P_LoadNodes'/>
+<use f='codebrowser/p_setup.c' l='283' u='r' c='P_LoadNodes'/>
+<use f='codebrowser/p_setup.c' l='341' u='w' c='P_LoadThings'/>
+<use f='codebrowser/p_setup.c' l='341' u='r' c='P_LoadThings'/>
+<use f='codebrowser/p_setup.c' l='381' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='381' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='406' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='406' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='408' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='409' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='413' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='414' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='548' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='549' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='557' u='w' c='P_GroupLines'/>
+<use f='codebrowser/p_sight.c' l='78' u='r' c='P_DivlineSide'/>
+<use f='codebrowser/p_sight.c' l='81' u='r' c='P_DivlineSide'/>
+<use f='codebrowser/p_sight.c' l='88' u='r' c='P_DivlineSide'/>
+<use f='codebrowser/p_sight.c' l='124' u='r' c='P_InterceptVector2'/>
+<use f='codebrowser/p_sight.c' l='124' u='r' c='P_InterceptVector2'/>
+<use f='codebrowser/p_sight.c' l='178' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='179' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='186' u='w' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='186' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='188' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='188' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='189' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='273' u='r' c='P_CrossBSPNode'/>
+<use f='codebrowser/p_sight.c' l='339' u='w' c='P_CheckSight'/>
+<use f='codebrowser/r_bsp.c' l='271' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='272' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_main.c' l='181' u='r' c='R_PointOnSide'/>
+<use f='codebrowser/r_main.c' l='188' u='r' c='R_PointOnSide'/>
+<use f='codebrowser/r_main.c' l='230' u='r' c='R_PointOnSegSide'/>
+<use f='codebrowser/r_main.c' l='233' u='r' c='R_PointOnSegSide'/>
+<use f='codebrowser/r_segs.c' l='124' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='124' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='408' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='646' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='646' u='r' c='R_StoreWallRange'/>
+<dec f='codebrowser/st_lib.h' l='49' type='int'/>
+<dec f='codebrowser/st_lib.h' l='93' type='int'/>
+<dec f='codebrowser/st_lib.h' l='122' type='int'/>
+<use f='codebrowser/st_lib.c' l='76' u='w' c='STlib_initNum'/>
+<use f='codebrowser/st_lib.c' l='122' u='r' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='125' u='r' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='125' u='r' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='135' u='r' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='141' u='r' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='147' u='r' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='185' u='r' c='STlib_updatePercent'/>
+<use f='codebrowser/st_lib.c' l='202' u='w' c='STlib_initMultIcon'/>
+<use f='codebrowser/st_lib.c' l='228' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='237' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='254' u='w' c='STlib_initBinIcon'/>
+<use f='codebrowser/st_lib.c' l='277' u='r' c='STlib_updateBinIcon'/>
+<use f='codebrowser/st_lib.c' l='285' u='r' c='STlib_updateBinIcon'/>
+<offset>32</offset>

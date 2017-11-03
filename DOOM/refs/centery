@@ -1,0 +1,8 @@
+<dec f='codebrowser/r_main.h' l='49' type='int'/>
+<use f='codebrowser/r_draw.c' l='133' u='r' c='R_DrawColumn'/>
+<use f='codebrowser/r_draw.c' l='242' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='347' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='432' u='r' c='R_DrawTranslatedColumn'/>
+<def f='codebrowser/r_main.c' l='62' type='int'/>
+<use f='codebrowser/r_main.c' l='696' u='w' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_main.c' l='699' u='r' c='R_ExecuteSetViewSize'/>

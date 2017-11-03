@@ -1,0 +1,13 @@
+<dec f='codebrowser/d_player.h' l='113' type='int [4]'/>
+<offset>800</offset>
+<doc f='codebrowser/d_player.h' l='112'>// Frags, kills of other players.</doc>
+<use f='codebrowser/g_game.c' l='481' u='r' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='481' u='r' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='809' u='r' c='G_PlayerReborn'/>
+<use f='codebrowser/g_game.c' l='817' u='r' c='G_PlayerReborn'/>
+<use f='codebrowser/g_game.c' l='817' u='r' c='G_PlayerReborn'/>
+<use f='codebrowser/g_game.c' l='1129' u='r' c='G_DoCompleted'/>
+<use f='codebrowser/p_inter.c' l='690' u='w' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='703' u='w' c='P_KillMobj'/>
+<use f='codebrowser/st_stuff.c' l='977' u='r' c='ST_updateWidgets'/>
+<use f='codebrowser/st_stuff.c' l='979' u='r' c='ST_updateWidgets'/>

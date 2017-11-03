@@ -1,0 +1,10 @@
+<def f='codebrowser/d_net.c' l='120' ll='135' type='int ExpandTics(int low)'/>
+<use f='codebrowser/d_net.c' l='171' u='c' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='176' u='c' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='238' u='c' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='244' u='c' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='279' u='c' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='307' u='c' c='GetPackets'/>
+<doc f='codebrowser/d_net.c' l='117'>//
+//
+//</doc>

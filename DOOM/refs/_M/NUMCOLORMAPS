@@ -1,0 +1,9 @@
+<dec f='codebrowser/r_main.h' l='87'/>
+<doc f='codebrowser/r_main.h' l='85'>// Number of diminishing brightness levels.
+// There a 0-31, i.e. 32 LUT in the COLORMAP lump.</doc>
+<use f='codebrowser/r_main.c' l='626' u='c'/>
+<use f='codebrowser/r_main.c' l='636' u='c'/>
+<use f='codebrowser/r_main.c' l='637' u='c'/>
+<use f='codebrowser/r_main.c' l='747' u='c'/>
+<use f='codebrowser/r_main.c' l='755' u='c'/>
+<use f='codebrowser/r_main.c' l='756' u='c'/>

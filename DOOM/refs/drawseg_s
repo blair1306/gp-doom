@@ -1,0 +1,17 @@
+<def f='codebrowser/r_defs.h' l='322' ll='347'/>
+<size>64</size>
+<doc f='codebrowser/r_defs.h' l='319'>//
+// ?
+//</doc>
+<mbr r='drawseg_s::curline' o='0' t='seg_t *'/>
+<mbr r='drawseg_s::x1' o='64' t='int'/>
+<mbr r='drawseg_s::x2' o='96' t='int'/>
+<mbr r='drawseg_s::scale1' o='128' t='fixed_t'/>
+<mbr r='drawseg_s::scale2' o='160' t='fixed_t'/>
+<mbr r='drawseg_s::scalestep' o='192' t='fixed_t'/>
+<mbr r='drawseg_s::silhouette' o='224' t='int'/>
+<mbr r='drawseg_s::bsilheight' o='256' t='fixed_t'/>
+<mbr r='drawseg_s::tsilheight' o='288' t='fixed_t'/>
+<mbr r='drawseg_s::sprtopclip' o='320' t='short *'/>
+<mbr r='drawseg_s::sprbottomclip' o='384' t='short *'/>
+<mbr r='drawseg_s::maskedtexturecol' o='448' t='short *'/>

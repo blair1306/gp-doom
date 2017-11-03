@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_local.h' l='165' type='fixed_t P_InterceptVector(divline_t * v2, divline_t * v1)'/>
+<def f='codebrowser/p_maputl.c' l='230' ll='285' type='fixed_t P_InterceptVector(divline_t * v2, divline_t * v1)'/>
+<use f='codebrowser/p_maputl.c' l='589' u='c' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='663' u='c' c='PIT_AddThingIntercepts'/>
+<doc f='codebrowser/p_maputl.c' l='223'>//
+// P_InterceptVector
+// Returns the fractional intercept point
+// along the first divline.
+// This is only called by the addthings
+// and addlines traversers.
+//</doc>

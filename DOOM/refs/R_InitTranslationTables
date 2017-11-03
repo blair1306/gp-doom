@@ -1,0 +1,12 @@
+<dec f='codebrowser/r_draw.h' l='98' type='void R_InitTranslationTables()'/>
+<doc f='codebrowser/r_draw.h' l='96'>// Initialize color translation tables,
+//  for player rendering etc.</doc>
+<def f='codebrowser/r_draw.c' l='459' ll='483' type='void R_InitTranslationTables()'/>
+<doc f='codebrowser/r_draw.c' l='452'>//
+// R_InitTranslationTables
+// Creates the translation tables to map
+//  the green color ramp to gray, brown, red.
+// Assumes a given structure of the PLAYPAL.
+// Could be read from a lump instead.
+//</doc>
+<use f='codebrowser/r_main.c' l='790' u='c' c='R_Init'/>

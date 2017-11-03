@@ -1,0 +1,6 @@
+<dec f='codebrowser/d_net.h' l='112' type='short'/>
+<offset>272</offset>
+<use f='codebrowser/d_net.c' l='586' u='r' c='D_CheckNetGame'/>
+<use f='codebrowser/d_net.c' l='592' u='r' c='D_CheckNetGame'/>
+<use f='codebrowser/i_net.c' l='287' u='w' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='324' u='w' c='I_InitNetwork'/>

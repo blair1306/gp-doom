@@ -1,0 +1,9 @@
+<def f='codebrowser/r_things.c' l='77' type='lighttable_t **'/>
+<use f='codebrowser/r_things.c' l='602' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='631' u='w' c='R_AddSprites'/>
+<use f='codebrowser/r_things.c' l='633' u='w' c='R_AddSprites'/>
+<use f='codebrowser/r_things.c' l='635' u='w' c='R_AddSprites'/>
+<use f='codebrowser/r_things.c' l='735' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='758' u='w' c='R_DrawPlayerSprites'/>
+<use f='codebrowser/r_things.c' l='760' u='w' c='R_DrawPlayerSprites'/>
+<use f='codebrowser/r_things.c' l='762' u='w' c='R_DrawPlayerSprites'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_net.h' l='139' type='void TryRunTics()'/>
+<doc f='codebrowser/d_net.h' l='138'>//? how many ticks to run?</doc>
+<use f='codebrowser/d_main.c' l='389' u='c' c='D_DoomLoop'/>
+<def f='codebrowser/d_net.c' l='636' ll='767' type='void TryRunTics()'/>

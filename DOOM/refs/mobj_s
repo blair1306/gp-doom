@@ -1,0 +1,38 @@
+<def f='codebrowser/p_mobj.h' l='207' ll='286'/>
+<size>224</size>
+<doc f='codebrowser/p_mobj.h' l='206'>// Map Object definition.</doc>
+<mbr r='mobj_s::thinker' o='0' t='thinker_t'/>
+<mbr r='mobj_s::x' o='192' t='fixed_t'/>
+<mbr r='mobj_s::y' o='224' t='fixed_t'/>
+<mbr r='mobj_s::z' o='256' t='fixed_t'/>
+<mbr r='mobj_s::snext' o='320' t='struct mobj_s *'/>
+<mbr r='mobj_s::sprev' o='384' t='struct mobj_s *'/>
+<mbr r='mobj_s::angle' o='448' t='angle_t'/>
+<mbr r='mobj_s::sprite' o='480' t='spritenum_t'/>
+<mbr r='mobj_s::frame' o='512' t='int'/>
+<mbr r='mobj_s::bnext' o='576' t='struct mobj_s *'/>
+<mbr r='mobj_s::bprev' o='640' t='struct mobj_s *'/>
+<mbr r='mobj_s::subsector' o='704' t='struct subsector_s *'/>
+<mbr r='mobj_s::floorz' o='768' t='fixed_t'/>
+<mbr r='mobj_s::ceilingz' o='800' t='fixed_t'/>
+<mbr r='mobj_s::radius' o='832' t='fixed_t'/>
+<mbr r='mobj_s::height' o='864' t='fixed_t'/>
+<mbr r='mobj_s::momx' o='896' t='fixed_t'/>
+<mbr r='mobj_s::momy' o='928' t='fixed_t'/>
+<mbr r='mobj_s::momz' o='960' t='fixed_t'/>
+<mbr r='mobj_s::validcount' o='992' t='int'/>
+<mbr r='mobj_s::type' o='1024' t='mobjtype_t'/>
+<mbr r='mobj_s::info' o='1088' t='mobjinfo_t *'/>
+<mbr r='mobj_s::tics' o='1152' t='int'/>
+<mbr r='mobj_s::state' o='1216' t='state_t *'/>
+<mbr r='mobj_s::flags' o='1280' t='int'/>
+<mbr r='mobj_s::health' o='1312' t='int'/>
+<mbr r='mobj_s::movedir' o='1344' t='int'/>
+<mbr r='mobj_s::movecount' o='1376' t='int'/>
+<mbr r='mobj_s::target' o='1408' t='struct mobj_s *'/>
+<mbr r='mobj_s::reactiontime' o='1472' t='int'/>
+<mbr r='mobj_s::threshold' o='1504' t='int'/>
+<mbr r='mobj_s::player' o='1536' t='struct player_s *'/>
+<mbr r='mobj_s::lastlook' o='1600' t='int'/>
+<mbr r='mobj_s::spawnpoint' o='1632' t='mapthing_t'/>
+<mbr r='mobj_s::tracer' o='1728' t='struct mobj_s *'/>

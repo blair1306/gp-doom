@@ -1,0 +1,5 @@
+<def f='codebrowser/i_net.c' l='161' ll='218' type='void PacketGet()'/>
+<use f='codebrowser/i_net.c' l='294' u='r' c='I_InitNetwork'/>
+<doc f='codebrowser/i_net.c' l='158'>//
+// PacketGet
+//</doc>

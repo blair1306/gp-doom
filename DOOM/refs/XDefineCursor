@@ -1,0 +1,2 @@
+<dec f='include/X11/Xlib.h' l='2231' type='int XDefineCursor(Display * , Window , Cursor )'/>
+<use f='codebrowser/i_video.c' l='819' u='c' c='I_InitGraphics'/>

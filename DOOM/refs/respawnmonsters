@@ -1,0 +1,6 @@
+<dec f='codebrowser/doomstat.h' l='89' type='boolean'/>
+<doc f='codebrowser/doomstat.h' l='88'>// Nightmare mode flag, single player.</doc>
+<def f='codebrowser/g_game.c' l='100' type='boolean'/>
+<use f='codebrowser/g_game.c' l='1417' u='w' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1419' u='w' c='G_InitNew'/>
+<use f='codebrowser/p_mobj.c' l='456' u='r' c='P_MobjThinker'/>

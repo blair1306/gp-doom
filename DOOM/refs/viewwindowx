@@ -1,0 +1,18 @@
+<dec f='codebrowser/r_main.h' l='43' type='int'/>
+<dec f='codebrowser/doomstat.h' l='142' type='int'/>
+<use f='codebrowser/d_main.c' l='309' u='r' c='D_Display'/>
+<use f='codebrowser/hu_lib.c' l='155' u='r' c='HUlib_eraseTextLine'/>
+<use f='codebrowser/hu_lib.c' l='164' u='r' c='HUlib_eraseTextLine'/>
+<use f='codebrowser/hu_lib.c' l='165' u='r' c='HUlib_eraseTextLine'/>
+<use f='codebrowser/hu_lib.c' l='165' u='r' c='HUlib_eraseTextLine'/>
+<def f='codebrowser/r_draw.c' l='67' type='int'/>
+<use f='codebrowser/r_draw.c' l='705' u='w' c='R_InitBuffer'/>
+<use f='codebrowser/r_draw.c' l='709' u='r' c='R_InitBuffer'/>
+<use f='codebrowser/r_draw.c' l='776' u='r' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='780' u='r' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='784' u='r' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='788' u='r' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='792' u='r' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='797' u='r' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='802' u='r' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='807' u='r' c='R_FillBackScreen'/>

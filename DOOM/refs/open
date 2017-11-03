@@ -1,0 +1,17 @@
+<dec f='codebrowser/p_spec.h' l='333' type='3'/>
+<dec f='include/fcntl.h' l='156' type='int open(const char * __file, int __oflag)'/>
+<use f='codebrowser/m_menu.c' l='525' u='c' c='M_ReadSaveStrings'/>
+<use f='codebrowser/m_misc.c' l='121' u='c' c='M_WriteFile'/>
+<use f='codebrowser/m_misc.c' l='148' u='c' c='M_ReadFile'/>
+<use f='codebrowser/p_doors.c' l='187' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='332' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='481' u='r' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_enemy.c' l='592' u='r' c='A_KeenDie'/>
+<use f='codebrowser/p_spec.c' l='545' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='849' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='990' u='r' c='P_ShootSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='457' u='r' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='540' u='r' c='P_UseSpecialLine'/>
+<use f='codebrowser/w_wad.c' l='163' u='c' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='249' u='c' c='W_Reload'/>
+<use f='codebrowser/w_wad.c' l='450' u='c' c='W_ReadLump'/>

@@ -1,0 +1,9 @@
+<def f='codebrowser/i_video.c' l='595' ll='689' type='void grabsharedmemory(int size)'/>
+<use f='codebrowser/i_video.c' l='867' u='c' c='I_InitGraphics'/>
+<doc f='codebrowser/i_video.c' l='588'>//
+// This function is probably redundant,
+//  if XShmDetach works properly.
+// ddt never detached the XShm memory,
+//  thus there might have been stale
+//  handles accumulating.
+//</doc>

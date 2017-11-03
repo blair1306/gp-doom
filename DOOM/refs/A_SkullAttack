@@ -1,0 +1,11 @@
+<dec f='codebrowser/info.c' l='115' type='void A_SkullAttack()'/>
+<use f='codebrowser/info.c' l='726'/>
+<use f='codebrowser/info.c' l='726'/>
+<use f='codebrowser/info.c' l='726'/>
+<use f='codebrowser/info.c' l='726'/>
+<use f='codebrowser/info.c' l='726'/>
+<use f='codebrowser/info.c' l='726'/>
+<use f='codebrowser/info.c' l='726'/>
+<use f='codebrowser/info.c' l='726'/>
+<def f='codebrowser/p_enemy.c' l='1419' ll='1442' type='void A_SkullAttack(mobj_t * actor)'/>
+<use f='codebrowser/p_enemy.c' l='1504' u='c' c='A_PainShootSkull'/>

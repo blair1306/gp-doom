@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>sounds.c source code [codebrowser/sounds.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sounds.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='sounds.c.html'>sounds.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION:</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//	Created by a sound utility.</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">//	Kept as a sample, DOOM2 sounds.</i></td></tr>
+<tr><th id="22">22</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="23">23</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><em>static</em> <em>const</em> <em>char</em> </td></tr>
+<tr><th id="27">27</th><td><dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [49]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id: sounds.c,v 1.3 1997/01/29 22:40:44 b1 Exp $"</q>;</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#include <a href="doomtype.h.html">"doomtype.h"</a></u></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="sounds.h.html">"sounds.h"</a></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><i>//</i></td></tr>
+<tr><th id="34">34</th><td><i>// Information about all the music</i></td></tr>
+<tr><th id="35">35</th><td><i>//</i></td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><a class="typedef" href="sounds.h.html#musicinfo_t" title='musicinfo_t' data-type='struct musicinfo_t' data-ref="musicinfo_t">musicinfo_t</a> <dfn class="decl def" id="S_music" title='S_music' data-ref="S_music">S_music</dfn>[] =</td></tr>
+<tr><th id="38">38</th><td>{</td></tr>
+<tr><th id="39">39</th><td>    { <var>0</var> },</td></tr>
+<tr><th id="40">40</th><td>    { <q>"e1m1"</q>, <var>0</var> },</td></tr>
+<tr><th id="41">41</th><td>    { <q>"e1m2"</q>, <var>0</var> },</td></tr>
+<tr><th id="42">42</th><td>    { <q>"e1m3"</q>, <var>0</var> },</td></tr>
+<tr><th id="43">43</th><td>    { <q>"e1m4"</q>, <var>0</var> },</td></tr>
+<tr><th id="44">44</th><td>    { <q>"e1m5"</q>, <var>0</var> },</td></tr>
+<tr><th id="45">45</th><td>    { <q>"e1m6"</q>, <var>0</var> },</td></tr>
+<tr><th id="46">46</th><td>    { <q>"e1m7"</q>, <var>0</var> },</td></tr>
+<tr><th id="47">47</th><td>    { <q>"e1m8"</q>, <var>0</var> },</td></tr>
+<tr><th id="48">48</th><td>    { <q>"e1m9"</q>, <var>0</var> },</td></tr>
+<tr><th id="49">49</th><td>    { <q>"e2m1"</q>, <var>0</var> },</td></tr>
+<tr><th id="50">50</th><td>    { <q>"e2m2"</q>, <var>0</var> },</td></tr>
+<tr><th id="51">51</th><td>    { <q>"e2m3"</q>, <var>0</var> },</td></tr>
+<tr><th id="52">52</th><td>    { <q>"e2m4"</q>, <var>0</var> },</td></tr>
+<tr><th id="53">53</th><td>    { <q>"e2m5"</q>, <var>0</var> },</td></tr>
+<tr><th id="54">54</th><td>    { <q>"e2m6"</q>, <var>0</var> },</td></tr>
+<tr><th id="55">55</th><td>    { <q>"e2m7"</q>, <var>0</var> },</td></tr>
+<tr><th id="56">56</th><td>    { <q>"e2m8"</q>, <var>0</var> },</td></tr>
+<tr><th id="57">57</th><td>    { <q>"e2m9"</q>, <var>0</var> },</td></tr>
+<tr><th id="58">58</th><td>    { <q>"e3m1"</q>, <var>0</var> },</td></tr>
+<tr><th id="59">59</th><td>    { <q>"e3m2"</q>, <var>0</var> },</td></tr>
+<tr><th id="60">60</th><td>    { <q>"e3m3"</q>, <var>0</var> },</td></tr>
+<tr><th id="61">61</th><td>    { <q>"e3m4"</q>, <var>0</var> },</td></tr>
+<tr><th id="62">62</th><td>    { <q>"e3m5"</q>, <var>0</var> },</td></tr>
+<tr><th id="63">63</th><td>    { <q>"e3m6"</q>, <var>0</var> },</td></tr>
+<tr><th id="64">64</th><td>    { <q>"e3m7"</q>, <var>0</var> },</td></tr>
+<tr><th id="65">65</th><td>    { <q>"e3m8"</q>, <var>0</var> },</td></tr>
+<tr><th id="66">66</th><td>    { <q>"e3m9"</q>, <var>0</var> },</td></tr>
+<tr><th id="67">67</th><td>    { <q>"inter"</q>, <var>0</var> },</td></tr>
+<tr><th id="68">68</th><td>    { <q>"intro"</q>, <var>0</var> },</td></tr>
+<tr><th id="69">69</th><td>    { <q>"bunny"</q>, <var>0</var> },</td></tr>
+<tr><th id="70">70</th><td>    { <q>"victor"</q>, <var>0</var> },</td></tr>
+<tr><th id="71">71</th><td>    { <q>"introa"</q>, <var>0</var> },</td></tr>
+<tr><th id="72">72</th><td>    { <q>"runnin"</q>, <var>0</var> },</td></tr>
+<tr><th id="73">73</th><td>    { <q>"stalks"</q>, <var>0</var> },</td></tr>
+<tr><th id="74">74</th><td>    { <q>"countd"</q>, <var>0</var> },</td></tr>
+<tr><th id="75">75</th><td>    { <q>"betwee"</q>, <var>0</var> },</td></tr>
+<tr><th id="76">76</th><td>    { <q>"doom"</q>, <var>0</var> },</td></tr>
+<tr><th id="77">77</th><td>    { <q>"the_da"</q>, <var>0</var> },</td></tr>
+<tr><th id="78">78</th><td>    { <q>"shawn"</q>, <var>0</var> },</td></tr>
+<tr><th id="79">79</th><td>    { <q>"ddtblu"</q>, <var>0</var> },</td></tr>
+<tr><th id="80">80</th><td>    { <q>"in_cit"</q>, <var>0</var> },</td></tr>
+<tr><th id="81">81</th><td>    { <q>"dead"</q>, <var>0</var> },</td></tr>
+<tr><th id="82">82</th><td>    { <q>"stlks2"</q>, <var>0</var> },</td></tr>
+<tr><th id="83">83</th><td>    { <q>"theda2"</q>, <var>0</var> },</td></tr>
+<tr><th id="84">84</th><td>    { <q>"doom2"</q>, <var>0</var> },</td></tr>
+<tr><th id="85">85</th><td>    { <q>"ddtbl2"</q>, <var>0</var> },</td></tr>
+<tr><th id="86">86</th><td>    { <q>"runni2"</q>, <var>0</var> },</td></tr>
+<tr><th id="87">87</th><td>    { <q>"dead2"</q>, <var>0</var> },</td></tr>
+<tr><th id="88">88</th><td>    { <q>"stlks3"</q>, <var>0</var> },</td></tr>
+<tr><th id="89">89</th><td>    { <q>"romero"</q>, <var>0</var> },</td></tr>
+<tr><th id="90">90</th><td>    { <q>"shawn2"</q>, <var>0</var> },</td></tr>
+<tr><th id="91">91</th><td>    { <q>"messag"</q>, <var>0</var> },</td></tr>
+<tr><th id="92">92</th><td>    { <q>"count2"</q>, <var>0</var> },</td></tr>
+<tr><th id="93">93</th><td>    { <q>"ddtbl3"</q>, <var>0</var> },</td></tr>
+<tr><th id="94">94</th><td>    { <q>"ampie"</q>, <var>0</var> },</td></tr>
+<tr><th id="95">95</th><td>    { <q>"theda3"</q>, <var>0</var> },</td></tr>
+<tr><th id="96">96</th><td>    { <q>"adrian"</q>, <var>0</var> },</td></tr>
+<tr><th id="97">97</th><td>    { <q>"messg2"</q>, <var>0</var> },</td></tr>
+<tr><th id="98">98</th><td>    { <q>"romer2"</q>, <var>0</var> },</td></tr>
+<tr><th id="99">99</th><td>    { <q>"tense"</q>, <var>0</var> },</td></tr>
+<tr><th id="100">100</th><td>    { <q>"shawn3"</q>, <var>0</var> },</td></tr>
+<tr><th id="101">101</th><td>    { <q>"openin"</q>, <var>0</var> },</td></tr>
+<tr><th id="102">102</th><td>    { <q>"evil"</q>, <var>0</var> },</td></tr>
+<tr><th id="103">103</th><td>    { <q>"ultima"</q>, <var>0</var> },</td></tr>
+<tr><th id="104">104</th><td>    { <q>"read_m"</q>, <var>0</var> },</td></tr>
+<tr><th id="105">105</th><td>    { <q>"dm2ttl"</q>, <var>0</var> },</td></tr>
+<tr><th id="106">106</th><td>    { <q>"dm2int"</q>, <var>0</var> } </td></tr>
+<tr><th id="107">107</th><td>};</td></tr>
+<tr><th id="108">108</th><td></td></tr>
+<tr><th id="109">109</th><td></td></tr>
+<tr><th id="110">110</th><td><i>//</i></td></tr>
+<tr><th id="111">111</th><td><i>// Information about all the sfx</i></td></tr>
+<tr><th id="112">112</th><td><i>//</i></td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td><a class="typedef" href="sounds.h.html#sfxinfo_t" title='sfxinfo_t' data-type='struct sfxinfo_struct' data-ref="sfxinfo_t">sfxinfo_t</a> <dfn class="decl def" id="S_sfx" title='S_sfx' data-ref="S_sfx">S_sfx</dfn>[] =</td></tr>
+<tr><th id="115">115</th><td>{</td></tr>
+<tr><th id="116">116</th><td>  <i>// S_sfx[0] needs to be a dummy for odd reasons.</i></td></tr>
+<tr><th id="117">117</th><td>  { <q>"none"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>,  <var>0</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td>  { <q>"pistol"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="120">120</th><td>  { <q>"shotgn"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="121">121</th><td>  { <q>"sgcock"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="122">122</th><td>  { <q>"dshtgn"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="123">123</th><td>  { <q>"dbopn"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="124">124</th><td>  { <q>"dbcls"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="125">125</th><td>  { <q>"dbload"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="126">126</th><td>  { <q>"plasma"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="127">127</th><td>  { <q>"bfg"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="128">128</th><td>  { <q>"sawup"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="129">129</th><td>  { <q>"sawidl"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>118</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="130">130</th><td>  { <q>"sawful"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="131">131</th><td>  { <q>"sawhit"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="132">132</th><td>  { <q>"rlaunc"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="133">133</th><td>  { <q>"rxplod"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="134">134</th><td>  { <q>"firsht"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="135">135</th><td>  { <q>"firxpl"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="136">136</th><td>  { <q>"pstart"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>100</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="137">137</th><td>  { <q>"pstop"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>100</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="138">138</th><td>  { <q>"doropn"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>100</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="139">139</th><td>  { <q>"dorcls"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>100</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="140">140</th><td>  { <q>"stnmov"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>119</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="141">141</th><td>  { <q>"swtchn"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>78</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="142">142</th><td>  { <q>"swtchx"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>78</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="143">143</th><td>  { <q>"plpain"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>96</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="144">144</th><td>  { <q>"dmpain"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>96</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="145">145</th><td>  { <q>"popain"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>96</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="146">146</th><td>  { <q>"vipain"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>96</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="147">147</th><td>  { <q>"mnpain"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>96</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="148">148</th><td>  { <q>"pepain"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>96</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="149">149</th><td>  { <q>"slop"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>78</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="150">150</th><td>  { <q>"itemup"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>78</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="151">151</th><td>  { <q>"wpnup"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>78</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="152">152</th><td>  { <q>"oof"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>96</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="153">153</th><td>  { <q>"telept"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>32</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="154">154</th><td>  { <q>"posit1"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>98</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="155">155</th><td>  { <q>"posit2"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>98</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="156">156</th><td>  { <q>"posit3"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>98</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="157">157</th><td>  { <q>"bgsit1"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>98</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="158">158</th><td>  { <q>"bgsit2"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>98</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="159">159</th><td>  { <q>"sgtsit"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>98</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="160">160</th><td>  { <q>"cacsit"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>98</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="161">161</th><td>  { <q>"brssit"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>94</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="162">162</th><td>  { <q>"cybsit"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>92</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="163">163</th><td>  { <q>"spisit"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>90</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="164">164</th><td>  { <q>"bspsit"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>90</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="165">165</th><td>  { <q>"kntsit"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>90</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="166">166</th><td>  { <q>"vilsit"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>90</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="167">167</th><td>  { <q>"mansit"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>90</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="168">168</th><td>  { <q>"pesit"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>90</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="169">169</th><td>  { <q>"sklatk"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="170">170</th><td>  { <q>"sgtatk"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="171">171</th><td>  { <q>"skepch"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="172">172</th><td>  { <q>"vilatk"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="173">173</th><td>  { <q>"claw"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="174">174</th><td>  { <q>"skeswg"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="175">175</th><td>  { <q>"pldeth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>32</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="176">176</th><td>  { <q>"pdiehi"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>32</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="177">177</th><td>  { <q>"podth1"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="178">178</th><td>  { <q>"podth2"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="179">179</th><td>  { <q>"podth3"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="180">180</th><td>  { <q>"bgdth1"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="181">181</th><td>  { <q>"bgdth2"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="182">182</th><td>  { <q>"sgtdth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="183">183</th><td>  { <q>"cacdth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="184">184</th><td>  { <q>"skldth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="185">185</th><td>  { <q>"brsdth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>32</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="186">186</th><td>  { <q>"cybdth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>32</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="187">187</th><td>  { <q>"spidth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>32</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="188">188</th><td>  { <q>"bspdth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>32</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="189">189</th><td>  { <q>"vildth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>32</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="190">190</th><td>  { <q>"kntdth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>32</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="191">191</th><td>  { <q>"pedth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>32</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="192">192</th><td>  { <q>"skedth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>32</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="193">193</th><td>  { <q>"posact"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>120</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="194">194</th><td>  { <q>"bgact"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>120</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="195">195</th><td>  { <q>"dmact"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>120</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="196">196</th><td>  { <q>"bspact"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>100</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="197">197</th><td>  { <q>"bspwlk"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>100</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="198">198</th><td>  { <q>"vilact"</q>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>, <var>100</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="199">199</th><td>  { <q>"noway"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>78</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="200">200</th><td>  { <q>"barexp"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>60</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="201">201</th><td>  { <q>"punch"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="202">202</th><td>  { <q>"hoof"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="203">203</th><td>  { <q>"metal"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="204">204</th><td>  { <q>"chgun"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>64</var>, &amp;<a class="ref" href="sounds.h.html#S_sfx" title='S_sfx' data-ref="S_sfx">S_sfx</a>[<a class="enum" href="sounds.h.html#sfx_pistol" title='sfx_pistol' data-ref="sfx_pistol">sfx_pistol</a>], <var>150</var>, <var>0</var>, <var>0</var> },</td></tr>
+<tr><th id="205">205</th><td>  { <q>"tink"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>60</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="206">206</th><td>  { <q>"bdopn"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>100</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="207">207</th><td>  { <q>"bdcls"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>100</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="208">208</th><td>  { <q>"itmbk"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>100</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="209">209</th><td>  { <q>"flame"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>32</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="210">210</th><td>  { <q>"flamst"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>32</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="211">211</th><td>  { <q>"getpow"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>60</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="212">212</th><td>  { <q>"bospit"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="213">213</th><td>  { <q>"boscub"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="214">214</th><td>  { <q>"bossit"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="215">215</th><td>  { <q>"bospn"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="216">216</th><td>  { <q>"bosdth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="217">217</th><td>  { <q>"manatk"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="218">218</th><td>  { <q>"mandth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="219">219</th><td>  { <q>"sssit"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="220">220</th><td>  { <q>"ssdth"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="221">221</th><td>  { <q>"keenpn"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="222">222</th><td>  { <q>"keendt"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="223">223</th><td>  { <q>"skeact"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="224">224</th><td>  { <q>"skesit"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="225">225</th><td>  { <q>"skeatk"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>70</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> },</td></tr>
+<tr><th id="226">226</th><td>  { <q>"radio"</q>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>, <var>60</var>, <var>0</var>, -<var>1</var>, -<var>1</var>, <var>0</var> } </td></tr>
+<tr><th id="227">227</th><td>};</td></tr>
+<tr><th id="228">228</th><td></td></tr>
+<tr><th id="229">229</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

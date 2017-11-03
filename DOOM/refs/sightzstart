@@ -1,0 +1,10 @@
+<def f='codebrowser/p_sight.c' l='39' type='fixed_t'/>
+<use f='codebrowser/p_sight.c' l='231' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='238' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='334' u='w' c='P_CheckSight'/>
+<use f='codebrowser/p_sight.c' l='335' u='r' c='P_CheckSight'/>
+<use f='codebrowser/p_sight.c' l='336' u='r' c='P_CheckSight'/>
+<doc f='codebrowser/p_sight.c' l='36'>//
+// P_CheckSight
+//</doc>
+<doc f='codebrowser/p_sight.c' l='39'>// eye z of looker</doc>

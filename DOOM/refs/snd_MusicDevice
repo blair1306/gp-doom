@@ -1,0 +1,8 @@
+<dec f='codebrowser/doomstat.h' l='116' type='int'/>
+<doc f='codebrowser/doomstat.h' l='112'>// Current music/sfx card - index useless
+//  w/o a reference LUT in a sound module.
+// Ideally, this would use indices found
+//  in: /usr/include/linux/soundcard.h</doc>
+<dec f='codebrowser/s_sound.c' l='85' type='int'/>
+<doc f='codebrowser/s_sound.c' l='83'>// Current music/sfx card - index useless
+//  w/o a reference LUT in a sound module.</doc>

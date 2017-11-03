@@ -1,0 +1,5 @@
+<dec f='codebrowser/i_video.h' l='49' type='void I_WaitVBL(int count)'/>
+<doc f='codebrowser/i_video.h' l='48'>// Wait for vertical retrace or pause a bit.</doc>
+<use f='codebrowser/d_net.c' l='620' u='c' c='D_QuitNetGame'/>
+<def f='codebrowser/i_system.c' l='126' ll='137' type='void I_WaitVBL(int count)'/>
+<use f='codebrowser/m_menu.c' l='1090' u='c' c='M_QuitResponse'/>

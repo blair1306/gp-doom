@@ -1,0 +1,14 @@
+<dec f='codebrowser/hu_stuff.h' l='34'/>
+<doc f='codebrowser/hu_stuff.h' l='33'>// Calculate # of glyphs in font.</doc>
+<use f='codebrowser/f_finale.c' l='258' u='c'/>
+<use f='codebrowser/f_finale.c' l='314' u='c'/>
+<use f='codebrowser/f_finale.c' l='541' u='c'/>
+<use f='codebrowser/f_finale.c' l='560' u='c'/>
+<use f='codebrowser/hu_stuff.c' l='90' u='c'/>
+<use f='codebrowser/hu_stuff.c' l='406' u='c'/>
+<use f='codebrowser/m_menu.c' l='68' u='c'/>
+<use f='codebrowser/m_menu.c' l='1264' u='c'/>
+<use f='codebrowser/m_menu.c' l='1326' u='c'/>
+<use f='codebrowser/m_menu.c' l='1479' u='c'/>
+<use f='codebrowser/m_misc.c' l='67' u='c'/>
+<use f='codebrowser/m_misc.c' l='83' u='c'/>

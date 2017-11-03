@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/bits/ipc.h' l='47' type='__uid_t'/>
+<use f='codebrowser/i_video.c' l='623' u='r' c='grabsharedmemory'/>
+<offset>96</offset>
+<doc f='include/x86_64-linux-gnu/bits/ipc.h' l='47'>/* Creator&apos;s user ID.  */</doc>

@@ -1,0 +1,57 @@
+<dec f='codebrowser/doomdata.h' l='147' type='short'/>
+<dec f='codebrowser/r_defs.h' l='107' type='short'/>
+<dec f='codebrowser/r_defs.h' l='464' type='int'/>
+<offset>64</offset>
+<use f='codebrowser/p_lights.c' l='55' u='r' c='T_FireFlicker'/>
+<use f='codebrowser/p_lights.c' l='56' u='w' c='T_FireFlicker'/>
+<use f='codebrowser/p_lights.c' l='58' u='w' c='T_FireFlicker'/>
+<use f='codebrowser/p_lights.c' l='82' u='r' c='P_SpawnFireFlicker'/>
+<use f='codebrowser/p_lights.c' l='83' u='r' c='P_SpawnFireFlicker'/>
+<use f='codebrowser/p_lights.c' l='103' u='r' c='T_LightFlash'/>
+<use f='codebrowser/p_lights.c' l='105' u='w' c='T_LightFlash'/>
+<use f='codebrowser/p_lights.c' l='110' u='w' c='T_LightFlash'/>
+<use f='codebrowser/p_lights.c' l='137' u='r' c='P_SpawnLightFlash'/>
+<use f='codebrowser/p_lights.c' l='139' u='r' c='P_SpawnLightFlash'/>
+<use f='codebrowser/p_lights.c' l='160' u='r' c='T_StrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='162' u='w' c='T_StrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='167' u='w' c='T_StrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='196' u='r' c='P_SpawnStrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='197' u='r' c='P_SpawnStrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='251' u='r' c='EV_TurnTagLightsOff'/>
+<use f='codebrowser/p_lights.c' l='258' u='r' c='EV_TurnTagLightsOff'/>
+<use f='codebrowser/p_lights.c' l='259' u='r' c='EV_TurnTagLightsOff'/>
+<use f='codebrowser/p_lights.c' l='261' u='w' c='EV_TurnTagLightsOff'/>
+<use f='codebrowser/p_lights.c' l='300' u='r' c='EV_LightTurnOn'/>
+<use f='codebrowser/p_lights.c' l='301' u='r' c='EV_LightTurnOn'/>
+<use f='codebrowser/p_lights.c' l='304' u='w' c='EV_LightTurnOn'/>
+<use f='codebrowser/p_lights.c' l='320' u='w' c='T_Glow'/>
+<use f='codebrowser/p_lights.c' l='321' u='r' c='T_Glow'/>
+<use f='codebrowser/p_lights.c' l='323' u='w' c='T_Glow'/>
+<use f='codebrowser/p_lights.c' l='330' u='w' c='T_Glow'/>
+<use f='codebrowser/p_lights.c' l='331' u='r' c='T_Glow'/>
+<use f='codebrowser/p_lights.c' l='333' u='w' c='T_Glow'/>
+<use f='codebrowser/p_lights.c' l='350' u='r' c='P_SpawnGlowingLight'/>
+<use f='codebrowser/p_lights.c' l='351' u='r' c='P_SpawnGlowingLight'/>
+<use f='codebrowser/p_saveg.c' l='132' u='r' c='P_ArchiveWorld'/>
+<use f='codebrowser/p_saveg.c' l='185' u='w' c='P_UnArchiveWorld'/>
+<use f='codebrowser/p_setup.c' l='251' u='w' c='P_LoadSectors'/>
+<use f='codebrowser/p_setup.c' l='251' u='r' c='P_LoadSectors'/>
+<use f='codebrowser/p_spec.c' l='472' u='r' c='P_FindMinSurroundingLight'/>
+<use f='codebrowser/p_spec.c' l='473' u='r' c='P_FindMinSurroundingLight'/>
+<use f='codebrowser/r_bsp.c' l='343' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='343' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='520' u='r' c='R_Subsector'/>
+<use f='codebrowser/r_bsp.c' l='530' u='r' c='R_Subsector'/>
+<use f='codebrowser/r_plane.c' l='235' u='r' c='R_FindPlane'/>
+<use f='codebrowser/r_plane.c' l='252' u='w' c='R_FindPlane'/>
+<use f='codebrowser/r_plane.c' l='315' u='w' c='R_CheckPlane'/>
+<use f='codebrowser/r_plane.c' l='315' u='r' c='R_CheckPlane'/>
+<use f='codebrowser/r_plane.c' l='428' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_segs.c' l='122' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='539' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='539' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='552' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='552' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='644' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_things.c' l='628' u='r' c='R_AddSprites'/>
+<use f='codebrowser/r_things.c' l='754' u='r' c='R_DrawPlayerSprites'/>

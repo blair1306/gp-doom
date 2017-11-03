@@ -1,0 +1,7 @@
+<dec f='codebrowser/doomstat.h' l='69' type='Language_t'/>
+<doc f='codebrowser/doomstat.h' l='67'>// -------------------------------------------
+// Language.</doc>
+<use f='codebrowser/d_main.c' l='663' u='w' c='IdentifyVersion'/>
+<def f='codebrowser/doomstat.c' l='39' type='Language_t'/>
+<doc f='codebrowser/doomstat.c' l='38'>// Language.</doc>
+<use f='codebrowser/m_menu.c' l='1102' u='r' c='M_QuitDOOM'/>

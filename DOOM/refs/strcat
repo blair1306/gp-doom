@@ -1,0 +1,4 @@
+<dec f='include/string.h' l='133' type='char * strcat(char *restrict __dest, const char *restrict __src)'/>
+<doc f='include/string.h' l='132'>/* Append SRC onto DEST.  */</doc>
+<use f='codebrowser/g_game.c' l='1537' u='c' c='G_RecordDemo'/>
+<use f='codebrowser/i_sound.c' l='754' u='c' c='I_InitSound'/>

@@ -1,0 +1,6 @@
+<dec f='include/x86_64-linux-gnu/bits/shm.h' l='65' type='__pid_t'/>
+<use f='codebrowser/i_video.c' l='618' u='r' c='grabsharedmemory'/>
+<use f='codebrowser/i_video.c' l='645' u='r' c='grabsharedmemory'/>
+<use f='codebrowser/i_video.c' l='654' u='r' c='grabsharedmemory'/>
+<offset>640</offset>
+<doc f='include/x86_64-linux-gnu/bits/shm.h' l='65'>/* pid of creator */</doc>

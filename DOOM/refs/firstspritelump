@@ -1,0 +1,12 @@
+<dec f='codebrowser/r_state.h' l='66' type='int'/>
+<doc f='codebrowser/r_state.h' l='65'>// Sprite....</doc>
+<use f='codebrowser/f_finale.c' l='598' u='r' c='F_CastDrawer'/>
+<def f='codebrowser/r_data.c' l='137' type='int'/>
+<use f='codebrowser/r_data.c' l='608' u='w' c='R_InitSpriteLumps'/>
+<use f='codebrowser/r_data.c' l='611' u='r' c='R_InitSpriteLumps'/>
+<use f='codebrowser/r_data.c' l='621' u='r' c='R_InitSpriteLumps'/>
+<use f='codebrowser/r_data.c' l='839' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_things.c' l='135' u='r' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='155' u='r' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='201' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='408' u='r' c='R_DrawVisSprite'/>

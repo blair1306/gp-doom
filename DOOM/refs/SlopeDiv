@@ -1,0 +1,12 @@
+<dec f='codebrowser/tables.h' l='90' type='int SlopeDiv(unsigned int num, unsigned int den)'/>
+<doc f='codebrowser/tables.h' l='87'>// Utility function,
+//  called by R_PointToAngle.</doc>
+<use f='codebrowser/r_main.c' l='312' u='c' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='317' u='c' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='328' u='c' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='333' u='c' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='348' u='c' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='353' u='c' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='364' u='c' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='369' u='c' c='R_PointToAngle'/>
+<def f='codebrowser/tables.c' l='49' ll='62' type='int SlopeDiv(unsigned int num, unsigned int den)'/>

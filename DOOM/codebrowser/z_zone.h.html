@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>z_zone.h source code [codebrowser/z_zone.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="memblock_s "/>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/z_zone.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='z_zone.h.html'>z_zone.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>// DESCRIPTION:</i></td></tr>
+<tr><th id="18">18</th><td><i>//      Zone Memory Allocation, perhaps NeXT ObjectiveC inspired.</i></td></tr>
+<tr><th id="19">19</th><td><i>//	Remark: this was the only stuff that, according</i></td></tr>
+<tr><th id="20">20</th><td><i>//	 to John Carmack, might have been useful for</i></td></tr>
+<tr><th id="21">21</th><td><i>//	 Quake.</i></td></tr>
+<tr><th id="22">22</th><td><i>//</i></td></tr>
+<tr><th id="23">23</th><td><i>//---------------------------------------------------------------------</i></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><u>#<span data-ppcond="27">ifndef</span> <span class="macro" data-ref="_M/__Z_ZONE__">__Z_ZONE__</span></u></td></tr>
+<tr><th id="28">28</th><td><u>#define <dfn class="macro" id="_M/__Z_ZONE__" data-ref="_M/__Z_ZONE__">__Z_ZONE__</dfn></u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#include <a href="../include/stdio.h.html">&lt;stdio.h&gt;</a></u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><i>//</i></td></tr>
+<tr><th id="33">33</th><td><i>// ZONE MEMORY</i></td></tr>
+<tr><th id="34">34</th><td><i>// PU - purge tags.</i></td></tr>
+<tr><th id="35">35</th><td><i>// Tags &lt; 100 are not overwritten until freed.</i></td></tr>
+<tr><th id="36">36</th><td><u>#define <dfn class="macro" id="_M/PU_STATIC" data-ref="_M/PU_STATIC">PU_STATIC</dfn>		1	// static entire execution time</u></td></tr>
+<tr><th id="37">37</th><td><u>#define <dfn class="macro" id="_M/PU_SOUND" data-ref="_M/PU_SOUND">PU_SOUND</dfn>		2	// static while playing</u></td></tr>
+<tr><th id="38">38</th><td><u>#define <dfn class="macro" id="_M/PU_MUSIC" data-ref="_M/PU_MUSIC">PU_MUSIC</dfn>		3	// static while playing</u></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/PU_DAVE" data-ref="_M/PU_DAVE">PU_DAVE</dfn>		4	// anything else Dave wants static</u></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/PU_LEVEL" data-ref="_M/PU_LEVEL">PU_LEVEL</dfn>		50	// static until level exited</u></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/PU_LEVSPEC" data-ref="_M/PU_LEVSPEC">PU_LEVSPEC</dfn>		51      // a special thinker in a level</u></td></tr>
+<tr><th id="42">42</th><td><i>// Tags &gt;= 100 are purgable whenever needed.</i></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/PU_PURGELEVEL" data-ref="_M/PU_PURGELEVEL">PU_PURGELEVEL</dfn>	100</u></td></tr>
+<tr><th id="44">44</th><td><u>#define <dfn class="macro" id="_M/PU_CACHE" data-ref="_M/PU_CACHE">PU_CACHE</dfn>		101</u></td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><em>void</em>	<dfn class="decl" id="Z_Init" title='Z_Init' data-ref="Z_Init">Z_Init</dfn> (<em>void</em>);</td></tr>
+<tr><th id="48">48</th><td><em>void</em>*	<dfn class="decl" id="Z_Malloc" title='Z_Malloc' data-ref="Z_Malloc">Z_Malloc</dfn> (<em>int</em> <dfn class="local col5 decl" id="185size" title='size' data-type='int' data-ref="185size">size</dfn>, <em>int</em> <dfn class="local col6 decl" id="186tag" title='tag' data-type='int' data-ref="186tag">tag</dfn>, <em>void</em> *<dfn class="local col7 decl" id="187ptr" title='ptr' data-type='void *' data-ref="187ptr">ptr</dfn>);</td></tr>
+<tr><th id="49">49</th><td><em>void</em>    <dfn class="decl" id="Z_Free" title='Z_Free' data-ref="Z_Free">Z_Free</dfn> (<em>void</em> *<dfn class="local col8 decl" id="188ptr" title='ptr' data-type='void *' data-ref="188ptr">ptr</dfn>);</td></tr>
+<tr><th id="50">50</th><td><em>void</em>    <dfn class="decl" id="Z_FreeTags" title='Z_FreeTags' data-ref="Z_FreeTags">Z_FreeTags</dfn> (<em>int</em> <dfn class="local col9 decl" id="189lowtag" title='lowtag' data-type='int' data-ref="189lowtag">lowtag</dfn>, <em>int</em> <dfn class="local col0 decl" id="190hightag" title='hightag' data-type='int' data-ref="190hightag">hightag</dfn>);</td></tr>
+<tr><th id="51">51</th><td><em>void</em>    <dfn class="decl" id="Z_DumpHeap" title='Z_DumpHeap' data-ref="Z_DumpHeap">Z_DumpHeap</dfn> (<em>int</em> <dfn class="local col1 decl" id="191lowtag" title='lowtag' data-type='int' data-ref="191lowtag">lowtag</dfn>, <em>int</em> <dfn class="local col2 decl" id="192hightag" title='hightag' data-type='int' data-ref="192hightag">hightag</dfn>);</td></tr>
+<tr><th id="52">52</th><td><em>void</em>    <dfn class="decl" id="Z_FileDumpHeap" title='Z_FileDumpHeap' data-ref="Z_FileDumpHeap">Z_FileDumpHeap</dfn> (<a class="typedef" href="../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *<dfn class="local col3 decl" id="193f" title='f' data-type='FILE *' data-ref="193f">f</dfn>);</td></tr>
+<tr><th id="53">53</th><td><em>void</em>    <dfn class="decl" id="Z_CheckHeap" title='Z_CheckHeap' data-ref="Z_CheckHeap">Z_CheckHeap</dfn> (<em>void</em>);</td></tr>
+<tr><th id="54">54</th><td><em>void</em>    <dfn class="decl" id="Z_ChangeTag2" title='Z_ChangeTag2' data-ref="Z_ChangeTag2">Z_ChangeTag2</dfn> (<em>void</em> *<dfn class="local col4 decl" id="194ptr" title='ptr' data-type='void *' data-ref="194ptr">ptr</dfn>, <em>int</em> <dfn class="local col5 decl" id="195tag" title='tag' data-type='int' data-ref="195tag">tag</dfn>);</td></tr>
+<tr><th id="55">55</th><td><em>int</em>     <dfn class="decl" id="Z_FreeMemory" title='Z_FreeMemory' data-ref="Z_FreeMemory">Z_FreeMemory</dfn> (<em>void</em>);</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="memblock_s" title='memblock_s' data-ref="memblock_s"><a class="type" href="#memblock_s" title='memblock_s' data-ref="memblock_s">memblock_s</a></dfn></td></tr>
+<tr><th id="59">59</th><td>{</td></tr>
+<tr><th id="60">60</th><td>    <em>int</em>			<dfn class="decl" id="memblock_s::size" title='memblock_s::size' data-ref="memblock_s::size">size</dfn>;	<i>// including the header and possibly tiny fragments</i></td></tr>
+<tr><th id="61">61</th><td>    <em>void</em>**		<dfn class="decl" id="memblock_s::user" title='memblock_s::user' data-ref="memblock_s::user">user</dfn>;	<i>// NULL if a free block</i></td></tr>
+<tr><th id="62">62</th><td>    <em>int</em>			<dfn class="decl" id="memblock_s::tag" title='memblock_s::tag' data-ref="memblock_s::tag">tag</dfn>;	<i>// purgelevel</i></td></tr>
+<tr><th id="63">63</th><td>    <em>int</em>			<dfn class="decl" id="memblock_s::id" title='memblock_s::id' data-ref="memblock_s::id">id</dfn>;	<i>// should be ZONEID</i></td></tr>
+<tr><th id="64">64</th><td>    <b>struct</b> <a class="type" href="#memblock_s" title='memblock_s' data-ref="memblock_s">memblock_s</a>*	<dfn class="decl" id="memblock_s::next" title='memblock_s::next' data-ref="memblock_s::next">next</dfn>;</td></tr>
+<tr><th id="65">65</th><td>    <b>struct</b> <a class="type" href="#memblock_s" title='memblock_s' data-ref="memblock_s">memblock_s</a>*	<dfn class="decl" id="memblock_s::prev" title='memblock_s::prev' data-ref="memblock_s::prev">prev</dfn>;</td></tr>
+<tr><th id="66">66</th><td>} <dfn class="typedef" id="memblock_t" title='memblock_t' data-type='struct memblock_s' data-ref="memblock_t">memblock_t</dfn>;</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td><i>//</i></td></tr>
+<tr><th id="69">69</th><td><i>// This is used to get the local FILE:LINE info from CPP</i></td></tr>
+<tr><th id="70">70</th><td><i>// prior to really call the function in question.</i></td></tr>
+<tr><th id="71">71</th><td><i>//</i></td></tr>
+<tr><th id="72">72</th><td><u>#define <dfn class="macro" id="_M/Z_ChangeTag" data-ref="_M/Z_ChangeTag">Z_ChangeTag</dfn>(p,t) \</u></td></tr>
+<tr><th id="73">73</th><td><u>{ \</u></td></tr>
+<tr><th id="74">74</th><td><u>      if (( (memblock_t *)( (byte *)(p) - sizeof(memblock_t)))-&gt;id!=0x1d4a11) \</u></td></tr>
+<tr><th id="75">75</th><td><u>	  I_Error("Z_CT at "__FILE__":%i",__LINE__); \</u></td></tr>
+<tr><th id="76">76</th><td><u>	  Z_ChangeTag2(p,t); \</u></td></tr>
+<tr><th id="77">77</th><td><u>};</u></td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><u>#<span data-ppcond="27">endif</span></u></td></tr>
+<tr><th id="82">82</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="83">83</th><td><i>//</i></td></tr>
+<tr><th id="84">84</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="85">85</th><td><i>//</i></td></tr>
+<tr><th id="86">86</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="87">87</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='am_map.c.html'>codebrowser/am_map.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

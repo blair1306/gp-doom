@@ -1,0 +1,10 @@
+<dec f='codebrowser/p_local.h' l='116' type='void P_RemoveMobj(mobj_t * th)'/>
+<use f='codebrowser/g_game.c' l='873' u='c' c='G_CheckSpot'/>
+<use f='codebrowser/p_enemy.c' l='1989' u='c' c='A_SpawnFly'/>
+<use f='codebrowser/p_inter.c' l='657' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_map.c' l='1284' u='c' c='PIT_ChangeSector'/>
+<use f='codebrowser/p_mobj.c' l='65' u='c' c='P_SetMobjState'/>
+<use f='codebrowser/p_mobj.c' l='183' u='c' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='408' u='c' c='P_NightmareRespawn'/>
+<def f='codebrowser/p_mobj.c' l='546' ll='570' type='void P_RemoveMobj(mobj_t * mobj)'/>
+<use f='codebrowser/p_saveg.c' l='280' u='c' c='P_UnArchiveThinkers'/>

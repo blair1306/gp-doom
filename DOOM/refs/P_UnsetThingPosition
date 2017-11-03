@@ -1,0 +1,18 @@
+<dec f='codebrowser/p_local.h' l='193' type='void P_UnsetThingPosition(mobj_t * thing)'/>
+<use f='codebrowser/p_enemy.c' l='1272' u='c' c='A_Fire'/>
+<use f='codebrowser/p_map.c' l='167' u='c' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='488' u='c' c='P_TryMove'/>
+<def f='codebrowser/p_maputl.c' l='347' ll='386' type='void P_UnsetThingPosition(mobj_t * thing)'/>
+<doc f='codebrowser/p_maputl.c' l='335'>//
+// THING POSITION SETTING
+//
+
+
+//
+// P_UnsetThingPosition
+// Unlinks a thing from block map and sectors.
+// On each position change, BLOCKMAP and other
+// lookups maintaining lists ot things inside
+// these structures need to be updated.
+//</doc>
+<use f='codebrowser/p_mobj.c' l='563' u='c' c='P_RemoveMobj'/>

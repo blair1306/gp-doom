@@ -1,0 +1,25 @@
+<def f='codebrowser/p_inter.c' l='73' ll='160' type='boolean P_GiveAmmo(player_t * player, ammotype_t ammo, int num)'/>
+<use f='codebrowser/p_inter.c' l='188' u='c' c='P_GiveWeapon'/>
+<use f='codebrowser/p_inter.c' l='190' u='c' c='P_GiveWeapon'/>
+<use f='codebrowser/p_inter.c' l='203' u='c' c='P_GiveWeapon'/>
+<use f='codebrowser/p_inter.c' l='205' u='c' c='P_GiveWeapon'/>
+<use f='codebrowser/p_inter.c' l='536' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='541' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='548' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='554' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='560' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='566' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='572' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='578' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='584' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='597' u='c' c='P_TouchSpecialThing'/>
+<doc f='codebrowser/p_inter.c' l='62'>//
+// GET STUFF
+//
+
+//
+// P_GiveAmmo
+// Num is the number of clip loads,
+// not the individual count (0= 1/2 clip).
+// Returns false if the ammo can&apos;t be picked up at all
+//</doc>

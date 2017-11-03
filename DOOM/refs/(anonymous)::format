@@ -1,0 +1,4 @@
+<dec f='include/X11/Xlib.h' l='904' type='int'/>
+<dec f='include/X11/Xutil.h' l='166' type='int'/>
+<offset>128</offset>
+<doc f='include/X11/Xutil.h' l='166'>/* prop data format: 8, 16, or 32 */</doc>

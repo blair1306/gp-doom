@@ -1,0 +1,5 @@
+<dec f='include/netinet/in.h' l='242' type='in_port_t'/>
+<use f='codebrowser/i_net.c' l='116' u='w' c='BindToLocalPort'/>
+<use f='codebrowser/i_net.c' l='306' u='w' c='I_InitNetwork'/>
+<offset>16</offset>
+<doc f='include/netinet/in.h' l='242'>/* Port number.  */</doc>

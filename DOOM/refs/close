@@ -1,0 +1,19 @@
+<dec f='codebrowser/p_spec.h' l='332' type='2'/>
+<dec f='include/unistd.h' l='356' type='int close(int __fd)'/>
+<doc f='include/unistd.h' l='352'>/* Close the file descriptor FD.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/m_menu.c' l='533' u='c' c='M_ReadSaveStrings'/>
+<use f='codebrowser/m_misc.c' l='127' u='c' c='M_WriteFile'/>
+<use f='codebrowser/m_misc.c' l='156' u='c' c='M_ReadFile'/>
+<use f='codebrowser/p_doors.c' l='137' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='156' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='305' c='EV_DoDoor'/>
+<use f='codebrowser/p_spec.c' l='551' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='804' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='427' u='r' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='516' u='r' c='P_UseSpecialLine'/>
+<use f='codebrowser/w_wad.c' l='225' u='c' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='274' u='c' c='W_Reload'/>
+<use f='codebrowser/w_wad.c' l='464' u='c' c='W_ReadLump'/>

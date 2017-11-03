@@ -1,0 +1,7 @@
+<dec f='codebrowser/r_draw.h' l='87' type='void R_DrawSpanLow()'/>
+<doc f='codebrowser/r_draw.h' l='86'>// Low resolution mode, 160x200?</doc>
+<def f='codebrowser/r_draw.c' l='643' ll='686' type='void R_DrawSpanLow()'/>
+<doc f='codebrowser/r_draw.c' l='640'>//
+// Again..
+//</doc>
+<use f='codebrowser/r_main.c' l='714' u='r' c='R_ExecuteSetViewSize'/>

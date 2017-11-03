@@ -1,0 +1,6 @@
+<dec f='include/x86_64-linux-gnu/sys/ioctl.h' l='41' type='int ioctl(int __fd, unsigned long __request)'/>
+<use f='codebrowser/i_net.c' l='329' u='c' c='I_InitNetwork'/>
+<doc f='include/x86_64-linux-gnu/sys/ioctl.h' l='38'>/* Perform the I/O control operation specified by REQUEST on FD.
+   One argument may follow; its presence and type depend on REQUEST.
+   Return value depends on REQUEST.  Usually -1 indicates error.  */</doc>
+<use f='codebrowser/i_sound.c' l='169' u='c' c='myioctl'/>

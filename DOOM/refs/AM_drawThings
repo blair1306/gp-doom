@@ -1,0 +1,2 @@
+<def f='codebrowser/am_map.c' l='1284' ll='1303' type='void AM_drawThings(int colors, int colorrange)'/>
+<use f='codebrowser/am_map.c' l='1342' u='c' c='AM_Drawer'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_tick.h' l='35' type='void P_Ticker()'/>
+<use f='codebrowser/g_game.c' l='730' u='c' c='G_Ticker'/>
+<doc f='codebrowser/p_tick.h' l='32'>// Called by C_Ticker,
+// can call G_PlayerExited.
+// Carries out all thinking of monsters and players.</doc>
+<def f='codebrowser/p_tick.c' l='130' ll='158' type='void P_Ticker()'/>
+<doc f='codebrowser/p_tick.c' l='126'>//
+// P_Ticker
+//</doc>

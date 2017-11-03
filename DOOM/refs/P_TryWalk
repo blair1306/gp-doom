@@ -1,0 +1,19 @@
+<def f='codebrowser/p_enemy.c' l='349' ll='358' type='boolean P_TryWalk(mobj_t * actor)'/>
+<use f='codebrowser/p_enemy.c' l='403' u='c' c='P_NewChaseDir'/>
+<use f='codebrowser/p_enemy.c' l='424' u='c' c='P_NewChaseDir'/>
+<use f='codebrowser/p_enemy.c' l='435' u='c' c='P_NewChaseDir'/>
+<use f='codebrowser/p_enemy.c' l='445' u='c' c='P_NewChaseDir'/>
+<use f='codebrowser/p_enemy.c' l='460' u='c' c='P_NewChaseDir'/>
+<use f='codebrowser/p_enemy.c' l='475' u='c' c='P_NewChaseDir'/>
+<use f='codebrowser/p_enemy.c' l='484' u='c' c='P_NewChaseDir'/>
+<doc f='codebrowser/p_enemy.c' l='338'>//
+// TryWalk
+// Attempts to move actor on
+// in its current (ob-&gt;moveangle) direction.
+// If blocked by either a wall or an actor
+// returns FALSE
+// If move is either clear or blocked only by a door,
+// returns TRUE and sets...
+// If a door is in the way,
+// an OpenDoor call is made to start it opening.
+//</doc>

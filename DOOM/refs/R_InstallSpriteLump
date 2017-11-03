@@ -1,0 +1,7 @@
+<def f='codebrowser/r_things.c' l='105' ll='157' type='void R_InstallSpriteLump(int lump, unsigned int frame, unsigned int rotation, boolean flipped)'/>
+<use f='codebrowser/r_things.c' l='229' u='c' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='235' u='c' c='R_InitSpriteDefs'/>
+<doc f='codebrowser/r_things.c' l='101'>//
+// R_InstallSpriteLump
+// Local function for R_InitSprites.
+//</doc>

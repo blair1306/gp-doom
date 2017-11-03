@@ -1,0 +1,9 @@
+<dec f='codebrowser/v_video.h' l='61' type='void V_CopyRect(int srcx, int srcy, int srcscrn, int width, int height, int destx, int desty, int destscrn)'/>
+<use f='codebrowser/st_lib.c' l='125' u='c' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='235' u='c' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='287' u='c' c='STlib_updateBinIcon'/>
+<use f='codebrowser/st_stuff.c' l='509' u='c' c='ST_refreshBackground'/>
+<def f='codebrowser/v_video.c' l='157' ll='196' type='void V_CopyRect(int srcx, int srcy, int srcscrn, int width, int height, int destx, int desty, int destscrn)'/>
+<doc f='codebrowser/v_video.c' l='154'>//
+// V_CopyRect 
+// </doc>

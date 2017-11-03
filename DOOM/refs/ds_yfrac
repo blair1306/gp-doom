@@ -1,0 +1,5 @@
+<dec f='codebrowser/r_draw.h' l='71' type='fixed_t'/>
+<def f='codebrowser/r_draw.c' l='507' type='fixed_t'/>
+<use f='codebrowser/r_draw.c' l='542' u='r' c='R_DrawSpan'/>
+<use f='codebrowser/r_draw.c' l='664' u='r' c='R_DrawSpanLow'/>
+<use f='codebrowser/r_plane.c' l='158' u='w' c='R_MapPlane'/>

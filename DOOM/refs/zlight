@@ -1,0 +1,4 @@
+<dec f='codebrowser/r_main.h' l='79' type='lighttable_t *[16][128]'/>
+<def f='codebrowser/r_main.c' l='118' type='lighttable_t *[16][128]'/>
+<use f='codebrowser/r_main.c' l='639' u='w' c='R_InitLightTables'/>
+<use f='codebrowser/r_plane.c' l='436' u='r' c='R_DrawPlanes'/>

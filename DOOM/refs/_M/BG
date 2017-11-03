@@ -1,0 +1,13 @@
+<dec f='codebrowser/hu_lib.h' l='30'/>
+<doc f='codebrowser/hu_lib.h' l='28'>// background and foreground screen numbers
+// different from other modules.</doc>
+<dec f='codebrowser/st_lib.h' l='33'/>
+<use f='codebrowser/st_lib.c' l='125' u='c'/>
+<use f='codebrowser/st_lib.c' l='235' u='c'/>
+<use f='codebrowser/st_lib.c' l='287' u='c'/>
+<doc f='codebrowser/st_lib.h' l='30'>//
+// Background and foreground screen numbers
+//</doc>
+<use f='codebrowser/st_stuff.c' l='504' u='c'/>
+<use f='codebrowser/st_stuff.c' l='507' u='c'/>
+<use f='codebrowser/st_stuff.c' l='509' u='c'/>

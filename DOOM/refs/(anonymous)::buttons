@@ -1,0 +1,32 @@
+<dec f='codebrowser/d_ticcmd.h' l='43' type='byte'/>
+<offset>56</offset>
+<use f='codebrowser/d_net.c' l='760' u='r' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='761' u='w' c='TryRunTics'/>
+<use f='codebrowser/f_finale.c' l='217' u='r' c='F_Ticker'/>
+<use f='codebrowser/g_game.c' l='332' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='336' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='345' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='346' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='362' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='389' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='429' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='435' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='702' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='704' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='718' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1502' u='w' c='G_ReadDemoTiccmd'/>
+<use f='codebrowser/g_game.c' l='1513' u='r' c='G_WriteDemoTiccmd'/>
+<use f='codebrowser/i_net.c' l='145' u='w' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='145' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='216' u='w' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='216' u='r' c='PacketGet'/>
+<use f='codebrowser/p_pspr.c' l='315' u='r' c='A_WeaponReady'/>
+<use f='codebrowser/p_pspr.c' l='350' u='r' c='A_ReFire'/>
+<use f='codebrowser/p_user.c' l='227' u='r' c='P_DeathThink'/>
+<use f='codebrowser/p_user.c' l='280' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='281' u='w' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='283' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='288' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='322' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/wi_stuff.c' l='1480' u='r' c='WI_checkForAccelerate'/>
+<use f='codebrowser/wi_stuff.c' l='1488' u='r' c='WI_checkForAccelerate'/>

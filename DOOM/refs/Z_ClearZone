@@ -1,0 +1,4 @@
+<def f='codebrowser/z_zone.c' l='67' ll='86' type='void Z_ClearZone(memzone_t * zone)'/>
+<doc f='codebrowser/z_zone.c' l='64'>//
+// Z_ClearZone
+//</doc>

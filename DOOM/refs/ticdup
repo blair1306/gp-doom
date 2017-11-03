@@ -1,0 +1,20 @@
+<dec f='codebrowser/doomstat.h' l='287' type='int'/>
+<def f='codebrowser/d_net.c' l='74' type='int'/>
+<use f='codebrowser/d_net.c' l='377' u='r' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='399' u='r' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='581' u='w' c='D_CheckNetGame'/>
+<use f='codebrowser/d_net.c' l='582' u='r' c='D_CheckNetGame'/>
+<use f='codebrowser/d_net.c' l='648' u='r' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='666' u='r' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='715' u='r' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='724' u='r' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='728' u='r' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='738' u='r' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='740' u='r' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='749' u='r' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='755' u='r' c='TryRunTics'/>
+<use f='codebrowser/g_game.c' l='268' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='370' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='397' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='656' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='681' u='r' c='G_Ticker'/>

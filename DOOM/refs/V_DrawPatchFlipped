@@ -1,0 +1,11 @@
+<dec f='codebrowser/f_finale.c' l='577' type='void V_DrawPatchFlipped(int x, int y, int scrn, patch_t * patch)'/>
+<use f='codebrowser/f_finale.c' l='600' u='c' c='F_CastDrawer'/>
+<doc f='codebrowser/f_finale.c' l='574'>//
+// F_CastDrawer
+//</doc>
+<def f='codebrowser/v_video.c' l='270' ll='328' type='void V_DrawPatchFlipped(int x, int y, int scrn, patch_t * patch)'/>
+<doc f='codebrowser/v_video.c' l='265'>//
+// V_DrawPatchFlipped 
+// Masks a column based masked pic to the screen.
+// Flips horizontally, e.g. to mirror face.
+//</doc>

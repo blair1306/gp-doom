@@ -1,0 +1,13 @@
+<dec f='codebrowser/r_draw.h' l='79' type='byte *'/>
+<def f='codebrowser/r_draw.c' l='382' type='byte *'/>
+<use f='codebrowser/r_draw.c' l='442' u='r' c='R_DrawTranslatedColumn'/>
+<doc f='codebrowser/r_draw.c' l='373'>//
+// R_DrawTranslatedColumn
+// Used to draw player sprites
+//  with the green colorramp mapped to others.
+// Could be used with different translation
+//  tables, e.g. the lighter colored version
+//  of the BaronOfHell, the HellKnight, uses
+//  identical sprites, kinda brightened up.
+//</doc>
+<use f='codebrowser/r_things.c' l='420' u='w' c='R_DrawVisSprite'/>

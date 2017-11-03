@@ -1,0 +1,8 @@
+<def f='codebrowser/st_stuff.c' l='752' ll='922' type='void ST_updateFaceWidget()'/>
+<use f='codebrowser/st_stuff.c' l='962' u='c' c='ST_updateWidgets'/>
+<doc f='codebrowser/st_stuff.c' l='746'>//
+// This is a not-very-pretty routine which handles
+//  the face states and their timing.
+// the precedence of expressions is:
+//  dead &gt; evil grin &gt; turned head &gt; straight ahead
+//</doc>

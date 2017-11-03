@@ -1,0 +1,25 @@
+<dec f='codebrowser/sounds.h' l='180' type='1'/>
+<use f='codebrowser/f_finale.c' l='428' u='r' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='688' u='r' c='F_BunnyScroll'/>
+<use f='codebrowser/i_sound.c' l='291' u='r' c='addsfx'/>
+<use f='codebrowser/info.c' l='1141'/>
+<use f='codebrowser/info.c' l='1141'/>
+<use f='codebrowser/info.c' l='1141'/>
+<use f='codebrowser/info.c' l='1141'/>
+<use f='codebrowser/m_menu.c' l='1675' u='r' c='M_Responder'/>
+<use f='codebrowser/p_enemy.c' l='815' u='r' c='A_PosAttack'/>
+<use f='codebrowser/p_pspr.c' l='651' u='r' c='A_FirePistol'/>
+<use f='codebrowser/p_pspr.c' l='737' u='r' c='A_FireCGun'/>
+<use f='codebrowser/sounds.c' l='204' u='a'/>
+<use f='codebrowser/sounds.c' l='204' u='a'/>
+<use f='codebrowser/sounds.c' l='204' u='a'/>
+<use f='codebrowser/sounds.c' l='204' u='a'/>
+<use f='codebrowser/wi_stuff.c' l='913' u='r' c='WI_updateDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1139' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1165' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1189' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1215' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1352' u='r' c='WI_updateStats'/>
+<use f='codebrowser/wi_stuff.c' l='1366' u='r' c='WI_updateStats'/>
+<use f='codebrowser/wi_stuff.c' l='1380' u='r' c='WI_updateStats'/>
+<use f='codebrowser/wi_stuff.c' l='1393' u='r' c='WI_updateStats'/>

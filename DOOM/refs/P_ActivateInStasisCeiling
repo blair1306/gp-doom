@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_spec.h' l='531' type='void P_ActivateInStasisCeiling(line_t * line)'/>
+<use f='codebrowser/p_ceilng.c' l='190' u='c' c='EV_DoCeiling'/>
+<def f='codebrowser/p_ceilng.c' l='291' ll='306' type='void P_ActivateInStasisCeiling(line_t * line)'/>
+<doc f='codebrowser/p_ceilng.c' l='288'>//
+// Restart a ceiling that&apos;s in-stasis
+//</doc>

@@ -1,0 +1,5 @@
+<def f='codebrowser/r_main.c' l='544' ll='603' type='void R_InitTextureMapping()'/>
+<use f='codebrowser/r_main.c' l='719' u='c' c='R_ExecuteSetViewSize'/>
+<doc f='codebrowser/r_main.c' l='541'>//
+// R_InitTextureMapping
+//</doc>

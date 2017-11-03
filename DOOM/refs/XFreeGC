@@ -1,0 +1,2 @@
+<dec f='include/X11/Xlib.h' l='2561' type='int XFreeGC(Display * , GC )'/>
+<use f='codebrowser/i_video.c' l='302' u='c' c='createnullcursor'/>

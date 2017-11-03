@@ -1,0 +1,26 @@
+<dec f='codebrowser/d_net.h' l='125' type='doomdata_t'/>
+<offset>320</offset>
+<doc f='codebrowser/d_net.h' l='124'>// The packet data to be sent.</doc>
+<dec f='codebrowser/sounds.h' l='79' type='void *'/>
+<offset>128</offset>
+<doc f='codebrowser/sounds.h' l='78'>// music data</doc>
+<use f='codebrowser/d_net.c' l='572' u='a' c='D_CheckNetGame'/>
+<dec f='include/linux/soundcard.h' l='525' type='unsigned char [30]'/>
+<offset>24</offset>
+<dec f='include/X11/Xlib.h' l='909' type='union (anonymous union at /usr/include/X11/Xlib.h:905:2)'/>
+<dec f='include/X11/Xlib.h' l='966' type='void *'/>
+<offset>384</offset>
+<use f='codebrowser/s_sound.c' l='679' u='w' c='S_ChangeMusic'/>
+<use f='codebrowser/s_sound.c' l='680' u='r' c='S_ChangeMusic'/>
+<use f='codebrowser/s_sound.c' l='698' u='r' c='S_StopMusic'/>
+<use f='codebrowser/s_sound.c' l='698' u='r' c='S_StopMusic'/>
+<use f='codebrowser/s_sound.c' l='700' u='w' c='S_StopMusic'/>
+<dec f='codebrowser/st_lib.h' l='68' type='int'/>
+<dec f='codebrowser/st_lib.h' l='109' type='int'/>
+<dec f='codebrowser/st_lib.h' l='136' type='int'/>
+<offset>320</offset>
+<doc f='codebrowser/st_lib.h' l='67'>// user data</doc>
+<doc f='codebrowser/st_lib.h' l='108'>// user data</doc>
+<doc f='codebrowser/st_lib.h' l='136'>// user data</doc>
+<use f='codebrowser/st_stuff.c' l='945' u='w' c='ST_updateWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1297' u='w' c='ST_createWidgets'/>

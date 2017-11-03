@@ -1,0 +1,23 @@
+<dec f='codebrowser/p_mobj.h' l='234' type='fixed_t'/>
+<offset>768</offset>
+<doc f='codebrowser/p_mobj.h' l='233'>// The closest interval over all contacted Sectors.</doc>
+<use f='codebrowser/p_enemy.c' l='333' u='r' c='P_Move'/>
+<use f='codebrowser/p_map.c' l='169' u='w' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='492' u='w' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='534' u='r' c='P_ThingHeightClip'/>
+<use f='codebrowser/p_map.c' l='539' u='w' c='P_ThingHeightClip'/>
+<use f='codebrowser/p_map.c' l='545' u='r' c='P_ThingHeightClip'/>
+<use f='codebrowser/p_map.c' l='554' u='r' c='P_ThingHeightClip'/>
+<use f='codebrowser/p_mobj.c' l='204' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='216' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='252' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='254' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='284' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='311' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='428' u='r' c='P_MobjThinker'/>
+<use f='codebrowser/p_mobj.c' l='519' u='w' c='P_SpawnMobj'/>
+<use f='codebrowser/p_mobj.c' l='523' u='r' c='P_SpawnMobj'/>
+<use f='codebrowser/p_saveg.c' l='311' u='w' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_telept.c' l='106' u='r' c='EV_Teleport'/>
+<use f='codebrowser/p_user.c' l='158' u='r' c='P_MovePlayer'/>
+<use f='codebrowser/p_user.c' l='197' u='r' c='P_DeathThink'/>

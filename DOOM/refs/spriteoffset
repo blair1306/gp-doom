@@ -1,0 +1,6 @@
+<dec f='codebrowser/r_state.h' l='49' type='fixed_t *'/>
+<def f='codebrowser/r_data.c' l='159' type='fixed_t *'/>
+<use f='codebrowser/r_data.c' l='613' u='w' c='R_InitSpriteLumps'/>
+<use f='codebrowser/r_data.c' l='623' u='r' c='R_InitSpriteLumps'/>
+<use f='codebrowser/r_things.c' l='535' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='678' u='r' c='R_DrawPSprite'/>

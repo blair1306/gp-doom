@@ -1,0 +1,9 @@
+<dec f='codebrowser/d_main.h' l='61' type='void D_AdvanceDemo()'/>
+<use f='codebrowser/d_main.c' l='426' u='c' c='D_PageTicker'/>
+<def f='codebrowser/d_main.c' l='444' ll='447' type='void D_AdvanceDemo()'/>
+<use f='codebrowser/d_main.c' l='529' u='c' c='D_StartTitle'/>
+<doc f='codebrowser/d_main.c' l='440'>//
+// D_AdvanceDemo
+// Called after each demo or intro demosequence finishes
+//</doc>
+<use f='codebrowser/g_game.c' l='1673' u='c' c='G_CheckDemoStatus'/>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/info.c' l='124' type='void A_KeenDie()'/>
+<use f='codebrowser/info.c' l='910'/>
+<use f='codebrowser/info.c' l='910'/>
+<use f='codebrowser/info.c' l='910'/>
+<use f='codebrowser/info.c' l='910'/>
+<use f='codebrowser/info.c' l='910'/>
+<use f='codebrowser/info.c' l='910'/>
+<use f='codebrowser/info.c' l='910'/>
+<use f='codebrowser/info.c' l='910'/>
+<def f='codebrowser/p_enemy.c' l='566' ll='593' type='void A_KeenDie(mobj_t * mo)'/>
+<doc f='codebrowser/p_enemy.c' l='561'>//
+// A_KeenDie
+// DOOM II special, map 32.
+// Uses special tag 666.
+//</doc>

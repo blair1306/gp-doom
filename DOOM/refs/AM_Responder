@@ -1,0 +1,7 @@
+<dec f='codebrowser/am_map.h' l='32' type='boolean AM_Responder(event_t * ev)'/>
+<def f='codebrowser/am_map.c' l='613' ll='735' type='boolean AM_Responder(event_t * ev)'/>
+<doc f='codebrowser/am_map.c' l='610'>//
+// Handle events (user inputs) in automap mode
+//</doc>
+<doc f='codebrowser/am_map.h' l='31'>// Called by main loop.</doc>
+<use f='codebrowser/g_game.c' l='548' u='c' c='G_Responder'/>

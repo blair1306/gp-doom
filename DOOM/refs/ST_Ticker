@@ -1,0 +1,4 @@
+<dec f='codebrowser/st_stuff.h' l='45' type='void ST_Ticker()'/>
+<doc f='codebrowser/st_stuff.h' l='44'>// Called by main loop.</doc>
+<use f='codebrowser/g_game.c' l='731' u='c' c='G_Ticker'/>
+<def f='codebrowser/st_stuff.c' l='988' ll='996' type='void ST_Ticker()'/>

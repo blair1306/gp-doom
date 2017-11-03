@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_local.h' l='169' type='fixed_t'/>
+<use f='codebrowser/p_map.c' l='233' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='234' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='664' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='837' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='844' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='932' u='r' c='PTR_ShootTraverse'/>
+<def f='codebrowser/p_maputl.c' l='295' type='fixed_t'/>
+<use f='codebrowser/p_maputl.c' l='322' u='w' c='P_LineOpening'/>
+<use f='codebrowser/p_maputl.c' l='327' u='w' c='P_LineOpening'/>
+<use f='codebrowser/p_maputl.c' l='331' u='r' c='P_LineOpening'/>

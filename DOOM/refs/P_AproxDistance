@@ -1,0 +1,14 @@
+<dec f='codebrowser/p_local.h' l='161' type='fixed_t P_AproxDistance(fixed_t dx, fixed_t dy)'/>
+<use f='codebrowser/p_enemy.c' l='183' u='c' c='P_CheckMeleeRange'/>
+<use f='codebrowser/p_enemy.c' l='216' u='c' c='P_CheckMissileRange'/>
+<use f='codebrowser/p_enemy.c' l='545' u='c' c='P_LookForPlayers'/>
+<use f='codebrowser/p_enemy.c' l='1077' u='c' c='A_Tracer'/>
+<use f='codebrowser/p_enemy.c' l='1436' u='c' c='A_SkullAttack'/>
+<use f='codebrowser/p_map.c' l='625' u='c' c='P_HitSlideLine'/>
+<def f='codebrowser/p_maputl.c' l='48' ll='58' type='fixed_t P_AproxDistance(fixed_t dx, fixed_t dy)'/>
+<doc f='codebrowser/p_maputl.c' l='43'>//
+// P_AproxDistance
+// Gives an estimation of distance (not exact)
+//</doc>
+<use f='codebrowser/p_mobj.c' l='270' u='c' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='917' u='c' c='P_SpawnMissile'/>

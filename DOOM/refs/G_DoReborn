@@ -1,0 +1,6 @@
+<dec f='codebrowser/g_game.c' l='85' type='void G_DoReborn(int playernum)'/>
+<use f='codebrowser/g_game.c' l='614' u='c' c='G_Ticker'/>
+<def f='codebrowser/g_game.c' l='924' ll='967' type='void G_DoReborn(int playernum)'/>
+<doc f='codebrowser/g_game.c' l='921'>//
+// G_DoReborn 
+// </doc>

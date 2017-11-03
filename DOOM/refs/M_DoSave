@@ -1,0 +1,6 @@
+<def f='codebrowser/m_menu.c' l='631' ll='639' type='void M_DoSave(int slot)'/>
+<use f='codebrowser/m_menu.c' l='685' u='c' c='M_QuickSaveResponse'/>
+<use f='codebrowser/m_menu.c' l='1473' u='c' c='M_Responder'/>
+<doc f='codebrowser/m_menu.c' l='628'>//
+// M_Responder calls this when user is finished
+//</doc>

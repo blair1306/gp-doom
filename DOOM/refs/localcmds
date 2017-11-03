@@ -1,0 +1,4 @@
+<dec f='codebrowser/doomstat.h' l='280' type='ticcmd_t [12]'/>
+<def f='codebrowser/d_net.c' l='60' type='ticcmd_t [12]'/>
+<use f='codebrowser/d_net.c' l='408' u='a' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='429' u='r' c='NetUpdate'/>

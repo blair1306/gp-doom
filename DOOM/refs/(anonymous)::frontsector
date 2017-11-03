@@ -1,0 +1,8 @@
+<dec f='codebrowser/r_defs.h' l='255' type='sector_t *'/>
+<offset>320</offset>
+<doc f='codebrowser/r_defs.h' l='252'>// Sector references.
+    // Could be retrieved from linedef, too.
+    // backsector is NULL for one sided lines</doc>
+<use f='codebrowser/p_setup.c' l='188' u='w' c='P_LoadSegs'/>
+<use f='codebrowser/p_sight.c' l='202' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/r_segs.c' l='118' u='r' c='R_RenderMaskedSegRange'/>

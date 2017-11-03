@@ -1,0 +1,10 @@
+<dec f='codebrowser/hu_lib.h' l='69' type='int'/>
+<use f='codebrowser/hu_lib.c' l='192' u='w' c='HUlib_initSText'/>
+<use f='codebrowser/hu_lib.c' l='206' u='w' c='HUlib_addLineToSText'/>
+<use f='codebrowser/hu_lib.c' l='207' u='w' c='HUlib_addLineToSText'/>
+<use f='codebrowser/hu_lib.c' l='208' u='r' c='HUlib_addLineToSText'/>
+<use f='codebrowser/hu_lib.c' l='225' u='r' c='HUlib_addMessageToSText'/>
+<use f='codebrowser/hu_lib.c' l='228' u='r' c='HUlib_addMessageToSText'/>
+<use f='codebrowser/hu_lib.c' l='242' u='r' c='HUlib_drawSText'/>
+<offset>3616</offset>
+<doc f='codebrowser/hu_lib.h' l='69'>// current line number</doc>

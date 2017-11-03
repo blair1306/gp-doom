@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_event.h' l='97' type='28'/>
+<doc f='codebrowser/d_event.h' l='95'>// Savegame slot numbers
+    //  occupy the second byte of buttons.    </doc>
+<use f='codebrowser/g_game.c' l='718' u='r' c='G_Ticker'/>

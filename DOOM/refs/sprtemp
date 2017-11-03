@@ -1,0 +1,16 @@
+<def f='codebrowser/r_things.c' l='94' type='spriteframe_t [29]'/>
+<use f='codebrowser/r_things.c' l='124' u='m' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='128' u='m' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='132' u='m' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='135' u='m' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='136' u='m' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='142' u='m' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='146' u='m' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='150' u='m' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='155' u='m' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='156' u='m' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='210' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='210' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='251' u='m' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='266' u='m' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='278' u='r' c='R_InitSpriteDefs'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/doomstat.h' l='258' type='boolean'/>
+<doc f='codebrowser/doomstat.h' l='256'>//?
+// debug flag to cancel adaptiveness</doc>
+<def f='codebrowser/d_main.c' l='102' type='boolean'/>
+<use f='codebrowser/d_main.c' l='375' u='r' c='D_DoomLoop'/>
+<doc f='codebrowser/d_main.c' l='102'>// debug flag to cancel adaptiveness</doc>
+<use f='codebrowser/d_net.c' l='413' u='r' c='NetUpdate'/>
+<use f='codebrowser/g_game.c' l='1630' u='w' c='G_TimeDemo'/>

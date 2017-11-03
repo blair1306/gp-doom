@@ -1,0 +1,4 @@
+<dec f='codebrowser/sounds.h' l='274' type='95'/>
+<use f='codebrowser/m_menu.c' l='1070'/>
+<use f='codebrowser/m_menu.c' l='1070'/>
+<use f='codebrowser/p_enemy.c' l='1932' u='r' c='A_SpawnSound'/>

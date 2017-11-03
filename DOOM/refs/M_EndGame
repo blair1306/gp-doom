@@ -1,0 +1,7 @@
+<dec f='codebrowser/m_menu.c' l='189' type='void M_EndGame(int choice)'/>
+<use f='codebrowser/m_menu.c' l='354'/>
+<use f='codebrowser/m_menu.c' l='354'/>
+<use f='codebrowser/m_menu.c' l='354'/>
+<use f='codebrowser/m_menu.c' l='354'/>
+<def f='codebrowser/m_menu.c' l='1006' ll='1022' type='void M_EndGame(int choice)'/>
+<use f='codebrowser/m_menu.c' l='1579' u='c' c='M_Responder'/>

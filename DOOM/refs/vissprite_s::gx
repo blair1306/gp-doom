@@ -1,0 +1,5 @@
+<dec f='codebrowser/r_defs.h' l='385' type='fixed_t'/>
+<offset>192</offset>
+<doc f='codebrowser/r_defs.h' l='384'>// for line side calculation</doc>
+<use f='codebrowser/r_things.c' l='553' u='w' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='888' u='r' c='R_DrawSprite'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/p_spec.h' l='552' type='4'/>
+<doc f='codebrowser/p_spec.h' l='551'>// raise floor to next highest surrounding floor</doc>
+<use f='codebrowser/p_floor.c' l='339' c='EV_DoFloor'/>
+<use f='codebrowser/p_spec.c' l='750' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='942' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='379' u='r' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='588' u='r' c='P_UseSpecialLine'/>

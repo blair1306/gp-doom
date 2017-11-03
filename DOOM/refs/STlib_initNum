@@ -1,0 +1,15 @@
+<dec f='codebrowser/st_lib.h' l='156' type='void STlib_initNum(st_number_t * n, int x, int y, patch_t ** pl, int * num, boolean * on, int width)'/>
+<def f='codebrowser/st_lib.c' l='65' ll='82' type='void STlib_initNum(st_number_t * n, int x, int y, patch_t ** pl, int * num, boolean * on, int width)'/>
+<use f='codebrowser/st_lib.c' l='172' u='c' c='STlib_initPercent'/>
+<doc f='codebrowser/st_lib.c' l='64'>// ?</doc>
+<doc f='codebrowser/st_lib.h' l='154'>// Number widget routines</doc>
+<use f='codebrowser/st_stuff.c' l='1288' u='c' c='ST_createWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1327' u='c' c='ST_createWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1374' u='c' c='ST_createWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1382' u='c' c='ST_createWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1390' u='c' c='ST_createWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1398' u='c' c='ST_createWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1407' u='c' c='ST_createWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1415' u='c' c='ST_createWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1423' u='c' c='ST_createWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1431' u='c' c='ST_createWidgets'/>

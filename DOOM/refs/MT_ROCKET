@@ -1,0 +1,6 @@
+<dec f='codebrowser/info.h' l='1197' type='33'/>
+<use f='codebrowser/p_enemy.c' l='975' u='r' c='A_CyberAttack'/>
+<use f='codebrowser/p_enemy.c' l='1860' u='r' c='A_BrainScream'/>
+<use f='codebrowser/p_enemy.c' l='1885' u='r' c='A_BrainExplode'/>
+<use f='codebrowser/p_pspr.c' l='556' u='r' c='A_FireMissile'/>
+<use f='codebrowser/p_spec.c' l='508' c='P_CrossSpecialLine'/>

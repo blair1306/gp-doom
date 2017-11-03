@@ -1,0 +1,7 @@
+<dec f='codebrowser/m_menu.c' l='213' type='void M_DrawNewGame()'/>
+<use f='codebrowser/m_menu.c' l='329'/>
+<use f='codebrowser/m_menu.c' l='329'/>
+<def f='codebrowser/m_menu.c' l='867' ll='871' type='void M_DrawNewGame()'/>
+<doc f='codebrowser/m_menu.c' l='864'>//
+// M_NewGame
+//</doc>

@@ -1,0 +1,20 @@
+<dec f='codebrowser/g_game.c' l='841' type='void P_SpawnPlayer(mapthing_t * mthing)'/>
+<use f='codebrowser/g_game.c' l='912' u='c' c='G_DeathMatchSpawnPlayer'/>
+<use f='codebrowser/g_game.c' l='918' u='c' c='G_DeathMatchSpawnPlayer'/>
+<use f='codebrowser/g_game.c' l='949' u='c' c='G_DoReborn'/>
+<use f='codebrowser/g_game.c' l='959' u='c' c='G_DoReborn'/>
+<use f='codebrowser/g_game.c' l='965' u='c' c='G_DoReborn'/>
+<doc f='codebrowser/g_game.c' l='835'>//
+// G_CheckSpot  
+// Returns false if the player cannot be respawned
+// at the given mapthing_t spot  
+// because something is occupying it 
+//</doc>
+<def f='codebrowser/p_mobj.c' l='642' ll='700' type='void P_SpawnPlayer(mapthing_t * mthing)'/>
+<use f='codebrowser/p_mobj.c' l='734' u='c' c='P_SpawnMapThing'/>
+<doc f='codebrowser/p_mobj.c' l='636'>//
+// P_SpawnPlayer
+// Called when a player is spawned on the level.
+// Most of the player structure stays unchanged
+//  between levels.
+//</doc>

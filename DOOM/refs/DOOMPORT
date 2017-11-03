@@ -1,0 +1,10 @@
+<def f='codebrowser/i_net.c' l='76' type='int'/>
+<use f='codebrowser/i_net.c' l='275' u='w' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='276' u='r' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='306' u='r' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='306' u='r' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='328' u='r' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='328' u='r' c='I_InitNetwork'/>
+<doc f='codebrowser/i_net.c' l='72'>//
+// NETWORKING
+//</doc>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/r_main.h' l='159' type='void R_RenderPlayerView(player_t * player)'/>
+<doc f='codebrowser/r_main.h' l='154'>//
+// REFRESH - the actual rendering functions.
+//
+
+// Called by G_Drawer.</doc>
+<use f='codebrowser/d_main.c' l='268' u='c' c='D_Display'/>
+<def f='codebrowser/r_main.c' l='870' ll='898' type='void R_RenderPlayerView(player_t * player)'/>
+<doc f='codebrowser/r_main.c' l='867'>//
+// R_RenderView
+//</doc>

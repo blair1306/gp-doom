@@ -1,0 +1,29 @@
+<dec f='codebrowser/p_spec.h' l='128' type='int'/>
+<dec f='codebrowser/p_spec.h' l='140' type='int'/>
+<dec f='codebrowser/p_spec.h' l='154' type='int'/>
+<dec f='codebrowser/p_spec.h' l='293' type='int'/>
+<offset>384</offset>
+<dec f='include/X11/Xlib.h' l='670' type='int'/>
+<dec f='include/X11/Xlib.h' l='681' type='int'/>
+<dec f='include/X11/Xlib.h' l='921' type='int'/>
+<use f='codebrowser/i_video.c' l='839' u='r' c='I_InitGraphics'/>
+<offset>384</offset>
+<doc f='include/X11/Xlib.h' l='670'>/* if non-zero, at least this many more */</doc>
+<doc f='include/X11/Xlib.h' l='681'>/* if non-zero, at least this many more */</doc>
+<doc f='include/X11/Xlib.h' l='921'>/* defines range of change w. first_keycode*/</doc>
+<use f='codebrowser/p_lights.c' l='50' u='w' c='T_FireFlicker'/>
+<use f='codebrowser/p_lights.c' l='60' u='w' c='T_FireFlicker'/>
+<use f='codebrowser/p_lights.c' l='84' u='w' c='P_SpawnFireFlicker'/>
+<use f='codebrowser/p_lights.c' l='100' u='w' c='T_LightFlash'/>
+<use f='codebrowser/p_lights.c' l='106' u='w' c='T_LightFlash'/>
+<use f='codebrowser/p_lights.c' l='111' u='w' c='T_LightFlash'/>
+<use f='codebrowser/p_lights.c' l='142' u='w' c='P_SpawnLightFlash'/>
+<use f='codebrowser/p_lights.c' l='157' u='w' c='T_StrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='163' u='w' c='T_StrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='168' u='w' c='T_StrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='206' u='w' c='P_SpawnStrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='208' u='w' c='P_SpawnStrobeFlash'/>
+<use f='codebrowser/p_plats.c' l='75' u='w' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='84' u='w' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='113' u='w' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='120' u='w' c='T_PlatRaise'/>

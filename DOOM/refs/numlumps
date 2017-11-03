@@ -1,0 +1,18 @@
+<dec f='codebrowser/w_wad.h' l='67' type='int'/>
+<def f='codebrowser/w_wad.c' l='62' type='int'/>
+<use f='codebrowser/w_wad.c' l='160' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='170' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='179' u='w' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='202' u='w' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='207' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='216' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='297' u='w' c='W_InitMultipleFiles'/>
+<use f='codebrowser/w_wad.c' l='305' u='r' c='W_InitMultipleFiles'/>
+<use f='codebrowser/w_wad.c' l='309' u='r' c='W_InitMultipleFiles'/>
+<use f='codebrowser/w_wad.c' l='341' u='r' c='W_NumLumps'/>
+<use f='codebrowser/w_wad.c' l='377' u='r' c='W_CheckNumForName'/>
+<use f='codebrowser/w_wad.c' l='418' u='r' c='W_LumpLength'/>
+<use f='codebrowser/w_wad.c' l='440' u='r' c='W_ReadLump'/>
+<use f='codebrowser/w_wad.c' l='482' u='r' c='W_CacheLumpNum'/>
+<use f='codebrowser/w_wad.c' l='533' u='r' c='W_Profile'/>
+<use f='codebrowser/w_wad.c' l='556' u='r' c='W_Profile'/>

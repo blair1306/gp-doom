@@ -1,0 +1,5 @@
+<def f='codebrowser/p_tick.c' l='92' ll='94' type='void P_AllocateThinker(thinker_t * thinker)'/>
+<doc f='codebrowser/p_tick.c' l='88'>//
+// P_AllocateThinker
+// Allocates memory and adds a new thinker at the end of the list.
+//</doc>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/doomdata.h' l='73' type='char [8]'/>
+<dec f='codebrowser/r_defs.h' l='154' type='short'/>
+<offset>64</offset>
+<doc f='codebrowser/r_defs.h' l='152'>// Texture indices.
+    // We do not maintain names here. </doc>
+<use f='codebrowser/p_saveg.c' l='153' u='r' c='P_ArchiveWorld'/>
+<use f='codebrowser/p_saveg.c' l='205' u='w' c='P_UnArchiveWorld'/>
+<use f='codebrowser/p_setup.c' l='456' u='w' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_setup.c' l='456' u='r' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_spec.c' l='1137' u='w' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_switch.c' l='214' u='r' c='P_ChangeSwitchTexture'/>
+<use f='codebrowser/p_switch.c' l='229' u='w' c='P_ChangeSwitchTexture'/>
+<use f='codebrowser/r_data.c' l='789' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_segs.c' l='573' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='583' u='r' c='R_StoreWallRange'/>

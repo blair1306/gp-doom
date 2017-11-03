@@ -1,0 +1,5 @@
+<dec f='codebrowser/info.h' l='1180' type='16'/>
+<use f='codebrowser/g_game.c' l='1425' u='m' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1433' u='m' c='G_InitNew'/>
+<use f='codebrowser/p_enemy.c' l='995' u='r' c='A_BruisAttack'/>
+<use f='codebrowser/p_spec.c' l='513' c='P_CrossSpecialLine'/>

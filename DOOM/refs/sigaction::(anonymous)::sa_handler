@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/bits/sigaction.h' l='31' type='__sighandler_t'/>
+<use f='codebrowser/i_sound.c' l='956' macro='1' u='w'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/bits/sigaction.h' l='30'>/* Used if SA_SIGINFO is not set.  */</doc>

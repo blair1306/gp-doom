@@ -1,0 +1,3 @@
+<dec f='codebrowser/r_things.h' l='55' type='void R_SortVisSprites()'/>
+<def f='codebrowser/r_things.c' l='787' ll='835' type='void R_SortVisSprites()'/>
+<use f='codebrowser/r_things.c' l='963' u='c' c='R_DrawMasked'/>

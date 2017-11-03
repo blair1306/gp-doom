@@ -1,0 +1,6 @@
+<def f='codebrowser/r_segs.c' l='54' type='int'/>
+<use f='codebrowser/r_segs.c' l='322' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='337' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='453' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='592' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='617' u='r' c='R_StoreWallRange'/>

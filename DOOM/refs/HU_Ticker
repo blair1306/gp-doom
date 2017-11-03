@@ -1,0 +1,3 @@
+<dec f='codebrowser/hu_stuff.h' l='55' type='void HU_Ticker()'/>
+<use f='codebrowser/g_game.c' l='733' u='c' c='G_Ticker'/>
+<def f='codebrowser/hu_stuff.c' l='505' ll='578' type='void HU_Ticker()'/>

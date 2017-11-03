@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>m_menu.h source code [codebrowser/m_menu.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/m_menu.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='m_menu.h.html'>m_menu.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>// DESCRIPTION:</i></td></tr>
+<tr><th id="18">18</th><td><i>//   Menu widget stuff, episode selection and such.</i></td></tr>
+<tr><th id="19">19</th><td><i>//    </i></td></tr>
+<tr><th id="20">20</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="23">ifndef</span> <span class="macro" data-ref="_M/__M_MENU__">__M_MENU__</span></u></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/__M_MENU__" data-ref="_M/__M_MENU__">__M_MENU__</dfn></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="d_event.h.html">"d_event.h"</a></u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><i>//</i></td></tr>
+<tr><th id="31">31</th><td><i>// MENUS</i></td></tr>
+<tr><th id="32">32</th><td><i>//</i></td></tr>
+<tr><th id="33">33</th><td><i>// Called by main loop,</i></td></tr>
+<tr><th id="34">34</th><td><i>// saves config file and calls I_Quit when user exits.</i></td></tr>
+<tr><th id="35">35</th><td><i>// Even when the menu is not displayed,</i></td></tr>
+<tr><th id="36">36</th><td><i>// this can resize the view and change game parameters.</i></td></tr>
+<tr><th id="37">37</th><td><i>// Does all the real work of the menu interaction.</i></td></tr>
+<tr><th id="38">38</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a> <dfn class="decl" id="M_Responder" title='M_Responder' data-ref="M_Responder">M_Responder</dfn> (<a class="typedef" href="d_event.h.html#event_t" title='event_t' data-type='struct event_t' data-ref="event_t">event_t</a> *<dfn class="local col4 decl" id="494ev" title='ev' data-type='event_t *' data-ref="494ev">ev</dfn>);</td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><i>// Called by main loop,</i></td></tr>
+<tr><th id="42">42</th><td><i>// only used for menu (skull cursor) animation.</i></td></tr>
+<tr><th id="43">43</th><td><em>void</em> <dfn class="decl" id="M_Ticker" title='M_Ticker' data-ref="M_Ticker">M_Ticker</dfn> (<em>void</em>);</td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><i>// Called by main loop,</i></td></tr>
+<tr><th id="46">46</th><td><i>// draws the menus directly into the screen buffer.</i></td></tr>
+<tr><th id="47">47</th><td><em>void</em> <dfn class="decl" id="M_Drawer" title='M_Drawer' data-ref="M_Drawer">M_Drawer</dfn> (<em>void</em>);</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><i>// Called by D_DoomMain,</i></td></tr>
+<tr><th id="50">50</th><td><i>// loads the config file.</i></td></tr>
+<tr><th id="51">51</th><td><em>void</em> <dfn class="decl" id="M_Init" title='M_Init' data-ref="M_Init">M_Init</dfn> (<em>void</em>);</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><i>// Called by intro code to force menu up upon a keypress,</i></td></tr>
+<tr><th id="54">54</th><td><i>// does nothing if menu is already up.</i></td></tr>
+<tr><th id="55">55</th><td><em>void</em> <dfn class="decl" id="M_StartControlPanel" title='M_StartControlPanel' data-ref="M_StartControlPanel">M_StartControlPanel</dfn> (<em>void</em>);</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><u>#<span data-ppcond="23">endif</span></u>    </td></tr>
+<tr><th id="63">63</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="64">64</th><td><i>//</i></td></tr>
+<tr><th id="65">65</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="66">66</th><td><i>//</i></td></tr>
+<tr><th id="67">67</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="68">68</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='d_main.c.html'>codebrowser/d_main.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

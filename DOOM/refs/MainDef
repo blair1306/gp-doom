@@ -1,0 +1,17 @@
+<def f='codebrowser/m_menu.c' l='261' ll='269' type='menu_t'/>
+<use f='codebrowser/m_menu.c' l='295' u='a'/>
+<use f='codebrowser/m_menu.c' l='295' u='a'/>
+<use f='codebrowser/m_menu.c' l='367' u='a'/>
+<use f='codebrowser/m_menu.c' l='367' u='a'/>
+<use f='codebrowser/m_menu.c' l='391' u='a'/>
+<use f='codebrowser/m_menu.c' l='391' u='a'/>
+<use f='codebrowser/m_menu.c' l='476' u='a'/>
+<use f='codebrowser/m_menu.c' l='476' u='a'/>
+<use f='codebrowser/m_menu.c' l='499' u='a'/>
+<use f='codebrowser/m_menu.c' l='499' u='a'/>
+<use f='codebrowser/m_menu.c' l='1045' u='a' c='M_FinishReadThis'/>
+<use f='codebrowser/m_menu.c' l='1730' u='a' c='M_StartControlPanel'/>
+<use f='codebrowser/m_menu.c' l='1849' u='a' c='M_Init'/>
+<use f='codebrowser/m_menu.c' l='1871' u='m' c='M_Init'/>
+<use f='codebrowser/m_menu.c' l='1872' u='m' c='M_Init'/>
+<use f='codebrowser/m_menu.c' l='1873' u='a' c='M_Init'/>

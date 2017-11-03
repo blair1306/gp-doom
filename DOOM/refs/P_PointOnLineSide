@@ -1,0 +1,17 @@
+<dec f='codebrowser/p_local.h' l='162' type='int P_PointOnLineSide(fixed_t x, fixed_t y, line_t * line)'/>
+<use f='codebrowser/p_map.c' l='506' u='c' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='507' u='c' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='608' u='c' c='P_HitSlideLine'/>
+<use f='codebrowser/p_map.c' l='647' u='c' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='1114' u='c' c='PTR_UseTraverse'/>
+<def f='codebrowser/p_maputl.c' l='65' ll='100' type='int P_PointOnLineSide(fixed_t x, fixed_t y, line_t * line)'/>
+<use f='codebrowser/p_maputl.c' l='140' u='c' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='141' u='c' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='145' u='c' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='146' u='c' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='580' u='c' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='581' u='c' c='PIT_AddLineIntercepts'/>
+<doc f='codebrowser/p_maputl.c' l='61'>//
+// P_PointOnLineSide
+// Returns 0 or 1
+//</doc>

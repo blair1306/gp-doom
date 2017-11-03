@@ -1,0 +1,10 @@
+<dec f='codebrowser/doomdef.h' l='219' type='3'/>
+<use f='codebrowser/p_inter.c' l='313' u='r' c='P_GivePower'/>
+<use f='codebrowser/p_inter.c' l='512' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_spec.c' l='1024' u='r' c='P_PlayerInSpecialSector'/>
+<use f='codebrowser/p_spec.c' l='1031' u='r' c='P_PlayerInSpecialSector'/>
+<use f='codebrowser/p_spec.c' l='1040' u='r' c='P_PlayerInSpecialSector'/>
+<use f='codebrowser/p_user.c' l='352' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='353' u='w' c='P_PlayerThink'/>
+<use f='codebrowser/st_stuff.c' l='1039' u='r' c='ST_doPaletteStuff'/>
+<use f='codebrowser/st_stuff.c' l='1040' u='r' c='ST_doPaletteStuff'/>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/p_local.h' l='246' type='byte *'/>
+<doc f='codebrowser/p_local.h' l='243'>//
+// P_SETUP
+//</doc>
+<doc f='codebrowser/p_local.h' l='246'>// for fast sight rejection</doc>
+<def f='codebrowser/p_setup.c' l='105' type='byte *'/>
+<use f='codebrowser/p_setup.c' l='659' u='w' c='P_SetupLevel'/>
+<doc f='codebrowser/p_setup.c' l='98'>// REJECT
+// For fast sight rejection.
+// Speeds up enemy AI by skipping detailed
+//  LineOf Sight calculation.
+// Without special effect, this could be
+//  used as a PVS lookup as well.
+//</doc>
+<use f='codebrowser/p_sight.c' l='320' u='r' c='P_CheckSight'/>

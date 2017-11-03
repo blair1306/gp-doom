@@ -1,0 +1,10 @@
+<dec f='codebrowser/d_main.c' l='110' type='boolean'/>
+<use f='codebrowser/d_main.c' l='244' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='299' u='r' c='D_Display'/>
+<doc f='codebrowser/d_main.c' l='106'>//extern int soundVolume;
+//extern  int	sfxVolume;
+//extern  int	musicVolume;</doc>
+<def f='codebrowser/m_menu.c' l='125' type='boolean'/>
+<use f='codebrowser/m_menu.c' l='754' u='w' c='M_DrawReadThis1'/>
+<use f='codebrowser/m_menu.c' l='778' u='w' c='M_DrawReadThis2'/>
+<use f='codebrowser/m_menu.c' l='1749' u='w' c='M_Drawer'/>

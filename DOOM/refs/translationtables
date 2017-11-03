@@ -1,0 +1,12 @@
+<dec f='codebrowser/r_draw.h' l='78' type='byte *'/>
+<def f='codebrowser/r_draw.c' l='383' type='byte *'/>
+<use f='codebrowser/r_draw.c' l='463' u='w' c='R_InitTranslationTables'/>
+<use f='codebrowser/r_draw.c' l='464' u='w' c='R_InitTranslationTables'/>
+<use f='codebrowser/r_draw.c' l='464' u='r' c='R_InitTranslationTables'/>
+<use f='codebrowser/r_draw.c' l='472' u='r' c='R_InitTranslationTables'/>
+<use f='codebrowser/r_draw.c' l='473' u='r' c='R_InitTranslationTables'/>
+<use f='codebrowser/r_draw.c' l='474' u='r' c='R_InitTranslationTables'/>
+<use f='codebrowser/r_draw.c' l='479' u='r' c='R_InitTranslationTables'/>
+<use f='codebrowser/r_draw.c' l='479' u='r' c='R_InitTranslationTables'/>
+<use f='codebrowser/r_draw.c' l='480' u='r' c='R_InitTranslationTables'/>
+<use f='codebrowser/r_things.c' l='420' u='r' c='R_DrawVisSprite'/>

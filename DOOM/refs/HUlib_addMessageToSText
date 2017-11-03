@@ -1,0 +1,5 @@
+<dec f='codebrowser/hu_lib.h' l='144' type='void HUlib_addMessageToSText(hu_stext_t * s, char * prefix, char * msg)'/>
+<def f='codebrowser/hu_lib.c' l='216' ll='229' type='void HUlib_addMessageToSText(hu_stext_t * s, char * prefix, char * msg)'/>
+<doc f='codebrowser/hu_lib.h' l='142'>// ?</doc>
+<use f='codebrowser/hu_stuff.c' l='525' u='c' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='558' u='c' c='HU_Ticker'/>

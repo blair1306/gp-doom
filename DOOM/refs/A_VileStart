@@ -1,0 +1,13 @@
+<dec f='codebrowser/info.c' l='94' type='void A_VileStart()'/>
+<use f='codebrowser/info.c' l='391'/>
+<use f='codebrowser/info.c' l='391'/>
+<use f='codebrowser/info.c' l='391'/>
+<use f='codebrowser/info.c' l='391'/>
+<use f='codebrowser/info.c' l='391'/>
+<use f='codebrowser/info.c' l='391'/>
+<use f='codebrowser/info.c' l='391'/>
+<use f='codebrowser/info.c' l='391'/>
+<def f='codebrowser/p_enemy.c' l='1233' ll='1236' type='void A_VileStart(mobj_t * actor)'/>
+<doc f='codebrowser/p_enemy.c' l='1230'>//
+// A_VileStart
+//</doc>

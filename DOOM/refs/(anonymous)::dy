@@ -1,0 +1,39 @@
+<dec f='codebrowser/doomdata.h' l='186' type='short'/>
+<dec f='codebrowser/r_defs.h' l='271' type='fixed_t'/>
+<dec f='codebrowser/p_local.h' l='140' type='fixed_t'/>
+<offset>96</offset>
+<use f='codebrowser/p_map.c' l='953' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1000' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_maputl.c' l='174' u='r' c='P_PointOnDivlineSide'/>
+<use f='codebrowser/p_maputl.c' l='176' u='r' c='P_PointOnDivlineSide'/>
+<use f='codebrowser/p_maputl.c' l='178' u='r' c='P_PointOnDivlineSide'/>
+<use f='codebrowser/p_maputl.c' l='190' u='r' c='P_PointOnDivlineSide'/>
+<use f='codebrowser/p_maputl.c' l='192' u='r' c='P_PointOnDivlineSide'/>
+<use f='codebrowser/p_maputl.c' l='197' u='r' c='P_PointOnDivlineSide'/>
+<use f='codebrowser/p_maputl.c' l='218' u='w' c='P_MakeDivline'/>
+<use f='codebrowser/p_maputl.c' l='240' u='r' c='P_InterceptVector'/>
+<use f='codebrowser/p_maputl.c' l='240' u='r' c='P_InterceptVector'/>
+<use f='codebrowser/p_maputl.c' l='247' u='r' c='P_InterceptVector'/>
+<use f='codebrowser/p_maputl.c' l='571' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='573' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='581' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='632' u='r' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='661' u='w' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='786' u='w' c='P_PathTraverse'/>
+<use f='codebrowser/p_setup.c' l='285' u='w' c='P_LoadNodes'/>
+<use f='codebrowser/p_setup.c' l='285' u='r' c='P_LoadNodes'/>
+<use f='codebrowser/p_sight.c' l='71' u='r' c='P_DivlineSide'/>
+<use f='codebrowser/p_sight.c' l='73' u='r' c='P_DivlineSide'/>
+<use f='codebrowser/p_sight.c' l='76' u='r' c='P_DivlineSide'/>
+<use f='codebrowser/p_sight.c' l='90' u='r' c='P_DivlineSide'/>
+<use f='codebrowser/p_sight.c' l='117' u='r' c='P_InterceptVector2'/>
+<use f='codebrowser/p_sight.c' l='117' u='r' c='P_InterceptVector2'/>
+<use f='codebrowser/p_sight.c' l='123' u='r' c='P_InterceptVector2'/>
+<use f='codebrowser/p_sight.c' l='188' u='w' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='343' u='w' c='P_CheckSight'/>
+<use f='codebrowser/r_main.c' l='175' u='r' c='R_PointOnSide'/>
+<use f='codebrowser/r_main.c' l='177' u='r' c='R_PointOnSide'/>
+<use f='codebrowser/r_main.c' l='179' u='r' c='R_PointOnSide'/>
+<use f='codebrowser/r_main.c' l='191' u='r' c='R_PointOnSide'/>
+<use f='codebrowser/r_main.c' l='193' u='r' c='R_PointOnSide'/>
+<use f='codebrowser/r_main.c' l='201' u='r' c='R_PointOnSide'/>

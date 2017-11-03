@@ -1,0 +1,10 @@
+<dec f='codebrowser/i_video.h' l='43' type='void I_SetPalette(byte * palette)'/>
+<use f='codebrowser/d_main.c' l='275' u='c' c='D_Display'/>
+<doc f='codebrowser/i_video.h' l='42'>// Takes full 8 bit values.</doc>
+<def f='codebrowser/i_video.c' l='582' ll='585' type='void I_SetPalette(byte * palette)'/>
+<doc f='codebrowser/i_video.c' l='579'>//
+// I_SetPalette
+//</doc>
+<use f='codebrowser/m_menu.c' l='1602' u='c' c='M_Responder'/>
+<use f='codebrowser/st_stuff.c' l='1049' u='c' c='ST_doPaletteStuff'/>
+<use f='codebrowser/st_stuff.c' l='1461' u='c' c='ST_Stop'/>

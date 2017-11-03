@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_spec.h' l='321' type='void EV_StopPlat(line_t * line)'/>
+<def f='codebrowser/p_plats.c' l='273' ll='286' type='void EV_StopPlat(line_t * line)'/>
+<use f='codebrowser/p_spec.c' l='690' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='864' u='c' c='P_CrossSpecialLine'/>

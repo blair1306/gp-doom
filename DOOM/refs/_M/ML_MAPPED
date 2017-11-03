@@ -1,0 +1,4 @@
+<dec f='codebrowser/doomdata.h' l='135'/>
+<use f='codebrowser/am_map.c' l='1128' u='c'/>
+<doc f='codebrowser/doomdata.h' l='134'>// Set if already seen, thus drawn in automap.</doc>
+<use f='codebrowser/r_segs.c' l='398' u='c'/>

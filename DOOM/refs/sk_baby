@@ -1,0 +1,4 @@
+<dec f='codebrowser/doomdef.h' l='149' type='0'/>
+<use f='codebrowser/p_inter.c' l='95' u='r' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='799' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_mobj.c' l='743' u='r' c='P_SpawnMapThing'/>

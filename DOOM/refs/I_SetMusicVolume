@@ -1,0 +1,6 @@
+<dec f='codebrowser/i_sound.h' l='96' type='void I_SetMusicVolume(int volume)'/>
+<doc f='codebrowser/i_sound.h' l='95'>// Volume.</doc>
+<def f='codebrowser/i_sound.c' l='439' ll='445' type='void I_SetMusicVolume(int volume)'/>
+<doc f='codebrowser/i_sound.c' l='438'>// MUSIC API - dummy. Some code from DOS version.</doc>
+<use f='codebrowser/s_sound.c' l='624' u='c' c='S_SetMusicVolume'/>
+<use f='codebrowser/s_sound.c' l='625' u='c' c='S_SetMusicVolume'/>

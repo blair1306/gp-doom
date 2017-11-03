@@ -1,0 +1,14 @@
+<dec f='codebrowser/m_menu.c' l='229' type='void M_StartMessage(char * string, void * routine, boolean input)'/>
+<use f='codebrowser/m_menu.c' l='598' u='c' c='M_LoadGame'/>
+<use f='codebrowser/m_menu.c' l='663' u='c' c='M_SaveGame'/>
+<use f='codebrowser/m_menu.c' l='710' u='c' c='M_QuickSave'/>
+<use f='codebrowser/m_menu.c' l='732' u='c' c='M_QuickLoad'/>
+<use f='codebrowser/m_menu.c' l='738' u='c' c='M_QuickLoad'/>
+<use f='codebrowser/m_menu.c' l='742' u='c' c='M_QuickLoad'/>
+<use f='codebrowser/m_menu.c' l='877' u='c' c='M_NewGame'/>
+<use f='codebrowser/m_menu.c' l='911' u='c' c='M_ChooseSkill'/>
+<use f='codebrowser/m_menu.c' l='924' u='c' c='M_Episode'/>
+<use f='codebrowser/m_menu.c' l='1017' u='c' c='M_EndGame'/>
+<use f='codebrowser/m_menu.c' l='1021' u='c' c='M_EndGame'/>
+<use f='codebrowser/m_menu.c' l='1107' u='c' c='M_QuitDOOM'/>
+<def f='codebrowser/m_menu.c' l='1227' ll='1240' type='void M_StartMessage(char * string, void * routine, boolean input)'/>

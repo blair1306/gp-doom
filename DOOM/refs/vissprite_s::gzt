@@ -1,0 +1,5 @@
+<dec f='codebrowser/r_defs.h' l='390' type='fixed_t'/>
+<offset>288</offset>
+<use f='codebrowser/r_things.c' l='556' u='w' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='557' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='904' u='r' c='R_DrawSprite'/>

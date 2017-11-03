@@ -1,0 +1,18 @@
+<dec f='codebrowser/info.h' l='105' type='73'/>
+<use f='codebrowser/info.c' l='989'/>
+<use f='codebrowser/info.c' l='989'/>
+<use f='codebrowser/info.c' l='990'/>
+<use f='codebrowser/info.c' l='990'/>
+<use f='codebrowser/info.c' l='991'/>
+<use f='codebrowser/info.c' l='991'/>
+<use f='codebrowser/info.c' l='992'/>
+<use f='codebrowser/info.c' l='992'/>
+<use f='codebrowser/info.c' l='989'/>
+<use f='codebrowser/info.c' l='989'/>
+<use f='codebrowser/info.c' l='990'/>
+<use f='codebrowser/info.c' l='990'/>
+<use f='codebrowser/info.c' l='991'/>
+<use f='codebrowser/info.c' l='991'/>
+<use f='codebrowser/info.c' l='992'/>
+<use f='codebrowser/info.c' l='992'/>
+<use f='codebrowser/p_inter.c' l='504' c='P_TouchSpecialThing'/>

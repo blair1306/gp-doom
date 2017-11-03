@@ -1,0 +1,4 @@
+<def f='codebrowser/p_map.c' l='569' type='line_t *'/>
+<use f='codebrowser/p_map.c' l='676' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='678' u='w' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='779' u='r' c='P_SlideMove'/>

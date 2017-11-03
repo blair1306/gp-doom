@@ -1,0 +1,10 @@
+<dec f='codebrowser/g_game.c' l='82' type='void G_PlayerReborn(int player)'/>
+<use f='codebrowser/g_game.c' l='769' u='c' c='G_InitPlayer'/>
+<def f='codebrowser/g_game.c' l='800' ll='833' type='void G_PlayerReborn(int player)'/>
+<doc f='codebrowser/g_game.c' l='795'>//
+// G_PlayerReborn
+// Called after a player dies 
+// almost everything is cleared and initialized 
+//</doc>
+<dec f='codebrowser/p_mobj.c' l='43' type='void G_PlayerReborn(int player)'/>
+<use f='codebrowser/p_mobj.c' l='660' u='c' c='P_SpawnPlayer'/>

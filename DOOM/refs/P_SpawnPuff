@@ -1,0 +1,5 @@
+<dec f='codebrowser/p_local.h' l='120' type='void P_SpawnPuff(fixed_t x, fixed_t y, fixed_t z)'/>
+<use f='codebrowser/p_enemy.c' l='1033' u='c' c='A_Tracer'/>
+<use f='codebrowser/p_map.c' l='968' u='c' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1006' u='c' c='PTR_ShootTraverse'/>
+<def f='codebrowser/p_mobj.c' l='811' ll='831' type='void P_SpawnPuff(fixed_t x, fixed_t y, fixed_t z)'/>

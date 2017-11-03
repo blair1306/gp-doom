@@ -1,0 +1,2 @@
+<def f='codebrowser/d_main.c' l='193' ll='345' type='void D_Display()'/>
+<use f='codebrowser/d_main.c' l='395' u='c' c='D_DoomLoop'/>

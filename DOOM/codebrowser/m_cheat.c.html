@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>m_cheat.c source code [codebrowser/m_cheat.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/m_cheat.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='m_cheat.c.html'>m_cheat.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION:</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//	Cheat sequence checking.</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="22">22</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><em>static</em> <em>const</em> <em>char</em></td></tr>
+<tr><th id="26">26</th><td><dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [50]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id: m_cheat.c,v 1.1 1997/02/03 21:24:34 b1 Exp $"</q>;</td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="m_cheat.h.html">"m_cheat.h"</a></u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><i  data-doc="firsttime">//</i></td></tr>
+<tr><th id="31">31</th><td><i  data-doc="firsttime">// CHEAT SEQUENCE PACKAGE</i></td></tr>
+<tr><th id="32">32</th><td><i  data-doc="firsttime">//</i></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><em>static</em> <em>int</em>		<dfn class="tu decl def" id="firsttime" title='firsttime' data-type='int' data-ref="firsttime">firsttime</dfn> = <var>1</var>;</td></tr>
+<tr><th id="35">35</th><td><em>static</em> <em>unsigned</em> <em>char</em>	<dfn class="tu decl def" id="cheat_xlate_table" title='cheat_xlate_table' data-type='unsigned char [256]' data-ref="cheat_xlate_table">cheat_xlate_table</dfn>[<var>256</var>];</td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><i>//</i></td></tr>
+<tr><th id="39">39</th><td><i>// Called in st_stuff module, which handles the input.</i></td></tr>
+<tr><th id="40">40</th><td><i>// Returns a 1 if the cheat was successful, 0 if failed.</i></td></tr>
+<tr><th id="41">41</th><td><i>//</i></td></tr>
+<tr><th id="42">42</th><td><em>int</em></td></tr>
+<tr><th id="43">43</th><td><dfn class="decl def" id="cht_CheckCheat" title='cht_CheckCheat' data-ref="cht_CheckCheat">cht_CheckCheat</dfn></td></tr>
+<tr><th id="44">44</th><td>( <a class="typedef" href="m_cheat.h.html#cheatseq_t" title='cheatseq_t' data-type='struct cheatseq_t' data-ref="cheatseq_t">cheatseq_t</a>*	<dfn class="local col1 decl" id="1cht" title='cht' data-type='cheatseq_t *' data-ref="1cht">cht</dfn>,</td></tr>
+<tr><th id="45">45</th><td>  <em>char</em>		<dfn class="local col2 decl" id="2key" title='key' data-type='char' data-ref="2key">key</dfn> )</td></tr>
+<tr><th id="46">46</th><td>{</td></tr>
+<tr><th id="47">47</th><td>    <em>int</em> <dfn class="local col3 decl" id="3i" title='i' data-type='int' data-ref="3i">i</dfn>;</td></tr>
+<tr><th id="48">48</th><td>    <em>int</em> <dfn class="local col4 decl" id="4rc" title='rc' data-type='int' data-ref="4rc">rc</dfn> = <var>0</var>;</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td>    <b>if</b> (<a class="tu ref" href="#firsttime" title='firsttime' data-use='r' data-ref="firsttime">firsttime</a>)</td></tr>
+<tr><th id="51">51</th><td>    {</td></tr>
+<tr><th id="52">52</th><td>	<a class="tu ref" href="#firsttime" title='firsttime' data-use='w' data-ref="firsttime">firsttime</a> = <var>0</var>;</td></tr>
+<tr><th id="53">53</th><td>	<b>for</b> (<a class="local col3 ref" href="#3i" title='i' data-ref="3i">i</a>=<var>0</var>;<a class="local col3 ref" href="#3i" title='i' data-ref="3i">i</a>&lt;<var>256</var>;<a class="local col3 ref" href="#3i" title='i' data-ref="3i">i</a>++) <a class="tu ref" href="#cheat_xlate_table" title='cheat_xlate_table' data-use='w' data-ref="cheat_xlate_table">cheat_xlate_table</a>[<a class="local col3 ref" href="#3i" title='i' data-ref="3i">i</a>] = <a class="macro" href="m_cheat.h.html#30" title="((((i)&amp;1)&lt;&lt;7) + (((i)&amp;2)&lt;&lt;5) + ((i)&amp;4) + (((i)&amp;8)&lt;&lt;1) + (((i)&amp;16)&gt;&gt;1) + ((i)&amp;32) + (((i)&amp;64)&gt;&gt;5) + (((i)&amp;128)&gt;&gt;7))" data-ref="_M/SCRAMBLE">SCRAMBLE</a>(<a class="local col3 ref" href="#3i" title='i' data-ref="3i">i</a>);</td></tr>
+<tr><th id="54">54</th><td>    }</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td>    <b>if</b> (!<a class="local col1 ref" href="#1cht" title='cht' data-ref="1cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::p" title='(anonymous struct)::p' data-ref="(anonymous)::p">p</a>)</td></tr>
+<tr><th id="57">57</th><td>	<a class="local col1 ref" href="#1cht" title='cht' data-ref="1cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::p" title='(anonymous struct)::p' data-ref="(anonymous)::p">p</a> = <a class="local col1 ref" href="#1cht" title='cht' data-ref="1cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::sequence" title='(anonymous struct)::sequence' data-ref="(anonymous)::sequence">sequence</a>; <i>// initialize if first time</i></td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td>    <b>if</b> (*<a class="local col1 ref" href="#1cht" title='cht' data-ref="1cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::p" title='(anonymous struct)::p' data-ref="(anonymous)::p">p</a> == <var>0</var>)</td></tr>
+<tr><th id="60">60</th><td>	*(<a class="local col1 ref" href="#1cht" title='cht' data-ref="1cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::p" title='(anonymous struct)::p' data-ref="(anonymous)::p">p</a>++) = <a class="local col2 ref" href="#2key" title='key' data-ref="2key">key</a>;</td></tr>
+<tr><th id="61">61</th><td>    <b>else</b> <b>if</b></td></tr>
+<tr><th id="62">62</th><td>	(<a class="tu ref" href="#cheat_xlate_table" title='cheat_xlate_table' data-use='r' data-ref="cheat_xlate_table">cheat_xlate_table</a>[(<em>unsigned</em> <em>char</em>)<a class="local col2 ref" href="#2key" title='key' data-ref="2key">key</a>] == *<a class="local col1 ref" href="#1cht" title='cht' data-ref="1cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::p" title='(anonymous struct)::p' data-ref="(anonymous)::p">p</a>) <a class="local col1 ref" href="#1cht" title='cht' data-ref="1cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::p" title='(anonymous struct)::p' data-ref="(anonymous)::p">p</a>++;</td></tr>
+<tr><th id="63">63</th><td>    <b>else</b></td></tr>
+<tr><th id="64">64</th><td>	<a class="local col1 ref" href="#1cht" title='cht' data-ref="1cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::p" title='(anonymous struct)::p' data-ref="(anonymous)::p">p</a> = <a class="local col1 ref" href="#1cht" title='cht' data-ref="1cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::sequence" title='(anonymous struct)::sequence' data-ref="(anonymous)::sequence">sequence</a>;</td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td>    <b>if</b> (*<a class="local col1 ref" href="#1cht" title='cht' data-ref="1cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::p" title='(anonymous struct)::p' data-ref="(anonymous)::p">p</a> == <var>1</var>)</td></tr>
+<tr><th id="67">67</th><td>	<a class="local col1 ref" href="#1cht" title='cht' data-ref="1cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::p" title='(anonymous struct)::p' data-ref="(anonymous)::p">p</a>++;</td></tr>
+<tr><th id="68">68</th><td>    <b>else</b> <b>if</b> (*<a class="local col1 ref" href="#1cht" title='cht' data-ref="1cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::p" title='(anonymous struct)::p' data-ref="(anonymous)::p">p</a> == <var>0xff</var>) <i>// end of sequence character</i></td></tr>
+<tr><th id="69">69</th><td>    {</td></tr>
+<tr><th id="70">70</th><td>	<a class="local col1 ref" href="#1cht" title='cht' data-ref="1cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::p" title='(anonymous struct)::p' data-ref="(anonymous)::p">p</a> = <a class="local col1 ref" href="#1cht" title='cht' data-ref="1cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::sequence" title='(anonymous struct)::sequence' data-ref="(anonymous)::sequence">sequence</a>;</td></tr>
+<tr><th id="71">71</th><td>	<a class="local col4 ref" href="#4rc" title='rc' data-ref="4rc">rc</a> = <var>1</var>;</td></tr>
+<tr><th id="72">72</th><td>    }</td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td>    <b>return</b> <a class="local col4 ref" href="#4rc" title='rc' data-ref="4rc">rc</a>;</td></tr>
+<tr><th id="75">75</th><td>}</td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td><em>void</em></td></tr>
+<tr><th id="78">78</th><td><dfn class="decl def" id="cht_GetParam" title='cht_GetParam' data-ref="cht_GetParam">cht_GetParam</dfn></td></tr>
+<tr><th id="79">79</th><td>( <a class="typedef" href="m_cheat.h.html#cheatseq_t" title='cheatseq_t' data-type='struct cheatseq_t' data-ref="cheatseq_t">cheatseq_t</a>*	<dfn class="local col5 decl" id="5cht" title='cht' data-type='cheatseq_t *' data-ref="5cht">cht</dfn>,</td></tr>
+<tr><th id="80">80</th><td>  <em>char</em>*		<dfn class="local col6 decl" id="6buffer" title='buffer' data-type='char *' data-ref="6buffer">buffer</dfn> )</td></tr>
+<tr><th id="81">81</th><td>{</td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td>    <em>unsigned</em> <em>char</em> *<dfn class="local col7 decl" id="7p" title='p' data-type='unsigned char *' data-ref="7p">p</dfn>, <dfn class="local col8 decl" id="8c" title='c' data-type='unsigned char' data-ref="8c">c</dfn>;</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td>    <a class="local col7 ref" href="#7p" title='p' data-ref="7p">p</a> = <a class="local col5 ref" href="#5cht" title='cht' data-ref="5cht">cht</a>-&gt;<a class="ref" href="m_cheat.h.html#(anonymous)::sequence" title='(anonymous struct)::sequence' data-ref="(anonymous)::sequence">sequence</a>;</td></tr>
+<tr><th id="86">86</th><td>    <b>while</b> (*(<a class="local col7 ref" href="#7p" title='p' data-ref="7p">p</a>++) != <var>1</var>);</td></tr>
+<tr><th id="87">87</th><td>    </td></tr>
+<tr><th id="88">88</th><td>    <b>do</b></td></tr>
+<tr><th id="89">89</th><td>    {</td></tr>
+<tr><th id="90">90</th><td>	<a class="local col8 ref" href="#8c" title='c' data-ref="8c">c</a> = *<a class="local col7 ref" href="#7p" title='p' data-ref="7p">p</a>;</td></tr>
+<tr><th id="91">91</th><td>	*(<a class="local col6 ref" href="#6buffer" title='buffer' data-ref="6buffer">buffer</a>++) = <a class="local col8 ref" href="#8c" title='c' data-ref="8c">c</a>;</td></tr>
+<tr><th id="92">92</th><td>	*(<a class="local col7 ref" href="#7p" title='p' data-ref="7p">p</a>++) = <var>0</var>;</td></tr>
+<tr><th id="93">93</th><td>    }</td></tr>
+<tr><th id="94">94</th><td>    <b>while</b> (<a class="local col8 ref" href="#8c" title='c' data-ref="8c">c</a> &amp;&amp; *<a class="local col7 ref" href="#7p" title='p' data-ref="7p">p</a>!=<var>0xff</var> );</td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td>    <b>if</b> (*<a class="local col7 ref" href="#7p" title='p' data-ref="7p">p</a>==<var>0xff</var>)</td></tr>
+<tr><th id="97">97</th><td>	*<a class="local col6 ref" href="#6buffer" title='buffer' data-ref="6buffer">buffer</a> = <var>0</var>;</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td>}</td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

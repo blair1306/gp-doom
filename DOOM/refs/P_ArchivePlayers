@@ -1,0 +1,8 @@
+<dec f='codebrowser/p_saveg.h' l='34' type='void P_ArchivePlayers()'/>
+<use f='codebrowser/g_game.c' l='1302' u='c' c='G_DoSaveGame'/>
+<doc f='codebrowser/p_saveg.h' l='32'>// Persistent storage/archiving.
+// These are the load / save game routines.</doc>
+<def f='codebrowser/p_saveg.c' l='47' ll='72' type='void P_ArchivePlayers()'/>
+<doc f='codebrowser/p_saveg.c' l='44'>//
+// P_ArchivePlayers
+//</doc>

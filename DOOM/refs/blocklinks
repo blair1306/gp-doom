@@ -1,0 +1,10 @@
+<dec f='codebrowser/p_local.h' l='253' type='mobj_t **'/>
+<doc f='codebrowser/p_local.h' l='253'>// for thing chains</doc>
+<use f='codebrowser/p_maputl.c' l='382' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='436' u='r' c='P_SetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='529' u='r' c='P_BlockThingsIterator'/>
+<def f='codebrowser/p_setup.c' l='95' type='mobj_t **'/>
+<use f='codebrowser/p_setup.c' l='487' u='r' c='P_LoadBlockMap'/>
+<use f='codebrowser/p_setup.c' l='488' u='w' c='P_LoadBlockMap'/>
+<use f='codebrowser/p_setup.c' l='489' u='r' c='P_LoadBlockMap'/>
+<doc f='codebrowser/p_setup.c' l='94'>// for thing chains</doc>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/info.h' l='330' type='154'/>
+<use f='codebrowser/f_finale.c' l='418' u='a' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='427' c='F_CastTicker'/>
+<use f='codebrowser/info.c' l='291'/>
+<use f='codebrowser/info.c' l='291'/>
+<use f='codebrowser/info.c' l='291'/>
+<use f='codebrowser/info.c' l='291'/>
+<use f='codebrowser/info.c' l='1120'/>
+<use f='codebrowser/info.c' l='1120'/>
+<use f='codebrowser/info.c' l='1120'/>
+<use f='codebrowser/info.c' l='1120'/>
+<use f='codebrowser/p_pspr.c' l='253' u='r' c='P_FireWeapon'/>
+<use f='codebrowser/p_pspr.c' l='290' u='a' c='A_WeaponReady'/>

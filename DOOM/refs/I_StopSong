@@ -1,0 +1,4 @@
+<dec f='codebrowser/i_sound.h' l='111' type='void I_StopSong(int handle)'/>
+<doc f='codebrowser/i_sound.h' l='110'>// Stops a song over 3 seconds.</doc>
+<def f='codebrowser/i_sound.c' l='861' ll='868' type='void I_StopSong(int handle)'/>
+<use f='codebrowser/s_sound.c' l='696' u='c' c='S_StopMusic'/>

@@ -1,0 +1,8 @@
+V_CopyRect|V_CopyRect
+V_DrawBlock|V_DrawBlock
+V_DrawPatch|V_DrawPatch
+V_DrawPatchDirect|V_DrawPatchDirect
+V_DrawPatchFlipped|V_DrawPatchFlipped
+V_GetBlock|V_GetBlock
+V_Init|V_Init
+V_MarkRect|V_MarkRect

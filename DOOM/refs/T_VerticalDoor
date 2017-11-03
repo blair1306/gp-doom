@@ -1,0 +1,15 @@
+<dec f='codebrowser/p_spec.h' l='383' type='void T_VerticalDoor(vldoor_t * door)'/>
+<def f='codebrowser/p_doors.c' l='63' ll='198' type='void T_VerticalDoor(vldoor_t * door)'/>
+<use f='codebrowser/p_doors.c' l='288' u='r' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='462' u='r' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='516' u='r' c='P_SpawnDoorCloseIn30'/>
+<use f='codebrowser/p_doors.c' l='541' u='r' c='P_SpawnDoorRaiseIn5Mins'/>
+<doc f='codebrowser/p_doors.c' l='56'>//
+// VERTICAL DOORS
+//
+
+//
+// T_VerticalDoor
+//</doc>
+<use f='codebrowser/p_saveg.c' l='399' u='r' c='P_ArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='518' u='r' c='P_UnArchiveSpecials'/>

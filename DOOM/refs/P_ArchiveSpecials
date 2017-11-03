@@ -1,0 +1,14 @@
+<dec f='codebrowser/p_saveg.h' l='40' type='void P_ArchiveSpecials()'/>
+<use f='codebrowser/g_game.c' l='1305' u='c' c='G_DoSaveGame'/>
+<def f='codebrowser/p_saveg.c' l='355' ll='469' type='void P_ArchiveSpecials()'/>
+<doc f='codebrowser/p_saveg.c' l='344'>//
+// Things to handle:
+//
+// T_MoveCeiling, (ceiling_t: sector_t * swizzle), - active list
+// T_VerticalDoor, (vldoor_t: sector_t * swizzle),
+// T_MoveFloor, (floormove_t: sector_t * swizzle),
+// T_LightFlash, (lightflash_t: sector_t * swizzle),
+// T_StrobeFlash, (strobe_t: sector_t *),
+// T_Glow, (glow_t: sector_t *),
+// T_PlatRaise, (plat_t: sector_t *), - active list
+//</doc>

@@ -1,0 +1,5 @@
+<def f='codebrowser/am_map.c' l='377' ll='383' type='void AM_addMark()'/>
+<use f='codebrowser/am_map.c' l='691' u='c' c='AM_Responder'/>
+<doc f='codebrowser/am_map.c' l='374'>//
+// adds a marker at the current location
+//</doc>

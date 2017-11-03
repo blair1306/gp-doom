@@ -1,0 +1,7 @@
+<def f='codebrowser/p_map.c' l='636' ll='682' type='boolean PTR_SlideTraverse(intercept_t * in)'/>
+<use f='codebrowser/p_map.c' l='739' u='r' c='P_SlideMove'/>
+<use f='codebrowser/p_map.c' l='741' u='r' c='P_SlideMove'/>
+<use f='codebrowser/p_map.c' l='743' u='r' c='P_SlideMove'/>
+<doc f='codebrowser/p_map.c' l='633'>//
+// PTR_SlideTraverse
+//</doc>

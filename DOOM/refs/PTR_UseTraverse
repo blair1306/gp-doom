@@ -1,0 +1,2 @@
+<def f='codebrowser/p_map.c' l='1095' ll='1123' type='boolean PTR_UseTraverse(intercept_t * in)'/>
+<use f='codebrowser/p_map.c' l='1147' u='r' c='P_UseLines'/>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/m_menu.h' l='47' type='void M_Drawer()'/>
+<use f='codebrowser/d_main.c' l='315' u='c' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='342' u='c' c='D_Display'/>
+<doc f='codebrowser/m_menu.h' l='45'>// Called by main loop,
+// draws the menus directly into the screen buffer.</doc>
+<def f='codebrowser/m_menu.c' l='1740' ll='1805' type='void M_Drawer()'/>
+<doc f='codebrowser/m_menu.c' l='1735'>//
+// M_Drawer
+// Called after the view has been rendered,
+// but before it has been blitted.
+//</doc>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/hu_lib.h' l='112' type='boolean HUlib_addCharToTextLine(hu_textline_t * t, char ch)'/>
+<def f='codebrowser/hu_lib.c' l='68' ll='84' type='boolean HUlib_addCharToTextLine(hu_textline_t * t, char ch)'/>
+<use f='codebrowser/hu_lib.c' l='225' u='c' c='HUlib_addMessageToSText'/>
+<use f='codebrowser/hu_lib.c' l='228' u='c' c='HUlib_addMessageToSText'/>
+<use f='codebrowser/hu_lib.c' l='311' u='c' c='HUlib_addPrefixToIText'/>
+<use f='codebrowser/hu_lib.c' l='324' u='c' c='HUlib_keyInIText'/>
+<doc f='codebrowser/hu_lib.h' l='111'>// returns success</doc>
+<use f='codebrowser/hu_stuff.c' l='470' u='c' c='HU_Start'/>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/info.h' l='1311' type='int'/>
+<offset>128</offset>
+<use f='codebrowser/f_finale.c' l='410' u='r' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='411' u='r' c='F_CastTicker'/>
+<use f='codebrowser/p_enemy.c' l='631' u='r' c='A_Look'/>
+<use f='codebrowser/p_enemy.c' l='635' u='r' c='A_Look'/>
+<use f='codebrowser/p_enemy.c' l='649' u='r' c='A_Look'/>
+<use f='codebrowser/p_mobj.c' l='902' u='r' c='P_SpawnMissile'/>
+<use f='codebrowser/p_mobj.c' l='903' u='r' c='P_SpawnMissile'/>
+<use f='codebrowser/p_mobj.c' l='975' u='r' c='P_SpawnPlayerMissile'/>
+<use f='codebrowser/p_mobj.c' l='976' u='r' c='P_SpawnPlayerMissile'/>

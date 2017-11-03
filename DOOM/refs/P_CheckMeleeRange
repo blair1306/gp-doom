@@ -1,0 +1,10 @@
+<def f='codebrowser/p_enemy.c' l='174' ll='192' type='boolean P_CheckMeleeRange(mobj_t * actor)'/>
+<use f='codebrowser/p_enemy.c' l='726' u='c' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='921' u='c' c='A_TroopAttack'/>
+<use f='codebrowser/p_enemy.c' l='943' u='c' c='A_SargAttack'/>
+<use f='codebrowser/p_enemy.c' l='958' u='c' c='A_HeadAttack'/>
+<use f='codebrowser/p_enemy.c' l='986' u='c' c='A_BruisAttack'/>
+<use f='codebrowser/p_enemy.c' l='1110' u='c' c='A_SkelFist'/>
+<doc f='codebrowser/p_enemy.c' l='171'>//
+// P_CheckMeleeRange
+//</doc>

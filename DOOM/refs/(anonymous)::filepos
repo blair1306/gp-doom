@@ -1,0 +1,5 @@
+<dec f='codebrowser/w_wad.h' l='47' type='int'/>
+<offset>0</offset>
+<use f='codebrowser/w_wad.c' l='176' u='w' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='219' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='270' u='r' c='W_Reload'/>

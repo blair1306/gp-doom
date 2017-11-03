@@ -1,0 +1,16 @@
+<dec f='codebrowser/tables.h' l='70'/>
+<use f='codebrowser/p_enemy.c' l='1526' u='c'/>
+<use f='codebrowser/p_inter.c' l='825' u='c'/>
+<use f='codebrowser/p_map.c' l='613' u='c'/>
+<use f='codebrowser/p_map.c' l='618' u='c'/>
+<use f='codebrowser/p_map.c' l='619' u='c'/>
+<use f='codebrowser/p_pspr.c' l='528' u='c'/>
+<use f='codebrowser/p_user.c' l='218' u='c'/>
+<use f='codebrowser/r_bsp.c' l='279' u='c'/>
+<use f='codebrowser/r_bsp.c' l='434' u='c'/>
+<use f='codebrowser/r_main.c' l='348' u='c'/>
+<use f='codebrowser/r_main.c' l='364' u='c'/>
+<use f='codebrowser/r_segs.c' l='623' u='c'/>
+<use f='codebrowser/r_segs.c' l='632' u='c'/>
+<use f='codebrowser/st_stuff.c' l='823' u='c'/>
+<use f='codebrowser/st_stuff.c' l='829' u='c'/>

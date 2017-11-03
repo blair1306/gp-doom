@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_mobj.h' l='131' type='32'/>
+<doc f='codebrowser/p_mobj.h' l='130'>// Not to be activated by sound, deaf monster.</doc>
+<use f='codebrowser/p_enemy.c' l='616' u='r' c='A_Look'/>
+<use f='codebrowser/p_enemy.c' l='787' u='r' c='A_FaceTarget'/>
+<use f='codebrowser/p_mobj.c' l='403' u='r' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='796' u='r' c='P_SpawnMapThing'/>

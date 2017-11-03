@@ -1,0 +1,3 @@
+<dec f='include/x86_64-linux-gnu/bits/sigaction.h' l='35' type='union (anonymous union at /usr/include/x86_64-linux-gnu/bits/sigaction.h:28:5)'/>
+<use f='codebrowser/i_sound.c' l='956' macro='1' u='m'/>
+<offset>0</offset>

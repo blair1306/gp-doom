@@ -1,0 +1,14 @@
+<dec f='codebrowser/p_local.h' l='75' type='void P_RemoveThinker(thinker_t * thinker)'/>
+<use f='codebrowser/p_ceilng.c' l='279' u='c' c='P_RemoveActiveCeiling'/>
+<use f='codebrowser/p_doors.c' l='131' u='c' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='139' u='c' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='189' u='c' c='T_VerticalDoor'/>
+<use f='codebrowser/p_floor.c' l='248' u='c' c='T_MoveFloor'/>
+<use f='codebrowser/p_mobj.c' l='569' u='c' c='P_RemoveMobj'/>
+<use f='codebrowser/p_plats.c' l='308' u='c' c='P_RemoveActivePlat'/>
+<def f='codebrowser/p_tick.c' l='80' ll='84' type='void P_RemoveThinker(thinker_t * thinker)'/>
+<doc f='codebrowser/p_tick.c' l='75'>//
+// P_RemoveThinker
+// Deallocation is lazy -- it will not actually be freed
+// until its thinking turn comes up.
+//</doc>

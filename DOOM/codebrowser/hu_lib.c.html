@@ -1,0 +1,372 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>hu_lib.c source code [codebrowser/hu_lib.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/hu_lib.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='hu_lib.c.html'>hu_lib.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION:  heads-up text and input code</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><em>static</em> <em>const</em> <em>char</em></td></tr>
+<tr><th id="24">24</th><td><dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [49]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id: hu_lib.c,v 1.3 1997/01/26 07:44:58 b1 Exp $"</q>;</td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="../include/ctype.h.html">&lt;ctype.h&gt;</a></u></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="doomdef.h.html">"doomdef.h"</a></u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#include <a href="v_video.h.html">"v_video.h"</a></u></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="m_swap.h.html">"m_swap.h"</a></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><u>#include <a href="hu_lib.h.html">"hu_lib.h"</a></u></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="r_local.h.html">"r_local.h"</a></u></td></tr>
+<tr><th id="35">35</th><td><u>#include <a href="r_draw.h.html">"r_draw.h"</a></u></td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><i>// boolean : whether the screen is always erased</i></td></tr>
+<tr><th id="38">38</th><td><u>#define <dfn class="macro" id="_M/noterased" data-ref="_M/noterased">noterased</dfn> viewwindowx</u></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><b>extern</b> <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>	<dfn class="decl" id="automapactive" title='automapactive' data-ref="automapactive">automapactive</dfn>;	<i>// in AM_map.c</i></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><em>void</em> <dfn class="decl def" id="HUlib_init" title='HUlib_init' data-ref="HUlib_init">HUlib_init</dfn>(<em>void</em>)</td></tr>
+<tr><th id="43">43</th><td>{</td></tr>
+<tr><th id="44">44</th><td>}</td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><em>void</em> <dfn class="decl def" id="HUlib_clearTextLine" title='HUlib_clearTextLine' data-ref="HUlib_clearTextLine">HUlib_clearTextLine</dfn>(<a class="typedef" href="hu_lib.h.html#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a>* <dfn class="local col1 decl" id="41t" title='t' data-type='hu_textline_t *' data-ref="41t">t</dfn>)</td></tr>
+<tr><th id="47">47</th><td>{</td></tr>
+<tr><th id="48">48</th><td>    <a class="local col1 ref" href="#41t" title='t' data-ref="41t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::len" title='(anonymous struct)::len' data-ref="(anonymous)::len">len</a> = <var>0</var>;</td></tr>
+<tr><th id="49">49</th><td>    <a class="local col1 ref" href="#41t" title='t' data-ref="41t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>[<var>0</var>] = <var>0</var>;</td></tr>
+<tr><th id="50">50</th><td>    <a class="local col1 ref" href="#41t" title='t' data-ref="41t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::needsupdate" title='(anonymous struct)::needsupdate' data-ref="(anonymous)::needsupdate">needsupdate</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="51">51</th><td>}</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><em>void</em></td></tr>
+<tr><th id="54">54</th><td><dfn class="decl def" id="HUlib_initTextLine" title='HUlib_initTextLine' data-ref="HUlib_initTextLine">HUlib_initTextLine</dfn></td></tr>
+<tr><th id="55">55</th><td>( <a class="typedef" href="hu_lib.h.html#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a>*	<dfn class="local col2 decl" id="42t" title='t' data-type='hu_textline_t *' data-ref="42t">t</dfn>,</td></tr>
+<tr><th id="56">56</th><td>  <em>int</em>			<dfn class="local col3 decl" id="43x" title='x' data-type='int' data-ref="43x">x</dfn>,</td></tr>
+<tr><th id="57">57</th><td>  <em>int</em>			<dfn class="local col4 decl" id="44y" title='y' data-type='int' data-ref="44y">y</dfn>,</td></tr>
+<tr><th id="58">58</th><td>  <a class="typedef" href="r_defs.h.html#patch_t" title='patch_t' data-type='struct patch_t' data-ref="patch_t">patch_t</a>**		<dfn class="local col5 decl" id="45f" title='f' data-type='patch_t **' data-ref="45f">f</dfn>,</td></tr>
+<tr><th id="59">59</th><td>  <em>int</em>			<dfn class="local col6 decl" id="46sc" title='sc' data-type='int' data-ref="46sc">sc</dfn> )</td></tr>
+<tr><th id="60">60</th><td>{</td></tr>
+<tr><th id="61">61</th><td>    <a class="local col2 ref" href="#42t" title='t' data-ref="42t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a> = <a class="local col3 ref" href="#43x" title='x' data-ref="43x">x</a>;</td></tr>
+<tr><th id="62">62</th><td>    <a class="local col2 ref" href="#42t" title='t' data-ref="42t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a> = <a class="local col4 ref" href="#44y" title='y' data-ref="44y">y</a>;</td></tr>
+<tr><th id="63">63</th><td>    <a class="local col2 ref" href="#42t" title='t' data-ref="42t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::f" title='(anonymous struct)::f' data-ref="(anonymous)::f">f</a> = <a class="local col5 ref" href="#45f" title='f' data-ref="45f">f</a>;</td></tr>
+<tr><th id="64">64</th><td>    <a class="local col2 ref" href="#42t" title='t' data-ref="42t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::sc" title='(anonymous struct)::sc' data-ref="(anonymous)::sc">sc</a> = <a class="local col6 ref" href="#46sc" title='sc' data-ref="46sc">sc</a>;</td></tr>
+<tr><th id="65">65</th><td>    <a class="ref" href="#HUlib_clearTextLine" title='HUlib_clearTextLine' data-ref="HUlib_clearTextLine">HUlib_clearTextLine</a>(<a class="local col2 ref" href="#42t" title='t' data-ref="42t">t</a>);</td></tr>
+<tr><th id="66">66</th><td>}</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a></td></tr>
+<tr><th id="69">69</th><td><dfn class="decl def" id="HUlib_addCharToTextLine" title='HUlib_addCharToTextLine' data-ref="HUlib_addCharToTextLine">HUlib_addCharToTextLine</dfn></td></tr>
+<tr><th id="70">70</th><td>( <a class="typedef" href="hu_lib.h.html#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a>*	<dfn class="local col7 decl" id="47t" title='t' data-type='hu_textline_t *' data-ref="47t">t</dfn>,</td></tr>
+<tr><th id="71">71</th><td>  <em>char</em>			<dfn class="local col8 decl" id="48ch" title='ch' data-type='char' data-ref="48ch">ch</dfn> )</td></tr>
+<tr><th id="72">72</th><td>{</td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td>    <b>if</b> (<a class="local col7 ref" href="#47t" title='t' data-ref="47t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::len" title='(anonymous struct)::len' data-ref="(anonymous)::len">len</a> == <a class="macro" href="hu_lib.h.html#37" title="80" data-ref="_M/HU_MAXLINELENGTH">HU_MAXLINELENGTH</a>)</td></tr>
+<tr><th id="75">75</th><td>	<b>return</b> <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="76">76</th><td>    <b>else</b></td></tr>
+<tr><th id="77">77</th><td>    {</td></tr>
+<tr><th id="78">78</th><td>	<a class="local col7 ref" href="#47t" title='t' data-ref="47t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>[<a class="local col7 ref" href="#47t" title='t' data-ref="47t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::len" title='(anonymous struct)::len' data-ref="(anonymous)::len">len</a>++] = <a class="local col8 ref" href="#48ch" title='ch' data-ref="48ch">ch</a>;</td></tr>
+<tr><th id="79">79</th><td>	<a class="local col7 ref" href="#47t" title='t' data-ref="47t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>[<a class="local col7 ref" href="#47t" title='t' data-ref="47t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::len" title='(anonymous struct)::len' data-ref="(anonymous)::len">len</a>] = <var>0</var>;</td></tr>
+<tr><th id="80">80</th><td>	<a class="local col7 ref" href="#47t" title='t' data-ref="47t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::needsupdate" title='(anonymous struct)::needsupdate' data-ref="(anonymous)::needsupdate">needsupdate</a> = <var>4</var>;</td></tr>
+<tr><th id="81">81</th><td>	<b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="82">82</th><td>    }</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td>}</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a> <dfn class="decl def" id="HUlib_delCharFromTextLine" title='HUlib_delCharFromTextLine' data-ref="HUlib_delCharFromTextLine">HUlib_delCharFromTextLine</dfn>(<a class="typedef" href="hu_lib.h.html#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a>* <dfn class="local col9 decl" id="49t" title='t' data-type='hu_textline_t *' data-ref="49t">t</dfn>)</td></tr>
+<tr><th id="87">87</th><td>{</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td>    <b>if</b> (!<a class="local col9 ref" href="#49t" title='t' data-ref="49t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::len" title='(anonymous struct)::len' data-ref="(anonymous)::len">len</a>) <b>return</b> <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="90">90</th><td>    <b>else</b></td></tr>
+<tr><th id="91">91</th><td>    {</td></tr>
+<tr><th id="92">92</th><td>	<a class="local col9 ref" href="#49t" title='t' data-ref="49t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>[--<a class="local col9 ref" href="#49t" title='t' data-ref="49t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::len" title='(anonymous struct)::len' data-ref="(anonymous)::len">len</a>] = <var>0</var>;</td></tr>
+<tr><th id="93">93</th><td>	<a class="local col9 ref" href="#49t" title='t' data-ref="49t">t</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::needsupdate" title='(anonymous struct)::needsupdate' data-ref="(anonymous)::needsupdate">needsupdate</a> = <var>4</var>;</td></tr>
+<tr><th id="94">94</th><td>	<b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="95">95</th><td>    }</td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td>}</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><em>void</em></td></tr>
+<tr><th id="100">100</th><td><dfn class="decl def" id="HUlib_drawTextLine" title='HUlib_drawTextLine' data-ref="HUlib_drawTextLine">HUlib_drawTextLine</dfn></td></tr>
+<tr><th id="101">101</th><td>( <a class="typedef" href="hu_lib.h.html#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a>*	<dfn class="local col0 decl" id="50l" title='l' data-type='hu_textline_t *' data-ref="50l">l</dfn>,</td></tr>
+<tr><th id="102">102</th><td>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="local col1 decl" id="51drawcursor" title='drawcursor' data-type='boolean' data-ref="51drawcursor">drawcursor</dfn> )</td></tr>
+<tr><th id="103">103</th><td>{</td></tr>
+<tr><th id="104">104</th><td></td></tr>
+<tr><th id="105">105</th><td>    <em>int</em>			<dfn class="local col2 decl" id="52i" title='i' data-type='int' data-ref="52i">i</dfn>;</td></tr>
+<tr><th id="106">106</th><td>    <em>int</em>			<dfn class="local col3 decl" id="53w" title='w' data-type='int' data-ref="53w">w</dfn>;</td></tr>
+<tr><th id="107">107</th><td>    <em>int</em>			<dfn class="local col4 decl" id="54x" title='x' data-type='int' data-ref="54x">x</dfn>;</td></tr>
+<tr><th id="108">108</th><td>    <em>unsigned</em> <em>char</em>	<dfn class="local col5 decl" id="55c" title='c' data-type='unsigned char' data-ref="55c">c</dfn>;</td></tr>
+<tr><th id="109">109</th><td></td></tr>
+<tr><th id="110">110</th><td>    <i>// draw the new stuff</i></td></tr>
+<tr><th id="111">111</th><td>    <a class="local col4 ref" href="#54x" title='x' data-ref="54x">x</a> = <a class="local col0 ref" href="#50l" title='l' data-ref="50l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>;</td></tr>
+<tr><th id="112">112</th><td>    <b>for</b> (<a class="local col2 ref" href="#52i" title='i' data-ref="52i">i</a>=<var>0</var>;<a class="local col2 ref" href="#52i" title='i' data-ref="52i">i</a>&lt;<a class="local col0 ref" href="#50l" title='l' data-ref="50l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::len" title='(anonymous struct)::len' data-ref="(anonymous)::len">len</a>;<a class="local col2 ref" href="#52i" title='i' data-ref="52i">i</a>++)</td></tr>
+<tr><th id="113">113</th><td>    {</td></tr>
+<tr><th id="114">114</th><td>	<a class="local col5 ref" href="#55c" title='c' data-ref="55c">c</a> = <a class="ref" href="../include/ctype.h.html#toupper" title='toupper' data-ref="toupper">toupper</a>(<a class="local col0 ref" href="#50l" title='l' data-ref="50l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>[<a class="local col2 ref" href="#52i" title='i' data-ref="52i">i</a>]);</td></tr>
+<tr><th id="115">115</th><td>	<b>if</b> (<a class="local col5 ref" href="#55c" title='c' data-ref="55c">c</a> != <kbd>' '</kbd></td></tr>
+<tr><th id="116">116</th><td>	    &amp;&amp; <a class="local col5 ref" href="#55c" title='c' data-ref="55c">c</a> &gt;= <a class="local col0 ref" href="#50l" title='l' data-ref="50l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::sc" title='(anonymous struct)::sc' data-ref="(anonymous)::sc">sc</a></td></tr>
+<tr><th id="117">117</th><td>	    &amp;&amp; <a class="local col5 ref" href="#55c" title='c' data-ref="55c">c</a> &lt;= <kbd>'_'</kbd>)</td></tr>
+<tr><th id="118">118</th><td>	{</td></tr>
+<tr><th id="119">119</th><td>	    <a class="local col3 ref" href="#53w" title='w' data-ref="53w">w</a> = <a class="macro" href="m_swap.h.html#40" title="(l-&gt;f[c - l-&gt;sc]-&gt;width)" data-ref="_M/SHORT">SHORT</a>(<a class="local col0 ref" href="#50l" title='l' data-ref="50l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::f" title='(anonymous struct)::f' data-ref="(anonymous)::f">f</a>[<a class="local col5 ref" href="#55c" title='c' data-ref="55c">c</a> - <a class="local col0 ref" href="#50l" title='l' data-ref="50l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::sc" title='(anonymous struct)::sc' data-ref="(anonymous)::sc">sc</a>]-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::width" title='(anonymous struct)::width' data-ref="(anonymous)::width">width</a>);</td></tr>
+<tr><th id="120">120</th><td>	    <b>if</b> (<a class="local col4 ref" href="#54x" title='x' data-ref="54x">x</a>+<a class="local col3 ref" href="#53w" title='w' data-ref="53w">w</a> &gt; <a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>)</td></tr>
+<tr><th id="121">121</th><td>		<b>break</b>;</td></tr>
+<tr><th id="122">122</th><td>	    <a class="ref" href="v_video.h.html#V_DrawPatchDirect" title='V_DrawPatchDirect' data-ref="V_DrawPatchDirect">V_DrawPatchDirect</a>(<a class="local col4 ref" href="#54x" title='x' data-ref="54x">x</a>, <a class="local col0 ref" href="#50l" title='l' data-ref="50l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>, <a class="macro" href="hu_lib.h.html#31" title="0" data-ref="_M/FG">FG</a>, <a class="local col0 ref" href="#50l" title='l' data-ref="50l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::f" title='(anonymous struct)::f' data-ref="(anonymous)::f">f</a>[<a class="local col5 ref" href="#55c" title='c' data-ref="55c">c</a> - <a class="local col0 ref" href="#50l" title='l' data-ref="50l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::sc" title='(anonymous struct)::sc' data-ref="(anonymous)::sc">sc</a>]);</td></tr>
+<tr><th id="123">123</th><td>	    <a class="local col4 ref" href="#54x" title='x' data-ref="54x">x</a> += <a class="local col3 ref" href="#53w" title='w' data-ref="53w">w</a>;</td></tr>
+<tr><th id="124">124</th><td>	}</td></tr>
+<tr><th id="125">125</th><td>	<b>else</b></td></tr>
+<tr><th id="126">126</th><td>	{</td></tr>
+<tr><th id="127">127</th><td>	    <a class="local col4 ref" href="#54x" title='x' data-ref="54x">x</a> += <var>4</var>;</td></tr>
+<tr><th id="128">128</th><td>	    <b>if</b> (<a class="local col4 ref" href="#54x" title='x' data-ref="54x">x</a> &gt;= <a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>)</td></tr>
+<tr><th id="129">129</th><td>		<b>break</b>;</td></tr>
+<tr><th id="130">130</th><td>	}</td></tr>
+<tr><th id="131">131</th><td>    }</td></tr>
+<tr><th id="132">132</th><td></td></tr>
+<tr><th id="133">133</th><td>    <i>// draw the cursor if requested</i></td></tr>
+<tr><th id="134">134</th><td>    <b>if</b> (<a class="local col1 ref" href="#51drawcursor" title='drawcursor' data-ref="51drawcursor">drawcursor</a></td></tr>
+<tr><th id="135">135</th><td>	&amp;&amp; <a class="local col4 ref" href="#54x" title='x' data-ref="54x">x</a> + <a class="macro" href="m_swap.h.html#40" title="(l-&gt;f[&apos;_&apos; - l-&gt;sc]-&gt;width)" data-ref="_M/SHORT">SHORT</a>(<a class="local col0 ref" href="#50l" title='l' data-ref="50l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::f" title='(anonymous struct)::f' data-ref="(anonymous)::f">f</a>[<kbd>'_'</kbd> - <a class="local col0 ref" href="#50l" title='l' data-ref="50l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::sc" title='(anonymous struct)::sc' data-ref="(anonymous)::sc">sc</a>]-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::width" title='(anonymous struct)::width' data-ref="(anonymous)::width">width</a>) &lt;= <a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>)</td></tr>
+<tr><th id="136">136</th><td>    {</td></tr>
+<tr><th id="137">137</th><td>	<a class="ref" href="v_video.h.html#V_DrawPatchDirect" title='V_DrawPatchDirect' data-ref="V_DrawPatchDirect">V_DrawPatchDirect</a>(<a class="local col4 ref" href="#54x" title='x' data-ref="54x">x</a>, <a class="local col0 ref" href="#50l" title='l' data-ref="50l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>, <a class="macro" href="hu_lib.h.html#31" title="0" data-ref="_M/FG">FG</a>, <a class="local col0 ref" href="#50l" title='l' data-ref="50l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::f" title='(anonymous struct)::f' data-ref="(anonymous)::f">f</a>[<kbd>'_'</kbd> - <a class="local col0 ref" href="#50l" title='l' data-ref="50l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::sc" title='(anonymous struct)::sc' data-ref="(anonymous)::sc">sc</a>]);</td></tr>
+<tr><th id="138">138</th><td>    }</td></tr>
+<tr><th id="139">139</th><td>}</td></tr>
+<tr><th id="140">140</th><td></td></tr>
+<tr><th id="141">141</th><td></td></tr>
+<tr><th id="142">142</th><td><i>// sorta called by HU_Erase and just better darn get things straight</i></td></tr>
+<tr><th id="143">143</th><td><em>void</em> <dfn class="decl def" id="HUlib_eraseTextLine" title='HUlib_eraseTextLine' data-ref="HUlib_eraseTextLine">HUlib_eraseTextLine</dfn>(<a class="typedef" href="hu_lib.h.html#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a>* <dfn class="local col6 decl" id="56l" title='l' data-type='hu_textline_t *' data-ref="56l">l</dfn>)</td></tr>
+<tr><th id="144">144</th><td>{</td></tr>
+<tr><th id="145">145</th><td>    <em>int</em>			<dfn class="local col7 decl" id="57lh" title='lh' data-type='int' data-ref="57lh">lh</dfn>;</td></tr>
+<tr><th id="146">146</th><td>    <em>int</em>			<dfn class="local col8 decl" id="58y" title='y' data-type='int' data-ref="58y">y</dfn>;</td></tr>
+<tr><th id="147">147</th><td>    <em>int</em>			<dfn class="local col9 decl" id="59yoffset" title='yoffset' data-type='int' data-ref="59yoffset">yoffset</dfn>;</td></tr>
+<tr><th id="148">148</th><td>    <em>static</em> <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>	<dfn class="local col0 decl" id="60lastautomapactive" title='lastautomapactive' data-type='boolean' data-ref="60lastautomapactive">lastautomapactive</dfn> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td>    <i>// Only erases when NOT in automap and the screen is reduced,</i></td></tr>
+<tr><th id="151">151</th><td><i>    // and the text must either need updating or refreshing</i></td></tr>
+<tr><th id="152">152</th><td><i>    // (because of a recent change back from the automap)</i></td></tr>
+<tr><th id="153">153</th><td></td></tr>
+<tr><th id="154">154</th><td>    <b>if</b> (!<a class="ref" href="#automapactive" title='automapactive' data-ref="automapactive">automapactive</a> &amp;&amp;</td></tr>
+<tr><th id="155">155</th><td>	<a class="ref" href="r_main.h.html#viewwindowx" title='viewwindowx' data-ref="viewwindowx">viewwindowx</a> &amp;&amp; <a class="local col6 ref" href="#56l" title='l' data-ref="56l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::needsupdate" title='(anonymous struct)::needsupdate' data-ref="(anonymous)::needsupdate">needsupdate</a>)</td></tr>
+<tr><th id="156">156</th><td>    {</td></tr>
+<tr><th id="157">157</th><td>	<a class="local col7 ref" href="#57lh" title='lh' data-ref="57lh">lh</a> = <a class="macro" href="m_swap.h.html#40" title="(l-&gt;f[0]-&gt;height)" data-ref="_M/SHORT">SHORT</a>(<a class="local col6 ref" href="#56l" title='l' data-ref="56l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::f" title='(anonymous struct)::f' data-ref="(anonymous)::f">f</a>[<var>0</var>]-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::height" title='(anonymous struct)::height' data-ref="(anonymous)::height">height</a>) + <var>1</var>;</td></tr>
+<tr><th id="158">158</th><td>	<b>for</b> (<a class="local col8 ref" href="#58y" title='y' data-ref="58y">y</a>=<a class="local col6 ref" href="#56l" title='l' data-ref="56l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>,<a class="local col9 ref" href="#59yoffset" title='yoffset' data-ref="59yoffset">yoffset</a>=<a class="local col8 ref" href="#58y" title='y' data-ref="58y">y</a>*<a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a> ; <a class="local col8 ref" href="#58y" title='y' data-ref="58y">y</a>&lt;<a class="local col6 ref" href="#56l" title='l' data-ref="56l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>+<a class="local col7 ref" href="#57lh" title='lh' data-ref="57lh">lh</a> ; <a class="local col8 ref" href="#58y" title='y' data-ref="58y">y</a>++,<a class="local col9 ref" href="#59yoffset" title='yoffset' data-ref="59yoffset">yoffset</a>+=<a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>)</td></tr>
+<tr><th id="159">159</th><td>	{</td></tr>
+<tr><th id="160">160</th><td>	    <b>if</b> (<a class="local col8 ref" href="#58y" title='y' data-ref="58y">y</a> &lt; <a class="ref" href="r_main.h.html#viewwindowy" title='viewwindowy' data-ref="viewwindowy">viewwindowy</a> || <a class="local col8 ref" href="#58y" title='y' data-ref="58y">y</a> &gt;= <a class="ref" href="r_main.h.html#viewwindowy" title='viewwindowy' data-ref="viewwindowy">viewwindowy</a> + <a class="ref" href="r_state.h.html#viewheight" title='viewheight' data-ref="viewheight">viewheight</a>)</td></tr>
+<tr><th id="161">161</th><td>		<a class="ref" href="r_draw.h.html#R_VideoErase" title='R_VideoErase' data-ref="R_VideoErase">R_VideoErase</a>(<a class="local col9 ref" href="#59yoffset" title='yoffset' data-ref="59yoffset">yoffset</a>, <a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>); <i>// erase entire line</i></td></tr>
+<tr><th id="162">162</th><td>	    <b>else</b></td></tr>
+<tr><th id="163">163</th><td>	    {</td></tr>
+<tr><th id="164">164</th><td>		<a class="ref" href="r_draw.h.html#R_VideoErase" title='R_VideoErase' data-ref="R_VideoErase">R_VideoErase</a>(<a class="local col9 ref" href="#59yoffset" title='yoffset' data-ref="59yoffset">yoffset</a>, <a class="ref" href="r_main.h.html#viewwindowx" title='viewwindowx' data-ref="viewwindowx">viewwindowx</a>); <i>// erase left border</i></td></tr>
+<tr><th id="165">165</th><td>		<a class="ref" href="r_draw.h.html#R_VideoErase" title='R_VideoErase' data-ref="R_VideoErase">R_VideoErase</a>(<a class="local col9 ref" href="#59yoffset" title='yoffset' data-ref="59yoffset">yoffset</a> + <a class="ref" href="r_main.h.html#viewwindowx" title='viewwindowx' data-ref="viewwindowx">viewwindowx</a> + <a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>, <a class="ref" href="r_main.h.html#viewwindowx" title='viewwindowx' data-ref="viewwindowx">viewwindowx</a>);</td></tr>
+<tr><th id="166">166</th><td>		<i>// erase right border</i></td></tr>
+<tr><th id="167">167</th><td>	    }</td></tr>
+<tr><th id="168">168</th><td>	}</td></tr>
+<tr><th id="169">169</th><td>    }</td></tr>
+<tr><th id="170">170</th><td></td></tr>
+<tr><th id="171">171</th><td>    <a class="local col0 ref" href="#60lastautomapactive" title='lastautomapactive' data-ref="60lastautomapactive">lastautomapactive</a> = <a class="ref" href="#automapactive" title='automapactive' data-ref="automapactive">automapactive</a>;</td></tr>
+<tr><th id="172">172</th><td>    <b>if</b> (<a class="local col6 ref" href="#56l" title='l' data-ref="56l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::needsupdate" title='(anonymous struct)::needsupdate' data-ref="(anonymous)::needsupdate">needsupdate</a>) <a class="local col6 ref" href="#56l" title='l' data-ref="56l">l</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::needsupdate" title='(anonymous struct)::needsupdate' data-ref="(anonymous)::needsupdate">needsupdate</a>--;</td></tr>
+<tr><th id="173">173</th><td></td></tr>
+<tr><th id="174">174</th><td>}</td></tr>
+<tr><th id="175">175</th><td></td></tr>
+<tr><th id="176">176</th><td><em>void</em></td></tr>
+<tr><th id="177">177</th><td><dfn class="decl def" id="HUlib_initSText" title='HUlib_initSText' data-ref="HUlib_initSText">HUlib_initSText</dfn></td></tr>
+<tr><th id="178">178</th><td>( <a class="typedef" href="hu_lib.h.html#hu_stext_t" title='hu_stext_t' data-type='struct hu_stext_t' data-ref="hu_stext_t">hu_stext_t</a>*	<dfn class="local col1 decl" id="61s" title='s' data-type='hu_stext_t *' data-ref="61s">s</dfn>,</td></tr>
+<tr><th id="179">179</th><td>  <em>int</em>		<dfn class="local col2 decl" id="62x" title='x' data-type='int' data-ref="62x">x</dfn>,</td></tr>
+<tr><th id="180">180</th><td>  <em>int</em>		<dfn class="local col3 decl" id="63y" title='y' data-type='int' data-ref="63y">y</dfn>,</td></tr>
+<tr><th id="181">181</th><td>  <em>int</em>		<dfn class="local col4 decl" id="64h" title='h' data-type='int' data-ref="64h">h</dfn>,</td></tr>
+<tr><th id="182">182</th><td>  <a class="typedef" href="r_defs.h.html#patch_t" title='patch_t' data-type='struct patch_t' data-ref="patch_t">patch_t</a>**	<dfn class="local col5 decl" id="65font" title='font' data-type='patch_t **' data-ref="65font">font</dfn>,</td></tr>
+<tr><th id="183">183</th><td>  <em>int</em>		<dfn class="local col6 decl" id="66startchar" title='startchar' data-type='int' data-ref="66startchar">startchar</dfn>,</td></tr>
+<tr><th id="184">184</th><td>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>*	<dfn class="local col7 decl" id="67on" title='on' data-type='boolean *' data-ref="67on">on</dfn> )</td></tr>
+<tr><th id="185">185</th><td>{</td></tr>
+<tr><th id="186">186</th><td></td></tr>
+<tr><th id="187">187</th><td>    <em>int</em> <dfn class="local col8 decl" id="68i" title='i' data-type='int' data-ref="68i">i</dfn>;</td></tr>
+<tr><th id="188">188</th><td></td></tr>
+<tr><th id="189">189</th><td>    <a class="local col1 ref" href="#61s" title='s' data-ref="61s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::h" title='(anonymous struct)::h' data-ref="(anonymous)::h">h</a> = <a class="local col4 ref" href="#64h" title='h' data-ref="64h">h</a>;</td></tr>
+<tr><th id="190">190</th><td>    <a class="local col1 ref" href="#61s" title='s' data-ref="61s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::on" title='(anonymous struct)::on' data-ref="(anonymous)::on">on</a> = <a class="local col7 ref" href="#67on" title='on' data-ref="67on">on</a>;</td></tr>
+<tr><th id="191">191</th><td>    <a class="local col1 ref" href="#61s" title='s' data-ref="61s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::laston" title='(anonymous struct)::laston' data-ref="(anonymous)::laston">laston</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="192">192</th><td>    <a class="local col1 ref" href="#61s" title='s' data-ref="61s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::cl" title='(anonymous struct)::cl' data-ref="(anonymous)::cl">cl</a> = <var>0</var>;</td></tr>
+<tr><th id="193">193</th><td>    <b>for</b> (<a class="local col8 ref" href="#68i" title='i' data-ref="68i">i</a>=<var>0</var>;<a class="local col8 ref" href="#68i" title='i' data-ref="68i">i</a>&lt;<a class="local col4 ref" href="#64h" title='h' data-ref="64h">h</a>;<a class="local col8 ref" href="#68i" title='i' data-ref="68i">i</a>++)</td></tr>
+<tr><th id="194">194</th><td>	<a class="ref" href="#HUlib_initTextLine" title='HUlib_initTextLine' data-ref="HUlib_initTextLine">HUlib_initTextLine</a>(&amp;<a class="local col1 ref" href="#61s" title='s' data-ref="61s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>[<a class="local col8 ref" href="#68i" title='i' data-ref="68i">i</a>],</td></tr>
+<tr><th id="195">195</th><td>			   <a class="local col2 ref" href="#62x" title='x' data-ref="62x">x</a>, <a class="local col3 ref" href="#63y" title='y' data-ref="63y">y</a> - <a class="local col8 ref" href="#68i" title='i' data-ref="68i">i</a>*(<a class="macro" href="m_swap.h.html#40" title="(font[0]-&gt;height)" data-ref="_M/SHORT">SHORT</a>(<a class="local col5 ref" href="#65font" title='font' data-ref="65font">font</a>[<var>0</var>]-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::height" title='(anonymous struct)::height' data-ref="(anonymous)::height">height</a>)+<var>1</var>),</td></tr>
+<tr><th id="196">196</th><td>			   <a class="local col5 ref" href="#65font" title='font' data-ref="65font">font</a>, <a class="local col6 ref" href="#66startchar" title='startchar' data-ref="66startchar">startchar</a>);</td></tr>
+<tr><th id="197">197</th><td></td></tr>
+<tr><th id="198">198</th><td>}</td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td><em>void</em> <dfn class="decl def" id="HUlib_addLineToSText" title='HUlib_addLineToSText' data-ref="HUlib_addLineToSText">HUlib_addLineToSText</dfn>(<a class="typedef" href="hu_lib.h.html#hu_stext_t" title='hu_stext_t' data-type='struct hu_stext_t' data-ref="hu_stext_t">hu_stext_t</a>* <dfn class="local col9 decl" id="69s" title='s' data-type='hu_stext_t *' data-ref="69s">s</dfn>)</td></tr>
+<tr><th id="201">201</th><td>{</td></tr>
+<tr><th id="202">202</th><td></td></tr>
+<tr><th id="203">203</th><td>    <em>int</em> <dfn class="local col0 decl" id="70i" title='i' data-type='int' data-ref="70i">i</dfn>;</td></tr>
+<tr><th id="204">204</th><td></td></tr>
+<tr><th id="205">205</th><td>    <i>// add a clear line</i></td></tr>
+<tr><th id="206">206</th><td>    <b>if</b> (++<a class="local col9 ref" href="#69s" title='s' data-ref="69s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::cl" title='(anonymous struct)::cl' data-ref="(anonymous)::cl">cl</a> == <a class="local col9 ref" href="#69s" title='s' data-ref="69s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::h" title='(anonymous struct)::h' data-ref="(anonymous)::h">h</a>)</td></tr>
+<tr><th id="207">207</th><td>	<a class="local col9 ref" href="#69s" title='s' data-ref="69s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::cl" title='(anonymous struct)::cl' data-ref="(anonymous)::cl">cl</a> = <var>0</var>;</td></tr>
+<tr><th id="208">208</th><td>    <a class="ref" href="#HUlib_clearTextLine" title='HUlib_clearTextLine' data-ref="HUlib_clearTextLine">HUlib_clearTextLine</a>(&amp;<a class="local col9 ref" href="#69s" title='s' data-ref="69s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>[<a class="local col9 ref" href="#69s" title='s' data-ref="69s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::cl" title='(anonymous struct)::cl' data-ref="(anonymous)::cl">cl</a>]);</td></tr>
+<tr><th id="209">209</th><td></td></tr>
+<tr><th id="210">210</th><td>    <i>// everything needs updating</i></td></tr>
+<tr><th id="211">211</th><td>    <b>for</b> (<a class="local col0 ref" href="#70i" title='i' data-ref="70i">i</a>=<var>0</var> ; <a class="local col0 ref" href="#70i" title='i' data-ref="70i">i</a>&lt;<a class="local col9 ref" href="#69s" title='s' data-ref="69s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::h" title='(anonymous struct)::h' data-ref="(anonymous)::h">h</a> ; <a class="local col0 ref" href="#70i" title='i' data-ref="70i">i</a>++)</td></tr>
+<tr><th id="212">212</th><td>	<a class="local col9 ref" href="#69s" title='s' data-ref="69s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>[<a class="local col0 ref" href="#70i" title='i' data-ref="70i">i</a>].<a class="ref" href="hu_lib.h.html#(anonymous)::needsupdate" title='(anonymous struct)::needsupdate' data-ref="(anonymous)::needsupdate">needsupdate</a> = <var>4</var>;</td></tr>
+<tr><th id="213">213</th><td></td></tr>
+<tr><th id="214">214</th><td>}</td></tr>
+<tr><th id="215">215</th><td></td></tr>
+<tr><th id="216">216</th><td><em>void</em></td></tr>
+<tr><th id="217">217</th><td><dfn class="decl def" id="HUlib_addMessageToSText" title='HUlib_addMessageToSText' data-ref="HUlib_addMessageToSText">HUlib_addMessageToSText</dfn></td></tr>
+<tr><th id="218">218</th><td>( <a class="typedef" href="hu_lib.h.html#hu_stext_t" title='hu_stext_t' data-type='struct hu_stext_t' data-ref="hu_stext_t">hu_stext_t</a>*	<dfn class="local col1 decl" id="71s" title='s' data-type='hu_stext_t *' data-ref="71s">s</dfn>,</td></tr>
+<tr><th id="219">219</th><td>  <em>char</em>*		<dfn class="local col2 decl" id="72prefix" title='prefix' data-type='char *' data-ref="72prefix">prefix</dfn>,</td></tr>
+<tr><th id="220">220</th><td>  <em>char</em>*		<dfn class="local col3 decl" id="73msg" title='msg' data-type='char *' data-ref="73msg">msg</dfn> )</td></tr>
+<tr><th id="221">221</th><td>{</td></tr>
+<tr><th id="222">222</th><td>    <a class="ref" href="#HUlib_addLineToSText" title='HUlib_addLineToSText' data-ref="HUlib_addLineToSText">HUlib_addLineToSText</a>(<a class="local col1 ref" href="#71s" title='s' data-ref="71s">s</a>);</td></tr>
+<tr><th id="223">223</th><td>    <b>if</b> (<a class="local col2 ref" href="#72prefix" title='prefix' data-ref="72prefix">prefix</a>)</td></tr>
+<tr><th id="224">224</th><td>	<b>while</b> (*<a class="local col2 ref" href="#72prefix" title='prefix' data-ref="72prefix">prefix</a>)</td></tr>
+<tr><th id="225">225</th><td>	    <a class="ref" href="#HUlib_addCharToTextLine" title='HUlib_addCharToTextLine' data-ref="HUlib_addCharToTextLine">HUlib_addCharToTextLine</a>(&amp;<a class="local col1 ref" href="#71s" title='s' data-ref="71s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>[<a class="local col1 ref" href="#71s" title='s' data-ref="71s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::cl" title='(anonymous struct)::cl' data-ref="(anonymous)::cl">cl</a>], *(<a class="local col2 ref" href="#72prefix" title='prefix' data-ref="72prefix">prefix</a>++));</td></tr>
+<tr><th id="226">226</th><td></td></tr>
+<tr><th id="227">227</th><td>    <b>while</b> (*<a class="local col3 ref" href="#73msg" title='msg' data-ref="73msg">msg</a>)</td></tr>
+<tr><th id="228">228</th><td>	<a class="ref" href="#HUlib_addCharToTextLine" title='HUlib_addCharToTextLine' data-ref="HUlib_addCharToTextLine">HUlib_addCharToTextLine</a>(&amp;<a class="local col1 ref" href="#71s" title='s' data-ref="71s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>[<a class="local col1 ref" href="#71s" title='s' data-ref="71s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::cl" title='(anonymous struct)::cl' data-ref="(anonymous)::cl">cl</a>], *(<a class="local col3 ref" href="#73msg" title='msg' data-ref="73msg">msg</a>++));</td></tr>
+<tr><th id="229">229</th><td>}</td></tr>
+<tr><th id="230">230</th><td></td></tr>
+<tr><th id="231">231</th><td><em>void</em> <dfn class="decl def" id="HUlib_drawSText" title='HUlib_drawSText' data-ref="HUlib_drawSText">HUlib_drawSText</dfn>(<a class="typedef" href="hu_lib.h.html#hu_stext_t" title='hu_stext_t' data-type='struct hu_stext_t' data-ref="hu_stext_t">hu_stext_t</a>* <dfn class="local col4 decl" id="74s" title='s' data-type='hu_stext_t *' data-ref="74s">s</dfn>)</td></tr>
+<tr><th id="232">232</th><td>{</td></tr>
+<tr><th id="233">233</th><td>    <em>int</em> <dfn class="local col5 decl" id="75i" title='i' data-type='int' data-ref="75i">i</dfn>, <dfn class="local col6 decl" id="76idx" title='idx' data-type='int' data-ref="76idx">idx</dfn>;</td></tr>
+<tr><th id="234">234</th><td>    <a class="typedef" href="hu_lib.h.html#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a> *<dfn class="local col7 decl" id="77l" title='l' data-type='hu_textline_t *' data-ref="77l">l</dfn>;</td></tr>
+<tr><th id="235">235</th><td></td></tr>
+<tr><th id="236">236</th><td>    <b>if</b> (!*<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::on" title='(anonymous struct)::on' data-ref="(anonymous)::on">on</a>)</td></tr>
+<tr><th id="237">237</th><td>	<b>return</b>; <i>// if not on, don't draw</i></td></tr>
+<tr><th id="238">238</th><td></td></tr>
+<tr><th id="239">239</th><td>    <i>// draw everything</i></td></tr>
+<tr><th id="240">240</th><td>    <b>for</b> (<a class="local col5 ref" href="#75i" title='i' data-ref="75i">i</a>=<var>0</var> ; <a class="local col5 ref" href="#75i" title='i' data-ref="75i">i</a>&lt;<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::h" title='(anonymous struct)::h' data-ref="(anonymous)::h">h</a> ; <a class="local col5 ref" href="#75i" title='i' data-ref="75i">i</a>++)</td></tr>
+<tr><th id="241">241</th><td>    {</td></tr>
+<tr><th id="242">242</th><td>	<a class="local col6 ref" href="#76idx" title='idx' data-ref="76idx">idx</a> = <a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::cl" title='(anonymous struct)::cl' data-ref="(anonymous)::cl">cl</a> - <a class="local col5 ref" href="#75i" title='i' data-ref="75i">i</a>;</td></tr>
+<tr><th id="243">243</th><td>	<b>if</b> (<a class="local col6 ref" href="#76idx" title='idx' data-ref="76idx">idx</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="244">244</th><td>	    <a class="local col6 ref" href="#76idx" title='idx' data-ref="76idx">idx</a> += <a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::h" title='(anonymous struct)::h' data-ref="(anonymous)::h">h</a>; <i>// handle queue of lines</i></td></tr>
+<tr><th id="245">245</th><td>	</td></tr>
+<tr><th id="246">246</th><td>	<a class="local col7 ref" href="#77l" title='l' data-ref="77l">l</a> = &amp;<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>[<a class="local col6 ref" href="#76idx" title='idx' data-ref="76idx">idx</a>];</td></tr>
+<tr><th id="247">247</th><td></td></tr>
+<tr><th id="248">248</th><td>	<i>// need a decision made here on whether to skip the draw</i></td></tr>
+<tr><th id="249">249</th><td>	<a class="ref" href="#HUlib_drawTextLine" title='HUlib_drawTextLine' data-ref="HUlib_drawTextLine">HUlib_drawTextLine</a>(<a class="local col7 ref" href="#77l" title='l' data-ref="77l">l</a>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>); <i>// no cursor, please</i></td></tr>
+<tr><th id="250">250</th><td>    }</td></tr>
+<tr><th id="251">251</th><td></td></tr>
+<tr><th id="252">252</th><td>}</td></tr>
+<tr><th id="253">253</th><td></td></tr>
+<tr><th id="254">254</th><td><em>void</em> <dfn class="decl def" id="HUlib_eraseSText" title='HUlib_eraseSText' data-ref="HUlib_eraseSText">HUlib_eraseSText</dfn>(<a class="typedef" href="hu_lib.h.html#hu_stext_t" title='hu_stext_t' data-type='struct hu_stext_t' data-ref="hu_stext_t">hu_stext_t</a>* <dfn class="local col8 decl" id="78s" title='s' data-type='hu_stext_t *' data-ref="78s">s</dfn>)</td></tr>
+<tr><th id="255">255</th><td>{</td></tr>
+<tr><th id="256">256</th><td></td></tr>
+<tr><th id="257">257</th><td>    <em>int</em> <dfn class="local col9 decl" id="79i" title='i' data-type='int' data-ref="79i">i</dfn>;</td></tr>
+<tr><th id="258">258</th><td></td></tr>
+<tr><th id="259">259</th><td>    <b>for</b> (<a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a>=<var>0</var> ; <a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a>&lt;<a class="local col8 ref" href="#78s" title='s' data-ref="78s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::h" title='(anonymous struct)::h' data-ref="(anonymous)::h">h</a> ; <a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a>++)</td></tr>
+<tr><th id="260">260</th><td>    {</td></tr>
+<tr><th id="261">261</th><td>	<b>if</b> (<a class="local col8 ref" href="#78s" title='s' data-ref="78s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::laston" title='(anonymous struct)::laston' data-ref="(anonymous)::laston">laston</a> &amp;&amp; !*<a class="local col8 ref" href="#78s" title='s' data-ref="78s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::on" title='(anonymous struct)::on' data-ref="(anonymous)::on">on</a>)</td></tr>
+<tr><th id="262">262</th><td>	    <a class="local col8 ref" href="#78s" title='s' data-ref="78s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>[<a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a>].<a class="ref" href="hu_lib.h.html#(anonymous)::needsupdate" title='(anonymous struct)::needsupdate' data-ref="(anonymous)::needsupdate">needsupdate</a> = <var>4</var>;</td></tr>
+<tr><th id="263">263</th><td>	<a class="ref" href="#HUlib_eraseTextLine" title='HUlib_eraseTextLine' data-ref="HUlib_eraseTextLine">HUlib_eraseTextLine</a>(&amp;<a class="local col8 ref" href="#78s" title='s' data-ref="78s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>[<a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a>]);</td></tr>
+<tr><th id="264">264</th><td>    }</td></tr>
+<tr><th id="265">265</th><td>    <a class="local col8 ref" href="#78s" title='s' data-ref="78s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::laston" title='(anonymous struct)::laston' data-ref="(anonymous)::laston">laston</a> = *<a class="local col8 ref" href="#78s" title='s' data-ref="78s">s</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::on" title='(anonymous struct)::on' data-ref="(anonymous)::on">on</a>;</td></tr>
+<tr><th id="266">266</th><td></td></tr>
+<tr><th id="267">267</th><td>}</td></tr>
+<tr><th id="268">268</th><td></td></tr>
+<tr><th id="269">269</th><td><em>void</em></td></tr>
+<tr><th id="270">270</th><td><dfn class="decl def" id="HUlib_initIText" title='HUlib_initIText' data-ref="HUlib_initIText">HUlib_initIText</dfn></td></tr>
+<tr><th id="271">271</th><td>( <a class="typedef" href="hu_lib.h.html#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>*	<dfn class="local col0 decl" id="80it" title='it' data-type='hu_itext_t *' data-ref="80it">it</dfn>,</td></tr>
+<tr><th id="272">272</th><td>  <em>int</em>		<dfn class="local col1 decl" id="81x" title='x' data-type='int' data-ref="81x">x</dfn>,</td></tr>
+<tr><th id="273">273</th><td>  <em>int</em>		<dfn class="local col2 decl" id="82y" title='y' data-type='int' data-ref="82y">y</dfn>,</td></tr>
+<tr><th id="274">274</th><td>  <a class="typedef" href="r_defs.h.html#patch_t" title='patch_t' data-type='struct patch_t' data-ref="patch_t">patch_t</a>**	<dfn class="local col3 decl" id="83font" title='font' data-type='patch_t **' data-ref="83font">font</dfn>,</td></tr>
+<tr><th id="275">275</th><td>  <em>int</em>		<dfn class="local col4 decl" id="84startchar" title='startchar' data-type='int' data-ref="84startchar">startchar</dfn>,</td></tr>
+<tr><th id="276">276</th><td>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>*	<dfn class="local col5 decl" id="85on" title='on' data-type='boolean *' data-ref="85on">on</dfn> )</td></tr>
+<tr><th id="277">277</th><td>{</td></tr>
+<tr><th id="278">278</th><td>    <a class="local col0 ref" href="#80it" title='it' data-ref="80it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::lm" title='(anonymous struct)::lm' data-ref="(anonymous)::lm">lm</a> = <var>0</var>; <i>// default left margin is start of text</i></td></tr>
+<tr><th id="279">279</th><td>    <a class="local col0 ref" href="#80it" title='it' data-ref="80it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::on" title='(anonymous struct)::on' data-ref="(anonymous)::on">on</a> = <a class="local col5 ref" href="#85on" title='on' data-ref="85on">on</a>;</td></tr>
+<tr><th id="280">280</th><td>    <a class="local col0 ref" href="#80it" title='it' data-ref="80it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::laston" title='(anonymous struct)::laston' data-ref="(anonymous)::laston">laston</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="281">281</th><td>    <a class="ref" href="#HUlib_initTextLine" title='HUlib_initTextLine' data-ref="HUlib_initTextLine">HUlib_initTextLine</a>(&amp;<a class="local col0 ref" href="#80it" title='it' data-ref="80it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>, <a class="local col1 ref" href="#81x" title='x' data-ref="81x">x</a>, <a class="local col2 ref" href="#82y" title='y' data-ref="82y">y</a>, <a class="local col3 ref" href="#83font" title='font' data-ref="83font">font</a>, <a class="local col4 ref" href="#84startchar" title='startchar' data-ref="84startchar">startchar</a>);</td></tr>
+<tr><th id="282">282</th><td>}</td></tr>
+<tr><th id="283">283</th><td></td></tr>
+<tr><th id="284">284</th><td></td></tr>
+<tr><th id="285">285</th><td><i>// The following deletion routines adhere to the left margin restriction</i></td></tr>
+<tr><th id="286">286</th><td><em>void</em> <dfn class="decl def" id="HUlib_delCharFromIText" title='HUlib_delCharFromIText' data-ref="HUlib_delCharFromIText">HUlib_delCharFromIText</dfn>(<a class="typedef" href="hu_lib.h.html#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>* <dfn class="local col6 decl" id="86it" title='it' data-type='hu_itext_t *' data-ref="86it">it</dfn>)</td></tr>
+<tr><th id="287">287</th><td>{</td></tr>
+<tr><th id="288">288</th><td>    <b>if</b> (<a class="local col6 ref" href="#86it" title='it' data-ref="86it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>.<a class="ref" href="hu_lib.h.html#(anonymous)::len" title='(anonymous struct)::len' data-ref="(anonymous)::len">len</a> != <a class="local col6 ref" href="#86it" title='it' data-ref="86it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::lm" title='(anonymous struct)::lm' data-ref="(anonymous)::lm">lm</a>)</td></tr>
+<tr><th id="289">289</th><td>	<a class="ref" href="#HUlib_delCharFromTextLine" title='HUlib_delCharFromTextLine' data-ref="HUlib_delCharFromTextLine">HUlib_delCharFromTextLine</a>(&amp;<a class="local col6 ref" href="#86it" title='it' data-ref="86it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>);</td></tr>
+<tr><th id="290">290</th><td>}</td></tr>
+<tr><th id="291">291</th><td></td></tr>
+<tr><th id="292">292</th><td><em>void</em> <dfn class="decl def" id="HUlib_eraseLineFromIText" title='HUlib_eraseLineFromIText' data-ref="HUlib_eraseLineFromIText">HUlib_eraseLineFromIText</dfn>(<a class="typedef" href="hu_lib.h.html#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>* <dfn class="local col7 decl" id="87it" title='it' data-type='hu_itext_t *' data-ref="87it">it</dfn>)</td></tr>
+<tr><th id="293">293</th><td>{</td></tr>
+<tr><th id="294">294</th><td>    <b>while</b> (<a class="local col7 ref" href="#87it" title='it' data-ref="87it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::lm" title='(anonymous struct)::lm' data-ref="(anonymous)::lm">lm</a> != <a class="local col7 ref" href="#87it" title='it' data-ref="87it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>.<a class="ref" href="hu_lib.h.html#(anonymous)::len" title='(anonymous struct)::len' data-ref="(anonymous)::len">len</a>)</td></tr>
+<tr><th id="295">295</th><td>	<a class="ref" href="#HUlib_delCharFromTextLine" title='HUlib_delCharFromTextLine' data-ref="HUlib_delCharFromTextLine">HUlib_delCharFromTextLine</a>(&amp;<a class="local col7 ref" href="#87it" title='it' data-ref="87it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>);</td></tr>
+<tr><th id="296">296</th><td>}</td></tr>
+<tr><th id="297">297</th><td></td></tr>
+<tr><th id="298">298</th><td><i>// Resets left margin as well</i></td></tr>
+<tr><th id="299">299</th><td><em>void</em> <dfn class="decl def" id="HUlib_resetIText" title='HUlib_resetIText' data-ref="HUlib_resetIText">HUlib_resetIText</dfn>(<a class="typedef" href="hu_lib.h.html#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>* <dfn class="local col8 decl" id="88it" title='it' data-type='hu_itext_t *' data-ref="88it">it</dfn>)</td></tr>
+<tr><th id="300">300</th><td>{</td></tr>
+<tr><th id="301">301</th><td>    <a class="local col8 ref" href="#88it" title='it' data-ref="88it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::lm" title='(anonymous struct)::lm' data-ref="(anonymous)::lm">lm</a> = <var>0</var>;</td></tr>
+<tr><th id="302">302</th><td>    <a class="ref" href="#HUlib_clearTextLine" title='HUlib_clearTextLine' data-ref="HUlib_clearTextLine">HUlib_clearTextLine</a>(&amp;<a class="local col8 ref" href="#88it" title='it' data-ref="88it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>);</td></tr>
+<tr><th id="303">303</th><td>}</td></tr>
+<tr><th id="304">304</th><td></td></tr>
+<tr><th id="305">305</th><td><em>void</em></td></tr>
+<tr><th id="306">306</th><td><dfn class="decl def" id="HUlib_addPrefixToIText" title='HUlib_addPrefixToIText' data-ref="HUlib_addPrefixToIText">HUlib_addPrefixToIText</dfn></td></tr>
+<tr><th id="307">307</th><td>( <a class="typedef" href="hu_lib.h.html#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>*	<dfn class="local col9 decl" id="89it" title='it' data-type='hu_itext_t *' data-ref="89it">it</dfn>,</td></tr>
+<tr><th id="308">308</th><td>  <em>char</em>*		<dfn class="local col0 decl" id="90str" title='str' data-type='char *' data-ref="90str">str</dfn> )</td></tr>
+<tr><th id="309">309</th><td>{</td></tr>
+<tr><th id="310">310</th><td>    <b>while</b> (*<a class="local col0 ref" href="#90str" title='str' data-ref="90str">str</a>)</td></tr>
+<tr><th id="311">311</th><td>	<a class="ref" href="#HUlib_addCharToTextLine" title='HUlib_addCharToTextLine' data-ref="HUlib_addCharToTextLine">HUlib_addCharToTextLine</a>(&amp;<a class="local col9 ref" href="#89it" title='it' data-ref="89it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>, *(<a class="local col0 ref" href="#90str" title='str' data-ref="90str">str</a>++));</td></tr>
+<tr><th id="312">312</th><td>    <a class="local col9 ref" href="#89it" title='it' data-ref="89it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::lm" title='(anonymous struct)::lm' data-ref="(anonymous)::lm">lm</a> = <a class="local col9 ref" href="#89it" title='it' data-ref="89it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>.<a class="ref" href="hu_lib.h.html#(anonymous)::len" title='(anonymous struct)::len' data-ref="(anonymous)::len">len</a>;</td></tr>
+<tr><th id="313">313</th><td>}</td></tr>
+<tr><th id="314">314</th><td></td></tr>
+<tr><th id="315">315</th><td><i>// wrapper function for handling general keyed input.</i></td></tr>
+<tr><th id="316">316</th><td><i>// returns true if it ate the key</i></td></tr>
+<tr><th id="317">317</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a></td></tr>
+<tr><th id="318">318</th><td><dfn class="decl def" id="HUlib_keyInIText" title='HUlib_keyInIText' data-ref="HUlib_keyInIText">HUlib_keyInIText</dfn></td></tr>
+<tr><th id="319">319</th><td>( <a class="typedef" href="hu_lib.h.html#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>*	<dfn class="local col1 decl" id="91it" title='it' data-type='hu_itext_t *' data-ref="91it">it</dfn>,</td></tr>
+<tr><th id="320">320</th><td>  <em>unsigned</em> <em>char</em> <dfn class="local col2 decl" id="92ch" title='ch' data-type='unsigned char' data-ref="92ch">ch</dfn> )</td></tr>
+<tr><th id="321">321</th><td>{</td></tr>
+<tr><th id="322">322</th><td></td></tr>
+<tr><th id="323">323</th><td>    <b>if</b> (<a class="local col2 ref" href="#92ch" title='ch' data-ref="92ch">ch</a> &gt;= <kbd>' '</kbd> &amp;&amp; <a class="local col2 ref" href="#92ch" title='ch' data-ref="92ch">ch</a> &lt;= <kbd>'_'</kbd>) </td></tr>
+<tr><th id="324">324</th><td>  	<a class="ref" href="#HUlib_addCharToTextLine" title='HUlib_addCharToTextLine' data-ref="HUlib_addCharToTextLine">HUlib_addCharToTextLine</a>(&amp;<a class="local col1 ref" href="#91it" title='it' data-ref="91it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>, (<em>char</em>) <a class="local col2 ref" href="#92ch" title='ch' data-ref="92ch">ch</a>);</td></tr>
+<tr><th id="325">325</th><td>    <b>else</b> </td></tr>
+<tr><th id="326">326</th><td>	<b>if</b> (<a class="local col2 ref" href="#92ch" title='ch' data-ref="92ch">ch</a> == <a class="macro" href="doomdef.h.html#270" title="127" data-ref="_M/KEY_BACKSPACE">KEY_BACKSPACE</a>) </td></tr>
+<tr><th id="327">327</th><td>	    <a class="ref" href="#HUlib_delCharFromIText" title='HUlib_delCharFromIText' data-ref="HUlib_delCharFromIText">HUlib_delCharFromIText</a>(<a class="local col1 ref" href="#91it" title='it' data-ref="91it">it</a>);</td></tr>
+<tr><th id="328">328</th><td>	<b>else</b> </td></tr>
+<tr><th id="329">329</th><td>	    <b>if</b> (<a class="local col2 ref" href="#92ch" title='ch' data-ref="92ch">ch</a> != <a class="macro" href="doomdef.h.html#255" title="13" data-ref="_M/KEY_ENTER">KEY_ENTER</a>) </td></tr>
+<tr><th id="330">330</th><td>		<b>return</b> <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>; <i>// did not eat key</i></td></tr>
+<tr><th id="331">331</th><td></td></tr>
+<tr><th id="332">332</th><td>    <b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>; <i>// ate the key</i></td></tr>
+<tr><th id="333">333</th><td></td></tr>
+<tr><th id="334">334</th><td>}</td></tr>
+<tr><th id="335">335</th><td></td></tr>
+<tr><th id="336">336</th><td><em>void</em> <dfn class="decl def" id="HUlib_drawIText" title='HUlib_drawIText' data-ref="HUlib_drawIText">HUlib_drawIText</dfn>(<a class="typedef" href="hu_lib.h.html#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>* <dfn class="local col3 decl" id="93it" title='it' data-type='hu_itext_t *' data-ref="93it">it</dfn>)</td></tr>
+<tr><th id="337">337</th><td>{</td></tr>
+<tr><th id="338">338</th><td></td></tr>
+<tr><th id="339">339</th><td>    <a class="typedef" href="hu_lib.h.html#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a> *<dfn class="local col4 decl" id="94l" title='l' data-type='hu_textline_t *' data-ref="94l">l</dfn> = &amp;<a class="local col3 ref" href="#93it" title='it' data-ref="93it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>;</td></tr>
+<tr><th id="340">340</th><td></td></tr>
+<tr><th id="341">341</th><td>    <b>if</b> (!*<a class="local col3 ref" href="#93it" title='it' data-ref="93it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::on" title='(anonymous struct)::on' data-ref="(anonymous)::on">on</a>)</td></tr>
+<tr><th id="342">342</th><td>	<b>return</b>;</td></tr>
+<tr><th id="343">343</th><td>    <a class="ref" href="#HUlib_drawTextLine" title='HUlib_drawTextLine' data-ref="HUlib_drawTextLine">HUlib_drawTextLine</a>(<a class="local col4 ref" href="#94l" title='l' data-ref="94l">l</a>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>); <i>// draw the line w/ cursor</i></td></tr>
+<tr><th id="344">344</th><td></td></tr>
+<tr><th id="345">345</th><td>}</td></tr>
+<tr><th id="346">346</th><td></td></tr>
+<tr><th id="347">347</th><td><em>void</em> <dfn class="decl def" id="HUlib_eraseIText" title='HUlib_eraseIText' data-ref="HUlib_eraseIText">HUlib_eraseIText</dfn>(<a class="typedef" href="hu_lib.h.html#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>* <dfn class="local col5 decl" id="95it" title='it' data-type='hu_itext_t *' data-ref="95it">it</dfn>)</td></tr>
+<tr><th id="348">348</th><td>{</td></tr>
+<tr><th id="349">349</th><td>    <b>if</b> (<a class="local col5 ref" href="#95it" title='it' data-ref="95it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::laston" title='(anonymous struct)::laston' data-ref="(anonymous)::laston">laston</a> &amp;&amp; !*<a class="local col5 ref" href="#95it" title='it' data-ref="95it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::on" title='(anonymous struct)::on' data-ref="(anonymous)::on">on</a>)</td></tr>
+<tr><th id="350">350</th><td>	<a class="local col5 ref" href="#95it" title='it' data-ref="95it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>.<a class="ref" href="hu_lib.h.html#(anonymous)::needsupdate" title='(anonymous struct)::needsupdate' data-ref="(anonymous)::needsupdate">needsupdate</a> = <var>4</var>;</td></tr>
+<tr><th id="351">351</th><td>    <a class="ref" href="#HUlib_eraseTextLine" title='HUlib_eraseTextLine' data-ref="HUlib_eraseTextLine">HUlib_eraseTextLine</a>(&amp;<a class="local col5 ref" href="#95it" title='it' data-ref="95it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>);</td></tr>
+<tr><th id="352">352</th><td>    <a class="local col5 ref" href="#95it" title='it' data-ref="95it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::laston" title='(anonymous struct)::laston' data-ref="(anonymous)::laston">laston</a> = *<a class="local col5 ref" href="#95it" title='it' data-ref="95it">it</a>-&gt;<a class="ref" href="hu_lib.h.html#(anonymous)::on" title='(anonymous struct)::on' data-ref="(anonymous)::on">on</a>;</td></tr>
+<tr><th id="353">353</th><td>}</td></tr>
+<tr><th id="354">354</th><td></td></tr>
+<tr><th id="355">355</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

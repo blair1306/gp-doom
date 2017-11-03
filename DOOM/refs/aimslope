@@ -1,0 +1,10 @@
+<def f='codebrowser/p_map.c' l='804' type='fixed_t'/>
+<use f='codebrowser/p_map.c' l='889' u='w' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='933' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='940' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='954' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='986' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='991' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1001' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1051' u='r' c='P_AimLineAttack'/>
+<use f='codebrowser/p_map.c' l='1080' u='w' c='P_LineAttack'/>

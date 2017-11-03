@@ -1,0 +1,5 @@
+<dec f='codebrowser/doomdef.h' l='169' type='5'/>
+<use f='codebrowser/p_doors.c' l='237' u='r' c='EV_DoLockedDoor'/>
+<use f='codebrowser/p_doors.c' l='403' u='r' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_inter.c' l='462' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='464' u='r' c='P_TouchSpecialThing'/>

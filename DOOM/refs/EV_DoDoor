@@ -1,0 +1,32 @@
+<dec f='codebrowser/p_spec.h' l='373' type='int EV_DoDoor(line_t * line, vldoor_e type)'/>
+<use f='codebrowser/p_doors.c' l='259' u='c' c='EV_DoLockedDoor'/>
+<def f='codebrowser/p_doors.c' l='263' ll='347' type='int EV_DoDoor(line_t * line, vldoor_e type)'/>
+<use f='codebrowser/p_enemy.c' l='592' u='c' c='A_KeenDie'/>
+<use f='codebrowser/p_enemy.c' l='1742' u='c' c='A_BossDeath'/>
+<use f='codebrowser/p_spec.c' l='545' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='551' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='557' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='599' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='726' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='732' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='744' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='804' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='809' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='849' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='869' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='916' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='921' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='926' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='990' u='c' c='P_ShootSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='403' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='427' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='457' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='463' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='469' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='475' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='516' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='540' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='552' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='600' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='606' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='612' u='c' c='P_UseSpecialLine'/>

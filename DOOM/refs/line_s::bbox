@@ -1,0 +1,16 @@
+<dec f='codebrowser/r_defs.h' l='200' type='fixed_t [4]'/>
+<offset>288</offset>
+<doc f='codebrowser/r_defs.h' l='198'>// Neat. Another bounding box, for the extent
+    //  of the LineDef.</doc>
+<use f='codebrowser/p_map.c' l='191' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='192' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='193' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='194' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_setup.c' l='397' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='398' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='402' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='403' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='408' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='409' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='413' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='414' u='w' c='P_LoadLineDefs'/>

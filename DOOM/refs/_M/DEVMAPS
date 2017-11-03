@@ -1,0 +1,16 @@
+<dec f='codebrowser/dstrings.h' l='49'/>
+<doc f='codebrowser/dstrings.h' l='44'>//
+// File locations,
+//  relative to current position.
+// Path names are OS-sensitive.
+//</doc>
+<use f='codebrowser/d_main.c' l='622' u='c'/>
+<use f='codebrowser/d_main.c' l='623' u='c'/>
+<use f='codebrowser/d_main.c' l='633' u='c'/>
+<use f='codebrowser/d_main.c' l='634' u='c'/>
+<use f='codebrowser/d_main.c' l='635' u='c'/>
+<use f='codebrowser/d_main.c' l='652' u='c'/>
+<use f='codebrowser/d_main.c' l='653' u='c'/>
+<use f='codebrowser/d_main.c' l='920' u='c'/>
+<use f='codebrowser/d_main.c' l='930' u='c'/>
+<use f='codebrowser/d_main.c' l='932' u='c'/>

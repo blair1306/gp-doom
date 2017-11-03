@@ -1,0 +1,4 @@
+<dec f='codebrowser/g_game.h' l='49' type='void G_DoLoadGame()'/>
+<dec f='codebrowser/g_game.c' l='89' type='void G_DoLoadGame()'/>
+<use f='codebrowser/g_game.c' l='628' u='c' c='G_Ticker'/>
+<def f='codebrowser/g_game.c' l='1201' ll='1252' type='void G_DoLoadGame()'/>

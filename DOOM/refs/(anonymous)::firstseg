@@ -1,0 +1,4 @@
+<dec f='codebrowser/doomdata.h' l='157' type='short'/>
+<offset>16</offset>
+<doc f='codebrowser/doomdata.h' l='156'>// Index of first one, segs are stored sequentially.</doc>
+<use f='codebrowser/p_setup.c' l='220' u='r' c='P_LoadSubsectors'/>

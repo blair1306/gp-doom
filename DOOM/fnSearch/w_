@@ -1,0 +1,12 @@
+W_AddFile|W_AddFile
+W_CacheLumpName|W_CacheLumpName
+W_CacheLumpNum|W_CacheLumpNum
+W_CheckNumForName|W_CheckNumForName
+W_GetNumForName|W_GetNumForName
+W_InitFile|W_InitFile
+W_InitMultipleFiles|W_InitMultipleFiles
+W_LumpLength|W_LumpLength
+W_NumLumps|W_NumLumps
+W_Profile|W_Profile
+W_ReadLump|W_ReadLump
+W_Reload|W_Reload

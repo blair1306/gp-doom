@@ -1,0 +1,15 @@
+<dec f='codebrowser/w_wad.h' l='48' type='int'/>
+<dec f='codebrowser/w_wad.h' l='61' type='int'/>
+<offset>128</offset>
+<use f='codebrowser/r_data.c' l='778' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='813' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='840' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/w_wad.c' l='177' u='w' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='220' u='w' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='220' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='271' u='w' c='W_Reload'/>
+<use f='codebrowser/w_wad.c' l='271' u='r' c='W_Reload'/>
+<use f='codebrowser/w_wad.c' l='421' u='r' c='W_LumpLength'/>
+<use f='codebrowser/w_wad.c' l='457' u='r' c='W_ReadLump'/>
+<use f='codebrowser/w_wad.c' l='459' u='r' c='W_ReadLump'/>
+<use f='codebrowser/w_wad.c' l='461' u='r' c='W_ReadLump'/>

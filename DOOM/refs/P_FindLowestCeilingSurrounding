@@ -1,0 +1,12 @@
+<dec f='codebrowser/p_spec.h' l='95' type='fixed_t P_FindLowestCeilingSurrounding(sector_t * sec)'/>
+<use f='codebrowser/p_doors.c' l='297' u='c' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='306' u='c' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='323' u='c' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='334' u='c' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='497' u='c' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='546' u='c' c='P_SpawnDoorRaiseIn5Mins'/>
+<use f='codebrowser/p_floor.c' l='324' u='c' c='EV_DoFloor'/>
+<def f='codebrowser/p_spec.c' l='381' ll='401' type='fixed_t P_FindLowestCeilingSurrounding(sector_t * sec)'/>
+<doc f='codebrowser/p_spec.c' l='378'>//
+// FIND LOWEST CEILING IN THE SURROUNDING SECTORS
+//</doc>

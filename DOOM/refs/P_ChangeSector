@@ -1,0 +1,20 @@
+<dec f='codebrowser/p_local.h' l='217' type='boolean P_ChangeSector(sector_t * sector, boolean crunch)'/>
+<use f='codebrowser/p_floor.c' l='72' u='c' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='76' u='c' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='85' u='c' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='89' u='c' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='101' u='c' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='105' u='c' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='115' u='c' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='121' u='c' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='139' u='c' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='144' u='c' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='154' u='c' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='161' u='c' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='173' u='c' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='177' u='c' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='186' u='c' c='T_MovePlane'/>
+<def f='codebrowser/p_map.c' l='1320' ll='1338' type='boolean P_ChangeSector(sector_t * sector, boolean crunch)'/>
+<doc f='codebrowser/p_map.c' l='1317'>//
+// P_ChangeSector
+//</doc>

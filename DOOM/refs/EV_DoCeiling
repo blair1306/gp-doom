@@ -1,0 +1,17 @@
+<dec f='codebrowser/p_spec.h' l='523' type='int EV_DoCeiling(line_t * line, ceiling_e type)'/>
+<def f='codebrowser/p_ceilng.c' l='171' ll='245' type='int EV_DoCeiling(line_t * line, ceiling_e type)'/>
+<doc f='codebrowser/p_ceilng.c' l='167'>//
+// EV_DoCeiling
+// Move a ceiling up/down and all around!
+//</doc>
+<use f='codebrowser/p_spec.c' l='569' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='623' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='666' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='673' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='782' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='789' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='794' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='814' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='409' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='421' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='522' u='c' c='P_UseSpecialLine'/>

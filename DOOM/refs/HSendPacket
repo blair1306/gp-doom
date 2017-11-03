@@ -1,0 +1,8 @@
+<def f='codebrowser/d_net.c' l='142' ll='186' type='void HSendPacket(int node, int flags)'/>
+<use f='codebrowser/d_net.c' l='434' u='c' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='439' u='c' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='526' u='c' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='619' u='c' c='D_QuitNetGame'/>
+<doc f='codebrowser/d_net.c' l='139'>//
+// HSendPacket
+//</doc>

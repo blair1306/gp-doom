@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_spec.h' l='384' type='void P_SpawnDoorCloseIn30(sector_t * sec)'/>
+<def f='codebrowser/p_doors.c' l='505' ll='522' type='void P_SpawnDoorCloseIn30(sector_t * sec)'/>
+<doc f='codebrowser/p_doors.c' l='502'>//
+// Spawn a door that closes after 30 seconds
+//</doc>
+<use f='codebrowser/p_spec.c' l='1310' u='c' c='P_SpawnSpecials'/>

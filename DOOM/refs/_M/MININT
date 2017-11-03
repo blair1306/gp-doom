@@ -1,0 +1,7 @@
+<dec f='include/values.h' l='40'/>
+<use f='codebrowser/m_bbox.c' l='41' u='c'/>
+<use f='codebrowser/m_fixed.c' l='63' u='c'/>
+<use f='codebrowser/r_segs.c' l='480' u='c'/>
+<use f='codebrowser/r_segs.c' l='508' u='c'/>
+<use f='codebrowser/r_segs.c' l='522' u='c'/>
+<use f='codebrowser/r_segs.c' l='737' u='c'/>

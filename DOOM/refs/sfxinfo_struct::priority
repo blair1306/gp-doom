@@ -1,0 +1,6 @@
+<dec f='codebrowser/sounds.h' l='41' type='int'/>
+<offset>96</offset>
+<doc f='codebrowser/sounds.h' l='40'>// Sfx priority</doc>
+<use f='codebrowser/s_sound.c' l='286' u='r' c='S_StartSoundAtVolume'/>
+<use f='codebrowser/s_sound.c' l='854' u='r' c='S_getChannel'/>
+<use f='codebrowser/s_sound.c' l='854' u='r' c='S_getChannel'/>

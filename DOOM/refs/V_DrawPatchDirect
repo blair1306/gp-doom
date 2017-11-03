@@ -1,0 +1,36 @@
+<dec f='codebrowser/v_video.h' l='79' type='void V_DrawPatchDirect(int x, int y, int scrn, patch_t * patch)'/>
+<use f='codebrowser/d_main.c' l='309' u='c' c='D_Display'/>
+<use f='codebrowser/hu_lib.c' l='122' u='c' c='HUlib_drawTextLine'/>
+<use f='codebrowser/hu_lib.c' l='137' u='c' c='HUlib_drawTextLine'/>
+<use f='codebrowser/m_menu.c' l='546' u='c' c='M_DrawLoad'/>
+<use f='codebrowser/m_menu.c' l='563' u='c' c='M_DrawSaveLoadBorder'/>
+<use f='codebrowser/m_menu.c' l='567' u='c' c='M_DrawSaveLoadBorder'/>
+<use f='codebrowser/m_menu.c' l='571' u='c' c='M_DrawSaveLoadBorder'/>
+<use f='codebrowser/m_menu.c' l='614' u='c' c='M_DrawSave'/>
+<use f='codebrowser/m_menu.c' l='758' u='c' c='M_DrawReadThis1'/>
+<use f='codebrowser/m_menu.c' l='763' u='c' c='M_DrawReadThis1'/>
+<use f='codebrowser/m_menu.c' l='784' u='c' c='M_DrawReadThis2'/>
+<use f='codebrowser/m_menu.c' l='788' u='c' c='M_DrawReadThis2'/>
+<use f='codebrowser/m_menu.c' l='802' u='c' c='M_DrawSound'/>
+<use f='codebrowser/m_menu.c' l='858' u='c' c='M_DrawMainMenu'/>
+<use f='codebrowser/m_menu.c' l='869' u='c' c='M_DrawNewGame'/>
+<use f='codebrowser/m_menu.c' l='870' u='c' c='M_DrawNewGame'/>
+<use f='codebrowser/m_menu.c' l='895' u='c' c='M_DrawEpisode'/>
+<use f='codebrowser/m_menu.c' l='953' u='c' c='M_DrawOptions'/>
+<use f='codebrowser/m_menu.c' l='955' u='c' c='M_DrawOptions'/>
+<use f='codebrowser/m_menu.c' l='958' u='c' c='M_DrawOptions'/>
+<use f='codebrowser/m_menu.c' l='1193' u='c' c='M_DrawThermo'/>
+<use f='codebrowser/m_menu.c' l='1197' u='c' c='M_DrawThermo'/>
+<use f='codebrowser/m_menu.c' l='1200' u='c' c='M_DrawThermo'/>
+<use f='codebrowser/m_menu.c' l='1202' u='c' c='M_DrawThermo'/>
+<use f='codebrowser/m_menu.c' l='1213' u='c' c='M_DrawEmptyCell'/>
+<use f='codebrowser/m_menu.c' l='1222' u='c' c='M_DrawSelCell'/>
+<use f='codebrowser/m_menu.c' l='1335' u='c' c='M_WriteText'/>
+<use f='codebrowser/m_menu.c' l='1795' u='c' c='M_Drawer'/>
+<use f='codebrowser/m_menu.c' l='1802' u='c' c='M_Drawer'/>
+<use f='codebrowser/m_misc.c' l='93' u='c' c='M_DrawText'/>
+<def f='codebrowser/v_video.c' l='336' ll='396' type='void V_DrawPatchDirect(int x, int y, int scrn, patch_t * patch)'/>
+<doc f='codebrowser/v_video.c' l='332'>//
+// V_DrawPatchDirect
+// Draws directly to the screen on the pc. 
+//</doc>

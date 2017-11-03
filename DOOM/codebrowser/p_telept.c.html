@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>p_telept.c source code [codebrowser/p_telept.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/p_telept.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='p_telept.c.html'>p_telept.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION:</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//	Teleportation.</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="22">22</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><em>static</em> <em>const</em> <em>char</em></td></tr>
+<tr><th id="25">25</th><td><dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [51]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id: p_telept.c,v 1.3 1997/01/28 22:08:29 b1 Exp $"</q>;</td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#include <a href="doomdef.h.html">"doomdef.h"</a></u></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="s_sound.h.html">"s_sound.h"</a></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><u>#include <a href="p_local.h.html">"p_local.h"</a></u></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><i>// Data.</i></td></tr>
+<tr><th id="37">37</th><td><u>#include <a href="sounds.h.html">"sounds.h"</a></u></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><i>// State.</i></td></tr>
+<tr><th id="40">40</th><td><u>#include <a href="r_state.h.html">"r_state.h"</a></u></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><i>//</i></td></tr>
+<tr><th id="45">45</th><td><i>// TELEPORTATION</i></td></tr>
+<tr><th id="46">46</th><td><i>//</i></td></tr>
+<tr><th id="47">47</th><td><em>int</em></td></tr>
+<tr><th id="48">48</th><td><dfn class="decl def" id="EV_Teleport" title='EV_Teleport' data-ref="EV_Teleport">EV_Teleport</dfn></td></tr>
+<tr><th id="49">49</th><td>( <a class="typedef" href="r_defs.h.html#line_t" title='line_t' data-type='struct line_s' data-ref="line_t">line_t</a>*	<dfn class="local col1 decl" id="1line" title='line' data-type='line_t *' data-ref="1line">line</dfn>,</td></tr>
+<tr><th id="50">50</th><td>  <em>int</em>		<dfn class="local col2 decl" id="2side" title='side' data-type='int' data-ref="2side">side</dfn>,</td></tr>
+<tr><th id="51">51</th><td>  <a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>*	<dfn class="local col3 decl" id="3thing" title='thing' data-type='mobj_t *' data-ref="3thing">thing</dfn> )</td></tr>
+<tr><th id="52">52</th><td>{</td></tr>
+<tr><th id="53">53</th><td>    <em>int</em>		<dfn class="local col4 decl" id="4i" title='i' data-type='int' data-ref="4i">i</dfn>;</td></tr>
+<tr><th id="54">54</th><td>    <em>int</em>		<dfn class="local col5 decl" id="5tag" title='tag' data-type='int' data-ref="5tag">tag</dfn>;</td></tr>
+<tr><th id="55">55</th><td>    <a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>*	<dfn class="local col6 decl" id="6m" title='m' data-type='mobj_t *' data-ref="6m">m</dfn>;</td></tr>
+<tr><th id="56">56</th><td>    <a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>*	<dfn class="local col7 decl" id="7fog" title='fog' data-type='mobj_t *' data-ref="7fog">fog</dfn>;</td></tr>
+<tr><th id="57">57</th><td>    <em>unsigned</em>	<dfn class="local col8 decl" id="8an" title='an' data-type='unsigned int' data-ref="8an">an</dfn>;</td></tr>
+<tr><th id="58">58</th><td>    <a class="typedef" href="d_think.h.html#thinker_t" title='thinker_t' data-type='struct thinker_s' data-ref="thinker_t">thinker_t</a>*	<dfn class="local col9 decl" id="9thinker" title='thinker' data-type='thinker_t *' data-ref="9thinker">thinker</dfn>;</td></tr>
+<tr><th id="59">59</th><td>    <a class="typedef" href="r_defs.h.html#sector_t" title='sector_t' data-type='struct sector_t' data-ref="sector_t">sector_t</a>*	<dfn class="local col0 decl" id="10sector" title='sector' data-type='sector_t *' data-ref="10sector">sector</dfn>;</td></tr>
+<tr><th id="60">60</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col1 decl" id="11oldx" title='oldx' data-type='fixed_t' data-ref="11oldx">oldx</dfn>;</td></tr>
+<tr><th id="61">61</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col2 decl" id="12oldy" title='oldy' data-type='fixed_t' data-ref="12oldy">oldy</dfn>;</td></tr>
+<tr><th id="62">62</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col3 decl" id="13oldz" title='oldz' data-type='fixed_t' data-ref="13oldz">oldz</dfn>;</td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td>    <i>// don't teleport missiles</i></td></tr>
+<tr><th id="65">65</th><td>    <b>if</b> (<a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::flags" title='mobj_s::flags' data-ref="mobj_s::flags">flags</a> &amp; <a class="enum" href="p_mobj.h.html#MF_MISSILE" title='MF_MISSILE' data-ref="MF_MISSILE">MF_MISSILE</a>)</td></tr>
+<tr><th id="66">66</th><td>	<b>return</b> <var>0</var>;		</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td>    <i>// Don't teleport if hit back of line,</i></td></tr>
+<tr><th id="69">69</th><td><i>    //  so you can get out of teleporter.</i></td></tr>
+<tr><th id="70">70</th><td>    <b>if</b> (<a class="local col2 ref" href="#2side" title='side' data-ref="2side">side</a> == <var>1</var>)		</td></tr>
+<tr><th id="71">71</th><td>	<b>return</b> <var>0</var>;	</td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td>    </td></tr>
+<tr><th id="74">74</th><td>    <a class="local col5 ref" href="#5tag" title='tag' data-ref="5tag">tag</a> = <a class="local col1 ref" href="#1line" title='line' data-ref="1line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::tag" title='line_s::tag' data-ref="line_s::tag">tag</a>;</td></tr>
+<tr><th id="75">75</th><td>    <b>for</b> (<a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a> = <var>0</var>; <a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a> &lt; <a class="ref" href="r_state.h.html#numsectors" title='numsectors' data-ref="numsectors">numsectors</a>; <a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a>++)</td></tr>
+<tr><th id="76">76</th><td>    {</td></tr>
+<tr><th id="77">77</th><td>	<b>if</b> (<a class="ref" href="r_state.h.html#sectors" title='sectors' data-ref="sectors">sectors</a>[ <a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a> ].<a class="ref" href="r_defs.h.html#(anonymous)::tag" title='(anonymous struct)::tag' data-ref="(anonymous)::tag">tag</a> == <a class="local col5 ref" href="#5tag" title='tag' data-ref="5tag">tag</a> )</td></tr>
+<tr><th id="78">78</th><td>	{</td></tr>
+<tr><th id="79">79</th><td>	    <a class="local col9 ref" href="#9thinker" title='thinker' data-ref="9thinker">thinker</a> = <a class="ref" href="p_local.h.html#thinkercap" title='thinkercap' data-ref="thinkercap">thinkercap</a>.<a class="ref" href="d_think.h.html#thinker_s::next" title='thinker_s::next' data-ref="thinker_s::next">next</a>;</td></tr>
+<tr><th id="80">80</th><td>	    <b>for</b> (<a class="local col9 ref" href="#9thinker" title='thinker' data-ref="9thinker">thinker</a> = <a class="ref" href="p_local.h.html#thinkercap" title='thinkercap' data-ref="thinkercap">thinkercap</a>.<a class="ref" href="d_think.h.html#thinker_s::next" title='thinker_s::next' data-ref="thinker_s::next">next</a>;</td></tr>
+<tr><th id="81">81</th><td>		 <a class="local col9 ref" href="#9thinker" title='thinker' data-ref="9thinker">thinker</a> != &amp;<a class="ref" href="p_local.h.html#thinkercap" title='thinkercap' data-ref="thinkercap">thinkercap</a>;</td></tr>
+<tr><th id="82">82</th><td>		 <a class="local col9 ref" href="#9thinker" title='thinker' data-ref="9thinker">thinker</a> = <a class="local col9 ref" href="#9thinker" title='thinker' data-ref="9thinker">thinker</a>-&gt;<a class="ref" href="d_think.h.html#thinker_s::next" title='thinker_s::next' data-ref="thinker_s::next">next</a>)</td></tr>
+<tr><th id="83">83</th><td>	    {</td></tr>
+<tr><th id="84">84</th><td>		<i>// not a mobj</i></td></tr>
+<tr><th id="85">85</th><td>		<b>if</b> (<a class="local col9 ref" href="#9thinker" title='thinker' data-ref="9thinker">thinker</a>-&gt;<a class="ref" href="d_think.h.html#thinker_s::function" title='thinker_s::function' data-ref="thinker_s::function">function</a>.<a class="ref" href="d_think.h.html#(anonymous)::acp1" title='(anonymous union)::acp1' data-ref="(anonymous)::acp1">acp1</a> != (<a class="typedef" href="d_think.h.html#actionf_p1" title='actionf_p1' data-type='void (*)(void *)' data-ref="actionf_p1">actionf_p1</a>)<a class="ref" href="p_local.h.html#P_MobjThinker" title='P_MobjThinker' data-ref="P_MobjThinker">P_MobjThinker</a>)</td></tr>
+<tr><th id="86">86</th><td>		    <b>continue</b>;	</td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td>		<a class="local col6 ref" href="#6m" title='m' data-ref="6m">m</a> = (<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a> *)<a class="local col9 ref" href="#9thinker" title='thinker' data-ref="9thinker">thinker</a>;</td></tr>
+<tr><th id="89">89</th><td>		</td></tr>
+<tr><th id="90">90</th><td>		<i>// not a teleportman</i></td></tr>
+<tr><th id="91">91</th><td>		<b>if</b> (<a class="local col6 ref" href="#6m" title='m' data-ref="6m">m</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::type" title='mobj_s::type' data-ref="mobj_s::type">type</a> != <a class="enum" href="info.h.html#MT_TELEPORTMAN" title='MT_TELEPORTMAN' data-ref="MT_TELEPORTMAN">MT_TELEPORTMAN</a> )</td></tr>
+<tr><th id="92">92</th><td>		    <b>continue</b>;		</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td>		<a class="local col0 ref" href="#10sector" title='sector' data-ref="10sector">sector</a> = <a class="local col6 ref" href="#6m" title='m' data-ref="6m">m</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::subsector" title='mobj_s::subsector' data-ref="mobj_s::subsector">subsector</a>-&gt;<a class="ref" href="r_defs.h.html#subsector_s::sector" title='subsector_s::sector' data-ref="subsector_s::sector">sector</a>;</td></tr>
+<tr><th id="95">95</th><td>		<i>// wrong sector</i></td></tr>
+<tr><th id="96">96</th><td>		<b>if</b> (<a class="local col0 ref" href="#10sector" title='sector' data-ref="10sector">sector</a>-<a class="ref" href="r_state.h.html#sectors" title='sectors' data-ref="sectors">sectors</a> != <a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a> )</td></tr>
+<tr><th id="97">97</th><td>		    <b>continue</b>;	</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td>		<a class="local col1 ref" href="#11oldx" title='oldx' data-ref="11oldx">oldx</a> = <a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a>;</td></tr>
+<tr><th id="100">100</th><td>		<a class="local col2 ref" href="#12oldy" title='oldy' data-ref="12oldy">oldy</a> = <a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a>;</td></tr>
+<tr><th id="101">101</th><td>		<a class="local col3 ref" href="#13oldz" title='oldz' data-ref="13oldz">oldz</a> = <a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::z" title='mobj_s::z' data-ref="mobj_s::z">z</a>;</td></tr>
+<tr><th id="102">102</th><td>				</td></tr>
+<tr><th id="103">103</th><td>		<b>if</b> (!<a class="ref" href="p_local.h.html#P_TeleportMove" title='P_TeleportMove' data-ref="P_TeleportMove">P_TeleportMove</a> (<a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>, <a class="local col6 ref" href="#6m" title='m' data-ref="6m">m</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a>, <a class="local col6 ref" href="#6m" title='m' data-ref="6m">m</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a>))</td></tr>
+<tr><th id="104">104</th><td>		    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="105">105</th><td>		</td></tr>
+<tr><th id="106">106</th><td>		<a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::z" title='mobj_s::z' data-ref="mobj_s::z">z</a> = <a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::floorz" title='mobj_s::floorz' data-ref="mobj_s::floorz">floorz</a>;  <i>//fixme: not needed?</i></td></tr>
+<tr><th id="107">107</th><td>		<b>if</b> (<a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::player" title='mobj_s::player' data-ref="mobj_s::player">player</a>)</td></tr>
+<tr><th id="108">108</th><td>		    <a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::player" title='mobj_s::player' data-ref="mobj_s::player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewz" title='player_s::viewz' data-ref="player_s::viewz">viewz</a> = <a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::z" title='mobj_s::z' data-ref="mobj_s::z">z</a>+<a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::player" title='mobj_s::player' data-ref="mobj_s::player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewheight" title='player_s::viewheight' data-ref="player_s::viewheight">viewheight</a>;</td></tr>
+<tr><th id="109">109</th><td>				</td></tr>
+<tr><th id="110">110</th><td>		<i>// spawn teleport fog at source and destination</i></td></tr>
+<tr><th id="111">111</th><td>		<a class="local col7 ref" href="#7fog" title='fog' data-ref="7fog">fog</a> = <a class="ref" href="p_local.h.html#P_SpawnMobj" title='P_SpawnMobj' data-ref="P_SpawnMobj">P_SpawnMobj</a> (<a class="local col1 ref" href="#11oldx" title='oldx' data-ref="11oldx">oldx</a>, <a class="local col2 ref" href="#12oldy" title='oldy' data-ref="12oldy">oldy</a>, <a class="local col3 ref" href="#13oldz" title='oldz' data-ref="13oldz">oldz</a>, <a class="enum" href="info.h.html#MT_TFOG" title='MT_TFOG' data-ref="MT_TFOG">MT_TFOG</a>);</td></tr>
+<tr><th id="112">112</th><td>		<a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a> (<a class="local col7 ref" href="#7fog" title='fog' data-ref="7fog">fog</a>, <a class="enum" href="sounds.h.html#sfx_telept" title='sfx_telept' data-ref="sfx_telept">sfx_telept</a>);</td></tr>
+<tr><th id="113">113</th><td>		<a class="local col8 ref" href="#8an" title='an' data-ref="8an">an</a> = <a class="local col6 ref" href="#6m" title='m' data-ref="6m">m</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::angle" title='mobj_s::angle' data-ref="mobj_s::angle">angle</a> &gt;&gt; <a class="macro" href="tables.h.html#55" title="19" data-ref="_M/ANGLETOFINESHIFT">ANGLETOFINESHIFT</a>;</td></tr>
+<tr><th id="114">114</th><td>		<a class="local col7 ref" href="#7fog" title='fog' data-ref="7fog">fog</a> = <a class="ref" href="p_local.h.html#P_SpawnMobj" title='P_SpawnMobj' data-ref="P_SpawnMobj">P_SpawnMobj</a> (<a class="local col6 ref" href="#6m" title='m' data-ref="6m">m</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a>+<var>20</var>*<a class="ref" href="tables.h.html#finecosine" title='finecosine' data-ref="finecosine">finecosine</a>[<a class="local col8 ref" href="#8an" title='an' data-ref="8an">an</a>], <a class="local col6 ref" href="#6m" title='m' data-ref="6m">m</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a>+<var>20</var>*<a class="ref" href="tables.h.html#finesine" title='finesine' data-ref="finesine">finesine</a>[<a class="local col8 ref" href="#8an" title='an' data-ref="8an">an</a>]</td></tr>
+<tr><th id="115">115</th><td>				   , <a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::z" title='mobj_s::z' data-ref="mobj_s::z">z</a>, <a class="enum" href="info.h.html#MT_TFOG" title='MT_TFOG' data-ref="MT_TFOG">MT_TFOG</a>);</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td>		<i>// emit sound, where?</i></td></tr>
+<tr><th id="118">118</th><td>		<a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a> (<a class="local col7 ref" href="#7fog" title='fog' data-ref="7fog">fog</a>, <a class="enum" href="sounds.h.html#sfx_telept" title='sfx_telept' data-ref="sfx_telept">sfx_telept</a>);</td></tr>
+<tr><th id="119">119</th><td>		</td></tr>
+<tr><th id="120">120</th><td>		<i>// don't move for a bit</i></td></tr>
+<tr><th id="121">121</th><td>		<b>if</b> (<a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::player" title='mobj_s::player' data-ref="mobj_s::player">player</a>)</td></tr>
+<tr><th id="122">122</th><td>		    <a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::reactiontime" title='mobj_s::reactiontime' data-ref="mobj_s::reactiontime">reactiontime</a> = <var>18</var>;	</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td>		<a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::angle" title='mobj_s::angle' data-ref="mobj_s::angle">angle</a> = <a class="local col6 ref" href="#6m" title='m' data-ref="6m">m</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::angle" title='mobj_s::angle' data-ref="mobj_s::angle">angle</a>;</td></tr>
+<tr><th id="125">125</th><td>		<a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::momx" title='mobj_s::momx' data-ref="mobj_s::momx">momx</a> = <a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::momy" title='mobj_s::momy' data-ref="mobj_s::momy">momy</a> = <a class="local col3 ref" href="#3thing" title='thing' data-ref="3thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::momz" title='mobj_s::momz' data-ref="mobj_s::momz">momz</a> = <var>0</var>;</td></tr>
+<tr><th id="126">126</th><td>		<b>return</b> <var>1</var>;</td></tr>
+<tr><th id="127">127</th><td>	    }	</td></tr>
+<tr><th id="128">128</th><td>	}</td></tr>
+<tr><th id="129">129</th><td>    }</td></tr>
+<tr><th id="130">130</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="131">131</th><td>}</td></tr>
+<tr><th id="132">132</th><td></td></tr>
+<tr><th id="133">133</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

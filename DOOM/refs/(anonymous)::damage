@@ -1,0 +1,4 @@
+<dec f='codebrowser/info.h' l='1326' type='int'/>
+<offset>608</offset>
+<use f='codebrowser/p_map.c' l='277' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='323' u='r' c='PIT_CheckThing'/>

@@ -1,0 +1,2 @@
+<def f='codebrowser/w_wad.c' l='141' ll='226' type='void W_AddFile(char * filename)'/>
+<use f='codebrowser/w_wad.c' l='303' u='c' c='W_InitMultipleFiles'/>

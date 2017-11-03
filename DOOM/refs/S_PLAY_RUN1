@@ -1,0 +1,11 @@
+<dec f='codebrowser/info.h' l='326' type='150'/>
+<use f='codebrowser/info.c' l='289'/>
+<use f='codebrowser/info.c' l='289'/>
+<use f='codebrowser/info.c' l='289'/>
+<use f='codebrowser/info.c' l='289'/>
+<use f='codebrowser/info.c' l='1112'/>
+<use f='codebrowser/info.c' l='1112'/>
+<use f='codebrowser/info.c' l='1112'/>
+<use f='codebrowser/info.c' l='1112'/>
+<use f='codebrowser/p_mobj.c' l='230' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_user.c' l='169' u='r' c='P_MovePlayer'/>

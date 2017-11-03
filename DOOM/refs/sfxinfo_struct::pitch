@@ -1,0 +1,5 @@
+<dec f='codebrowser/sounds.h' l='47' type='int'/>
+<offset>192</offset>
+<doc f='codebrowser/sounds.h' l='46'>// pitch if a link</doc>
+<use f='codebrowser/s_sound.c' l='285' u='r' c='S_StartSoundAtVolume'/>
+<use f='codebrowser/s_sound.c' l='569' u='r' c='S_UpdateSounds'/>

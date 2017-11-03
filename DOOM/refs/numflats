@@ -1,0 +1,7 @@
+<def f='codebrowser/r_data.c' l='131' type='int'/>
+<use f='codebrowser/r_data.c' l='587' u='w' c='R_InitFlats'/>
+<use f='codebrowser/r_data.c' l='590' u='r' c='R_InitFlats'/>
+<use f='codebrowser/r_data.c' l='592' u='r' c='R_InitFlats'/>
+<use f='codebrowser/r_data.c' l='762' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='763' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='773' u='r' c='R_PrecacheLevel'/>

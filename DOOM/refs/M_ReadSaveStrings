@@ -1,0 +1,9 @@
+<dec f='codebrowser/m_menu.c' l='206' type='void M_ReadSaveStrings()'/>
+<def f='codebrowser/m_menu.c' l='511' ll='536' type='void M_ReadSaveStrings()'/>
+<use f='codebrowser/m_menu.c' l='603' u='c' c='M_LoadGame'/>
+<use f='codebrowser/m_menu.c' l='671' u='c' c='M_SaveGame'/>
+<use f='codebrowser/m_menu.c' l='704' u='c' c='M_QuickSave'/>
+<doc f='codebrowser/m_menu.c' l='507'>//
+// M_ReadSaveStrings
+//  read the strings from the savegame files
+//</doc>

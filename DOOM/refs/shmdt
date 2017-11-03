@@ -1,0 +1,3 @@
+<dec f='include/x86_64-linux-gnu/sys/shm.h' l='60' type='int shmdt(const void * __shmaddr)'/>
+<use f='codebrowser/i_video.c' l='171' u='c' c='I_ShutdownGraphics'/>
+<doc f='include/x86_64-linux-gnu/sys/shm.h' l='59'>/* Detach shared memory segment.  */</doc>

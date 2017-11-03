@@ -1,0 +1,9 @@
+<dec f='codebrowser/d_player.h' l='135' type='int'/>
+<offset>1664</offset>
+<doc f='codebrowser/d_player.h' l='134'>// For intermission stats.</doc>
+<use f='codebrowser/g_game.c' l='810' u='r' c='G_PlayerReborn'/>
+<use f='codebrowser/g_game.c' l='818' u='w' c='G_PlayerReborn'/>
+<use f='codebrowser/g_game.c' l='1125' u='r' c='G_DoCompleted'/>
+<use f='codebrowser/p_inter.c' l='687' u='w' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='696' u='w' c='P_KillMobj'/>
+<use f='codebrowser/p_setup.c' l='598' u='w' c='P_SetupLevel'/>

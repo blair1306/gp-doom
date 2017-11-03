@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>i_sound.h source code [codebrowser/i_sound.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/i_sound.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='i_sound.h.html'>i_sound.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>//</i></td></tr>
+<tr><th id="18">18</th><td><i>// DESCRIPTION:</i></td></tr>
+<tr><th id="19">19</th><td><i>//	System interface, sound.</i></td></tr>
+<tr><th id="20">20</th><td><i>//</i></td></tr>
+<tr><th id="21">21</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="23">ifndef</span> <span class="macro" data-ref="_M/__I_SOUND__">__I_SOUND__</span></u></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/__I_SOUND__" data-ref="_M/__I_SOUND__">__I_SOUND__</dfn></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="doomdef.h.html">"doomdef.h"</a></u></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><i>// UNIX hack, to be removed.</i></td></tr>
+<tr><th id="29">29</th><td><u>#<span data-ppcond="29">ifdef</span> <a class="macro" href="doomdef.h.html#84" data-ref="_M/SNDSERV">SNDSERV</a></u></td></tr>
+<tr><th id="30">30</th><td><u>#include <a href="../include/stdio.h.html">&lt;stdio.h&gt;</a></u></td></tr>
+<tr><th id="31">31</th><td><b>extern</b> <a class="typedef" href="../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a>* <dfn class="decl" id="sndserver" title='sndserver' data-ref="sndserver">sndserver</dfn>;</td></tr>
+<tr><th id="32">32</th><td><b>extern</b> <em>char</em>* <dfn class="decl" id="sndserver_filename" title='sndserver_filename' data-ref="sndserver_filename">sndserver_filename</dfn>;</td></tr>
+<tr><th id="33">33</th><td><u>#<span data-ppcond="29">endif</span></u></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><u>#include <a href="doomstat.h.html">"doomstat.h"</a></u></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="sounds.h.html">"sounds.h"</a></u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><i>// Init at program start...</i></td></tr>
+<tr><th id="41">41</th><td><em>void</em> <dfn class="decl" id="I_InitSound" title='I_InitSound' data-ref="I_InitSound">I_InitSound</dfn>();</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><i>// ... update sound buffer and audio device at runtime...</i></td></tr>
+<tr><th id="44">44</th><td><em>void</em> <dfn class="decl" id="I_UpdateSound" title='I_UpdateSound' data-ref="I_UpdateSound">I_UpdateSound</dfn>(<em>void</em>);</td></tr>
+<tr><th id="45">45</th><td><em>void</em> <dfn class="decl" id="I_SubmitSound" title='I_SubmitSound' data-ref="I_SubmitSound">I_SubmitSound</dfn>(<em>void</em>);</td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><i>// ... shut down and relase at program termination.</i></td></tr>
+<tr><th id="48">48</th><td><em>void</em> <dfn class="decl" id="I_ShutdownSound" title='I_ShutdownSound' data-ref="I_ShutdownSound">I_ShutdownSound</dfn>(<em>void</em>);</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><i>//</i></td></tr>
+<tr><th id="52">52</th><td><i>//  SFX I/O</i></td></tr>
+<tr><th id="53">53</th><td><i>//</i></td></tr>
+<tr><th id="54">54</th><td><i></i></td></tr>
+<tr><th id="55">55</th><td><i>// Initialize channels?</i></td></tr>
+<tr><th id="56">56</th><td><em>void</em> <dfn class="decl" id="I_SetChannels" title='I_SetChannels' data-ref="I_SetChannels">I_SetChannels</dfn>();</td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td><i>// Get raw data lump index for sound descriptor.</i></td></tr>
+<tr><th id="59">59</th><td><em>int</em> <dfn class="decl" id="I_GetSfxLumpNum" title='I_GetSfxLumpNum' data-ref="I_GetSfxLumpNum">I_GetSfxLumpNum</dfn> (<a class="typedef" href="sounds.h.html#sfxinfo_t" title='sfxinfo_t' data-type='struct sfxinfo_struct' data-ref="sfxinfo_t">sfxinfo_t</a>* <dfn class="local col5 decl" id="495sfxinfo" title='sfxinfo' data-type='sfxinfo_t *' data-ref="495sfxinfo">sfxinfo</dfn> );</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><i>// Starts a sound in a particular sound channel.</i></td></tr>
+<tr><th id="63">63</th><td><em>int</em></td></tr>
+<tr><th id="64">64</th><td><dfn class="decl" id="I_StartSound" title='I_StartSound' data-ref="I_StartSound">I_StartSound</dfn></td></tr>
+<tr><th id="65">65</th><td>( <em>int</em>		<dfn class="local col6 decl" id="496id" title='id' data-type='int' data-ref="496id">id</dfn>,</td></tr>
+<tr><th id="66">66</th><td>  <em>int</em>		<dfn class="local col7 decl" id="497vol" title='vol' data-type='int' data-ref="497vol">vol</dfn>,</td></tr>
+<tr><th id="67">67</th><td>  <em>int</em>		<dfn class="local col8 decl" id="498sep" title='sep' data-type='int' data-ref="498sep">sep</dfn>,</td></tr>
+<tr><th id="68">68</th><td>  <em>int</em>		<dfn class="local col9 decl" id="499pitch" title='pitch' data-type='int' data-ref="499pitch">pitch</dfn>,</td></tr>
+<tr><th id="69">69</th><td>  <em>int</em>		<dfn class="local col0 decl" id="500priority" title='priority' data-type='int' data-ref="500priority">priority</dfn> );</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td><i>// Stops a sound channel.</i></td></tr>
+<tr><th id="73">73</th><td><em>void</em> <dfn class="decl" id="I_StopSound" title='I_StopSound' data-ref="I_StopSound">I_StopSound</dfn>(<em>int</em> <dfn class="local col1 decl" id="501handle" title='handle' data-type='int' data-ref="501handle">handle</dfn>);</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td><i>// Called by S_*() functions</i></td></tr>
+<tr><th id="76">76</th><td><i>//  to see if a channel is still playing.</i></td></tr>
+<tr><th id="77">77</th><td><i>// Returns 0 if no longer playing, 1 if playing.</i></td></tr>
+<tr><th id="78">78</th><td><em>int</em> <dfn class="decl" id="I_SoundIsPlaying" title='I_SoundIsPlaying' data-ref="I_SoundIsPlaying">I_SoundIsPlaying</dfn>(<em>int</em> <dfn class="local col2 decl" id="502handle" title='handle' data-type='int' data-ref="502handle">handle</dfn>);</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><i>// Updates the volume, separation,</i></td></tr>
+<tr><th id="81">81</th><td><i>//  and pitch of a sound channel.</i></td></tr>
+<tr><th id="82">82</th><td><em>void</em></td></tr>
+<tr><th id="83">83</th><td><dfn class="decl" id="I_UpdateSoundParams" title='I_UpdateSoundParams' data-ref="I_UpdateSoundParams">I_UpdateSoundParams</dfn></td></tr>
+<tr><th id="84">84</th><td>( <em>int</em>		<dfn class="local col3 decl" id="503handle" title='handle' data-type='int' data-ref="503handle">handle</dfn>,</td></tr>
+<tr><th id="85">85</th><td>  <em>int</em>		<dfn class="local col4 decl" id="504vol" title='vol' data-type='int' data-ref="504vol">vol</dfn>,</td></tr>
+<tr><th id="86">86</th><td>  <em>int</em>		<dfn class="local col5 decl" id="505sep" title='sep' data-type='int' data-ref="505sep">sep</dfn>,</td></tr>
+<tr><th id="87">87</th><td>  <em>int</em>		<dfn class="local col6 decl" id="506pitch" title='pitch' data-type='int' data-ref="506pitch">pitch</dfn> );</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td><i>//</i></td></tr>
+<tr><th id="91">91</th><td><i>//  MUSIC I/O</i></td></tr>
+<tr><th id="92">92</th><td><i>//</i></td></tr>
+<tr><th id="93">93</th><td><em>void</em> <dfn class="decl" id="I_InitMusic" title='I_InitMusic' data-ref="I_InitMusic">I_InitMusic</dfn>(<em>void</em>);</td></tr>
+<tr><th id="94">94</th><td><em>void</em> <dfn class="decl" id="I_ShutdownMusic" title='I_ShutdownMusic' data-ref="I_ShutdownMusic">I_ShutdownMusic</dfn>(<em>void</em>);</td></tr>
+<tr><th id="95">95</th><td><i>// Volume.</i></td></tr>
+<tr><th id="96">96</th><td><em>void</em> <dfn class="decl" id="I_SetMusicVolume" title='I_SetMusicVolume' data-ref="I_SetMusicVolume">I_SetMusicVolume</dfn>(<em>int</em> <dfn class="local col7 decl" id="507volume" title='volume' data-type='int' data-ref="507volume">volume</dfn>);</td></tr>
+<tr><th id="97">97</th><td><i>// PAUSE game handling.</i></td></tr>
+<tr><th id="98">98</th><td><em>void</em> <dfn class="decl" id="I_PauseSong" title='I_PauseSong' data-ref="I_PauseSong">I_PauseSong</dfn>(<em>int</em> <dfn class="local col8 decl" id="508handle" title='handle' data-type='int' data-ref="508handle">handle</dfn>);</td></tr>
+<tr><th id="99">99</th><td><em>void</em> <dfn class="decl" id="I_ResumeSong" title='I_ResumeSong' data-ref="I_ResumeSong">I_ResumeSong</dfn>(<em>int</em> <dfn class="local col9 decl" id="509handle" title='handle' data-type='int' data-ref="509handle">handle</dfn>);</td></tr>
+<tr><th id="100">100</th><td><i>// Registers a song handle to song data.</i></td></tr>
+<tr><th id="101">101</th><td><em>int</em> <dfn class="decl" id="I_RegisterSong" title='I_RegisterSong' data-ref="I_RegisterSong">I_RegisterSong</dfn>(<em>void</em> *<dfn class="local col0 decl" id="510data" title='data' data-type='void *' data-ref="510data">data</dfn>);</td></tr>
+<tr><th id="102">102</th><td><i>// Called by anything that wishes to start music.</i></td></tr>
+<tr><th id="103">103</th><td><i>//  plays a song, and when the song is done,</i></td></tr>
+<tr><th id="104">104</th><td><i>//  starts playing it again in an endless loop.</i></td></tr>
+<tr><th id="105">105</th><td><i>// Horrible thing to do, considering.</i></td></tr>
+<tr><th id="106">106</th><td><em>void</em></td></tr>
+<tr><th id="107">107</th><td><dfn class="decl" id="I_PlaySong" title='I_PlaySong' data-ref="I_PlaySong">I_PlaySong</dfn></td></tr>
+<tr><th id="108">108</th><td>( <em>int</em>		<dfn class="local col1 decl" id="511handle" title='handle' data-type='int' data-ref="511handle">handle</dfn>,</td></tr>
+<tr><th id="109">109</th><td>  <em>int</em>		<dfn class="local col2 decl" id="512looping" title='looping' data-type='int' data-ref="512looping">looping</dfn> );</td></tr>
+<tr><th id="110">110</th><td><i>// Stops a song over 3 seconds.</i></td></tr>
+<tr><th id="111">111</th><td><em>void</em> <dfn class="decl" id="I_StopSong" title='I_StopSong' data-ref="I_StopSong">I_StopSong</dfn>(<em>int</em> <dfn class="local col3 decl" id="513handle" title='handle' data-type='int' data-ref="513handle">handle</dfn>);</td></tr>
+<tr><th id="112">112</th><td><i>// See above (register), then think backwards</i></td></tr>
+<tr><th id="113">113</th><td><em>void</em> <dfn class="decl" id="I_UnRegisterSong" title='I_UnRegisterSong' data-ref="I_UnRegisterSong">I_UnRegisterSong</dfn>(<em>int</em> <dfn class="local col4 decl" id="514handle" title='handle' data-type='int' data-ref="514handle">handle</dfn>);</td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><u>#<span data-ppcond="23">endif</span></u></td></tr>
+<tr><th id="118">118</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="119">119</th><td><i>//</i></td></tr>
+<tr><th id="120">120</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="121">121</th><td><i>//</i></td></tr>
+<tr><th id="122">122</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="123">123</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='d_main.c.html'>codebrowser/d_main.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

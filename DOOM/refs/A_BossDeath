@@ -1,0 +1,47 @@
+<dec f='codebrowser/info.c' l='108' type='void A_BossDeath()'/>
+<use f='codebrowser/info.c' l='533'/>
+<use f='codebrowser/info.c' l='533'/>
+<use f='codebrowser/info.c' l='533'/>
+<use f='codebrowser/info.c' l='533'/>
+<use f='codebrowser/info.c' l='684'/>
+<use f='codebrowser/info.c' l='684'/>
+<use f='codebrowser/info.c' l='684'/>
+<use f='codebrowser/info.c' l='684'/>
+<use f='codebrowser/info.c' l='767'/>
+<use f='codebrowser/info.c' l='767'/>
+<use f='codebrowser/info.c' l='767'/>
+<use f='codebrowser/info.c' l='767'/>
+<use f='codebrowser/info.c' l='795'/>
+<use f='codebrowser/info.c' l='795'/>
+<use f='codebrowser/info.c' l='795'/>
+<use f='codebrowser/info.c' l='795'/>
+<use f='codebrowser/info.c' l='836'/>
+<use f='codebrowser/info.c' l='836'/>
+<use f='codebrowser/info.c' l='836'/>
+<use f='codebrowser/info.c' l='836'/>
+<use f='codebrowser/info.c' l='533'/>
+<use f='codebrowser/info.c' l='533'/>
+<use f='codebrowser/info.c' l='533'/>
+<use f='codebrowser/info.c' l='533'/>
+<use f='codebrowser/info.c' l='684'/>
+<use f='codebrowser/info.c' l='684'/>
+<use f='codebrowser/info.c' l='684'/>
+<use f='codebrowser/info.c' l='684'/>
+<use f='codebrowser/info.c' l='767'/>
+<use f='codebrowser/info.c' l='767'/>
+<use f='codebrowser/info.c' l='767'/>
+<use f='codebrowser/info.c' l='767'/>
+<use f='codebrowser/info.c' l='795'/>
+<use f='codebrowser/info.c' l='795'/>
+<use f='codebrowser/info.c' l='795'/>
+<use f='codebrowser/info.c' l='795'/>
+<use f='codebrowser/info.c' l='836'/>
+<use f='codebrowser/info.c' l='836'/>
+<use f='codebrowser/info.c' l='836'/>
+<use f='codebrowser/info.c' l='836'/>
+<def f='codebrowser/p_enemy.c' l='1609' ll='1756' type='void A_BossDeath(mobj_t * mo)'/>
+<doc f='codebrowser/p_enemy.c' l='1604'>//
+// A_BossDeath
+// Possibly trigger special effects
+// if on first boss level
+//</doc>

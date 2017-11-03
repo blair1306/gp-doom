@@ -1,0 +1,24 @@
+<dec f='codebrowser/doomstat.h' l='253' type='gamestate_t'/>
+<doc f='codebrowser/doomstat.h' l='251'>// wipegamestate can be set to -1
+//  to force a wipe on the next draw</doc>
+<def f='codebrowser/d_main.c' l='188' type='gamestate_t'/>
+<use f='codebrowser/d_main.c' l='223' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='300' u='w' c='D_Display'/>
+<doc f='codebrowser/d_main.c' l='182'>//
+// D_Display
+//  draw current display, possibly wiping it from the previous
+//
+
+// wipegamestate can be set to -1 to force a wipe on the next draw</doc>
+<use f='codebrowser/f_finale.c' l='245' u='w' c='F_Ticker'/>
+<dec f='codebrowser/f_finale.c' l='374' type='gamestate_t'/>
+<use f='codebrowser/f_finale.c' l='379' u='w' c='F_StartCast'/>
+<doc f='codebrowser/f_finale.c' l='371'>//
+// F_StartCast
+//</doc>
+<dec f='codebrowser/g_game.c' l='443' type='gamestate_t'/>
+<use f='codebrowser/g_game.c' l='472' u='r' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='473' u='w' c='G_DoLoadLevel'/>
+<doc f='codebrowser/g_game.c' l='440'>//
+// G_DoLoadLevel 
+//</doc>

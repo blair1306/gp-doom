@@ -1,0 +1,47 @@
+<dec f='codebrowser/m_fixed.h' l='41' type='fixed_t FixedDiv(fixed_t a, fixed_t b)'/>
+<use f='codebrowser/am_map.c' l='318' u='c' c='AM_getIslope'/>
+<use f='codebrowser/am_map.c' l='320' u='c' c='AM_getIslope'/>
+<use f='codebrowser/am_map.c' l='370' u='c' c='AM_restoreScaleAndLoc'/>
+<use f='codebrowser/am_map.c' l='371' u='c' c='AM_restoreScaleAndLoc'/>
+<use f='codebrowser/am_map.c' l='417' u='c' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='418' u='c' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='421' u='c' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='548' u='c' c='AM_LevelInit'/>
+<use f='codebrowser/am_map.c' l='551' u='c' c='AM_LevelInit'/>
+<use f='codebrowser/am_map.c' l='595' u='c' c='AM_minOutWindowScale'/>
+<use f='codebrowser/am_map.c' l='605' u='c' c='AM_maxOutWindowScale'/>
+<use f='codebrowser/am_map.c' l='746' u='c' c='AM_changeWindowScale'/>
+<def f='codebrowser/m_fixed.c' l='57' ll='65' type='fixed_t FixedDiv(fixed_t a, fixed_t b)'/>
+<doc f='codebrowser/m_fixed.c' l='53'>//
+// FixedDiv, C version.
+//</doc>
+<use f='codebrowser/p_map.c' l='844' u='c' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='851' u='c' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='872' u='c' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='877' u='c' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='932' u='c' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='939' u='c' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='951' u='c' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='984' u='c' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='989' u='c' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='997' u='c' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_maputl.c' l='250' u='c' c='P_InterceptVector'/>
+<use f='codebrowser/p_maputl.c' l='802' u='c' c='P_PathTraverse'/>
+<use f='codebrowser/p_maputl.c' l='808' u='c' c='P_PathTraverse'/>
+<use f='codebrowser/p_maputl.c' l='824' u='c' c='P_PathTraverse'/>
+<use f='codebrowser/p_maputl.c' l='830' u='c' c='P_PathTraverse'/>
+<use f='codebrowser/p_setup.c' l='389' u='c' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_sight.c' l='125' u='c' c='P_InterceptVector2'/>
+<use f='codebrowser/p_sight.c' l='231' u='c' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='238' u='c' c='P_CrossSubsector'/>
+<use f='codebrowser/r_main.c' l='412' u='c' c='R_PointToDist'/>
+<use f='codebrowser/r_main.c' l='415' u='c' c='R_PointToDist'/>
+<use f='codebrowser/r_main.c' l='491' u='c' c='R_ScaleFromGlobalAngle'/>
+<use f='codebrowser/r_main.c' l='557' u='c' c='R_InitTextureMapping'/>
+<use f='codebrowser/r_main.c' l='629' u='c' c='R_InitLightTables'/>
+<use f='codebrowser/r_main.c' l='734' u='c' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_main.c' l='740' u='c' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_plane.c' l='207' u='c' c='R_ClearPlanes'/>
+<use f='codebrowser/r_plane.c' l='208' u='c' c='R_ClearPlanes'/>
+<use f='codebrowser/r_things.c' l='495' u='c' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='560' u='c' c='R_ProjectSprite'/>

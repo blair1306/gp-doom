@@ -1,0 +1,2 @@
+<def f='codebrowser/i_video.c' l='281' ll='304' type='Cursor createnullcursor(Display * display, Window root)'/>
+<use f='codebrowser/i_video.c' l='820' u='c' c='I_InitGraphics'/>

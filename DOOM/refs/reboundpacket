@@ -1,0 +1,4 @@
+<def f='codebrowser/d_net.c' l='82' type='boolean'/>
+<use f='codebrowser/d_net.c' l='152' u='w' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='194' u='r' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='198' u='w' c='HGetPacket'/>

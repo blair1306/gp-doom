@@ -1,0 +1,20 @@
+<dec f='codebrowser/r_plane.h' l='43' type='short [320]'/>
+<def f='codebrowser/r_plane.c' l='69' type='short [320]'/>
+<use f='codebrowser/r_plane.c' l='193' u='w' c='R_ClearPlanes'/>
+<doc f='codebrowser/r_plane.c' l='64'>//
+// Clip values are the solid pixel bounding the range.
+//  floorclip starts out SCREENHEIGHT
+//  ceilingclip starts out -1
+//</doc>
+<use f='codebrowser/r_segs.c' l='233' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='234' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='245' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='246' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='251' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='289' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='300' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='301' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='340' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='343' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='349' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='729' u='r' c='R_StoreWallRange'/>

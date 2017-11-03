@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_spec.h' l='193' type='void EV_TurnTagLightsOff(line_t * line)'/>
+<def f='codebrowser/p_lights.c' l='236' ll='264' type='void EV_TurnTagLightsOff(line_t * line)'/>
+<doc f='codebrowser/p_lights.c' l='233'>//
+// TURN LINE&apos;S TAG LIGHTS OFF
+//</doc>
+<use f='codebrowser/p_spec.c' l='720' u='c' c='P_CrossSpecialLine'/>

@@ -1,0 +1,4 @@
+<def f='codebrowser/i_sound.c' l='152' type='int *[8]'/>
+<use f='codebrowser/i_sound.c' l='373' u='w' c='addsfx'/>
+<use f='codebrowser/i_sound.c' l='597' u='r' c='I_UpdateSound'/>
+<doc f='codebrowser/i_sound.c' l='151'>// Hardware left and right channel volume lookup.</doc>

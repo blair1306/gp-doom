@@ -1,0 +1,7 @@
+<def f='codebrowser/f_finale.c' l='363' type='int'/>
+<use f='codebrowser/f_finale.c' l='382' u='w' c='F_StartCast'/>
+<use f='codebrowser/f_finale.c' l='400' u='w' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='492' u='w' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='493' u='r' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='494' u='w' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='513' u='w' c='F_CastResponder'/>

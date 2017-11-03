@@ -1,0 +1,23 @@
+<dec f='codebrowser/doomdata.h' l='90' type='short'/>
+<dec f='codebrowser/doomdata.h' l='149' type='short'/>
+<dec f='codebrowser/r_defs.h' l='109' type='short'/>
+<dec f='codebrowser/p_spec.h' l='297' type='int'/>
+<dec f='codebrowser/p_spec.h' l='507' type='int'/>
+<offset>480</offset>
+<doc f='codebrowser/p_spec.h' l='506'>// ID</doc>
+<use f='codebrowser/p_ceilng.c' l='240' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='240' u='r' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='298' u='r' c='P_ActivateInStasisCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='323' u='r' c='EV_CeilingCrushStop'/>
+<use f='codebrowser/p_lights.c' l='249' u='r' c='EV_TurnTagLightsOff'/>
+<use f='codebrowser/p_lights.c' l='285' u='r' c='EV_LightTurnOn'/>
+<use f='codebrowser/p_plats.c' l='181' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='264' u='r' c='P_ActivateInStasis'/>
+<use f='codebrowser/p_plats.c' l='280' u='r' c='EV_StopPlat'/>
+<use f='codebrowser/p_saveg.c' l='134' u='r' c='P_ArchiveWorld'/>
+<use f='codebrowser/p_saveg.c' l='187' u='w' c='P_UnArchiveWorld'/>
+<use f='codebrowser/p_setup.c' l='253' u='w' c='P_LoadSectors'/>
+<use f='codebrowser/p_setup.c' l='253' u='r' c='P_LoadSectors'/>
+<use f='codebrowser/p_setup.c' l='377' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_spec.c' l='441' u='r' c='P_FindSectorFromLineTag'/>
+<use f='codebrowser/p_telept.c' l='77' u='r' c='EV_Teleport'/>

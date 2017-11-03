@@ -1,0 +1,3 @@
+<dec f='codebrowser/doomdata.h' l='129'/>
+<doc f='codebrowser/doomdata.h' l='128'>// Sound rendering: don&apos;t let sound cross two of these.</doc>
+<use f='codebrowser/p_enemy.c' l='141' u='c'/>

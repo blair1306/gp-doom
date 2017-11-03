@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_spec.h' l='498' type='fixed_t'/>
+<offset>320</offset>
+<use f='codebrowser/p_ceilng.c' l='109' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='215' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='226' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='228' u='w' c='EV_DoCeiling'/>

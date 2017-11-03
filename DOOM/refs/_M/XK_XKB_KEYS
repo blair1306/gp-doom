@@ -1,0 +1,5 @@
+<dec f='include/X11/keysym.h' l='50'/>
+<use f='include/X11/keysymdef.h' l='338' u='a'/>
+<use f='include/X11/Xutil.h' l='257' u='a'/>
+<dec f='include/X11/keysym.h' l='50'/>
+<use f='include/X11/keysymdef.h' l='338' u='a'/>

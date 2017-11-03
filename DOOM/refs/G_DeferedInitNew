@@ -1,0 +1,8 @@
+<dec f='codebrowser/g_game.h' l='41' type='void G_DeferedInitNew(skill_t skill, int episode, int map)'/>
+<doc f='codebrowser/g_game.h' l='38'>// Can be called by the startup code or M_Responder.
+// A normal game starts at map 1,
+// but a warp test can start elsewhere</doc>
+<def f='codebrowser/g_game.c' l='1332' ll='1342' type='void G_DeferedInitNew(skill_t skill, int episode, int map)'/>
+<use f='codebrowser/m_menu.c' l='903' u='c' c='M_VerifyNightmare'/>
+<use f='codebrowser/m_menu.c' l='915' u='c' c='M_ChooseSkill'/>
+<use f='codebrowser/st_stuff.c' l='721' u='c' c='ST_Responder'/>

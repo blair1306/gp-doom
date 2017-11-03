@@ -1,0 +1,17 @@
+<dec f='codebrowser/w_wad.h' l='69' type='void W_InitMultipleFiles(char ** filenames)'/>
+<use f='codebrowser/d_main.c' l='1021' u='c' c='D_DoomMain'/>
+<def f='codebrowser/w_wad.c' l='292' ll='316' type='void W_InitMultipleFiles(char ** filenames)'/>
+<use f='codebrowser/w_wad.c' l='331' u='c' c='W_InitFile'/>
+<doc f='codebrowser/w_wad.c' l='279'>//
+// W_InitMultipleFiles
+// Pass a null terminated list of files to use.
+// All files are optional, but at least one file
+//  must be found.
+// Files with a .wad extension are idlink files
+//  with multiple lumps.
+// Other files are single lumps with the base filename
+//  for the lump name.
+// Lump names can appear multiple times.
+// The name searcher looks backwards, so a later file
+//  does override all earlier ones.
+//</doc>

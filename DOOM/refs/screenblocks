@@ -1,0 +1,13 @@
+<def f='codebrowser/m_menu.c' l='84' type='int'/>
+<use f='codebrowser/m_menu.c' l='1159' u='w' c='M_SizeDisplay'/>
+<use f='codebrowser/m_menu.c' l='1166' u='w' c='M_SizeDisplay'/>
+<use f='codebrowser/m_menu.c' l='1173' u='r' c='M_SizeDisplay'/>
+<use f='codebrowser/m_menu.c' l='1854' u='r' c='M_Init'/>
+<doc f='codebrowser/m_menu.c' l='84'>// has default</doc>
+<dec f='codebrowser/m_misc.c' l='202' type='int'/>
+<use f='codebrowser/m_misc.c' l='282' u='a'/>
+<use f='codebrowser/m_misc.c' l='282' u='a'/>
+<use f='codebrowser/m_misc.c' l='282' u='a'/>
+<use f='codebrowser/m_misc.c' l='282' u='a'/>
+<dec f='codebrowser/r_main.c' l='769' type='int'/>
+<use f='codebrowser/r_main.c' l='783' u='r' c='R_Init'/>

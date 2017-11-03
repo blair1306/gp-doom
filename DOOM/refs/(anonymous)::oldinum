@@ -1,0 +1,11 @@
+<dec f='codebrowser/st_lib.h' l='96' type='int'/>
+<use f='codebrowser/st_lib.c' l='203' u='w' c='STlib_initMultIcon'/>
+<use f='codebrowser/st_lib.c' l='222' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='225' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='227' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='228' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='229' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='230' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='238' u='w' c='STlib_updateMultIcon'/>
+<offset>64</offset>
+<doc f='codebrowser/st_lib.h' l='95'>// last icon number</doc>

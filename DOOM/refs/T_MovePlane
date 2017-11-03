@@ -1,0 +1,16 @@
+<dec f='codebrowser/p_spec.h' l='611' type='result_e T_MovePlane(sector_t * sector, fixed_t speed, fixed_t dest, boolean crush, int floorOrCeiling, int direction)'/>
+<use f='codebrowser/p_ceilng.c' l='63' u='c' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='107' u='c' c='T_MoveCeiling'/>
+<use f='codebrowser/p_doors.c' l='120' u='c' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='170' u='c' c='T_VerticalDoor'/>
+<def f='codebrowser/p_floor.c' l='48' ll='203' type='result_e T_MovePlane(sector_t * sector, fixed_t speed, fixed_t dest, boolean crush, int floorOrCeiling, int direction)'/>
+<use f='codebrowser/p_floor.c' l='213' u='c' c='T_MoveFloor'/>
+<doc f='codebrowser/p_floor.c' l='41'>//
+// FLOORS
+//
+
+//
+// Move a plane (floor or ceiling) and check for crushing
+//</doc>
+<use f='codebrowser/p_plats.c' l='59' u='c' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='109' u='c' c='T_PlatRaise'/>

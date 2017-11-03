@@ -1,0 +1,3 @@
+<def f='codebrowser/i_sound.c' l='918' ll='939' type='void I_HandleSoundTimer(int ignore)'/>
+<use f='codebrowser/i_sound.c' l='956' u='r' c='I_SoundSetTimer'/>
+<doc f='codebrowser/i_sound.c' l='917'>// Interrupt handler.</doc>

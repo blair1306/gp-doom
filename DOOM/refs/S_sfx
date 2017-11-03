@@ -1,0 +1,14 @@
+<dec f='codebrowser/sounds.h' l='90' type='sfxinfo_t []'/>
+<doc f='codebrowser/sounds.h' l='89'>// the complete set of sound effects</doc>
+<use f='codebrowser/i_sound.c' l='331' u='m' c='addsfx'/>
+<use f='codebrowser/s_sound.c' l='191' u='m' c='S_Init'/>
+<use f='codebrowser/s_sound.c' l='191' u='m' c='S_Init'/>
+<use f='codebrowser/s_sound.c' l='280' u='a' c='S_StartSoundAtVolume'/>
+<def f='codebrowser/sounds.c' l='114' ll='227' type='sfxinfo_t [109]'/>
+<use f='codebrowser/sounds.c' l='204' u='a'/>
+<use f='codebrowser/sounds.c' l='204' u='a'/>
+<use f='codebrowser/sounds.c' l='204' u='a'/>
+<use f='codebrowser/sounds.c' l='204' u='a'/>
+<doc f='codebrowser/sounds.c' l='110'>//
+// Information about all the sfx
+//</doc>

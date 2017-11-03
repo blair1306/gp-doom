@@ -1,0 +1,22 @@
+<dec f='include/string.h' l='125' type='char * strcpy(char *restrict __dest, const char *restrict __src)'/>
+<doc f='include/string.h' l='124'>/* Copy SRC to DEST.  */</doc>
+<use f='codebrowser/d_main.c' l='552' u='c' c='D_AddFile'/>
+<use f='codebrowser/d_main.c' l='624' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='636' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='654' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='881' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_net.c' l='289' u='c' c='GetPackets'/>
+<use f='codebrowser/g_game.c' l='716' u='c' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1194' u='c' c='G_LoadGame'/>
+<use f='codebrowser/g_game.c' l='1266' u='c' c='G_SaveGame'/>
+<use f='codebrowser/g_game.c' l='1536' u='c' c='G_RecordDemo'/>
+<use f='codebrowser/hu_stuff.c' l='724' u='c' c='HU_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='748' u='c' c='HU_Responder'/>
+<use f='codebrowser/m_menu.c' l='528' u='c' c='M_ReadSaveStrings'/>
+<use f='codebrowser/m_menu.c' l='650' u='c' c='M_SaveSelect'/>
+<use f='codebrowser/m_menu.c' l='1467' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1770' u='c' c='M_Drawer'/>
+<use f='codebrowser/m_misc.c' l='385' u='c' c='M_LoadDefaults'/>
+<use f='codebrowser/m_misc.c' l='517' u='c' c='M_ScreenShot'/>
+<use f='codebrowser/wi_stuff.c' l='1546' u='c' c='WI_loadData'/>
+<use f='codebrowser/wi_stuff.c' l='1553' u='c' c='WI_loadData'/>

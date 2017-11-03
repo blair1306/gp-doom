@@ -1,0 +1,30 @@
+<dec f='codebrowser/hu_lib.h' l='72' type='boolean *'/>
+<dec f='codebrowser/hu_lib.h' l='89' type='boolean *'/>
+<use f='codebrowser/hu_lib.c' l='190' u='w' c='HUlib_initSText'/>
+<use f='codebrowser/hu_lib.c' l='236' u='r' c='HUlib_drawSText'/>
+<use f='codebrowser/hu_lib.c' l='261' u='r' c='HUlib_eraseSText'/>
+<use f='codebrowser/hu_lib.c' l='265' u='r' c='HUlib_eraseSText'/>
+<use f='codebrowser/hu_lib.c' l='279' u='w' c='HUlib_initIText'/>
+<use f='codebrowser/hu_lib.c' l='341' u='r' c='HUlib_drawIText'/>
+<use f='codebrowser/hu_lib.c' l='349' u='r' c='HUlib_eraseIText'/>
+<use f='codebrowser/hu_lib.c' l='352' u='r' c='HUlib_eraseIText'/>
+<offset>960</offset>
+<doc f='codebrowser/hu_lib.h' l='71'>// pointer to boolean stating whether to update window</doc>
+<doc f='codebrowser/hu_lib.h' l='88'>// pointer to boolean stating whether to update window</doc>
+<dec f='codebrowser/st_lib.h' l='62' type='boolean *'/>
+<dec f='codebrowser/st_lib.h' l='103' type='boolean *'/>
+<dec f='codebrowser/st_lib.h' l='132' type='boolean *'/>
+<use f='codebrowser/st_lib.c' l='80' u='w' c='STlib_initNum'/>
+<use f='codebrowser/st_lib.c' l='157' u='r' c='STlib_updateNum'/>
+<use f='codebrowser/st_lib.c' l='184' u='r' c='STlib_updatePercent'/>
+<use f='codebrowser/st_lib.c' l='205' u='w' c='STlib_initMultIcon'/>
+<use f='codebrowser/st_lib.c' l='221' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='257' u='w' c='STlib_initBinIcon'/>
+<use f='codebrowser/st_lib.c' l='273' u='r' c='STlib_updateBinIcon'/>
+<offset>192</offset>
+<doc f='codebrowser/st_lib.h' l='60'>// pointer to boolean stating
+    //  whether to update number</doc>
+<doc f='codebrowser/st_lib.h' l='101'>// pointer to boolean stating
+    //  whether to update icon</doc>
+<doc f='codebrowser/st_lib.h' l='130'>// pointer to boolean
+    //  stating whether to update icon</doc>

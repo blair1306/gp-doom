@@ -1,0 +1,2 @@
+<dec f='codebrowser/sounds.h' l='269' type='90'/>
+<use f='codebrowser/p_mobj.c' l='610' u='r' c='P_RespawnSpecials'/>

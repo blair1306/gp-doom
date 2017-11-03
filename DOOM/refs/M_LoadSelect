@@ -1,0 +1,30 @@
+<dec f='codebrowser/m_menu.c' l='204' type='void M_LoadSelect(int choice)'/>
+<use f='codebrowser/m_menu.c' l='465'/>
+<use f='codebrowser/m_menu.c' l='465'/>
+<use f='codebrowser/m_menu.c' l='466'/>
+<use f='codebrowser/m_menu.c' l='466'/>
+<use f='codebrowser/m_menu.c' l='467'/>
+<use f='codebrowser/m_menu.c' l='467'/>
+<use f='codebrowser/m_menu.c' l='468'/>
+<use f='codebrowser/m_menu.c' l='468'/>
+<use f='codebrowser/m_menu.c' l='469'/>
+<use f='codebrowser/m_menu.c' l='469'/>
+<use f='codebrowser/m_menu.c' l='470'/>
+<use f='codebrowser/m_menu.c' l='470'/>
+<use f='codebrowser/m_menu.c' l='465'/>
+<use f='codebrowser/m_menu.c' l='465'/>
+<use f='codebrowser/m_menu.c' l='466'/>
+<use f='codebrowser/m_menu.c' l='466'/>
+<use f='codebrowser/m_menu.c' l='467'/>
+<use f='codebrowser/m_menu.c' l='467'/>
+<use f='codebrowser/m_menu.c' l='468'/>
+<use f='codebrowser/m_menu.c' l='468'/>
+<use f='codebrowser/m_menu.c' l='469'/>
+<use f='codebrowser/m_menu.c' l='469'/>
+<use f='codebrowser/m_menu.c' l='470'/>
+<use f='codebrowser/m_menu.c' l='470'/>
+<def f='codebrowser/m_menu.c' l='579' ll='589' type='void M_LoadSelect(int choice)'/>
+<use f='codebrowser/m_menu.c' l='722' u='c' c='M_QuickLoadResponse'/>
+<doc f='codebrowser/m_menu.c' l='576'>//
+// User wants to load this game
+//</doc>

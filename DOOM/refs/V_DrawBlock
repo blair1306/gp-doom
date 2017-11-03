@@ -1,0 +1,8 @@
+<dec f='codebrowser/v_video.h' l='88' type='void V_DrawBlock(int x, int y, int scrn, int width, int height, byte * src)'/>
+<doc f='codebrowser/v_video.h' l='86'>// Draw a linear block of pixels into the view buffer.</doc>
+<use f='codebrowser/f_wipe.c' l='257' u='c' c='wipe_EndScreen'/>
+<def f='codebrowser/v_video.c' l='404' ll='436' type='void V_DrawBlock(int x, int y, int scrn, int width, int height, byte * src)'/>
+<doc f='codebrowser/v_video.c' l='400'>//
+// V_DrawBlock
+// Draw a linear block of pixels into the view buffer.
+//</doc>

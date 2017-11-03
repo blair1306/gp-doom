@@ -1,0 +1,30 @@
+<dec f='codebrowser/p_local.h' l='74' type='void P_AddThinker(thinker_t * thinker)'/>
+<use f='codebrowser/p_ceilng.c' l='204' u='c' c='EV_DoCeiling'/>
+<use f='codebrowser/p_doors.c' l='285' u='c' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='460' u='c' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='511' u='c' c='P_SpawnDoorCloseIn30'/>
+<use f='codebrowser/p_doors.c' l='536' u='c' c='P_SpawnDoorRaiseIn5Mins'/>
+<use f='codebrowser/p_floor.c' l='283' u='c' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='486' u='c' c='EV_BuildStairs'/>
+<use f='codebrowser/p_floor.c' l='540' u='c' c='EV_BuildStairs'/>
+<use f='codebrowser/p_lights.c' l='78' u='c' c='P_SpawnFireFlicker'/>
+<use f='codebrowser/p_lights.c' l='133' u='c' c='P_SpawnLightFlash'/>
+<use f='codebrowser/p_lights.c' l='190' u='c' c='P_SpawnStrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='347' u='c' c='P_SpawnGlowingLight'/>
+<use f='codebrowser/p_mobj.c' l='531' u='c' c='P_SpawnMobj'/>
+<use f='codebrowser/p_plats.c' l='174' u='c' c='EV_DoPlat'/>
+<use f='codebrowser/p_saveg.c' l='314' u='c' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='507' u='c' c='P_UnArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='519' u='c' c='P_UnArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='530' u='c' c='P_UnArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='544' u='c' c='P_UnArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='555' u='c' c='P_UnArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='565' u='c' c='P_UnArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='575' u='c' c='P_UnArchiveSpecials'/>
+<use f='codebrowser/p_spec.c' l='1194' u='c' c='EV_DoDonut'/>
+<use f='codebrowser/p_spec.c' l='1208' u='c' c='EV_DoDonut'/>
+<def f='codebrowser/p_tick.c' l='65' ll='71' type='void P_AddThinker(thinker_t * thinker)'/>
+<doc f='codebrowser/p_tick.c' l='61'>//
+// P_AddThinker
+// Adds a new thinker at the end of the list.
+//</doc>

@@ -1,0 +1,5 @@
+<def f='codebrowser/r_data.c' l='296' ll='374' type='void R_GenerateLookup(int texnum)'/>
+<use f='codebrowser/r_data.c' l='567' u='c' c='R_InitTextures'/>
+<doc f='codebrowser/r_data.c' l='293'>//
+// R_GenerateLookup
+//</doc>

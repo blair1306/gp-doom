@@ -1,0 +1,5 @@
+<def f='codebrowser/d_net.c' l='75' type='int'/>
+<use f='codebrowser/d_net.c' l='582' u='w' c='D_CheckNetGame'/>
+<use f='codebrowser/d_net.c' l='583' u='r' c='D_CheckNetGame'/>
+<use f='codebrowser/d_net.c' l='584' u='w' c='D_CheckNetGame'/>
+<doc f='codebrowser/d_net.c' l='75'>// BACKUPTICS/(2*ticdup)-1</doc>

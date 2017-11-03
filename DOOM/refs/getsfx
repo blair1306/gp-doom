@@ -1,0 +1,5 @@
+<def f='codebrowser/i_sound.c' l='186' ll='252' type='void * getsfx(char * sfxname, int * len)'/>
+<doc f='codebrowser/i_sound.c' l='182'>//
+// This function loads the sound data from the WAD lump,
+//  for single sound.
+//</doc>

@@ -1,0 +1,2 @@
+<def f='codebrowser/st_stuff.c' l='1102' ll='1106' type='void ST_diffDraw()'/>
+<use f='codebrowser/st_stuff.c' l='1120' u='c' c='ST_Drawer'/>

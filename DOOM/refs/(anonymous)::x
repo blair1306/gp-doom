@@ -1,0 +1,129 @@
+<dec f='codebrowser/doomdata.h' l='62' type='short'/>
+<dec f='codebrowser/doomdata.h' l='183' type='short'/>
+<dec f='codebrowser/doomdata.h' l='205' type='short'/>
+<dec f='codebrowser/r_defs.h' l='73' type='fixed_t'/>
+<dec f='codebrowser/r_defs.h' l='91' type='fixed_t'/>
+<dec f='codebrowser/r_defs.h' l='268' type='fixed_t'/>
+<dec f='codebrowser/p_local.h' l='137' type='fixed_t'/>
+<use f='codebrowser/am_map.c' l='400' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='401' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='402' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='403' u='r' c='AM_findMinMaxBoundaries'/>
+<use f='codebrowser/am_map.c' l='1124' u='r' c='AM_drawWalls'/>
+<use f='codebrowser/am_map.c' l='1126' u='r' c='AM_drawWalls'/>
+<offset>0</offset>
+<doc f='codebrowser/r_defs.h' l='267'>// Partition line.</doc>
+<doc f='codebrowser/doomdata.h' l='182'>// Partition line from (x,y) to x+dx,y+dy)</doc>
+<use f='codebrowser/g_game.c' l='859' u='r' c='G_CheckSpot'/>
+<use f='codebrowser/g_game.c' l='865' u='r' c='G_CheckSpot'/>
+<dec f='codebrowser/hu_lib.h' l='48' type='int'/>
+<use f='codebrowser/hu_lib.c' l='61' u='w' c='HUlib_initTextLine'/>
+<use f='codebrowser/hu_lib.c' l='111' u='r' c='HUlib_drawTextLine'/>
+<offset>0</offset>
+<doc f='codebrowser/hu_lib.h' l='47'>// left-justified position of scrolling text window</doc>
+<dec f='include/X11/Xlib.h' l='309' type='int'/>
+<dec f='include/X11/Xlib.h' l='400' type='int'/>
+<dec f='include/X11/Xlib.h' l='427' type='short'/>
+<dec f='include/X11/Xlib.h' l='431' type='short'/>
+<dec f='include/X11/Xlib.h' l='436' type='short'/>
+<dec f='include/X11/Xlib.h' l='470' type='short'/>
+<dec f='include/X11/Xlib.h' l='566' type='int'/>
+<dec f='include/X11/Xlib.h' l='584' type='int'/>
+<dec f='include/X11/Xlib.h' l='602' type='int'/>
+<dec f='include/X11/Xlib.h' l='619' type='int'/>
+<dec f='include/X11/Xlib.h' l='668' type='int'/>
+<dec f='include/X11/Xlib.h' l='679' type='int'/>
+<dec f='include/X11/Xlib.h' l='712' type='int'/>
+<dec f='include/X11/Xlib.h' l='764' type='int'/>
+<dec f='include/X11/Xlib.h' l='775' type='int'/>
+<dec f='include/X11/Xlib.h' l='789' type='int'/>
+<dec f='include/X11/Xlib.h' l='808' type='int'/>
+<dec f='include/X11/Xutil.h' l='83' type='int'/>
+<use f='codebrowser/i_video.c' l='250' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='255' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='257' u='r' c='I_GetEvent'/>
+<offset>64</offset>
+<use f='codebrowser/p_map.c' l='952' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='999' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_maputl.c' l='78' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='91' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='130' u='r' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='131' u='r' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='173' u='r' c='P_PointOnDivlineSide'/>
+<use f='codebrowser/p_maputl.c' l='186' u='r' c='P_PointOnDivlineSide'/>
+<use f='codebrowser/p_maputl.c' l='215' u='w' c='P_MakeDivline'/>
+<use f='codebrowser/p_maputl.c' l='215' u='r' c='P_MakeDivline'/>
+<use f='codebrowser/p_maputl.c' l='247' u='r' c='P_InterceptVector'/>
+<use f='codebrowser/p_maputl.c' l='247' u='r' c='P_InterceptVector'/>
+<use f='codebrowser/p_maputl.c' l='575' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='576' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='580' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='581' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='658' u='w' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='783' u='w' c='P_PathTraverse'/>
+<use f='codebrowser/p_mobj.c' l='366' u='r' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='604' u='r' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='662' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_mobj.c' l='761' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_mobj.c' l='776' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_setup.c' l='146' u='w' c='P_LoadVertexes'/>
+<use f='codebrowser/p_setup.c' l='146' u='r' c='P_LoadVertexes'/>
+<use f='codebrowser/p_setup.c' l='282' u='w' c='P_LoadNodes'/>
+<use f='codebrowser/p_setup.c' l='282' u='r' c='P_LoadNodes'/>
+<use f='codebrowser/p_setup.c' l='340' u='w' c='P_LoadThings'/>
+<use f='codebrowser/p_setup.c' l='340' u='r' c='P_LoadThings'/>
+<use f='codebrowser/p_setup.c' l='380' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='380' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='395' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='395' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='397' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='398' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='402' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='403' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='548' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='549' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='556' u='w' c='P_GroupLines'/>
+<use f='codebrowser/p_sight.c' l='67' u='r' c='P_DivlineSide'/>
+<use f='codebrowser/p_sight.c' l='70' u='r' c='P_DivlineSide'/>
+<use f='codebrowser/p_sight.c' l='87' u='r' c='P_DivlineSide'/>
+<use f='codebrowser/p_sight.c' l='123' u='r' c='P_InterceptVector2'/>
+<use f='codebrowser/p_sight.c' l='123' u='r' c='P_InterceptVector2'/>
+<use f='codebrowser/p_sight.c' l='178' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='179' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='185' u='w' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='185' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='187' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='187' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='189' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='273' u='r' c='P_CrossBSPNode'/>
+<use f='codebrowser/p_sight.c' l='338' u='w' c='P_CheckSight'/>
+<use f='codebrowser/r_bsp.c' l='271' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='272' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_main.c' l='174' u='r' c='R_PointOnSide'/>
+<use f='codebrowser/r_main.c' l='187' u='r' c='R_PointOnSide'/>
+<use f='codebrowser/r_main.c' l='229' u='r' c='R_PointOnSegSide'/>
+<use f='codebrowser/r_main.c' l='232' u='r' c='R_PointOnSegSide'/>
+<use f='codebrowser/r_segs.c' l='126' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='126' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='408' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='648' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='648' u='r' c='R_StoreWallRange'/>
+<dec f='codebrowser/st_lib.h' l='48' type='int'/>
+<dec f='codebrowser/st_lib.h' l='92' type='int'/>
+<dec f='codebrowser/st_lib.h' l='121' type='int'/>
+<use f='codebrowser/st_lib.c' l='75' u='w' c='STlib_initNum'/>
+<use f='codebrowser/st_lib.c' l='101' u='r' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='120' u='r' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='131' u='r' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='185' u='r' c='STlib_updatePercent'/>
+<use f='codebrowser/st_lib.c' l='201' u='w' c='STlib_initMultIcon'/>
+<use f='codebrowser/st_lib.c' l='227' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='237' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='253' u='w' c='STlib_initBinIcon'/>
+<use f='codebrowser/st_lib.c' l='276' u='r' c='STlib_updateBinIcon'/>
+<use f='codebrowser/st_lib.c' l='285' u='r' c='STlib_updateBinIcon'/>
+<offset>0</offset>
+<doc f='codebrowser/st_lib.h' l='46'>// upper right-hand corner
+    //  of the number (right-justified)</doc>
+<doc f='codebrowser/st_lib.h' l='91'>// center-justified location of icons</doc>
+<doc f='codebrowser/st_lib.h' l='120'>// center-justified location of icon</doc>

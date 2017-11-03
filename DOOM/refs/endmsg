@@ -1,0 +1,4 @@
+<dec f='codebrowser/dstrings.h' l='58' type='char *[]'/>
+<def f='codebrowser/dstrings.c' l='35' ll='67' type='char *[23]'/>
+<use f='codebrowser/m_menu.c' l='1103' u='r' c='M_QuitDOOM'/>
+<use f='codebrowser/m_menu.c' l='1105' u='r' c='M_QuitDOOM'/>

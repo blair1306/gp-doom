@@ -1,0 +1,5 @@
+<def f='codebrowser/i_sound.c' l='149' type='int [32768]'/>
+<use f='codebrowser/i_sound.c' l='373' u='a' c='addsfx'/>
+<use f='codebrowser/i_sound.c' l='374' u='a' c='addsfx'/>
+<use f='codebrowser/i_sound.c' l='424' u='w' c='I_SetChannels'/>
+<doc f='codebrowser/i_sound.c' l='148'>// Volume lookups.</doc>

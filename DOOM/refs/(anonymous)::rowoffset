@@ -1,0 +1,12 @@
+<dec f='codebrowser/doomdata.h' l='72' type='short'/>
+<dec f='codebrowser/r_defs.h' l='150' type='fixed_t'/>
+<offset>32</offset>
+<doc f='codebrowser/r_defs.h' l='149'>// add this to the calculated texture top</doc>
+<use f='codebrowser/p_saveg.c' l='152' u='r' c='P_ArchiveWorld'/>
+<use f='codebrowser/p_saveg.c' l='204' u='w' c='P_UnArchiveWorld'/>
+<use f='codebrowser/p_setup.c' l='455' u='w' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_setup.c' l='455' u='r' c='P_LoadSideDefs'/>
+<use f='codebrowser/r_segs.c' l='156' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='474' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='603' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='604' u='r' c='R_StoreWallRange'/>

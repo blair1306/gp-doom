@@ -1,0 +1,9 @@
+<def f='codebrowser/r_bsp.c' l='92' type='cliprange_t [32]'/>
+<use f='codebrowser/r_bsp.c' l='113' u='r' c='R_ClipSolidWallSegment'/>
+<use f='codebrowser/r_bsp.c' l='205' u='r' c='R_ClipPassWallSegment'/>
+<use f='codebrowser/r_bsp.c' l='247' u='m' c='R_ClearClipSegs'/>
+<use f='codebrowser/r_bsp.c' l='248' u='m' c='R_ClearClipSegs'/>
+<use f='codebrowser/r_bsp.c' l='249' u='m' c='R_ClearClipSegs'/>
+<use f='codebrowser/r_bsp.c' l='250' u='m' c='R_ClearClipSegs'/>
+<use f='codebrowser/r_bsp.c' l='251' u='r' c='R_ClearClipSegs'/>
+<use f='codebrowser/r_bsp.c' l='475' u='r' c='R_CheckBBox'/>

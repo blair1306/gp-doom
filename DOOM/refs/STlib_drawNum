@@ -1,0 +1,7 @@
+<def f='codebrowser/st_lib.c' l='90' ll='148' type='void STlib_drawNum(st_number_t * n, boolean refresh)'/>
+<use f='codebrowser/st_lib.c' l='157' u='c' c='STlib_updateNum'/>
+<doc f='codebrowser/st_lib.c' l='85'>// 
+// A fairly efficient way to draw a number
+//  based on differences from the old number.
+// Note: worth the trouble?
+//</doc>

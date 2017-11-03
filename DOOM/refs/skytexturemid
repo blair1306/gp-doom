@@ -1,0 +1,4 @@
+<dec f='codebrowser/r_sky.h' l='38' type='int'/>
+<use f='codebrowser/r_plane.c' l='405' u='r' c='R_DrawPlanes'/>
+<def f='codebrowser/r_sky.c' l='49' type='int'/>
+<use f='codebrowser/r_sky.c' l='60' u='w' c='R_InitSkyMap'/>

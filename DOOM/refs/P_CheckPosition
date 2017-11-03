@@ -1,0 +1,35 @@
+<dec f='codebrowser/p_local.h' l='210' type='boolean P_CheckPosition(mobj_t * thing, fixed_t x, fixed_t y)'/>
+<use f='codebrowser/g_game.c' l='868' u='c' c='G_CheckSpot'/>
+<use f='codebrowser/p_enemy.c' l='1152' u='c' c='PIT_VileCheck'/>
+<def f='codebrowser/p_map.c' l='374' ll='442' type='boolean P_CheckPosition(mobj_t * thing, fixed_t x, fixed_t y)'/>
+<use f='codebrowser/p_map.c' l='463' u='c' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='536' u='c' c='P_ThingHeightClip'/>
+<doc f='codebrowser/p_map.c' l='346'>//
+// MOVEMENT CLIPPING
+//
+
+//
+// P_CheckPosition
+// This is purely informative, nothing is modified
+// (except things picked up).
+// 
+// in:
+//  a mobj_t (can be valid or invalid)
+//  a position to be checked
+//   (doesn&apos;t need to be related to the mobj_t-&gt;x,y)
+//
+// during:
+//  special things are touched if MF_PICKUP
+//  early out on solid lines?
+//
+// out:
+//  newsubsec
+//  floorz
+//  ceilingz
+//  tmdropoffz
+//   the lowest point contacted
+//   (monsters won&apos;t move to a dropoff)
+//  speciallines[]
+//  numspeciallines
+//</doc>
+<use f='codebrowser/p_mobj.c' l='370' u='c' c='P_NightmareRespawn'/>

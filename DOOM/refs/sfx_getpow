@@ -1,0 +1,11 @@
+<dec f='codebrowser/sounds.h' l='272' type='93'/>
+<use f='codebrowser/m_menu.c' l='1069'/>
+<use f='codebrowser/m_menu.c' l='1069'/>
+<use f='codebrowser/p_inter.c' l='406' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='416' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='492' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='501' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='508' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='515' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='522' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='529' u='r' c='P_TouchSpecialThing'/>

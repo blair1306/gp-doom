@@ -1,0 +1,51 @@
+<dec f='codebrowser/p_mobj.h' l='161' type='65536'/>
+<doc f='codebrowser/p_mobj.h' l='159'>// Don&apos;t hit same species, explode on block.
+    // Player missiles as well as fireballs of various kinds.</doc>
+<use f='codebrowser/info.c' l='1286' u='r'/>
+<use f='codebrowser/info.c' l='1286' u='r'/>
+<use f='codebrowser/info.c' l='1364' u='r'/>
+<use f='codebrowser/info.c' l='1364' u='r'/>
+<use f='codebrowser/info.c' l='1546' u='r'/>
+<use f='codebrowser/info.c' l='1546' u='r'/>
+<use f='codebrowser/info.c' l='1858' u='r'/>
+<use f='codebrowser/info.c' l='1858' u='r'/>
+<use f='codebrowser/info.c' l='1936' u='r'/>
+<use f='codebrowser/info.c' l='1936' u='r'/>
+<use f='codebrowser/info.c' l='1962' u='r'/>
+<use f='codebrowser/info.c' l='1962' u='r'/>
+<use f='codebrowser/info.c' l='1988' u='r'/>
+<use f='codebrowser/info.c' l='1988' u='r'/>
+<use f='codebrowser/info.c' l='2014' u='r'/>
+<use f='codebrowser/info.c' l='2014' u='r'/>
+<use f='codebrowser/info.c' l='2040' u='r'/>
+<use f='codebrowser/info.c' l='2040' u='r'/>
+<use f='codebrowser/info.c' l='2066' u='r'/>
+<use f='codebrowser/info.c' l='2066' u='r'/>
+<use f='codebrowser/info.c' l='1286' u='r'/>
+<use f='codebrowser/info.c' l='1286' u='r'/>
+<use f='codebrowser/info.c' l='1364' u='r'/>
+<use f='codebrowser/info.c' l='1364' u='r'/>
+<use f='codebrowser/info.c' l='1546' u='r'/>
+<use f='codebrowser/info.c' l='1546' u='r'/>
+<use f='codebrowser/info.c' l='1858' u='r'/>
+<use f='codebrowser/info.c' l='1858' u='r'/>
+<use f='codebrowser/info.c' l='1936' u='r'/>
+<use f='codebrowser/info.c' l='1936' u='r'/>
+<use f='codebrowser/info.c' l='1962' u='r'/>
+<use f='codebrowser/info.c' l='1962' u='r'/>
+<use f='codebrowser/info.c' l='1988' u='r'/>
+<use f='codebrowser/info.c' l='1988' u='r'/>
+<use f='codebrowser/info.c' l='2014' u='r'/>
+<use f='codebrowser/info.c' l='2014' u='r'/>
+<use f='codebrowser/info.c' l='2040' u='r'/>
+<use f='codebrowser/info.c' l='2040' u='r'/>
+<use f='codebrowser/info.c' l='2066' u='r'/>
+<use f='codebrowser/info.c' l='2066' u='r'/>
+<use f='codebrowser/p_map.c' l='214' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='291' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_mobj.c' l='101' u='r' c='P_ExplodeMissile'/>
+<use f='codebrowser/p_mobj.c' l='173' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='201' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='313' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='342' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_telept.c' l='65' u='r' c='EV_Teleport'/>

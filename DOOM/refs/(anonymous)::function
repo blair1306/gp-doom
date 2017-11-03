@@ -1,0 +1,4 @@
+<dec f='include/X11/Xlib.h' l='182' type='int'/>
+<use f='codebrowser/i_video.c' l='293' u='w' c='createnullcursor'/>
+<offset>0</offset>
+<doc f='include/X11/Xlib.h' l='182'>/* logical operation */</doc>

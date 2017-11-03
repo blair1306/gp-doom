@@ -1,0 +1,4 @@
+<dec f='include/netinet/in.h' l='241' macro='1' type='sa_family_t'/>
+<use f='codebrowser/i_net.c' l='114' u='w' c='BindToLocalPort'/>
+<use f='codebrowser/i_net.c' l='305' u='w' c='I_InitNetwork'/>
+<offset>0</offset>

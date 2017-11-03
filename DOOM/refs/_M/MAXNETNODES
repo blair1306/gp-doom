@@ -1,0 +1,12 @@
+<dec f='codebrowser/d_net.h' l='45'/>
+<use f='codebrowser/doomstat.h' l='284' u='c'/>
+<doc f='codebrowser/d_net.h' l='44'>// Max computers/players in a game.</doc>
+<use f='codebrowser/d_net.c' l='63' u='c'/>
+<use f='codebrowser/d_net.c' l='64' u='c'/>
+<use f='codebrowser/d_net.c' l='65' u='c'/>
+<use f='codebrowser/d_net.c' l='66' u='c'/>
+<use f='codebrowser/d_net.c' l='67' u='c'/>
+<use f='codebrowser/d_net.c' l='479' u='c'/>
+<use f='codebrowser/d_net.c' l='532' u='c'/>
+<use f='codebrowser/d_net.c' l='559' u='c'/>
+<use f='codebrowser/i_net.c' l='81' u='c'/>

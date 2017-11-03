@@ -1,0 +1,18 @@
+<dec f='codebrowser/p_local.h' l='214' type='boolean P_CheckSight(mobj_t * t1, mobj_t * t2)'/>
+<use f='codebrowser/p_enemy.c' l='188' u='c' c='P_CheckMeleeRange'/>
+<use f='codebrowser/p_enemy.c' l='201' u='c' c='P_CheckMissileRange'/>
+<use f='codebrowser/p_enemy.c' l='532' u='c' c='P_LookForPlayers'/>
+<use f='codebrowser/p_enemy.c' l='618' u='c' c='A_Look'/>
+<use f='codebrowser/p_enemy.c' l='757' u='c' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='875' u='c' c='A_CPosRefire'/>
+<use f='codebrowser/p_enemy.c' l='892' u='c' c='A_SpidRefire'/>
+<use f='codebrowser/p_enemy.c' l='1267' u='c' c='A_Fire'/>
+<use f='codebrowser/p_enemy.c' l='1320' u='c' c='A_VileAttack'/>
+<use f='codebrowser/p_map.c' l='1191' u='c' c='PIT_RadiusAttack'/>
+<def f='codebrowser/p_sight.c' l='299' ll='347' type='boolean P_CheckSight(mobj_t * t1, mobj_t * t2)'/>
+<doc f='codebrowser/p_sight.c' l='293'>//
+// P_CheckSight
+// Returns true
+//  if a straight line between t1 and t2 is unobstructed.
+// Uses REJECT.
+//</doc>

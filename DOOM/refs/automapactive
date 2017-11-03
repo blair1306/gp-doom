@@ -1,0 +1,28 @@
+<dec f='codebrowser/doomstat.h' l='132' type='boolean'/>
+<def f='codebrowser/am_map.c' l='221' type='boolean'/>
+<use f='codebrowser/am_map.c' l='463' u='w' c='AM_initVariables'/>
+<use f='codebrowser/am_map.c' l='565' u='w' c='AM_Stop'/>
+<use f='codebrowser/am_map.c' l='625' u='r' c='AM_Responder'/>
+<use f='codebrowser/am_map.c' l='808' u='r' c='AM_Ticker'/>
+<use f='codebrowser/am_map.c' l='1334' u='r' c='AM_Drawer'/>
+<doc f='codebrowser/doomstat.h' l='132'>// In AutoMap mode?</doc>
+<use f='codebrowser/d_main.c' l='240' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='267' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='285' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='305' u='r' c='D_Display'/>
+<use f='codebrowser/f_finale.c' l='101' u='w' c='F_StartFinale'/>
+<use f='codebrowser/g_game.c' l='1030' u='r' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1135' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1446' u='w' c='G_InitNew'/>
+<dec f='codebrowser/hu_lib.c' l='40' type='boolean'/>
+<use f='codebrowser/hu_lib.c' l='154' u='r' c='HUlib_eraseTextLine'/>
+<use f='codebrowser/hu_lib.c' l='171' u='r' c='HUlib_eraseTextLine'/>
+<doc f='codebrowser/hu_lib.c' l='40'>// in AM_map.c</doc>
+<dec f='codebrowser/hu_stuff.c' l='106' type='boolean'/>
+<use f='codebrowser/hu_stuff.c' l='491' u='r' c='HU_Drawer'/>
+<use f='codebrowser/m_menu.c' l='1523' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1530' u='r' c='M_Responder'/>
+<use f='codebrowser/p_inter.c' l='710' u='r' c='P_KillMobj'/>
+<dec f='codebrowser/st_lib.c' l='47' type='boolean'/>
+<doc f='codebrowser/st_lib.c' l='46'>// in AM_map.c</doc>
+<use f='codebrowser/st_stuff.c' l='1111' u='r' c='ST_Drawer'/>

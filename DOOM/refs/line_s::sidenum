@@ -1,0 +1,36 @@
+<dec f='codebrowser/r_defs.h' l='196' type='short [2]'/>
+<offset>240</offset>
+<doc f='codebrowser/r_defs.h' l='194'>// Visual appearance: SideDefs.
+    //  sidenum[1] will be -1 if one sided</doc>
+<use f='codebrowser/p_doors.c' l='413' u='r' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_enemy.c' l='136' u='r' c='P_RecursiveSound'/>
+<use f='codebrowser/p_enemy.c' l='137' u='r' c='P_RecursiveSound'/>
+<use f='codebrowser/p_enemy.c' l='139' u='r' c='P_RecursiveSound'/>
+<use f='codebrowser/p_maputl.c' l='305' u='r' c='P_LineOpening'/>
+<use f='codebrowser/p_plats.c' l='187' u='r' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='199' u='r' c='EV_DoPlat'/>
+<use f='codebrowser/p_saveg.c' l='146' u='r' c='P_ArchiveWorld'/>
+<use f='codebrowser/p_saveg.c' l='149' u='r' c='P_ArchiveWorld'/>
+<use f='codebrowser/p_saveg.c' l='200' u='r' c='P_UnArchiveWorld'/>
+<use f='codebrowser/p_saveg.c' l='202' u='r' c='P_UnArchiveWorld'/>
+<use f='codebrowser/p_setup.c' l='187' u='r' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='188' u='r' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='190' u='r' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='417' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='418' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='420' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='421' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='425' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='426' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_spec.c' l='209' u='r' c='getSide'/>
+<use f='codebrowser/p_spec.c' l='225' u='r' c='getSector'/>
+<use f='codebrowser/p_spec.c' l='1121' u='r' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_spec.c' l='1137' u='r' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_spec.c' l='1142' u='r' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_spec.c' l='1147' u='r' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_switch.c' l='214' u='r' c='P_ChangeSwitchTexture'/>
+<use f='codebrowser/p_switch.c' l='215' u='r' c='P_ChangeSwitchTexture'/>
+<use f='codebrowser/p_switch.c' l='216' u='r' c='P_ChangeSwitchTexture'/>
+<use f='codebrowser/p_switch.c' l='229' u='r' c='P_ChangeSwitchTexture'/>
+<use f='codebrowser/p_switch.c' l='241' u='r' c='P_ChangeSwitchTexture'/>
+<use f='codebrowser/p_switch.c' l='253' u='r' c='P_ChangeSwitchTexture'/>

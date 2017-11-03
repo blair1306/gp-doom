@@ -1,0 +1,5 @@
+<dec f='codebrowser/p_enemy.c' l='269' type='line_t *[8]'/>
+<use f='codebrowser/p_enemy.c' l='317' u='r' c='P_Move'/>
+<def f='codebrowser/p_map.c' l='69' type='line_t *[8]'/>
+<use f='codebrowser/p_map.c' l='242' u='w' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='505' u='r' c='P_TryMove'/>

@@ -1,0 +1,1007 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>r_things.c source code [codebrowser/r_things.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/r_things.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='r_things.c.html'>r_things.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION:</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//	Refresh of things, i.e. objects represented by sprites.</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="22">22</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><em>static</em> <em>const</em> <em>char</em></td></tr>
+<tr><th id="26">26</th><td><dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [51]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id: r_things.c,v 1.5 1997/02/03 16:47:56 b1 Exp $"</q>;</td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#include <a href="../include/stdio.h.html">&lt;stdio.h&gt;</a></u></td></tr>
+<tr><th id="30">30</th><td><u>#include <a href="../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><u>#include <a href="doomdef.h.html">"doomdef.h"</a></u></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="m_swap.h.html">"m_swap.h"</a></u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="i_system.h.html">"i_system.h"</a></u></td></tr>
+<tr><th id="37">37</th><td><u>#include <a href="z_zone.h.html">"z_zone.h"</a></u></td></tr>
+<tr><th id="38">38</th><td><u>#include <a href="w_wad.h.html">"w_wad.h"</a></u></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><u>#include <a href="r_local.h.html">"r_local.h"</a></u></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><u>#include <a href="doomstat.h.html">"doomstat.h"</a></u></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/MINZ" data-ref="_M/MINZ">MINZ</dfn>				(FRACUNIT*4)</u></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/BASEYCENTER" data-ref="_M/BASEYCENTER">BASEYCENTER</dfn>			100</u></td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><i>//void R_DrawColumn (void);</i></td></tr>
+<tr><th id="50">50</th><td><i>//void R_DrawFuzzColumn (void);</i></td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="55">55</th><td>{</td></tr>
+<tr><th id="56">56</th><td>    <em>int</em>		<dfn class="tu decl" id="(anonymous)::x1" title='(anonymous struct)::x1' data-type='int' data-ref="(anonymous)::x1">x1</dfn>;</td></tr>
+<tr><th id="57">57</th><td>    <em>int</em>		<dfn class="tu decl" id="(anonymous)::x2" title='(anonymous struct)::x2' data-type='int' data-ref="(anonymous)::x2">x2</dfn>;</td></tr>
+<tr><th id="58">58</th><td>	</td></tr>
+<tr><th id="59">59</th><td>    <em>int</em>		<dfn class="tu decl" id="(anonymous)::column" title='(anonymous struct)::column' data-type='int' data-ref="(anonymous)::column">column</dfn>;</td></tr>
+<tr><th id="60">60</th><td>    <em>int</em>		<dfn class="tu decl" id="(anonymous)::topclip" title='(anonymous struct)::topclip' data-type='int' data-ref="(anonymous)::topclip">topclip</dfn>;</td></tr>
+<tr><th id="61">61</th><td>    <em>int</em>		<dfn class="tu decl" id="(anonymous)::bottomclip" title='(anonymous struct)::bottomclip' data-type='int' data-ref="(anonymous)::bottomclip">bottomclip</dfn>;</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td>} <dfn class="typedef" id="maskdraw_t" title='maskdraw_t' data-type='struct maskdraw_t' data-ref="maskdraw_t">maskdraw_t</dfn>;</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><i>//</i></td></tr>
+<tr><th id="68">68</th><td><i>// Sprite rotation 0 is facing the viewer,</i></td></tr>
+<tr><th id="69">69</th><td><i>//  rotation 1 is one angle turn CLOCKWISE around the axis.</i></td></tr>
+<tr><th id="70">70</th><td><i>// This is not the same as the angle,</i></td></tr>
+<tr><th id="71">71</th><td><i>//  which increases counter clockwise (protractor).</i></td></tr>
+<tr><th id="72">72</th><td><i>// There was a lot of stuff grabbed wrong, so I changed it...</i></td></tr>
+<tr><th id="73">73</th><td><i>//</i></td></tr>
+<tr><th id="74">74</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="decl def" id="pspritescale" title='pspritescale' data-ref="pspritescale">pspritescale</dfn>;</td></tr>
+<tr><th id="75">75</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="decl def" id="pspriteiscale" title='pspriteiscale' data-ref="pspriteiscale">pspriteiscale</dfn>;</td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td><a class="typedef" href="r_defs.h.html#lighttable_t" title='lighttable_t' data-type='byte' data-ref="lighttable_t">lighttable_t</a>**	<dfn class="decl def" id="spritelights" title='spritelights' data-ref="spritelights">spritelights</dfn>;</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><i>// constant arrays</i></td></tr>
+<tr><th id="80">80</th><td><i>//  used for psprite clipping and initializing clipping</i></td></tr>
+<tr><th id="81">81</th><td><em>short</em>		<dfn class="decl def" id="negonearray" title='negonearray' data-ref="negonearray">negonearray</dfn>[<a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>];</td></tr>
+<tr><th id="82">82</th><td><em>short</em>		<dfn class="decl def" id="screenheightarray" title='screenheightarray' data-ref="screenheightarray">screenheightarray</dfn>[<a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>];</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><i>//</i></td></tr>
+<tr><th id="86">86</th><td><i>// INITIALIZATION FUNCTIONS</i></td></tr>
+<tr><th id="87">87</th><td><i>//</i></td></tr>
+<tr><th id="88">88</th><td><i></i></td></tr>
+<tr><th id="89">89</th><td><i>// variables used to look up</i></td></tr>
+<tr><th id="90">90</th><td><i>//  and range check thing_t sprites patches</i></td></tr>
+<tr><th id="91">91</th><td><a class="typedef" href="r_defs.h.html#spritedef_t" title='spritedef_t' data-type='struct spritedef_t' data-ref="spritedef_t">spritedef_t</a>*	<dfn class="decl def" id="sprites" title='sprites' data-ref="sprites">sprites</dfn>;</td></tr>
+<tr><th id="92">92</th><td><em>int</em>		<dfn class="decl def" id="numsprites" title='numsprites' data-ref="numsprites">numsprites</dfn>;</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td><a class="typedef" href="r_defs.h.html#spriteframe_t" title='spriteframe_t' data-type='struct spriteframe_t' data-ref="spriteframe_t">spriteframe_t</a>	<dfn class="decl def" id="sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</dfn>[<var>29</var>];</td></tr>
+<tr><th id="95">95</th><td><em>int</em>		<dfn class="decl def" id="maxframe" title='maxframe' data-ref="maxframe">maxframe</dfn>;</td></tr>
+<tr><th id="96">96</th><td><em>char</em>*		<dfn class="decl def" id="spritename" title='spritename' data-ref="spritename">spritename</dfn>;</td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td><i>//</i></td></tr>
+<tr><th id="102">102</th><td><i>// R_InstallSpriteLump</i></td></tr>
+<tr><th id="103">103</th><td><i>// Local function for R_InitSprites.</i></td></tr>
+<tr><th id="104">104</th><td><i>//</i></td></tr>
+<tr><th id="105">105</th><td><em>void</em></td></tr>
+<tr><th id="106">106</th><td><dfn class="decl def" id="R_InstallSpriteLump" title='R_InstallSpriteLump' data-ref="R_InstallSpriteLump">R_InstallSpriteLump</dfn></td></tr>
+<tr><th id="107">107</th><td>( <em>int</em>		<dfn class="local col1 decl" id="1lump" title='lump' data-type='int' data-ref="1lump">lump</dfn>,</td></tr>
+<tr><th id="108">108</th><td>  <em>unsigned</em>	<dfn class="local col2 decl" id="2frame" title='frame' data-type='unsigned int' data-ref="2frame">frame</dfn>,</td></tr>
+<tr><th id="109">109</th><td>  <em>unsigned</em>	<dfn class="local col3 decl" id="3rotation" title='rotation' data-type='unsigned int' data-ref="3rotation">rotation</dfn>,</td></tr>
+<tr><th id="110">110</th><td>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>	<dfn class="local col4 decl" id="4flipped" title='flipped' data-type='boolean' data-ref="4flipped">flipped</dfn> )</td></tr>
+<tr><th id="111">111</th><td>{</td></tr>
+<tr><th id="112">112</th><td>    <em>int</em>		<dfn class="local col5 decl" id="5r" title='r' data-type='int' data-ref="5r">r</dfn>;</td></tr>
+<tr><th id="113">113</th><td>	</td></tr>
+<tr><th id="114">114</th><td>    <b>if</b> (<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a> &gt;= <var>29</var> || <a class="local col3 ref" href="#3rotation" title='rotation' data-ref="3rotation">rotation</a> &gt; <var>8</var>)</td></tr>
+<tr><th id="115">115</th><td>	<a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a>(<q>"R_InstallSpriteLump: "</q></td></tr>
+<tr><th id="116">116</th><td>		<q>"Bad frame characters in lump %i"</q>, <a class="local col1 ref" href="#1lump" title='lump' data-ref="1lump">lump</a>);</td></tr>
+<tr><th id="117">117</th><td>	</td></tr>
+<tr><th id="118">118</th><td>    <b>if</b> ((<em>int</em>)<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a> &gt; <a class="ref" href="#maxframe" title='maxframe' data-ref="maxframe">maxframe</a>)</td></tr>
+<tr><th id="119">119</th><td>	<a class="ref" href="#maxframe" title='maxframe' data-ref="maxframe">maxframe</a> = <a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>;</td></tr>
+<tr><th id="120">120</th><td>		</td></tr>
+<tr><th id="121">121</th><td>    <b>if</b> (<a class="local col3 ref" href="#3rotation" title='rotation' data-ref="3rotation">rotation</a> == <var>0</var>)</td></tr>
+<tr><th id="122">122</th><td>    {</td></tr>
+<tr><th id="123">123</th><td>	<i>// the lump should be used for all rotations</i></td></tr>
+<tr><th id="124">124</th><td>	<b>if</b> (<a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>[<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>].<a class="ref" href="r_defs.h.html#(anonymous)::rotate" title='(anonymous struct)::rotate' data-ref="(anonymous)::rotate">rotate</a> == <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>)</td></tr>
+<tr><th id="125">125</th><td>	    <a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a> (<q>"R_InitSprites: Sprite %s frame %c has "</q></td></tr>
+<tr><th id="126">126</th><td>		     <q>"multip rot=0 lump"</q>, <a class="ref" href="#spritename" title='spritename' data-ref="spritename">spritename</a>, <kbd>'A'</kbd>+<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>);</td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td>	<b>if</b> (<a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>[<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>].<a class="ref" href="r_defs.h.html#(anonymous)::rotate" title='(anonymous struct)::rotate' data-ref="(anonymous)::rotate">rotate</a> == <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>)</td></tr>
+<tr><th id="129">129</th><td>	    <a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a> (<q>"R_InitSprites: Sprite %s frame %c has rotations "</q></td></tr>
+<tr><th id="130">130</th><td>		     <q>"and a rot=0 lump"</q>, <a class="ref" href="#spritename" title='spritename' data-ref="spritename">spritename</a>, <kbd>'A'</kbd>+<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>);</td></tr>
+<tr><th id="131">131</th><td>			</td></tr>
+<tr><th id="132">132</th><td>	<a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>[<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>].<a class="ref" href="r_defs.h.html#(anonymous)::rotate" title='(anonymous struct)::rotate' data-ref="(anonymous)::rotate">rotate</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="133">133</th><td>	<b>for</b> (<a class="local col5 ref" href="#5r" title='r' data-ref="5r">r</a>=<var>0</var> ; <a class="local col5 ref" href="#5r" title='r' data-ref="5r">r</a>&lt;<var>8</var> ; <a class="local col5 ref" href="#5r" title='r' data-ref="5r">r</a>++)</td></tr>
+<tr><th id="134">134</th><td>	{</td></tr>
+<tr><th id="135">135</th><td>	    <a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>[<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>].<a class="ref" href="r_defs.h.html#(anonymous)::lump" title='(anonymous struct)::lump' data-ref="(anonymous)::lump">lump</a>[<a class="local col5 ref" href="#5r" title='r' data-ref="5r">r</a>] = <a class="local col1 ref" href="#1lump" title='lump' data-ref="1lump">lump</a> - <a class="ref" href="r_state.h.html#firstspritelump" title='firstspritelump' data-ref="firstspritelump">firstspritelump</a>;</td></tr>
+<tr><th id="136">136</th><td>	    <a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>[<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>].<a class="ref" href="r_defs.h.html#(anonymous)::flip" title='(anonymous struct)::flip' data-ref="(anonymous)::flip">flip</a>[<a class="local col5 ref" href="#5r" title='r' data-ref="5r">r</a>] = (<a class="typedef" href="doomtype.h.html#byte" title='byte' data-type='unsigned char' data-ref="byte">byte</a>)<a class="local col4 ref" href="#4flipped" title='flipped' data-ref="4flipped">flipped</a>;</td></tr>
+<tr><th id="137">137</th><td>	}</td></tr>
+<tr><th id="138">138</th><td>	<b>return</b>;</td></tr>
+<tr><th id="139">139</th><td>    }</td></tr>
+<tr><th id="140">140</th><td>	</td></tr>
+<tr><th id="141">141</th><td>    <i>// the lump is only used for one rotation</i></td></tr>
+<tr><th id="142">142</th><td>    <b>if</b> (<a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>[<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>].<a class="ref" href="r_defs.h.html#(anonymous)::rotate" title='(anonymous struct)::rotate' data-ref="(anonymous)::rotate">rotate</a> == <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>)</td></tr>
+<tr><th id="143">143</th><td>	<a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a> (<q>"R_InitSprites: Sprite %s frame %c has rotations "</q></td></tr>
+<tr><th id="144">144</th><td>		 <q>"and a rot=0 lump"</q>, <a class="ref" href="#spritename" title='spritename' data-ref="spritename">spritename</a>, <kbd>'A'</kbd>+<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>);</td></tr>
+<tr><th id="145">145</th><td>		</td></tr>
+<tr><th id="146">146</th><td>    <a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>[<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>].<a class="ref" href="r_defs.h.html#(anonymous)::rotate" title='(anonymous struct)::rotate' data-ref="(anonymous)::rotate">rotate</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="147">147</th><td></td></tr>
+<tr><th id="148">148</th><td>    <i>// make 0 based</i></td></tr>
+<tr><th id="149">149</th><td>    <a class="local col3 ref" href="#3rotation" title='rotation' data-ref="3rotation">rotation</a>--;		</td></tr>
+<tr><th id="150">150</th><td>    <b>if</b> (<a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>[<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>].<a class="ref" href="r_defs.h.html#(anonymous)::lump" title='(anonymous struct)::lump' data-ref="(anonymous)::lump">lump</a>[<a class="local col3 ref" href="#3rotation" title='rotation' data-ref="3rotation">rotation</a>] != -<var>1</var>)</td></tr>
+<tr><th id="151">151</th><td>	<a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a> (<q>"R_InitSprites: Sprite %s : %c : %c "</q></td></tr>
+<tr><th id="152">152</th><td>		 <q>"has two lumps mapped to it"</q>,</td></tr>
+<tr><th id="153">153</th><td>		 <a class="ref" href="#spritename" title='spritename' data-ref="spritename">spritename</a>, <kbd>'A'</kbd>+<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>, <kbd>'1'</kbd>+<a class="local col3 ref" href="#3rotation" title='rotation' data-ref="3rotation">rotation</a>);</td></tr>
+<tr><th id="154">154</th><td>		</td></tr>
+<tr><th id="155">155</th><td>    <a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>[<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>].<a class="ref" href="r_defs.h.html#(anonymous)::lump" title='(anonymous struct)::lump' data-ref="(anonymous)::lump">lump</a>[<a class="local col3 ref" href="#3rotation" title='rotation' data-ref="3rotation">rotation</a>] = <a class="local col1 ref" href="#1lump" title='lump' data-ref="1lump">lump</a> - <a class="ref" href="r_state.h.html#firstspritelump" title='firstspritelump' data-ref="firstspritelump">firstspritelump</a>;</td></tr>
+<tr><th id="156">156</th><td>    <a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>[<a class="local col2 ref" href="#2frame" title='frame' data-ref="2frame">frame</a>].<a class="ref" href="r_defs.h.html#(anonymous)::flip" title='(anonymous struct)::flip' data-ref="(anonymous)::flip">flip</a>[<a class="local col3 ref" href="#3rotation" title='rotation' data-ref="3rotation">rotation</a>] = (<a class="typedef" href="doomtype.h.html#byte" title='byte' data-type='unsigned char' data-ref="byte">byte</a>)<a class="local col4 ref" href="#4flipped" title='flipped' data-ref="4flipped">flipped</a>;</td></tr>
+<tr><th id="157">157</th><td>}</td></tr>
+<tr><th id="158">158</th><td></td></tr>
+<tr><th id="159">159</th><td></td></tr>
+<tr><th id="160">160</th><td></td></tr>
+<tr><th id="161">161</th><td></td></tr>
+<tr><th id="162">162</th><td><i>//</i></td></tr>
+<tr><th id="163">163</th><td><i>// R_InitSpriteDefs</i></td></tr>
+<tr><th id="164">164</th><td><i>// Pass a null terminated list of sprite names</i></td></tr>
+<tr><th id="165">165</th><td><i>//  (4 chars exactly) to be used.</i></td></tr>
+<tr><th id="166">166</th><td><i>// Builds the sprite rotation matrixes to account</i></td></tr>
+<tr><th id="167">167</th><td><i>//  for horizontally flipped sprites.</i></td></tr>
+<tr><th id="168">168</th><td><i>// Will report an error if the lumps are inconsistant. </i></td></tr>
+<tr><th id="169">169</th><td><i>// Only called at startup.</i></td></tr>
+<tr><th id="170">170</th><td><i>//</i></td></tr>
+<tr><th id="171">171</th><td><i>// Sprite lump names are 4 characters for the actor,</i></td></tr>
+<tr><th id="172">172</th><td><i>//  a letter for the frame, and a number for the rotation.</i></td></tr>
+<tr><th id="173">173</th><td><i>// A sprite that is flippable will have an additional</i></td></tr>
+<tr><th id="174">174</th><td><i>//  letter/number appended.</i></td></tr>
+<tr><th id="175">175</th><td><i>// The rotation character can be 0 to signify no rotations.</i></td></tr>
+<tr><th id="176">176</th><td><i>//</i></td></tr>
+<tr><th id="177">177</th><td><em>void</em> <dfn class="decl def" id="R_InitSpriteDefs" title='R_InitSpriteDefs' data-ref="R_InitSpriteDefs">R_InitSpriteDefs</dfn> (<em>char</em>** <dfn class="local col6 decl" id="6namelist" title='namelist' data-type='char **' data-ref="6namelist">namelist</dfn>) </td></tr>
+<tr><th id="178">178</th><td>{ </td></tr>
+<tr><th id="179">179</th><td>    <em>char</em>**	<dfn class="local col7 decl" id="7check" title='check' data-type='char **' data-ref="7check">check</dfn>;</td></tr>
+<tr><th id="180">180</th><td>    <em>int</em>		<dfn class="local col8 decl" id="8i" title='i' data-type='int' data-ref="8i">i</dfn>;</td></tr>
+<tr><th id="181">181</th><td>    <em>int</em>		<dfn class="local col9 decl" id="9l" title='l' data-type='int' data-ref="9l">l</dfn>;</td></tr>
+<tr><th id="182">182</th><td>    <em>int</em>		<dfn class="local col0 decl" id="10intname" title='intname' data-type='int' data-ref="10intname">intname</dfn>;</td></tr>
+<tr><th id="183">183</th><td>    <em>int</em>		<dfn class="local col1 decl" id="11frame" title='frame' data-type='int' data-ref="11frame">frame</dfn>;</td></tr>
+<tr><th id="184">184</th><td>    <em>int</em>		<dfn class="local col2 decl" id="12rotation" title='rotation' data-type='int' data-ref="12rotation">rotation</dfn>;</td></tr>
+<tr><th id="185">185</th><td>    <em>int</em>		<dfn class="local col3 decl" id="13start" title='start' data-type='int' data-ref="13start">start</dfn>;</td></tr>
+<tr><th id="186">186</th><td>    <em>int</em>		<dfn class="local col4 decl" id="14end" title='end' data-type='int' data-ref="14end">end</dfn>;</td></tr>
+<tr><th id="187">187</th><td>    <em>int</em>		<dfn class="local col5 decl" id="15patched" title='patched' data-type='int' data-ref="15patched">patched</dfn>;</td></tr>
+<tr><th id="188">188</th><td>		</td></tr>
+<tr><th id="189">189</th><td>    <i>// count the number of sprite names</i></td></tr>
+<tr><th id="190">190</th><td>    <a class="local col7 ref" href="#7check" title='check' data-ref="7check">check</a> = <a class="local col6 ref" href="#6namelist" title='namelist' data-ref="6namelist">namelist</a>;</td></tr>
+<tr><th id="191">191</th><td>    <b>while</b> (*<a class="local col7 ref" href="#7check" title='check' data-ref="7check">check</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="192">192</th><td>	<a class="local col7 ref" href="#7check" title='check' data-ref="7check">check</a>++;</td></tr>
+<tr><th id="193">193</th><td></td></tr>
+<tr><th id="194">194</th><td>    <a class="ref" href="r_state.h.html#numsprites" title='numsprites' data-ref="numsprites">numsprites</a> = <a class="local col7 ref" href="#7check" title='check' data-ref="7check">check</a>-<a class="local col6 ref" href="#6namelist" title='namelist' data-ref="6namelist">namelist</a>;</td></tr>
+<tr><th id="195">195</th><td>	</td></tr>
+<tr><th id="196">196</th><td>    <b>if</b> (!<a class="ref" href="r_state.h.html#numsprites" title='numsprites' data-ref="numsprites">numsprites</a>)</td></tr>
+<tr><th id="197">197</th><td>	<b>return</b>;</td></tr>
+<tr><th id="198">198</th><td>		</td></tr>
+<tr><th id="199">199</th><td>    <a class="ref" href="r_state.h.html#sprites" title='sprites' data-ref="sprites">sprites</a> = <a class="ref" href="z_zone.h.html#Z_Malloc" title='Z_Malloc' data-ref="Z_Malloc">Z_Malloc</a>(<a class="ref" href="r_state.h.html#numsprites" title='numsprites' data-ref="numsprites">numsprites</a> *<b>sizeof</b>(*<a class="ref" href="r_state.h.html#sprites" title='sprites' data-ref="sprites">sprites</a>), <a class="macro" href="z_zone.h.html#36" title="1" data-ref="_M/PU_STATIC">PU_STATIC</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="200">200</th><td>	</td></tr>
+<tr><th id="201">201</th><td>    <a class="local col3 ref" href="#13start" title='start' data-ref="13start">start</a> = <a class="ref" href="r_state.h.html#firstspritelump" title='firstspritelump' data-ref="firstspritelump">firstspritelump</a>-<var>1</var>;</td></tr>
+<tr><th id="202">202</th><td>    <a class="local col4 ref" href="#14end" title='end' data-ref="14end">end</a> = <a class="ref" href="r_state.h.html#lastspritelump" title='lastspritelump' data-ref="lastspritelump">lastspritelump</a>+<var>1</var>;</td></tr>
+<tr><th id="203">203</th><td>	</td></tr>
+<tr><th id="204">204</th><td>    <i>// scan all the lump names for each of the names,</i></td></tr>
+<tr><th id="205">205</th><td><i>    //  noting the highest frame letter.</i></td></tr>
+<tr><th id="206">206</th><td><i>    // Just compare 4 characters as ints</i></td></tr>
+<tr><th id="207">207</th><td>    <b>for</b> (<a class="local col8 ref" href="#8i" title='i' data-ref="8i">i</a>=<var>0</var> ; <a class="local col8 ref" href="#8i" title='i' data-ref="8i">i</a>&lt;<a class="ref" href="r_state.h.html#numsprites" title='numsprites' data-ref="numsprites">numsprites</a> ; <a class="local col8 ref" href="#8i" title='i' data-ref="8i">i</a>++)</td></tr>
+<tr><th id="208">208</th><td>    {</td></tr>
+<tr><th id="209">209</th><td>	<a class="ref" href="#spritename" title='spritename' data-ref="spritename">spritename</a> = <a class="local col6 ref" href="#6namelist" title='namelist' data-ref="6namelist">namelist</a>[<a class="local col8 ref" href="#8i" title='i' data-ref="8i">i</a>];</td></tr>
+<tr><th id="210">210</th><td>	<a class="ref" href="../include/string.h.html#memset" title='memset' data-ref="memset">memset</a> (<a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>,-<var>1</var>, <b>sizeof</b>(<a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>));</td></tr>
+<tr><th id="211">211</th><td>		</td></tr>
+<tr><th id="212">212</th><td>	<a class="ref" href="#maxframe" title='maxframe' data-ref="maxframe">maxframe</a> = -<var>1</var>;</td></tr>
+<tr><th id="213">213</th><td>	<a class="local col0 ref" href="#10intname" title='intname' data-ref="10intname">intname</a> = *(<em>int</em> *)<a class="local col6 ref" href="#6namelist" title='namelist' data-ref="6namelist">namelist</a>[<a class="local col8 ref" href="#8i" title='i' data-ref="8i">i</a>];</td></tr>
+<tr><th id="214">214</th><td>	</td></tr>
+<tr><th id="215">215</th><td>	<i>// scan the lumps,</i></td></tr>
+<tr><th id="216">216</th><td><i>	//  filling in the frames for whatever is found</i></td></tr>
+<tr><th id="217">217</th><td>	<b>for</b> (<a class="local col9 ref" href="#9l" title='l' data-ref="9l">l</a>=<a class="local col3 ref" href="#13start" title='start' data-ref="13start">start</a>+<var>1</var> ; <a class="local col9 ref" href="#9l" title='l' data-ref="9l">l</a>&lt;<a class="local col4 ref" href="#14end" title='end' data-ref="14end">end</a> ; <a class="local col9 ref" href="#9l" title='l' data-ref="9l">l</a>++)</td></tr>
+<tr><th id="218">218</th><td>	{</td></tr>
+<tr><th id="219">219</th><td>	    <b>if</b> (*(<em>int</em> *)<a class="ref" href="w_wad.h.html#lumpinfo" title='lumpinfo' data-ref="lumpinfo">lumpinfo</a>[<a class="local col9 ref" href="#9l" title='l' data-ref="9l">l</a>].<a class="ref" href="w_wad.h.html#(anonymous)::name" title='(anonymous struct)::name' data-ref="(anonymous)::name">name</a> == <a class="local col0 ref" href="#10intname" title='intname' data-ref="10intname">intname</a>)</td></tr>
+<tr><th id="220">220</th><td>	    {</td></tr>
+<tr><th id="221">221</th><td>		<a class="local col1 ref" href="#11frame" title='frame' data-ref="11frame">frame</a> = <a class="ref" href="w_wad.h.html#lumpinfo" title='lumpinfo' data-ref="lumpinfo">lumpinfo</a>[<a class="local col9 ref" href="#9l" title='l' data-ref="9l">l</a>].<a class="ref" href="w_wad.h.html#(anonymous)::name" title='(anonymous struct)::name' data-ref="(anonymous)::name">name</a>[<var>4</var>] - <kbd>'A'</kbd>;</td></tr>
+<tr><th id="222">222</th><td>		<a class="local col2 ref" href="#12rotation" title='rotation' data-ref="12rotation">rotation</a> = <a class="ref" href="w_wad.h.html#lumpinfo" title='lumpinfo' data-ref="lumpinfo">lumpinfo</a>[<a class="local col9 ref" href="#9l" title='l' data-ref="9l">l</a>].<a class="ref" href="w_wad.h.html#(anonymous)::name" title='(anonymous struct)::name' data-ref="(anonymous)::name">name</a>[<var>5</var>] - <kbd>'0'</kbd>;</td></tr>
+<tr><th id="223">223</th><td></td></tr>
+<tr><th id="224">224</th><td>		<b>if</b> (<a class="ref" href="doomstat.h.html#modifiedgame" title='modifiedgame' data-ref="modifiedgame">modifiedgame</a>)</td></tr>
+<tr><th id="225">225</th><td>		    <a class="local col5 ref" href="#15patched" title='patched' data-ref="15patched">patched</a> = <a class="ref" href="w_wad.h.html#W_GetNumForName" title='W_GetNumForName' data-ref="W_GetNumForName">W_GetNumForName</a> (<a class="ref" href="w_wad.h.html#lumpinfo" title='lumpinfo' data-ref="lumpinfo">lumpinfo</a>[<a class="local col9 ref" href="#9l" title='l' data-ref="9l">l</a>].<a class="ref" href="w_wad.h.html#(anonymous)::name" title='(anonymous struct)::name' data-ref="(anonymous)::name">name</a>);</td></tr>
+<tr><th id="226">226</th><td>		<b>else</b></td></tr>
+<tr><th id="227">227</th><td>		    <a class="local col5 ref" href="#15patched" title='patched' data-ref="15patched">patched</a> = <a class="local col9 ref" href="#9l" title='l' data-ref="9l">l</a>;</td></tr>
+<tr><th id="228">228</th><td></td></tr>
+<tr><th id="229">229</th><td>		<a class="ref" href="#R_InstallSpriteLump" title='R_InstallSpriteLump' data-ref="R_InstallSpriteLump">R_InstallSpriteLump</a> (<a class="local col5 ref" href="#15patched" title='patched' data-ref="15patched">patched</a>, <a class="local col1 ref" href="#11frame" title='frame' data-ref="11frame">frame</a>, <a class="local col2 ref" href="#12rotation" title='rotation' data-ref="12rotation">rotation</a>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>);</td></tr>
+<tr><th id="230">230</th><td></td></tr>
+<tr><th id="231">231</th><td>		<b>if</b> (<a class="ref" href="w_wad.h.html#lumpinfo" title='lumpinfo' data-ref="lumpinfo">lumpinfo</a>[<a class="local col9 ref" href="#9l" title='l' data-ref="9l">l</a>].<a class="ref" href="w_wad.h.html#(anonymous)::name" title='(anonymous struct)::name' data-ref="(anonymous)::name">name</a>[<var>6</var>])</td></tr>
+<tr><th id="232">232</th><td>		{</td></tr>
+<tr><th id="233">233</th><td>		    <a class="local col1 ref" href="#11frame" title='frame' data-ref="11frame">frame</a> = <a class="ref" href="w_wad.h.html#lumpinfo" title='lumpinfo' data-ref="lumpinfo">lumpinfo</a>[<a class="local col9 ref" href="#9l" title='l' data-ref="9l">l</a>].<a class="ref" href="w_wad.h.html#(anonymous)::name" title='(anonymous struct)::name' data-ref="(anonymous)::name">name</a>[<var>6</var>] - <kbd>'A'</kbd>;</td></tr>
+<tr><th id="234">234</th><td>		    <a class="local col2 ref" href="#12rotation" title='rotation' data-ref="12rotation">rotation</a> = <a class="ref" href="w_wad.h.html#lumpinfo" title='lumpinfo' data-ref="lumpinfo">lumpinfo</a>[<a class="local col9 ref" href="#9l" title='l' data-ref="9l">l</a>].<a class="ref" href="w_wad.h.html#(anonymous)::name" title='(anonymous struct)::name' data-ref="(anonymous)::name">name</a>[<var>7</var>] - <kbd>'0'</kbd>;</td></tr>
+<tr><th id="235">235</th><td>		    <a class="ref" href="#R_InstallSpriteLump" title='R_InstallSpriteLump' data-ref="R_InstallSpriteLump">R_InstallSpriteLump</a> (<a class="local col9 ref" href="#9l" title='l' data-ref="9l">l</a>, <a class="local col1 ref" href="#11frame" title='frame' data-ref="11frame">frame</a>, <a class="local col2 ref" href="#12rotation" title='rotation' data-ref="12rotation">rotation</a>, <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>);</td></tr>
+<tr><th id="236">236</th><td>		}</td></tr>
+<tr><th id="237">237</th><td>	    }</td></tr>
+<tr><th id="238">238</th><td>	}</td></tr>
+<tr><th id="239">239</th><td>	</td></tr>
+<tr><th id="240">240</th><td>	<i>// check the frames that were found for completeness</i></td></tr>
+<tr><th id="241">241</th><td>	<b>if</b> (<a class="ref" href="#maxframe" title='maxframe' data-ref="maxframe">maxframe</a> == -<var>1</var>)</td></tr>
+<tr><th id="242">242</th><td>	{</td></tr>
+<tr><th id="243">243</th><td>	    <a class="ref" href="r_state.h.html#sprites" title='sprites' data-ref="sprites">sprites</a>[<a class="local col8 ref" href="#8i" title='i' data-ref="8i">i</a>].<a class="ref" href="r_defs.h.html#(anonymous)::numframes" title='(anonymous struct)::numframes' data-ref="(anonymous)::numframes">numframes</a> = <var>0</var>;</td></tr>
+<tr><th id="244">244</th><td>	    <b>continue</b>;</td></tr>
+<tr><th id="245">245</th><td>	}</td></tr>
+<tr><th id="246">246</th><td>		</td></tr>
+<tr><th id="247">247</th><td>	<a class="ref" href="#maxframe" title='maxframe' data-ref="maxframe">maxframe</a>++;</td></tr>
+<tr><th id="248">248</th><td>	</td></tr>
+<tr><th id="249">249</th><td>	<b>for</b> (<a class="local col1 ref" href="#11frame" title='frame' data-ref="11frame">frame</a> = <var>0</var> ; <a class="local col1 ref" href="#11frame" title='frame' data-ref="11frame">frame</a> &lt; <a class="ref" href="#maxframe" title='maxframe' data-ref="maxframe">maxframe</a> ; <a class="local col1 ref" href="#11frame" title='frame' data-ref="11frame">frame</a>++)</td></tr>
+<tr><th id="250">250</th><td>	{</td></tr>
+<tr><th id="251">251</th><td>	    <b>switch</b> ((<em>int</em>)<a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>[<a class="local col1 ref" href="#11frame" title='frame' data-ref="11frame">frame</a>].<a class="ref" href="r_defs.h.html#(anonymous)::rotate" title='(anonymous struct)::rotate' data-ref="(anonymous)::rotate">rotate</a>)</td></tr>
+<tr><th id="252">252</th><td>	    {</td></tr>
+<tr><th id="253">253</th><td>	      <b>case</b> -<var>1</var>:</td></tr>
+<tr><th id="254">254</th><td>		<i>// no rotations were found for that frame at all</i></td></tr>
+<tr><th id="255">255</th><td>		<a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a> (<q>"R_InitSprites: No patches found "</q></td></tr>
+<tr><th id="256">256</th><td>			 <q>"for %s frame %c"</q>, <a class="local col6 ref" href="#6namelist" title='namelist' data-ref="6namelist">namelist</a>[<a class="local col8 ref" href="#8i" title='i' data-ref="8i">i</a>], <a class="local col1 ref" href="#11frame" title='frame' data-ref="11frame">frame</a>+<kbd>'A'</kbd>);</td></tr>
+<tr><th id="257">257</th><td>		<b>break</b>;</td></tr>
+<tr><th id="258">258</th><td>		</td></tr>
+<tr><th id="259">259</th><td>	      <b>case</b> <var>0</var>:</td></tr>
+<tr><th id="260">260</th><td>		<i>// only the first rotation is needed</i></td></tr>
+<tr><th id="261">261</th><td>		<b>break</b>;</td></tr>
+<tr><th id="262">262</th><td>			</td></tr>
+<tr><th id="263">263</th><td>	      <b>case</b> <var>1</var>:</td></tr>
+<tr><th id="264">264</th><td>		<i>// must have all 8 frames</i></td></tr>
+<tr><th id="265">265</th><td>		<b>for</b> (<a class="local col2 ref" href="#12rotation" title='rotation' data-ref="12rotation">rotation</a>=<var>0</var> ; <a class="local col2 ref" href="#12rotation" title='rotation' data-ref="12rotation">rotation</a>&lt;<var>8</var> ; <a class="local col2 ref" href="#12rotation" title='rotation' data-ref="12rotation">rotation</a>++)</td></tr>
+<tr><th id="266">266</th><td>		    <b>if</b> (<a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>[<a class="local col1 ref" href="#11frame" title='frame' data-ref="11frame">frame</a>].<a class="ref" href="r_defs.h.html#(anonymous)::lump" title='(anonymous struct)::lump' data-ref="(anonymous)::lump">lump</a>[<a class="local col2 ref" href="#12rotation" title='rotation' data-ref="12rotation">rotation</a>] == -<var>1</var>)</td></tr>
+<tr><th id="267">267</th><td>			<a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a> (<q>"R_InitSprites: Sprite %s frame %c "</q></td></tr>
+<tr><th id="268">268</th><td>				 <q>"is missing rotations"</q>,</td></tr>
+<tr><th id="269">269</th><td>				 <a class="local col6 ref" href="#6namelist" title='namelist' data-ref="6namelist">namelist</a>[<a class="local col8 ref" href="#8i" title='i' data-ref="8i">i</a>], <a class="local col1 ref" href="#11frame" title='frame' data-ref="11frame">frame</a>+<kbd>'A'</kbd>);</td></tr>
+<tr><th id="270">270</th><td>		<b>break</b>;</td></tr>
+<tr><th id="271">271</th><td>	    }</td></tr>
+<tr><th id="272">272</th><td>	}</td></tr>
+<tr><th id="273">273</th><td>	</td></tr>
+<tr><th id="274">274</th><td>	<i>// allocate space for the frames present and copy sprtemp to it</i></td></tr>
+<tr><th id="275">275</th><td>	<a class="ref" href="r_state.h.html#sprites" title='sprites' data-ref="sprites">sprites</a>[<a class="local col8 ref" href="#8i" title='i' data-ref="8i">i</a>].<a class="ref" href="r_defs.h.html#(anonymous)::numframes" title='(anonymous struct)::numframes' data-ref="(anonymous)::numframes">numframes</a> = <a class="ref" href="#maxframe" title='maxframe' data-ref="maxframe">maxframe</a>;</td></tr>
+<tr><th id="276">276</th><td>	<a class="ref" href="r_state.h.html#sprites" title='sprites' data-ref="sprites">sprites</a>[<a class="local col8 ref" href="#8i" title='i' data-ref="8i">i</a>].<a class="ref" href="r_defs.h.html#(anonymous)::spriteframes" title='(anonymous struct)::spriteframes' data-ref="(anonymous)::spriteframes">spriteframes</a> = </td></tr>
+<tr><th id="277">277</th><td>	    <a class="ref" href="z_zone.h.html#Z_Malloc" title='Z_Malloc' data-ref="Z_Malloc">Z_Malloc</a> (<a class="ref" href="#maxframe" title='maxframe' data-ref="maxframe">maxframe</a> * <b>sizeof</b>(<a class="typedef" href="r_defs.h.html#spriteframe_t" title='spriteframe_t' data-type='struct spriteframe_t' data-ref="spriteframe_t">spriteframe_t</a>), <a class="macro" href="z_zone.h.html#36" title="1" data-ref="_M/PU_STATIC">PU_STATIC</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="278">278</th><td>	<a class="ref" href="../include/string.h.html#memcpy" title='memcpy' data-ref="memcpy">memcpy</a> (<a class="ref" href="r_state.h.html#sprites" title='sprites' data-ref="sprites">sprites</a>[<a class="local col8 ref" href="#8i" title='i' data-ref="8i">i</a>].<a class="ref" href="r_defs.h.html#(anonymous)::spriteframes" title='(anonymous struct)::spriteframes' data-ref="(anonymous)::spriteframes">spriteframes</a>, <a class="ref" href="#sprtemp" title='sprtemp' data-ref="sprtemp">sprtemp</a>, <a class="ref" href="#maxframe" title='maxframe' data-ref="maxframe">maxframe</a>*<b>sizeof</b>(<a class="typedef" href="r_defs.h.html#spriteframe_t" title='spriteframe_t' data-type='struct spriteframe_t' data-ref="spriteframe_t">spriteframe_t</a>));</td></tr>
+<tr><th id="279">279</th><td>    }</td></tr>
+<tr><th id="280">280</th><td></td></tr>
+<tr><th id="281">281</th><td>}</td></tr>
+<tr><th id="282">282</th><td></td></tr>
+<tr><th id="283">283</th><td></td></tr>
+<tr><th id="284">284</th><td></td></tr>
+<tr><th id="285">285</th><td></td></tr>
+<tr><th id="286">286</th><td><i>//</i></td></tr>
+<tr><th id="287">287</th><td><i>// GAME FUNCTIONS</i></td></tr>
+<tr><th id="288">288</th><td><i>//</i></td></tr>
+<tr><th id="289">289</th><td><a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>	<dfn class="decl def" id="vissprites" title='vissprites' data-ref="vissprites">vissprites</dfn>[<a class="macro" href="r_things.h.html#31" title="128" data-ref="_M/MAXVISSPRITES">MAXVISSPRITES</a>];</td></tr>
+<tr><th id="290">290</th><td><a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>*	<dfn class="decl def" id="vissprite_p" title='vissprite_p' data-ref="vissprite_p">vissprite_p</dfn>;</td></tr>
+<tr><th id="291">291</th><td><em>int</em>		<dfn class="decl def" id="newvissprite" title='newvissprite' data-ref="newvissprite">newvissprite</dfn>;</td></tr>
+<tr><th id="292">292</th><td></td></tr>
+<tr><th id="293">293</th><td></td></tr>
+<tr><th id="294">294</th><td></td></tr>
+<tr><th id="295">295</th><td><i>//</i></td></tr>
+<tr><th id="296">296</th><td><i>// R_InitSprites</i></td></tr>
+<tr><th id="297">297</th><td><i>// Called at program start.</i></td></tr>
+<tr><th id="298">298</th><td><i>//</i></td></tr>
+<tr><th id="299">299</th><td><em>void</em> <dfn class="decl def" id="R_InitSprites" title='R_InitSprites' data-ref="R_InitSprites">R_InitSprites</dfn> (<em>char</em>** <dfn class="local col6 decl" id="16namelist" title='namelist' data-type='char **' data-ref="16namelist">namelist</dfn>)</td></tr>
+<tr><th id="300">300</th><td>{</td></tr>
+<tr><th id="301">301</th><td>    <em>int</em>		<dfn class="local col7 decl" id="17i" title='i' data-type='int' data-ref="17i">i</dfn>;</td></tr>
+<tr><th id="302">302</th><td>	</td></tr>
+<tr><th id="303">303</th><td>    <b>for</b> (<a class="local col7 ref" href="#17i" title='i' data-ref="17i">i</a>=<var>0</var> ; <a class="local col7 ref" href="#17i" title='i' data-ref="17i">i</a>&lt;<a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a> ; <a class="local col7 ref" href="#17i" title='i' data-ref="17i">i</a>++)</td></tr>
+<tr><th id="304">304</th><td>    {</td></tr>
+<tr><th id="305">305</th><td>	<a class="ref" href="r_things.h.html#negonearray" title='negonearray' data-ref="negonearray">negonearray</a>[<a class="local col7 ref" href="#17i" title='i' data-ref="17i">i</a>] = -<var>1</var>;</td></tr>
+<tr><th id="306">306</th><td>    }</td></tr>
+<tr><th id="307">307</th><td>	</td></tr>
+<tr><th id="308">308</th><td>    <a class="ref" href="#R_InitSpriteDefs" title='R_InitSpriteDefs' data-ref="R_InitSpriteDefs">R_InitSpriteDefs</a> (<a class="local col6 ref" href="#16namelist" title='namelist' data-ref="16namelist">namelist</a>);</td></tr>
+<tr><th id="309">309</th><td>}</td></tr>
+<tr><th id="310">310</th><td></td></tr>
+<tr><th id="311">311</th><td></td></tr>
+<tr><th id="312">312</th><td></td></tr>
+<tr><th id="313">313</th><td><i>//</i></td></tr>
+<tr><th id="314">314</th><td><i>// R_ClearSprites</i></td></tr>
+<tr><th id="315">315</th><td><i>// Called at frame start.</i></td></tr>
+<tr><th id="316">316</th><td><i>//</i></td></tr>
+<tr><th id="317">317</th><td><em>void</em> <dfn class="decl def" id="R_ClearSprites" title='R_ClearSprites' data-ref="R_ClearSprites">R_ClearSprites</dfn> (<em>void</em>)</td></tr>
+<tr><th id="318">318</th><td>{</td></tr>
+<tr><th id="319">319</th><td>    <a class="ref" href="r_things.h.html#vissprite_p" title='vissprite_p' data-ref="vissprite_p">vissprite_p</a> = <a class="ref" href="r_things.h.html#vissprites" title='vissprites' data-ref="vissprites">vissprites</a>;</td></tr>
+<tr><th id="320">320</th><td>}</td></tr>
+<tr><th id="321">321</th><td></td></tr>
+<tr><th id="322">322</th><td></td></tr>
+<tr><th id="323">323</th><td><i>//</i></td></tr>
+<tr><th id="324">324</th><td><i>// R_NewVisSprite</i></td></tr>
+<tr><th id="325">325</th><td><i>//</i></td></tr>
+<tr><th id="326">326</th><td><a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>	<dfn class="decl def" id="overflowsprite" title='overflowsprite' data-ref="overflowsprite">overflowsprite</dfn>;</td></tr>
+<tr><th id="327">327</th><td></td></tr>
+<tr><th id="328">328</th><td><a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>* <dfn class="decl def" id="R_NewVisSprite" title='R_NewVisSprite' data-ref="R_NewVisSprite">R_NewVisSprite</dfn> (<em>void</em>)</td></tr>
+<tr><th id="329">329</th><td>{</td></tr>
+<tr><th id="330">330</th><td>    <b>if</b> (<a class="ref" href="r_things.h.html#vissprite_p" title='vissprite_p' data-ref="vissprite_p">vissprite_p</a> == &amp;<a class="ref" href="r_things.h.html#vissprites" title='vissprites' data-ref="vissprites">vissprites</a>[<a class="macro" href="r_things.h.html#31" title="128" data-ref="_M/MAXVISSPRITES">MAXVISSPRITES</a>])</td></tr>
+<tr><th id="331">331</th><td>	<b>return</b> &amp;<a class="ref" href="#overflowsprite" title='overflowsprite' data-ref="overflowsprite">overflowsprite</a>;</td></tr>
+<tr><th id="332">332</th><td>    </td></tr>
+<tr><th id="333">333</th><td>    <a class="ref" href="r_things.h.html#vissprite_p" title='vissprite_p' data-ref="vissprite_p">vissprite_p</a>++;</td></tr>
+<tr><th id="334">334</th><td>    <b>return</b> <a class="ref" href="r_things.h.html#vissprite_p" title='vissprite_p' data-ref="vissprite_p">vissprite_p</a>-<var>1</var>;</td></tr>
+<tr><th id="335">335</th><td>}</td></tr>
+<tr><th id="336">336</th><td></td></tr>
+<tr><th id="337">337</th><td></td></tr>
+<tr><th id="338">338</th><td></td></tr>
+<tr><th id="339">339</th><td><i>//</i></td></tr>
+<tr><th id="340">340</th><td><i>// R_DrawMaskedColumn</i></td></tr>
+<tr><th id="341">341</th><td><i>// Used for sprites and masked mid textures.</i></td></tr>
+<tr><th id="342">342</th><td><i>// Masked means: partly transparent, i.e. stored</i></td></tr>
+<tr><th id="343">343</th><td><i>//  in posts/runs of opaque pixels.</i></td></tr>
+<tr><th id="344">344</th><td><i>//</i></td></tr>
+<tr><th id="345">345</th><td><em>short</em>*		<dfn class="decl def" id="mfloorclip" title='mfloorclip' data-ref="mfloorclip">mfloorclip</dfn>;</td></tr>
+<tr><th id="346">346</th><td><em>short</em>*		<dfn class="decl def" id="mceilingclip" title='mceilingclip' data-ref="mceilingclip">mceilingclip</dfn>;</td></tr>
+<tr><th id="347">347</th><td></td></tr>
+<tr><th id="348">348</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="decl def" id="spryscale" title='spryscale' data-ref="spryscale">spryscale</dfn>;</td></tr>
+<tr><th id="349">349</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="decl def" id="sprtopscreen" title='sprtopscreen' data-ref="sprtopscreen">sprtopscreen</dfn>;</td></tr>
+<tr><th id="350">350</th><td></td></tr>
+<tr><th id="351">351</th><td><em>void</em> <dfn class="decl def" id="R_DrawMaskedColumn" title='R_DrawMaskedColumn' data-ref="R_DrawMaskedColumn">R_DrawMaskedColumn</dfn> (<a class="typedef" href="r_defs.h.html#column_t" title='column_t' data-type='post_t' data-ref="column_t">column_t</a>* <dfn class="local col8 decl" id="18column" title='column' data-type='column_t *' data-ref="18column">column</dfn>)</td></tr>
+<tr><th id="352">352</th><td>{</td></tr>
+<tr><th id="353">353</th><td>    <em>int</em>		<dfn class="local col9 decl" id="19topscreen" title='topscreen' data-type='int' data-ref="19topscreen">topscreen</dfn>;</td></tr>
+<tr><th id="354">354</th><td>    <em>int</em> 	<dfn class="local col0 decl" id="20bottomscreen" title='bottomscreen' data-type='int' data-ref="20bottomscreen">bottomscreen</dfn>;</td></tr>
+<tr><th id="355">355</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col1 decl" id="21basetexturemid" title='basetexturemid' data-type='fixed_t' data-ref="21basetexturemid">basetexturemid</dfn>;</td></tr>
+<tr><th id="356">356</th><td>	</td></tr>
+<tr><th id="357">357</th><td>    <a class="local col1 ref" href="#21basetexturemid" title='basetexturemid' data-ref="21basetexturemid">basetexturemid</a> = <a class="ref" href="r_draw.h.html#dc_texturemid" title='dc_texturemid' data-ref="dc_texturemid">dc_texturemid</a>;</td></tr>
+<tr><th id="358">358</th><td>	</td></tr>
+<tr><th id="359">359</th><td>    <b>for</b> ( ; <a class="local col8 ref" href="#18column" title='column' data-ref="18column">column</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::topdelta" title='(anonymous struct)::topdelta' data-ref="(anonymous)::topdelta">topdelta</a> != <var>0xff</var> ; ) </td></tr>
+<tr><th id="360">360</th><td>    {</td></tr>
+<tr><th id="361">361</th><td>	<i>// calculate unclipped screen coordinates</i></td></tr>
+<tr><th id="362">362</th><td><i>	//  for post</i></td></tr>
+<tr><th id="363">363</th><td>	<a class="local col9 ref" href="#19topscreen" title='topscreen' data-ref="19topscreen">topscreen</a> = <a class="ref" href="r_things.h.html#sprtopscreen" title='sprtopscreen' data-ref="sprtopscreen">sprtopscreen</a> + <a class="ref" href="r_things.h.html#spryscale" title='spryscale' data-ref="spryscale">spryscale</a>*<a class="local col8 ref" href="#18column" title='column' data-ref="18column">column</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::topdelta" title='(anonymous struct)::topdelta' data-ref="(anonymous)::topdelta">topdelta</a>;</td></tr>
+<tr><th id="364">364</th><td>	<a class="local col0 ref" href="#20bottomscreen" title='bottomscreen' data-ref="20bottomscreen">bottomscreen</a> = <a class="local col9 ref" href="#19topscreen" title='topscreen' data-ref="19topscreen">topscreen</a> + <a class="ref" href="r_things.h.html#spryscale" title='spryscale' data-ref="spryscale">spryscale</a>*<a class="local col8 ref" href="#18column" title='column' data-ref="18column">column</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::length" title='(anonymous struct)::length' data-ref="(anonymous)::length">length</a>;</td></tr>
+<tr><th id="365">365</th><td></td></tr>
+<tr><th id="366">366</th><td>	<a class="ref" href="r_draw.h.html#dc_yl" title='dc_yl' data-ref="dc_yl">dc_yl</a> = (<a class="local col9 ref" href="#19topscreen" title='topscreen' data-ref="19topscreen">topscreen</a>+<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>-<var>1</var>)&gt;&gt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>;</td></tr>
+<tr><th id="367">367</th><td>	<a class="ref" href="r_draw.h.html#dc_yh" title='dc_yh' data-ref="dc_yh">dc_yh</a> = (<a class="local col0 ref" href="#20bottomscreen" title='bottomscreen' data-ref="20bottomscreen">bottomscreen</a>-<var>1</var>)&gt;&gt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>;</td></tr>
+<tr><th id="368">368</th><td>		</td></tr>
+<tr><th id="369">369</th><td>	<b>if</b> (<a class="ref" href="r_draw.h.html#dc_yh" title='dc_yh' data-ref="dc_yh">dc_yh</a> &gt;= <a class="ref" href="r_things.h.html#mfloorclip" title='mfloorclip' data-ref="mfloorclip">mfloorclip</a>[<a class="ref" href="r_draw.h.html#dc_x" title='dc_x' data-ref="dc_x">dc_x</a>])</td></tr>
+<tr><th id="370">370</th><td>	    <a class="ref" href="r_draw.h.html#dc_yh" title='dc_yh' data-ref="dc_yh">dc_yh</a> = <a class="ref" href="r_things.h.html#mfloorclip" title='mfloorclip' data-ref="mfloorclip">mfloorclip</a>[<a class="ref" href="r_draw.h.html#dc_x" title='dc_x' data-ref="dc_x">dc_x</a>]-<var>1</var>;</td></tr>
+<tr><th id="371">371</th><td>	<b>if</b> (<a class="ref" href="r_draw.h.html#dc_yl" title='dc_yl' data-ref="dc_yl">dc_yl</a> &lt;= <a class="ref" href="r_things.h.html#mceilingclip" title='mceilingclip' data-ref="mceilingclip">mceilingclip</a>[<a class="ref" href="r_draw.h.html#dc_x" title='dc_x' data-ref="dc_x">dc_x</a>])</td></tr>
+<tr><th id="372">372</th><td>	    <a class="ref" href="r_draw.h.html#dc_yl" title='dc_yl' data-ref="dc_yl">dc_yl</a> = <a class="ref" href="r_things.h.html#mceilingclip" title='mceilingclip' data-ref="mceilingclip">mceilingclip</a>[<a class="ref" href="r_draw.h.html#dc_x" title='dc_x' data-ref="dc_x">dc_x</a>]+<var>1</var>;</td></tr>
+<tr><th id="373">373</th><td></td></tr>
+<tr><th id="374">374</th><td>	<b>if</b> (<a class="ref" href="r_draw.h.html#dc_yl" title='dc_yl' data-ref="dc_yl">dc_yl</a> &lt;= <a class="ref" href="r_draw.h.html#dc_yh" title='dc_yh' data-ref="dc_yh">dc_yh</a>)</td></tr>
+<tr><th id="375">375</th><td>	{</td></tr>
+<tr><th id="376">376</th><td>	    <a class="ref" href="r_draw.h.html#dc_source" title='dc_source' data-ref="dc_source">dc_source</a> = (<a class="typedef" href="doomtype.h.html#byte" title='byte' data-type='unsigned char' data-ref="byte">byte</a> *)<a class="local col8 ref" href="#18column" title='column' data-ref="18column">column</a> + <var>3</var>;</td></tr>
+<tr><th id="377">377</th><td>	    <a class="ref" href="r_draw.h.html#dc_texturemid" title='dc_texturemid' data-ref="dc_texturemid">dc_texturemid</a> = <a class="local col1 ref" href="#21basetexturemid" title='basetexturemid' data-ref="21basetexturemid">basetexturemid</a> - (<a class="local col8 ref" href="#18column" title='column' data-ref="18column">column</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::topdelta" title='(anonymous struct)::topdelta' data-ref="(anonymous)::topdelta">topdelta</a>&lt;&lt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>);</td></tr>
+<tr><th id="378">378</th><td>	    <i>// dc_source = (byte *)column + 3 - column-&gt;topdelta;</i></td></tr>
+<tr><th id="379">379</th><td><i></i></td></tr>
+<tr><th id="380">380</th><td><i>	    // Drawn by either R_DrawColumn</i></td></tr>
+<tr><th id="381">381</th><td><i>	    //  or (SHADOW) R_DrawFuzzColumn.</i></td></tr>
+<tr><th id="382">382</th><td>	    <a class="ref" href="r_main.h.html#colfunc" title='colfunc' data-ref="colfunc">colfunc</a> ();	</td></tr>
+<tr><th id="383">383</th><td>	}</td></tr>
+<tr><th id="384">384</th><td>	<a class="local col8 ref" href="#18column" title='column' data-ref="18column">column</a> = (<a class="typedef" href="r_defs.h.html#column_t" title='column_t' data-type='post_t' data-ref="column_t">column_t</a> *)(  (<a class="typedef" href="doomtype.h.html#byte" title='byte' data-type='unsigned char' data-ref="byte">byte</a> *)<a class="local col8 ref" href="#18column" title='column' data-ref="18column">column</a> + <a class="local col8 ref" href="#18column" title='column' data-ref="18column">column</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::length" title='(anonymous struct)::length' data-ref="(anonymous)::length">length</a> + <var>4</var>);</td></tr>
+<tr><th id="385">385</th><td>    }</td></tr>
+<tr><th id="386">386</th><td>	</td></tr>
+<tr><th id="387">387</th><td>    <a class="ref" href="r_draw.h.html#dc_texturemid" title='dc_texturemid' data-ref="dc_texturemid">dc_texturemid</a> = <a class="local col1 ref" href="#21basetexturemid" title='basetexturemid' data-ref="21basetexturemid">basetexturemid</a>;</td></tr>
+<tr><th id="388">388</th><td>}</td></tr>
+<tr><th id="389">389</th><td></td></tr>
+<tr><th id="390">390</th><td></td></tr>
+<tr><th id="391">391</th><td></td></tr>
+<tr><th id="392">392</th><td><i>//</i></td></tr>
+<tr><th id="393">393</th><td><i>// R_DrawVisSprite</i></td></tr>
+<tr><th id="394">394</th><td><i>//  mfloorclip and mceilingclip should also be set.</i></td></tr>
+<tr><th id="395">395</th><td><i>//</i></td></tr>
+<tr><th id="396">396</th><td><em>void</em></td></tr>
+<tr><th id="397">397</th><td><dfn class="decl def" id="R_DrawVisSprite" title='R_DrawVisSprite' data-ref="R_DrawVisSprite">R_DrawVisSprite</dfn></td></tr>
+<tr><th id="398">398</th><td>( <a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>*		<dfn class="local col2 decl" id="22vis" title='vis' data-type='vissprite_t *' data-ref="22vis">vis</dfn>,</td></tr>
+<tr><th id="399">399</th><td>  <em>int</em>			<dfn class="local col3 decl" id="23x1" title='x1' data-type='int' data-ref="23x1">x1</dfn>,</td></tr>
+<tr><th id="400">400</th><td>  <em>int</em>			<dfn class="local col4 decl" id="24x2" title='x2' data-type='int' data-ref="24x2">x2</dfn> )</td></tr>
+<tr><th id="401">401</th><td>{</td></tr>
+<tr><th id="402">402</th><td>    <a class="typedef" href="r_defs.h.html#column_t" title='column_t' data-type='post_t' data-ref="column_t">column_t</a>*		<dfn class="local col5 decl" id="25column" title='column' data-type='column_t *' data-ref="25column">column</dfn>;</td></tr>
+<tr><th id="403">403</th><td>    <em>int</em>			<dfn class="local col6 decl" id="26texturecolumn" title='texturecolumn' data-type='int' data-ref="26texturecolumn">texturecolumn</dfn>;</td></tr>
+<tr><th id="404">404</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col7 decl" id="27frac" title='frac' data-type='fixed_t' data-ref="27frac">frac</dfn>;</td></tr>
+<tr><th id="405">405</th><td>    <a class="typedef" href="r_defs.h.html#patch_t" title='patch_t' data-type='struct patch_t' data-ref="patch_t">patch_t</a>*		<dfn class="local col8 decl" id="28patch" title='patch' data-type='patch_t *' data-ref="28patch">patch</dfn>;</td></tr>
+<tr><th id="406">406</th><td>	</td></tr>
+<tr><th id="407">407</th><td>	</td></tr>
+<tr><th id="408">408</th><td>    <a class="local col8 ref" href="#28patch" title='patch' data-ref="28patch">patch</a> = <a class="ref" href="w_wad.h.html#W_CacheLumpNum" title='W_CacheLumpNum' data-ref="W_CacheLumpNum">W_CacheLumpNum</a> (<a class="local col2 ref" href="#22vis" title='vis' data-ref="22vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::patch" title='vissprite_s::patch' data-ref="vissprite_s::patch">patch</a>+<a class="ref" href="r_state.h.html#firstspritelump" title='firstspritelump' data-ref="firstspritelump">firstspritelump</a>, <a class="macro" href="z_zone.h.html#44" title="101" data-ref="_M/PU_CACHE">PU_CACHE</a>);</td></tr>
+<tr><th id="409">409</th><td></td></tr>
+<tr><th id="410">410</th><td>    <a class="ref" href="r_draw.h.html#dc_colormap" title='dc_colormap' data-ref="dc_colormap">dc_colormap</a> = <a class="local col2 ref" href="#22vis" title='vis' data-ref="22vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::colormap" title='vissprite_s::colormap' data-ref="vissprite_s::colormap">colormap</a>;</td></tr>
+<tr><th id="411">411</th><td>    </td></tr>
+<tr><th id="412">412</th><td>    <b>if</b> (!<a class="ref" href="r_draw.h.html#dc_colormap" title='dc_colormap' data-ref="dc_colormap">dc_colormap</a>)</td></tr>
+<tr><th id="413">413</th><td>    {</td></tr>
+<tr><th id="414">414</th><td>	<i>// NULL colormap = shadow draw</i></td></tr>
+<tr><th id="415">415</th><td>	<a class="ref" href="r_main.h.html#colfunc" title='colfunc' data-ref="colfunc">colfunc</a> = <a class="ref" href="r_main.h.html#fuzzcolfunc" title='fuzzcolfunc' data-ref="fuzzcolfunc">fuzzcolfunc</a>;</td></tr>
+<tr><th id="416">416</th><td>    }</td></tr>
+<tr><th id="417">417</th><td>    <b>else</b> <b>if</b> (<a class="local col2 ref" href="#22vis" title='vis' data-ref="22vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::mobjflags" title='vissprite_s::mobjflags' data-ref="vissprite_s::mobjflags">mobjflags</a> &amp; <a class="enum" href="p_mobj.h.html#MF_TRANSLATION" title='MF_TRANSLATION' data-ref="MF_TRANSLATION">MF_TRANSLATION</a>)</td></tr>
+<tr><th id="418">418</th><td>    {</td></tr>
+<tr><th id="419">419</th><td>	<a class="ref" href="r_main.h.html#colfunc" title='colfunc' data-ref="colfunc">colfunc</a> = <a class="ref" href="r_draw.h.html#R_DrawTranslatedColumn" title='R_DrawTranslatedColumn' data-ref="R_DrawTranslatedColumn">R_DrawTranslatedColumn</a>;</td></tr>
+<tr><th id="420">420</th><td>	<a class="ref" href="r_draw.h.html#dc_translation" title='dc_translation' data-ref="dc_translation">dc_translation</a> = <a class="ref" href="r_draw.h.html#translationtables" title='translationtables' data-ref="translationtables">translationtables</a> - <var>256</var> +</td></tr>
+<tr><th id="421">421</th><td>	    ( (<a class="local col2 ref" href="#22vis" title='vis' data-ref="22vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::mobjflags" title='vissprite_s::mobjflags' data-ref="vissprite_s::mobjflags">mobjflags</a> &amp; <a class="enum" href="p_mobj.h.html#MF_TRANSLATION" title='MF_TRANSLATION' data-ref="MF_TRANSLATION">MF_TRANSLATION</a>) &gt;&gt; (<a class="enum" href="p_mobj.h.html#MF_TRANSSHIFT" title='MF_TRANSSHIFT' data-ref="MF_TRANSSHIFT">MF_TRANSSHIFT</a>-<var>8</var>) );</td></tr>
+<tr><th id="422">422</th><td>    }</td></tr>
+<tr><th id="423">423</th><td>	</td></tr>
+<tr><th id="424">424</th><td>    <a class="ref" href="r_draw.h.html#dc_iscale" title='dc_iscale' data-ref="dc_iscale">dc_iscale</a> = <a class="ref" href="../include/stdlib.h.html#abs" title='abs' data-ref="abs">abs</a>(<a class="local col2 ref" href="#22vis" title='vis' data-ref="22vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::xiscale" title='vissprite_s::xiscale' data-ref="vissprite_s::xiscale">xiscale</a>)&gt;&gt;<a class="ref" href="r_main.h.html#detailshift" title='detailshift' data-ref="detailshift">detailshift</a>;</td></tr>
+<tr><th id="425">425</th><td>    <a class="ref" href="r_draw.h.html#dc_texturemid" title='dc_texturemid' data-ref="dc_texturemid">dc_texturemid</a> = <a class="local col2 ref" href="#22vis" title='vis' data-ref="22vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::texturemid" title='vissprite_s::texturemid' data-ref="vissprite_s::texturemid">texturemid</a>;</td></tr>
+<tr><th id="426">426</th><td>    <a class="local col7 ref" href="#27frac" title='frac' data-ref="27frac">frac</a> = <a class="local col2 ref" href="#22vis" title='vis' data-ref="22vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::startfrac" title='vissprite_s::startfrac' data-ref="vissprite_s::startfrac">startfrac</a>;</td></tr>
+<tr><th id="427">427</th><td>    <a class="ref" href="r_things.h.html#spryscale" title='spryscale' data-ref="spryscale">spryscale</a> = <a class="local col2 ref" href="#22vis" title='vis' data-ref="22vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::scale" title='vissprite_s::scale' data-ref="vissprite_s::scale">scale</a>;</td></tr>
+<tr><th id="428">428</th><td>    <a class="ref" href="r_things.h.html#sprtopscreen" title='sprtopscreen' data-ref="sprtopscreen">sprtopscreen</a> = <a class="ref" href="r_main.h.html#centeryfrac" title='centeryfrac' data-ref="centeryfrac">centeryfrac</a> - <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a>(<a class="ref" href="r_draw.h.html#dc_texturemid" title='dc_texturemid' data-ref="dc_texturemid">dc_texturemid</a>,<a class="ref" href="r_things.h.html#spryscale" title='spryscale' data-ref="spryscale">spryscale</a>);</td></tr>
+<tr><th id="429">429</th><td>	</td></tr>
+<tr><th id="430">430</th><td>    <b>for</b> (<a class="ref" href="r_draw.h.html#dc_x" title='dc_x' data-ref="dc_x">dc_x</a>=<a class="local col2 ref" href="#22vis" title='vis' data-ref="22vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x1" title='vissprite_s::x1' data-ref="vissprite_s::x1">x1</a> ; <a class="ref" href="r_draw.h.html#dc_x" title='dc_x' data-ref="dc_x">dc_x</a>&lt;=<a class="local col2 ref" href="#22vis" title='vis' data-ref="22vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x2" title='vissprite_s::x2' data-ref="vissprite_s::x2">x2</a> ; <a class="ref" href="r_draw.h.html#dc_x" title='dc_x' data-ref="dc_x">dc_x</a>++, <a class="local col7 ref" href="#27frac" title='frac' data-ref="27frac">frac</a> += <a class="local col2 ref" href="#22vis" title='vis' data-ref="22vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::xiscale" title='vissprite_s::xiscale' data-ref="vissprite_s::xiscale">xiscale</a>)</td></tr>
+<tr><th id="431">431</th><td>    {</td></tr>
+<tr><th id="432">432</th><td>	<a class="local col6 ref" href="#26texturecolumn" title='texturecolumn' data-ref="26texturecolumn">texturecolumn</a> = <a class="local col7 ref" href="#27frac" title='frac' data-ref="27frac">frac</a>&gt;&gt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>;</td></tr>
+<tr><th id="433">433</th><td><u>#<span data-ppcond="433">ifdef</span> <a class="macro" href="doomdef.h.html#75" data-ref="_M/RANGECHECK">RANGECHECK</a></u></td></tr>
+<tr><th id="434">434</th><td>	<b>if</b> (<a class="local col6 ref" href="#26texturecolumn" title='texturecolumn' data-ref="26texturecolumn">texturecolumn</a> &lt; <var>0</var> || <a class="local col6 ref" href="#26texturecolumn" title='texturecolumn' data-ref="26texturecolumn">texturecolumn</a> &gt;= <a class="macro" href="m_swap.h.html#40" title="(patch-&gt;width)" data-ref="_M/SHORT">SHORT</a>(<a class="local col8 ref" href="#28patch" title='patch' data-ref="28patch">patch</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::width" title='(anonymous struct)::width' data-ref="(anonymous)::width">width</a>))</td></tr>
+<tr><th id="435">435</th><td>	    <a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a> (<q>"R_DrawSpriteRange: bad texturecolumn"</q>);</td></tr>
+<tr><th id="436">436</th><td><u>#<span data-ppcond="433">endif</span></u></td></tr>
+<tr><th id="437">437</th><td>	<a class="local col5 ref" href="#25column" title='column' data-ref="25column">column</a> = (<a class="typedef" href="r_defs.h.html#column_t" title='column_t' data-type='post_t' data-ref="column_t">column_t</a> *) ((<a class="typedef" href="doomtype.h.html#byte" title='byte' data-type='unsigned char' data-ref="byte">byte</a> *)<a class="local col8 ref" href="#28patch" title='patch' data-ref="28patch">patch</a> +</td></tr>
+<tr><th id="438">438</th><td>			       <a class="macro" href="m_swap.h.html#41" title="(patch-&gt;columnofs[texturecolumn])" data-ref="_M/LONG">LONG</a>(<a class="local col8 ref" href="#28patch" title='patch' data-ref="28patch">patch</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::columnofs" title='(anonymous struct)::columnofs' data-ref="(anonymous)::columnofs">columnofs</a>[<a class="local col6 ref" href="#26texturecolumn" title='texturecolumn' data-ref="26texturecolumn">texturecolumn</a>]));</td></tr>
+<tr><th id="439">439</th><td>	<a class="ref" href="#R_DrawMaskedColumn" title='R_DrawMaskedColumn' data-ref="R_DrawMaskedColumn">R_DrawMaskedColumn</a> (<a class="local col5 ref" href="#25column" title='column' data-ref="25column">column</a>);</td></tr>
+<tr><th id="440">440</th><td>    }</td></tr>
+<tr><th id="441">441</th><td></td></tr>
+<tr><th id="442">442</th><td>    <a class="ref" href="r_main.h.html#colfunc" title='colfunc' data-ref="colfunc">colfunc</a> = <a class="ref" href="r_main.h.html#basecolfunc" title='basecolfunc' data-ref="basecolfunc">basecolfunc</a>;</td></tr>
+<tr><th id="443">443</th><td>}</td></tr>
+<tr><th id="444">444</th><td></td></tr>
+<tr><th id="445">445</th><td></td></tr>
+<tr><th id="446">446</th><td></td></tr>
+<tr><th id="447">447</th><td><i>//</i></td></tr>
+<tr><th id="448">448</th><td><i>// R_ProjectSprite</i></td></tr>
+<tr><th id="449">449</th><td><i>// Generates a vissprite for a thing</i></td></tr>
+<tr><th id="450">450</th><td><i>//  if it might be visible.</i></td></tr>
+<tr><th id="451">451</th><td><i>//</i></td></tr>
+<tr><th id="452">452</th><td><em>void</em> <dfn class="decl def" id="R_ProjectSprite" title='R_ProjectSprite' data-ref="R_ProjectSprite">R_ProjectSprite</dfn> (<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>* <dfn class="local col9 decl" id="29thing" title='thing' data-type='mobj_t *' data-ref="29thing">thing</dfn>)</td></tr>
+<tr><th id="453">453</th><td>{</td></tr>
+<tr><th id="454">454</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col0 decl" id="30tr_x" title='tr_x' data-type='fixed_t' data-ref="30tr_x">tr_x</dfn>;</td></tr>
+<tr><th id="455">455</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col1 decl" id="31tr_y" title='tr_y' data-type='fixed_t' data-ref="31tr_y">tr_y</dfn>;</td></tr>
+<tr><th id="456">456</th><td>    </td></tr>
+<tr><th id="457">457</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col2 decl" id="32gxt" title='gxt' data-type='fixed_t' data-ref="32gxt">gxt</dfn>;</td></tr>
+<tr><th id="458">458</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col3 decl" id="33gyt" title='gyt' data-type='fixed_t' data-ref="33gyt">gyt</dfn>;</td></tr>
+<tr><th id="459">459</th><td>    </td></tr>
+<tr><th id="460">460</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col4 decl" id="34tx" title='tx' data-type='fixed_t' data-ref="34tx">tx</dfn>;</td></tr>
+<tr><th id="461">461</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col5 decl" id="35tz" title='tz' data-type='fixed_t' data-ref="35tz">tz</dfn>;</td></tr>
+<tr><th id="462">462</th><td></td></tr>
+<tr><th id="463">463</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col6 decl" id="36xscale" title='xscale' data-type='fixed_t' data-ref="36xscale">xscale</dfn>;</td></tr>
+<tr><th id="464">464</th><td>    </td></tr>
+<tr><th id="465">465</th><td>    <em>int</em>			<dfn class="local col7 decl" id="37x1" title='x1' data-type='int' data-ref="37x1">x1</dfn>;</td></tr>
+<tr><th id="466">466</th><td>    <em>int</em>			<dfn class="local col8 decl" id="38x2" title='x2' data-type='int' data-ref="38x2">x2</dfn>;</td></tr>
+<tr><th id="467">467</th><td></td></tr>
+<tr><th id="468">468</th><td>    <a class="typedef" href="r_defs.h.html#spritedef_t" title='spritedef_t' data-type='struct spritedef_t' data-ref="spritedef_t">spritedef_t</a>*	<dfn class="local col9 decl" id="39sprdef" title='sprdef' data-type='spritedef_t *' data-ref="39sprdef">sprdef</dfn>;</td></tr>
+<tr><th id="469">469</th><td>    <a class="typedef" href="r_defs.h.html#spriteframe_t" title='spriteframe_t' data-type='struct spriteframe_t' data-ref="spriteframe_t">spriteframe_t</a>*	<dfn class="local col0 decl" id="40sprframe" title='sprframe' data-type='spriteframe_t *' data-ref="40sprframe">sprframe</dfn>;</td></tr>
+<tr><th id="470">470</th><td>    <em>int</em>			<dfn class="local col1 decl" id="41lump" title='lump' data-type='int' data-ref="41lump">lump</dfn>;</td></tr>
+<tr><th id="471">471</th><td>    </td></tr>
+<tr><th id="472">472</th><td>    <em>unsigned</em>		<dfn class="local col2 decl" id="42rot" title='rot' data-type='unsigned int' data-ref="42rot">rot</dfn>;</td></tr>
+<tr><th id="473">473</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="local col3 decl" id="43flip" title='flip' data-type='boolean' data-ref="43flip">flip</dfn>;</td></tr>
+<tr><th id="474">474</th><td>    </td></tr>
+<tr><th id="475">475</th><td>    <em>int</em>			<dfn class="local col4 decl" id="44index" title='index' data-type='int' data-ref="44index">index</dfn>;</td></tr>
+<tr><th id="476">476</th><td></td></tr>
+<tr><th id="477">477</th><td>    <a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>*	<dfn class="local col5 decl" id="45vis" title='vis' data-type='vissprite_t *' data-ref="45vis">vis</dfn>;</td></tr>
+<tr><th id="478">478</th><td>    </td></tr>
+<tr><th id="479">479</th><td>    <a class="typedef" href="tables.h.html#angle_t" title='angle_t' data-type='unsigned int' data-ref="angle_t">angle_t</a>		<dfn class="local col6 decl" id="46ang" title='ang' data-type='angle_t' data-ref="46ang">ang</dfn>;</td></tr>
+<tr><th id="480">480</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col7 decl" id="47iscale" title='iscale' data-type='fixed_t' data-ref="47iscale">iscale</dfn>;</td></tr>
+<tr><th id="481">481</th><td>    </td></tr>
+<tr><th id="482">482</th><td>    <i>// transform the origin point</i></td></tr>
+<tr><th id="483">483</th><td>    <a class="local col0 ref" href="#30tr_x" title='tr_x' data-ref="30tr_x">tr_x</a> = <a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a> - <a class="ref" href="r_state.h.html#viewx" title='viewx' data-ref="viewx">viewx</a>;</td></tr>
+<tr><th id="484">484</th><td>    <a class="local col1 ref" href="#31tr_y" title='tr_y' data-ref="31tr_y">tr_y</a> = <a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a> - <a class="ref" href="r_state.h.html#viewy" title='viewy' data-ref="viewy">viewy</a>;</td></tr>
+<tr><th id="485">485</th><td>	</td></tr>
+<tr><th id="486">486</th><td>    <a class="local col2 ref" href="#32gxt" title='gxt' data-ref="32gxt">gxt</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a>(<a class="local col0 ref" href="#30tr_x" title='tr_x' data-ref="30tr_x">tr_x</a>,<a class="ref" href="r_main.h.html#viewcos" title='viewcos' data-ref="viewcos">viewcos</a>); </td></tr>
+<tr><th id="487">487</th><td>    <a class="local col3 ref" href="#33gyt" title='gyt' data-ref="33gyt">gyt</a> = -<a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a>(<a class="local col1 ref" href="#31tr_y" title='tr_y' data-ref="31tr_y">tr_y</a>,<a class="ref" href="r_main.h.html#viewsin" title='viewsin' data-ref="viewsin">viewsin</a>);</td></tr>
+<tr><th id="488">488</th><td>    </td></tr>
+<tr><th id="489">489</th><td>    <a class="local col5 ref" href="#35tz" title='tz' data-ref="35tz">tz</a> = <a class="local col2 ref" href="#32gxt" title='gxt' data-ref="32gxt">gxt</a>-<a class="local col3 ref" href="#33gyt" title='gyt' data-ref="33gyt">gyt</a>; </td></tr>
+<tr><th id="490">490</th><td></td></tr>
+<tr><th id="491">491</th><td>    <i>// thing is behind view plane?</i></td></tr>
+<tr><th id="492">492</th><td>    <b>if</b> (<a class="local col5 ref" href="#35tz" title='tz' data-ref="35tz">tz</a> &lt; <a class="macro" href="#46" title="((1&lt;&lt;16)*4)" data-ref="_M/MINZ">MINZ</a>)</td></tr>
+<tr><th id="493">493</th><td>	<b>return</b>;</td></tr>
+<tr><th id="494">494</th><td>    </td></tr>
+<tr><th id="495">495</th><td>    <a class="local col6 ref" href="#36xscale" title='xscale' data-ref="36xscale">xscale</a> = <a class="ref" href="m_fixed.h.html#FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</a>(<a class="ref" href="r_main.h.html#projection" title='projection' data-ref="projection">projection</a>, <a class="local col5 ref" href="#35tz" title='tz' data-ref="35tz">tz</a>);</td></tr>
+<tr><th id="496">496</th><td>	</td></tr>
+<tr><th id="497">497</th><td>    <a class="local col2 ref" href="#32gxt" title='gxt' data-ref="32gxt">gxt</a> = -<a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a>(<a class="local col0 ref" href="#30tr_x" title='tr_x' data-ref="30tr_x">tr_x</a>,<a class="ref" href="r_main.h.html#viewsin" title='viewsin' data-ref="viewsin">viewsin</a>); </td></tr>
+<tr><th id="498">498</th><td>    <a class="local col3 ref" href="#33gyt" title='gyt' data-ref="33gyt">gyt</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a>(<a class="local col1 ref" href="#31tr_y" title='tr_y' data-ref="31tr_y">tr_y</a>,<a class="ref" href="r_main.h.html#viewcos" title='viewcos' data-ref="viewcos">viewcos</a>); </td></tr>
+<tr><th id="499">499</th><td>    <a class="local col4 ref" href="#34tx" title='tx' data-ref="34tx">tx</a> = -(<a class="local col3 ref" href="#33gyt" title='gyt' data-ref="33gyt">gyt</a>+<a class="local col2 ref" href="#32gxt" title='gxt' data-ref="32gxt">gxt</a>); </td></tr>
+<tr><th id="500">500</th><td></td></tr>
+<tr><th id="501">501</th><td>    <i>// too far off the side?</i></td></tr>
+<tr><th id="502">502</th><td>    <b>if</b> (<a class="ref" href="../include/stdlib.h.html#abs" title='abs' data-ref="abs">abs</a>(<a class="local col4 ref" href="#34tx" title='tx' data-ref="34tx">tx</a>)&gt;(<a class="local col5 ref" href="#35tz" title='tz' data-ref="35tz">tz</a>&lt;&lt;<var>2</var>))</td></tr>
+<tr><th id="503">503</th><td>	<b>return</b>;</td></tr>
+<tr><th id="504">504</th><td>    </td></tr>
+<tr><th id="505">505</th><td>    <i>// decide which patch to use for sprite relative to player</i></td></tr>
+<tr><th id="506">506</th><td><u>#<span data-ppcond="506">ifdef</span> <a class="macro" href="doomdef.h.html#75" data-ref="_M/RANGECHECK">RANGECHECK</a></u></td></tr>
+<tr><th id="507">507</th><td>    <b>if</b> ((<em>unsigned</em>)<a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::sprite" title='mobj_s::sprite' data-ref="mobj_s::sprite">sprite</a> &gt;= <a class="ref" href="r_state.h.html#numsprites" title='numsprites' data-ref="numsprites">numsprites</a>)</td></tr>
+<tr><th id="508">508</th><td>	<a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a> (<q>"R_ProjectSprite: invalid sprite number %i "</q>,</td></tr>
+<tr><th id="509">509</th><td>		 <a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::sprite" title='mobj_s::sprite' data-ref="mobj_s::sprite">sprite</a>);</td></tr>
+<tr><th id="510">510</th><td><u>#<span data-ppcond="506">endif</span></u></td></tr>
+<tr><th id="511">511</th><td>    <a class="local col9 ref" href="#39sprdef" title='sprdef' data-ref="39sprdef">sprdef</a> = &amp;<a class="ref" href="r_state.h.html#sprites" title='sprites' data-ref="sprites">sprites</a>[<a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::sprite" title='mobj_s::sprite' data-ref="mobj_s::sprite">sprite</a>];</td></tr>
+<tr><th id="512">512</th><td><u>#<span data-ppcond="512">ifdef</span> <a class="macro" href="doomdef.h.html#75" data-ref="_M/RANGECHECK">RANGECHECK</a></u></td></tr>
+<tr><th id="513">513</th><td>    <b>if</b> ( (<a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::frame" title='mobj_s::frame' data-ref="mobj_s::frame">frame</a>&amp;<a class="macro" href="p_pspr.h.html#51" title="0x7fff" data-ref="_M/FF_FRAMEMASK">FF_FRAMEMASK</a>) &gt;= <a class="local col9 ref" href="#39sprdef" title='sprdef' data-ref="39sprdef">sprdef</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::numframes" title='(anonymous struct)::numframes' data-ref="(anonymous)::numframes">numframes</a> )</td></tr>
+<tr><th id="514">514</th><td>	<a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a> (<q>"R_ProjectSprite: invalid sprite frame %i : %i "</q>,</td></tr>
+<tr><th id="515">515</th><td>		 <a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::sprite" title='mobj_s::sprite' data-ref="mobj_s::sprite">sprite</a>, <a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::frame" title='mobj_s::frame' data-ref="mobj_s::frame">frame</a>);</td></tr>
+<tr><th id="516">516</th><td><u>#<span data-ppcond="512">endif</span></u></td></tr>
+<tr><th id="517">517</th><td>    <a class="local col0 ref" href="#40sprframe" title='sprframe' data-ref="40sprframe">sprframe</a> = &amp;<a class="local col9 ref" href="#39sprdef" title='sprdef' data-ref="39sprdef">sprdef</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::spriteframes" title='(anonymous struct)::spriteframes' data-ref="(anonymous)::spriteframes">spriteframes</a>[ <a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::frame" title='mobj_s::frame' data-ref="mobj_s::frame">frame</a> &amp; <a class="macro" href="p_pspr.h.html#51" title="0x7fff" data-ref="_M/FF_FRAMEMASK">FF_FRAMEMASK</a>];</td></tr>
+<tr><th id="518">518</th><td></td></tr>
+<tr><th id="519">519</th><td>    <b>if</b> (<a class="local col0 ref" href="#40sprframe" title='sprframe' data-ref="40sprframe">sprframe</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::rotate" title='(anonymous struct)::rotate' data-ref="(anonymous)::rotate">rotate</a>)</td></tr>
+<tr><th id="520">520</th><td>    {</td></tr>
+<tr><th id="521">521</th><td>	<i>// choose a different rotation based on player view</i></td></tr>
+<tr><th id="522">522</th><td>	<a class="local col6 ref" href="#46ang" title='ang' data-ref="46ang">ang</a> = <a class="ref" href="r_main.h.html#R_PointToAngle" title='R_PointToAngle' data-ref="R_PointToAngle">R_PointToAngle</a> (<a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a>, <a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a>);</td></tr>
+<tr><th id="523">523</th><td>	<a class="local col2 ref" href="#42rot" title='rot' data-ref="42rot">rot</a> = (<a class="local col6 ref" href="#46ang" title='ang' data-ref="46ang">ang</a>-<a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::angle" title='mobj_s::angle' data-ref="mobj_s::angle">angle</a>+(<em>unsigned</em>)(<a class="macro" href="tables.h.html#68" title="0x20000000" data-ref="_M/ANG45">ANG45</a>/<var>2</var>)*<var>9</var>)&gt;&gt;<var>29</var>;</td></tr>
+<tr><th id="524">524</th><td>	<a class="local col1 ref" href="#41lump" title='lump' data-ref="41lump">lump</a> = <a class="local col0 ref" href="#40sprframe" title='sprframe' data-ref="40sprframe">sprframe</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::lump" title='(anonymous struct)::lump' data-ref="(anonymous)::lump">lump</a>[<a class="local col2 ref" href="#42rot" title='rot' data-ref="42rot">rot</a>];</td></tr>
+<tr><th id="525">525</th><td>	<a class="local col3 ref" href="#43flip" title='flip' data-ref="43flip">flip</a> = (<a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>)<a class="local col0 ref" href="#40sprframe" title='sprframe' data-ref="40sprframe">sprframe</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::flip" title='(anonymous struct)::flip' data-ref="(anonymous)::flip">flip</a>[<a class="local col2 ref" href="#42rot" title='rot' data-ref="42rot">rot</a>];</td></tr>
+<tr><th id="526">526</th><td>    }</td></tr>
+<tr><th id="527">527</th><td>    <b>else</b></td></tr>
+<tr><th id="528">528</th><td>    {</td></tr>
+<tr><th id="529">529</th><td>	<i>// use single rotation for all views</i></td></tr>
+<tr><th id="530">530</th><td>	<a class="local col1 ref" href="#41lump" title='lump' data-ref="41lump">lump</a> = <a class="local col0 ref" href="#40sprframe" title='sprframe' data-ref="40sprframe">sprframe</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::lump" title='(anonymous struct)::lump' data-ref="(anonymous)::lump">lump</a>[<var>0</var>];</td></tr>
+<tr><th id="531">531</th><td>	<a class="local col3 ref" href="#43flip" title='flip' data-ref="43flip">flip</a> = (<a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>)<a class="local col0 ref" href="#40sprframe" title='sprframe' data-ref="40sprframe">sprframe</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::flip" title='(anonymous struct)::flip' data-ref="(anonymous)::flip">flip</a>[<var>0</var>];</td></tr>
+<tr><th id="532">532</th><td>    }</td></tr>
+<tr><th id="533">533</th><td>    </td></tr>
+<tr><th id="534">534</th><td>    <i>// calculate edges of the shape</i></td></tr>
+<tr><th id="535">535</th><td>    <a class="local col4 ref" href="#34tx" title='tx' data-ref="34tx">tx</a> -= <a class="ref" href="r_state.h.html#spriteoffset" title='spriteoffset' data-ref="spriteoffset">spriteoffset</a>[<a class="local col1 ref" href="#41lump" title='lump' data-ref="41lump">lump</a>];	</td></tr>
+<tr><th id="536">536</th><td>    <a class="local col7 ref" href="#37x1" title='x1' data-ref="37x1">x1</a> = (<a class="ref" href="r_main.h.html#centerxfrac" title='centerxfrac' data-ref="centerxfrac">centerxfrac</a> + <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> (<a class="local col4 ref" href="#34tx" title='tx' data-ref="34tx">tx</a>,<a class="local col6 ref" href="#36xscale" title='xscale' data-ref="36xscale">xscale</a>) ) &gt;&gt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>;</td></tr>
+<tr><th id="537">537</th><td></td></tr>
+<tr><th id="538">538</th><td>    <i>// off the right side?</i></td></tr>
+<tr><th id="539">539</th><td>    <b>if</b> (<a class="local col7 ref" href="#37x1" title='x1' data-ref="37x1">x1</a> &gt; <a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>)</td></tr>
+<tr><th id="540">540</th><td>	<b>return</b>;</td></tr>
+<tr><th id="541">541</th><td>    </td></tr>
+<tr><th id="542">542</th><td>    <a class="local col4 ref" href="#34tx" title='tx' data-ref="34tx">tx</a> +=  <a class="ref" href="r_state.h.html#spritewidth" title='spritewidth' data-ref="spritewidth">spritewidth</a>[<a class="local col1 ref" href="#41lump" title='lump' data-ref="41lump">lump</a>];</td></tr>
+<tr><th id="543">543</th><td>    <a class="local col8 ref" href="#38x2" title='x2' data-ref="38x2">x2</a> = ((<a class="ref" href="r_main.h.html#centerxfrac" title='centerxfrac' data-ref="centerxfrac">centerxfrac</a> + <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> (<a class="local col4 ref" href="#34tx" title='tx' data-ref="34tx">tx</a>,<a class="local col6 ref" href="#36xscale" title='xscale' data-ref="36xscale">xscale</a>) ) &gt;&gt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>) - <var>1</var>;</td></tr>
+<tr><th id="544">544</th><td></td></tr>
+<tr><th id="545">545</th><td>    <i>// off the left side</i></td></tr>
+<tr><th id="546">546</th><td>    <b>if</b> (<a class="local col8 ref" href="#38x2" title='x2' data-ref="38x2">x2</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="547">547</th><td>	<b>return</b>;</td></tr>
+<tr><th id="548">548</th><td>    </td></tr>
+<tr><th id="549">549</th><td>    <i>// store information in a vissprite</i></td></tr>
+<tr><th id="550">550</th><td>    <a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a> = <a class="ref" href="#R_NewVisSprite" title='R_NewVisSprite' data-ref="R_NewVisSprite">R_NewVisSprite</a> ();</td></tr>
+<tr><th id="551">551</th><td>    <a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::mobjflags" title='vissprite_s::mobjflags' data-ref="vissprite_s::mobjflags">mobjflags</a> = <a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::flags" title='mobj_s::flags' data-ref="mobj_s::flags">flags</a>;</td></tr>
+<tr><th id="552">552</th><td>    <a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::scale" title='vissprite_s::scale' data-ref="vissprite_s::scale">scale</a> = <a class="local col6 ref" href="#36xscale" title='xscale' data-ref="36xscale">xscale</a>&lt;&lt;<a class="ref" href="r_main.h.html#detailshift" title='detailshift' data-ref="detailshift">detailshift</a>;</td></tr>
+<tr><th id="553">553</th><td>    <a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::gx" title='vissprite_s::gx' data-ref="vissprite_s::gx">gx</a> = <a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a>;</td></tr>
+<tr><th id="554">554</th><td>    <a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::gy" title='vissprite_s::gy' data-ref="vissprite_s::gy">gy</a> = <a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a>;</td></tr>
+<tr><th id="555">555</th><td>    <a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::gz" title='vissprite_s::gz' data-ref="vissprite_s::gz">gz</a> = <a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::z" title='mobj_s::z' data-ref="mobj_s::z">z</a>;</td></tr>
+<tr><th id="556">556</th><td>    <a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::gzt" title='vissprite_s::gzt' data-ref="vissprite_s::gzt">gzt</a> = <a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::z" title='mobj_s::z' data-ref="mobj_s::z">z</a> + <a class="ref" href="r_state.h.html#spritetopoffset" title='spritetopoffset' data-ref="spritetopoffset">spritetopoffset</a>[<a class="local col1 ref" href="#41lump" title='lump' data-ref="41lump">lump</a>];</td></tr>
+<tr><th id="557">557</th><td>    <a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::texturemid" title='vissprite_s::texturemid' data-ref="vissprite_s::texturemid">texturemid</a> = <a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::gzt" title='vissprite_s::gzt' data-ref="vissprite_s::gzt">gzt</a> - <a class="ref" href="r_state.h.html#viewz" title='viewz' data-ref="viewz">viewz</a>;</td></tr>
+<tr><th id="558">558</th><td>    <a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x1" title='vissprite_s::x1' data-ref="vissprite_s::x1">x1</a> = <a class="local col7 ref" href="#37x1" title='x1' data-ref="37x1">x1</a> &lt; <var>0</var> ? <var>0</var> : <a class="local col7 ref" href="#37x1" title='x1' data-ref="37x1">x1</a>;</td></tr>
+<tr><th id="559">559</th><td>    <a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x2" title='vissprite_s::x2' data-ref="vissprite_s::x2">x2</a> = <a class="local col8 ref" href="#38x2" title='x2' data-ref="38x2">x2</a> &gt;= <a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a> ? <a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>-<var>1</var> : <a class="local col8 ref" href="#38x2" title='x2' data-ref="38x2">x2</a>;	</td></tr>
+<tr><th id="560">560</th><td>    <a class="local col7 ref" href="#47iscale" title='iscale' data-ref="47iscale">iscale</a> = <a class="ref" href="m_fixed.h.html#FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</a> (<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>, <a class="local col6 ref" href="#36xscale" title='xscale' data-ref="36xscale">xscale</a>);</td></tr>
+<tr><th id="561">561</th><td></td></tr>
+<tr><th id="562">562</th><td>    <b>if</b> (<a class="local col3 ref" href="#43flip" title='flip' data-ref="43flip">flip</a>)</td></tr>
+<tr><th id="563">563</th><td>    {</td></tr>
+<tr><th id="564">564</th><td>	<a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::startfrac" title='vissprite_s::startfrac' data-ref="vissprite_s::startfrac">startfrac</a> = <a class="ref" href="r_state.h.html#spritewidth" title='spritewidth' data-ref="spritewidth">spritewidth</a>[<a class="local col1 ref" href="#41lump" title='lump' data-ref="41lump">lump</a>]-<var>1</var>;</td></tr>
+<tr><th id="565">565</th><td>	<a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::xiscale" title='vissprite_s::xiscale' data-ref="vissprite_s::xiscale">xiscale</a> = -<a class="local col7 ref" href="#47iscale" title='iscale' data-ref="47iscale">iscale</a>;</td></tr>
+<tr><th id="566">566</th><td>    }</td></tr>
+<tr><th id="567">567</th><td>    <b>else</b></td></tr>
+<tr><th id="568">568</th><td>    {</td></tr>
+<tr><th id="569">569</th><td>	<a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::startfrac" title='vissprite_s::startfrac' data-ref="vissprite_s::startfrac">startfrac</a> = <var>0</var>;</td></tr>
+<tr><th id="570">570</th><td>	<a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::xiscale" title='vissprite_s::xiscale' data-ref="vissprite_s::xiscale">xiscale</a> = <a class="local col7 ref" href="#47iscale" title='iscale' data-ref="47iscale">iscale</a>;</td></tr>
+<tr><th id="571">571</th><td>    }</td></tr>
+<tr><th id="572">572</th><td></td></tr>
+<tr><th id="573">573</th><td>    <b>if</b> (<a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x1" title='vissprite_s::x1' data-ref="vissprite_s::x1">x1</a> &gt; <a class="local col7 ref" href="#37x1" title='x1' data-ref="37x1">x1</a>)</td></tr>
+<tr><th id="574">574</th><td>	<a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::startfrac" title='vissprite_s::startfrac' data-ref="vissprite_s::startfrac">startfrac</a> += <a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::xiscale" title='vissprite_s::xiscale' data-ref="vissprite_s::xiscale">xiscale</a>*(<a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x1" title='vissprite_s::x1' data-ref="vissprite_s::x1">x1</a>-<a class="local col7 ref" href="#37x1" title='x1' data-ref="37x1">x1</a>);</td></tr>
+<tr><th id="575">575</th><td>    <a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::patch" title='vissprite_s::patch' data-ref="vissprite_s::patch">patch</a> = <a class="local col1 ref" href="#41lump" title='lump' data-ref="41lump">lump</a>;</td></tr>
+<tr><th id="576">576</th><td>    </td></tr>
+<tr><th id="577">577</th><td>    <i>// get light level</i></td></tr>
+<tr><th id="578">578</th><td>    <b>if</b> (<a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::flags" title='mobj_s::flags' data-ref="mobj_s::flags">flags</a> &amp; <a class="enum" href="p_mobj.h.html#MF_SHADOW" title='MF_SHADOW' data-ref="MF_SHADOW">MF_SHADOW</a>)</td></tr>
+<tr><th id="579">579</th><td>    {</td></tr>
+<tr><th id="580">580</th><td>	<i>// shadow draw</i></td></tr>
+<tr><th id="581">581</th><td>	<a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::colormap" title='vissprite_s::colormap' data-ref="vissprite_s::colormap">colormap</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="582">582</th><td>    }</td></tr>
+<tr><th id="583">583</th><td>    <b>else</b> <b>if</b> (<a class="ref" href="r_main.h.html#fixedcolormap" title='fixedcolormap' data-ref="fixedcolormap">fixedcolormap</a>)</td></tr>
+<tr><th id="584">584</th><td>    {</td></tr>
+<tr><th id="585">585</th><td>	<i>// fixed map</i></td></tr>
+<tr><th id="586">586</th><td>	<a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::colormap" title='vissprite_s::colormap' data-ref="vissprite_s::colormap">colormap</a> = <a class="ref" href="r_main.h.html#fixedcolormap" title='fixedcolormap' data-ref="fixedcolormap">fixedcolormap</a>;</td></tr>
+<tr><th id="587">587</th><td>    }</td></tr>
+<tr><th id="588">588</th><td>    <b>else</b> <b>if</b> (<a class="local col9 ref" href="#29thing" title='thing' data-ref="29thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::frame" title='mobj_s::frame' data-ref="mobj_s::frame">frame</a> &amp; <a class="macro" href="p_pspr.h.html#50" title="0x8000" data-ref="_M/FF_FULLBRIGHT">FF_FULLBRIGHT</a>)</td></tr>
+<tr><th id="589">589</th><td>    {</td></tr>
+<tr><th id="590">590</th><td>	<i>// full bright</i></td></tr>
+<tr><th id="591">591</th><td>	<a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::colormap" title='vissprite_s::colormap' data-ref="vissprite_s::colormap">colormap</a> = <a class="ref" href="r_state.h.html#colormaps" title='colormaps' data-ref="colormaps">colormaps</a>;</td></tr>
+<tr><th id="592">592</th><td>    }</td></tr>
+<tr><th id="593">593</th><td>    </td></tr>
+<tr><th id="594">594</th><td>    <b>else</b></td></tr>
+<tr><th id="595">595</th><td>    {</td></tr>
+<tr><th id="596">596</th><td>	<i>// diminished light</i></td></tr>
+<tr><th id="597">597</th><td>	<a class="local col4 ref" href="#44index" title='index' data-ref="44index">index</a> = <a class="local col6 ref" href="#36xscale" title='xscale' data-ref="36xscale">xscale</a>&gt;&gt;(<a class="macro" href="r_main.h.html#73" title="12" data-ref="_M/LIGHTSCALESHIFT">LIGHTSCALESHIFT</a>-<a class="ref" href="r_main.h.html#detailshift" title='detailshift' data-ref="detailshift">detailshift</a>);</td></tr>
+<tr><th id="598">598</th><td></td></tr>
+<tr><th id="599">599</th><td>	<b>if</b> (<a class="local col4 ref" href="#44index" title='index' data-ref="44index">index</a> &gt;= <a class="macro" href="r_main.h.html#72" title="48" data-ref="_M/MAXLIGHTSCALE">MAXLIGHTSCALE</a>) </td></tr>
+<tr><th id="600">600</th><td>	    <a class="local col4 ref" href="#44index" title='index' data-ref="44index">index</a> = <a class="macro" href="r_main.h.html#72" title="48" data-ref="_M/MAXLIGHTSCALE">MAXLIGHTSCALE</a>-<var>1</var>;</td></tr>
+<tr><th id="601">601</th><td></td></tr>
+<tr><th id="602">602</th><td>	<a class="local col5 ref" href="#45vis" title='vis' data-ref="45vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::colormap" title='vissprite_s::colormap' data-ref="vissprite_s::colormap">colormap</a> = <a class="ref" href="#spritelights" title='spritelights' data-ref="spritelights">spritelights</a>[<a class="local col4 ref" href="#44index" title='index' data-ref="44index">index</a>];</td></tr>
+<tr><th id="603">603</th><td>    }	</td></tr>
+<tr><th id="604">604</th><td>}</td></tr>
+<tr><th id="605">605</th><td></td></tr>
+<tr><th id="606">606</th><td></td></tr>
+<tr><th id="607">607</th><td></td></tr>
+<tr><th id="608">608</th><td></td></tr>
+<tr><th id="609">609</th><td><i>//</i></td></tr>
+<tr><th id="610">610</th><td><i>// R_AddSprites</i></td></tr>
+<tr><th id="611">611</th><td><i>// During BSP traversal, this adds sprites by sector.</i></td></tr>
+<tr><th id="612">612</th><td><i>//</i></td></tr>
+<tr><th id="613">613</th><td><em>void</em> <dfn class="decl def" id="R_AddSprites" title='R_AddSprites' data-ref="R_AddSprites">R_AddSprites</dfn> (<a class="typedef" href="r_defs.h.html#sector_t" title='sector_t' data-type='struct sector_t' data-ref="sector_t">sector_t</a>* <dfn class="local col8 decl" id="48sec" title='sec' data-type='sector_t *' data-ref="48sec">sec</dfn>)</td></tr>
+<tr><th id="614">614</th><td>{</td></tr>
+<tr><th id="615">615</th><td>    <a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>*		<dfn class="local col9 decl" id="49thing" title='thing' data-type='mobj_t *' data-ref="49thing">thing</dfn>;</td></tr>
+<tr><th id="616">616</th><td>    <em>int</em>			<dfn class="local col0 decl" id="50lightnum" title='lightnum' data-type='int' data-ref="50lightnum">lightnum</dfn>;</td></tr>
+<tr><th id="617">617</th><td></td></tr>
+<tr><th id="618">618</th><td>    <i>// BSP is traversed by subsector.</i></td></tr>
+<tr><th id="619">619</th><td><i>    // A sector might have been split into several</i></td></tr>
+<tr><th id="620">620</th><td><i>    //  subsectors during BSP building.</i></td></tr>
+<tr><th id="621">621</th><td><i>    // Thus we check whether its already added.</i></td></tr>
+<tr><th id="622">622</th><td>    <b>if</b> (<a class="local col8 ref" href="#48sec" title='sec' data-ref="48sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::validcount" title='(anonymous struct)::validcount' data-ref="(anonymous)::validcount">validcount</a> == <a class="ref" href="r_main.h.html#validcount" title='validcount' data-ref="validcount">validcount</a>)</td></tr>
+<tr><th id="623">623</th><td>	<b>return</b>;		</td></tr>
+<tr><th id="624">624</th><td></td></tr>
+<tr><th id="625">625</th><td>    <i>// Well, now it will be done.</i></td></tr>
+<tr><th id="626">626</th><td>    <a class="local col8 ref" href="#48sec" title='sec' data-ref="48sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::validcount" title='(anonymous struct)::validcount' data-ref="(anonymous)::validcount">validcount</a> = <a class="ref" href="r_main.h.html#validcount" title='validcount' data-ref="validcount">validcount</a>;</td></tr>
+<tr><th id="627">627</th><td>	</td></tr>
+<tr><th id="628">628</th><td>    <a class="local col0 ref" href="#50lightnum" title='lightnum' data-ref="50lightnum">lightnum</a> = (<a class="local col8 ref" href="#48sec" title='sec' data-ref="48sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::lightlevel" title='(anonymous struct)::lightlevel' data-ref="(anonymous)::lightlevel">lightlevel</a> &gt;&gt; <a class="macro" href="r_main.h.html#70" title="4" data-ref="_M/LIGHTSEGSHIFT">LIGHTSEGSHIFT</a>)+<a class="ref" href="r_main.h.html#extralight" title='extralight' data-ref="extralight">extralight</a>;</td></tr>
+<tr><th id="629">629</th><td></td></tr>
+<tr><th id="630">630</th><td>    <b>if</b> (<a class="local col0 ref" href="#50lightnum" title='lightnum' data-ref="50lightnum">lightnum</a> &lt; <var>0</var>)		</td></tr>
+<tr><th id="631">631</th><td>	<a class="ref" href="#spritelights" title='spritelights' data-ref="spritelights">spritelights</a> = <a class="ref" href="r_main.h.html#scalelight" title='scalelight' data-ref="scalelight">scalelight</a>[<var>0</var>];</td></tr>
+<tr><th id="632">632</th><td>    <b>else</b> <b>if</b> (<a class="local col0 ref" href="#50lightnum" title='lightnum' data-ref="50lightnum">lightnum</a> &gt;= <a class="macro" href="r_main.h.html#69" title="16" data-ref="_M/LIGHTLEVELS">LIGHTLEVELS</a>)</td></tr>
+<tr><th id="633">633</th><td>	<a class="ref" href="#spritelights" title='spritelights' data-ref="spritelights">spritelights</a> = <a class="ref" href="r_main.h.html#scalelight" title='scalelight' data-ref="scalelight">scalelight</a>[<a class="macro" href="r_main.h.html#69" title="16" data-ref="_M/LIGHTLEVELS">LIGHTLEVELS</a>-<var>1</var>];</td></tr>
+<tr><th id="634">634</th><td>    <b>else</b></td></tr>
+<tr><th id="635">635</th><td>	<a class="ref" href="#spritelights" title='spritelights' data-ref="spritelights">spritelights</a> = <a class="ref" href="r_main.h.html#scalelight" title='scalelight' data-ref="scalelight">scalelight</a>[<a class="local col0 ref" href="#50lightnum" title='lightnum' data-ref="50lightnum">lightnum</a>];</td></tr>
+<tr><th id="636">636</th><td></td></tr>
+<tr><th id="637">637</th><td>    <i>// Handle all things in sector.</i></td></tr>
+<tr><th id="638">638</th><td>    <b>for</b> (<a class="local col9 ref" href="#49thing" title='thing' data-ref="49thing">thing</a> = <a class="local col8 ref" href="#48sec" title='sec' data-ref="48sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::thinglist" title='(anonymous struct)::thinglist' data-ref="(anonymous)::thinglist">thinglist</a> ; <a class="local col9 ref" href="#49thing" title='thing' data-ref="49thing">thing</a> ; <a class="local col9 ref" href="#49thing" title='thing' data-ref="49thing">thing</a> = <a class="local col9 ref" href="#49thing" title='thing' data-ref="49thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::snext" title='mobj_s::snext' data-ref="mobj_s::snext">snext</a>)</td></tr>
+<tr><th id="639">639</th><td>	<a class="ref" href="#R_ProjectSprite" title='R_ProjectSprite' data-ref="R_ProjectSprite">R_ProjectSprite</a> (<a class="local col9 ref" href="#49thing" title='thing' data-ref="49thing">thing</a>);</td></tr>
+<tr><th id="640">640</th><td>}</td></tr>
+<tr><th id="641">641</th><td></td></tr>
+<tr><th id="642">642</th><td></td></tr>
+<tr><th id="643">643</th><td><i>//</i></td></tr>
+<tr><th id="644">644</th><td><i>// R_DrawPSprite</i></td></tr>
+<tr><th id="645">645</th><td><i>//</i></td></tr>
+<tr><th id="646">646</th><td><em>void</em> <dfn class="decl def" id="R_DrawPSprite" title='R_DrawPSprite' data-ref="R_DrawPSprite">R_DrawPSprite</dfn> (<a class="typedef" href="p_pspr.h.html#pspdef_t" title='pspdef_t' data-type='struct pspdef_t' data-ref="pspdef_t">pspdef_t</a>* <dfn class="local col1 decl" id="51psp" title='psp' data-type='pspdef_t *' data-ref="51psp">psp</dfn>)</td></tr>
+<tr><th id="647">647</th><td>{</td></tr>
+<tr><th id="648">648</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col2 decl" id="52tx" title='tx' data-type='fixed_t' data-ref="52tx">tx</dfn>;</td></tr>
+<tr><th id="649">649</th><td>    <em>int</em>			<dfn class="local col3 decl" id="53x1" title='x1' data-type='int' data-ref="53x1">x1</dfn>;</td></tr>
+<tr><th id="650">650</th><td>    <em>int</em>			<dfn class="local col4 decl" id="54x2" title='x2' data-type='int' data-ref="54x2">x2</dfn>;</td></tr>
+<tr><th id="651">651</th><td>    <a class="typedef" href="r_defs.h.html#spritedef_t" title='spritedef_t' data-type='struct spritedef_t' data-ref="spritedef_t">spritedef_t</a>*	<dfn class="local col5 decl" id="55sprdef" title='sprdef' data-type='spritedef_t *' data-ref="55sprdef">sprdef</dfn>;</td></tr>
+<tr><th id="652">652</th><td>    <a class="typedef" href="r_defs.h.html#spriteframe_t" title='spriteframe_t' data-type='struct spriteframe_t' data-ref="spriteframe_t">spriteframe_t</a>*	<dfn class="local col6 decl" id="56sprframe" title='sprframe' data-type='spriteframe_t *' data-ref="56sprframe">sprframe</dfn>;</td></tr>
+<tr><th id="653">653</th><td>    <em>int</em>			<dfn class="local col7 decl" id="57lump" title='lump' data-type='int' data-ref="57lump">lump</dfn>;</td></tr>
+<tr><th id="654">654</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="local col8 decl" id="58flip" title='flip' data-type='boolean' data-ref="58flip">flip</dfn>;</td></tr>
+<tr><th id="655">655</th><td>    <a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>*	<dfn class="local col9 decl" id="59vis" title='vis' data-type='vissprite_t *' data-ref="59vis">vis</dfn>;</td></tr>
+<tr><th id="656">656</th><td>    <a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>		<dfn class="local col0 decl" id="60avis" title='avis' data-type='vissprite_t' data-ref="60avis">avis</dfn>;</td></tr>
+<tr><th id="657">657</th><td>    </td></tr>
+<tr><th id="658">658</th><td>    <i>// decide which patch to use</i></td></tr>
+<tr><th id="659">659</th><td><u>#<span data-ppcond="659">ifdef</span> <a class="macro" href="doomdef.h.html#75" data-ref="_M/RANGECHECK">RANGECHECK</a></u></td></tr>
+<tr><th id="660">660</th><td>    <b>if</b> ( (<em>unsigned</em>)<a class="local col1 ref" href="#51psp" title='psp' data-ref="51psp">psp</a>-&gt;<a class="ref" href="p_pspr.h.html#(anonymous)::state" title='(anonymous struct)::state' data-ref="(anonymous)::state">state</a>-&gt;<a class="ref" href="info.h.html#(anonymous)::sprite" title='(anonymous struct)::sprite' data-ref="(anonymous)::sprite">sprite</a> &gt;= <a class="ref" href="r_state.h.html#numsprites" title='numsprites' data-ref="numsprites">numsprites</a>)</td></tr>
+<tr><th id="661">661</th><td>	<a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a> (<q>"R_ProjectSprite: invalid sprite number %i "</q>,</td></tr>
+<tr><th id="662">662</th><td>		 <a class="local col1 ref" href="#51psp" title='psp' data-ref="51psp">psp</a>-&gt;<a class="ref" href="p_pspr.h.html#(anonymous)::state" title='(anonymous struct)::state' data-ref="(anonymous)::state">state</a>-&gt;<a class="ref" href="info.h.html#(anonymous)::sprite" title='(anonymous struct)::sprite' data-ref="(anonymous)::sprite">sprite</a>);</td></tr>
+<tr><th id="663">663</th><td><u>#<span data-ppcond="659">endif</span></u></td></tr>
+<tr><th id="664">664</th><td>    <a class="local col5 ref" href="#55sprdef" title='sprdef' data-ref="55sprdef">sprdef</a> = &amp;<a class="ref" href="r_state.h.html#sprites" title='sprites' data-ref="sprites">sprites</a>[<a class="local col1 ref" href="#51psp" title='psp' data-ref="51psp">psp</a>-&gt;<a class="ref" href="p_pspr.h.html#(anonymous)::state" title='(anonymous struct)::state' data-ref="(anonymous)::state">state</a>-&gt;<a class="ref" href="info.h.html#(anonymous)::sprite" title='(anonymous struct)::sprite' data-ref="(anonymous)::sprite">sprite</a>];</td></tr>
+<tr><th id="665">665</th><td><u>#<span data-ppcond="665">ifdef</span> <a class="macro" href="doomdef.h.html#75" data-ref="_M/RANGECHECK">RANGECHECK</a></u></td></tr>
+<tr><th id="666">666</th><td>    <b>if</b> ( (<a class="local col1 ref" href="#51psp" title='psp' data-ref="51psp">psp</a>-&gt;<a class="ref" href="p_pspr.h.html#(anonymous)::state" title='(anonymous struct)::state' data-ref="(anonymous)::state">state</a>-&gt;<a class="ref" href="info.h.html#(anonymous)::frame" title='(anonymous struct)::frame' data-ref="(anonymous)::frame">frame</a> &amp; <a class="macro" href="p_pspr.h.html#51" title="0x7fff" data-ref="_M/FF_FRAMEMASK">FF_FRAMEMASK</a>)  &gt;= <a class="local col5 ref" href="#55sprdef" title='sprdef' data-ref="55sprdef">sprdef</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::numframes" title='(anonymous struct)::numframes' data-ref="(anonymous)::numframes">numframes</a>)</td></tr>
+<tr><th id="667">667</th><td>	<a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a> (<q>"R_ProjectSprite: invalid sprite frame %i : %i "</q>,</td></tr>
+<tr><th id="668">668</th><td>		 <a class="local col1 ref" href="#51psp" title='psp' data-ref="51psp">psp</a>-&gt;<a class="ref" href="p_pspr.h.html#(anonymous)::state" title='(anonymous struct)::state' data-ref="(anonymous)::state">state</a>-&gt;<a class="ref" href="info.h.html#(anonymous)::sprite" title='(anonymous struct)::sprite' data-ref="(anonymous)::sprite">sprite</a>, <a class="local col1 ref" href="#51psp" title='psp' data-ref="51psp">psp</a>-&gt;<a class="ref" href="p_pspr.h.html#(anonymous)::state" title='(anonymous struct)::state' data-ref="(anonymous)::state">state</a>-&gt;<a class="ref" href="info.h.html#(anonymous)::frame" title='(anonymous struct)::frame' data-ref="(anonymous)::frame">frame</a>);</td></tr>
+<tr><th id="669">669</th><td><u>#<span data-ppcond="665">endif</span></u></td></tr>
+<tr><th id="670">670</th><td>    <a class="local col6 ref" href="#56sprframe" title='sprframe' data-ref="56sprframe">sprframe</a> = &amp;<a class="local col5 ref" href="#55sprdef" title='sprdef' data-ref="55sprdef">sprdef</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::spriteframes" title='(anonymous struct)::spriteframes' data-ref="(anonymous)::spriteframes">spriteframes</a>[ <a class="local col1 ref" href="#51psp" title='psp' data-ref="51psp">psp</a>-&gt;<a class="ref" href="p_pspr.h.html#(anonymous)::state" title='(anonymous struct)::state' data-ref="(anonymous)::state">state</a>-&gt;<a class="ref" href="info.h.html#(anonymous)::frame" title='(anonymous struct)::frame' data-ref="(anonymous)::frame">frame</a> &amp; <a class="macro" href="p_pspr.h.html#51" title="0x7fff" data-ref="_M/FF_FRAMEMASK">FF_FRAMEMASK</a> ];</td></tr>
+<tr><th id="671">671</th><td></td></tr>
+<tr><th id="672">672</th><td>    <a class="local col7 ref" href="#57lump" title='lump' data-ref="57lump">lump</a> = <a class="local col6 ref" href="#56sprframe" title='sprframe' data-ref="56sprframe">sprframe</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::lump" title='(anonymous struct)::lump' data-ref="(anonymous)::lump">lump</a>[<var>0</var>];</td></tr>
+<tr><th id="673">673</th><td>    <a class="local col8 ref" href="#58flip" title='flip' data-ref="58flip">flip</a> = (<a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>)<a class="local col6 ref" href="#56sprframe" title='sprframe' data-ref="56sprframe">sprframe</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::flip" title='(anonymous struct)::flip' data-ref="(anonymous)::flip">flip</a>[<var>0</var>];</td></tr>
+<tr><th id="674">674</th><td>    </td></tr>
+<tr><th id="675">675</th><td>    <i>// calculate edges of the shape</i></td></tr>
+<tr><th id="676">676</th><td>    <a class="local col2 ref" href="#52tx" title='tx' data-ref="52tx">tx</a> = <a class="local col1 ref" href="#51psp" title='psp' data-ref="51psp">psp</a>-&gt;<a class="ref" href="p_pspr.h.html#(anonymous)::sx" title='(anonymous struct)::sx' data-ref="(anonymous)::sx">sx</a>-<var>160</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="677">677</th><td>	</td></tr>
+<tr><th id="678">678</th><td>    <a class="local col2 ref" href="#52tx" title='tx' data-ref="52tx">tx</a> -= <a class="ref" href="r_state.h.html#spriteoffset" title='spriteoffset' data-ref="spriteoffset">spriteoffset</a>[<a class="local col7 ref" href="#57lump" title='lump' data-ref="57lump">lump</a>];	</td></tr>
+<tr><th id="679">679</th><td>    <a class="local col3 ref" href="#53x1" title='x1' data-ref="53x1">x1</a> = (<a class="ref" href="r_main.h.html#centerxfrac" title='centerxfrac' data-ref="centerxfrac">centerxfrac</a> + <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> (<a class="local col2 ref" href="#52tx" title='tx' data-ref="52tx">tx</a>,<a class="ref" href="r_things.h.html#pspritescale" title='pspritescale' data-ref="pspritescale">pspritescale</a>) ) &gt;&gt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>;</td></tr>
+<tr><th id="680">680</th><td></td></tr>
+<tr><th id="681">681</th><td>    <i>// off the right side</i></td></tr>
+<tr><th id="682">682</th><td>    <b>if</b> (<a class="local col3 ref" href="#53x1" title='x1' data-ref="53x1">x1</a> &gt; <a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>)</td></tr>
+<tr><th id="683">683</th><td>	<b>return</b>;		</td></tr>
+<tr><th id="684">684</th><td></td></tr>
+<tr><th id="685">685</th><td>    <a class="local col2 ref" href="#52tx" title='tx' data-ref="52tx">tx</a> +=  <a class="ref" href="r_state.h.html#spritewidth" title='spritewidth' data-ref="spritewidth">spritewidth</a>[<a class="local col7 ref" href="#57lump" title='lump' data-ref="57lump">lump</a>];</td></tr>
+<tr><th id="686">686</th><td>    <a class="local col4 ref" href="#54x2" title='x2' data-ref="54x2">x2</a> = ((<a class="ref" href="r_main.h.html#centerxfrac" title='centerxfrac' data-ref="centerxfrac">centerxfrac</a> + <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> (<a class="local col2 ref" href="#52tx" title='tx' data-ref="52tx">tx</a>, <a class="ref" href="r_things.h.html#pspritescale" title='pspritescale' data-ref="pspritescale">pspritescale</a>) ) &gt;&gt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>) - <var>1</var>;</td></tr>
+<tr><th id="687">687</th><td></td></tr>
+<tr><th id="688">688</th><td>    <i>// off the left side</i></td></tr>
+<tr><th id="689">689</th><td>    <b>if</b> (<a class="local col4 ref" href="#54x2" title='x2' data-ref="54x2">x2</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="690">690</th><td>	<b>return</b>;</td></tr>
+<tr><th id="691">691</th><td>    </td></tr>
+<tr><th id="692">692</th><td>    <i>// store information in a vissprite</i></td></tr>
+<tr><th id="693">693</th><td>    <a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a> = &amp;<a class="local col0 ref" href="#60avis" title='avis' data-ref="60avis">avis</a>;</td></tr>
+<tr><th id="694">694</th><td>    <a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::mobjflags" title='vissprite_s::mobjflags' data-ref="vissprite_s::mobjflags">mobjflags</a> = <var>0</var>;</td></tr>
+<tr><th id="695">695</th><td>    <a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::texturemid" title='vissprite_s::texturemid' data-ref="vissprite_s::texturemid">texturemid</a> = (<a class="macro" href="#47" title="100" data-ref="_M/BASEYCENTER">BASEYCENTER</a>&lt;&lt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>)+<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>/<var>2</var>-(<a class="local col1 ref" href="#51psp" title='psp' data-ref="51psp">psp</a>-&gt;<a class="ref" href="p_pspr.h.html#(anonymous)::sy" title='(anonymous struct)::sy' data-ref="(anonymous)::sy">sy</a>-<a class="ref" href="r_state.h.html#spritetopoffset" title='spritetopoffset' data-ref="spritetopoffset">spritetopoffset</a>[<a class="local col7 ref" href="#57lump" title='lump' data-ref="57lump">lump</a>]);</td></tr>
+<tr><th id="696">696</th><td>    <a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x1" title='vissprite_s::x1' data-ref="vissprite_s::x1">x1</a> = <a class="local col3 ref" href="#53x1" title='x1' data-ref="53x1">x1</a> &lt; <var>0</var> ? <var>0</var> : <a class="local col3 ref" href="#53x1" title='x1' data-ref="53x1">x1</a>;</td></tr>
+<tr><th id="697">697</th><td>    <a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x2" title='vissprite_s::x2' data-ref="vissprite_s::x2">x2</a> = <a class="local col4 ref" href="#54x2" title='x2' data-ref="54x2">x2</a> &gt;= <a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a> ? <a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>-<var>1</var> : <a class="local col4 ref" href="#54x2" title='x2' data-ref="54x2">x2</a>;	</td></tr>
+<tr><th id="698">698</th><td>    <a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::scale" title='vissprite_s::scale' data-ref="vissprite_s::scale">scale</a> = <a class="ref" href="r_things.h.html#pspritescale" title='pspritescale' data-ref="pspritescale">pspritescale</a>&lt;&lt;<a class="ref" href="r_main.h.html#detailshift" title='detailshift' data-ref="detailshift">detailshift</a>;</td></tr>
+<tr><th id="699">699</th><td>    </td></tr>
+<tr><th id="700">700</th><td>    <b>if</b> (<a class="local col8 ref" href="#58flip" title='flip' data-ref="58flip">flip</a>)</td></tr>
+<tr><th id="701">701</th><td>    {</td></tr>
+<tr><th id="702">702</th><td>	<a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::xiscale" title='vissprite_s::xiscale' data-ref="vissprite_s::xiscale">xiscale</a> = -<a class="ref" href="r_things.h.html#pspriteiscale" title='pspriteiscale' data-ref="pspriteiscale">pspriteiscale</a>;</td></tr>
+<tr><th id="703">703</th><td>	<a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::startfrac" title='vissprite_s::startfrac' data-ref="vissprite_s::startfrac">startfrac</a> = <a class="ref" href="r_state.h.html#spritewidth" title='spritewidth' data-ref="spritewidth">spritewidth</a>[<a class="local col7 ref" href="#57lump" title='lump' data-ref="57lump">lump</a>]-<var>1</var>;</td></tr>
+<tr><th id="704">704</th><td>    }</td></tr>
+<tr><th id="705">705</th><td>    <b>else</b></td></tr>
+<tr><th id="706">706</th><td>    {</td></tr>
+<tr><th id="707">707</th><td>	<a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::xiscale" title='vissprite_s::xiscale' data-ref="vissprite_s::xiscale">xiscale</a> = <a class="ref" href="r_things.h.html#pspriteiscale" title='pspriteiscale' data-ref="pspriteiscale">pspriteiscale</a>;</td></tr>
+<tr><th id="708">708</th><td>	<a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::startfrac" title='vissprite_s::startfrac' data-ref="vissprite_s::startfrac">startfrac</a> = <var>0</var>;</td></tr>
+<tr><th id="709">709</th><td>    }</td></tr>
+<tr><th id="710">710</th><td>    </td></tr>
+<tr><th id="711">711</th><td>    <b>if</b> (<a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x1" title='vissprite_s::x1' data-ref="vissprite_s::x1">x1</a> &gt; <a class="local col3 ref" href="#53x1" title='x1' data-ref="53x1">x1</a>)</td></tr>
+<tr><th id="712">712</th><td>	<a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::startfrac" title='vissprite_s::startfrac' data-ref="vissprite_s::startfrac">startfrac</a> += <a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::xiscale" title='vissprite_s::xiscale' data-ref="vissprite_s::xiscale">xiscale</a>*(<a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x1" title='vissprite_s::x1' data-ref="vissprite_s::x1">x1</a>-<a class="local col3 ref" href="#53x1" title='x1' data-ref="53x1">x1</a>);</td></tr>
+<tr><th id="713">713</th><td></td></tr>
+<tr><th id="714">714</th><td>    <a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::patch" title='vissprite_s::patch' data-ref="vissprite_s::patch">patch</a> = <a class="local col7 ref" href="#57lump" title='lump' data-ref="57lump">lump</a>;</td></tr>
+<tr><th id="715">715</th><td></td></tr>
+<tr><th id="716">716</th><td>    <b>if</b> (<a class="ref" href="r_state.h.html#viewplayer" title='viewplayer' data-ref="viewplayer">viewplayer</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_invisibility" title='pw_invisibility' data-ref="pw_invisibility">pw_invisibility</a>] &gt; <var>4</var>*<var>32</var></td></tr>
+<tr><th id="717">717</th><td>	|| <a class="ref" href="r_state.h.html#viewplayer" title='viewplayer' data-ref="viewplayer">viewplayer</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_invisibility" title='pw_invisibility' data-ref="pw_invisibility">pw_invisibility</a>] &amp; <var>8</var>)</td></tr>
+<tr><th id="718">718</th><td>    {</td></tr>
+<tr><th id="719">719</th><td>	<i>// shadow draw</i></td></tr>
+<tr><th id="720">720</th><td>	<a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::colormap" title='vissprite_s::colormap' data-ref="vissprite_s::colormap">colormap</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="721">721</th><td>    }</td></tr>
+<tr><th id="722">722</th><td>    <b>else</b> <b>if</b> (<a class="ref" href="r_main.h.html#fixedcolormap" title='fixedcolormap' data-ref="fixedcolormap">fixedcolormap</a>)</td></tr>
+<tr><th id="723">723</th><td>    {</td></tr>
+<tr><th id="724">724</th><td>	<i>// fixed color</i></td></tr>
+<tr><th id="725">725</th><td>	<a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::colormap" title='vissprite_s::colormap' data-ref="vissprite_s::colormap">colormap</a> = <a class="ref" href="r_main.h.html#fixedcolormap" title='fixedcolormap' data-ref="fixedcolormap">fixedcolormap</a>;</td></tr>
+<tr><th id="726">726</th><td>    }</td></tr>
+<tr><th id="727">727</th><td>    <b>else</b> <b>if</b> (<a class="local col1 ref" href="#51psp" title='psp' data-ref="51psp">psp</a>-&gt;<a class="ref" href="p_pspr.h.html#(anonymous)::state" title='(anonymous struct)::state' data-ref="(anonymous)::state">state</a>-&gt;<a class="ref" href="info.h.html#(anonymous)::frame" title='(anonymous struct)::frame' data-ref="(anonymous)::frame">frame</a> &amp; <a class="macro" href="p_pspr.h.html#50" title="0x8000" data-ref="_M/FF_FULLBRIGHT">FF_FULLBRIGHT</a>)</td></tr>
+<tr><th id="728">728</th><td>    {</td></tr>
+<tr><th id="729">729</th><td>	<i>// full bright</i></td></tr>
+<tr><th id="730">730</th><td>	<a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::colormap" title='vissprite_s::colormap' data-ref="vissprite_s::colormap">colormap</a> = <a class="ref" href="r_state.h.html#colormaps" title='colormaps' data-ref="colormaps">colormaps</a>;</td></tr>
+<tr><th id="731">731</th><td>    }</td></tr>
+<tr><th id="732">732</th><td>    <b>else</b></td></tr>
+<tr><th id="733">733</th><td>    {</td></tr>
+<tr><th id="734">734</th><td>	<i>// local light</i></td></tr>
+<tr><th id="735">735</th><td>	<a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::colormap" title='vissprite_s::colormap' data-ref="vissprite_s::colormap">colormap</a> = <a class="ref" href="#spritelights" title='spritelights' data-ref="spritelights">spritelights</a>[<a class="macro" href="r_main.h.html#72" title="48" data-ref="_M/MAXLIGHTSCALE">MAXLIGHTSCALE</a>-<var>1</var>];</td></tr>
+<tr><th id="736">736</th><td>    }</td></tr>
+<tr><th id="737">737</th><td>	</td></tr>
+<tr><th id="738">738</th><td>    <a class="ref" href="#R_DrawVisSprite" title='R_DrawVisSprite' data-ref="R_DrawVisSprite">R_DrawVisSprite</a> (<a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>, <a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x1" title='vissprite_s::x1' data-ref="vissprite_s::x1">x1</a>, <a class="local col9 ref" href="#59vis" title='vis' data-ref="59vis">vis</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x2" title='vissprite_s::x2' data-ref="vissprite_s::x2">x2</a>);</td></tr>
+<tr><th id="739">739</th><td>}</td></tr>
+<tr><th id="740">740</th><td></td></tr>
+<tr><th id="741">741</th><td></td></tr>
+<tr><th id="742">742</th><td></td></tr>
+<tr><th id="743">743</th><td><i>//</i></td></tr>
+<tr><th id="744">744</th><td><i>// R_DrawPlayerSprites</i></td></tr>
+<tr><th id="745">745</th><td><i>//</i></td></tr>
+<tr><th id="746">746</th><td><em>void</em> <dfn class="decl def" id="R_DrawPlayerSprites" title='R_DrawPlayerSprites' data-ref="R_DrawPlayerSprites">R_DrawPlayerSprites</dfn> (<em>void</em>)</td></tr>
+<tr><th id="747">747</th><td>{</td></tr>
+<tr><th id="748">748</th><td>    <em>int</em>		<dfn class="local col1 decl" id="61i" title='i' data-type='int' data-ref="61i">i</dfn>;</td></tr>
+<tr><th id="749">749</th><td>    <em>int</em>		<dfn class="local col2 decl" id="62lightnum" title='lightnum' data-type='int' data-ref="62lightnum">lightnum</dfn>;</td></tr>
+<tr><th id="750">750</th><td>    <a class="typedef" href="p_pspr.h.html#pspdef_t" title='pspdef_t' data-type='struct pspdef_t' data-ref="pspdef_t">pspdef_t</a>*	<dfn class="local col3 decl" id="63psp" title='psp' data-type='pspdef_t *' data-ref="63psp">psp</dfn>;</td></tr>
+<tr><th id="751">751</th><td>    </td></tr>
+<tr><th id="752">752</th><td>    <i>// get light level</i></td></tr>
+<tr><th id="753">753</th><td>    <a class="local col2 ref" href="#62lightnum" title='lightnum' data-ref="62lightnum">lightnum</a> =</td></tr>
+<tr><th id="754">754</th><td>	(<a class="ref" href="r_state.h.html#viewplayer" title='viewplayer' data-ref="viewplayer">viewplayer</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::subsector" title='mobj_s::subsector' data-ref="mobj_s::subsector">subsector</a>-&gt;<a class="ref" href="r_defs.h.html#subsector_s::sector" title='subsector_s::sector' data-ref="subsector_s::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::lightlevel" title='(anonymous struct)::lightlevel' data-ref="(anonymous)::lightlevel">lightlevel</a> &gt;&gt; <a class="macro" href="r_main.h.html#70" title="4" data-ref="_M/LIGHTSEGSHIFT">LIGHTSEGSHIFT</a>) </td></tr>
+<tr><th id="755">755</th><td>	+<a class="ref" href="r_main.h.html#extralight" title='extralight' data-ref="extralight">extralight</a>;</td></tr>
+<tr><th id="756">756</th><td></td></tr>
+<tr><th id="757">757</th><td>    <b>if</b> (<a class="local col2 ref" href="#62lightnum" title='lightnum' data-ref="62lightnum">lightnum</a> &lt; <var>0</var>)		</td></tr>
+<tr><th id="758">758</th><td>	<a class="ref" href="#spritelights" title='spritelights' data-ref="spritelights">spritelights</a> = <a class="ref" href="r_main.h.html#scalelight" title='scalelight' data-ref="scalelight">scalelight</a>[<var>0</var>];</td></tr>
+<tr><th id="759">759</th><td>    <b>else</b> <b>if</b> (<a class="local col2 ref" href="#62lightnum" title='lightnum' data-ref="62lightnum">lightnum</a> &gt;= <a class="macro" href="r_main.h.html#69" title="16" data-ref="_M/LIGHTLEVELS">LIGHTLEVELS</a>)</td></tr>
+<tr><th id="760">760</th><td>	<a class="ref" href="#spritelights" title='spritelights' data-ref="spritelights">spritelights</a> = <a class="ref" href="r_main.h.html#scalelight" title='scalelight' data-ref="scalelight">scalelight</a>[<a class="macro" href="r_main.h.html#69" title="16" data-ref="_M/LIGHTLEVELS">LIGHTLEVELS</a>-<var>1</var>];</td></tr>
+<tr><th id="761">761</th><td>    <b>else</b></td></tr>
+<tr><th id="762">762</th><td>	<a class="ref" href="#spritelights" title='spritelights' data-ref="spritelights">spritelights</a> = <a class="ref" href="r_main.h.html#scalelight" title='scalelight' data-ref="scalelight">scalelight</a>[<a class="local col2 ref" href="#62lightnum" title='lightnum' data-ref="62lightnum">lightnum</a>];</td></tr>
+<tr><th id="763">763</th><td>    </td></tr>
+<tr><th id="764">764</th><td>    <i>// clip to screen bounds</i></td></tr>
+<tr><th id="765">765</th><td>    <a class="ref" href="r_things.h.html#mfloorclip" title='mfloorclip' data-ref="mfloorclip">mfloorclip</a> = <a class="ref" href="r_things.h.html#screenheightarray" title='screenheightarray' data-ref="screenheightarray">screenheightarray</a>;</td></tr>
+<tr><th id="766">766</th><td>    <a class="ref" href="r_things.h.html#mceilingclip" title='mceilingclip' data-ref="mceilingclip">mceilingclip</a> = <a class="ref" href="r_things.h.html#negonearray" title='negonearray' data-ref="negonearray">negonearray</a>;</td></tr>
+<tr><th id="767">767</th><td>    </td></tr>
+<tr><th id="768">768</th><td>    <i>// add all active psprites</i></td></tr>
+<tr><th id="769">769</th><td>    <b>for</b> (<a class="local col1 ref" href="#61i" title='i' data-ref="61i">i</a>=<var>0</var>, <a class="local col3 ref" href="#63psp" title='psp' data-ref="63psp">psp</a>=<a class="ref" href="r_state.h.html#viewplayer" title='viewplayer' data-ref="viewplayer">viewplayer</a>-&gt;<a class="ref" href="d_player.h.html#player_s::psprites" title='player_s::psprites' data-ref="player_s::psprites">psprites</a>;</td></tr>
+<tr><th id="770">770</th><td>	 <a class="local col1 ref" href="#61i" title='i' data-ref="61i">i</a>&lt;<a class="enum" href="p_pspr.h.html#NUMPSPRITES" title='NUMPSPRITES' data-ref="NUMPSPRITES">NUMPSPRITES</a>;</td></tr>
+<tr><th id="771">771</th><td>	 <a class="local col1 ref" href="#61i" title='i' data-ref="61i">i</a>++,<a class="local col3 ref" href="#63psp" title='psp' data-ref="63psp">psp</a>++)</td></tr>
+<tr><th id="772">772</th><td>    {</td></tr>
+<tr><th id="773">773</th><td>	<b>if</b> (<a class="local col3 ref" href="#63psp" title='psp' data-ref="63psp">psp</a>-&gt;<a class="ref" href="p_pspr.h.html#(anonymous)::state" title='(anonymous struct)::state' data-ref="(anonymous)::state">state</a>)</td></tr>
+<tr><th id="774">774</th><td>	    <a class="ref" href="#R_DrawPSprite" title='R_DrawPSprite' data-ref="R_DrawPSprite">R_DrawPSprite</a> (<a class="local col3 ref" href="#63psp" title='psp' data-ref="63psp">psp</a>);</td></tr>
+<tr><th id="775">775</th><td>    }</td></tr>
+<tr><th id="776">776</th><td>}</td></tr>
+<tr><th id="777">777</th><td></td></tr>
+<tr><th id="778">778</th><td></td></tr>
+<tr><th id="779">779</th><td></td></tr>
+<tr><th id="780">780</th><td></td></tr>
+<tr><th id="781">781</th><td><i>//</i></td></tr>
+<tr><th id="782">782</th><td><i>// R_SortVisSprites</i></td></tr>
+<tr><th id="783">783</th><td><i>//</i></td></tr>
+<tr><th id="784">784</th><td><a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>	<dfn class="decl def" id="vsprsortedhead" title='vsprsortedhead' data-ref="vsprsortedhead">vsprsortedhead</dfn>;</td></tr>
+<tr><th id="785">785</th><td></td></tr>
+<tr><th id="786">786</th><td></td></tr>
+<tr><th id="787">787</th><td><em>void</em> <dfn class="decl def" id="R_SortVisSprites" title='R_SortVisSprites' data-ref="R_SortVisSprites">R_SortVisSprites</dfn> (<em>void</em>)</td></tr>
+<tr><th id="788">788</th><td>{</td></tr>
+<tr><th id="789">789</th><td>    <em>int</em>			<dfn class="local col4 decl" id="64i" title='i' data-type='int' data-ref="64i">i</dfn>;</td></tr>
+<tr><th id="790">790</th><td>    <em>int</em>			<dfn class="local col5 decl" id="65count" title='count' data-type='int' data-ref="65count">count</dfn>;</td></tr>
+<tr><th id="791">791</th><td>    <a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>*	<dfn class="local col6 decl" id="66ds" title='ds' data-type='vissprite_t *' data-ref="66ds">ds</dfn>;</td></tr>
+<tr><th id="792">792</th><td>    <a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>*	<dfn class="local col7 decl" id="67best" title='best' data-type='vissprite_t *' data-ref="67best">best</dfn>;</td></tr>
+<tr><th id="793">793</th><td>    <a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>		<dfn class="local col8 decl" id="68unsorted" title='unsorted' data-type='vissprite_t' data-ref="68unsorted">unsorted</dfn>;</td></tr>
+<tr><th id="794">794</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col9 decl" id="69bestscale" title='bestscale' data-type='fixed_t' data-ref="69bestscale">bestscale</dfn>;</td></tr>
+<tr><th id="795">795</th><td></td></tr>
+<tr><th id="796">796</th><td>    <a class="local col5 ref" href="#65count" title='count' data-ref="65count">count</a> = <a class="ref" href="r_things.h.html#vissprite_p" title='vissprite_p' data-ref="vissprite_p">vissprite_p</a> - <a class="ref" href="r_things.h.html#vissprites" title='vissprites' data-ref="vissprites">vissprites</a>;</td></tr>
+<tr><th id="797">797</th><td>	</td></tr>
+<tr><th id="798">798</th><td>    <a class="local col8 ref" href="#68unsorted" title='unsorted' data-ref="68unsorted">unsorted</a>.<a class="ref" href="r_defs.h.html#vissprite_s::next" title='vissprite_s::next' data-ref="vissprite_s::next">next</a> = <a class="local col8 ref" href="#68unsorted" title='unsorted' data-ref="68unsorted">unsorted</a>.<a class="ref" href="r_defs.h.html#vissprite_s::prev" title='vissprite_s::prev' data-ref="vissprite_s::prev">prev</a> = &amp;<a class="local col8 ref" href="#68unsorted" title='unsorted' data-ref="68unsorted">unsorted</a>;</td></tr>
+<tr><th id="799">799</th><td></td></tr>
+<tr><th id="800">800</th><td>    <b>if</b> (!<a class="local col5 ref" href="#65count" title='count' data-ref="65count">count</a>)</td></tr>
+<tr><th id="801">801</th><td>	<b>return</b>;</td></tr>
+<tr><th id="802">802</th><td>		</td></tr>
+<tr><th id="803">803</th><td>    <b>for</b> (<a class="local col6 ref" href="#66ds" title='ds' data-ref="66ds">ds</a>=<a class="ref" href="r_things.h.html#vissprites" title='vissprites' data-ref="vissprites">vissprites</a> ; <a class="local col6 ref" href="#66ds" title='ds' data-ref="66ds">ds</a>&lt;<a class="ref" href="r_things.h.html#vissprite_p" title='vissprite_p' data-ref="vissprite_p">vissprite_p</a> ; <a class="local col6 ref" href="#66ds" title='ds' data-ref="66ds">ds</a>++)</td></tr>
+<tr><th id="804">804</th><td>    {</td></tr>
+<tr><th id="805">805</th><td>	<a class="local col6 ref" href="#66ds" title='ds' data-ref="66ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::next" title='vissprite_s::next' data-ref="vissprite_s::next">next</a> = <a class="local col6 ref" href="#66ds" title='ds' data-ref="66ds">ds</a>+<var>1</var>;</td></tr>
+<tr><th id="806">806</th><td>	<a class="local col6 ref" href="#66ds" title='ds' data-ref="66ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::prev" title='vissprite_s::prev' data-ref="vissprite_s::prev">prev</a> = <a class="local col6 ref" href="#66ds" title='ds' data-ref="66ds">ds</a>-<var>1</var>;</td></tr>
+<tr><th id="807">807</th><td>    }</td></tr>
+<tr><th id="808">808</th><td>    </td></tr>
+<tr><th id="809">809</th><td>    <a class="ref" href="r_things.h.html#vissprites" title='vissprites' data-ref="vissprites">vissprites</a>[<var>0</var>].<a class="ref" href="r_defs.h.html#vissprite_s::prev" title='vissprite_s::prev' data-ref="vissprite_s::prev">prev</a> = &amp;<a class="local col8 ref" href="#68unsorted" title='unsorted' data-ref="68unsorted">unsorted</a>;</td></tr>
+<tr><th id="810">810</th><td>    <a class="local col8 ref" href="#68unsorted" title='unsorted' data-ref="68unsorted">unsorted</a>.<a class="ref" href="r_defs.h.html#vissprite_s::next" title='vissprite_s::next' data-ref="vissprite_s::next">next</a> = &amp;<a class="ref" href="r_things.h.html#vissprites" title='vissprites' data-ref="vissprites">vissprites</a>[<var>0</var>];</td></tr>
+<tr><th id="811">811</th><td>    (<a class="ref" href="r_things.h.html#vissprite_p" title='vissprite_p' data-ref="vissprite_p">vissprite_p</a>-<var>1</var>)-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::next" title='vissprite_s::next' data-ref="vissprite_s::next">next</a> = &amp;<a class="local col8 ref" href="#68unsorted" title='unsorted' data-ref="68unsorted">unsorted</a>;</td></tr>
+<tr><th id="812">812</th><td>    <a class="local col8 ref" href="#68unsorted" title='unsorted' data-ref="68unsorted">unsorted</a>.<a class="ref" href="r_defs.h.html#vissprite_s::prev" title='vissprite_s::prev' data-ref="vissprite_s::prev">prev</a> = <a class="ref" href="r_things.h.html#vissprite_p" title='vissprite_p' data-ref="vissprite_p">vissprite_p</a>-<var>1</var>;</td></tr>
+<tr><th id="813">813</th><td>    </td></tr>
+<tr><th id="814">814</th><td>    <i>// pull the vissprites out by scale</i></td></tr>
+<tr><th id="815">815</th><td><i>    //best = 0;		// shut up the compiler warning</i></td></tr>
+<tr><th id="816">816</th><td>    <a class="ref" href="r_things.h.html#vsprsortedhead" title='vsprsortedhead' data-ref="vsprsortedhead">vsprsortedhead</a>.<a class="ref" href="r_defs.h.html#vissprite_s::next" title='vissprite_s::next' data-ref="vissprite_s::next">next</a> = <a class="ref" href="r_things.h.html#vsprsortedhead" title='vsprsortedhead' data-ref="vsprsortedhead">vsprsortedhead</a>.<a class="ref" href="r_defs.h.html#vissprite_s::prev" title='vissprite_s::prev' data-ref="vissprite_s::prev">prev</a> = &amp;<a class="ref" href="r_things.h.html#vsprsortedhead" title='vsprsortedhead' data-ref="vsprsortedhead">vsprsortedhead</a>;</td></tr>
+<tr><th id="817">817</th><td>    <b>for</b> (<a class="local col4 ref" href="#64i" title='i' data-ref="64i">i</a>=<var>0</var> ; <a class="local col4 ref" href="#64i" title='i' data-ref="64i">i</a>&lt;<a class="local col5 ref" href="#65count" title='count' data-ref="65count">count</a> ; <a class="local col4 ref" href="#64i" title='i' data-ref="64i">i</a>++)</td></tr>
+<tr><th id="818">818</th><td>    {</td></tr>
+<tr><th id="819">819</th><td>	<a class="local col9 ref" href="#69bestscale" title='bestscale' data-ref="69bestscale">bestscale</a> = <a class="macro" href="../include/values.h.html#44" title="2147483647" data-ref="_M/MAXINT">MAXINT</a>;</td></tr>
+<tr><th id="820">820</th><td>	<b>for</b> (<a class="local col6 ref" href="#66ds" title='ds' data-ref="66ds">ds</a>=<a class="local col8 ref" href="#68unsorted" title='unsorted' data-ref="68unsorted">unsorted</a>.<a class="ref" href="r_defs.h.html#vissprite_s::next" title='vissprite_s::next' data-ref="vissprite_s::next">next</a> ; <a class="local col6 ref" href="#66ds" title='ds' data-ref="66ds">ds</a>!= &amp;<a class="local col8 ref" href="#68unsorted" title='unsorted' data-ref="68unsorted">unsorted</a> ; <a class="local col6 ref" href="#66ds" title='ds' data-ref="66ds">ds</a>=<a class="local col6 ref" href="#66ds" title='ds' data-ref="66ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::next" title='vissprite_s::next' data-ref="vissprite_s::next">next</a>)</td></tr>
+<tr><th id="821">821</th><td>	{</td></tr>
+<tr><th id="822">822</th><td>	    <b>if</b> (<a class="local col6 ref" href="#66ds" title='ds' data-ref="66ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::scale" title='vissprite_s::scale' data-ref="vissprite_s::scale">scale</a> &lt; <a class="local col9 ref" href="#69bestscale" title='bestscale' data-ref="69bestscale">bestscale</a>)</td></tr>
+<tr><th id="823">823</th><td>	    {</td></tr>
+<tr><th id="824">824</th><td>		<a class="local col9 ref" href="#69bestscale" title='bestscale' data-ref="69bestscale">bestscale</a> = <a class="local col6 ref" href="#66ds" title='ds' data-ref="66ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::scale" title='vissprite_s::scale' data-ref="vissprite_s::scale">scale</a>;</td></tr>
+<tr><th id="825">825</th><td>		<a class="local col7 ref" href="#67best" title='best' data-ref="67best">best</a> = <a class="local col6 ref" href="#66ds" title='ds' data-ref="66ds">ds</a>;</td></tr>
+<tr><th id="826">826</th><td>	    }</td></tr>
+<tr><th id="827">827</th><td>	}</td></tr>
+<tr><th id="828">828</th><td>	<a class="local col7 ref" href="#67best" title='best' data-ref="67best">best</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::next" title='vissprite_s::next' data-ref="vissprite_s::next">next</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::prev" title='vissprite_s::prev' data-ref="vissprite_s::prev">prev</a> = <a class="local col7 ref" href="#67best" title='best' data-ref="67best">best</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::prev" title='vissprite_s::prev' data-ref="vissprite_s::prev">prev</a>;</td></tr>
+<tr><th id="829">829</th><td>	<a class="local col7 ref" href="#67best" title='best' data-ref="67best">best</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::prev" title='vissprite_s::prev' data-ref="vissprite_s::prev">prev</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::next" title='vissprite_s::next' data-ref="vissprite_s::next">next</a> = <a class="local col7 ref" href="#67best" title='best' data-ref="67best">best</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::next" title='vissprite_s::next' data-ref="vissprite_s::next">next</a>;</td></tr>
+<tr><th id="830">830</th><td>	<a class="local col7 ref" href="#67best" title='best' data-ref="67best">best</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::next" title='vissprite_s::next' data-ref="vissprite_s::next">next</a> = &amp;<a class="ref" href="r_things.h.html#vsprsortedhead" title='vsprsortedhead' data-ref="vsprsortedhead">vsprsortedhead</a>;</td></tr>
+<tr><th id="831">831</th><td>	<a class="local col7 ref" href="#67best" title='best' data-ref="67best">best</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::prev" title='vissprite_s::prev' data-ref="vissprite_s::prev">prev</a> = <a class="ref" href="r_things.h.html#vsprsortedhead" title='vsprsortedhead' data-ref="vsprsortedhead">vsprsortedhead</a>.<a class="ref" href="r_defs.h.html#vissprite_s::prev" title='vissprite_s::prev' data-ref="vissprite_s::prev">prev</a>;</td></tr>
+<tr><th id="832">832</th><td>	<a class="ref" href="r_things.h.html#vsprsortedhead" title='vsprsortedhead' data-ref="vsprsortedhead">vsprsortedhead</a>.<a class="ref" href="r_defs.h.html#vissprite_s::prev" title='vissprite_s::prev' data-ref="vissprite_s::prev">prev</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::next" title='vissprite_s::next' data-ref="vissprite_s::next">next</a> = <a class="local col7 ref" href="#67best" title='best' data-ref="67best">best</a>;</td></tr>
+<tr><th id="833">833</th><td>	<a class="ref" href="r_things.h.html#vsprsortedhead" title='vsprsortedhead' data-ref="vsprsortedhead">vsprsortedhead</a>.<a class="ref" href="r_defs.h.html#vissprite_s::prev" title='vissprite_s::prev' data-ref="vissprite_s::prev">prev</a> = <a class="local col7 ref" href="#67best" title='best' data-ref="67best">best</a>;</td></tr>
+<tr><th id="834">834</th><td>    }</td></tr>
+<tr><th id="835">835</th><td>}</td></tr>
+<tr><th id="836">836</th><td></td></tr>
+<tr><th id="837">837</th><td></td></tr>
+<tr><th id="838">838</th><td></td></tr>
+<tr><th id="839">839</th><td><i>//</i></td></tr>
+<tr><th id="840">840</th><td><i>// R_DrawSprite</i></td></tr>
+<tr><th id="841">841</th><td><i>//</i></td></tr>
+<tr><th id="842">842</th><td><em>void</em> <dfn class="decl def" id="R_DrawSprite" title='R_DrawSprite' data-ref="R_DrawSprite">R_DrawSprite</dfn> (<a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>* <dfn class="local col0 decl" id="70spr" title='spr' data-type='vissprite_t *' data-ref="70spr">spr</dfn>)</td></tr>
+<tr><th id="843">843</th><td>{</td></tr>
+<tr><th id="844">844</th><td>    <a class="typedef" href="r_defs.h.html#drawseg_t" title='drawseg_t' data-type='struct drawseg_s' data-ref="drawseg_t">drawseg_t</a>*		<dfn class="local col1 decl" id="71ds" title='ds' data-type='drawseg_t *' data-ref="71ds">ds</dfn>;</td></tr>
+<tr><th id="845">845</th><td>    <em>short</em>		<dfn class="local col2 decl" id="72clipbot" title='clipbot' data-type='short [320]' data-ref="72clipbot">clipbot</dfn>[<a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>];</td></tr>
+<tr><th id="846">846</th><td>    <em>short</em>		<dfn class="local col3 decl" id="73cliptop" title='cliptop' data-type='short [320]' data-ref="73cliptop">cliptop</dfn>[<a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>];</td></tr>
+<tr><th id="847">847</th><td>    <em>int</em>			<dfn class="local col4 decl" id="74x" title='x' data-type='int' data-ref="74x">x</dfn>;</td></tr>
+<tr><th id="848">848</th><td>    <em>int</em>			<dfn class="local col5 decl" id="75r1" title='r1' data-type='int' data-ref="75r1">r1</dfn>;</td></tr>
+<tr><th id="849">849</th><td>    <em>int</em>			<dfn class="local col6 decl" id="76r2" title='r2' data-type='int' data-ref="76r2">r2</dfn>;</td></tr>
+<tr><th id="850">850</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col7 decl" id="77scale" title='scale' data-type='fixed_t' data-ref="77scale">scale</dfn>;</td></tr>
+<tr><th id="851">851</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col8 decl" id="78lowscale" title='lowscale' data-type='fixed_t' data-ref="78lowscale">lowscale</dfn>;</td></tr>
+<tr><th id="852">852</th><td>    <em>int</em>			<dfn class="local col9 decl" id="79silhouette" title='silhouette' data-type='int' data-ref="79silhouette">silhouette</dfn>;</td></tr>
+<tr><th id="853">853</th><td>		</td></tr>
+<tr><th id="854">854</th><td>    <b>for</b> (<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a> = <a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x1" title='vissprite_s::x1' data-ref="vissprite_s::x1">x1</a> ; <a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>&lt;=<a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x2" title='vissprite_s::x2' data-ref="vissprite_s::x2">x2</a> ; <a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>++)</td></tr>
+<tr><th id="855">855</th><td>	<a class="local col2 ref" href="#72clipbot" title='clipbot' data-ref="72clipbot">clipbot</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>] = <a class="local col3 ref" href="#73cliptop" title='cliptop' data-ref="73cliptop">cliptop</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>] = -<var>2</var>;</td></tr>
+<tr><th id="856">856</th><td>    </td></tr>
+<tr><th id="857">857</th><td>    <i>// Scan drawsegs from end to start for obscuring segs.</i></td></tr>
+<tr><th id="858">858</th><td><i>    // The first drawseg that has a greater scale</i></td></tr>
+<tr><th id="859">859</th><td><i>    //  is the clip seg.</i></td></tr>
+<tr><th id="860">860</th><td>    <b>for</b> (<a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>=<a class="ref" href="r_bsp.h.html#ds_p" title='ds_p' data-ref="ds_p">ds_p</a>-<var>1</var> ; <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a> &gt;= <a class="ref" href="r_bsp.h.html#drawsegs" title='drawsegs' data-ref="drawsegs">drawsegs</a> ; <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>--)</td></tr>
+<tr><th id="861">861</th><td>    {</td></tr>
+<tr><th id="862">862</th><td>	<i>// determine if the drawseg obscures the sprite</i></td></tr>
+<tr><th id="863">863</th><td>	<b>if</b> (<a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::x1" title='drawseg_s::x1' data-ref="drawseg_s::x1">x1</a> &gt; <a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x2" title='vissprite_s::x2' data-ref="vissprite_s::x2">x2</a></td></tr>
+<tr><th id="864">864</th><td>	    || <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::x2" title='drawseg_s::x2' data-ref="drawseg_s::x2">x2</a> &lt; <a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x1" title='vissprite_s::x1' data-ref="vissprite_s::x1">x1</a></td></tr>
+<tr><th id="865">865</th><td>	    || (!<a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::silhouette" title='drawseg_s::silhouette' data-ref="drawseg_s::silhouette">silhouette</a></td></tr>
+<tr><th id="866">866</th><td>		&amp;&amp; !<a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::maskedtexturecol" title='drawseg_s::maskedtexturecol' data-ref="drawseg_s::maskedtexturecol">maskedtexturecol</a>) )</td></tr>
+<tr><th id="867">867</th><td>	{</td></tr>
+<tr><th id="868">868</th><td>	    <i>// does not cover sprite</i></td></tr>
+<tr><th id="869">869</th><td>	    <b>continue</b>;</td></tr>
+<tr><th id="870">870</th><td>	}</td></tr>
+<tr><th id="871">871</th><td>			</td></tr>
+<tr><th id="872">872</th><td>	<a class="local col5 ref" href="#75r1" title='r1' data-ref="75r1">r1</a> = <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::x1" title='drawseg_s::x1' data-ref="drawseg_s::x1">x1</a> &lt; <a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x1" title='vissprite_s::x1' data-ref="vissprite_s::x1">x1</a> ? <a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x1" title='vissprite_s::x1' data-ref="vissprite_s::x1">x1</a> : <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::x1" title='drawseg_s::x1' data-ref="drawseg_s::x1">x1</a>;</td></tr>
+<tr><th id="873">873</th><td>	<a class="local col6 ref" href="#76r2" title='r2' data-ref="76r2">r2</a> = <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::x2" title='drawseg_s::x2' data-ref="drawseg_s::x2">x2</a> &gt; <a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x2" title='vissprite_s::x2' data-ref="vissprite_s::x2">x2</a> ? <a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x2" title='vissprite_s::x2' data-ref="vissprite_s::x2">x2</a> : <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::x2" title='drawseg_s::x2' data-ref="drawseg_s::x2">x2</a>;</td></tr>
+<tr><th id="874">874</th><td></td></tr>
+<tr><th id="875">875</th><td>	<b>if</b> (<a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::scale1" title='drawseg_s::scale1' data-ref="drawseg_s::scale1">scale1</a> &gt; <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::scale2" title='drawseg_s::scale2' data-ref="drawseg_s::scale2">scale2</a>)</td></tr>
+<tr><th id="876">876</th><td>	{</td></tr>
+<tr><th id="877">877</th><td>	    <a class="local col8 ref" href="#78lowscale" title='lowscale' data-ref="78lowscale">lowscale</a> = <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::scale2" title='drawseg_s::scale2' data-ref="drawseg_s::scale2">scale2</a>;</td></tr>
+<tr><th id="878">878</th><td>	    <a class="local col7 ref" href="#77scale" title='scale' data-ref="77scale">scale</a> = <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::scale1" title='drawseg_s::scale1' data-ref="drawseg_s::scale1">scale1</a>;</td></tr>
+<tr><th id="879">879</th><td>	}</td></tr>
+<tr><th id="880">880</th><td>	<b>else</b></td></tr>
+<tr><th id="881">881</th><td>	{</td></tr>
+<tr><th id="882">882</th><td>	    <a class="local col8 ref" href="#78lowscale" title='lowscale' data-ref="78lowscale">lowscale</a> = <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::scale1" title='drawseg_s::scale1' data-ref="drawseg_s::scale1">scale1</a>;</td></tr>
+<tr><th id="883">883</th><td>	    <a class="local col7 ref" href="#77scale" title='scale' data-ref="77scale">scale</a> = <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::scale2" title='drawseg_s::scale2' data-ref="drawseg_s::scale2">scale2</a>;</td></tr>
+<tr><th id="884">884</th><td>	}</td></tr>
+<tr><th id="885">885</th><td>		</td></tr>
+<tr><th id="886">886</th><td>	<b>if</b> (<a class="local col7 ref" href="#77scale" title='scale' data-ref="77scale">scale</a> &lt; <a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::scale" title='vissprite_s::scale' data-ref="vissprite_s::scale">scale</a></td></tr>
+<tr><th id="887">887</th><td>	    || ( <a class="local col8 ref" href="#78lowscale" title='lowscale' data-ref="78lowscale">lowscale</a> &lt; <a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::scale" title='vissprite_s::scale' data-ref="vissprite_s::scale">scale</a></td></tr>
+<tr><th id="888">888</th><td>		 &amp;&amp; !<a class="ref" href="r_main.h.html#R_PointOnSegSide" title='R_PointOnSegSide' data-ref="R_PointOnSegSide">R_PointOnSegSide</a> (<a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::gx" title='vissprite_s::gx' data-ref="vissprite_s::gx">gx</a>, <a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::gy" title='vissprite_s::gy' data-ref="vissprite_s::gy">gy</a>, <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::curline" title='drawseg_s::curline' data-ref="drawseg_s::curline">curline</a>) ) )</td></tr>
+<tr><th id="889">889</th><td>	{</td></tr>
+<tr><th id="890">890</th><td>	    <i>// masked mid texture?</i></td></tr>
+<tr><th id="891">891</th><td>	    <b>if</b> (<a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::maskedtexturecol" title='drawseg_s::maskedtexturecol' data-ref="drawseg_s::maskedtexturecol">maskedtexturecol</a>)	</td></tr>
+<tr><th id="892">892</th><td>		<a class="ref" href="r_segs.h.html#R_RenderMaskedSegRange" title='R_RenderMaskedSegRange' data-ref="R_RenderMaskedSegRange">R_RenderMaskedSegRange</a> (<a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>, <a class="local col5 ref" href="#75r1" title='r1' data-ref="75r1">r1</a>, <a class="local col6 ref" href="#76r2" title='r2' data-ref="76r2">r2</a>);</td></tr>
+<tr><th id="893">893</th><td>	    <i>// seg is behind sprite</i></td></tr>
+<tr><th id="894">894</th><td>	    <b>continue</b>;			</td></tr>
+<tr><th id="895">895</th><td>	}</td></tr>
+<tr><th id="896">896</th><td></td></tr>
+<tr><th id="897">897</th><td>	</td></tr>
+<tr><th id="898">898</th><td>	<i>// clip this piece of the sprite</i></td></tr>
+<tr><th id="899">899</th><td>	<a class="local col9 ref" href="#79silhouette" title='silhouette' data-ref="79silhouette">silhouette</a> = <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::silhouette" title='drawseg_s::silhouette' data-ref="drawseg_s::silhouette">silhouette</a>;</td></tr>
+<tr><th id="900">900</th><td>	</td></tr>
+<tr><th id="901">901</th><td>	<b>if</b> (<a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::gz" title='vissprite_s::gz' data-ref="vissprite_s::gz">gz</a> &gt;= <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::bsilheight" title='drawseg_s::bsilheight' data-ref="drawseg_s::bsilheight">bsilheight</a>)</td></tr>
+<tr><th id="902">902</th><td>	    <a class="local col9 ref" href="#79silhouette" title='silhouette' data-ref="79silhouette">silhouette</a> &amp;= ~<a class="macro" href="r_defs.h.html#51" title="1" data-ref="_M/SIL_BOTTOM">SIL_BOTTOM</a>;</td></tr>
+<tr><th id="903">903</th><td></td></tr>
+<tr><th id="904">904</th><td>	<b>if</b> (<a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::gzt" title='vissprite_s::gzt' data-ref="vissprite_s::gzt">gzt</a> &lt;= <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::tsilheight" title='drawseg_s::tsilheight' data-ref="drawseg_s::tsilheight">tsilheight</a>)</td></tr>
+<tr><th id="905">905</th><td>	    <a class="local col9 ref" href="#79silhouette" title='silhouette' data-ref="79silhouette">silhouette</a> &amp;= ~<a class="macro" href="r_defs.h.html#52" title="2" data-ref="_M/SIL_TOP">SIL_TOP</a>;</td></tr>
+<tr><th id="906">906</th><td>			</td></tr>
+<tr><th id="907">907</th><td>	<b>if</b> (<a class="local col9 ref" href="#79silhouette" title='silhouette' data-ref="79silhouette">silhouette</a> == <var>1</var>)</td></tr>
+<tr><th id="908">908</th><td>	{</td></tr>
+<tr><th id="909">909</th><td>	    <i>// bottom sil</i></td></tr>
+<tr><th id="910">910</th><td>	    <b>for</b> (<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>=<a class="local col5 ref" href="#75r1" title='r1' data-ref="75r1">r1</a> ; <a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>&lt;=<a class="local col6 ref" href="#76r2" title='r2' data-ref="76r2">r2</a> ; <a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>++)</td></tr>
+<tr><th id="911">911</th><td>		<b>if</b> (<a class="local col2 ref" href="#72clipbot" title='clipbot' data-ref="72clipbot">clipbot</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>] == -<var>2</var>)</td></tr>
+<tr><th id="912">912</th><td>		    <a class="local col2 ref" href="#72clipbot" title='clipbot' data-ref="72clipbot">clipbot</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>] = <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::sprbottomclip" title='drawseg_s::sprbottomclip' data-ref="drawseg_s::sprbottomclip">sprbottomclip</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>];</td></tr>
+<tr><th id="913">913</th><td>	}</td></tr>
+<tr><th id="914">914</th><td>	<b>else</b> <b>if</b> (<a class="local col9 ref" href="#79silhouette" title='silhouette' data-ref="79silhouette">silhouette</a> == <var>2</var>)</td></tr>
+<tr><th id="915">915</th><td>	{</td></tr>
+<tr><th id="916">916</th><td>	    <i>// top sil</i></td></tr>
+<tr><th id="917">917</th><td>	    <b>for</b> (<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>=<a class="local col5 ref" href="#75r1" title='r1' data-ref="75r1">r1</a> ; <a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>&lt;=<a class="local col6 ref" href="#76r2" title='r2' data-ref="76r2">r2</a> ; <a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>++)</td></tr>
+<tr><th id="918">918</th><td>		<b>if</b> (<a class="local col3 ref" href="#73cliptop" title='cliptop' data-ref="73cliptop">cliptop</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>] == -<var>2</var>)</td></tr>
+<tr><th id="919">919</th><td>		    <a class="local col3 ref" href="#73cliptop" title='cliptop' data-ref="73cliptop">cliptop</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>] = <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::sprtopclip" title='drawseg_s::sprtopclip' data-ref="drawseg_s::sprtopclip">sprtopclip</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>];</td></tr>
+<tr><th id="920">920</th><td>	}</td></tr>
+<tr><th id="921">921</th><td>	<b>else</b> <b>if</b> (<a class="local col9 ref" href="#79silhouette" title='silhouette' data-ref="79silhouette">silhouette</a> == <var>3</var>)</td></tr>
+<tr><th id="922">922</th><td>	{</td></tr>
+<tr><th id="923">923</th><td>	    <i>// both</i></td></tr>
+<tr><th id="924">924</th><td>	    <b>for</b> (<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>=<a class="local col5 ref" href="#75r1" title='r1' data-ref="75r1">r1</a> ; <a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>&lt;=<a class="local col6 ref" href="#76r2" title='r2' data-ref="76r2">r2</a> ; <a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>++)</td></tr>
+<tr><th id="925">925</th><td>	    {</td></tr>
+<tr><th id="926">926</th><td>		<b>if</b> (<a class="local col2 ref" href="#72clipbot" title='clipbot' data-ref="72clipbot">clipbot</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>] == -<var>2</var>)</td></tr>
+<tr><th id="927">927</th><td>		    <a class="local col2 ref" href="#72clipbot" title='clipbot' data-ref="72clipbot">clipbot</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>] = <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::sprbottomclip" title='drawseg_s::sprbottomclip' data-ref="drawseg_s::sprbottomclip">sprbottomclip</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>];</td></tr>
+<tr><th id="928">928</th><td>		<b>if</b> (<a class="local col3 ref" href="#73cliptop" title='cliptop' data-ref="73cliptop">cliptop</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>] == -<var>2</var>)</td></tr>
+<tr><th id="929">929</th><td>		    <a class="local col3 ref" href="#73cliptop" title='cliptop' data-ref="73cliptop">cliptop</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>] = <a class="local col1 ref" href="#71ds" title='ds' data-ref="71ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::sprtopclip" title='drawseg_s::sprtopclip' data-ref="drawseg_s::sprtopclip">sprtopclip</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>];</td></tr>
+<tr><th id="930">930</th><td>	    }</td></tr>
+<tr><th id="931">931</th><td>	}</td></tr>
+<tr><th id="932">932</th><td>		</td></tr>
+<tr><th id="933">933</th><td>    }</td></tr>
+<tr><th id="934">934</th><td>    </td></tr>
+<tr><th id="935">935</th><td>    <i>// all clipping has been performed, so draw the sprite</i></td></tr>
+<tr><th id="936">936</th><td><i></i></td></tr>
+<tr><th id="937">937</th><td><i>    // check for unclipped columns</i></td></tr>
+<tr><th id="938">938</th><td>    <b>for</b> (<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a> = <a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x1" title='vissprite_s::x1' data-ref="vissprite_s::x1">x1</a> ; <a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>&lt;=<a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x2" title='vissprite_s::x2' data-ref="vissprite_s::x2">x2</a> ; <a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>++)</td></tr>
+<tr><th id="939">939</th><td>    {</td></tr>
+<tr><th id="940">940</th><td>	<b>if</b> (<a class="local col2 ref" href="#72clipbot" title='clipbot' data-ref="72clipbot">clipbot</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>] == -<var>2</var>)		</td></tr>
+<tr><th id="941">941</th><td>	    <a class="local col2 ref" href="#72clipbot" title='clipbot' data-ref="72clipbot">clipbot</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>] = <a class="ref" href="r_state.h.html#viewheight" title='viewheight' data-ref="viewheight">viewheight</a>;</td></tr>
+<tr><th id="942">942</th><td></td></tr>
+<tr><th id="943">943</th><td>	<b>if</b> (<a class="local col3 ref" href="#73cliptop" title='cliptop' data-ref="73cliptop">cliptop</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>] == -<var>2</var>)</td></tr>
+<tr><th id="944">944</th><td>	    <a class="local col3 ref" href="#73cliptop" title='cliptop' data-ref="73cliptop">cliptop</a>[<a class="local col4 ref" href="#74x" title='x' data-ref="74x">x</a>] = -<var>1</var>;</td></tr>
+<tr><th id="945">945</th><td>    }</td></tr>
+<tr><th id="946">946</th><td>		</td></tr>
+<tr><th id="947">947</th><td>    <a class="ref" href="r_things.h.html#mfloorclip" title='mfloorclip' data-ref="mfloorclip">mfloorclip</a> = <a class="local col2 ref" href="#72clipbot" title='clipbot' data-ref="72clipbot">clipbot</a>;</td></tr>
+<tr><th id="948">948</th><td>    <a class="ref" href="r_things.h.html#mceilingclip" title='mceilingclip' data-ref="mceilingclip">mceilingclip</a> = <a class="local col3 ref" href="#73cliptop" title='cliptop' data-ref="73cliptop">cliptop</a>;</td></tr>
+<tr><th id="949">949</th><td>    <a class="ref" href="#R_DrawVisSprite" title='R_DrawVisSprite' data-ref="R_DrawVisSprite">R_DrawVisSprite</a> (<a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>, <a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x1" title='vissprite_s::x1' data-ref="vissprite_s::x1">x1</a>, <a class="local col0 ref" href="#70spr" title='spr' data-ref="70spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::x2" title='vissprite_s::x2' data-ref="vissprite_s::x2">x2</a>);</td></tr>
+<tr><th id="950">950</th><td>}</td></tr>
+<tr><th id="951">951</th><td></td></tr>
+<tr><th id="952">952</th><td></td></tr>
+<tr><th id="953">953</th><td></td></tr>
+<tr><th id="954">954</th><td></td></tr>
+<tr><th id="955">955</th><td><i>//</i></td></tr>
+<tr><th id="956">956</th><td><i>// R_DrawMasked</i></td></tr>
+<tr><th id="957">957</th><td><i>//</i></td></tr>
+<tr><th id="958">958</th><td><em>void</em> <dfn class="decl def" id="R_DrawMasked" title='R_DrawMasked' data-ref="R_DrawMasked">R_DrawMasked</dfn> (<em>void</em>)</td></tr>
+<tr><th id="959">959</th><td>{</td></tr>
+<tr><th id="960">960</th><td>    <a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>*	<dfn class="local col0 decl" id="80spr" title='spr' data-type='vissprite_t *' data-ref="80spr">spr</dfn>;</td></tr>
+<tr><th id="961">961</th><td>    <a class="typedef" href="r_defs.h.html#drawseg_t" title='drawseg_t' data-type='struct drawseg_s' data-ref="drawseg_t">drawseg_t</a>*		<dfn class="local col1 decl" id="81ds" title='ds' data-type='drawseg_t *' data-ref="81ds">ds</dfn>;</td></tr>
+<tr><th id="962">962</th><td>	</td></tr>
+<tr><th id="963">963</th><td>    <a class="ref" href="#R_SortVisSprites" title='R_SortVisSprites' data-ref="R_SortVisSprites">R_SortVisSprites</a> ();</td></tr>
+<tr><th id="964">964</th><td></td></tr>
+<tr><th id="965">965</th><td>    <b>if</b> (<a class="ref" href="r_things.h.html#vissprite_p" title='vissprite_p' data-ref="vissprite_p">vissprite_p</a> &gt; <a class="ref" href="r_things.h.html#vissprites" title='vissprites' data-ref="vissprites">vissprites</a>)</td></tr>
+<tr><th id="966">966</th><td>    {</td></tr>
+<tr><th id="967">967</th><td>	<i>// draw all vissprites back to front</i></td></tr>
+<tr><th id="968">968</th><td>	<b>for</b> (<a class="local col0 ref" href="#80spr" title='spr' data-ref="80spr">spr</a> = <a class="ref" href="r_things.h.html#vsprsortedhead" title='vsprsortedhead' data-ref="vsprsortedhead">vsprsortedhead</a>.<a class="ref" href="r_defs.h.html#vissprite_s::next" title='vissprite_s::next' data-ref="vissprite_s::next">next</a> ;</td></tr>
+<tr><th id="969">969</th><td>	     <a class="local col0 ref" href="#80spr" title='spr' data-ref="80spr">spr</a> != &amp;<a class="ref" href="r_things.h.html#vsprsortedhead" title='vsprsortedhead' data-ref="vsprsortedhead">vsprsortedhead</a> ;</td></tr>
+<tr><th id="970">970</th><td>	     <a class="local col0 ref" href="#80spr" title='spr' data-ref="80spr">spr</a>=<a class="local col0 ref" href="#80spr" title='spr' data-ref="80spr">spr</a>-&gt;<a class="ref" href="r_defs.h.html#vissprite_s::next" title='vissprite_s::next' data-ref="vissprite_s::next">next</a>)</td></tr>
+<tr><th id="971">971</th><td>	{</td></tr>
+<tr><th id="972">972</th><td>	    </td></tr>
+<tr><th id="973">973</th><td>	    <a class="ref" href="#R_DrawSprite" title='R_DrawSprite' data-ref="R_DrawSprite">R_DrawSprite</a> (<a class="local col0 ref" href="#80spr" title='spr' data-ref="80spr">spr</a>);</td></tr>
+<tr><th id="974">974</th><td>	}</td></tr>
+<tr><th id="975">975</th><td>    }</td></tr>
+<tr><th id="976">976</th><td>    </td></tr>
+<tr><th id="977">977</th><td>    <i>// render any remaining masked mid textures</i></td></tr>
+<tr><th id="978">978</th><td>    <b>for</b> (<a class="local col1 ref" href="#81ds" title='ds' data-ref="81ds">ds</a>=<a class="ref" href="r_bsp.h.html#ds_p" title='ds_p' data-ref="ds_p">ds_p</a>-<var>1</var> ; <a class="local col1 ref" href="#81ds" title='ds' data-ref="81ds">ds</a> &gt;= <a class="ref" href="r_bsp.h.html#drawsegs" title='drawsegs' data-ref="drawsegs">drawsegs</a> ; <a class="local col1 ref" href="#81ds" title='ds' data-ref="81ds">ds</a>--)</td></tr>
+<tr><th id="979">979</th><td>	<b>if</b> (<a class="local col1 ref" href="#81ds" title='ds' data-ref="81ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::maskedtexturecol" title='drawseg_s::maskedtexturecol' data-ref="drawseg_s::maskedtexturecol">maskedtexturecol</a>)</td></tr>
+<tr><th id="980">980</th><td>	    <a class="ref" href="r_segs.h.html#R_RenderMaskedSegRange" title='R_RenderMaskedSegRange' data-ref="R_RenderMaskedSegRange">R_RenderMaskedSegRange</a> (<a class="local col1 ref" href="#81ds" title='ds' data-ref="81ds">ds</a>, <a class="local col1 ref" href="#81ds" title='ds' data-ref="81ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::x1" title='drawseg_s::x1' data-ref="drawseg_s::x1">x1</a>, <a class="local col1 ref" href="#81ds" title='ds' data-ref="81ds">ds</a>-&gt;<a class="ref" href="r_defs.h.html#drawseg_s::x2" title='drawseg_s::x2' data-ref="drawseg_s::x2">x2</a>);</td></tr>
+<tr><th id="981">981</th><td>    </td></tr>
+<tr><th id="982">982</th><td>    <i>// draw the psprites on top of everything</i></td></tr>
+<tr><th id="983">983</th><td><i>    //  but does not draw on side views</i></td></tr>
+<tr><th id="984">984</th><td>    <b>if</b> (!<a class="ref" href="doomstat.h.html#viewangleoffset" title='viewangleoffset' data-ref="viewangleoffset">viewangleoffset</a>)		</td></tr>
+<tr><th id="985">985</th><td>	<a class="ref" href="#R_DrawPlayerSprites" title='R_DrawPlayerSprites' data-ref="R_DrawPlayerSprites">R_DrawPlayerSprites</a> ();</td></tr>
+<tr><th id="986">986</th><td>}</td></tr>
+<tr><th id="987">987</th><td></td></tr>
+<tr><th id="988">988</th><td></td></tr>
+<tr><th id="989">989</th><td></td></tr>
+<tr><th id="990">990</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

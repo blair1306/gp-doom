@@ -1,0 +1,9 @@
+<def f='codebrowser/p_pspr.c' l='161' ll='240' type='boolean P_CheckAmmo(player_t * player)'/>
+<use f='codebrowser/p_pspr.c' l='250' u='c' c='P_FireWeapon'/>
+<use f='codebrowser/p_pspr.c' l='360' u='c' c='A_ReFire'/>
+<use f='codebrowser/p_pspr.c' l='370' u='c' c='A_CheckReload'/>
+<doc f='codebrowser/p_pspr.c' l='156'>//
+// P_CheckAmmo
+// Returns true if there is enough ammo to shoot.
+// If not, selects the next weapon to use.
+//</doc>

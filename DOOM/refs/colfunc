@@ -1,0 +1,16 @@
+<dec f='codebrowser/r_main.h' l='100' type='void (*)(void)'/>
+<doc f='codebrowser/r_main.h' l='96'>//
+// Function pointers to switch refresh/drawing functions.
+// Used to select shadow mode etc.
+//</doc>
+<def f='codebrowser/r_main.c' l='125' type='void (*)(void)'/>
+<use f='codebrowser/r_main.c' l='704' u='w' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_main.c' l='711' u='w' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_plane.c' l='416' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_segs.c' l='287' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='309' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='339' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_things.c' l='382' u='r' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='415' u='w' c='R_DrawVisSprite'/>
+<use f='codebrowser/r_things.c' l='419' u='w' c='R_DrawVisSprite'/>
+<use f='codebrowser/r_things.c' l='442' u='w' c='R_DrawVisSprite'/>

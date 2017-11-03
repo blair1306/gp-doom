@@ -1,0 +1,12 @@
+<dec f='codebrowser/p_spec.h' l='635' type='int EV_Teleport(line_t * line, int side, mobj_t * thing)'/>
+<doc f='codebrowser/p_spec.h' l='631'>//
+// P_TELEPT
+//</doc>
+<use f='codebrowser/p_spec.c' l='660' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='769' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='906' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='937' u='c' c='P_CrossSpecialLine'/>
+<def f='codebrowser/p_telept.c' l='47' ll='131' type='int EV_Teleport(line_t * line, int side, mobj_t * thing)'/>
+<doc f='codebrowser/p_telept.c' l='44'>//
+// TELEPORTATION
+//</doc>

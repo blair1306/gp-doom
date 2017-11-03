@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_mobj.h' l='158' type='32768'/>
+<doc f='codebrowser/p_mobj.h' l='156'>// Don&apos;t cross lines
+    //   ??? or look at heights on teleport.</doc>
+<use f='codebrowser/p_map.c' l='473' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='477' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='500' u='r' c='P_TryMove'/>

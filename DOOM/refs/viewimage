@@ -1,0 +1,9 @@
+<def f='codebrowser/r_draw.c' l='63' type='byte *'/>
+<doc f='codebrowser/r_draw.c' l='53'>//
+// All drawing to the view buffer is accomplished in this file.
+// The other refresh files only know about ccordinates,
+//  not the architecture of the frame buffer.
+// Conveniently, the frame buffer is a linear one,
+//  and we need only the base address,
+//  and the total size == width*height*depth/8.,
+//</doc>

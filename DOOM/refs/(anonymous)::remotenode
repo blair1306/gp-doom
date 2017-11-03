@@ -1,0 +1,13 @@
+<dec f='codebrowser/d_net.h' l='90' type='short'/>
+<offset>96</offset>
+<doc f='codebrowser/d_net.h' l='89'>// Is dest for send, set by get (-1 = no packet).</doc>
+<use f='codebrowser/d_net.c' l='163' u='w' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='197' u='w' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='211' u='r' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='243' u='r' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='275' u='r' c='GetPackets'/>
+<use f='codebrowser/i_net.c' l='150' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='151' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='176' u='w' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='195' u='w' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='199' u='w' c='PacketGet'/>

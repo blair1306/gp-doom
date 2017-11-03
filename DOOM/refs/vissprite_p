@@ -1,0 +1,11 @@
+<dec f='codebrowser/r_things.h' l='34' type='vissprite_t *'/>
+<def f='codebrowser/r_things.c' l='290' type='vissprite_t *'/>
+<use f='codebrowser/r_things.c' l='319' u='w' c='R_ClearSprites'/>
+<use f='codebrowser/r_things.c' l='330' u='r' c='R_NewVisSprite'/>
+<use f='codebrowser/r_things.c' l='333' u='w' c='R_NewVisSprite'/>
+<use f='codebrowser/r_things.c' l='334' u='r' c='R_NewVisSprite'/>
+<use f='codebrowser/r_things.c' l='796' u='r' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='803' u='r' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='811' u='r' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='812' u='r' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='965' u='r' c='R_DrawMasked'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/info.c' l='103' type='void A_SkelMissile()'/>
+<use f='codebrowser/info.c' l='477'/>
+<use f='codebrowser/info.c' l='477'/>
+<use f='codebrowser/info.c' l='477'/>
+<use f='codebrowser/info.c' l='477'/>
+<use f='codebrowser/info.c' l='477'/>
+<use f='codebrowser/info.c' l='477'/>
+<use f='codebrowser/info.c' l='477'/>
+<use f='codebrowser/info.c' l='477'/>
+<def f='codebrowser/p_enemy.c' l='1002' ll='1017' type='void A_SkelMissile(mobj_t * actor)'/>
+<doc f='codebrowser/p_enemy.c' l='999'>//
+// A_SkelMissile
+//</doc>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_mobj.h' l='271' type='int'/>
+<offset>1504</offset>
+<doc f='codebrowser/p_mobj.h' l='269'>// If &gt;0, the target will be chased
+    // no matter what (even if shot)</doc>
+<use f='codebrowser/p_enemy.c' l='608' u='w' c='A_Look'/>
+<use f='codebrowser/p_enemy.c' l='681' u='r' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='686' u='w' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='689' u='w' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='756' u='r' c='A_Chase'/>
+<use f='codebrowser/p_inter.c' l='904' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='911' u='w' c='P_DamageMobj'/>

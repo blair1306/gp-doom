@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_spec.h' l='179'/>
+<use f='codebrowser/p_lights.c' l='227' u='c'/>
+<use f='codebrowser/p_spec.c' l='1290' u='c'/>
+<use f='codebrowser/p_spec.c' l='1315' u='c'/>

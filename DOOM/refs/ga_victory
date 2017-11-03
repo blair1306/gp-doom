@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_event.h' l='62' type='7'/>
+<use f='codebrowser/g_game.c' l='639' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1037' u='r' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1050' u='r' c='G_DoCompleted'/>

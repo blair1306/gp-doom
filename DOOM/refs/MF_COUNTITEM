@@ -1,0 +1,41 @@
+<dec f='codebrowser/p_mobj.h' l='185' type='8388608'/>
+<doc f='codebrowser/p_mobj.h' l='183'>// On picking up, count this item object
+    //  towards intermission item total.</doc>
+<use f='codebrowser/info.c' l='2300' u='r'/>
+<use f='codebrowser/info.c' l='2300' u='r'/>
+<use f='codebrowser/info.c' l='2326' u='r'/>
+<use f='codebrowser/info.c' l='2326' u='r'/>
+<use f='codebrowser/info.c' l='2560' u='r'/>
+<use f='codebrowser/info.c' l='2560' u='r'/>
+<use f='codebrowser/info.c' l='2586' u='r'/>
+<use f='codebrowser/info.c' l='2586' u='r'/>
+<use f='codebrowser/info.c' l='2612' u='r'/>
+<use f='codebrowser/info.c' l='2612' u='r'/>
+<use f='codebrowser/info.c' l='2638' u='r'/>
+<use f='codebrowser/info.c' l='2638' u='r'/>
+<use f='codebrowser/info.c' l='2690' u='r'/>
+<use f='codebrowser/info.c' l='2690' u='r'/>
+<use f='codebrowser/info.c' l='2716' u='r'/>
+<use f='codebrowser/info.c' l='2716' u='r'/>
+<use f='codebrowser/info.c' l='2742' u='r'/>
+<use f='codebrowser/info.c' l='2742' u='r'/>
+<use f='codebrowser/info.c' l='2300' u='r'/>
+<use f='codebrowser/info.c' l='2300' u='r'/>
+<use f='codebrowser/info.c' l='2326' u='r'/>
+<use f='codebrowser/info.c' l='2326' u='r'/>
+<use f='codebrowser/info.c' l='2560' u='r'/>
+<use f='codebrowser/info.c' l='2560' u='r'/>
+<use f='codebrowser/info.c' l='2586' u='r'/>
+<use f='codebrowser/info.c' l='2586' u='r'/>
+<use f='codebrowser/info.c' l='2612' u='r'/>
+<use f='codebrowser/info.c' l='2612' u='r'/>
+<use f='codebrowser/info.c' l='2638' u='r'/>
+<use f='codebrowser/info.c' l='2638' u='r'/>
+<use f='codebrowser/info.c' l='2690' u='r'/>
+<use f='codebrowser/info.c' l='2690' u='r'/>
+<use f='codebrowser/info.c' l='2716' u='r'/>
+<use f='codebrowser/info.c' l='2716' u='r'/>
+<use f='codebrowser/info.c' l='2742' u='r'/>
+<use f='codebrowser/info.c' l='2742' u='r'/>
+<use f='codebrowser/p_inter.c' l='655' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_mobj.c' l='791' u='r' c='P_SpawnMapThing'/>

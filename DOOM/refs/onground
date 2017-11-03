@@ -1,0 +1,6 @@
+<def f='codebrowser/p_user.c' l='51' type='boolean'/>
+<use f='codebrowser/p_user.c' l='97' u='r' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='158' u='w' c='P_MovePlayer'/>
+<use f='codebrowser/p_user.c' l='160' u='r' c='P_MovePlayer'/>
+<use f='codebrowser/p_user.c' l='163' u='r' c='P_MovePlayer'/>
+<use f='codebrowser/p_user.c' l='197' u='w' c='P_DeathThink'/>

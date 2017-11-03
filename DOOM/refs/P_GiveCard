@@ -1,0 +1,10 @@
+<def f='codebrowser/p_inter.c' l='273' ll='283' type='void P_GiveCard(player_t * player, card_t card)'/>
+<use f='codebrowser/p_inter.c' l='424' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='432' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='440' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='448' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='456' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='464' u='c' c='P_TouchSpecialThing'/>
+<doc f='codebrowser/p_inter.c' l='270'>//
+// P_GiveCard
+//</doc>

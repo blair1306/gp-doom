@@ -1,0 +1,10 @@
+<dec f='codebrowser/r_bsp.h' l='64' type='void R_RenderBSPNode(int bspnum)'/>
+<def f='codebrowser/r_bsp.c' l='552' ll='578' type='void R_RenderBSPNode(int bspnum)'/>
+<use f='codebrowser/r_bsp.c' l='573' u='c' c='R_RenderBSPNode'/>
+<use f='codebrowser/r_bsp.c' l='577' u='c' c='R_RenderBSPNode'/>
+<doc f='codebrowser/r_bsp.c' l='547'>//
+// RenderBSPNode
+// Renders all subsectors below a given node,
+//  traversing subtree recursively.
+// Just call with BSP root.</doc>
+<use f='codebrowser/r_main.c' l='884' u='c' c='R_RenderPlayerView'/>

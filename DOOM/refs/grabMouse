@@ -1,0 +1,7 @@
+<def f='codebrowser/i_video.c' l='83' type='boolean'/>
+<use f='codebrowser/i_video.c' l='321' u='r' c='I_StartTic'/>
+<use f='codebrowser/i_video.c' l='737' u='w' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='846' u='r' c='I_InitGraphics'/>
+<doc f='codebrowser/i_video.c' l='80'>// Fake mouse handling.
+// This cannot work properly w/o DGA.
+// Needs an invisible mouse cursor at least.</doc>

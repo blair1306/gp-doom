@@ -1,0 +1,16 @@
+<dec f='codebrowser/p_mobj.h' l='189' type='16777216'/>
+<doc f='codebrowser/p_mobj.h' l='187'>// Special handling: skull in flight.
+    // Neither a cacodemon nor a missile.</doc>
+<use f='codebrowser/p_enemy.c' l='1429' u='r' c='A_SkullAttack'/>
+<use f='codebrowser/p_inter.c' l='675' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='793' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='895' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_map.c' l='275' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='281' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_mobj.c' l='124' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='127' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='201' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='267' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='291' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='337' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='420' u='r' c='P_MobjThinker'/>

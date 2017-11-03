@@ -1,0 +1,11 @@
+<dec f='codebrowser/d_net.h' l='132' type='void NetUpdate()'/>
+<doc f='codebrowser/d_net.h' l='131'>// Create any new ticcmds and broadcast to other players.</doc>
+<use f='codebrowser/d_main.c' l='316' u='c' c='D_Display'/>
+<def f='codebrowser/d_net.c' l='368' ll='446' type='void NetUpdate()'/>
+<use f='codebrowser/d_net.c' l='653' u='c' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='717' u='c' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='765' u='c' c='TryRunTics'/>
+<use f='codebrowser/r_main.c' l='881' u='c' c='R_RenderPlayerView'/>
+<use f='codebrowser/r_main.c' l='887' u='c' c='R_RenderPlayerView'/>
+<use f='codebrowser/r_main.c' l='892' u='c' c='R_RenderPlayerView'/>
+<use f='codebrowser/r_main.c' l='897' u='c' c='R_RenderPlayerView'/>

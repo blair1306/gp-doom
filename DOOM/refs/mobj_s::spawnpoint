@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_mobj.h' l='281' type='mapthing_t'/>
+<offset>1632</offset>
+<doc f='codebrowser/p_mobj.h' l='280'>// For nightmare respawn.</doc>
+<use f='codebrowser/p_mobj.c' l='366' u='m' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='367' u='m' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='389' u='a' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='399' u='w' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='399' u='r' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='553' u='r' c='P_RemoveMobj'/>
+<use f='codebrowser/p_mobj.c' l='626' u='w' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='785' u='w' c='P_SpawnMapThing'/>

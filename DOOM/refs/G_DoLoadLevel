@@ -1,0 +1,5 @@
+<dec f='codebrowser/g_game.c' l='87' type='void G_DoLoadLevel()'/>
+<def f='codebrowser/g_game.c' l='445' ll='497' type='void G_DoLoadLevel()'/>
+<use f='codebrowser/g_game.c' l='622' u='c' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1176' u='c' c='G_DoWorldDone'/>
+<use f='codebrowser/g_game.c' l='1481' u='c' c='G_InitNew'/>

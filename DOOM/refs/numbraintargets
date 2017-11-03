@@ -1,0 +1,5 @@
+<def f='codebrowser/p_enemy.c' l='1810' type='int'/>
+<use f='codebrowser/p_enemy.c' l='1819' u='w' c='A_BrainAwake'/>
+<use f='codebrowser/p_enemy.c' l='1834' u='r' c='A_BrainAwake'/>
+<use f='codebrowser/p_enemy.c' l='1835' u='w' c='A_BrainAwake'/>
+<use f='codebrowser/p_enemy.c' l='1914' u='r' c='A_BrainSpit'/>

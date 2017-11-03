@@ -1,0 +1,6 @@
+<dec f='include/X11/X.h' l='246'/>
+<use f='codebrowser/i_video.c' l='218' u='c'/>
+<use f='codebrowser/i_video.c' l='231' u='c'/>
+<use f='codebrowser/i_video.c' l='247' u='c'/>
+<doc f='include/X11/X.h' l='243'>/* button masks.  Used in same manner as Key masks above. Not to be confused
+   with button names below. */</doc>

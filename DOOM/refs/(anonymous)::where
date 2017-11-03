@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_spec.h' l='230' type='bwhere_e'/>
+<offset>64</offset>
+<use f='codebrowser/p_spec.c' l='1134' u='r' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_switch.c' l='181' u='w' c='P_StartButton'/>

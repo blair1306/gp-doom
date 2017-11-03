@@ -1,0 +1,7 @@
+<def f='codebrowser/g_game.c' l='105' type='boolean'/>
+<use f='codebrowser/g_game.c' l='426' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='428' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='494' u='w' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='563' u='w' c='G_Responder'/>
+<doc f='codebrowser/g_game.c' l='105'>// send a pause event next tic </doc>
+<dec f='codebrowser/m_menu.c' l='131' type='boolean'/>

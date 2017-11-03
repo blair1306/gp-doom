@@ -1,0 +1,10 @@
+<dec f='codebrowser/r_state.h' l='88' type='subsector_t *'/>
+<def f='codebrowser/p_setup.c' l='66' type='subsector_t *'/>
+<use f='codebrowser/p_setup.c' l='210' u='w' c='P_LoadSubsectors'/>
+<use f='codebrowser/p_setup.c' l='214' u='r' c='P_LoadSubsectors'/>
+<use f='codebrowser/p_setup.c' l='215' u='r' c='P_LoadSubsectors'/>
+<use f='codebrowser/p_setup.c' l='513' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_sight.c' l='160' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/r_bsp.c' l='511' u='r' c='R_Subsector'/>
+<use f='codebrowser/r_main.c' l='811' u='r' c='R_PointInSubsector'/>
+<use f='codebrowser/r_main.c' l='822' u='r' c='R_PointInSubsector'/>

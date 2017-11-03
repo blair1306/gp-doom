@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_event.h' l='60' type='5'/>
+<use f='codebrowser/g_game.c' l='633' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1579' u='r' c='G_DeferedPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1633' u='r' c='G_TimeDemo'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_enemy.c' l='59' type='6'/>
+<use f='codebrowser/p_enemy.c' l='72'/>
+<use f='codebrowser/p_enemy.c' l='72'/>
+<use f='codebrowser/p_enemy.c' l='392' u='r' c='P_NewChaseDir'/>

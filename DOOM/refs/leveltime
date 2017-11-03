@@ -1,0 +1,27 @@
+<dec f='codebrowser/doomstat.h' l='172' type='int'/>
+<doc f='codebrowser/doomstat.h' l='172'>// tics in game play for par</doc>
+<use f='codebrowser/g_game.c' l='1128' u='r' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1233' u='w' c='G_DoLoadGame'/>
+<use f='codebrowser/g_game.c' l='1298' u='r' c='G_DoSaveGame'/>
+<use f='codebrowser/g_game.c' l='1299' u='r' c='G_DoSaveGame'/>
+<use f='codebrowser/g_game.c' l='1300' u='r' c='G_DoSaveGame'/>
+<use f='codebrowser/p_ceilng.c' l='68' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='112' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_floor.c' l='218' u='r' c='T_MoveFloor'/>
+<use f='codebrowser/p_map.c' l='1298' u='r' c='PIT_ChangeSector'/>
+<use f='codebrowser/p_mobj.c' l='464' u='r' c='P_MobjThinker'/>
+<use f='codebrowser/p_mobj.c' l='554' u='r' c='P_RemoveMobj'/>
+<use f='codebrowser/p_mobj.c' l='599' u='r' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_plats.c' l='67' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_pspr.c' l='123' u='r' c='P_CalcSwing'/>
+<use f='codebrowser/p_pspr.c' l='126' u='r' c='P_CalcSwing'/>
+<use f='codebrowser/p_pspr.c' l='330' u='r' c='A_WeaponReady'/>
+<use f='codebrowser/p_setup.c' l='646' u='w' c='P_SetupLevel'/>
+<use f='codebrowser/p_spec.c' l='1025' u='r' c='P_PlayerInSpecialSector'/>
+<use f='codebrowser/p_spec.c' l='1032' u='r' c='P_PlayerInSpecialSector'/>
+<use f='codebrowser/p_spec.c' l='1043' u='r' c='P_PlayerInSpecialSector'/>
+<use f='codebrowser/p_spec.c' l='1058' u='r' c='P_PlayerInSpecialSector'/>
+<use f='codebrowser/p_spec.c' l='1104' u='r' c='P_UpdateSpecials'/>
+<def f='codebrowser/p_tick.c' l='34' type='int'/>
+<use f='codebrowser/p_tick.c' l='157' u='w' c='P_Ticker'/>
+<use f='codebrowser/p_user.c' l='108' u='r' c='P_CalcHeight'/>

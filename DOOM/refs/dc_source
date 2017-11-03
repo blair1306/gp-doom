@@ -1,0 +1,12 @@
+<dec f='codebrowser/r_draw.h' l='40' type='byte *'/>
+<doc f='codebrowser/r_draw.h' l='39'>// first pixel in a column</doc>
+<def f='codebrowser/r_draw.c' l='93' type='byte *'/>
+<use f='codebrowser/r_draw.c' l='142' u='r' c='R_DrawColumn'/>
+<use f='codebrowser/r_draw.c' l='247' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='442' u='r' c='R_DrawTranslatedColumn'/>
+<doc f='codebrowser/r_draw.c' l='92'>// first pixel in a column (possibly virtual) </doc>
+<use f='codebrowser/r_plane.c' l='415' u='w' c='R_DrawPlanes'/>
+<use f='codebrowser/r_segs.c' l='286' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='308' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='337' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_things.c' l='376' u='w' c='R_DrawMaskedColumn'/>

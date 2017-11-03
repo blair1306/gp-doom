@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_local.h' l='123' type='void P_SpawnPlayerMissile(mobj_t * source, mobjtype_t type)'/>
+<def f='codebrowser/p_mobj.c' l='934' ll='987' type='void P_SpawnPlayerMissile(mobj_t * source, mobjtype_t type)'/>
+<doc f='codebrowser/p_mobj.c' l='930'>//
+// P_SpawnPlayerMissile
+// Tries to aim at a nearby monster
+//</doc>
+<use f='codebrowser/p_pspr.c' l='556' u='c' c='A_FireMissile'/>
+<use f='codebrowser/p_pspr.c' l='569' u='c' c='A_FireBFG'/>
+<use f='codebrowser/p_pspr.c' l='588' u='c' c='A_FirePlasma'/>

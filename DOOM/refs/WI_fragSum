@@ -1,0 +1,6 @@
+<def f='codebrowser/wi_stuff.c' l='818' ll='839' type='int WI_fragSum(int playernum)'/>
+<use f='codebrowser/wi_stuff.c' l='900' u='c' c='WI_updateDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='940' u='c' c='WI_updateDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1096' u='c' c='WI_initNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1130' u='c' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1226' u='c' c='WI_updateNetgameStats'/>

@@ -1,0 +1,24 @@
+<dec f='codebrowser/r_defs.h' l='207' type='sector_t *'/>
+<use f='codebrowser/am_map.c' l='1148' u='r' c='AM_drawWalls'/>
+<use f='codebrowser/am_map.c' l='1152' u='r' c='AM_drawWalls'/>
+<offset>448</offset>
+<doc f='codebrowser/r_defs.h' l='205'>// Front and back sector.
+    // Note: redundant? Can be retrieved from SideDefs.</doc>
+<use f='codebrowser/p_floor.c' l='368' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='369' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='519' u='r' c='EV_BuildStairs'/>
+<use f='codebrowser/p_map.c' l='842' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='849' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='930' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='937' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='956' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='959' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_maputl.c' l='312' u='r' c='P_LineOpening'/>
+<use f='codebrowser/p_setup.c' l='421' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='423' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='526' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='528' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='545' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_spec.c' l='258' u='r' c='getNextSector'/>
+<use f='codebrowser/p_spec.c' l='261' u='r' c='getNextSector'/>
+<use f='codebrowser/p_switch.c' l='184' u='r' c='P_StartButton'/>

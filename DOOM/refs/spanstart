@@ -1,0 +1,9 @@
+<def f='codebrowser/r_plane.c' l='76' type='int [200]'/>
+<use f='codebrowser/r_plane.c' l='340' u='r' c='R_MakeSpans'/>
+<use f='codebrowser/r_plane.c' l='345' u='r' c='R_MakeSpans'/>
+<use f='codebrowser/r_plane.c' l='351' u='w' c='R_MakeSpans'/>
+<use f='codebrowser/r_plane.c' l='356' u='w' c='R_MakeSpans'/>
+<doc f='codebrowser/r_plane.c' l='72'>//
+// spanstart holds the start of a plane span
+// initialized to 0 at start
+//</doc>

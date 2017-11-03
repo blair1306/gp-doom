@@ -1,0 +1,6 @@
+<def f='codebrowser/r_data.c' l='149' type='short **'/>
+<use f='codebrowser/r_data.c' l='248' u='r' c='R_GenerateComposite'/>
+<use f='codebrowser/r_data.c' l='315' u='r' c='R_GenerateLookup'/>
+<use f='codebrowser/r_data.c' l='391' u='r' c='R_GetColumn'/>
+<use f='codebrowser/r_data.c' l='483' u='w' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='548' u='r' c='R_InitTextures'/>

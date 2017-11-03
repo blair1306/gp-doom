@@ -1,0 +1,38 @@
+<dec f='codebrowser/hu_lib.h' l='53' type='char [81]'/>
+<dec f='codebrowser/hu_lib.h' l='67' type='hu_textline_t [4]'/>
+<dec f='codebrowser/hu_lib.h' l='83' type='hu_textline_t'/>
+<use f='codebrowser/hu_lib.c' l='49' u='w' c='HUlib_clearTextLine'/>
+<use f='codebrowser/hu_lib.c' l='78' u='w' c='HUlib_addCharToTextLine'/>
+<use f='codebrowser/hu_lib.c' l='79' u='w' c='HUlib_addCharToTextLine'/>
+<use f='codebrowser/hu_lib.c' l='92' u='w' c='HUlib_delCharFromTextLine'/>
+<use f='codebrowser/hu_lib.c' l='114' u='r' c='HUlib_drawTextLine'/>
+<use f='codebrowser/hu_lib.c' l='194' u='a' c='HUlib_initSText'/>
+<use f='codebrowser/hu_lib.c' l='208' u='a' c='HUlib_addLineToSText'/>
+<use f='codebrowser/hu_lib.c' l='212' u='m' c='HUlib_addLineToSText'/>
+<use f='codebrowser/hu_lib.c' l='225' u='a' c='HUlib_addMessageToSText'/>
+<use f='codebrowser/hu_lib.c' l='228' u='a' c='HUlib_addMessageToSText'/>
+<use f='codebrowser/hu_lib.c' l='246' u='a' c='HUlib_drawSText'/>
+<use f='codebrowser/hu_lib.c' l='262' u='m' c='HUlib_eraseSText'/>
+<use f='codebrowser/hu_lib.c' l='263' u='a' c='HUlib_eraseSText'/>
+<use f='codebrowser/hu_lib.c' l='281' u='a' c='HUlib_initIText'/>
+<use f='codebrowser/hu_lib.c' l='288' u='m' c='HUlib_delCharFromIText'/>
+<use f='codebrowser/hu_lib.c' l='289' u='a' c='HUlib_delCharFromIText'/>
+<use f='codebrowser/hu_lib.c' l='294' u='m' c='HUlib_eraseLineFromIText'/>
+<use f='codebrowser/hu_lib.c' l='295' u='a' c='HUlib_eraseLineFromIText'/>
+<use f='codebrowser/hu_lib.c' l='302' u='a' c='HUlib_resetIText'/>
+<use f='codebrowser/hu_lib.c' l='311' u='a' c='HUlib_addPrefixToIText'/>
+<use f='codebrowser/hu_lib.c' l='312' u='m' c='HUlib_addPrefixToIText'/>
+<use f='codebrowser/hu_lib.c' l='324' u='a' c='HUlib_keyInIText'/>
+<use f='codebrowser/hu_lib.c' l='339' u='a' c='HUlib_drawIText'/>
+<use f='codebrowser/hu_lib.c' l='350' u='m' c='HUlib_eraseIText'/>
+<use f='codebrowser/hu_lib.c' l='351' u='a' c='HUlib_eraseIText'/>
+<offset>0</offset>
+<doc f='codebrowser/hu_lib.h' l='53'>// line of text</doc>
+<doc f='codebrowser/hu_lib.h' l='67'>// text lines to draw</doc>
+<doc f='codebrowser/hu_lib.h' l='83'>// text line to input on</doc>
+<use f='codebrowser/hu_stuff.c' l='554' u='m' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='560' u='r' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='560' u='m' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='746' u='m' c='HU_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='748' u='r' c='HU_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='748' u='m' c='HU_Responder'/>

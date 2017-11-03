@@ -1,0 +1,15 @@
+<dec f='codebrowser/doomstat.h' l='49' type='boolean'/>
+<doc f='codebrowser/doomstat.h' l='46'>// ------------------------
+// Command line parameters.
+//</doc>
+<doc f='codebrowser/doomstat.h' l='49'>// checkparm of -nomonsters</doc>
+<def f='codebrowser/d_main.c' l='96' type='boolean'/>
+<use f='codebrowser/d_main.c' l='808' u='w' c='D_DoomMain'/>
+<doc f='codebrowser/d_main.c' l='96'>// checkparm of -nomonsters</doc>
+<use f='codebrowser/d_net.c' l='499' u='w' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='519' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/g_game.c' l='1354' u='w' c='G_DoNewGame'/>
+<use f='codebrowser/g_game.c' l='1562' u='r' c='G_BeginRecording'/>
+<use f='codebrowser/g_game.c' l='1602' u='w' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1671' u='w' c='G_CheckDemoStatus'/>
+<use f='codebrowser/p_mobj.c' l='768' u='r' c='P_SpawnMapThing'/>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/sounds.h' l='202' type='23'/>
+<use f='codebrowser/m_menu.c' l='1545' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1550' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1556' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1564' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1569' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1573' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1578' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1584' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1588' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1593' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1614' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1692' u='r' c='M_Responder'/>
+<use f='codebrowser/p_spec.c' l='1151' u='r' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_switch.c' l='218' u='r' c='P_ChangeSwitchTexture'/>

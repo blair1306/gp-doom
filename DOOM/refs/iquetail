@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_local.h' l='104' type='int'/>
+<def f='codebrowser/p_mobj.c' l='543' type='int'/>
+<use f='codebrowser/p_mobj.c' l='558' u='r' c='P_RemoveMobj'/>
+<use f='codebrowser/p_mobj.c' l='559' u='w' c='P_RemoveMobj'/>
+<use f='codebrowser/p_mobj.c' l='559' u='r' c='P_RemoveMobj'/>
+<use f='codebrowser/p_mobj.c' l='595' u='r' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='599' u='r' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='602' u='r' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='630' u='w' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='630' u='r' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_setup.c' l='679' u='w' c='P_SetupLevel'/>

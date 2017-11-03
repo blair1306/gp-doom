@@ -1,0 +1,5 @@
+<dec f='codebrowser/d_player.h' l='71' type='1'/>
+<doc f='codebrowser/d_player.h' l='70'>// No clipping, walk through barriers.</doc>
+<use f='codebrowser/p_user.c' l='242' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/st_stuff.c' l='628' u='r' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='630' u='r' c='ST_Responder'/>

@@ -1,0 +1,8 @@
+<def f='codebrowser/m_menu.c' l='679' type='char [80]'/>
+<use f='codebrowser/m_menu.c' l='709' u='r' c='M_QuickSave'/>
+<use f='codebrowser/m_menu.c' l='710' u='r' c='M_QuickSave'/>
+<use f='codebrowser/m_menu.c' l='741' u='r' c='M_QuickLoad'/>
+<use f='codebrowser/m_menu.c' l='742' u='r' c='M_QuickLoad'/>
+<doc f='codebrowser/m_menu.c' l='676'>//
+//      M_QuickSave
+//</doc>

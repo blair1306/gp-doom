@@ -1,0 +1,10 @@
+<def f='codebrowser/i_sound.c' l='114' type='short [2048]'/>
+<use f='codebrowser/i_sound.c' l='566' u='r' c='I_UpdateSound'/>
+<use f='codebrowser/i_sound.c' l='567' u='r' c='I_UpdateSound'/>
+<use f='codebrowser/i_sound.c' l='572' u='r' c='I_UpdateSound'/>
+<use f='codebrowser/i_sound.c' l='670' u='r' c='I_SubmitSound'/>
+<use f='codebrowser/i_sound.c' l='928' u='r' c='I_HandleSoundTimer'/>
+<doc f='codebrowser/i_sound.c' l='110'>// The global mixing buffer.
+// Basically, samples from all active internal channels
+//  are modifed and added, and stored in the buffer
+//  that is submitted to the audio device.</doc>

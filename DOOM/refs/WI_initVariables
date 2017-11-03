@@ -1,0 +1,2 @@
+<def f='codebrowser/wi_stuff.c' l='1796' ll='1836' type='void WI_initVariables(wbstartstruct_t * wbstartstruct)'/>
+<use f='codebrowser/wi_stuff.c' l='1841' u='c' c='WI_Start'/>

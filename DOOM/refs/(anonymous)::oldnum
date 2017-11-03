@@ -1,0 +1,5 @@
+<dec f='codebrowser/st_lib.h' l='55' type='int'/>
+<use f='codebrowser/st_lib.c' l='77' u='w' c='STlib_initNum'/>
+<use f='codebrowser/st_lib.c' l='105' u='w' c='STlib_drawNum'/>
+<offset>96</offset>
+<doc f='codebrowser/st_lib.h' l='54'>// last number value</doc>

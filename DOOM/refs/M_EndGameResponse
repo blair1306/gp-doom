@@ -1,0 +1,5 @@
+<def f='codebrowser/m_menu.c' l='996' ll='1004' type='void M_EndGameResponse(int ch)'/>
+<use f='codebrowser/m_menu.c' l='1021' u='r' c='M_EndGame'/>
+<doc f='codebrowser/m_menu.c' l='993'>//
+// M_EndGame
+//</doc>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_enemy.c' l='270' type='int'/>
+<use f='codebrowser/p_enemy.c' l='310' u='r' c='P_Move'/>
+<use f='codebrowser/p_enemy.c' l='315' u='w' c='P_Move'/>
+<use f='codebrowser/p_enemy.c' l='317' u='r' c='P_Move'/>
+<def f='codebrowser/p_map.c' l='70' type='int'/>
+<use f='codebrowser/p_map.c' l='152' u='w' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='242' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='243' u='w' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='410' u='w' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='502' u='w' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='505' u='r' c='P_TryMove'/>

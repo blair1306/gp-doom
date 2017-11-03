@@ -1,0 +1,13 @@
+<dec f='codebrowser/d_player.h' l='103' type='int'/>
+<offset>320</offset>
+<use f='codebrowser/p_inter.c' l='259' u='r' c='P_GiveArmor'/>
+<use f='codebrowser/p_inter.c' l='263' u='w' c='P_GiveArmor'/>
+<use f='codebrowser/p_inter.c' l='392' u='w' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='393' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='394' u='w' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='861' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='864' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='867' u='w' c='P_DamageMobj'/>
+<use f='codebrowser/st_stuff.c' l='566' u='w' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='580' u='w' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='1348' u='a' c='ST_createWidgets'/>

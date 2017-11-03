@@ -1,0 +1,5 @@
+<dec f='include/netdb.h' l='106' type='char **'/>
+<use f='codebrowser/i_net.c' l='237' u='r' c='GetLocalAddress'/>
+<use f='codebrowser/i_net.c' l='318' u='r' c='I_InitNetwork'/>
+<offset>192</offset>
+<doc f='include/netdb.h' l='106'>/* List of addresses from name server.  */</doc>

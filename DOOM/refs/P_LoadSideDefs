@@ -1,0 +1,5 @@
+<def f='codebrowser/p_setup.c' l='438' ll='463' type='void P_LoadSideDefs(int lump)'/>
+<use f='codebrowser/p_setup.c' l='652' u='c' c='P_SetupLevel'/>
+<doc f='codebrowser/p_setup.c' l='435'>//
+// P_LoadSideDefs
+//</doc>

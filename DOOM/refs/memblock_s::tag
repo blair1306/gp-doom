@@ -1,0 +1,18 @@
+<dec f='codebrowser/z_zone.h' l='62' type='int'/>
+<offset>128</offset>
+<doc f='codebrowser/z_zone.h' l='62'>// purgelevel</doc>
+<use f='codebrowser/w_wad.c' l='544' u='r' c='W_Profile'/>
+<use f='codebrowser/z_zone.c' l='77' u='w' c='Z_ClearZone'/>
+<use f='codebrowser/z_zone.c' l='107' u='w' c='Z_Init'/>
+<use f='codebrowser/z_zone.c' l='143' u='w' c='Z_Free'/>
+<use f='codebrowser/z_zone.c' l='225' u='r' c='Z_Malloc'/>
+<use f='codebrowser/z_zone.c' l='258' u='w' c='Z_Malloc'/>
+<use f='codebrowser/z_zone.c' l='281' u='w' c='Z_Malloc'/>
+<use f='codebrowser/z_zone.c' l='315' u='r' c='Z_FreeTags'/>
+<use f='codebrowser/z_zone.c' l='315' u='r' c='Z_FreeTags'/>
+<use f='codebrowser/z_zone.c' l='341' u='r' c='Z_DumpHeap'/>
+<use f='codebrowser/z_zone.c' l='341' u='r' c='Z_DumpHeap'/>
+<use f='codebrowser/z_zone.c' l='343' u='r' c='Z_DumpHeap'/>
+<use f='codebrowser/z_zone.c' l='375' u='r' c='Z_FileDumpHeap'/>
+<use f='codebrowser/z_zone.c' l='443' u='w' c='Z_ChangeTag2'/>
+<use f='codebrowser/z_zone.c' l='462' u='r' c='Z_FreeMemory'/>

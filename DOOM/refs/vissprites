@@ -1,0 +1,12 @@
+<dec f='codebrowser/r_things.h' l='33' type='vissprite_t [128]'/>
+<def f='codebrowser/r_things.c' l='289' type='vissprite_t [128]'/>
+<use f='codebrowser/r_things.c' l='319' u='r' c='R_ClearSprites'/>
+<use f='codebrowser/r_things.c' l='330' u='a' c='R_NewVisSprite'/>
+<use f='codebrowser/r_things.c' l='796' u='r' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='803' u='r' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='809' u='m' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='810' u='a' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='965' u='r' c='R_DrawMasked'/>
+<doc f='codebrowser/r_things.c' l='286'>//
+// GAME FUNCTIONS
+//</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/r_defs.h' l='55'/>
+<use f='codebrowser/r_bsp.h' l='48' u='c'/>
+<use f='codebrowser/r_bsp.c' l='53' u='c'/>
+<use f='codebrowser/r_plane.c' l='376' u='c'/>
+<use f='codebrowser/r_segs.c' l='386' u='c'/>

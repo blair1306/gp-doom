@@ -1,0 +1,9 @@
+<dec f='codebrowser/d_event.h' l='108'/>
+<use f='codebrowser/d_event.h' l='110' u='c'/>
+<doc f='codebrowser/d_event.h' l='105'>//
+// GLOBAL VARIABLES
+//</doc>
+<use f='codebrowser/d_main.c' l='141' u='c'/>
+<use f='codebrowser/d_main.c' l='153' u='c'/>
+<use f='codebrowser/d_main.c' l='170' u='c'/>
+<use f='codebrowser/d_net.c' l='464' u='c'/>

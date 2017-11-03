@@ -1,0 +1,6 @@
+<dec f='codebrowser/info.h' l='122' type='90'/>
+<use f='codebrowser/info.c' l='1018'/>
+<use f='codebrowser/info.c' l='1018'/>
+<use f='codebrowser/info.c' l='1018'/>
+<use f='codebrowser/info.c' l='1018'/>
+<use f='codebrowser/p_inter.c' l='623' c='P_TouchSpecialThing'/>

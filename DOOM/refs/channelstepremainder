@@ -1,0 +1,6 @@
+<def f='codebrowser/i_sound.c' l='120' type='unsigned int [8]'/>
+<use f='codebrowser/i_sound.c' l='347' u='w' c='addsfx'/>
+<use f='codebrowser/i_sound.c' l='600' u='w' c='I_UpdateSound'/>
+<use f='codebrowser/i_sound.c' l='602' u='r' c='I_UpdateSound'/>
+<use f='codebrowser/i_sound.c' l='604' u='w' c='I_UpdateSound'/>
+<doc f='codebrowser/i_sound.c' l='119'>// ... and a 0.16 bit remainder of last step.</doc>

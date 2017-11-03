@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_mobj.h' l='176' type='2097152'/>
+<doc f='codebrowser/p_mobj.h' l='174'>// Floating to a height for a move, ???
+    //  don&apos;t auto float to target&apos;s height.</doc>
+<use f='codebrowser/p_enemy.c' l='306' u='r' c='P_Move'/>
+<use f='codebrowser/p_enemy.c' l='328' u='r' c='P_Move'/>
+<use f='codebrowser/p_mobj.c' l='268' u='r' c='P_ZMovement'/>

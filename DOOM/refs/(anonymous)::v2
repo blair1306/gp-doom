@@ -1,0 +1,15 @@
+<dec f='codebrowser/doomdata.h' l='87' type='short'/>
+<dec f='codebrowser/doomdata.h' l='166' type='short'/>
+<dec f='codebrowser/r_defs.h' l='243' type='vertex_t *'/>
+<offset>64</offset>
+<use f='codebrowser/p_setup.c' l='179' u='w' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='179' u='r' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='379' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/r_bsp.c' l='272' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='272' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_main.c' l='232' u='r' c='R_PointOnSegSide'/>
+<use f='codebrowser/r_main.c' l='233' u='r' c='R_PointOnSegSide'/>
+<use f='codebrowser/r_segs.c' l='124' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='126' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='646' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='648' u='r' c='R_StoreWallRange'/>

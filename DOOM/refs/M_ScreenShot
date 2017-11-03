@@ -1,0 +1,6 @@
+<dec f='codebrowser/m_misc.h' l='45' type='void M_ScreenShot()'/>
+<use f='codebrowser/g_game.c' l='646' u='c' c='G_Ticker'/>
+<def f='codebrowser/m_misc.c' l='506' ll='535' type='void M_ScreenShot()'/>
+<doc f='codebrowser/m_misc.c' l='503'>//
+// M_ScreenShot
+//</doc>

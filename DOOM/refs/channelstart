@@ -1,0 +1,9 @@
+<def f='codebrowser/i_sound.c' l='133' type='int [8]'/>
+<use f='codebrowser/i_sound.c' l='312' u='r' c='addsfx'/>
+<use f='codebrowser/i_sound.c' l='315' u='r' c='addsfx'/>
+<use f='codebrowser/i_sound.c' l='349' u='w' c='addsfx'/>
+<doc f='codebrowser/i_sound.c' l='128'>// Time/gametic that the channel started playing,
+//  used to determine oldest, which automatically
+//  has lowest priority.
+// In case number of active sounds exceeds
+//  available channels.</doc>

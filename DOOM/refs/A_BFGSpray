@@ -1,0 +1,14 @@
+<dec f='codebrowser/info.c' l='81' type='void A_BFGSpray()'/>
+<use f='codebrowser/info.c' l='255'/>
+<use f='codebrowser/info.c' l='255'/>
+<use f='codebrowser/info.c' l='255'/>
+<use f='codebrowser/info.c' l='255'/>
+<use f='codebrowser/info.c' l='255'/>
+<use f='codebrowser/info.c' l='255'/>
+<use f='codebrowser/info.c' l='255'/>
+<use f='codebrowser/info.c' l='255'/>
+<def f='codebrowser/p_pspr.c' l='781' ll='811' type='void A_BFGSpray(mobj_t * mo)'/>
+<doc f='codebrowser/p_pspr.c' l='777'>//
+// A_BFGSpray
+// Spawn a BFG explosion on every monster in view
+//</doc>

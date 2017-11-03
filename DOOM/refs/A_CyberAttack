@@ -1,0 +1,26 @@
+<dec f='codebrowser/info.c' l='121' type='void A_CyberAttack()'/>
+<use f='codebrowser/info.c' l='821'/>
+<use f='codebrowser/info.c' l='821'/>
+<use f='codebrowser/info.c' l='821'/>
+<use f='codebrowser/info.c' l='821'/>
+<use f='codebrowser/info.c' l='823'/>
+<use f='codebrowser/info.c' l='823'/>
+<use f='codebrowser/info.c' l='823'/>
+<use f='codebrowser/info.c' l='823'/>
+<use f='codebrowser/info.c' l='825'/>
+<use f='codebrowser/info.c' l='825'/>
+<use f='codebrowser/info.c' l='825'/>
+<use f='codebrowser/info.c' l='825'/>
+<use f='codebrowser/info.c' l='821'/>
+<use f='codebrowser/info.c' l='821'/>
+<use f='codebrowser/info.c' l='821'/>
+<use f='codebrowser/info.c' l='821'/>
+<use f='codebrowser/info.c' l='823'/>
+<use f='codebrowser/info.c' l='823'/>
+<use f='codebrowser/info.c' l='823'/>
+<use f='codebrowser/info.c' l='823'/>
+<use f='codebrowser/info.c' l='825'/>
+<use f='codebrowser/info.c' l='825'/>
+<use f='codebrowser/info.c' l='825'/>
+<use f='codebrowser/info.c' l='825'/>
+<def f='codebrowser/p_enemy.c' l='969' ll='976' type='void A_CyberAttack(mobj_t * actor)'/>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/d_main.h' l='49' type='void D_DoomMain()'/>
+<def f='codebrowser/d_main.c' l='796' ll='1171' type='void D_DoomMain()'/>
+<doc f='codebrowser/d_main.c' l='793'>//
+// D_DoomMain
+//</doc>
+<doc f='codebrowser/d_main.h' l='43'>//
+// D_DoomMain()
+// Not a globally visible function, just included for source reference,
+// calls all startup code, parses command line options.
+// If not overrided by user input, calls N_AdvanceDemo.
+//</doc>
+<use f='codebrowser/i_main.c' l='42' u='c' c='main'/>

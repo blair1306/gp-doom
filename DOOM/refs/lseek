@@ -1,0 +1,4 @@
+<dec f='include/unistd.h' l='337' type='__off_t lseek(int __fd, __off_t __offset, int __whence)'/>
+<use f='codebrowser/w_wad.c' l='200' u='c' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='257' u='c' c='W_Reload'/>
+<use f='codebrowser/w_wad.c' l='456' u='c' c='W_ReadLump'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/r_defs.h' l='115' type='mobj_t *'/>
+<offset>192</offset>
+<doc f='codebrowser/r_defs.h' l='114'>// thing that made a sound (or null)</doc>
+<use f='codebrowser/p_enemy.c' l='123' u='w' c='P_RecursiveSound'/>
+<use f='codebrowser/p_enemy.c' l='609' u='r' c='A_Look'/>
+<use f='codebrowser/p_saveg.c' l='189' u='w' c='P_UnArchiveWorld'/>

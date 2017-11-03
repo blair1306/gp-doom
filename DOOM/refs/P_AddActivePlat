@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_spec.h' l='319' type='void P_AddActivePlat(plat_t * plat)'/>
+<use f='codebrowser/p_plats.c' l='251' u='c' c='EV_DoPlat'/>
+<def f='codebrowser/p_plats.c' l='288' ll='299' type='void P_AddActivePlat(plat_t * plat)'/>
+<use f='codebrowser/p_saveg.c' l='545' u='c' c='P_UnArchiveSpecials'/>

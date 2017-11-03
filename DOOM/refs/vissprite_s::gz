@@ -1,0 +1,5 @@
+<dec f='codebrowser/r_defs.h' l='389' type='fixed_t'/>
+<offset>256</offset>
+<doc f='codebrowser/r_defs.h' l='388'>// global bottom / top for silhouette clipping</doc>
+<use f='codebrowser/r_things.c' l='555' u='w' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='901' u='r' c='R_DrawSprite'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/r_things.h' l='62' type='void R_DrawMasked()'/>
+<use f='codebrowser/r_main.c' l='894' u='c' c='R_RenderPlayerView'/>
+<def f='codebrowser/r_things.c' l='958' ll='986' type='void R_DrawMasked()'/>
+<doc f='codebrowser/r_things.c' l='955'>//
+// R_DrawMasked
+//</doc>

@@ -1,0 +1,5 @@
+<def f='codebrowser/am_map.c' l='977' ll='1049' type='void AM_drawFline(fline_t * fl, int color)'/>
+<use f='codebrowser/am_map.c' l='1063' u='c' c='AM_drawMline'/>
+<doc f='codebrowser/am_map.c' l='974'>//
+// Classic Bresenham w/ whatever optimizations needed for speed
+//</doc>

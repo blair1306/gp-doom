@@ -1,0 +1,30 @@
+<dec f='codebrowser/w_wad.h' l='78' type='void * W_CacheLumpNum(int lump, int tag)'/>
+<use f='codebrowser/f_finale.c' l='598' u='c' c='F_CastDrawer'/>
+<use f='codebrowser/i_sound.c' l='227' u='c' c='getsfx'/>
+<use f='codebrowser/p_setup.c' l='137' u='c' c='P_LoadVertexes'/>
+<use f='codebrowser/p_setup.c' l='172' u='c' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='211' u='c' c='P_LoadSubsectors'/>
+<use f='codebrowser/p_setup.c' l='241' u='c' c='P_LoadSectors'/>
+<use f='codebrowser/p_setup.c' l='275' u='c' c='P_LoadNodes'/>
+<use f='codebrowser/p_setup.c' l='309' u='c' c='P_LoadThings'/>
+<use f='codebrowser/p_setup.c' l='369' u='c' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='448' u='c' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_setup.c' l='474' u='c' c='P_LoadBlockMap'/>
+<use f='codebrowser/p_setup.c' l='659' u='c' c='P_SetupLevel'/>
+<use f='codebrowser/r_data.c' l='258' u='c' c='R_GenerateComposite'/>
+<use f='codebrowser/r_data.c' l='330' u='c' c='R_GenerateLookup'/>
+<use f='codebrowser/r_data.c' l='395' u='c' c='R_GetColumn'/>
+<use f='codebrowser/r_data.c' l='621' u='c' c='R_InitSpriteLumps'/>
+<use f='codebrowser/r_data.c' l='779' u='c' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='814' u='c' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='841' u='c' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_plane.c' l='423' u='c' c='R_DrawPlanes'/>
+<use f='codebrowser/r_things.c' l='408' u='c' c='R_DrawVisSprite'/>
+<use f='codebrowser/s_sound.c' l='679' u='c' c='S_ChangeMusic'/>
+<use f='codebrowser/st_stuff.c' l='1048' u='c' c='ST_doPaletteStuff'/>
+<use f='codebrowser/st_stuff.c' l='1461' u='c' c='ST_Stop'/>
+<def f='codebrowser/w_wad.c' l='475' ll='500' type='void * W_CacheLumpNum(int lump, int tag)'/>
+<use f='codebrowser/w_wad.c' l='512' u='c' c='W_CacheLumpName'/>
+<doc f='codebrowser/w_wad.c' l='472'>//
+// W_CacheLumpNum
+//</doc>

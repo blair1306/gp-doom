@@ -1,0 +1,5 @@
+<def f='codebrowser/wi_stuff.c' l='503' ll='530' type='void WI_initAnimatedBack()'/>
+<use f='codebrowser/wi_stuff.c' l='758' u='c' c='WI_initShowNextLoc'/>
+<use f='codebrowser/wi_stuff.c' l='873' u='c' c='WI_initDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1101' u='c' c='WI_initNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1327' u='c' c='WI_initStats'/>

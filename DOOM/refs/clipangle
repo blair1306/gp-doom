@@ -1,0 +1,23 @@
+<dec f='codebrowser/r_state.h' l='112' type='angle_t'/>
+<doc f='codebrowser/r_state.h' l='111'>// ?</doc>
+<use f='codebrowser/r_bsp.c' l='287' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='288' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='290' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='296' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='298' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='299' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='301' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='306' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='437' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='439' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='441' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='447' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='449' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='450' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='452' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='458' u='r' c='R_CheckBBox'/>
+<def f='codebrowser/r_main.c' l='92' type='angle_t'/>
+<use f='codebrowser/r_main.c' l='602' u='w' c='R_InitTextureMapping'/>
+<doc f='codebrowser/r_main.c' l='89'>//
+// precalculated math tables
+//</doc>

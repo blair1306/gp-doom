@@ -1,0 +1,8 @@
+<dec f='codebrowser/r_defs.h' l='345' type='short *'/>
+<offset>448</offset>
+<use f='codebrowser/r_segs.c' l='136' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='454' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='611' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_things.c' l='866' u='r' c='R_DrawSprite'/>
+<use f='codebrowser/r_things.c' l='891' u='r' c='R_DrawSprite'/>
+<use f='codebrowser/r_things.c' l='979' u='r' c='R_DrawMasked'/>

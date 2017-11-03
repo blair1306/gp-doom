@@ -1,0 +1,5 @@
+<def f='codebrowser/w_wad.c' l='325' ll='332' type='void W_InitFile(char * filename)'/>
+<doc f='codebrowser/w_wad.c' l='321'>//
+// W_InitFile
+// Just initialize from a single file.
+//</doc>

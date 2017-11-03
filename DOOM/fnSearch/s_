@@ -1,0 +1,16 @@
+S_AdjustSoundParams|S_AdjustSoundParams
+S_ChangeMusic|S_ChangeMusic
+S_Init|S_Init
+S_PauseSound|S_PauseSound
+S_ResumeSound|S_ResumeSound
+S_SetMusicVolume|S_SetMusicVolume
+S_SetSfxVolume|S_SetSfxVolume
+S_Start|S_Start
+S_StartMusic|S_StartMusic
+S_StartSound|S_StartSound
+S_StartSoundAtVolume|S_StartSoundAtVolume
+S_StopChannel|S_StopChannel
+S_StopMusic|S_StopMusic
+S_StopSound|S_StopSound
+S_UpdateSounds|S_UpdateSounds
+S_getChannel|S_getChannel

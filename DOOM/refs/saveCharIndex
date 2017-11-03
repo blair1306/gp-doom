@@ -1,0 +1,9 @@
+<def f='codebrowser/m_menu.c' l='121' type='int'/>
+<use f='codebrowser/m_menu.c' l='653' u='w' c='M_SaveSelect'/>
+<use f='codebrowser/m_menu.c' l='1458' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1460' u='w' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1461' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1482' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1486' u='w' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1487' u='r' c='M_Responder'/>
+<doc f='codebrowser/m_menu.c' l='121'>// which char we&apos;re editing</doc>

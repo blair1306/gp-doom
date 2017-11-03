@@ -1,0 +1,10 @@
+<dec f='codebrowser/i_system.h' l='79' type='void I_Quit()'/>
+<doc f='codebrowser/i_system.h' l='77'>// Called by M_Responder when quit is selected.
+// Clean exit, displays sell blurb.</doc>
+<use f='codebrowser/g_game.c' l='1661' u='c' c='G_CheckDemoStatus'/>
+<def f='codebrowser/i_system.c' l='116' ll='124' type='void I_Quit()'/>
+<doc f='codebrowser/i_system.c' l='113'>//
+// I_Quit
+//</doc>
+<use f='codebrowser/i_video.c' l='716' u='r' c='I_InitGraphics'/>
+<use f='codebrowser/m_menu.c' l='1092' u='c' c='M_QuitResponse'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_spec.h' l='181' type='void P_SpawnFireFlicker(sector_t * sector)'/>
+<def f='codebrowser/p_lights.c' l='68' ll='85' type='void P_SpawnFireFlicker(sector_t * sector)'/>
+<doc f='codebrowser/p_lights.c' l='65'>//
+// P_SpawnFireFlicker
+//</doc>
+<use f='codebrowser/p_spec.c' l='1329' u='c' c='P_SpawnSpecials'/>

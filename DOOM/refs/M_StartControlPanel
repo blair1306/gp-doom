@@ -1,0 +1,15 @@
+<dec f='codebrowser/m_menu.h' l='55' type='void M_StartControlPanel()'/>
+<doc f='codebrowser/m_menu.h' l='53'>// Called by intro code to force menu up upon a keypress,
+// does nothing if menu is already up.</doc>
+<use f='codebrowser/g_game.c' l='529' u='c' c='G_Responder'/>
+<dec f='codebrowser/m_menu.c' l='228' type='void M_StartControlPanel()'/>
+<use f='codebrowser/m_menu.c' l='703' u='c' c='M_QuickSave'/>
+<use f='codebrowser/m_menu.c' l='1537' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1549' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1555' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1561' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1613' u='c' c='M_Responder'/>
+<def f='codebrowser/m_menu.c' l='1723' ll='1732' type='void M_StartControlPanel()'/>
+<doc f='codebrowser/m_menu.c' l='1720'>//
+// M_StartControlPanel
+//</doc>

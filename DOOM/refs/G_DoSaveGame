@@ -1,0 +1,3 @@
+<dec f='codebrowser/g_game.c' l='94' type='void G_DoSaveGame()'/>
+<use f='codebrowser/g_game.c' l='631' u='c' c='G_Ticker'/>
+<def f='codebrowser/g_game.c' l='1270' ll='1320' type='void G_DoSaveGame()'/>

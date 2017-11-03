@@ -1,0 +1,3 @@
+<dec f='codebrowser/doomdata.h' l='104'/>
+<doc f='codebrowser/doomdata.h' l='103'>// Blocks monsters only.</doc>
+<use f='codebrowser/p_map.c' l='219' u='c'/>

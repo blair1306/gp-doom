@@ -1,0 +1,34 @@
+<dec f='codebrowser/r_draw.h' l='34' type='int'/>
+<def f='codebrowser/r_draw.c' l='87' type='int'/>
+<use f='codebrowser/r_draw.c' l='112' u='r' c='R_DrawColumn'/>
+<use f='codebrowser/r_draw.c' l='120' u='r' c='R_DrawColumn'/>
+<use f='codebrowser/r_draw.c' l='122' u='r' c='R_DrawColumn'/>
+<use f='codebrowser/r_draw.c' l='128' u='r' c='R_DrawColumn'/>
+<use f='codebrowser/r_draw.c' l='133' u='r' c='R_DrawColumn'/>
+<use f='codebrowser/r_draw.c' l='219' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='227' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='231' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='238' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='239' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='242' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='293' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='294' u='w' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='300' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='309' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='312' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='343' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='347' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='392' u='r' c='R_DrawTranslatedColumn'/>
+<use f='codebrowser/r_draw.c' l='398' u='r' c='R_DrawTranslatedColumn'/>
+<use f='codebrowser/r_draw.c' l='402' u='r' c='R_DrawTranslatedColumn'/>
+<use f='codebrowser/r_draw.c' l='428' u='r' c='R_DrawTranslatedColumn'/>
+<use f='codebrowser/r_draw.c' l='432' u='r' c='R_DrawTranslatedColumn'/>
+<use f='codebrowser/r_plane.c' l='408' u='w' c='R_DrawPlanes'/>
+<use f='codebrowser/r_plane.c' l='411' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_segs.c' l='283' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='305' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='334' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_things.c' l='366' u='w' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='371' u='r' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='372' u='w' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='374' u='r' c='R_DrawMaskedColumn'/>

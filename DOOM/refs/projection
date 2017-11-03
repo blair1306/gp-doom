@@ -1,0 +1,5 @@
+<dec f='codebrowser/r_main.h' l='53' type='fixed_t'/>
+<def f='codebrowser/r_main.c' l='66' type='fixed_t'/>
+<use f='codebrowser/r_main.c' l='486' u='r' c='R_ScaleFromGlobalAngle'/>
+<use f='codebrowser/r_main.c' l='700' u='w' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_things.c' l='495' u='r' c='R_ProjectSprite'/>

@@ -1,0 +1,5 @@
+<def f='codebrowser/m_misc.c' l='304' type='int'/>
+<use f='codebrowser/m_misc.c' l='321' u='r' c='M_SaveDefaults'/>
+<use f='codebrowser/m_misc.c' l='355' u='w' c='M_LoadDefaults'/>
+<use f='codebrowser/m_misc.c' l='356' u='r' c='M_LoadDefaults'/>
+<use f='codebrowser/m_misc.c' l='391' u='r' c='M_LoadDefaults'/>

@@ -1,0 +1,4 @@
+<def f='codebrowser/g_game.c' l='109' type='boolean'/>
+<use f='codebrowser/g_game.c' l='1629' u='w' c='G_TimeDemo'/>
+<use f='codebrowser/g_game.c' l='1651' u='r' c='G_CheckDemoStatus'/>
+<doc f='codebrowser/g_game.c' l='109'>// if true, exit with report on completion </doc>

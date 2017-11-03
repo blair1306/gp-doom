@@ -1,0 +1,14 @@
+<dec f='codebrowser/i_system.h' l='56' type='void I_StartFrame()'/>
+<doc f='codebrowser/i_system.h' l='48'>//
+// Called by D_DoomLoop,
+// called before processing any tics in a frame
+// (just after displaying a frame).
+// Time consuming syncronous operations
+// are performed here (joystick reading).
+// Can call D_PostEvent.
+//</doc>
+<use f='codebrowser/d_main.c' l='372' u='c' c='D_DoomLoop'/>
+<def f='codebrowser/i_video.c' l='183' ll='187' type='void I_StartFrame()'/>
+<doc f='codebrowser/i_video.c' l='180'>//
+// I_StartFrame
+//</doc>

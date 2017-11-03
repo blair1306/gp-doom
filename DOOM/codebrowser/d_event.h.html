@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>d_event.h source code [codebrowser/d_event.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/d_event.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='d_event.h.html'>d_event.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>// DESCRIPTION:</i></td></tr>
+<tr><th id="18">18</th><td><i>//</i></td></tr>
+<tr><th id="19">19</th><td><i>//    </i></td></tr>
+<tr><th id="20">20</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="23">ifndef</span> <span class="macro" data-ref="_M/__D_EVENT__">__D_EVENT__</span></u></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/__D_EVENT__" data-ref="_M/__D_EVENT__">__D_EVENT__</dfn></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><u>#include <a href="doomtype.h.html">"doomtype.h"</a></u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><i>//</i></td></tr>
+<tr><th id="31">31</th><td><i>// Event handling.</i></td></tr>
+<tr><th id="32">32</th><td><i>//</i></td></tr>
+<tr><th id="33">33</th><td><i></i></td></tr>
+<tr><th id="34">34</th><td><i>// Input event types.</i></td></tr>
+<tr><th id="35">35</th><td><b>typedef</b> <b>enum</b></td></tr>
+<tr><th id="36">36</th><td>{</td></tr>
+<tr><th id="37">37</th><td>    <dfn class="enum" id="ev_keydown" title='ev_keydown' data-ref="ev_keydown">ev_keydown</dfn>,</td></tr>
+<tr><th id="38">38</th><td>    <dfn class="enum" id="ev_keyup" title='ev_keyup' data-ref="ev_keyup">ev_keyup</dfn>,</td></tr>
+<tr><th id="39">39</th><td>    <dfn class="enum" id="ev_mouse" title='ev_mouse' data-ref="ev_mouse">ev_mouse</dfn>,</td></tr>
+<tr><th id="40">40</th><td>    <dfn class="enum" id="ev_joystick" title='ev_joystick' data-ref="ev_joystick">ev_joystick</dfn></td></tr>
+<tr><th id="41">41</th><td>} <dfn class="typedef" id="evtype_t" title='evtype_t' data-type='enum evtype_t' data-ref="evtype_t">evtype_t</dfn>;</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><i>// Event structure.</i></td></tr>
+<tr><th id="44">44</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="45">45</th><td>{</td></tr>
+<tr><th id="46">46</th><td>    <a class="typedef" href="#evtype_t" title='evtype_t' data-type='enum evtype_t' data-ref="evtype_t">evtype_t</a>	<dfn class="decl" id="(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</dfn>;</td></tr>
+<tr><th id="47">47</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::data1" title='(anonymous struct)::data1' data-ref="(anonymous)::data1">data1</dfn>;		<i>// keys / mouse/joystick buttons</i></td></tr>
+<tr><th id="48">48</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::data2" title='(anonymous struct)::data2' data-ref="(anonymous)::data2">data2</dfn>;		<i>// mouse/joystick x move</i></td></tr>
+<tr><th id="49">49</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::data3" title='(anonymous struct)::data3' data-ref="(anonymous)::data3">data3</dfn>;		<i>// mouse/joystick y move</i></td></tr>
+<tr><th id="50">50</th><td>} <dfn class="typedef" id="event_t" title='event_t' data-type='struct event_t' data-ref="event_t">event_t</dfn>;</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td> </td></tr>
+<tr><th id="53">53</th><td><b>typedef</b> <b>enum</b></td></tr>
+<tr><th id="54">54</th><td>{</td></tr>
+<tr><th id="55">55</th><td>    <dfn class="enum" id="ga_nothing" title='ga_nothing' data-ref="ga_nothing">ga_nothing</dfn>,</td></tr>
+<tr><th id="56">56</th><td>    <dfn class="enum" id="ga_loadlevel" title='ga_loadlevel' data-ref="ga_loadlevel">ga_loadlevel</dfn>,</td></tr>
+<tr><th id="57">57</th><td>    <dfn class="enum" id="ga_newgame" title='ga_newgame' data-ref="ga_newgame">ga_newgame</dfn>,</td></tr>
+<tr><th id="58">58</th><td>    <dfn class="enum" id="ga_loadgame" title='ga_loadgame' data-ref="ga_loadgame">ga_loadgame</dfn>,</td></tr>
+<tr><th id="59">59</th><td>    <dfn class="enum" id="ga_savegame" title='ga_savegame' data-ref="ga_savegame">ga_savegame</dfn>,</td></tr>
+<tr><th id="60">60</th><td>    <dfn class="enum" id="ga_playdemo" title='ga_playdemo' data-ref="ga_playdemo">ga_playdemo</dfn>,</td></tr>
+<tr><th id="61">61</th><td>    <dfn class="enum" id="ga_completed" title='ga_completed' data-ref="ga_completed">ga_completed</dfn>,</td></tr>
+<tr><th id="62">62</th><td>    <dfn class="enum" id="ga_victory" title='ga_victory' data-ref="ga_victory">ga_victory</dfn>,</td></tr>
+<tr><th id="63">63</th><td>    <dfn class="enum" id="ga_worlddone" title='ga_worlddone' data-ref="ga_worlddone">ga_worlddone</dfn>,</td></tr>
+<tr><th id="64">64</th><td>    <dfn class="enum" id="ga_screenshot" title='ga_screenshot' data-ref="ga_screenshot">ga_screenshot</dfn></td></tr>
+<tr><th id="65">65</th><td>} <dfn class="typedef" id="gameaction_t" title='gameaction_t' data-type='enum gameaction_t' data-ref="gameaction_t">gameaction_t</dfn>;</td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><i>//</i></td></tr>
+<tr><th id="70">70</th><td><i>// Button/action code definitions.</i></td></tr>
+<tr><th id="71">71</th><td><i>//</i></td></tr>
+<tr><th id="72">72</th><td><b>typedef</b> <b>enum</b></td></tr>
+<tr><th id="73">73</th><td>{</td></tr>
+<tr><th id="74">74</th><td>    <i>// Press "Fire".</i></td></tr>
+<tr><th id="75">75</th><td>    <dfn class="enum" id="BT_ATTACK" title='BT_ATTACK' data-ref="BT_ATTACK">BT_ATTACK</dfn>		= <var>1</var>,</td></tr>
+<tr><th id="76">76</th><td>    <i>// Use button, to open doors, activate switches.</i></td></tr>
+<tr><th id="77">77</th><td>    <dfn class="enum" id="BT_USE" title='BT_USE' data-ref="BT_USE">BT_USE</dfn>		= <var>2</var>,</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td>    <i>// Flag: game events, not really buttons.</i></td></tr>
+<tr><th id="80">80</th><td>    <dfn class="enum" id="BT_SPECIAL" title='BT_SPECIAL' data-ref="BT_SPECIAL">BT_SPECIAL</dfn>		= <var>128</var>,</td></tr>
+<tr><th id="81">81</th><td>    <dfn class="enum" id="BT_SPECIALMASK" title='BT_SPECIALMASK' data-ref="BT_SPECIALMASK">BT_SPECIALMASK</dfn>	= <var>3</var>,</td></tr>
+<tr><th id="82">82</th><td>    </td></tr>
+<tr><th id="83">83</th><td>    <i>// Flag, weapon change pending.</i></td></tr>
+<tr><th id="84">84</th><td><i>    // If true, the next 3 bits hold weapon num.</i></td></tr>
+<tr><th id="85">85</th><td>    <dfn class="enum" id="BT_CHANGE" title='BT_CHANGE' data-ref="BT_CHANGE">BT_CHANGE</dfn>		= <var>4</var>,</td></tr>
+<tr><th id="86">86</th><td>    <i>// The 3bit weapon mask and shift, convenience.</i></td></tr>
+<tr><th id="87">87</th><td>    <dfn class="enum" id="BT_WEAPONMASK" title='BT_WEAPONMASK' data-ref="BT_WEAPONMASK">BT_WEAPONMASK</dfn>	= (<var>8</var>+<var>16</var>+<var>32</var>),</td></tr>
+<tr><th id="88">88</th><td>    <dfn class="enum" id="BT_WEAPONSHIFT" title='BT_WEAPONSHIFT' data-ref="BT_WEAPONSHIFT">BT_WEAPONSHIFT</dfn>	= <var>3</var>,</td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td>    <i>// Pause the game.</i></td></tr>
+<tr><th id="91">91</th><td>    <dfn class="enum" id="BTS_PAUSE" title='BTS_PAUSE' data-ref="BTS_PAUSE">BTS_PAUSE</dfn>		= <var>1</var>,</td></tr>
+<tr><th id="92">92</th><td>    <i>// Save the game at each console.</i></td></tr>
+<tr><th id="93">93</th><td>    <dfn class="enum" id="BTS_SAVEGAME" title='BTS_SAVEGAME' data-ref="BTS_SAVEGAME">BTS_SAVEGAME</dfn>	= <var>2</var>,</td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td>    <i>// Savegame slot numbers</i></td></tr>
+<tr><th id="96">96</th><td><i>    //  occupy the second byte of buttons.    </i></td></tr>
+<tr><th id="97">97</th><td>    <dfn class="enum" id="BTS_SAVEMASK" title='BTS_SAVEMASK' data-ref="BTS_SAVEMASK">BTS_SAVEMASK</dfn>	= (<var>4</var>+<var>8</var>+<var>16</var>),</td></tr>
+<tr><th id="98">98</th><td>    <dfn class="enum" id="BTS_SAVESHIFT" title='BTS_SAVESHIFT' data-ref="BTS_SAVESHIFT">BTS_SAVESHIFT</dfn> 	= <var>2</var>,</td></tr>
+<tr><th id="99">99</th><td>  </td></tr>
+<tr><th id="100">100</th><td>} <dfn class="typedef" id="buttoncode_t" title='buttoncode_t' data-type='enum buttoncode_t' data-ref="buttoncode_t">buttoncode_t</dfn>;</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td></td></tr>
+<tr><th id="105">105</th><td><i>//</i></td></tr>
+<tr><th id="106">106</th><td><i>// GLOBAL VARIABLES</i></td></tr>
+<tr><th id="107">107</th><td><i>//</i></td></tr>
+<tr><th id="108">108</th><td><u>#define <dfn class="macro" id="_M/MAXEVENTS" data-ref="_M/MAXEVENTS">MAXEVENTS</dfn>		64</u></td></tr>
+<tr><th id="109">109</th><td></td></tr>
+<tr><th id="110">110</th><td><b>extern</b>  <a class="typedef" href="#event_t" title='event_t' data-type='struct event_t' data-ref="event_t">event_t</a>		<dfn class="decl" id="events" title='events' data-ref="events">events</dfn>[<a class="macro" href="#108" title="64" data-ref="_M/MAXEVENTS">MAXEVENTS</a>];</td></tr>
+<tr><th id="111">111</th><td><b>extern</b>  <em>int</em>             <dfn class="decl" id="eventhead" title='eventhead' data-ref="eventhead">eventhead</dfn>;</td></tr>
+<tr><th id="112">112</th><td><b>extern</b>	<em>int</em>		<dfn class="decl" id="eventtail" title='eventtail' data-ref="eventtail">eventtail</dfn>;</td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td><b>extern</b>  <a class="typedef" href="#gameaction_t" title='gameaction_t' data-type='enum gameaction_t' data-ref="gameaction_t">gameaction_t</a>    <dfn class="decl" id="gameaction" title='gameaction' data-ref="gameaction">gameaction</dfn>;</td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><u>#<span data-ppcond="23">endif</span></u></td></tr>
+<tr><th id="118">118</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="119">119</th><td><i>//</i></td></tr>
+<tr><th id="120">120</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="121">121</th><td><i>//</i></td></tr>
+<tr><th id="122">122</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="123">123</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='am_map.c.html'>codebrowser/am_map.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

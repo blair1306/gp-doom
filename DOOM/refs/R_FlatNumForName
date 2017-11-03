@@ -1,0 +1,14 @@
+<dec f='codebrowser/r_data.h' l='49' type='int R_FlatNumForName(char * name)'/>
+<doc f='codebrowser/r_data.h' l='46'>// Retrieval.
+// Floor/ceiling opaque texture tiles,
+// lookup by name. For animation?</doc>
+<use f='codebrowser/g_game.c' l='454' u='c' c='G_DoLoadLevel'/>
+<use f='codebrowser/p_setup.c' l='249' u='c' c='P_LoadSectors'/>
+<use f='codebrowser/p_setup.c' l='250' u='c' c='P_LoadSectors'/>
+<use f='codebrowser/p_spec.c' l='171' u='c' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='172' u='c' c='P_InitPicAnims'/>
+<def f='codebrowser/r_data.c' l='672' ll='686' type='int R_FlatNumForName(char * name)'/>
+<doc f='codebrowser/r_data.c' l='668'>//
+// R_FlatNumForName
+// Retrieval, get a flat number for a flat name.
+//</doc>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/d_event.h' l='49' type='int'/>
+<offset>96</offset>
+<doc f='codebrowser/d_event.h' l='49'>// mouse/joystick y move</doc>
+<use f='codebrowser/g_game.c' l='580' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='589' u='r' c='G_Responder'/>
+<use f='codebrowser/i_video.c' l='224' u='w' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='240' u='w' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='251' u='w' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='253' u='r' c='I_GetEvent'/>
+<use f='codebrowser/m_menu.c' l='1364' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1369' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1401' u='r' c='M_Responder'/>

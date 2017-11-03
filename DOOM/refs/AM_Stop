@@ -1,0 +1,11 @@
+<dec f='codebrowser/am_map.h' l='43' type='void AM_Stop()'/>
+<def f='codebrowser/am_map.c' l='560' ll='568' type='void AM_Stop()'/>
+<use f='codebrowser/am_map.c' l='577' u='c' c='AM_Start'/>
+<use f='codebrowser/am_map.c' l='668' u='c' c='AM_Responder'/>
+<doc f='codebrowser/am_map.c' l='557'>//
+//
+//</doc>
+<doc f='codebrowser/am_map.h' l='41'>// Called to force the automap to quit
+// if the level is completed while it is up.</doc>
+<use f='codebrowser/g_game.c' l='1031' u='c' c='G_DoCompleted'/>
+<use f='codebrowser/p_inter.c' l='714' u='c' c='P_KillMobj'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/doomdef.h' l='190' type='8'/>
+<use f='codebrowser/p_inter.c' l='645' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_pspr.c' l='171' u='r' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='191' u='r' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='195' u='r' c='P_CheckAmmo'/>
+<use f='codebrowser/p_user.c' l='300' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='301' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='303' u='r' c='P_PlayerThink'/>

@@ -1,0 +1,17 @@
+<dec f='codebrowser/doomdef.h' l='129' type='0'/>
+<use f='codebrowser/d_main.c' l='231' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='237' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='267' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='270' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='274' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='278' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='278' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='285' u='r' c='D_Display'/>
+<use f='codebrowser/g_game.c' l='472' u='r' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='475' u='r' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='507' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='535' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='729' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1174' u='r' c='G_DoWorldDone'/>
+<use f='codebrowser/m_menu.c' l='667' u='r' c='M_SaveGame'/>
+<use f='codebrowser/m_menu.c' l='698' u='r' c='M_QuickSave'/>

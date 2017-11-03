@@ -1,0 +1,26 @@
+<dec f='codebrowser/r_data.h' l='54' type='int R_TextureNumForName(char * name)'/>
+<doc f='codebrowser/r_data.h' l='52'>// Called by P_Ticker for switches and animations,
+// returns the texture number for the texture name.</doc>
+<use f='codebrowser/g_game.c' l='462' u='c' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='464' u='c' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='467' u='c' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='1457' u='c' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1459' u='c' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1462' u='c' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1468' u='c' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1471' u='c' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1474' u='c' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1477' u='c' c='G_InitNew'/>
+<use f='codebrowser/p_setup.c' l='456' u='c' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_setup.c' l='457' u='c' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_setup.c' l='458' u='c' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_spec.c' l='163' u='c' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='164' u='c' c='P_InitPicAnims'/>
+<use f='codebrowser/p_switch.c' l='144' u='c' c='P_InitSwitchList'/>
+<use f='codebrowser/p_switch.c' l='145' u='c' c='P_InitSwitchList'/>
+<def f='codebrowser/r_data.c' l='718' ll='730' type='int R_TextureNumForName(char * name)'/>
+<doc f='codebrowser/r_data.c' l='713'>//
+// R_TextureNumForName
+// Calls R_CheckTextureNumForName,
+//  aborts with error message.
+//</doc>

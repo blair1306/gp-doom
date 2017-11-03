@@ -1,0 +1,5 @@
+<def f='codebrowser/am_map.c' l='602' ll='607' type='void AM_maxOutWindowScale()'/>
+<use f='codebrowser/am_map.c' l='751' u='c' c='AM_changeWindowScale'/>
+<doc f='codebrowser/am_map.c' l='599'>//
+// set the window scale to the minimum size
+//</doc>

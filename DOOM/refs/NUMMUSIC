@@ -1,0 +1,2 @@
+<dec f='codebrowser/sounds.h' l='169' type='68'/>
+<use f='codebrowser/s_sound.c' l='658' u='r' c='S_ChangeMusic'/>

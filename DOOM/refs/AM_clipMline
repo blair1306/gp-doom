@@ -1,0 +1,9 @@
+<def f='codebrowser/am_map.c' l='846' ll='970' type='boolean AM_clipMline(mline_t * ml, fline_t * fl)'/>
+<use f='codebrowser/am_map.c' l='1062' u='c' c='AM_drawMline'/>
+<doc f='codebrowser/am_map.c' l='839'>//
+// Automap clipping of lines.
+//
+// Based on Cohen-Sutherland clipping algorithm but with a slightly
+// faster reject and precalculated slopes.  If the speed is needed,
+// use a hash algorithm to handle  the common cases.
+//</doc>

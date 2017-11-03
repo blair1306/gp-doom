@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_local.h' l='129' type='void P_NoiseAlert(mobj_t * target, mobj_t * emmiter)'/>
+<doc f='codebrowser/p_local.h' l='126'>//
+// P_ENEMY
+//</doc>
+<def f='codebrowser/p_enemy.c' l='158' ll='166' type='void P_NoiseAlert(mobj_t * target, mobj_t * emmiter)'/>
+<doc f='codebrowser/p_enemy.c' l='153'>//
+// P_NoiseAlert
+// If a monster yells at a player,
+// it will alert other monsters to the player.
+//</doc>
+<use f='codebrowser/p_pspr.c' l='256' u='c' c='P_FireWeapon'/>

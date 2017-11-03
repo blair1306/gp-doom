@@ -1,0 +1,6 @@
+<dec f='codebrowser/f_finale.c' l='90' type='boolean F_CastResponder(event_t * ev)'/>
+<use f='codebrowser/f_finale.c' l='198' u='c' c='F_Responder'/>
+<def f='codebrowser/f_finale.c' l='502' ll='520' type='boolean F_CastResponder(event_t * ev)'/>
+<doc f='codebrowser/f_finale.c' l='498'>//
+// F_CastResponder
+//</doc>

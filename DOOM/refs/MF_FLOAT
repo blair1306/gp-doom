@@ -1,0 +1,20 @@
+<dec f='codebrowser/p_mobj.h' l='155' type='16384'/>
+<doc f='codebrowser/p_mobj.h' l='153'>// Allow moves to any height, no gravity.
+    // For active floaters, e.g. cacodemons, pain elementals.</doc>
+<use f='codebrowser/info.c' l='1494' u='r'/>
+<use f='codebrowser/info.c' l='1494' u='r'/>
+<use f='codebrowser/info.c' l='1598' u='r'/>
+<use f='codebrowser/info.c' l='1598' u='r'/>
+<use f='codebrowser/info.c' l='1702' u='r'/>
+<use f='codebrowser/info.c' l='1702' u='r'/>
+<use f='codebrowser/info.c' l='1494' u='r'/>
+<use f='codebrowser/info.c' l='1494' u='r'/>
+<use f='codebrowser/info.c' l='1598' u='r'/>
+<use f='codebrowser/info.c' l='1598' u='r'/>
+<use f='codebrowser/info.c' l='1702' u='r'/>
+<use f='codebrowser/info.c' l='1702' u='r'/>
+<use f='codebrowser/p_enemy.c' l='298' u='r' c='P_Move'/>
+<use f='codebrowser/p_enemy.c' l='332' u='r' c='P_Move'/>
+<use f='codebrowser/p_inter.c' l='675' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_map.c' l='481' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_mobj.c' l='263' u='r' c='P_ZMovement'/>

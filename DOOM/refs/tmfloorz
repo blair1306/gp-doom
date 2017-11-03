@@ -1,0 +1,13 @@
+<dec f='codebrowser/p_local.h' l='204' type='fixed_t'/>
+<use f='codebrowser/p_enemy.c' l='301' u='r' c='P_Move'/>
+<def f='codebrowser/p_map.c' l='57' type='fixed_t'/>
+<use f='codebrowser/p_map.c' l='148' u='w' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='169' u='r' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='233' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='234' u='w' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='406' u='w' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='468' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='478' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='482' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='492' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='539' u='r' c='P_ThingHeightClip'/>

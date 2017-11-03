@@ -1,0 +1,13 @@
+<dec f='codebrowser/d_player.h' l='154' type='int'/>
+<offset>2016</offset>
+<doc f='codebrowser/d_player.h' l='152'>// Current PLAYPAL, ???
+    //  can be set to REDCOLORMAP for pain, etc.</doc>
+<use f='codebrowser/g_game.c' l='789' u='w' c='G_PlayerFinishLevel'/>
+<use f='codebrowser/p_mobj.c' l='682' u='w' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_user.c' l='367' u='w' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='369' u='w' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='377' u='w' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='380' u='w' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='383' u='w' c='P_PlayerThink'/>
+<use f='codebrowser/r_main.c' l='847' u='r' c='R_SetupFrame'/>
+<use f='codebrowser/r_main.c' l='851' u='r' c='R_SetupFrame'/>

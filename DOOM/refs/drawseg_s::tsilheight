@@ -1,0 +1,9 @@
+<dec f='codebrowser/r_defs.h' l='339' type='fixed_t'/>
+<offset>288</offset>
+<doc f='codebrowser/r_defs.h' l='338'>// do not clip sprites below this</doc>
+<use f='codebrowser/r_segs.c' l='480' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='503' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='508' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='522' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='737' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_things.c' l='904' u='r' c='R_DrawSprite'/>

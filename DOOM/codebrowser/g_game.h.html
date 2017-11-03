@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>g_game.h source code [codebrowser/g_game.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/g_game.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='g_game.h.html'>g_game.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>// DESCRIPTION:</i></td></tr>
+<tr><th id="18">18</th><td><i>//   Duh.</i></td></tr>
+<tr><th id="19">19</th><td><i>// </i></td></tr>
+<tr><th id="20">20</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="23">ifndef</span> <span class="macro" data-ref="_M/__G_GAME__">__G_GAME__</span></u></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/__G_GAME__" data-ref="_M/__G_GAME__">__G_GAME__</dfn></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="doomdef.h.html">"doomdef.h"</a></u></td></tr>
+<tr><th id="27">27</th><td><u>#include <a href="d_event.h.html">"d_event.h"</a></u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><i>//</i></td></tr>
+<tr><th id="32">32</th><td><i>// GAME</i></td></tr>
+<tr><th id="33">33</th><td><i>//</i></td></tr>
+<tr><th id="34">34</th><td><em>void</em> <dfn class="decl" id="G_DeathMatchSpawnPlayer" title='G_DeathMatchSpawnPlayer' data-ref="G_DeathMatchSpawnPlayer">G_DeathMatchSpawnPlayer</dfn> (<em>int</em> <dfn class="local col8 decl" id="518playernum" title='playernum' data-type='int' data-ref="518playernum">playernum</dfn>);</td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><em>void</em> <dfn class="decl" id="G_InitNew" title='G_InitNew' data-ref="G_InitNew">G_InitNew</dfn> (<a class="typedef" href="doomdef.h.html#skill_t" title='skill_t' data-type='enum skill_t' data-ref="skill_t">skill_t</a> <dfn class="local col9 decl" id="519skill" title='skill' data-type='skill_t' data-ref="519skill">skill</dfn>, <em>int</em> <dfn class="local col0 decl" id="520episode" title='episode' data-type='int' data-ref="520episode">episode</dfn>, <em>int</em> <dfn class="local col1 decl" id="521map" title='map' data-type='int' data-ref="521map">map</dfn>);</td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><i>// Can be called by the startup code or M_Responder.</i></td></tr>
+<tr><th id="39">39</th><td><i>// A normal game starts at map 1,</i></td></tr>
+<tr><th id="40">40</th><td><i>// but a warp test can start elsewhere</i></td></tr>
+<tr><th id="41">41</th><td><em>void</em> <dfn class="decl" id="G_DeferedInitNew" title='G_DeferedInitNew' data-ref="G_DeferedInitNew">G_DeferedInitNew</dfn> (<a class="typedef" href="doomdef.h.html#skill_t" title='skill_t' data-type='enum skill_t' data-ref="skill_t">skill_t</a> <dfn class="local col2 decl" id="522skill" title='skill' data-type='skill_t' data-ref="522skill">skill</dfn>, <em>int</em> <dfn class="local col3 decl" id="523episode" title='episode' data-type='int' data-ref="523episode">episode</dfn>, <em>int</em> <dfn class="local col4 decl" id="524map" title='map' data-type='int' data-ref="524map">map</dfn>);</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><em>void</em> <dfn class="decl" id="G_DeferedPlayDemo" title='G_DeferedPlayDemo' data-ref="G_DeferedPlayDemo">G_DeferedPlayDemo</dfn> (<em>char</em>* <dfn class="local col5 decl" id="525demo" title='demo' data-type='char *' data-ref="525demo">demo</dfn>);</td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><i>// Can be called by the startup code or M_Responder,</i></td></tr>
+<tr><th id="46">46</th><td><i>// calls P_SetupLevel or W_EnterWorld.</i></td></tr>
+<tr><th id="47">47</th><td><em>void</em> <dfn class="decl" id="G_LoadGame" title='G_LoadGame' data-ref="G_LoadGame">G_LoadGame</dfn> (<em>char</em>* <dfn class="local col6 decl" id="526name" title='name' data-type='char *' data-ref="526name">name</dfn>);</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><em>void</em> <dfn class="decl" id="G_DoLoadGame" title='G_DoLoadGame' data-ref="G_DoLoadGame">G_DoLoadGame</dfn> (<em>void</em>);</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><i>// Called by M_Responder.</i></td></tr>
+<tr><th id="52">52</th><td><em>void</em> <dfn class="decl" id="G_SaveGame" title='G_SaveGame' data-ref="G_SaveGame">G_SaveGame</dfn> (<em>int</em> <dfn class="local col7 decl" id="527slot" title='slot' data-type='int' data-ref="527slot">slot</dfn>, <em>char</em>* <dfn class="local col8 decl" id="528description" title='description' data-type='char *' data-ref="528description">description</dfn>);</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><i>// Only called by startup code.</i></td></tr>
+<tr><th id="55">55</th><td><em>void</em> <dfn class="decl" id="G_RecordDemo" title='G_RecordDemo' data-ref="G_RecordDemo">G_RecordDemo</dfn> (<em>char</em>* <dfn class="local col9 decl" id="529name" title='name' data-type='char *' data-ref="529name">name</dfn>);</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><em>void</em> <dfn class="decl" id="G_BeginRecording" title='G_BeginRecording' data-ref="G_BeginRecording">G_BeginRecording</dfn> (<em>void</em>);</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td><em>void</em> <dfn class="decl" id="G_PlayDemo" title='G_PlayDemo' data-ref="G_PlayDemo">G_PlayDemo</dfn> (<em>char</em>* <dfn class="local col0 decl" id="530name" title='name' data-type='char *' data-ref="530name">name</dfn>);</td></tr>
+<tr><th id="60">60</th><td><em>void</em> <dfn class="decl" id="G_TimeDemo" title='G_TimeDemo' data-ref="G_TimeDemo">G_TimeDemo</dfn> (<em>char</em>* <dfn class="local col1 decl" id="531name" title='name' data-type='char *' data-ref="531name">name</dfn>);</td></tr>
+<tr><th id="61">61</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a> <dfn class="decl" id="G_CheckDemoStatus" title='G_CheckDemoStatus' data-ref="G_CheckDemoStatus">G_CheckDemoStatus</dfn> (<em>void</em>);</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><em>void</em> <dfn class="decl" id="G_ExitLevel" title='G_ExitLevel' data-ref="G_ExitLevel">G_ExitLevel</dfn> (<em>void</em>);</td></tr>
+<tr><th id="64">64</th><td><em>void</em> <dfn class="decl" id="G_SecretExitLevel" title='G_SecretExitLevel' data-ref="G_SecretExitLevel">G_SecretExitLevel</dfn> (<em>void</em>);</td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td><em>void</em> <dfn class="decl" id="G_WorldDone" title='G_WorldDone' data-ref="G_WorldDone">G_WorldDone</dfn> (<em>void</em>);</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td><em>void</em> <dfn class="decl" id="G_Ticker" title='G_Ticker' data-ref="G_Ticker">G_Ticker</dfn> (<em>void</em>);</td></tr>
+<tr><th id="69">69</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a> <dfn class="decl" id="G_Responder" title='G_Responder' data-ref="G_Responder">G_Responder</dfn> (<a class="typedef" href="d_event.h.html#event_t" title='event_t' data-type='struct event_t' data-ref="event_t">event_t</a>*	<dfn class="local col2 decl" id="532ev" title='ev' data-type='event_t *' data-ref="532ev">ev</dfn>);</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><em>void</em> <dfn class="decl" id="G_ScreenShot" title='G_ScreenShot' data-ref="G_ScreenShot">G_ScreenShot</dfn> (<em>void</em>);</td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><u>#<span data-ppcond="23">endif</span></u></td></tr>
+<tr><th id="75">75</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="76">76</th><td><i>//</i></td></tr>
+<tr><th id="77">77</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="78">78</th><td><i>//</i></td></tr>
+<tr><th id="79">79</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="80">80</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='d_main.c.html'>codebrowser/d_main.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

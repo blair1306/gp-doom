@@ -1,0 +1,13 @@
+<dec f='codebrowser/p_spec.h' l='187' type='void P_SpawnStrobeFlash(sector_t * sector, int fastOrSlow, int inSync)'/>
+<def f='codebrowser/p_lights.c' l='180' ll='209' type='void P_SpawnStrobeFlash(sector_t * sector, int fastOrSlow, int inSync)'/>
+<use f='codebrowser/p_lights.c' l='227' u='c' c='EV_StartLightStrobing'/>
+<doc f='codebrowser/p_lights.c' l='175'>//
+// P_SpawnStrobeFlash
+// After the map has been loaded, scan each sector
+// for specials that spawn thinkers
+//</doc>
+<use f='codebrowser/p_spec.c' l='1285' u='c' c='P_SpawnSpecials'/>
+<use f='codebrowser/p_spec.c' l='1290' u='c' c='P_SpawnSpecials'/>
+<use f='codebrowser/p_spec.c' l='1295' u='c' c='P_SpawnSpecials'/>
+<use f='codebrowser/p_spec.c' l='1315' u='c' c='P_SpawnSpecials'/>
+<use f='codebrowser/p_spec.c' l='1320' u='c' c='P_SpawnSpecials'/>

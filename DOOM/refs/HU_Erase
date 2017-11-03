@@ -1,0 +1,3 @@
+<dec f='codebrowser/hu_stuff.h' l='58' type='void HU_Erase()'/>
+<use f='codebrowser/d_main.c' l='232' u='c' c='D_Display'/>
+<def f='codebrowser/hu_stuff.c' l='496' ll='503' type='void HU_Erase()'/>

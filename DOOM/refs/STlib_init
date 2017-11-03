@@ -1,0 +1,11 @@
+<dec f='codebrowser/st_lib.h' l='150' type='void STlib_init()'/>
+<def f='codebrowser/st_lib.c' l='58' ll='61' type='void STlib_init()'/>
+<doc f='codebrowser/st_lib.h' l='142'>//
+// Widget creation, access, and update routines
+//
+
+// Initializes widget library.
+// More precisely, initialize STMINUS,
+//  everything else is done somewhere else.
+//</doc>
+<use f='codebrowser/st_stuff.c' l='1276' u='c' c='ST_initData'/>

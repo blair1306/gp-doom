@@ -1,0 +1,5 @@
+<dec f='include/string.h' l='140' type='int strcmp(const char * __s1, const char * __s2)'/>
+<doc f='include/string.h' l='139'>/* Compare S1 and S2.  */</doc>
+<use f='codebrowser/g_game.c' l='1216' u='c' c='G_DoLoadGame'/>
+<use f='codebrowser/m_menu.c' l='651' u='c' c='M_SaveSelect'/>
+<use f='codebrowser/m_misc.c' l='392' u='c' c='M_LoadDefaults'/>

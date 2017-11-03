@@ -1,0 +1,6 @@
+<dec f='codebrowser/m_misc.h' l='49' type='void M_SaveDefaults()'/>
+<use f='codebrowser/i_system.c' l='121' u='c' c='I_Quit'/>
+<def f='codebrowser/m_misc.c' l='311' ll='335' type='void M_SaveDefaults()'/>
+<doc f='codebrowser/m_misc.c' l='308'>//
+// M_SaveDefaults
+//</doc>

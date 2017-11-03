@@ -1,0 +1,14 @@
+<dec f='codebrowser/i_system.h' l='64' type='void I_StartTic()'/>
+<doc f='codebrowser/i_system.h' l='59'>//
+// Called by D_DoomLoop,
+// called before processing each tic in a frame.
+// Quick syncronous operations are performed here.
+// Can call D_PostEvent.</doc>
+<use f='codebrowser/d_main.c' l='377' u='c' c='D_DoomLoop'/>
+<use f='codebrowser/d_net.c' l='402' u='c' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='460' u='c' c='CheckAbort'/>
+<use f='codebrowser/d_net.c' l='462' u='c' c='CheckAbort'/>
+<def f='codebrowser/i_video.c' l='309' ll='338' type='void I_StartTic()'/>
+<doc f='codebrowser/i_video.c' l='306'>//
+// I_StartTic
+//</doc>

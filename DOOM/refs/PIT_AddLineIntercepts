@@ -1,0 +1,12 @@
+<def f='codebrowser/p_maputl.c' l='561' ll='609' type='boolean PIT_AddLineIntercepts(line_t * ld)'/>
+<use f='codebrowser/p_maputl.c' l='850' u='r' c='P_PathTraverse'/>
+<doc f='codebrowser/p_maputl.c' l='551'>//
+// PIT_AddLineIntercepts.
+// Looks for lines in the given block
+// that intercept the given trace
+// to add to the intercepts list.
+//
+// A line is crossed if its endpoints
+// are on opposite sides of the trace.
+// Returns true if earlyout and a solid line hit.
+//</doc>

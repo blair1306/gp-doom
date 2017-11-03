@@ -1,0 +1,2 @@
+<def f='codebrowser/m_menu.c' l='898' ll='905' type='void M_VerifyNightmare(int ch)'/>
+<use f='codebrowser/m_menu.c' l='911' u='r' c='M_ChooseSkill'/>

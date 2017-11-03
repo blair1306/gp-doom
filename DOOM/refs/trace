@@ -1,0 +1,32 @@
+<dec f='codebrowser/p_local.h' l='182' type='divline_t'/>
+<use f='codebrowser/p_map.c' l='952' u='m' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='952' u='m' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='953' u='m' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='953' u='m' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='999' u='m' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='999' u='m' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1000' u='m' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1000' u='m' c='PTR_ShootTraverse'/>
+<def f='codebrowser/p_maputl.c' l='547' type='divline_t'/>
+<use f='codebrowser/p_maputl.c' l='570' u='m' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='571' u='m' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='572' u='m' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='573' u='m' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='575' u='a' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='576' u='a' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='580' u='m' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='580' u='m' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='581' u='m' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='581' u='m' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='581' u='m' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='581' u='m' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='589' u='a' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='632' u='m' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='632' u='m' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='652' u='a' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='653' u='a' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='663' u='a' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='783' u='m' c='P_PathTraverse'/>
+<use f='codebrowser/p_maputl.c' l='784' u='m' c='P_PathTraverse'/>
+<use f='codebrowser/p_maputl.c' l='785' u='m' c='P_PathTraverse'/>
+<use f='codebrowser/p_maputl.c' l='786' u='m' c='P_PathTraverse'/>

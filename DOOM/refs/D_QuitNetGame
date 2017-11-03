@@ -1,0 +1,11 @@
+<dec f='codebrowser/d_net.h' l='136' type='void D_QuitNetGame()'/>
+<doc f='codebrowser/d_net.h' l='134'>// Broadcasts special packets to other players
+//  to notify of game exit</doc>
+<def f='codebrowser/d_net.c' l='602' ll='622' type='void D_QuitNetGame()'/>
+<doc f='codebrowser/d_net.c' l='597'>//
+// D_QuitNetGame
+// Called before quitting to leave a net game
+// without hanging the other players
+//</doc>
+<use f='codebrowser/i_system.c' l='118' u='c' c='I_Quit'/>
+<use f='codebrowser/i_system.c' l='179' u='c' c='I_Error'/>

@@ -1,0 +1,27 @@
+<dec f='codebrowser/p_local.h' l='219' type='mobj_t *'/>
+<doc f='codebrowser/p_local.h' l='219'>// who got hit (or NULL)</doc>
+<def f='codebrowser/p_map.c' l='794' type='mobj_t *'/>
+<use f='codebrowser/p_map.c' l='890' u='w' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='1043' u='w' c='P_AimLineAttack'/>
+<use f='codebrowser/p_map.c' l='1050' u='r' c='P_AimLineAttack'/>
+<doc f='codebrowser/p_map.c' l='791'>//
+// P_LineAttack
+//</doc>
+<doc f='codebrowser/p_map.c' l='794'>// who got hit (or NULL)</doc>
+<use f='codebrowser/p_mobj.c' l='951' u='r' c='P_SpawnPlayerMissile'/>
+<use f='codebrowser/p_mobj.c' l='956' u='r' c='P_SpawnPlayerMissile'/>
+<use f='codebrowser/p_mobj.c' l='962' u='r' c='P_SpawnPlayerMissile'/>
+<use f='codebrowser/p_pspr.c' l='487' u='r' c='A_Punch'/>
+<use f='codebrowser/p_pspr.c' l='492' u='r' c='A_Punch'/>
+<use f='codebrowser/p_pspr.c' l='493' u='r' c='A_Punch'/>
+<use f='codebrowser/p_pspr.c' l='518' u='r' c='A_Saw'/>
+<use f='codebrowser/p_pspr.c' l='527' u='r' c='A_Saw'/>
+<use f='codebrowser/p_pspr.c' l='527' u='r' c='A_Saw'/>
+<use f='codebrowser/p_pspr.c' l='609' u='r' c='P_BulletSlope'/>
+<use f='codebrowser/p_pspr.c' l='613' u='r' c='P_BulletSlope'/>
+<use f='codebrowser/p_pspr.c' l='797' u='r' c='A_BFGSpray'/>
+<use f='codebrowser/p_pspr.c' l='800' u='r' c='A_BFGSpray'/>
+<use f='codebrowser/p_pspr.c' l='801' u='r' c='A_BFGSpray'/>
+<use f='codebrowser/p_pspr.c' l='802' u='r' c='A_BFGSpray'/>
+<use f='codebrowser/p_pspr.c' l='802' u='r' c='A_BFGSpray'/>
+<use f='codebrowser/p_pspr.c' l='809' u='r' c='A_BFGSpray'/>

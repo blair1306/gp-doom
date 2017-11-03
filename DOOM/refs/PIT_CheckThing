@@ -1,0 +1,5 @@
+<def f='codebrowser/p_map.c' l='252' ll='343' type='boolean PIT_CheckThing(mobj_t * thing)'/>
+<use f='codebrowser/p_map.c' l='427' u='r' c='P_CheckPosition'/>
+<doc f='codebrowser/p_map.c' l='249'>//
+// PIT_CheckThing
+//</doc>

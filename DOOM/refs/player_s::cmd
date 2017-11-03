@@ -1,0 +1,18 @@
+<dec f='codebrowser/d_player.h' l='87' type='ticcmd_t'/>
+<offset>96</offset>
+<use f='codebrowser/f_finale.c' l='217' u='m' c='F_Ticker'/>
+<use f='codebrowser/g_game.c' l='662' u='a' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='702' u='m' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='704' u='m' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='718' u='m' c='G_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='543' u='m' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='573' u='m' c='HU_Ticker'/>
+<use f='codebrowser/p_mobj.c' l='226' u='m' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='227' u='m' c='P_XYMovement'/>
+<use f='codebrowser/p_pspr.c' l='315' u='m' c='A_WeaponReady'/>
+<use f='codebrowser/p_pspr.c' l='350' u='m' c='A_ReFire'/>
+<use f='codebrowser/p_user.c' l='152' u='a' c='P_MovePlayer'/>
+<use f='codebrowser/p_user.c' l='227' u='m' c='P_DeathThink'/>
+<use f='codebrowser/p_user.c' l='248' u='a' c='P_PlayerThink'/>
+<use f='codebrowser/wi_stuff.c' l='1480' u='m' c='WI_checkForAccelerate'/>
+<use f='codebrowser/wi_stuff.c' l='1488' u='m' c='WI_checkForAccelerate'/>

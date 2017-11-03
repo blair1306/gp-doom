@@ -1,0 +1,9 @@
+<dec f='codebrowser/s_sound.h' l='98' type='void S_UpdateSounds(void * listener)'/>
+<use f='codebrowser/d_main.c' l='392' u='c' c='D_DoomLoop'/>
+<doc f='codebrowser/s_sound.h' l='95'>//
+// Updates music &amp; sounds
+//</doc>
+<def f='codebrowser/s_sound.c' l='519' ll='613' type='void S_UpdateSounds(void * listener_p)'/>
+<doc f='codebrowser/s_sound.c' l='516'>//
+// Updates music &amp; sounds
+//</doc>

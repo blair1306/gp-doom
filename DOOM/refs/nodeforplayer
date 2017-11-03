@@ -1,0 +1,4 @@
+<def f='codebrowser/d_net.c' l='69' type='int [4]'/>
+<use f='codebrowser/d_net.c' l='301' u='w' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='699' u='r' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='704' u='r' c='TryRunTics'/>

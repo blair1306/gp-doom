@@ -1,0 +1,6 @@
+<dec f='codebrowser/r_things.h' l='49' type='fixed_t'/>
+<use f='codebrowser/r_main.c' l='723' u='w' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_plane.c' l='398' u='r' c='R_DrawPlanes'/>
+<def f='codebrowser/r_things.c' l='75' type='fixed_t'/>
+<use f='codebrowser/r_things.c' l='702' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='707' u='r' c='R_DrawPSprite'/>

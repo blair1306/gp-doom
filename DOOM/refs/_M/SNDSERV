@@ -1,0 +1,17 @@
+<dec f='codebrowser/doomdef.h' l='84'/>
+<doc f='codebrowser/doomdef.h' l='77'>// Do or do not use external soundserver.
+// The sndserver binary to be run separately
+//  has been introduced by Dave Taylor.
+// The integrated sound support is experimental,
+//  and unfinished. Default is synchronous.
+// Experimental asynchronous timer based is
+//  handled by SNDINTR. </doc>
+<use f='codebrowser/i_sound.h' l='29' u='a'/>
+<use f='codebrowser/d_main.c' l='397' u='a'/>
+<use f='codebrowser/i_sound.c' l='64' u='a'/>
+<use f='codebrowser/i_sound.c' l='483' u='a'/>
+<use f='codebrowser/i_sound.c' l='696' u='a'/>
+<use f='codebrowser/i_sound.c' l='741' u='a'/>
+<use f='codebrowser/m_misc.c' l='211' u='a'/>
+<use f='codebrowser/m_misc.c' l='256' u='a'/>
+<use f='codebrowser/s_sound.c' l='367' u='a'/>

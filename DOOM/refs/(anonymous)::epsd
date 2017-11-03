@@ -1,0 +1,35 @@
+<dec f='codebrowser/d_player.h' l='189' type='int'/>
+<offset>0</offset>
+<doc f='codebrowser/d_player.h' l='189'>// episode # (0-2)</doc>
+<use f='codebrowser/g_game.c' l='1065' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/wi_stuff.c' l='471' u='r' c='WI_drawOnLnode'/>
+<use f='codebrowser/wi_stuff.c' l='472' u='r' c='WI_drawOnLnode'/>
+<use f='codebrowser/wi_stuff.c' l='491' u='r' c='WI_drawOnLnode'/>
+<use f='codebrowser/wi_stuff.c' l='491' u='r' c='WI_drawOnLnode'/>
+<use f='codebrowser/wi_stuff.c' l='511' u='r' c='WI_initAnimatedBack'/>
+<use f='codebrowser/wi_stuff.c' l='514' u='r' c='WI_initAnimatedBack'/>
+<use f='codebrowser/wi_stuff.c' l='516' u='r' c='WI_initAnimatedBack'/>
+<use f='codebrowser/wi_stuff.c' l='540' u='r' c='WI_updateAnimatedBack'/>
+<use f='codebrowser/wi_stuff.c' l='543' u='r' c='WI_updateAnimatedBack'/>
+<use f='codebrowser/wi_stuff.c' l='545' u='r' c='WI_updateAnimatedBack'/>
+<use f='codebrowser/wi_stuff.c' l='591' u='r' c='WI_drawAnimatedBack'/>
+<use f='codebrowser/wi_stuff.c' l='594' u='r' c='WI_drawAnimatedBack'/>
+<use f='codebrowser/wi_stuff.c' l='596' u='r' c='WI_drawAnimatedBack'/>
+<use f='codebrowser/wi_stuff.c' l='784' u='r' c='WI_drawShowNextLoc'/>
+<use f='codebrowser/wi_stuff.c' l='1462' u='r' c='WI_drawStats'/>
+<use f='codebrowser/wi_stuff.c' l='1548' u='r' c='WI_loadData'/>
+<use f='codebrowser/wi_stuff.c' l='1552' u='r' c='WI_loadData'/>
+<use f='codebrowser/wi_stuff.c' l='1589' u='r' c='WI_loadData'/>
+<use f='codebrowser/wi_stuff.c' l='1602' u='r' c='WI_loadData'/>
+<use f='codebrowser/wi_stuff.c' l='1604' u='r' c='WI_loadData'/>
+<use f='codebrowser/wi_stuff.c' l='1606' u='r' c='WI_loadData'/>
+<use f='codebrowser/wi_stuff.c' l='1610' u='r' c='WI_loadData'/>
+<use f='codebrowser/wi_stuff.c' l='1613' u='r' c='WI_loadData'/>
+<use f='codebrowser/wi_stuff.c' l='1733' u='r' c='WI_unloadData'/>
+<use f='codebrowser/wi_stuff.c' l='1735' u='r' c='WI_unloadData'/>
+<use f='codebrowser/wi_stuff.c' l='1737' u='r' c='WI_unloadData'/>
+<use f='codebrowser/wi_stuff.c' l='1738' u='r' c='WI_unloadData'/>
+<use f='codebrowser/wi_stuff.c' l='1739' u='r' c='WI_unloadData'/>
+<use f='codebrowser/wi_stuff.c' l='1739' u='r' c='WI_unloadData'/>
+<use f='codebrowser/wi_stuff.c' l='1834' u='r' c='WI_initVariables'/>
+<use f='codebrowser/wi_stuff.c' l='1835' u='w' c='WI_initVariables'/>

@@ -1,0 +1,50 @@
+<dec f='codebrowser/p_mobj.h' l='275' type='struct player_s *'/>
+<offset>1536</offset>
+<doc f='codebrowser/p_mobj.h' l='273'>// Additional info record for player avatars only.
+    // Only valid if type == MT_PLAYER</doc>
+<use f='codebrowser/g_game.c' l='938' u='w' c='G_DoReborn'/>
+<use f='codebrowser/p_doors.c' l='214' u='r' c='EV_DoLockedDoor'/>
+<use f='codebrowser/p_doors.c' l='367' u='r' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='430' u='r' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_inter.c' l='359' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='683' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='687' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='689' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='690' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='690' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='699' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='703' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='703' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='706' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='707' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='709' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='798' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='809' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='810' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_map.c' l='102' u='r' c='PIT_StompThing'/>
+<use f='codebrowser/p_map.c' l='219' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_mobj.c' l='135' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='169' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='252' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='254' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='256' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='257' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='299' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='306' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='672' u='w' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_saveg.c' l='249' u='r' c='P_ArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='250' u='w' c='P_ArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='250' u='r' c='P_ArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='304' u='r' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='306' u='w' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='306' u='r' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='307' u='r' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_spec.c' l='503' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='767' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='936' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='966' u='r' c='P_ShootSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='301' u='r' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_telept.c' l='107' u='r' c='EV_Teleport'/>
+<use f='codebrowser/p_telept.c' l='108' u='r' c='EV_Teleport'/>
+<use f='codebrowser/p_telept.c' l='108' u='r' c='EV_Teleport'/>
+<use f='codebrowser/p_telept.c' l='121' u='r' c='EV_Teleport'/>

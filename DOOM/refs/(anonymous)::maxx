@@ -1,0 +1,12 @@
+<dec f='codebrowser/r_defs.h' l='466' type='int'/>
+<offset>128</offset>
+<use f='codebrowser/r_plane.c' l='254' u='w' c='R_FindPlane'/>
+<use f='codebrowser/r_plane.c' l='288' u='r' c='R_CheckPlane'/>
+<use f='codebrowser/r_plane.c' l='290' u='r' c='R_CheckPlane'/>
+<use f='codebrowser/r_plane.c' l='295' u='r' c='R_CheckPlane'/>
+<use f='codebrowser/r_plane.c' l='306' u='w' c='R_CheckPlane'/>
+<use f='codebrowser/r_plane.c' l='319' u='w' c='R_CheckPlane'/>
+<use f='codebrowser/r_plane.c' l='391' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_plane.c' l='406' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_plane.c' l='438' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_plane.c' l='441' u='r' c='R_DrawPlanes'/>

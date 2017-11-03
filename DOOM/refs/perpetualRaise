@@ -1,0 +1,5 @@
+<dec f='codebrowser/p_spec.h' l='275' type='0'/>
+<use f='codebrowser/p_plats.c' l='156' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='233' c='EV_DoPlat'/>
+<use f='codebrowser/p_spec.c' l='684' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='854' u='r' c='P_CrossSpecialLine'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/p_spec.h' l='256' type='void P_InitSwitchList()'/>
+<use f='codebrowser/p_setup.c' l='702' u='c' c='P_Init'/>
+<def f='codebrowser/p_switch.c' l='107' ll='148' type='void P_InitSwitchList()'/>
+<doc f='codebrowser/p_switch.c' l='103'>//
+// P_InitSwitchList
+// Only called at game initialization.
+//</doc>

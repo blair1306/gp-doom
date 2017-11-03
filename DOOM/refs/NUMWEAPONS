@@ -1,0 +1,10 @@
+<dec f='codebrowser/doomdef.h' l='192' type='9'/>
+<use f='codebrowser/d_items.h' l='45'/>
+<use f='codebrowser/d_player.h' l='119'/>
+<use f='codebrowser/d_items.c' l='47'/>
+<use f='codebrowser/g_game.c' l='342' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/st_stuff.c' l='381'/>
+<use f='codebrowser/st_stuff.c' l='569' u='r' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='583' u='r' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='779' u='r' c='ST_updateFaceWidget'/>
+<use f='codebrowser/st_stuff.c' l='1270' u='r' c='ST_initData'/>

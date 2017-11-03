@@ -1,0 +1,9 @@
+<dec f='include/X11/Xlib.h' l='683' type='int'/>
+<dec f='include/X11/Xlib.h' l='693' type='int'/>
+<dec f='include/X11/Xlib.h' l='931' type='unsigned char'/>
+<dec f='include/X11/extensions/XShm.h' l='45' type='int'/>
+<offset>352</offset>
+<doc f='include/X11/Xlib.h' l='683'>/* not defined in the core */</doc>
+<doc f='include/X11/Xlib.h' l='693'>/* not defined in the core */</doc>
+<doc f='include/X11/Xlib.h' l='931'>/* Minor op-code of failed request */</doc>
+<doc f='include/X11/extensions/XShm.h' l='45'>/* X_ShmPutImage */</doc>

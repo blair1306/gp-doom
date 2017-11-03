@@ -1,0 +1,5 @@
+<dec f='codebrowser/hu_lib.h' l='166' type='void HUlib_delCharFromIText(hu_itext_t * it)'/>
+<def f='codebrowser/hu_lib.c' l='286' ll='290' type='void HUlib_delCharFromIText(hu_itext_t * it)'/>
+<use f='codebrowser/hu_lib.c' l='327' u='c' c='HUlib_keyInIText'/>
+<doc f='codebrowser/hu_lib.c' l='285'>// The following deletion routines adhere to the left margin restriction</doc>
+<doc f='codebrowser/hu_lib.h' l='165'>// enforces left margin</doc>

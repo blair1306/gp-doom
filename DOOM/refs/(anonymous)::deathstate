@@ -1,0 +1,5 @@
+<dec f='codebrowser/info.h' l='1319' type='int'/>
+<offset>384</offset>
+<use f='codebrowser/f_finale.c' l='512' u='r' c='F_CastResponder'/>
+<use f='codebrowser/p_inter.c' l='725' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_mobj.c' l='94' u='r' c='P_ExplodeMissile'/>

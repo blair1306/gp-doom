@@ -1,0 +1,7 @@
+<dec f='codebrowser/p_local.h' l='83' type='void P_DropWeapon(player_t * player)'/>
+<use f='codebrowser/p_inter.c' l='707' u='c' c='P_KillMobj'/>
+<def f='codebrowser/p_pspr.c' l='265' ll='270' type='void P_DropWeapon(player_t * player)'/>
+<doc f='codebrowser/p_pspr.c' l='261'>//
+// P_DropWeapon
+// Player died, so put the weapon away.
+//</doc>

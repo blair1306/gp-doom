@@ -1,0 +1,18 @@
+<dec f='codebrowser/info.c' l='118' type='void A_BabyMetal()'/>
+<use f='codebrowser/info.c' l='771'/>
+<use f='codebrowser/info.c' l='771'/>
+<use f='codebrowser/info.c' l='771'/>
+<use f='codebrowser/info.c' l='771'/>
+<use f='codebrowser/info.c' l='777'/>
+<use f='codebrowser/info.c' l='777'/>
+<use f='codebrowser/info.c' l='777'/>
+<use f='codebrowser/info.c' l='777'/>
+<use f='codebrowser/info.c' l='771'/>
+<use f='codebrowser/info.c' l='771'/>
+<use f='codebrowser/info.c' l='771'/>
+<use f='codebrowser/info.c' l='771'/>
+<use f='codebrowser/info.c' l='777'/>
+<use f='codebrowser/info.c' l='777'/>
+<use f='codebrowser/info.c' l='777'/>
+<use f='codebrowser/info.c' l='777'/>
+<def f='codebrowser/p_enemy.c' l='1771' ll='1775' type='void A_BabyMetal(mobj_t * mo)'/>

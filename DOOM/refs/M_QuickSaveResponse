@@ -1,0 +1,2 @@
+<def f='codebrowser/m_menu.c' l='681' ll='688' type='void M_QuickSaveResponse(int ch)'/>
+<use f='codebrowser/m_menu.c' l='710' u='r' c='M_QuickSave'/>

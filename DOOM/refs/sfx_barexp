@@ -1,0 +1,25 @@
+<dec f='codebrowser/sounds.h' l='261' type='82'/>
+<use f='codebrowser/info.c' l='1279'/>
+<use f='codebrowser/info.c' l='1279'/>
+<use f='codebrowser/info.c' l='1903'/>
+<use f='codebrowser/info.c' l='1903'/>
+<use f='codebrowser/info.c' l='1981'/>
+<use f='codebrowser/info.c' l='1981'/>
+<use f='codebrowser/info.c' l='1279'/>
+<use f='codebrowser/info.c' l='1279'/>
+<use f='codebrowser/info.c' l='1903'/>
+<use f='codebrowser/info.c' l='1903'/>
+<use f='codebrowser/info.c' l='1981'/>
+<use f='codebrowser/info.c' l='1981'/>
+<use f='codebrowser/p_enemy.c' l='1323' u='r' c='A_VileAttack'/>
+<use f='codebrowser/wi_stuff.c' l='905' u='r' c='WI_updateDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='952' u='r' c='WI_updateDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1132' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1158' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1182' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1208' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1343' u='r' c='WI_updateStats'/>
+<use f='codebrowser/wi_stuff.c' l='1357' u='r' c='WI_updateStats'/>
+<use f='codebrowser/wi_stuff.c' l='1371' u='r' c='WI_updateStats'/>
+<use f='codebrowser/wi_stuff.c' l='1385' u='r' c='WI_updateStats'/>
+<use f='codebrowser/wi_stuff.c' l='1408' u='r' c='WI_updateStats'/>

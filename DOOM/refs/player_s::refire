@@ -1,0 +1,8 @@
+<dec f='codebrowser/d_player.h' l='132' type='int'/>
+<offset>1632</offset>
+<doc f='codebrowser/d_player.h' l='131'>// Refired shots are less accurate.</doc>
+<use f='codebrowser/p_mobj.c' l='677' u='w' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_pspr.c' l='354' u='w' c='A_ReFire'/>
+<use f='codebrowser/p_pspr.c' l='359' u='w' c='A_ReFire'/>
+<use f='codebrowser/p_pspr.c' l='661' u='r' c='A_FirePistol'/>
+<use f='codebrowser/p_pspr.c' l='753' u='r' c='A_FireCGun'/>

@@ -1,0 +1,6 @@
+<def f='codebrowser/i_video.c' l='97' ll='162' type='int xlatekey()'/>
+<use f='codebrowser/i_video.c' l='205' u='c' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='211' u='c' c='I_GetEvent'/>
+<doc f='codebrowser/i_video.c' l='93'>//
+//  Translates the key currently in X_event
+//</doc>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/sounds.h' l='214' type='35'/>
+<use f='codebrowser/g_game.c' l='886' u='r' c='G_CheckSpot'/>
+<use f='codebrowser/m_menu.c' l='1060'/>
+<use f='codebrowser/m_menu.c' l='1060'/>
+<use f='codebrowser/p_enemy.c' l='1951' u='r' c='A_SpawnFly'/>
+<use f='codebrowser/p_mobj.c' l='379' u='r' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='386' u='r' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_telept.c' l='112' u='r' c='EV_Teleport'/>
+<use f='codebrowser/p_telept.c' l='118' u='r' c='EV_Teleport'/>

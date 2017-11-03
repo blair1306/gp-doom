@@ -1,0 +1,44 @@
+<def f='codebrowser/hu_stuff.c' l='65' ll='77' type='char *[10]'/>
+<use f='codebrowser/hu_stuff.c' l='712' u='r' c='HU_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='724' u='r' c='HU_Responder'/>
+<dec f='codebrowser/m_misc.c' l='221' type='char *[]'/>
+<use f='codebrowser/m_misc.c' l='291' u='a'/>
+<use f='codebrowser/m_misc.c' l='291' u='a'/>
+<use f='codebrowser/m_misc.c' l='292' u='a'/>
+<use f='codebrowser/m_misc.c' l='292' u='a'/>
+<use f='codebrowser/m_misc.c' l='293' u='a'/>
+<use f='codebrowser/m_misc.c' l='293' u='a'/>
+<use f='codebrowser/m_misc.c' l='294' u='a'/>
+<use f='codebrowser/m_misc.c' l='294' u='a'/>
+<use f='codebrowser/m_misc.c' l='295' u='a'/>
+<use f='codebrowser/m_misc.c' l='295' u='a'/>
+<use f='codebrowser/m_misc.c' l='296' u='a'/>
+<use f='codebrowser/m_misc.c' l='296' u='a'/>
+<use f='codebrowser/m_misc.c' l='297' u='a'/>
+<use f='codebrowser/m_misc.c' l='297' u='a'/>
+<use f='codebrowser/m_misc.c' l='298' u='a'/>
+<use f='codebrowser/m_misc.c' l='298' u='a'/>
+<use f='codebrowser/m_misc.c' l='299' u='a'/>
+<use f='codebrowser/m_misc.c' l='299' u='a'/>
+<use f='codebrowser/m_misc.c' l='300' u='a'/>
+<use f='codebrowser/m_misc.c' l='300' u='a'/>
+<use f='codebrowser/m_misc.c' l='291' u='a'/>
+<use f='codebrowser/m_misc.c' l='291' u='a'/>
+<use f='codebrowser/m_misc.c' l='292' u='a'/>
+<use f='codebrowser/m_misc.c' l='292' u='a'/>
+<use f='codebrowser/m_misc.c' l='293' u='a'/>
+<use f='codebrowser/m_misc.c' l='293' u='a'/>
+<use f='codebrowser/m_misc.c' l='294' u='a'/>
+<use f='codebrowser/m_misc.c' l='294' u='a'/>
+<use f='codebrowser/m_misc.c' l='295' u='a'/>
+<use f='codebrowser/m_misc.c' l='295' u='a'/>
+<use f='codebrowser/m_misc.c' l='296' u='a'/>
+<use f='codebrowser/m_misc.c' l='296' u='a'/>
+<use f='codebrowser/m_misc.c' l='297' u='a'/>
+<use f='codebrowser/m_misc.c' l='297' u='a'/>
+<use f='codebrowser/m_misc.c' l='298' u='a'/>
+<use f='codebrowser/m_misc.c' l='298' u='a'/>
+<use f='codebrowser/m_misc.c' l='299' u='a'/>
+<use f='codebrowser/m_misc.c' l='299' u='a'/>
+<use f='codebrowser/m_misc.c' l='300' u='a'/>
+<use f='codebrowser/m_misc.c' l='300' u='a'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_local.h' l='264' type='void P_TouchSpecialThing(mobj_t * special, mobj_t * toucher)'/>
+<def f='codebrowser/p_inter.c' l='338' ll='661' type='void P_TouchSpecialThing(mobj_t * special, mobj_t * toucher)'/>
+<doc f='codebrowser/p_inter.c' l='335'>//
+// P_TouchSpecialThing
+//</doc>
+<use f='codebrowser/p_map.c' l='337' u='c' c='PIT_CheckThing'/>

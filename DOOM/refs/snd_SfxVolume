@@ -1,0 +1,39 @@
+<dec f='codebrowser/doomstat.h' l='109' type='int'/>
+<doc f='codebrowser/doomstat.h' l='98'>// -------------------------
+// Internal parameters for sound rendering.
+// These have been taken from the DOS version,
+//  but are not (yet) supported with Linux
+//  (e.g. no sound volume adjustment with menu.
+
+// These are not used, but should be (menu).
+// From m_menu.c:
+//  Sound FX volume has default, 0 - 15
+//  Music volume has default, 0 - 15
+// These are multiplied by 8.</doc>
+<doc f='codebrowser/doomstat.h' l='109'>// maximum volume for sound</doc>
+<use f='codebrowser/d_main.c' l='1107' u='r' c='D_DoomMain'/>
+<use f='codebrowser/i_sound.c' l='435' u='w' c='I_SetSfxVolume'/>
+<use f='codebrowser/m_menu.c' l='805' u='r' c='M_DrawSound'/>
+<use f='codebrowser/m_menu.c' l='821' u='r' c='M_SfxVol'/>
+<use f='codebrowser/m_menu.c' l='822' u='w' c='M_SfxVol'/>
+<use f='codebrowser/m_menu.c' l='825' u='r' c='M_SfxVol'/>
+<use f='codebrowser/m_menu.c' l='826' u='w' c='M_SfxVol'/>
+<use f='codebrowser/m_menu.c' l='830' u='r' c='M_SfxVol'/>
+<use f='codebrowser/m_misc.c' l='237' u='a'/>
+<use f='codebrowser/m_misc.c' l='237' u='a'/>
+<use f='codebrowser/m_misc.c' l='237' u='a'/>
+<use f='codebrowser/m_misc.c' l='237' u='a'/>
+<def f='codebrowser/s_sound.c' l='113' type='int'/>
+<use f='codebrowser/s_sound.c' l='292' u='r' c='S_StartSoundAtVolume'/>
+<use f='codebrowser/s_sound.c' l='293' u='r' c='S_StartSoundAtVolume'/>
+<use f='codebrowser/s_sound.c' l='407' u='r' c='S_StartSound'/>
+<use f='codebrowser/s_sound.c' l='563' u='r' c='S_UpdateSounds'/>
+<use f='codebrowser/s_sound.c' l='576' u='r' c='S_UpdateSounds'/>
+<use f='codebrowser/s_sound.c' l='578' u='r' c='S_UpdateSounds'/>
+<use f='codebrowser/s_sound.c' l='637' u='w' c='S_SetSfxVolume'/>
+<use f='codebrowser/s_sound.c' l='798' u='r' c='S_AdjustSoundParams'/>
+<use f='codebrowser/s_sound.c' l='805' u='r' c='S_AdjustSoundParams'/>
+<use f='codebrowser/s_sound.c' l='812' u='r' c='S_AdjustSoundParams'/>
+<doc f='codebrowser/s_sound.c' l='110'>// These are not used, but should be (menu).
+// Maximum volume of a sound effect.
+// Internal default is max out of 0-15.</doc>

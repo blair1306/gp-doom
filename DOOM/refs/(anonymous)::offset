@@ -1,0 +1,9 @@
+<dec f='codebrowser/doomdata.h' l='170' type='short'/>
+<dec f='codebrowser/r_defs.h' l='245' type='fixed_t'/>
+<offset>128</offset>
+<dec f='include/X11/extensions/XShm.h' l='47' type='unsigned long'/>
+<offset>448</offset>
+<doc f='include/X11/extensions/XShm.h' l='47'>/* the offset into ShmSeg used in the request */</doc>
+<use f='codebrowser/p_setup.c' l='182' u='w' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='182' u='r' c='P_LoadSegs'/>
+<use f='codebrowser/r_segs.c' l='635' u='r' c='R_StoreWallRange'/>

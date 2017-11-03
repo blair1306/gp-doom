@@ -1,0 +1,4 @@
+<dec f='codebrowser/sounds.h' l='189' type='10'/>
+<use f='codebrowser/i_sound.c' l='286' u='r' c='addsfx'/>
+<use f='codebrowser/p_pspr.c' l='146' u='r' c='P_BringUpWeapon'/>
+<use f='codebrowser/s_sound.c' l='327' u='r' c='S_StartSoundAtVolume'/>

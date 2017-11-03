@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_event.h' l='40' type='3'/>
+<use f='codebrowser/g_game.c' l='527' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='583' c='G_Responder'/>
+<use f='codebrowser/m_menu.c' l='1362' u='r' c='M_Responder'/>

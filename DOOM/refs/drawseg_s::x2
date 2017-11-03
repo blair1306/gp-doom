@@ -1,0 +1,7 @@
+<dec f='codebrowser/r_defs.h' l='326' type='int'/>
+<offset>96</offset>
+<use f='codebrowser/r_segs.c' l='414' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_things.c' l='864' u='r' c='R_DrawSprite'/>
+<use f='codebrowser/r_things.c' l='873' u='r' c='R_DrawSprite'/>
+<use f='codebrowser/r_things.c' l='873' u='r' c='R_DrawSprite'/>
+<use f='codebrowser/r_things.c' l='980' u='r' c='R_DrawMasked'/>

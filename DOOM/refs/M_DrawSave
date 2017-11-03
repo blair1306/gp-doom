@@ -1,0 +1,7 @@
+<dec f='codebrowser/m_menu.c' l='218' type='void M_DrawSave()'/>
+<use f='codebrowser/m_menu.c' l='501'/>
+<use f='codebrowser/m_menu.c' l='501'/>
+<def f='codebrowser/m_menu.c' l='610' ll='626' type='void M_DrawSave()'/>
+<doc f='codebrowser/m_menu.c' l='607'>//
+//  M_SaveGame &amp; Cie.
+//</doc>

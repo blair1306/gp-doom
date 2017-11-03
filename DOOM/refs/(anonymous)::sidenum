@@ -1,0 +1,5 @@
+<dec f='codebrowser/doomdata.h' l='92' type='short [2]'/>
+<offset>80</offset>
+<doc f='codebrowser/doomdata.h' l='91'>// sidenum[1] will be -1 if one sided</doc>
+<use f='codebrowser/p_setup.c' l='417' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='418' u='r' c='P_LoadLineDefs'/>

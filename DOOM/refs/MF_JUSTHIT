@@ -1,0 +1,5 @@
+<dec f='codebrowser/p_mobj.h' l='133' type='64'/>
+<doc f='codebrowser/p_mobj.h' l='132'>// Will try to attack right back.</doc>
+<use f='codebrowser/p_enemy.c' l='204' u='r' c='P_CheckMissileRange'/>
+<use f='codebrowser/p_enemy.c' l='208' u='r' c='P_CheckMissileRange'/>
+<use f='codebrowser/p_inter.c' l='897' u='r' c='P_DamageMobj'/>

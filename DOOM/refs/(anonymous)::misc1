@@ -1,0 +1,4 @@
+<dec f='codebrowser/info.h' l='1155' type='long'/>
+<offset>320</offset>
+<use f='codebrowser/p_pspr.c' l='82' u='r' c='P_SetPsprite'/>
+<use f='codebrowser/p_pspr.c' l='85' u='r' c='P_SetPsprite'/>

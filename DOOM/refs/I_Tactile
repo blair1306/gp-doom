@@ -1,0 +1,3 @@
+<dec f='codebrowser/i_system.h' l='86' type='void I_Tactile(int on, int off, int total)'/>
+<def f='codebrowser/i_system.c' l='54' ll='62' type='void I_Tactile(int on, int off, int total)'/>
+<use f='codebrowser/p_inter.c' l='883' u='c' c='P_DamageMobj'/>

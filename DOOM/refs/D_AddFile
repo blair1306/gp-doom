@@ -1,0 +1,25 @@
+<dec f='codebrowser/d_main.h' l='39' type='void D_AddFile(char * file)'/>
+<def f='codebrowser/d_main.c' l='543' ll='555' type='void D_AddFile(char * file)'/>
+<use f='codebrowser/d_main.c' l='621' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='622' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='623' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='632' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='633' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='634' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='635' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='650' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='652' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='653' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='665' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='672' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='679' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='686' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='693' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='700' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='707' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='935' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='945' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='956' u='c' c='D_DoomMain'/>
+<doc f='codebrowser/d_main.c' l='540'>//
+// D_AddFile
+//</doc>

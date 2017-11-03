@@ -1,0 +1,4 @@
+<def f='codebrowser/i_sound.c' l='161' ll='176' type='void myioctl(int fd, int command, int * arg)'/>
+<doc f='codebrowser/i_sound.c' l='158'>//
+// Safe ioctl, convenience.
+//</doc>

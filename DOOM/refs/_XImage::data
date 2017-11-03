@@ -1,0 +1,11 @@
+<dec f='include/X11/Xlib.h' l='364' type='char *'/>
+<use f='codebrowser/i_video.c' l='175' u='w' c='I_ShutdownGraphics'/>
+<use f='codebrowser/i_video.c' l='388' u='r' c='I_FinishUpdate'/>
+<use f='codebrowser/i_video.c' l='430' u='r' c='I_FinishUpdate'/>
+<use f='codebrowser/i_video.c' l='480' u='r' c='I_FinishUpdate'/>
+<use f='codebrowser/i_video.c' l='685' u='w' c='grabsharedmemory'/>
+<use f='codebrowser/i_video.c' l='688' u='r' c='grabsharedmemory'/>
+<use f='codebrowser/i_video.c' l='884' u='r' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='910' u='r' c='I_InitGraphics'/>
+<offset>128</offset>
+<doc f='include/X11/Xlib.h' l='364'>/* pointer to image data */</doc>

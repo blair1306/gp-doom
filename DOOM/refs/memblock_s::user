@@ -1,0 +1,29 @@
+<dec f='codebrowser/z_zone.h' l='61' type='void **'/>
+<offset>64</offset>
+<doc f='codebrowser/z_zone.h' l='61'>// NULL if a free block</doc>
+<use f='codebrowser/z_zone.c' l='76' u='w' c='Z_ClearZone'/>
+<use f='codebrowser/z_zone.c' l='83' u='w' c='Z_ClearZone'/>
+<use f='codebrowser/z_zone.c' l='106' u='w' c='Z_Init'/>
+<use f='codebrowser/z_zone.c' l='113' u='w' c='Z_Init'/>
+<use f='codebrowser/z_zone.c' l='132' u='r' c='Z_Free'/>
+<use f='codebrowser/z_zone.c' l='138' u='r' c='Z_Free'/>
+<use f='codebrowser/z_zone.c' l='142' u='w' c='Z_Free'/>
+<use f='codebrowser/z_zone.c' l='148' u='r' c='Z_Free'/>
+<use f='codebrowser/z_zone.c' l='162' u='r' c='Z_Free'/>
+<use f='codebrowser/z_zone.c' l='209' u='r' c='Z_Malloc'/>
+<use f='codebrowser/z_zone.c' l='223' u='r' c='Z_Malloc'/>
+<use f='codebrowser/z_zone.c' l='244' u='r' c='Z_Malloc'/>
+<use f='codebrowser/z_zone.c' l='257' u='w' c='Z_Malloc'/>
+<use f='codebrowser/z_zone.c' l='270' u='w' c='Z_Malloc'/>
+<use f='codebrowser/z_zone.c' l='279' u='w' c='Z_Malloc'/>
+<use f='codebrowser/z_zone.c' l='312' u='r' c='Z_FreeTags'/>
+<use f='codebrowser/z_zone.c' l='343' u='r' c='Z_DumpHeap'/>
+<use f='codebrowser/z_zone.c' l='357' u='r' c='Z_DumpHeap'/>
+<use f='codebrowser/z_zone.c' l='357' u='r' c='Z_DumpHeap'/>
+<use f='codebrowser/z_zone.c' l='375' u='r' c='Z_FileDumpHeap'/>
+<use f='codebrowser/z_zone.c' l='389' u='r' c='Z_FileDumpHeap'/>
+<use f='codebrowser/z_zone.c' l='389' u='r' c='Z_FileDumpHeap'/>
+<use f='codebrowser/z_zone.c' l='417' u='r' c='Z_CheckHeap'/>
+<use f='codebrowser/z_zone.c' l='417' u='r' c='Z_CheckHeap'/>
+<use f='codebrowser/z_zone.c' l='440' u='r' c='Z_ChangeTag2'/>
+<use f='codebrowser/z_zone.c' l='462' u='r' c='Z_FreeMemory'/>

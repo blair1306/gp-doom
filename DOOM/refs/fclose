@@ -1,0 +1,10 @@
+<dec f='include/stdio.h' l='237' type='int fclose(FILE * __stream)'/>
+<doc f='include/stdio.h' l='233'>/* Close STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/d_main.c' l='753' u='c' c='FindResponseFile'/>
+<use f='codebrowser/d_net.c' l='607' u='c' c='D_QuitNetGame'/>
+<use f='codebrowser/m_misc.c' l='334' u='c' c='M_SaveDefaults'/>
+<use f='codebrowser/m_misc.c' l='404' u='c' c='M_LoadDefaults'/>
+<use f='codebrowser/w_wad.c' l='574' u='c' c='W_Profile'/>

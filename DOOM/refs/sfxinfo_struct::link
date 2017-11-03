@@ -1,0 +1,5 @@
+<dec f='codebrowser/sounds.h' l='44' type='sfxinfo_t *'/>
+<offset>128</offset>
+<doc f='codebrowser/sounds.h' l='43'>// referenced sound if a link</doc>
+<use f='codebrowser/s_sound.c' l='283' u='r' c='S_StartSoundAtVolume'/>
+<use f='codebrowser/s_sound.c' l='567' u='r' c='S_UpdateSounds'/>

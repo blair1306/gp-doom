@@ -1,0 +1,2 @@
+<def f='codebrowser/w_wad.c' l='69' ll='72' type='void strupr(char * s)'/>
+<use f='codebrowser/w_wad.c' l='370' u='c' c='W_CheckNumForName'/>

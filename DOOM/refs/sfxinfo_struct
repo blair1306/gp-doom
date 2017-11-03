@@ -1,0 +1,11 @@
+<def f='codebrowser/sounds.h' l='32' ll='62'/>
+<size>48</size>
+<mbr r='sfxinfo_struct::name' o='0' t='char *'/>
+<mbr r='sfxinfo_struct::singularity' o='64' t='int'/>
+<mbr r='sfxinfo_struct::priority' o='96' t='int'/>
+<mbr r='sfxinfo_struct::link' o='128' t='sfxinfo_t *'/>
+<mbr r='sfxinfo_struct::pitch' o='192' t='int'/>
+<mbr r='sfxinfo_struct::volume' o='224' t='int'/>
+<mbr r='sfxinfo_struct::data' o='256' t='void *'/>
+<mbr r='sfxinfo_struct::usefulness' o='320' t='int'/>
+<mbr r='sfxinfo_struct::lumpnum' o='352' t='int'/>

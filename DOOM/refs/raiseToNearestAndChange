@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_spec.h' l='278' type='3'/>
+<use f='codebrowser/p_plats.c' l='65' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='97' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='185' c='EV_DoPlat'/>
+<use f='codebrowser/p_spec.c' l='617' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='895' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='996' u='r' c='P_ShootSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='385' u='r' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='582' u='r' c='P_UseSpecialLine'/>

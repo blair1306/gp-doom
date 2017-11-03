@@ -1,0 +1,4 @@
+<dec f='codebrowser/m_cheat.h' l='48' type='void cht_GetParam(cheatseq_t * cht, char * buffer)'/>
+<def f='codebrowser/m_cheat.c' l='77' ll='99' type='void cht_GetParam(cheatseq_t * cht, char * buffer)'/>
+<use f='codebrowser/st_stuff.c' l='602' u='c' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='682' u='c' c='ST_Responder'/>

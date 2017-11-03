@@ -1,0 +1,8 @@
+<def f='codebrowser/p_map.c' l='575' type='fixed_t'/>
+<use f='codebrowser/p_map.c' l='598' u='w' c='P_HitSlideLine'/>
+<use f='codebrowser/p_map.c' l='615' u='r' c='P_HitSlideLine'/>
+<use f='codebrowser/p_map.c' l='625' u='r' c='P_HitSlideLine'/>
+<use f='codebrowser/p_map.c' l='629' u='w' c='P_HitSlideLine'/>
+<use f='codebrowser/p_map.c' l='777' u='w' c='P_SlideMove'/>
+<use f='codebrowser/p_map.c' l='782' u='r' c='P_SlideMove'/>
+<use f='codebrowser/p_map.c' l='784' u='r' c='P_SlideMove'/>

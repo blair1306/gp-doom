@@ -1,0 +1,2 @@
+<def f='codebrowser/am_map.c' l='1240' ll='1282' type='void AM_drawPlayers()'/>
+<use f='codebrowser/am_map.c' l='1340' u='c' c='AM_Drawer'/>

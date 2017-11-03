@@ -1,0 +1,6 @@
+<dec f='include/X11/Xlib.h' l='974' type='int'/>
+<use f='codebrowser/i_video.c' l='201' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='275' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='838' u='r' c='I_InitGraphics'/>
+<offset>0</offset>
+<doc f='include/X11/Xlib.h' l='974'>/* must not be changed; first element */</doc>

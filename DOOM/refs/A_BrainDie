@@ -1,0 +1,10 @@
+<dec f='codebrowser/info.c' l='127' type='void A_BrainDie()'/>
+<use f='codebrowser/info.c' l='919'/>
+<use f='codebrowser/info.c' l='919'/>
+<use f='codebrowser/info.c' l='919'/>
+<use f='codebrowser/info.c' l='919'/>
+<use f='codebrowser/info.c' l='919'/>
+<use f='codebrowser/info.c' l='919'/>
+<use f='codebrowser/info.c' l='919'/>
+<use f='codebrowser/info.c' l='919'/>
+<def f='codebrowser/p_enemy.c' l='1896' ll='1899' type='void A_BrainDie(mobj_t * mo)'/>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_local.h' l='38'/>
+<use f='codebrowser/am_map.c' l='1079' u='c'/>
+<use f='codebrowser/am_map.c' l='1080' u='c'/>
+<use f='codebrowser/am_map.c' l='1081' u='c'/>
+<use f='codebrowser/am_map.c' l='1087' u='c'/>
+<use f='codebrowser/am_map.c' l='1096' u='c'/>
+<use f='codebrowser/am_map.c' l='1097' u='c'/>
+<use f='codebrowser/am_map.c' l='1098' u='c'/>
+<use f='codebrowser/am_map.c' l='1104' u='c'/>
+<doc f='codebrowser/p_local.h' l='36'>// mapblocks are used to check movement
+// against lines and things</doc>

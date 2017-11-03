@@ -1,0 +1,7 @@
+<def f='codebrowser/wi_stuff.c' l='687' ll='721' type='void WI_drawTime(int x, int y, int t)'/>
+<use f='codebrowser/wi_stuff.c' l='1460' u='c' c='WI_drawStats'/>
+<use f='codebrowser/wi_stuff.c' l='1465' u='c' c='WI_drawStats'/>
+<doc f='codebrowser/wi_stuff.c' l='683'>//
+// Display level completion time and par,
+//  or &quot;sucks&quot; message if overflow.
+//</doc>

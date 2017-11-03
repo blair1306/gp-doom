@@ -1,0 +1,11 @@
+<def f='codebrowser/m_menu.c' l='95' type='char *'/>
+<use f='codebrowser/m_menu.c' l='1235' u='w' c='M_StartMessage'/>
+<use f='codebrowser/m_menu.c' l='1756' u='r' c='M_Drawer'/>
+<use f='codebrowser/m_menu.c' l='1757' u='r' c='M_Drawer'/>
+<use f='codebrowser/m_menu.c' l='1759' u='r' c='M_Drawer'/>
+<use f='codebrowser/m_menu.c' l='1760' u='r' c='M_Drawer'/>
+<use f='codebrowser/m_menu.c' l='1763' u='r' c='M_Drawer'/>
+<use f='codebrowser/m_menu.c' l='1768' u='r' c='M_Drawer'/>
+<use f='codebrowser/m_menu.c' l='1770' u='r' c='M_Drawer'/>
+<use f='codebrowser/m_menu.c' l='1856' u='w' c='M_Init'/>
+<doc f='codebrowser/m_menu.c' l='94'>// ...and here is the message string!</doc>

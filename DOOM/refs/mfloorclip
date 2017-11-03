@@ -1,0 +1,14 @@
+<dec f='codebrowser/r_things.h' l='43' type='short *'/>
+<doc f='codebrowser/r_things.h' l='42'>// vars for R_DrawMaskedColumn</doc>
+<use f='codebrowser/r_segs.c' l='140' u='w' c='R_RenderMaskedSegRange'/>
+<def f='codebrowser/r_things.c' l='345' type='short *'/>
+<use f='codebrowser/r_things.c' l='369' u='r' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='370' u='r' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='765' u='w' c='R_DrawPlayerSprites'/>
+<use f='codebrowser/r_things.c' l='947' u='w' c='R_DrawSprite'/>
+<doc f='codebrowser/r_things.c' l='339'>//
+// R_DrawMaskedColumn
+// Used for sprites and masked mid textures.
+// Masked means: partly transparent, i.e. stored
+//  in posts/runs of opaque pixels.
+//</doc>

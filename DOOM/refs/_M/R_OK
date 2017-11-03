@@ -1,0 +1,11 @@
+<dec f='include/unistd.h' l='284'/>
+<use f='include/fcntl.h' l='124' u='a'/>
+<use f='codebrowser/d_main.c' l='658' u='c'/>
+<use f='codebrowser/d_main.c' l='669' u='c'/>
+<use f='codebrowser/d_main.c' l='676' u='c'/>
+<use f='codebrowser/d_main.c' l='683' u='c'/>
+<use f='codebrowser/d_main.c' l='690' u='c'/>
+<use f='codebrowser/d_main.c' l='697' u='c'/>
+<use f='codebrowser/d_main.c' l='704' u='c'/>
+<doc f='include/unistd.h' l='282'>/* Values for the second argument to access.
+   These may be OR&apos;d together.  */</doc>

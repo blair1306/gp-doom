@@ -1,0 +1,5 @@
+<dec f='codebrowser/r_main.h' l='48' type='int'/>
+<def f='codebrowser/r_main.c' l='61' type='int'/>
+<use f='codebrowser/r_main.c' l='594' u='r' c='R_InitTextureMapping'/>
+<use f='codebrowser/r_main.c' l='697' u='w' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_main.c' l='698' u='r' c='R_ExecuteSetViewSize'/>

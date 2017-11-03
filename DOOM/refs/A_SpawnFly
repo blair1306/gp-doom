@@ -1,0 +1,28 @@
+<dec f='codebrowser/info.c' l='131' type='void A_SpawnFly()'/>
+<use f='codebrowser/info.c' l='924'/>
+<use f='codebrowser/info.c' l='924'/>
+<use f='codebrowser/info.c' l='924'/>
+<use f='codebrowser/info.c' l='924'/>
+<use f='codebrowser/info.c' l='925'/>
+<use f='codebrowser/info.c' l='925'/>
+<use f='codebrowser/info.c' l='925'/>
+<use f='codebrowser/info.c' l='925'/>
+<use f='codebrowser/info.c' l='926'/>
+<use f='codebrowser/info.c' l='926'/>
+<use f='codebrowser/info.c' l='926'/>
+<use f='codebrowser/info.c' l='926'/>
+<use f='codebrowser/info.c' l='924'/>
+<use f='codebrowser/info.c' l='924'/>
+<use f='codebrowser/info.c' l='924'/>
+<use f='codebrowser/info.c' l='924'/>
+<use f='codebrowser/info.c' l='925'/>
+<use f='codebrowser/info.c' l='925'/>
+<use f='codebrowser/info.c' l='925'/>
+<use f='codebrowser/info.c' l='925'/>
+<use f='codebrowser/info.c' l='926'/>
+<use f='codebrowser/info.c' l='926'/>
+<use f='codebrowser/info.c' l='926'/>
+<use f='codebrowser/info.c' l='926'/>
+<dec f='codebrowser/p_enemy.c' l='1927' type='void A_SpawnFly(mobj_t * mo)'/>
+<use f='codebrowser/p_enemy.c' l='1933' u='c' c='A_SpawnSound'/>
+<def f='codebrowser/p_enemy.c' l='1936' ll='1990' type='void A_SpawnFly(mobj_t * mo)'/>

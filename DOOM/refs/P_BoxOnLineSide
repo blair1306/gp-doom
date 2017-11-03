@@ -1,0 +1,8 @@
+<dec f='codebrowser/p_local.h' l='166' type='int P_BoxOnLineSide(fixed_t * tmbox, line_t * ld)'/>
+<use f='codebrowser/p_map.c' l='197' u='c' c='PIT_CheckLine'/>
+<def f='codebrowser/p_maputl.c' l='109' ll='153' type='int P_BoxOnLineSide(fixed_t * tmbox, line_t * ld)'/>
+<doc f='codebrowser/p_maputl.c' l='104'>//
+// P_BoxOnLineSide
+// Considers the line to be infinite
+// Returns side 0 or 1, -1 if box crosses the line.
+//</doc>

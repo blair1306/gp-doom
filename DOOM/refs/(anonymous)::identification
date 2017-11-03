@@ -1,0 +1,5 @@
+<dec f='codebrowser/w_wad.h' l='38' type='char [4]'/>
+<offset>0</offset>
+<doc f='codebrowser/w_wad.h' l='37'>// Should be &quot;IWAD&quot; or &quot;PWAD&quot;.</doc>
+<use f='codebrowser/w_wad.c' l='185' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='188' u='r' c='W_AddFile'/>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/p_local.h' l='213' type='void P_SlideMove(mobj_t * mo)'/>
+<def f='codebrowser/p_map.c' l='695' ll='788' type='void P_SlideMove(mobj_t * mo)'/>
+<doc f='codebrowser/p_map.c' l='686'>//
+// P_SlideMove
+// The momx / momy move is bad, so try to slide
+// along a wall.
+// Find the first line hit, move flush to it,
+// and slide along it
+//
+// This is a kludgy mess.
+//</doc>
+<use f='codebrowser/p_mobj.c' l='171' u='c' c='P_XYMovement'/>

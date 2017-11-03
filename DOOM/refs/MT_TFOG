@@ -1,0 +1,6 @@
+<dec f='codebrowser/info.h' l='1203' type='39'/>
+<use f='codebrowser/g_game.c' l='883' u='r' c='G_CheckSpot'/>
+<use f='codebrowser/p_mobj.c' l='377' u='r' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='384' u='r' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_telept.c' l='111' u='r' c='EV_Teleport'/>
+<use f='codebrowser/p_telept.c' l='115' u='r' c='EV_Teleport'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/r_things.h' l='52' type='void R_DrawMaskedColumn(column_t * column)'/>
+<use f='codebrowser/r_segs.c' l='184' u='c' c='R_RenderMaskedSegRange'/>
+<def f='codebrowser/r_things.c' l='351' ll='388' type='void R_DrawMaskedColumn(column_t * column)'/>
+<use f='codebrowser/r_things.c' l='439' u='c' c='R_DrawVisSprite'/>

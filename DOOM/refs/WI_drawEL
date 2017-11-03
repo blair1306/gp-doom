@@ -1,0 +1,4 @@
+<def f='codebrowser/wi_stuff.c' l='439' ll='453' type='void WI_drawEL()'/>
+<use f='codebrowser/wi_stuff.c' l='786' u='c' c='WI_drawShowNextLoc'/>
+<use f='codebrowser/wi_stuff.c' l='808' u='c' c='WI_drawShowNextLoc'/>
+<doc f='codebrowser/wi_stuff.c' l='438'>// Draws &quot;Entering &lt;LevelName&gt;&quot;</doc>

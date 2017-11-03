@@ -1,0 +1,2 @@
+<dec f='include/X11/Xlib.h' l='3514' type='int XWarpPointer(Display * , Window , Window , int , int , unsigned int , unsigned int , int , int )'/>
+<use f='codebrowser/i_video.c' l='325' u='c' c='I_StartTic'/>

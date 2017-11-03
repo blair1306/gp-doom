@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>m_random.c source code [codebrowser/m_random.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/m_random.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='m_random.c.html'>m_random.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION:</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//	Random number LUT.</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="22">22</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><em>static</em> <em>const</em> <em>char</em> <dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [51]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id: m_random.c,v 1.1 1997/02/03 22:45:11 b1 Exp $"</q>;</td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><i>//</i></td></tr>
+<tr><th id="28">28</th><td><i>// M_Random</i></td></tr>
+<tr><th id="29">29</th><td><i>// Returns a 0-255 number</i></td></tr>
+<tr><th id="30">30</th><td><i>//</i></td></tr>
+<tr><th id="31">31</th><td><em>unsigned</em> <em>char</em> <dfn class="decl def" id="rndtable" title='rndtable' data-ref="rndtable">rndtable</dfn>[<var>256</var>] = {</td></tr>
+<tr><th id="32">32</th><td>    <var>0</var>,   <var>8</var>, <var>109</var>, <var>220</var>, <var>222</var>, <var>241</var>, <var>149</var>, <var>107</var>,  <var>75</var>, <var>248</var>, <var>254</var>, <var>140</var>,  <var>16</var>,  <var>66</var> ,</td></tr>
+<tr><th id="33">33</th><td>    <var>74</var>,  <var>21</var>, <var>211</var>,  <var>47</var>,  <var>80</var>, <var>242</var>, <var>154</var>,  <var>27</var>, <var>205</var>, <var>128</var>, <var>161</var>,  <var>89</var>,  <var>77</var>,  <var>36</var> ,</td></tr>
+<tr><th id="34">34</th><td>    <var>95</var>, <var>110</var>,  <var>85</var>,  <var>48</var>, <var>212</var>, <var>140</var>, <var>211</var>, <var>249</var>,  <var>22</var>,  <var>79</var>, <var>200</var>,  <var>50</var>,  <var>28</var>, <var>188</var> ,</td></tr>
+<tr><th id="35">35</th><td>    <var>52</var>, <var>140</var>, <var>202</var>, <var>120</var>,  <var>68</var>, <var>145</var>,  <var>62</var>,  <var>70</var>, <var>184</var>, <var>190</var>,  <var>91</var>, <var>197</var>, <var>152</var>, <var>224</var> ,</td></tr>
+<tr><th id="36">36</th><td>    <var>149</var>, <var>104</var>,  <var>25</var>, <var>178</var>, <var>252</var>, <var>182</var>, <var>202</var>, <var>182</var>, <var>141</var>, <var>197</var>,   <var>4</var>,  <var>81</var>, <var>181</var>, <var>242</var> ,</td></tr>
+<tr><th id="37">37</th><td>    <var>145</var>,  <var>42</var>,  <var>39</var>, <var>227</var>, <var>156</var>, <var>198</var>, <var>225</var>, <var>193</var>, <var>219</var>,  <var>93</var>, <var>122</var>, <var>175</var>, <var>249</var>,   <var>0</var> ,</td></tr>
+<tr><th id="38">38</th><td>    <var>175</var>, <var>143</var>,  <var>70</var>, <var>239</var>,  <var>46</var>, <var>246</var>, <var>163</var>,  <var>53</var>, <var>163</var>, <var>109</var>, <var>168</var>, <var>135</var>,   <var>2</var>, <var>235</var> ,</td></tr>
+<tr><th id="39">39</th><td>    <var>25</var>,  <var>92</var>,  <var>20</var>, <var>145</var>, <var>138</var>,  <var>77</var>,  <var>69</var>, <var>166</var>,  <var>78</var>, <var>176</var>, <var>173</var>, <var>212</var>, <var>166</var>, <var>113</var> ,</td></tr>
+<tr><th id="40">40</th><td>    <var>94</var>, <var>161</var>,  <var>41</var>,  <var>50</var>, <var>239</var>,  <var>49</var>, <var>111</var>, <var>164</var>,  <var>70</var>,  <var>60</var>,   <var>2</var>,  <var>37</var>, <var>171</var>,  <var>75</var> ,</td></tr>
+<tr><th id="41">41</th><td>    <var>136</var>, <var>156</var>,  <var>11</var>,  <var>56</var>,  <var>42</var>, <var>146</var>, <var>138</var>, <var>229</var>,  <var>73</var>, <var>146</var>,  <var>77</var>,  <var>61</var>,  <var>98</var>, <var>196</var> ,</td></tr>
+<tr><th id="42">42</th><td>    <var>135</var>, <var>106</var>,  <var>63</var>, <var>197</var>, <var>195</var>,  <var>86</var>,  <var>96</var>, <var>203</var>, <var>113</var>, <var>101</var>, <var>170</var>, <var>247</var>, <var>181</var>, <var>113</var> ,</td></tr>
+<tr><th id="43">43</th><td>    <var>80</var>, <var>250</var>, <var>108</var>,   <var>7</var>, <var>255</var>, <var>237</var>, <var>129</var>, <var>226</var>,  <var>79</var>, <var>107</var>, <var>112</var>, <var>166</var>, <var>103</var>, <var>241</var> ,</td></tr>
+<tr><th id="44">44</th><td>    <var>24</var>, <var>223</var>, <var>239</var>, <var>120</var>, <var>198</var>,  <var>58</var>,  <var>60</var>,  <var>82</var>, <var>128</var>,   <var>3</var>, <var>184</var>,  <var>66</var>, <var>143</var>, <var>224</var> ,</td></tr>
+<tr><th id="45">45</th><td>    <var>145</var>, <var>224</var>,  <var>81</var>, <var>206</var>, <var>163</var>,  <var>45</var>,  <var>63</var>,  <var>90</var>, <var>168</var>, <var>114</var>,  <var>59</var>,  <var>33</var>, <var>159</var>,  <var>95</var> ,</td></tr>
+<tr><th id="46">46</th><td>    <var>28</var>, <var>139</var>, <var>123</var>,  <var>98</var>, <var>125</var>, <var>196</var>,  <var>15</var>,  <var>70</var>, <var>194</var>, <var>253</var>,  <var>54</var>,  <var>14</var>, <var>109</var>, <var>226</var> ,</td></tr>
+<tr><th id="47">47</th><td>    <var>71</var>,  <var>17</var>, <var>161</var>,  <var>93</var>, <var>186</var>,  <var>87</var>, <var>244</var>, <var>138</var>,  <var>20</var>,  <var>52</var>, <var>123</var>, <var>251</var>,  <var>26</var>,  <var>36</var> ,</td></tr>
+<tr><th id="48">48</th><td>    <var>17</var>,  <var>46</var>,  <var>52</var>, <var>231</var>, <var>232</var>,  <var>76</var>,  <var>31</var>, <var>221</var>,  <var>84</var>,  <var>37</var>, <var>216</var>, <var>165</var>, <var>212</var>, <var>106</var> ,</td></tr>
+<tr><th id="49">49</th><td>    <var>197</var>, <var>242</var>,  <var>98</var>,  <var>43</var>,  <var>39</var>, <var>175</var>, <var>254</var>, <var>145</var>, <var>190</var>,  <var>84</var>, <var>118</var>, <var>222</var>, <var>187</var>, <var>136</var> ,</td></tr>
+<tr><th id="50">50</th><td>    <var>120</var>, <var>163</var>, <var>236</var>, <var>249</var></td></tr>
+<tr><th id="51">51</th><td>};</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><em>int</em>	<dfn class="decl def" id="rndindex" title='rndindex' data-ref="rndindex">rndindex</dfn> = <var>0</var>;</td></tr>
+<tr><th id="54">54</th><td><em>int</em>	<dfn class="decl def" id="prndindex" title='prndindex' data-ref="prndindex">prndindex</dfn> = <var>0</var>;</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><i>// Which one is deterministic?</i></td></tr>
+<tr><th id="57">57</th><td><em>int</em> <dfn class="decl def" id="P_Random" title='P_Random' data-ref="P_Random">P_Random</dfn> (<em>void</em>)</td></tr>
+<tr><th id="58">58</th><td>{</td></tr>
+<tr><th id="59">59</th><td>    <a class="ref" href="#prndindex" title='prndindex' data-ref="prndindex">prndindex</a> = (<a class="ref" href="#prndindex" title='prndindex' data-ref="prndindex">prndindex</a>+<var>1</var>)&amp;<var>0xff</var>;</td></tr>
+<tr><th id="60">60</th><td>    <b>return</b> <a class="ref" href="#rndtable" title='rndtable' data-ref="rndtable">rndtable</a>[<a class="ref" href="#prndindex" title='prndindex' data-ref="prndindex">prndindex</a>];</td></tr>
+<tr><th id="61">61</th><td>}</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><em>int</em> <dfn class="decl def" id="M_Random" title='M_Random' data-ref="M_Random">M_Random</dfn> (<em>void</em>)</td></tr>
+<tr><th id="64">64</th><td>{</td></tr>
+<tr><th id="65">65</th><td>    <a class="ref" href="#rndindex" title='rndindex' data-ref="rndindex">rndindex</a> = (<a class="ref" href="#rndindex" title='rndindex' data-ref="rndindex">rndindex</a>+<var>1</var>)&amp;<var>0xff</var>;</td></tr>
+<tr><th id="66">66</th><td>    <b>return</b> <a class="ref" href="#rndtable" title='rndtable' data-ref="rndtable">rndtable</a>[<a class="ref" href="#rndindex" title='rndindex' data-ref="rndindex">rndindex</a>];</td></tr>
+<tr><th id="67">67</th><td>}</td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><em>void</em> <dfn class="decl def" id="M_ClearRandom" title='M_ClearRandom' data-ref="M_ClearRandom">M_ClearRandom</dfn> (<em>void</em>)</td></tr>
+<tr><th id="70">70</th><td>{</td></tr>
+<tr><th id="71">71</th><td>    <a class="ref" href="#rndindex" title='rndindex' data-ref="rndindex">rndindex</a> = <a class="ref" href="#prndindex" title='prndindex' data-ref="prndindex">prndindex</a> = <var>0</var>;</td></tr>
+<tr><th id="72">72</th><td>}</td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

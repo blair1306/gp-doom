@@ -1,0 +1,10 @@
+Z_ChangeTag2|Z_ChangeTag2
+Z_CheckHeap|Z_CheckHeap
+Z_ClearZone|Z_ClearZone
+Z_DumpHeap|Z_DumpHeap
+Z_FileDumpHeap|Z_FileDumpHeap
+Z_Free|Z_Free
+Z_FreeMemory|Z_FreeMemory
+Z_FreeTags|Z_FreeTags
+Z_Init|Z_Init
+Z_Malloc|Z_Malloc

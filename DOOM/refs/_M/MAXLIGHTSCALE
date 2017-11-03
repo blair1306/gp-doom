@@ -1,0 +1,14 @@
+<dec f='codebrowser/r_main.h' l='72'/>
+<use f='codebrowser/r_main.h' l='77' u='c'/>
+<use f='codebrowser/r_main.h' l='78' u='c'/>
+<use f='codebrowser/r_main.c' l='116' u='c'/>
+<use f='codebrowser/r_main.c' l='117' u='c'/>
+<use f='codebrowser/r_main.c' l='748' u='c'/>
+<use f='codebrowser/r_main.c' l='855' u='c'/>
+<use f='codebrowser/r_segs.c' l='171' u='c'/>
+<use f='codebrowser/r_segs.c' l='172' u='c'/>
+<use f='codebrowser/r_segs.c' l='271' u='c'/>
+<use f='codebrowser/r_segs.c' l='272' u='c'/>
+<use f='codebrowser/r_things.c' l='599' u='c'/>
+<use f='codebrowser/r_things.c' l='600' u='c'/>
+<use f='codebrowser/r_things.c' l='735' u='c'/>

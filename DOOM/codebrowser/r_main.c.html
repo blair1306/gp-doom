@@ -1,0 +1,916 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>r_main.c source code [codebrowser/r_main.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/r_main.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='r_main.c.html'>r_main.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION:</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//	Rendering main loop and setup functions,</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">//	 utility functions (BSP, geometry, trigonometry).</i></td></tr>
+<tr><th id="22">22</th><td><i  data-doc="rcsid">//	See tables.c, too.</i></td></tr>
+<tr><th id="23">23</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="24">24</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><em>static</em> <em>const</em> <em>char</em> <dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [49]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id: r_main.c,v 1.5 1997/02/03 22:45:12 b1 Exp $"</q>;</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="32">32</th><td><u>#include <a href="../include/math.h.html">&lt;math.h&gt;</a></u></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><u>#include <a href="doomdef.h.html">"doomdef.h"</a></u></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="d_net.h.html">"d_net.h"</a></u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><u>#include <a href="m_bbox.h.html">"m_bbox.h"</a></u></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><u>#include <a href="r_local.h.html">"r_local.h"</a></u></td></tr>
+<tr><th id="41">41</th><td><u>#include <a href="r_sky.h.html">"r_sky.h"</a></u></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><i>// Fineangles in the SCREENWIDTH wide window.</i></td></tr>
+<tr><th id="48">48</th><td><u>#define <dfn class="macro" id="_M/FIELDOFVIEW" data-ref="_M/FIELDOFVIEW">FIELDOFVIEW</dfn>		2048</u>	</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td><em>int</em>			<dfn class="decl def" id="viewangleoffset" title='viewangleoffset' data-ref="viewangleoffset">viewangleoffset</dfn>;</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><i>// increment every time a check is made</i></td></tr>
+<tr><th id="55">55</th><td><em>int</em>			<dfn class="decl def" id="validcount" title='validcount' data-ref="validcount">validcount</dfn> = <var>1</var>;		</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td><a class="typedef" href="r_defs.h.html#lighttable_t" title='lighttable_t' data-type='byte' data-ref="lighttable_t">lighttable_t</a>*		<dfn class="decl def" id="fixedcolormap" title='fixedcolormap' data-ref="fixedcolormap">fixedcolormap</dfn>;</td></tr>
+<tr><th id="59">59</th><td><b>extern</b> <a class="typedef" href="r_defs.h.html#lighttable_t" title='lighttable_t' data-type='byte' data-ref="lighttable_t">lighttable_t</a>**	<dfn class="decl" id="walllights" title='walllights' data-ref="walllights">walllights</dfn>;</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><em>int</em>			<dfn class="decl def" id="centerx" title='centerx' data-ref="centerx">centerx</dfn>;</td></tr>
+<tr><th id="62">62</th><td><em>int</em>			<dfn class="decl def" id="centery" title='centery' data-ref="centery">centery</dfn>;</td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>			<dfn class="decl def" id="centerxfrac" title='centerxfrac' data-ref="centerxfrac">centerxfrac</dfn>;</td></tr>
+<tr><th id="65">65</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>			<dfn class="decl def" id="centeryfrac" title='centeryfrac' data-ref="centeryfrac">centeryfrac</dfn>;</td></tr>
+<tr><th id="66">66</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>			<dfn class="decl def" id="projection" title='projection' data-ref="projection">projection</dfn>;</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td><i>// just for profiling purposes</i></td></tr>
+<tr><th id="69">69</th><td><em>int</em>			<dfn class="decl def" id="framecount" title='framecount' data-ref="framecount">framecount</dfn>;	</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><em>int</em>			<dfn class="decl def" id="sscount" title='sscount' data-ref="sscount">sscount</dfn>;</td></tr>
+<tr><th id="72">72</th><td><em>int</em>			<dfn class="decl def" id="linecount" title='linecount' data-ref="linecount">linecount</dfn>;</td></tr>
+<tr><th id="73">73</th><td><em>int</em>			<dfn class="decl def" id="loopcount" title='loopcount' data-ref="loopcount">loopcount</dfn>;</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>			<dfn class="decl def" id="viewx" title='viewx' data-ref="viewx">viewx</dfn>;</td></tr>
+<tr><th id="76">76</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>			<dfn class="decl def" id="viewy" title='viewy' data-ref="viewy">viewy</dfn>;</td></tr>
+<tr><th id="77">77</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>			<dfn class="decl def" id="viewz" title='viewz' data-ref="viewz">viewz</dfn>;</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><a class="typedef" href="tables.h.html#angle_t" title='angle_t' data-type='unsigned int' data-ref="angle_t">angle_t</a>			<dfn class="decl def" id="viewangle" title='viewangle' data-ref="viewangle">viewangle</dfn>;</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>			<dfn class="decl def" id="viewcos" title='viewcos' data-ref="viewcos">viewcos</dfn>;</td></tr>
+<tr><th id="82">82</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>			<dfn class="decl def" id="viewsin" title='viewsin' data-ref="viewsin">viewsin</dfn>;</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><a class="typedef" href="d_player.h.html#player_t" title='player_t' data-type='struct player_s' data-ref="player_t">player_t</a>*		<dfn class="decl def" id="viewplayer" title='viewplayer' data-ref="viewplayer">viewplayer</dfn>;</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td><i>// 0 = high, 1 = low</i></td></tr>
+<tr><th id="87">87</th><td><em>int</em>			<dfn class="decl def" id="detailshift" title='detailshift' data-ref="detailshift">detailshift</dfn>;	</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td><i>//</i></td></tr>
+<tr><th id="90">90</th><td><i>// precalculated math tables</i></td></tr>
+<tr><th id="91">91</th><td><i>//</i></td></tr>
+<tr><th id="92">92</th><td><a class="typedef" href="tables.h.html#angle_t" title='angle_t' data-type='unsigned int' data-ref="angle_t">angle_t</a>			<dfn class="decl def" id="clipangle" title='clipangle' data-ref="clipangle">clipangle</dfn>;</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td><i>// The viewangletox[viewangle + FINEANGLES/4] lookup</i></td></tr>
+<tr><th id="95">95</th><td><i>// maps the visible view angles to screen X coordinates,</i></td></tr>
+<tr><th id="96">96</th><td><i>// flattening the arc to a flat projection plane.</i></td></tr>
+<tr><th id="97">97</th><td><i>// There will be many angles mapped to the same X. </i></td></tr>
+<tr><th id="98">98</th><td><em>int</em>			<dfn class="decl def" id="viewangletox" title='viewangletox' data-ref="viewangletox">viewangletox</dfn>[<a class="macro" href="tables.h.html#50" title="8192" data-ref="_M/FINEANGLES">FINEANGLES</a>/<var>2</var>];</td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td><i>// The xtoviewangleangle[] table maps a screen pixel</i></td></tr>
+<tr><th id="101">101</th><td><i>// to the lowest viewangle that maps back to x ranges</i></td></tr>
+<tr><th id="102">102</th><td><i>// from clipangle to -clipangle.</i></td></tr>
+<tr><th id="103">103</th><td><a class="typedef" href="tables.h.html#angle_t" title='angle_t' data-type='unsigned int' data-ref="angle_t">angle_t</a>			<dfn class="decl def" id="xtoviewangle" title='xtoviewangle' data-ref="xtoviewangle">xtoviewangle</dfn>[<a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>+<var>1</var>];</td></tr>
+<tr><th id="104">104</th><td></td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td><i>// UNUSED.</i></td></tr>
+<tr><th id="107">107</th><td><i>// The finetangentgent[angle+FINEANGLES/4] table</i></td></tr>
+<tr><th id="108">108</th><td><i>// holds the fixed_t tangent values for view angles,</i></td></tr>
+<tr><th id="109">109</th><td><i>// ranging from MININT to 0 to MAXINT.</i></td></tr>
+<tr><th id="110">110</th><td><i>// fixed_t		finetangent[FINEANGLES/2];</i></td></tr>
+<tr><th id="111">111</th><td><i></i></td></tr>
+<tr><th id="112">112</th><td><i>// fixed_t		finesine[5*FINEANGLES/4];</i></td></tr>
+<tr><th id="113">113</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>*		<dfn class="decl def" id="finecosine" title='finecosine' data-ref="finecosine">finecosine</dfn> = &amp;<a class="ref" href="tables.h.html#finesine" title='finesine' data-ref="finesine">finesine</a>[<a class="macro" href="tables.h.html#50" title="8192" data-ref="_M/FINEANGLES">FINEANGLES</a>/<var>4</var>];</td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td><a class="typedef" href="r_defs.h.html#lighttable_t" title='lighttable_t' data-type='byte' data-ref="lighttable_t">lighttable_t</a>*		<dfn class="decl def" id="scalelight" title='scalelight' data-ref="scalelight">scalelight</dfn>[<a class="macro" href="r_main.h.html#69" title="16" data-ref="_M/LIGHTLEVELS">LIGHTLEVELS</a>][<a class="macro" href="r_main.h.html#72" title="48" data-ref="_M/MAXLIGHTSCALE">MAXLIGHTSCALE</a>];</td></tr>
+<tr><th id="117">117</th><td><a class="typedef" href="r_defs.h.html#lighttable_t" title='lighttable_t' data-type='byte' data-ref="lighttable_t">lighttable_t</a>*		<dfn class="decl def" id="scalelightfixed" title='scalelightfixed' data-ref="scalelightfixed">scalelightfixed</dfn>[<a class="macro" href="r_main.h.html#72" title="48" data-ref="_M/MAXLIGHTSCALE">MAXLIGHTSCALE</a>];</td></tr>
+<tr><th id="118">118</th><td><a class="typedef" href="r_defs.h.html#lighttable_t" title='lighttable_t' data-type='byte' data-ref="lighttable_t">lighttable_t</a>*		<dfn class="decl def" id="zlight" title='zlight' data-ref="zlight">zlight</dfn>[<a class="macro" href="r_main.h.html#69" title="16" data-ref="_M/LIGHTLEVELS">LIGHTLEVELS</a>][<a class="macro" href="r_main.h.html#74" title="128" data-ref="_M/MAXLIGHTZ">MAXLIGHTZ</a>];</td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td><i>// bumped light from gun blasts</i></td></tr>
+<tr><th id="121">121</th><td><em>int</em>			<dfn class="decl def" id="extralight" title='extralight' data-ref="extralight">extralight</dfn>;			</td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td></td></tr>
+<tr><th id="125">125</th><td><em>void</em> (*<dfn class="decl def" id="colfunc" title='colfunc' data-ref="colfunc">colfunc</dfn>) (<em>void</em>);</td></tr>
+<tr><th id="126">126</th><td><em>void</em> (*<dfn class="decl def" id="basecolfunc" title='basecolfunc' data-ref="basecolfunc">basecolfunc</dfn>) (<em>void</em>);</td></tr>
+<tr><th id="127">127</th><td><em>void</em> (*<dfn class="decl def" id="fuzzcolfunc" title='fuzzcolfunc' data-ref="fuzzcolfunc">fuzzcolfunc</dfn>) (<em>void</em>);</td></tr>
+<tr><th id="128">128</th><td><em>void</em> (*<dfn class="decl def" id="transcolfunc" title='transcolfunc' data-ref="transcolfunc">transcolfunc</dfn>) (<em>void</em>);</td></tr>
+<tr><th id="129">129</th><td><em>void</em> (*<dfn class="decl def" id="spanfunc" title='spanfunc' data-ref="spanfunc">spanfunc</dfn>) (<em>void</em>);</td></tr>
+<tr><th id="130">130</th><td></td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td></td></tr>
+<tr><th id="133">133</th><td><i>//</i></td></tr>
+<tr><th id="134">134</th><td><i>// R_AddPointToBox</i></td></tr>
+<tr><th id="135">135</th><td><i>// Expand a given bbox</i></td></tr>
+<tr><th id="136">136</th><td><i>// so that it encloses a given point.</i></td></tr>
+<tr><th id="137">137</th><td><i>//</i></td></tr>
+<tr><th id="138">138</th><td><em>void</em></td></tr>
+<tr><th id="139">139</th><td><dfn class="decl def" id="R_AddPointToBox" title='R_AddPointToBox' data-ref="R_AddPointToBox">R_AddPointToBox</dfn></td></tr>
+<tr><th id="140">140</th><td>( <em>int</em>		<dfn class="local col1 decl" id="1x" title='x' data-type='int' data-ref="1x">x</dfn>,</td></tr>
+<tr><th id="141">141</th><td>  <em>int</em>		<dfn class="local col2 decl" id="2y" title='y' data-type='int' data-ref="2y">y</dfn>,</td></tr>
+<tr><th id="142">142</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>*	<dfn class="local col3 decl" id="3box" title='box' data-type='fixed_t *' data-ref="3box">box</dfn> )</td></tr>
+<tr><th id="143">143</th><td>{</td></tr>
+<tr><th id="144">144</th><td>    <b>if</b> (<a class="local col1 ref" href="#1x" title='x' data-ref="1x">x</a>&lt; <a class="local col3 ref" href="#3box" title='box' data-ref="3box">box</a>[<a class="enum" href="m_bbox.h.html#BOXLEFT" title='BOXLEFT' data-ref="BOXLEFT">BOXLEFT</a>])</td></tr>
+<tr><th id="145">145</th><td>	<a class="local col3 ref" href="#3box" title='box' data-ref="3box">box</a>[<a class="enum" href="m_bbox.h.html#BOXLEFT" title='BOXLEFT' data-ref="BOXLEFT">BOXLEFT</a>] = <a class="local col1 ref" href="#1x" title='x' data-ref="1x">x</a>;</td></tr>
+<tr><th id="146">146</th><td>    <b>if</b> (<a class="local col1 ref" href="#1x" title='x' data-ref="1x">x</a>&gt; <a class="local col3 ref" href="#3box" title='box' data-ref="3box">box</a>[<a class="enum" href="m_bbox.h.html#BOXRIGHT" title='BOXRIGHT' data-ref="BOXRIGHT">BOXRIGHT</a>])</td></tr>
+<tr><th id="147">147</th><td>	<a class="local col3 ref" href="#3box" title='box' data-ref="3box">box</a>[<a class="enum" href="m_bbox.h.html#BOXRIGHT" title='BOXRIGHT' data-ref="BOXRIGHT">BOXRIGHT</a>] = <a class="local col1 ref" href="#1x" title='x' data-ref="1x">x</a>;</td></tr>
+<tr><th id="148">148</th><td>    <b>if</b> (<a class="local col2 ref" href="#2y" title='y' data-ref="2y">y</a>&lt; <a class="local col3 ref" href="#3box" title='box' data-ref="3box">box</a>[<a class="enum" href="m_bbox.h.html#BOXBOTTOM" title='BOXBOTTOM' data-ref="BOXBOTTOM">BOXBOTTOM</a>])</td></tr>
+<tr><th id="149">149</th><td>	<a class="local col3 ref" href="#3box" title='box' data-ref="3box">box</a>[<a class="enum" href="m_bbox.h.html#BOXBOTTOM" title='BOXBOTTOM' data-ref="BOXBOTTOM">BOXBOTTOM</a>] = <a class="local col2 ref" href="#2y" title='y' data-ref="2y">y</a>;</td></tr>
+<tr><th id="150">150</th><td>    <b>if</b> (<a class="local col2 ref" href="#2y" title='y' data-ref="2y">y</a>&gt; <a class="local col3 ref" href="#3box" title='box' data-ref="3box">box</a>[<a class="enum" href="m_bbox.h.html#BOXTOP" title='BOXTOP' data-ref="BOXTOP">BOXTOP</a>])</td></tr>
+<tr><th id="151">151</th><td>	<a class="local col3 ref" href="#3box" title='box' data-ref="3box">box</a>[<a class="enum" href="m_bbox.h.html#BOXTOP" title='BOXTOP' data-ref="BOXTOP">BOXTOP</a>] = <a class="local col2 ref" href="#2y" title='y' data-ref="2y">y</a>;</td></tr>
+<tr><th id="152">152</th><td>}</td></tr>
+<tr><th id="153">153</th><td></td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td><i>//</i></td></tr>
+<tr><th id="156">156</th><td><i>// R_PointOnSide</i></td></tr>
+<tr><th id="157">157</th><td><i>// Traverse BSP (sub) tree,</i></td></tr>
+<tr><th id="158">158</th><td><i>//  check point against partition plane.</i></td></tr>
+<tr><th id="159">159</th><td><i>// Returns side 0 (front) or 1 (back).</i></td></tr>
+<tr><th id="160">160</th><td><i>//</i></td></tr>
+<tr><th id="161">161</th><td><em>int</em></td></tr>
+<tr><th id="162">162</th><td><dfn class="decl def" id="R_PointOnSide" title='R_PointOnSide' data-ref="R_PointOnSide">R_PointOnSide</dfn></td></tr>
+<tr><th id="163">163</th><td>( <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col4 decl" id="4x" title='x' data-type='fixed_t' data-ref="4x">x</dfn>,</td></tr>
+<tr><th id="164">164</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col5 decl" id="5y" title='y' data-type='fixed_t' data-ref="5y">y</dfn>,</td></tr>
+<tr><th id="165">165</th><td>  <a class="typedef" href="r_defs.h.html#node_t" title='node_t' data-type='struct node_t' data-ref="node_t">node_t</a>*	<dfn class="local col6 decl" id="6node" title='node' data-type='node_t *' data-ref="6node">node</dfn> )</td></tr>
+<tr><th id="166">166</th><td>{</td></tr>
+<tr><th id="167">167</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col7 decl" id="7dx" title='dx' data-type='fixed_t' data-ref="7dx">dx</dfn>;</td></tr>
+<tr><th id="168">168</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col8 decl" id="8dy" title='dy' data-type='fixed_t' data-ref="8dy">dy</dfn>;</td></tr>
+<tr><th id="169">169</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col9 decl" id="9left" title='left' data-type='fixed_t' data-ref="9left">left</dfn>;</td></tr>
+<tr><th id="170">170</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col0 decl" id="10right" title='right' data-type='fixed_t' data-ref="10right">right</dfn>;</td></tr>
+<tr><th id="171">171</th><td>	</td></tr>
+<tr><th id="172">172</th><td>    <b>if</b> (!<a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a>)</td></tr>
+<tr><th id="173">173</th><td>    {</td></tr>
+<tr><th id="174">174</th><td>	<b>if</b> (<a class="local col4 ref" href="#4x" title='x' data-ref="4x">x</a> &lt;= <a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>)</td></tr>
+<tr><th id="175">175</th><td>	    <b>return</b> <a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a> &gt; <var>0</var>;</td></tr>
+<tr><th id="176">176</th><td>	</td></tr>
+<tr><th id="177">177</th><td>	<b>return</b> <a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a> &lt; <var>0</var>;</td></tr>
+<tr><th id="178">178</th><td>    }</td></tr>
+<tr><th id="179">179</th><td>    <b>if</b> (!<a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a>)</td></tr>
+<tr><th id="180">180</th><td>    {</td></tr>
+<tr><th id="181">181</th><td>	<b>if</b> (<a class="local col5 ref" href="#5y" title='y' data-ref="5y">y</a> &lt;= <a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>)</td></tr>
+<tr><th id="182">182</th><td>	    <b>return</b> <a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a> &lt; <var>0</var>;</td></tr>
+<tr><th id="183">183</th><td>	</td></tr>
+<tr><th id="184">184</th><td>	<b>return</b> <a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a> &gt; <var>0</var>;</td></tr>
+<tr><th id="185">185</th><td>    }</td></tr>
+<tr><th id="186">186</th><td>	</td></tr>
+<tr><th id="187">187</th><td>    <a class="local col7 ref" href="#7dx" title='dx' data-ref="7dx">dx</a> = (<a class="local col4 ref" href="#4x" title='x' data-ref="4x">x</a> - <a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>);</td></tr>
+<tr><th id="188">188</th><td>    <a class="local col8 ref" href="#8dy" title='dy' data-ref="8dy">dy</a> = (<a class="local col5 ref" href="#5y" title='y' data-ref="5y">y</a> - <a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>);</td></tr>
+<tr><th id="189">189</th><td>	</td></tr>
+<tr><th id="190">190</th><td>    <i>// Try to quickly decide by looking at sign bits.</i></td></tr>
+<tr><th id="191">191</th><td>    <b>if</b> ( (<a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a> ^ <a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a> ^ <a class="local col7 ref" href="#7dx" title='dx' data-ref="7dx">dx</a> ^ <a class="local col8 ref" href="#8dy" title='dy' data-ref="8dy">dy</a>)&amp;<var>0x80000000</var> )</td></tr>
+<tr><th id="192">192</th><td>    {</td></tr>
+<tr><th id="193">193</th><td>	<b>if</b>  ( (<a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a> ^ <a class="local col7 ref" href="#7dx" title='dx' data-ref="7dx">dx</a>) &amp; <var>0x80000000</var> )</td></tr>
+<tr><th id="194">194</th><td>	{</td></tr>
+<tr><th id="195">195</th><td>	    <i>// (left is negative)</i></td></tr>
+<tr><th id="196">196</th><td>	    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="197">197</th><td>	}</td></tr>
+<tr><th id="198">198</th><td>	<b>return</b> <var>0</var>;</td></tr>
+<tr><th id="199">199</th><td>    }</td></tr>
+<tr><th id="200">200</th><td></td></tr>
+<tr><th id="201">201</th><td>    <a class="local col9 ref" href="#9left" title='left' data-ref="9left">left</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> ( <a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a>&gt;&gt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a> , <a class="local col7 ref" href="#7dx" title='dx' data-ref="7dx">dx</a> );</td></tr>
+<tr><th id="202">202</th><td>    <a class="local col0 ref" href="#10right" title='right' data-ref="10right">right</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> ( <a class="local col8 ref" href="#8dy" title='dy' data-ref="8dy">dy</a> , <a class="local col6 ref" href="#6node" title='node' data-ref="6node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a>&gt;&gt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a> );</td></tr>
+<tr><th id="203">203</th><td>	</td></tr>
+<tr><th id="204">204</th><td>    <b>if</b> (<a class="local col0 ref" href="#10right" title='right' data-ref="10right">right</a> &lt; <a class="local col9 ref" href="#9left" title='left' data-ref="9left">left</a>)</td></tr>
+<tr><th id="205">205</th><td>    {</td></tr>
+<tr><th id="206">206</th><td>	<i>// front side</i></td></tr>
+<tr><th id="207">207</th><td>	<b>return</b> <var>0</var>;</td></tr>
+<tr><th id="208">208</th><td>    }</td></tr>
+<tr><th id="209">209</th><td>    <i>// back side</i></td></tr>
+<tr><th id="210">210</th><td>    <b>return</b> <var>1</var>;			</td></tr>
+<tr><th id="211">211</th><td>}</td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td></td></tr>
+<tr><th id="214">214</th><td><em>int</em></td></tr>
+<tr><th id="215">215</th><td><dfn class="decl def" id="R_PointOnSegSide" title='R_PointOnSegSide' data-ref="R_PointOnSegSide">R_PointOnSegSide</dfn></td></tr>
+<tr><th id="216">216</th><td>( <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col1 decl" id="11x" title='x' data-type='fixed_t' data-ref="11x">x</dfn>,</td></tr>
+<tr><th id="217">217</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col2 decl" id="12y" title='y' data-type='fixed_t' data-ref="12y">y</dfn>,</td></tr>
+<tr><th id="218">218</th><td>  <a class="typedef" href="r_defs.h.html#seg_t" title='seg_t' data-type='struct seg_t' data-ref="seg_t">seg_t</a>*	<dfn class="local col3 decl" id="13line" title='line' data-type='seg_t *' data-ref="13line">line</dfn> )</td></tr>
+<tr><th id="219">219</th><td>{</td></tr>
+<tr><th id="220">220</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col4 decl" id="14lx" title='lx' data-type='fixed_t' data-ref="14lx">lx</dfn>;</td></tr>
+<tr><th id="221">221</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col5 decl" id="15ly" title='ly' data-type='fixed_t' data-ref="15ly">ly</dfn>;</td></tr>
+<tr><th id="222">222</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col6 decl" id="16ldx" title='ldx' data-type='fixed_t' data-ref="16ldx">ldx</dfn>;</td></tr>
+<tr><th id="223">223</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col7 decl" id="17ldy" title='ldy' data-type='fixed_t' data-ref="17ldy">ldy</dfn>;</td></tr>
+<tr><th id="224">224</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col8 decl" id="18dx" title='dx' data-type='fixed_t' data-ref="18dx">dx</dfn>;</td></tr>
+<tr><th id="225">225</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col9 decl" id="19dy" title='dy' data-type='fixed_t' data-ref="19dy">dy</dfn>;</td></tr>
+<tr><th id="226">226</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col0 decl" id="20left" title='left' data-type='fixed_t' data-ref="20left">left</dfn>;</td></tr>
+<tr><th id="227">227</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col1 decl" id="21right" title='right' data-type='fixed_t' data-ref="21right">right</dfn>;</td></tr>
+<tr><th id="228">228</th><td>	</td></tr>
+<tr><th id="229">229</th><td>    <a class="local col4 ref" href="#14lx" title='lx' data-ref="14lx">lx</a> = <a class="local col3 ref" href="#13line" title='line' data-ref="13line">line</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::v1" title='(anonymous struct)::v1' data-ref="(anonymous)::v1">v1</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>;</td></tr>
+<tr><th id="230">230</th><td>    <a class="local col5 ref" href="#15ly" title='ly' data-ref="15ly">ly</a> = <a class="local col3 ref" href="#13line" title='line' data-ref="13line">line</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::v1" title='(anonymous struct)::v1' data-ref="(anonymous)::v1">v1</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>;</td></tr>
+<tr><th id="231">231</th><td>	</td></tr>
+<tr><th id="232">232</th><td>    <a class="local col6 ref" href="#16ldx" title='ldx' data-ref="16ldx">ldx</a> = <a class="local col3 ref" href="#13line" title='line' data-ref="13line">line</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::v2" title='(anonymous struct)::v2' data-ref="(anonymous)::v2">v2</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a> - <a class="local col4 ref" href="#14lx" title='lx' data-ref="14lx">lx</a>;</td></tr>
+<tr><th id="233">233</th><td>    <a class="local col7 ref" href="#17ldy" title='ldy' data-ref="17ldy">ldy</a> = <a class="local col3 ref" href="#13line" title='line' data-ref="13line">line</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::v2" title='(anonymous struct)::v2' data-ref="(anonymous)::v2">v2</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a> - <a class="local col5 ref" href="#15ly" title='ly' data-ref="15ly">ly</a>;</td></tr>
+<tr><th id="234">234</th><td>	</td></tr>
+<tr><th id="235">235</th><td>    <b>if</b> (!<a class="local col6 ref" href="#16ldx" title='ldx' data-ref="16ldx">ldx</a>)</td></tr>
+<tr><th id="236">236</th><td>    {</td></tr>
+<tr><th id="237">237</th><td>	<b>if</b> (<a class="local col1 ref" href="#11x" title='x' data-ref="11x">x</a> &lt;= <a class="local col4 ref" href="#14lx" title='lx' data-ref="14lx">lx</a>)</td></tr>
+<tr><th id="238">238</th><td>	    <b>return</b> <a class="local col7 ref" href="#17ldy" title='ldy' data-ref="17ldy">ldy</a> &gt; <var>0</var>;</td></tr>
+<tr><th id="239">239</th><td>	</td></tr>
+<tr><th id="240">240</th><td>	<b>return</b> <a class="local col7 ref" href="#17ldy" title='ldy' data-ref="17ldy">ldy</a> &lt; <var>0</var>;</td></tr>
+<tr><th id="241">241</th><td>    }</td></tr>
+<tr><th id="242">242</th><td>    <b>if</b> (!<a class="local col7 ref" href="#17ldy" title='ldy' data-ref="17ldy">ldy</a>)</td></tr>
+<tr><th id="243">243</th><td>    {</td></tr>
+<tr><th id="244">244</th><td>	<b>if</b> (<a class="local col2 ref" href="#12y" title='y' data-ref="12y">y</a> &lt;= <a class="local col5 ref" href="#15ly" title='ly' data-ref="15ly">ly</a>)</td></tr>
+<tr><th id="245">245</th><td>	    <b>return</b> <a class="local col6 ref" href="#16ldx" title='ldx' data-ref="16ldx">ldx</a> &lt; <var>0</var>;</td></tr>
+<tr><th id="246">246</th><td>	</td></tr>
+<tr><th id="247">247</th><td>	<b>return</b> <a class="local col6 ref" href="#16ldx" title='ldx' data-ref="16ldx">ldx</a> &gt; <var>0</var>;</td></tr>
+<tr><th id="248">248</th><td>    }</td></tr>
+<tr><th id="249">249</th><td>	</td></tr>
+<tr><th id="250">250</th><td>    <a class="local col8 ref" href="#18dx" title='dx' data-ref="18dx">dx</a> = (<a class="local col1 ref" href="#11x" title='x' data-ref="11x">x</a> - <a class="local col4 ref" href="#14lx" title='lx' data-ref="14lx">lx</a>);</td></tr>
+<tr><th id="251">251</th><td>    <a class="local col9 ref" href="#19dy" title='dy' data-ref="19dy">dy</a> = (<a class="local col2 ref" href="#12y" title='y' data-ref="12y">y</a> - <a class="local col5 ref" href="#15ly" title='ly' data-ref="15ly">ly</a>);</td></tr>
+<tr><th id="252">252</th><td>	</td></tr>
+<tr><th id="253">253</th><td>    <i>// Try to quickly decide by looking at sign bits.</i></td></tr>
+<tr><th id="254">254</th><td>    <b>if</b> ( (<a class="local col7 ref" href="#17ldy" title='ldy' data-ref="17ldy">ldy</a> ^ <a class="local col6 ref" href="#16ldx" title='ldx' data-ref="16ldx">ldx</a> ^ <a class="local col8 ref" href="#18dx" title='dx' data-ref="18dx">dx</a> ^ <a class="local col9 ref" href="#19dy" title='dy' data-ref="19dy">dy</a>)&amp;<var>0x80000000</var> )</td></tr>
+<tr><th id="255">255</th><td>    {</td></tr>
+<tr><th id="256">256</th><td>	<b>if</b>  ( (<a class="local col7 ref" href="#17ldy" title='ldy' data-ref="17ldy">ldy</a> ^ <a class="local col8 ref" href="#18dx" title='dx' data-ref="18dx">dx</a>) &amp; <var>0x80000000</var> )</td></tr>
+<tr><th id="257">257</th><td>	{</td></tr>
+<tr><th id="258">258</th><td>	    <i>// (left is negative)</i></td></tr>
+<tr><th id="259">259</th><td>	    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="260">260</th><td>	}</td></tr>
+<tr><th id="261">261</th><td>	<b>return</b> <var>0</var>;</td></tr>
+<tr><th id="262">262</th><td>    }</td></tr>
+<tr><th id="263">263</th><td></td></tr>
+<tr><th id="264">264</th><td>    <a class="local col0 ref" href="#20left" title='left' data-ref="20left">left</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> ( <a class="local col7 ref" href="#17ldy" title='ldy' data-ref="17ldy">ldy</a>&gt;&gt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a> , <a class="local col8 ref" href="#18dx" title='dx' data-ref="18dx">dx</a> );</td></tr>
+<tr><th id="265">265</th><td>    <a class="local col1 ref" href="#21right" title='right' data-ref="21right">right</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> ( <a class="local col9 ref" href="#19dy" title='dy' data-ref="19dy">dy</a> , <a class="local col6 ref" href="#16ldx" title='ldx' data-ref="16ldx">ldx</a>&gt;&gt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a> );</td></tr>
+<tr><th id="266">266</th><td>	</td></tr>
+<tr><th id="267">267</th><td>    <b>if</b> (<a class="local col1 ref" href="#21right" title='right' data-ref="21right">right</a> &lt; <a class="local col0 ref" href="#20left" title='left' data-ref="20left">left</a>)</td></tr>
+<tr><th id="268">268</th><td>    {</td></tr>
+<tr><th id="269">269</th><td>	<i>// front side</i></td></tr>
+<tr><th id="270">270</th><td>	<b>return</b> <var>0</var>;</td></tr>
+<tr><th id="271">271</th><td>    }</td></tr>
+<tr><th id="272">272</th><td>    <i>// back side</i></td></tr>
+<tr><th id="273">273</th><td>    <b>return</b> <var>1</var>;			</td></tr>
+<tr><th id="274">274</th><td>}</td></tr>
+<tr><th id="275">275</th><td></td></tr>
+<tr><th id="276">276</th><td></td></tr>
+<tr><th id="277">277</th><td><i>//</i></td></tr>
+<tr><th id="278">278</th><td><i>// R_PointToAngle</i></td></tr>
+<tr><th id="279">279</th><td><i>// To get a global angle from cartesian coordinates,</i></td></tr>
+<tr><th id="280">280</th><td><i>//  the coordinates are flipped until they are in</i></td></tr>
+<tr><th id="281">281</th><td><i>//  the first octant of the coordinate system, then</i></td></tr>
+<tr><th id="282">282</th><td><i>//  the y (&lt;=x) is scaled and divided by x to get a</i></td></tr>
+<tr><th id="283">283</th><td><i>//  tangent (slope) value which is looked up in the</i></td></tr>
+<tr><th id="284">284</th><td><i>//  tantoangle[] table.</i></td></tr>
+<tr><th id="285">285</th><td><i></i></td></tr>
+<tr><th id="286">286</th><td><i>//</i></td></tr>
+<tr><th id="287">287</th><td></td></tr>
+<tr><th id="288">288</th><td></td></tr>
+<tr><th id="289">289</th><td></td></tr>
+<tr><th id="290">290</th><td></td></tr>
+<tr><th id="291">291</th><td><a class="typedef" href="tables.h.html#angle_t" title='angle_t' data-type='unsigned int' data-ref="angle_t">angle_t</a></td></tr>
+<tr><th id="292">292</th><td><dfn class="decl def" id="R_PointToAngle" title='R_PointToAngle' data-ref="R_PointToAngle">R_PointToAngle</dfn></td></tr>
+<tr><th id="293">293</th><td>( <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col2 decl" id="22x" title='x' data-type='fixed_t' data-ref="22x">x</dfn>,</td></tr>
+<tr><th id="294">294</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col3 decl" id="23y" title='y' data-type='fixed_t' data-ref="23y">y</dfn> )</td></tr>
+<tr><th id="295">295</th><td>{	</td></tr>
+<tr><th id="296">296</th><td>    <a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a> -= <a class="ref" href="r_state.h.html#viewx" title='viewx' data-ref="viewx">viewx</a>;</td></tr>
+<tr><th id="297">297</th><td>    <a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a> -= <a class="ref" href="r_state.h.html#viewy" title='viewy' data-ref="viewy">viewy</a>;</td></tr>
+<tr><th id="298">298</th><td>    </td></tr>
+<tr><th id="299">299</th><td>    <b>if</b> ( (!<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>) &amp;&amp; (!<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>) )</td></tr>
+<tr><th id="300">300</th><td>	<b>return</b> <var>0</var>;</td></tr>
+<tr><th id="301">301</th><td></td></tr>
+<tr><th id="302">302</th><td>    <b>if</b> (<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>&gt;= <var>0</var>)</td></tr>
+<tr><th id="303">303</th><td>    {</td></tr>
+<tr><th id="304">304</th><td>	<i>// x &gt;=0</i></td></tr>
+<tr><th id="305">305</th><td>	<b>if</b> (<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>&gt;= <var>0</var>)</td></tr>
+<tr><th id="306">306</th><td>	{</td></tr>
+<tr><th id="307">307</th><td>	    <i>// y&gt;= 0</i></td></tr>
+<tr><th id="308">308</th><td></td></tr>
+<tr><th id="309">309</th><td>	    <b>if</b> (<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>&gt;<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>)</td></tr>
+<tr><th id="310">310</th><td>	    {</td></tr>
+<tr><th id="311">311</th><td>		<i>// octant 0</i></td></tr>
+<tr><th id="312">312</th><td>		<b>return</b> <a class="ref" href="tables.h.html#tantoangle" title='tantoangle' data-ref="tantoangle">tantoangle</a>[ <a class="ref" href="tables.h.html#SlopeDiv" title='SlopeDiv' data-ref="SlopeDiv">SlopeDiv</a>(<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>,<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>)];</td></tr>
+<tr><th id="313">313</th><td>	    }</td></tr>
+<tr><th id="314">314</th><td>	    <b>else</b></td></tr>
+<tr><th id="315">315</th><td>	    {</td></tr>
+<tr><th id="316">316</th><td>		<i>// octant 1</i></td></tr>
+<tr><th id="317">317</th><td>		<b>return</b> <a class="macro" href="tables.h.html#69" title="0x40000000" data-ref="_M/ANG90">ANG90</a>-<var>1</var>-<a class="ref" href="tables.h.html#tantoangle" title='tantoangle' data-ref="tantoangle">tantoangle</a>[ <a class="ref" href="tables.h.html#SlopeDiv" title='SlopeDiv' data-ref="SlopeDiv">SlopeDiv</a>(<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>,<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>)];</td></tr>
+<tr><th id="318">318</th><td>	    }</td></tr>
+<tr><th id="319">319</th><td>	}</td></tr>
+<tr><th id="320">320</th><td>	<b>else</b></td></tr>
+<tr><th id="321">321</th><td>	{</td></tr>
+<tr><th id="322">322</th><td>	    <i>// y&lt;0</i></td></tr>
+<tr><th id="323">323</th><td>	    <a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a> = -<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>;</td></tr>
+<tr><th id="324">324</th><td></td></tr>
+<tr><th id="325">325</th><td>	    <b>if</b> (<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>&gt;<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>)</td></tr>
+<tr><th id="326">326</th><td>	    {</td></tr>
+<tr><th id="327">327</th><td>		<i>// octant 8</i></td></tr>
+<tr><th id="328">328</th><td>		<b>return</b> -<a class="ref" href="tables.h.html#tantoangle" title='tantoangle' data-ref="tantoangle">tantoangle</a>[<a class="ref" href="tables.h.html#SlopeDiv" title='SlopeDiv' data-ref="SlopeDiv">SlopeDiv</a>(<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>,<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>)];</td></tr>
+<tr><th id="329">329</th><td>	    }</td></tr>
+<tr><th id="330">330</th><td>	    <b>else</b></td></tr>
+<tr><th id="331">331</th><td>	    {</td></tr>
+<tr><th id="332">332</th><td>		<i>// octant 7</i></td></tr>
+<tr><th id="333">333</th><td>		<b>return</b> <a class="macro" href="tables.h.html#71" title="0xc0000000" data-ref="_M/ANG270">ANG270</a>+<a class="ref" href="tables.h.html#tantoangle" title='tantoangle' data-ref="tantoangle">tantoangle</a>[ <a class="ref" href="tables.h.html#SlopeDiv" title='SlopeDiv' data-ref="SlopeDiv">SlopeDiv</a>(<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>,<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>)];</td></tr>
+<tr><th id="334">334</th><td>	    }</td></tr>
+<tr><th id="335">335</th><td>	}</td></tr>
+<tr><th id="336">336</th><td>    }</td></tr>
+<tr><th id="337">337</th><td>    <b>else</b></td></tr>
+<tr><th id="338">338</th><td>    {</td></tr>
+<tr><th id="339">339</th><td>	<i>// x&lt;0</i></td></tr>
+<tr><th id="340">340</th><td>	<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a> = -<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>;</td></tr>
+<tr><th id="341">341</th><td></td></tr>
+<tr><th id="342">342</th><td>	<b>if</b> (<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>&gt;= <var>0</var>)</td></tr>
+<tr><th id="343">343</th><td>	{</td></tr>
+<tr><th id="344">344</th><td>	    <i>// y&gt;= 0</i></td></tr>
+<tr><th id="345">345</th><td>	    <b>if</b> (<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>&gt;<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>)</td></tr>
+<tr><th id="346">346</th><td>	    {</td></tr>
+<tr><th id="347">347</th><td>		<i>// octant 3</i></td></tr>
+<tr><th id="348">348</th><td>		<b>return</b> <a class="macro" href="tables.h.html#70" title="0x80000000" data-ref="_M/ANG180">ANG180</a>-<var>1</var>-<a class="ref" href="tables.h.html#tantoangle" title='tantoangle' data-ref="tantoangle">tantoangle</a>[ <a class="ref" href="tables.h.html#SlopeDiv" title='SlopeDiv' data-ref="SlopeDiv">SlopeDiv</a>(<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>,<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>)];</td></tr>
+<tr><th id="349">349</th><td>	    }</td></tr>
+<tr><th id="350">350</th><td>	    <b>else</b></td></tr>
+<tr><th id="351">351</th><td>	    {</td></tr>
+<tr><th id="352">352</th><td>		<i>// octant 2</i></td></tr>
+<tr><th id="353">353</th><td>		<b>return</b> <a class="macro" href="tables.h.html#69" title="0x40000000" data-ref="_M/ANG90">ANG90</a>+ <a class="ref" href="tables.h.html#tantoangle" title='tantoangle' data-ref="tantoangle">tantoangle</a>[ <a class="ref" href="tables.h.html#SlopeDiv" title='SlopeDiv' data-ref="SlopeDiv">SlopeDiv</a>(<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>,<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>)];</td></tr>
+<tr><th id="354">354</th><td>	    }</td></tr>
+<tr><th id="355">355</th><td>	}</td></tr>
+<tr><th id="356">356</th><td>	<b>else</b></td></tr>
+<tr><th id="357">357</th><td>	{</td></tr>
+<tr><th id="358">358</th><td>	    <i>// y&lt;0</i></td></tr>
+<tr><th id="359">359</th><td>	    <a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a> = -<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>;</td></tr>
+<tr><th id="360">360</th><td></td></tr>
+<tr><th id="361">361</th><td>	    <b>if</b> (<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>&gt;<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>)</td></tr>
+<tr><th id="362">362</th><td>	    {</td></tr>
+<tr><th id="363">363</th><td>		<i>// octant 4</i></td></tr>
+<tr><th id="364">364</th><td>		<b>return</b> <a class="macro" href="tables.h.html#70" title="0x80000000" data-ref="_M/ANG180">ANG180</a>+<a class="ref" href="tables.h.html#tantoangle" title='tantoangle' data-ref="tantoangle">tantoangle</a>[ <a class="ref" href="tables.h.html#SlopeDiv" title='SlopeDiv' data-ref="SlopeDiv">SlopeDiv</a>(<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>,<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>)];</td></tr>
+<tr><th id="365">365</th><td>	    }</td></tr>
+<tr><th id="366">366</th><td>	    <b>else</b></td></tr>
+<tr><th id="367">367</th><td>	    {</td></tr>
+<tr><th id="368">368</th><td>		 <i>// octant 5</i></td></tr>
+<tr><th id="369">369</th><td>		<b>return</b> <a class="macro" href="tables.h.html#71" title="0xc0000000" data-ref="_M/ANG270">ANG270</a>-<var>1</var>-<a class="ref" href="tables.h.html#tantoangle" title='tantoangle' data-ref="tantoangle">tantoangle</a>[ <a class="ref" href="tables.h.html#SlopeDiv" title='SlopeDiv' data-ref="SlopeDiv">SlopeDiv</a>(<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a>,<a class="local col3 ref" href="#23y" title='y' data-ref="23y">y</a>)];</td></tr>
+<tr><th id="370">370</th><td>	    }</td></tr>
+<tr><th id="371">371</th><td>	}</td></tr>
+<tr><th id="372">372</th><td>    }</td></tr>
+<tr><th id="373">373</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="374">374</th><td>}</td></tr>
+<tr><th id="375">375</th><td></td></tr>
+<tr><th id="376">376</th><td></td></tr>
+<tr><th id="377">377</th><td><a class="typedef" href="tables.h.html#angle_t" title='angle_t' data-type='unsigned int' data-ref="angle_t">angle_t</a></td></tr>
+<tr><th id="378">378</th><td><dfn class="decl def" id="R_PointToAngle2" title='R_PointToAngle2' data-ref="R_PointToAngle2">R_PointToAngle2</dfn></td></tr>
+<tr><th id="379">379</th><td>( <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col4 decl" id="24x1" title='x1' data-type='fixed_t' data-ref="24x1">x1</dfn>,</td></tr>
+<tr><th id="380">380</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col5 decl" id="25y1" title='y1' data-type='fixed_t' data-ref="25y1">y1</dfn>,</td></tr>
+<tr><th id="381">381</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col6 decl" id="26x2" title='x2' data-type='fixed_t' data-ref="26x2">x2</dfn>,</td></tr>
+<tr><th id="382">382</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col7 decl" id="27y2" title='y2' data-type='fixed_t' data-ref="27y2">y2</dfn> )</td></tr>
+<tr><th id="383">383</th><td>{	</td></tr>
+<tr><th id="384">384</th><td>    <a class="ref" href="r_state.h.html#viewx" title='viewx' data-ref="viewx">viewx</a> = <a class="local col4 ref" href="#24x1" title='x1' data-ref="24x1">x1</a>;</td></tr>
+<tr><th id="385">385</th><td>    <a class="ref" href="r_state.h.html#viewy" title='viewy' data-ref="viewy">viewy</a> = <a class="local col5 ref" href="#25y1" title='y1' data-ref="25y1">y1</a>;</td></tr>
+<tr><th id="386">386</th><td>    </td></tr>
+<tr><th id="387">387</th><td>    <b>return</b> <a class="ref" href="#R_PointToAngle" title='R_PointToAngle' data-ref="R_PointToAngle">R_PointToAngle</a> (<a class="local col6 ref" href="#26x2" title='x2' data-ref="26x2">x2</a>, <a class="local col7 ref" href="#27y2" title='y2' data-ref="27y2">y2</a>);</td></tr>
+<tr><th id="388">388</th><td>}</td></tr>
+<tr><th id="389">389</th><td></td></tr>
+<tr><th id="390">390</th><td></td></tr>
+<tr><th id="391">391</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a></td></tr>
+<tr><th id="392">392</th><td><dfn class="decl def" id="R_PointToDist" title='R_PointToDist' data-ref="R_PointToDist">R_PointToDist</dfn></td></tr>
+<tr><th id="393">393</th><td>( <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col8 decl" id="28x" title='x' data-type='fixed_t' data-ref="28x">x</dfn>,</td></tr>
+<tr><th id="394">394</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col9 decl" id="29y" title='y' data-type='fixed_t' data-ref="29y">y</dfn> )</td></tr>
+<tr><th id="395">395</th><td>{</td></tr>
+<tr><th id="396">396</th><td>    <em>int</em>		<dfn class="local col0 decl" id="30angle" title='angle' data-type='int' data-ref="30angle">angle</dfn>;</td></tr>
+<tr><th id="397">397</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col1 decl" id="31dx" title='dx' data-type='fixed_t' data-ref="31dx">dx</dfn>;</td></tr>
+<tr><th id="398">398</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col2 decl" id="32dy" title='dy' data-type='fixed_t' data-ref="32dy">dy</dfn>;</td></tr>
+<tr><th id="399">399</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col3 decl" id="33temp" title='temp' data-type='fixed_t' data-ref="33temp">temp</dfn>;</td></tr>
+<tr><th id="400">400</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col4 decl" id="34dist" title='dist' data-type='fixed_t' data-ref="34dist">dist</dfn>;</td></tr>
+<tr><th id="401">401</th><td>	</td></tr>
+<tr><th id="402">402</th><td>    <a class="local col1 ref" href="#31dx" title='dx' data-ref="31dx">dx</a> = <a class="ref" href="../include/stdlib.h.html#abs" title='abs' data-ref="abs">abs</a>(<a class="local col8 ref" href="#28x" title='x' data-ref="28x">x</a> - <a class="ref" href="r_state.h.html#viewx" title='viewx' data-ref="viewx">viewx</a>);</td></tr>
+<tr><th id="403">403</th><td>    <a class="local col2 ref" href="#32dy" title='dy' data-ref="32dy">dy</a> = <a class="ref" href="../include/stdlib.h.html#abs" title='abs' data-ref="abs">abs</a>(<a class="local col9 ref" href="#29y" title='y' data-ref="29y">y</a> - <a class="ref" href="r_state.h.html#viewy" title='viewy' data-ref="viewy">viewy</a>);</td></tr>
+<tr><th id="404">404</th><td>	</td></tr>
+<tr><th id="405">405</th><td>    <b>if</b> (<a class="local col2 ref" href="#32dy" title='dy' data-ref="32dy">dy</a>&gt;<a class="local col1 ref" href="#31dx" title='dx' data-ref="31dx">dx</a>)</td></tr>
+<tr><th id="406">406</th><td>    {</td></tr>
+<tr><th id="407">407</th><td>	<a class="local col3 ref" href="#33temp" title='temp' data-ref="33temp">temp</a> = <a class="local col1 ref" href="#31dx" title='dx' data-ref="31dx">dx</a>;</td></tr>
+<tr><th id="408">408</th><td>	<a class="local col1 ref" href="#31dx" title='dx' data-ref="31dx">dx</a> = <a class="local col2 ref" href="#32dy" title='dy' data-ref="32dy">dy</a>;</td></tr>
+<tr><th id="409">409</th><td>	<a class="local col2 ref" href="#32dy" title='dy' data-ref="32dy">dy</a> = <a class="local col3 ref" href="#33temp" title='temp' data-ref="33temp">temp</a>;</td></tr>
+<tr><th id="410">410</th><td>    }</td></tr>
+<tr><th id="411">411</th><td>	</td></tr>
+<tr><th id="412">412</th><td>    <a class="local col0 ref" href="#30angle" title='angle' data-ref="30angle">angle</a> = (<a class="ref" href="tables.h.html#tantoangle" title='tantoangle' data-ref="tantoangle">tantoangle</a>[ <a class="ref" href="m_fixed.h.html#FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</a>(<a class="local col2 ref" href="#32dy" title='dy' data-ref="32dy">dy</a>,<a class="local col1 ref" href="#31dx" title='dx' data-ref="31dx">dx</a>)&gt;&gt;<a class="macro" href="tables.h.html#76" title="(16-11)" data-ref="_M/DBITS">DBITS</a> ]+<a class="macro" href="tables.h.html#69" title="0x40000000" data-ref="_M/ANG90">ANG90</a>) &gt;&gt; <a class="macro" href="tables.h.html#55" title="19" data-ref="_M/ANGLETOFINESHIFT">ANGLETOFINESHIFT</a>;</td></tr>
+<tr><th id="413">413</th><td></td></tr>
+<tr><th id="414">414</th><td>    <i>// use as cosine</i></td></tr>
+<tr><th id="415">415</th><td>    <a class="local col4 ref" href="#34dist" title='dist' data-ref="34dist">dist</a> = <a class="ref" href="m_fixed.h.html#FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</a> (<a class="local col1 ref" href="#31dx" title='dx' data-ref="31dx">dx</a>, <a class="ref" href="tables.h.html#finesine" title='finesine' data-ref="finesine">finesine</a>[<a class="local col0 ref" href="#30angle" title='angle' data-ref="30angle">angle</a>] );	</td></tr>
+<tr><th id="416">416</th><td>	</td></tr>
+<tr><th id="417">417</th><td>    <b>return</b> <a class="local col4 ref" href="#34dist" title='dist' data-ref="34dist">dist</a>;</td></tr>
+<tr><th id="418">418</th><td>}</td></tr>
+<tr><th id="419">419</th><td></td></tr>
+<tr><th id="420">420</th><td></td></tr>
+<tr><th id="421">421</th><td></td></tr>
+<tr><th id="422">422</th><td></td></tr>
+<tr><th id="423">423</th><td><i>//</i></td></tr>
+<tr><th id="424">424</th><td><i>// R_InitPointToAngle</i></td></tr>
+<tr><th id="425">425</th><td><i>//</i></td></tr>
+<tr><th id="426">426</th><td><em>void</em> <dfn class="decl def" id="R_InitPointToAngle" title='R_InitPointToAngle' data-ref="R_InitPointToAngle">R_InitPointToAngle</dfn> (<em>void</em>)</td></tr>
+<tr><th id="427">427</th><td>{</td></tr>
+<tr><th id="428">428</th><td>    <i>// UNUSED - now getting from tables.c</i></td></tr>
+<tr><th id="429">429</th><td><u>#<span data-ppcond="429">if</span> 0</u></td></tr>
+<tr><th id="430">430</th><td>    <em>int</em>	i;</td></tr>
+<tr><th id="431">431</th><td>    <em>long</em>	t;</td></tr>
+<tr><th id="432">432</th><td>    <em>float</em>	f;</td></tr>
+<tr><th id="433">433</th><td><i>//</i></td></tr>
+<tr><th id="434">434</th><td><i>// slope (tangent) to angle lookup</i></td></tr>
+<tr><th id="435">435</th><td><i>//</i></td></tr>
+<tr><th id="436">436</th><td>    <b>for</b> (i=<var>0</var> ; i&lt;=SLOPERANGE ; i++)</td></tr>
+<tr><th id="437">437</th><td>    {</td></tr>
+<tr><th id="438">438</th><td>	f = atan( (<em>float</em>)i/SLOPERANGE )/(<var>3.141592657</var>*<var>2</var>);</td></tr>
+<tr><th id="439">439</th><td>	t = <var>0xffffffff</var>*f;</td></tr>
+<tr><th id="440">440</th><td>	tantoangle[i] = t;</td></tr>
+<tr><th id="441">441</th><td>    }</td></tr>
+<tr><th id="442">442</th><td><u>#<span data-ppcond="429">endif</span></u></td></tr>
+<tr><th id="443">443</th><td>}</td></tr>
+<tr><th id="444">444</th><td></td></tr>
+<tr><th id="445">445</th><td></td></tr>
+<tr><th id="446">446</th><td><i>//</i></td></tr>
+<tr><th id="447">447</th><td><i>// R_ScaleFromGlobalAngle</i></td></tr>
+<tr><th id="448">448</th><td><i>// Returns the texture mapping scale</i></td></tr>
+<tr><th id="449">449</th><td><i>//  for the current line (horizontal span)</i></td></tr>
+<tr><th id="450">450</th><td><i>//  at the given angle.</i></td></tr>
+<tr><th id="451">451</th><td><i>// rw_distance must be calculated first.</i></td></tr>
+<tr><th id="452">452</th><td><i>//</i></td></tr>
+<tr><th id="453">453</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a> <dfn class="decl def" id="R_ScaleFromGlobalAngle" title='R_ScaleFromGlobalAngle' data-ref="R_ScaleFromGlobalAngle">R_ScaleFromGlobalAngle</dfn> (<a class="typedef" href="tables.h.html#angle_t" title='angle_t' data-type='unsigned int' data-ref="angle_t">angle_t</a> <dfn class="local col5 decl" id="35visangle" title='visangle' data-type='angle_t' data-ref="35visangle">visangle</dfn>)</td></tr>
+<tr><th id="454">454</th><td>{</td></tr>
+<tr><th id="455">455</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col6 decl" id="36scale" title='scale' data-type='fixed_t' data-ref="36scale">scale</dfn>;</td></tr>
+<tr><th id="456">456</th><td>    <em>int</em>			<dfn class="local col7 decl" id="37anglea" title='anglea' data-type='int' data-ref="37anglea">anglea</dfn>;</td></tr>
+<tr><th id="457">457</th><td>    <em>int</em>			<dfn class="local col8 decl" id="38angleb" title='angleb' data-type='int' data-ref="38angleb">angleb</dfn>;</td></tr>
+<tr><th id="458">458</th><td>    <em>int</em>			<dfn class="local col9 decl" id="39sinea" title='sinea' data-type='int' data-ref="39sinea">sinea</dfn>;</td></tr>
+<tr><th id="459">459</th><td>    <em>int</em>			<dfn class="local col0 decl" id="40sineb" title='sineb' data-type='int' data-ref="40sineb">sineb</dfn>;</td></tr>
+<tr><th id="460">460</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col1 decl" id="41num" title='num' data-type='fixed_t' data-ref="41num">num</dfn>;</td></tr>
+<tr><th id="461">461</th><td>    <em>int</em>			<dfn class="local col2 decl" id="42den" title='den' data-type='int' data-ref="42den">den</dfn>;</td></tr>
+<tr><th id="462">462</th><td></td></tr>
+<tr><th id="463">463</th><td>    <i>// UNUSED</i></td></tr>
+<tr><th id="464">464</th><td><u>#<span data-ppcond="464">if</span> 0</u></td></tr>
+<tr><th id="465">465</th><td>{</td></tr>
+<tr><th id="466">466</th><td>    fixed_t		dist;</td></tr>
+<tr><th id="467">467</th><td>    fixed_t		z;</td></tr>
+<tr><th id="468">468</th><td>    fixed_t		sinv;</td></tr>
+<tr><th id="469">469</th><td>    fixed_t		cosv;</td></tr>
+<tr><th id="470">470</th><td>	</td></tr>
+<tr><th id="471">471</th><td>    sinv = finesine[(visangle-rw_normalangle)&gt;&gt;ANGLETOFINESHIFT];	</td></tr>
+<tr><th id="472">472</th><td>    dist = FixedDiv (rw_distance, sinv);</td></tr>
+<tr><th id="473">473</th><td>    cosv = finecosine[(viewangle-visangle)&gt;&gt;ANGLETOFINESHIFT];</td></tr>
+<tr><th id="474">474</th><td>    z = abs(FixedMul (dist, cosv));</td></tr>
+<tr><th id="475">475</th><td>    scale = FixedDiv(projection, z);</td></tr>
+<tr><th id="476">476</th><td>    <b>return</b> scale;</td></tr>
+<tr><th id="477">477</th><td>}</td></tr>
+<tr><th id="478">478</th><td><u>#<span data-ppcond="464">endif</span></u></td></tr>
+<tr><th id="479">479</th><td></td></tr>
+<tr><th id="480">480</th><td>    <a class="local col7 ref" href="#37anglea" title='anglea' data-ref="37anglea">anglea</a> = <a class="macro" href="tables.h.html#69" title="0x40000000" data-ref="_M/ANG90">ANG90</a> + (<a class="local col5 ref" href="#35visangle" title='visangle' data-ref="35visangle">visangle</a>-<a class="ref" href="r_state.h.html#viewangle" title='viewangle' data-ref="viewangle">viewangle</a>);</td></tr>
+<tr><th id="481">481</th><td>    <a class="local col8 ref" href="#38angleb" title='angleb' data-ref="38angleb">angleb</a> = <a class="macro" href="tables.h.html#69" title="0x40000000" data-ref="_M/ANG90">ANG90</a> + (<a class="local col5 ref" href="#35visangle" title='visangle' data-ref="35visangle">visangle</a>-<a class="ref" href="r_state.h.html#rw_normalangle" title='rw_normalangle' data-ref="rw_normalangle">rw_normalangle</a>);</td></tr>
+<tr><th id="482">482</th><td></td></tr>
+<tr><th id="483">483</th><td>    <i>// both sines are allways positive</i></td></tr>
+<tr><th id="484">484</th><td>    <a class="local col9 ref" href="#39sinea" title='sinea' data-ref="39sinea">sinea</a> = <a class="ref" href="tables.h.html#finesine" title='finesine' data-ref="finesine">finesine</a>[<a class="local col7 ref" href="#37anglea" title='anglea' data-ref="37anglea">anglea</a>&gt;&gt;<a class="macro" href="tables.h.html#55" title="19" data-ref="_M/ANGLETOFINESHIFT">ANGLETOFINESHIFT</a>];	</td></tr>
+<tr><th id="485">485</th><td>    <a class="local col0 ref" href="#40sineb" title='sineb' data-ref="40sineb">sineb</a> = <a class="ref" href="tables.h.html#finesine" title='finesine' data-ref="finesine">finesine</a>[<a class="local col8 ref" href="#38angleb" title='angleb' data-ref="38angleb">angleb</a>&gt;&gt;<a class="macro" href="tables.h.html#55" title="19" data-ref="_M/ANGLETOFINESHIFT">ANGLETOFINESHIFT</a>];</td></tr>
+<tr><th id="486">486</th><td>    <a class="local col1 ref" href="#41num" title='num' data-ref="41num">num</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a>(<a class="ref" href="r_main.h.html#projection" title='projection' data-ref="projection">projection</a>,<a class="local col0 ref" href="#40sineb" title='sineb' data-ref="40sineb">sineb</a>)&lt;&lt;<a class="ref" href="r_main.h.html#detailshift" title='detailshift' data-ref="detailshift">detailshift</a>;</td></tr>
+<tr><th id="487">487</th><td>    <a class="local col2 ref" href="#42den" title='den' data-ref="42den">den</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a>(<a class="ref" href="r_state.h.html#rw_distance" title='rw_distance' data-ref="rw_distance">rw_distance</a>,<a class="local col9 ref" href="#39sinea" title='sinea' data-ref="39sinea">sinea</a>);</td></tr>
+<tr><th id="488">488</th><td></td></tr>
+<tr><th id="489">489</th><td>    <b>if</b> (<a class="local col2 ref" href="#42den" title='den' data-ref="42den">den</a> &gt; <a class="local col1 ref" href="#41num" title='num' data-ref="41num">num</a>&gt;&gt;<var>16</var>)</td></tr>
+<tr><th id="490">490</th><td>    {</td></tr>
+<tr><th id="491">491</th><td>	<a class="local col6 ref" href="#36scale" title='scale' data-ref="36scale">scale</a> = <a class="ref" href="m_fixed.h.html#FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</a> (<a class="local col1 ref" href="#41num" title='num' data-ref="41num">num</a>, <a class="local col2 ref" href="#42den" title='den' data-ref="42den">den</a>);</td></tr>
+<tr><th id="492">492</th><td></td></tr>
+<tr><th id="493">493</th><td>	<b>if</b> (<a class="local col6 ref" href="#36scale" title='scale' data-ref="36scale">scale</a> &gt; <var>64</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>)</td></tr>
+<tr><th id="494">494</th><td>	    <a class="local col6 ref" href="#36scale" title='scale' data-ref="36scale">scale</a> = <var>64</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="495">495</th><td>	<b>else</b> <b>if</b> (<a class="local col6 ref" href="#36scale" title='scale' data-ref="36scale">scale</a> &lt; <var>256</var>)</td></tr>
+<tr><th id="496">496</th><td>	    <a class="local col6 ref" href="#36scale" title='scale' data-ref="36scale">scale</a> = <var>256</var>;</td></tr>
+<tr><th id="497">497</th><td>    }</td></tr>
+<tr><th id="498">498</th><td>    <b>else</b></td></tr>
+<tr><th id="499">499</th><td>	<a class="local col6 ref" href="#36scale" title='scale' data-ref="36scale">scale</a> = <var>64</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="500">500</th><td>	</td></tr>
+<tr><th id="501">501</th><td>    <b>return</b> <a class="local col6 ref" href="#36scale" title='scale' data-ref="36scale">scale</a>;</td></tr>
+<tr><th id="502">502</th><td>}</td></tr>
+<tr><th id="503">503</th><td></td></tr>
+<tr><th id="504">504</th><td></td></tr>
+<tr><th id="505">505</th><td></td></tr>
+<tr><th id="506">506</th><td><i>//</i></td></tr>
+<tr><th id="507">507</th><td><i>// R_InitTables</i></td></tr>
+<tr><th id="508">508</th><td><i>//</i></td></tr>
+<tr><th id="509">509</th><td><em>void</em> <dfn class="decl def" id="R_InitTables" title='R_InitTables' data-ref="R_InitTables">R_InitTables</dfn> (<em>void</em>)</td></tr>
+<tr><th id="510">510</th><td>{</td></tr>
+<tr><th id="511">511</th><td>    <i>// UNUSED: now getting from tables.c</i></td></tr>
+<tr><th id="512">512</th><td><u>#<span data-ppcond="512">if</span> 0</u></td></tr>
+<tr><th id="513">513</th><td>    <em>int</em>		i;</td></tr>
+<tr><th id="514">514</th><td>    <em>float</em>	a;</td></tr>
+<tr><th id="515">515</th><td>    <em>float</em>	fv;</td></tr>
+<tr><th id="516">516</th><td>    <em>int</em>		t;</td></tr>
+<tr><th id="517">517</th><td>    </td></tr>
+<tr><th id="518">518</th><td>    <i>// viewangle tangent table</i></td></tr>
+<tr><th id="519">519</th><td>    <b>for</b> (i=<var>0</var> ; i&lt;FINEANGLES/<var>2</var> ; i++)</td></tr>
+<tr><th id="520">520</th><td>    {</td></tr>
+<tr><th id="521">521</th><td>	a = (i-FINEANGLES/<var>4</var>+<var>0.5</var>)*PI*<var>2</var>/FINEANGLES;</td></tr>
+<tr><th id="522">522</th><td>	fv = FRACUNIT*tan (a);</td></tr>
+<tr><th id="523">523</th><td>	t = fv;</td></tr>
+<tr><th id="524">524</th><td>	finetangent[i] = t;</td></tr>
+<tr><th id="525">525</th><td>    }</td></tr>
+<tr><th id="526">526</th><td>    </td></tr>
+<tr><th id="527">527</th><td>    <i>// finesine table</i></td></tr>
+<tr><th id="528">528</th><td>    <b>for</b> (i=<var>0</var> ; i&lt;<var>5</var>*FINEANGLES/<var>4</var> ; i++)</td></tr>
+<tr><th id="529">529</th><td>    {</td></tr>
+<tr><th id="530">530</th><td>	<i>// OPTIMIZE: mirror...</i></td></tr>
+<tr><th id="531">531</th><td>	a = (i+<var>0.5</var>)*PI*<var>2</var>/FINEANGLES;</td></tr>
+<tr><th id="532">532</th><td>	t = FRACUNIT*sin (a);</td></tr>
+<tr><th id="533">533</th><td>	finesine[i] = t;</td></tr>
+<tr><th id="534">534</th><td>    }</td></tr>
+<tr><th id="535">535</th><td><u>#<span data-ppcond="512">endif</span></u></td></tr>
+<tr><th id="536">536</th><td></td></tr>
+<tr><th id="537">537</th><td>}</td></tr>
+<tr><th id="538">538</th><td></td></tr>
+<tr><th id="539">539</th><td></td></tr>
+<tr><th id="540">540</th><td></td></tr>
+<tr><th id="541">541</th><td><i>//</i></td></tr>
+<tr><th id="542">542</th><td><i>// R_InitTextureMapping</i></td></tr>
+<tr><th id="543">543</th><td><i>//</i></td></tr>
+<tr><th id="544">544</th><td><em>void</em> <dfn class="decl def" id="R_InitTextureMapping" title='R_InitTextureMapping' data-ref="R_InitTextureMapping">R_InitTextureMapping</dfn> (<em>void</em>)</td></tr>
+<tr><th id="545">545</th><td>{</td></tr>
+<tr><th id="546">546</th><td>    <em>int</em>			<dfn class="local col3 decl" id="43i" title='i' data-type='int' data-ref="43i">i</dfn>;</td></tr>
+<tr><th id="547">547</th><td>    <em>int</em>			<dfn class="local col4 decl" id="44x" title='x' data-type='int' data-ref="44x">x</dfn>;</td></tr>
+<tr><th id="548">548</th><td>    <em>int</em>			<dfn class="local col5 decl" id="45t" title='t' data-type='int' data-ref="45t">t</dfn>;</td></tr>
+<tr><th id="549">549</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col6 decl" id="46focallength" title='focallength' data-type='fixed_t' data-ref="46focallength">focallength</dfn>;</td></tr>
+<tr><th id="550">550</th><td>    </td></tr>
+<tr><th id="551">551</th><td>    <i>// Use tangent table to generate viewangletox:</i></td></tr>
+<tr><th id="552">552</th><td><i>    //  viewangletox will give the next greatest x</i></td></tr>
+<tr><th id="553">553</th><td><i>    //  after the view angle.</i></td></tr>
+<tr><th id="554">554</th><td><i>    //</i></td></tr>
+<tr><th id="555">555</th><td><i>    // Calc focallength</i></td></tr>
+<tr><th id="556">556</th><td><i>    //  so FIELDOFVIEW angles covers SCREENWIDTH.</i></td></tr>
+<tr><th id="557">557</th><td>    <a class="local col6 ref" href="#46focallength" title='focallength' data-ref="46focallength">focallength</a> = <a class="ref" href="m_fixed.h.html#FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</a> (<a class="ref" href="r_main.h.html#centerxfrac" title='centerxfrac' data-ref="centerxfrac">centerxfrac</a>,</td></tr>
+<tr><th id="558">558</th><td>			    <a class="ref" href="tables.h.html#finetangent" title='finetangent' data-ref="finetangent">finetangent</a>[<a class="macro" href="tables.h.html#50" title="8192" data-ref="_M/FINEANGLES">FINEANGLES</a>/<var>4</var>+<a class="macro" href="#48" title="2048" data-ref="_M/FIELDOFVIEW">FIELDOFVIEW</a>/<var>2</var>] );</td></tr>
+<tr><th id="559">559</th><td>	</td></tr>
+<tr><th id="560">560</th><td>    <b>for</b> (<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>=<var>0</var> ; <a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>&lt;<a class="macro" href="tables.h.html#50" title="8192" data-ref="_M/FINEANGLES">FINEANGLES</a>/<var>2</var> ; <a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>++)</td></tr>
+<tr><th id="561">561</th><td>    {</td></tr>
+<tr><th id="562">562</th><td>	<b>if</b> (<a class="ref" href="tables.h.html#finetangent" title='finetangent' data-ref="finetangent">finetangent</a>[<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>] &gt; <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>*<var>2</var>)</td></tr>
+<tr><th id="563">563</th><td>	    <a class="local col5 ref" href="#45t" title='t' data-ref="45t">t</a> = -<var>1</var>;</td></tr>
+<tr><th id="564">564</th><td>	<b>else</b> <b>if</b> (<a class="ref" href="tables.h.html#finetangent" title='finetangent' data-ref="finetangent">finetangent</a>[<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>] &lt; -<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>*<var>2</var>)</td></tr>
+<tr><th id="565">565</th><td>	    <a class="local col5 ref" href="#45t" title='t' data-ref="45t">t</a> = <a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>+<var>1</var>;</td></tr>
+<tr><th id="566">566</th><td>	<b>else</b></td></tr>
+<tr><th id="567">567</th><td>	{</td></tr>
+<tr><th id="568">568</th><td>	    <a class="local col5 ref" href="#45t" title='t' data-ref="45t">t</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> (<a class="ref" href="tables.h.html#finetangent" title='finetangent' data-ref="finetangent">finetangent</a>[<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>], <a class="local col6 ref" href="#46focallength" title='focallength' data-ref="46focallength">focallength</a>);</td></tr>
+<tr><th id="569">569</th><td>	    <a class="local col5 ref" href="#45t" title='t' data-ref="45t">t</a> = (<a class="ref" href="r_main.h.html#centerxfrac" title='centerxfrac' data-ref="centerxfrac">centerxfrac</a> - <a class="local col5 ref" href="#45t" title='t' data-ref="45t">t</a>+<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>-<var>1</var>)&gt;&gt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>;</td></tr>
+<tr><th id="570">570</th><td></td></tr>
+<tr><th id="571">571</th><td>	    <b>if</b> (<a class="local col5 ref" href="#45t" title='t' data-ref="45t">t</a> &lt; -<var>1</var>)</td></tr>
+<tr><th id="572">572</th><td>		<a class="local col5 ref" href="#45t" title='t' data-ref="45t">t</a> = -<var>1</var>;</td></tr>
+<tr><th id="573">573</th><td>	    <b>else</b> <b>if</b> (<a class="local col5 ref" href="#45t" title='t' data-ref="45t">t</a>&gt;<a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>+<var>1</var>)</td></tr>
+<tr><th id="574">574</th><td>		<a class="local col5 ref" href="#45t" title='t' data-ref="45t">t</a> = <a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>+<var>1</var>;</td></tr>
+<tr><th id="575">575</th><td>	}</td></tr>
+<tr><th id="576">576</th><td>	<a class="ref" href="r_state.h.html#viewangletox" title='viewangletox' data-ref="viewangletox">viewangletox</a>[<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>] = <a class="local col5 ref" href="#45t" title='t' data-ref="45t">t</a>;</td></tr>
+<tr><th id="577">577</th><td>    }</td></tr>
+<tr><th id="578">578</th><td>    </td></tr>
+<tr><th id="579">579</th><td>    <i>// Scan viewangletox[] to generate xtoviewangle[]:</i></td></tr>
+<tr><th id="580">580</th><td><i>    //  xtoviewangle will give the smallest view angle</i></td></tr>
+<tr><th id="581">581</th><td><i>    //  that maps to x.	</i></td></tr>
+<tr><th id="582">582</th><td>    <b>for</b> (<a class="local col4 ref" href="#44x" title='x' data-ref="44x">x</a>=<var>0</var>;<a class="local col4 ref" href="#44x" title='x' data-ref="44x">x</a>&lt;=<a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>;<a class="local col4 ref" href="#44x" title='x' data-ref="44x">x</a>++)</td></tr>
+<tr><th id="583">583</th><td>    {</td></tr>
+<tr><th id="584">584</th><td>	<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a> = <var>0</var>;</td></tr>
+<tr><th id="585">585</th><td>	<b>while</b> (<a class="ref" href="r_state.h.html#viewangletox" title='viewangletox' data-ref="viewangletox">viewangletox</a>[<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>]&gt;<a class="local col4 ref" href="#44x" title='x' data-ref="44x">x</a>)</td></tr>
+<tr><th id="586">586</th><td>	    <a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>++;</td></tr>
+<tr><th id="587">587</th><td>	<a class="ref" href="r_state.h.html#xtoviewangle" title='xtoviewangle' data-ref="xtoviewangle">xtoviewangle</a>[<a class="local col4 ref" href="#44x" title='x' data-ref="44x">x</a>] = (<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>&lt;&lt;<a class="macro" href="tables.h.html#55" title="19" data-ref="_M/ANGLETOFINESHIFT">ANGLETOFINESHIFT</a>)-<a class="macro" href="tables.h.html#69" title="0x40000000" data-ref="_M/ANG90">ANG90</a>;</td></tr>
+<tr><th id="588">588</th><td>    }</td></tr>
+<tr><th id="589">589</th><td>    </td></tr>
+<tr><th id="590">590</th><td>    <i>// Take out the fencepost cases from viewangletox.</i></td></tr>
+<tr><th id="591">591</th><td>    <b>for</b> (<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>=<var>0</var> ; <a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>&lt;<a class="macro" href="tables.h.html#50" title="8192" data-ref="_M/FINEANGLES">FINEANGLES</a>/<var>2</var> ; <a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>++)</td></tr>
+<tr><th id="592">592</th><td>    {</td></tr>
+<tr><th id="593">593</th><td>	<a class="local col5 ref" href="#45t" title='t' data-ref="45t">t</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> (<a class="ref" href="tables.h.html#finetangent" title='finetangent' data-ref="finetangent">finetangent</a>[<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>], <a class="local col6 ref" href="#46focallength" title='focallength' data-ref="46focallength">focallength</a>);</td></tr>
+<tr><th id="594">594</th><td>	<a class="local col5 ref" href="#45t" title='t' data-ref="45t">t</a> = <a class="ref" href="r_main.h.html#centerx" title='centerx' data-ref="centerx">centerx</a> - <a class="local col5 ref" href="#45t" title='t' data-ref="45t">t</a>;</td></tr>
+<tr><th id="595">595</th><td>	</td></tr>
+<tr><th id="596">596</th><td>	<b>if</b> (<a class="ref" href="r_state.h.html#viewangletox" title='viewangletox' data-ref="viewangletox">viewangletox</a>[<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>] == -<var>1</var>)</td></tr>
+<tr><th id="597">597</th><td>	    <a class="ref" href="r_state.h.html#viewangletox" title='viewangletox' data-ref="viewangletox">viewangletox</a>[<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>] = <var>0</var>;</td></tr>
+<tr><th id="598">598</th><td>	<b>else</b> <b>if</b> (<a class="ref" href="r_state.h.html#viewangletox" title='viewangletox' data-ref="viewangletox">viewangletox</a>[<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>] == <a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>+<var>1</var>)</td></tr>
+<tr><th id="599">599</th><td>	    <a class="ref" href="r_state.h.html#viewangletox" title='viewangletox' data-ref="viewangletox">viewangletox</a>[<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>]  = <a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>;</td></tr>
+<tr><th id="600">600</th><td>    }</td></tr>
+<tr><th id="601">601</th><td>	</td></tr>
+<tr><th id="602">602</th><td>    <a class="ref" href="r_state.h.html#clipangle" title='clipangle' data-ref="clipangle">clipangle</a> = <a class="ref" href="r_state.h.html#xtoviewangle" title='xtoviewangle' data-ref="xtoviewangle">xtoviewangle</a>[<var>0</var>];</td></tr>
+<tr><th id="603">603</th><td>}</td></tr>
+<tr><th id="604">604</th><td></td></tr>
+<tr><th id="605">605</th><td></td></tr>
+<tr><th id="606">606</th><td></td></tr>
+<tr><th id="607">607</th><td><i>//</i></td></tr>
+<tr><th id="608">608</th><td><i>// R_InitLightTables</i></td></tr>
+<tr><th id="609">609</th><td><i>// Only inits the zlight table,</i></td></tr>
+<tr><th id="610">610</th><td><i>//  because the scalelight table changes with view size.</i></td></tr>
+<tr><th id="611">611</th><td><i>//</i></td></tr>
+<tr><th id="612">612</th><td><u>#define <dfn class="macro" id="_M/DISTMAP" data-ref="_M/DISTMAP">DISTMAP</dfn>		2</u></td></tr>
+<tr><th id="613">613</th><td></td></tr>
+<tr><th id="614">614</th><td><em>void</em> <dfn class="decl def" id="R_InitLightTables" title='R_InitLightTables' data-ref="R_InitLightTables">R_InitLightTables</dfn> (<em>void</em>)</td></tr>
+<tr><th id="615">615</th><td>{</td></tr>
+<tr><th id="616">616</th><td>    <em>int</em>		<dfn class="local col7 decl" id="47i" title='i' data-type='int' data-ref="47i">i</dfn>;</td></tr>
+<tr><th id="617">617</th><td>    <em>int</em>		<dfn class="local col8 decl" id="48j" title='j' data-type='int' data-ref="48j">j</dfn>;</td></tr>
+<tr><th id="618">618</th><td>    <em>int</em>		<dfn class="local col9 decl" id="49level" title='level' data-type='int' data-ref="49level">level</dfn>;</td></tr>
+<tr><th id="619">619</th><td>    <em>int</em>		<dfn class="local col0 decl" id="50startmap" title='startmap' data-type='int' data-ref="50startmap">startmap</dfn>; 	</td></tr>
+<tr><th id="620">620</th><td>    <em>int</em>		<dfn class="local col1 decl" id="51scale" title='scale' data-type='int' data-ref="51scale">scale</dfn>;</td></tr>
+<tr><th id="621">621</th><td>    </td></tr>
+<tr><th id="622">622</th><td>    <i>// Calculate the light levels to use</i></td></tr>
+<tr><th id="623">623</th><td><i>    //  for each level / distance combination.</i></td></tr>
+<tr><th id="624">624</th><td>    <b>for</b> (<a class="local col7 ref" href="#47i" title='i' data-ref="47i">i</a>=<var>0</var> ; <a class="local col7 ref" href="#47i" title='i' data-ref="47i">i</a>&lt; <a class="macro" href="r_main.h.html#69" title="16" data-ref="_M/LIGHTLEVELS">LIGHTLEVELS</a> ; <a class="local col7 ref" href="#47i" title='i' data-ref="47i">i</a>++)</td></tr>
+<tr><th id="625">625</th><td>    {</td></tr>
+<tr><th id="626">626</th><td>	<a class="local col0 ref" href="#50startmap" title='startmap' data-ref="50startmap">startmap</a> = ((<a class="macro" href="r_main.h.html#69" title="16" data-ref="_M/LIGHTLEVELS">LIGHTLEVELS</a>-<var>1</var>-<a class="local col7 ref" href="#47i" title='i' data-ref="47i">i</a>)*<var>2</var>)*<a class="macro" href="r_main.h.html#87" title="32" data-ref="_M/NUMCOLORMAPS">NUMCOLORMAPS</a>/<a class="macro" href="r_main.h.html#69" title="16" data-ref="_M/LIGHTLEVELS">LIGHTLEVELS</a>;</td></tr>
+<tr><th id="627">627</th><td>	<b>for</b> (<a class="local col8 ref" href="#48j" title='j' data-ref="48j">j</a>=<var>0</var> ; <a class="local col8 ref" href="#48j" title='j' data-ref="48j">j</a>&lt;<a class="macro" href="r_main.h.html#74" title="128" data-ref="_M/MAXLIGHTZ">MAXLIGHTZ</a> ; <a class="local col8 ref" href="#48j" title='j' data-ref="48j">j</a>++)</td></tr>
+<tr><th id="628">628</th><td>	{</td></tr>
+<tr><th id="629">629</th><td>	    <a class="local col1 ref" href="#51scale" title='scale' data-ref="51scale">scale</a> = <a class="ref" href="m_fixed.h.html#FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</a> ((<a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>/<var>2</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>), (<a class="local col8 ref" href="#48j" title='j' data-ref="48j">j</a>+<var>1</var>)&lt;&lt;<a class="macro" href="r_main.h.html#75" title="20" data-ref="_M/LIGHTZSHIFT">LIGHTZSHIFT</a>);</td></tr>
+<tr><th id="630">630</th><td>	    <a class="local col1 ref" href="#51scale" title='scale' data-ref="51scale">scale</a> &gt;&gt;= <a class="macro" href="r_main.h.html#73" title="12" data-ref="_M/LIGHTSCALESHIFT">LIGHTSCALESHIFT</a>;</td></tr>
+<tr><th id="631">631</th><td>	    <a class="local col9 ref" href="#49level" title='level' data-ref="49level">level</a> = <a class="local col0 ref" href="#50startmap" title='startmap' data-ref="50startmap">startmap</a> - <a class="local col1 ref" href="#51scale" title='scale' data-ref="51scale">scale</a>/<a class="macro" href="#612" title="2" data-ref="_M/DISTMAP">DISTMAP</a>;</td></tr>
+<tr><th id="632">632</th><td>	    </td></tr>
+<tr><th id="633">633</th><td>	    <b>if</b> (<a class="local col9 ref" href="#49level" title='level' data-ref="49level">level</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="634">634</th><td>		<a class="local col9 ref" href="#49level" title='level' data-ref="49level">level</a> = <var>0</var>;</td></tr>
+<tr><th id="635">635</th><td></td></tr>
+<tr><th id="636">636</th><td>	    <b>if</b> (<a class="local col9 ref" href="#49level" title='level' data-ref="49level">level</a> &gt;= <a class="macro" href="r_main.h.html#87" title="32" data-ref="_M/NUMCOLORMAPS">NUMCOLORMAPS</a>)</td></tr>
+<tr><th id="637">637</th><td>		<a class="local col9 ref" href="#49level" title='level' data-ref="49level">level</a> = <a class="macro" href="r_main.h.html#87" title="32" data-ref="_M/NUMCOLORMAPS">NUMCOLORMAPS</a>-<var>1</var>;</td></tr>
+<tr><th id="638">638</th><td></td></tr>
+<tr><th id="639">639</th><td>	    <a class="ref" href="r_main.h.html#zlight" title='zlight' data-ref="zlight">zlight</a>[<a class="local col7 ref" href="#47i" title='i' data-ref="47i">i</a>][<a class="local col8 ref" href="#48j" title='j' data-ref="48j">j</a>] = <a class="ref" href="r_state.h.html#colormaps" title='colormaps' data-ref="colormaps">colormaps</a> + <a class="local col9 ref" href="#49level" title='level' data-ref="49level">level</a>*<var>256</var>;</td></tr>
+<tr><th id="640">640</th><td>	}</td></tr>
+<tr><th id="641">641</th><td>    }</td></tr>
+<tr><th id="642">642</th><td>}</td></tr>
+<tr><th id="643">643</th><td></td></tr>
+<tr><th id="644">644</th><td></td></tr>
+<tr><th id="645">645</th><td></td></tr>
+<tr><th id="646">646</th><td><i>//</i></td></tr>
+<tr><th id="647">647</th><td><i>// R_SetViewSize</i></td></tr>
+<tr><th id="648">648</th><td><i>// Do not really change anything here,</i></td></tr>
+<tr><th id="649">649</th><td><i>//  because it might be in the middle of a refresh.</i></td></tr>
+<tr><th id="650">650</th><td><i>// The change will take effect next refresh.</i></td></tr>
+<tr><th id="651">651</th><td><i>//</i></td></tr>
+<tr><th id="652">652</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="decl def" id="setsizeneeded" title='setsizeneeded' data-ref="setsizeneeded">setsizeneeded</dfn>;</td></tr>
+<tr><th id="653">653</th><td><em>int</em>		<dfn class="decl def" id="setblocks" title='setblocks' data-ref="setblocks">setblocks</dfn>;</td></tr>
+<tr><th id="654">654</th><td><em>int</em>		<dfn class="decl def" id="setdetail" title='setdetail' data-ref="setdetail">setdetail</dfn>;</td></tr>
+<tr><th id="655">655</th><td></td></tr>
+<tr><th id="656">656</th><td></td></tr>
+<tr><th id="657">657</th><td><em>void</em></td></tr>
+<tr><th id="658">658</th><td><dfn class="decl def" id="R_SetViewSize" title='R_SetViewSize' data-ref="R_SetViewSize">R_SetViewSize</dfn></td></tr>
+<tr><th id="659">659</th><td>( <em>int</em>		<dfn class="local col2 decl" id="52blocks" title='blocks' data-type='int' data-ref="52blocks">blocks</dfn>,</td></tr>
+<tr><th id="660">660</th><td>  <em>int</em>		<dfn class="local col3 decl" id="53detail" title='detail' data-type='int' data-ref="53detail">detail</dfn> )</td></tr>
+<tr><th id="661">661</th><td>{</td></tr>
+<tr><th id="662">662</th><td>    <a class="ref" href="#setsizeneeded" title='setsizeneeded' data-ref="setsizeneeded">setsizeneeded</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="663">663</th><td>    <a class="ref" href="#setblocks" title='setblocks' data-ref="setblocks">setblocks</a> = <a class="local col2 ref" href="#52blocks" title='blocks' data-ref="52blocks">blocks</a>;</td></tr>
+<tr><th id="664">664</th><td>    <a class="ref" href="#setdetail" title='setdetail' data-ref="setdetail">setdetail</a> = <a class="local col3 ref" href="#53detail" title='detail' data-ref="53detail">detail</a>;</td></tr>
+<tr><th id="665">665</th><td>}</td></tr>
+<tr><th id="666">666</th><td></td></tr>
+<tr><th id="667">667</th><td></td></tr>
+<tr><th id="668">668</th><td><i>//</i></td></tr>
+<tr><th id="669">669</th><td><i>// R_ExecuteSetViewSize</i></td></tr>
+<tr><th id="670">670</th><td><i>//</i></td></tr>
+<tr><th id="671">671</th><td><em>void</em> <dfn class="decl def" id="R_ExecuteSetViewSize" title='R_ExecuteSetViewSize' data-ref="R_ExecuteSetViewSize">R_ExecuteSetViewSize</dfn> (<em>void</em>)</td></tr>
+<tr><th id="672">672</th><td>{</td></tr>
+<tr><th id="673">673</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col4 decl" id="54cosadj" title='cosadj' data-type='fixed_t' data-ref="54cosadj">cosadj</dfn>;</td></tr>
+<tr><th id="674">674</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col5 decl" id="55dy" title='dy' data-type='fixed_t' data-ref="55dy">dy</dfn>;</td></tr>
+<tr><th id="675">675</th><td>    <em>int</em>		<dfn class="local col6 decl" id="56i" title='i' data-type='int' data-ref="56i">i</dfn>;</td></tr>
+<tr><th id="676">676</th><td>    <em>int</em>		<dfn class="local col7 decl" id="57j" title='j' data-type='int' data-ref="57j">j</dfn>;</td></tr>
+<tr><th id="677">677</th><td>    <em>int</em>		<dfn class="local col8 decl" id="58level" title='level' data-type='int' data-ref="58level">level</dfn>;</td></tr>
+<tr><th id="678">678</th><td>    <em>int</em>		<dfn class="local col9 decl" id="59startmap" title='startmap' data-type='int' data-ref="59startmap">startmap</dfn>; 	</td></tr>
+<tr><th id="679">679</th><td></td></tr>
+<tr><th id="680">680</th><td>    <a class="ref" href="#setsizeneeded" title='setsizeneeded' data-ref="setsizeneeded">setsizeneeded</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="681">681</th><td></td></tr>
+<tr><th id="682">682</th><td>    <b>if</b> (<a class="ref" href="#setblocks" title='setblocks' data-ref="setblocks">setblocks</a> == <var>11</var>)</td></tr>
+<tr><th id="683">683</th><td>    {</td></tr>
+<tr><th id="684">684</th><td>	<a class="ref" href="r_state.h.html#scaledviewwidth" title='scaledviewwidth' data-ref="scaledviewwidth">scaledviewwidth</a> = <a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>;</td></tr>
+<tr><th id="685">685</th><td>	<a class="ref" href="r_state.h.html#viewheight" title='viewheight' data-ref="viewheight">viewheight</a> = <a class="macro" href="doomdef.h.html#112" title="200" data-ref="_M/SCREENHEIGHT">SCREENHEIGHT</a>;</td></tr>
+<tr><th id="686">686</th><td>    }</td></tr>
+<tr><th id="687">687</th><td>    <b>else</b></td></tr>
+<tr><th id="688">688</th><td>    {</td></tr>
+<tr><th id="689">689</th><td>	<a class="ref" href="r_state.h.html#scaledviewwidth" title='scaledviewwidth' data-ref="scaledviewwidth">scaledviewwidth</a> = <a class="ref" href="#setblocks" title='setblocks' data-ref="setblocks">setblocks</a>*<var>32</var>;</td></tr>
+<tr><th id="690">690</th><td>	<a class="ref" href="r_state.h.html#viewheight" title='viewheight' data-ref="viewheight">viewheight</a> = (<a class="ref" href="#setblocks" title='setblocks' data-ref="setblocks">setblocks</a>*<var>168</var>/<var>10</var>)&amp;~<var>7</var>;</td></tr>
+<tr><th id="691">691</th><td>    }</td></tr>
+<tr><th id="692">692</th><td>    </td></tr>
+<tr><th id="693">693</th><td>    <a class="ref" href="r_main.h.html#detailshift" title='detailshift' data-ref="detailshift">detailshift</a> = <a class="ref" href="#setdetail" title='setdetail' data-ref="setdetail">setdetail</a>;</td></tr>
+<tr><th id="694">694</th><td>    <a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a> = <a class="ref" href="r_state.h.html#scaledviewwidth" title='scaledviewwidth' data-ref="scaledviewwidth">scaledviewwidth</a>&gt;&gt;<a class="ref" href="r_main.h.html#detailshift" title='detailshift' data-ref="detailshift">detailshift</a>;</td></tr>
+<tr><th id="695">695</th><td>	</td></tr>
+<tr><th id="696">696</th><td>    <a class="ref" href="r_main.h.html#centery" title='centery' data-ref="centery">centery</a> = <a class="ref" href="r_state.h.html#viewheight" title='viewheight' data-ref="viewheight">viewheight</a>/<var>2</var>;</td></tr>
+<tr><th id="697">697</th><td>    <a class="ref" href="r_main.h.html#centerx" title='centerx' data-ref="centerx">centerx</a> = <a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>/<var>2</var>;</td></tr>
+<tr><th id="698">698</th><td>    <a class="ref" href="r_main.h.html#centerxfrac" title='centerxfrac' data-ref="centerxfrac">centerxfrac</a> = <a class="ref" href="r_main.h.html#centerx" title='centerx' data-ref="centerx">centerx</a>&lt;&lt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>;</td></tr>
+<tr><th id="699">699</th><td>    <a class="ref" href="r_main.h.html#centeryfrac" title='centeryfrac' data-ref="centeryfrac">centeryfrac</a> = <a class="ref" href="r_main.h.html#centery" title='centery' data-ref="centery">centery</a>&lt;&lt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>;</td></tr>
+<tr><th id="700">700</th><td>    <a class="ref" href="r_main.h.html#projection" title='projection' data-ref="projection">projection</a> = <a class="ref" href="r_main.h.html#centerxfrac" title='centerxfrac' data-ref="centerxfrac">centerxfrac</a>;</td></tr>
+<tr><th id="701">701</th><td></td></tr>
+<tr><th id="702">702</th><td>    <b>if</b> (!<a class="ref" href="r_main.h.html#detailshift" title='detailshift' data-ref="detailshift">detailshift</a>)</td></tr>
+<tr><th id="703">703</th><td>    {</td></tr>
+<tr><th id="704">704</th><td>	<a class="ref" href="r_main.h.html#colfunc" title='colfunc' data-ref="colfunc">colfunc</a> = <a class="ref" href="r_main.h.html#basecolfunc" title='basecolfunc' data-ref="basecolfunc">basecolfunc</a> = <a class="ref" href="r_draw.h.html#R_DrawColumn" title='R_DrawColumn' data-ref="R_DrawColumn">R_DrawColumn</a>;</td></tr>
+<tr><th id="705">705</th><td>	<a class="ref" href="r_main.h.html#fuzzcolfunc" title='fuzzcolfunc' data-ref="fuzzcolfunc">fuzzcolfunc</a> = <a class="ref" href="r_draw.h.html#R_DrawFuzzColumn" title='R_DrawFuzzColumn' data-ref="R_DrawFuzzColumn">R_DrawFuzzColumn</a>;</td></tr>
+<tr><th id="706">706</th><td>	<a class="ref" href="#transcolfunc" title='transcolfunc' data-ref="transcolfunc">transcolfunc</a> = <a class="ref" href="r_draw.h.html#R_DrawTranslatedColumn" title='R_DrawTranslatedColumn' data-ref="R_DrawTranslatedColumn">R_DrawTranslatedColumn</a>;</td></tr>
+<tr><th id="707">707</th><td>	<a class="ref" href="r_main.h.html#spanfunc" title='spanfunc' data-ref="spanfunc">spanfunc</a> = <a class="ref" href="r_draw.h.html#R_DrawSpan" title='R_DrawSpan' data-ref="R_DrawSpan">R_DrawSpan</a>;</td></tr>
+<tr><th id="708">708</th><td>    }</td></tr>
+<tr><th id="709">709</th><td>    <b>else</b></td></tr>
+<tr><th id="710">710</th><td>    {</td></tr>
+<tr><th id="711">711</th><td>	<a class="ref" href="r_main.h.html#colfunc" title='colfunc' data-ref="colfunc">colfunc</a> = <a class="ref" href="r_main.h.html#basecolfunc" title='basecolfunc' data-ref="basecolfunc">basecolfunc</a> = <a class="ref" href="r_draw.h.html#R_DrawColumnLow" title='R_DrawColumnLow' data-ref="R_DrawColumnLow">R_DrawColumnLow</a>;</td></tr>
+<tr><th id="712">712</th><td>	<a class="ref" href="r_main.h.html#fuzzcolfunc" title='fuzzcolfunc' data-ref="fuzzcolfunc">fuzzcolfunc</a> = <a class="ref" href="r_draw.h.html#R_DrawFuzzColumn" title='R_DrawFuzzColumn' data-ref="R_DrawFuzzColumn">R_DrawFuzzColumn</a>;</td></tr>
+<tr><th id="713">713</th><td>	<a class="ref" href="#transcolfunc" title='transcolfunc' data-ref="transcolfunc">transcolfunc</a> = <a class="ref" href="r_draw.h.html#R_DrawTranslatedColumn" title='R_DrawTranslatedColumn' data-ref="R_DrawTranslatedColumn">R_DrawTranslatedColumn</a>;</td></tr>
+<tr><th id="714">714</th><td>	<a class="ref" href="r_main.h.html#spanfunc" title='spanfunc' data-ref="spanfunc">spanfunc</a> = <a class="ref" href="r_draw.h.html#R_DrawSpanLow" title='R_DrawSpanLow' data-ref="R_DrawSpanLow">R_DrawSpanLow</a>;</td></tr>
+<tr><th id="715">715</th><td>    }</td></tr>
+<tr><th id="716">716</th><td></td></tr>
+<tr><th id="717">717</th><td>    <a class="ref" href="r_draw.h.html#R_InitBuffer" title='R_InitBuffer' data-ref="R_InitBuffer">R_InitBuffer</a> (<a class="ref" href="r_state.h.html#scaledviewwidth" title='scaledviewwidth' data-ref="scaledviewwidth">scaledviewwidth</a>, <a class="ref" href="r_state.h.html#viewheight" title='viewheight' data-ref="viewheight">viewheight</a>);</td></tr>
+<tr><th id="718">718</th><td>	</td></tr>
+<tr><th id="719">719</th><td>    <a class="ref" href="#R_InitTextureMapping" title='R_InitTextureMapping' data-ref="R_InitTextureMapping">R_InitTextureMapping</a> ();</td></tr>
+<tr><th id="720">720</th><td>    </td></tr>
+<tr><th id="721">721</th><td>    <i>// psprite scales</i></td></tr>
+<tr><th id="722">722</th><td>    <a class="ref" href="r_things.h.html#pspritescale" title='pspritescale' data-ref="pspritescale">pspritescale</a> = <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>*<a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>/<a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>;</td></tr>
+<tr><th id="723">723</th><td>    <a class="ref" href="r_things.h.html#pspriteiscale" title='pspriteiscale' data-ref="pspriteiscale">pspriteiscale</a> = <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>*<a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>/<a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>;</td></tr>
+<tr><th id="724">724</th><td>    </td></tr>
+<tr><th id="725">725</th><td>    <i>// thing clipping</i></td></tr>
+<tr><th id="726">726</th><td>    <b>for</b> (<a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>=<var>0</var> ; <a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>&lt;<a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a> ; <a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>++)</td></tr>
+<tr><th id="727">727</th><td>	<a class="ref" href="r_things.h.html#screenheightarray" title='screenheightarray' data-ref="screenheightarray">screenheightarray</a>[<a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>] = <a class="ref" href="r_state.h.html#viewheight" title='viewheight' data-ref="viewheight">viewheight</a>;</td></tr>
+<tr><th id="728">728</th><td>    </td></tr>
+<tr><th id="729">729</th><td>    <i>// planes</i></td></tr>
+<tr><th id="730">730</th><td>    <b>for</b> (<a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>=<var>0</var> ; <a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>&lt;<a class="ref" href="r_state.h.html#viewheight" title='viewheight' data-ref="viewheight">viewheight</a> ; <a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>++)</td></tr>
+<tr><th id="731">731</th><td>    {</td></tr>
+<tr><th id="732">732</th><td>	<a class="local col5 ref" href="#55dy" title='dy' data-ref="55dy">dy</a> = ((<a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>-<a class="ref" href="r_state.h.html#viewheight" title='viewheight' data-ref="viewheight">viewheight</a>/<var>2</var>)&lt;&lt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>)+<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>/<var>2</var>;</td></tr>
+<tr><th id="733">733</th><td>	<a class="local col5 ref" href="#55dy" title='dy' data-ref="55dy">dy</a> = <a class="ref" href="../include/stdlib.h.html#abs" title='abs' data-ref="abs">abs</a>(<a class="local col5 ref" href="#55dy" title='dy' data-ref="55dy">dy</a>);</td></tr>
+<tr><th id="734">734</th><td>	<a class="ref" href="r_plane.h.html#yslope" title='yslope' data-ref="yslope">yslope</a>[<a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>] = <a class="ref" href="m_fixed.h.html#FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</a> ( (<a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>&lt;&lt;<a class="ref" href="r_main.h.html#detailshift" title='detailshift' data-ref="detailshift">detailshift</a>)/<var>2</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>, <a class="local col5 ref" href="#55dy" title='dy' data-ref="55dy">dy</a>);</td></tr>
+<tr><th id="735">735</th><td>    }</td></tr>
+<tr><th id="736">736</th><td>	</td></tr>
+<tr><th id="737">737</th><td>    <b>for</b> (<a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>=<var>0</var> ; <a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>&lt;<a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a> ; <a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>++)</td></tr>
+<tr><th id="738">738</th><td>    {</td></tr>
+<tr><th id="739">739</th><td>	<a class="local col4 ref" href="#54cosadj" title='cosadj' data-ref="54cosadj">cosadj</a> = <a class="ref" href="../include/stdlib.h.html#abs" title='abs' data-ref="abs">abs</a>(<a class="ref" href="tables.h.html#finecosine" title='finecosine' data-ref="finecosine">finecosine</a>[<a class="ref" href="r_state.h.html#xtoviewangle" title='xtoviewangle' data-ref="xtoviewangle">xtoviewangle</a>[<a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>]&gt;&gt;<a class="macro" href="tables.h.html#55" title="19" data-ref="_M/ANGLETOFINESHIFT">ANGLETOFINESHIFT</a>]);</td></tr>
+<tr><th id="740">740</th><td>	<a class="ref" href="r_plane.h.html#distscale" title='distscale' data-ref="distscale">distscale</a>[<a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>] = <a class="ref" href="m_fixed.h.html#FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</a> (<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>,<a class="local col4 ref" href="#54cosadj" title='cosadj' data-ref="54cosadj">cosadj</a>);</td></tr>
+<tr><th id="741">741</th><td>    }</td></tr>
+<tr><th id="742">742</th><td>    </td></tr>
+<tr><th id="743">743</th><td>    <i>// Calculate the light levels to use</i></td></tr>
+<tr><th id="744">744</th><td><i>    //  for each level / scale combination.</i></td></tr>
+<tr><th id="745">745</th><td>    <b>for</b> (<a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>=<var>0</var> ; <a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>&lt; <a class="macro" href="r_main.h.html#69" title="16" data-ref="_M/LIGHTLEVELS">LIGHTLEVELS</a> ; <a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>++)</td></tr>
+<tr><th id="746">746</th><td>    {</td></tr>
+<tr><th id="747">747</th><td>	<a class="local col9 ref" href="#59startmap" title='startmap' data-ref="59startmap">startmap</a> = ((<a class="macro" href="r_main.h.html#69" title="16" data-ref="_M/LIGHTLEVELS">LIGHTLEVELS</a>-<var>1</var>-<a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>)*<var>2</var>)*<a class="macro" href="r_main.h.html#87" title="32" data-ref="_M/NUMCOLORMAPS">NUMCOLORMAPS</a>/<a class="macro" href="r_main.h.html#69" title="16" data-ref="_M/LIGHTLEVELS">LIGHTLEVELS</a>;</td></tr>
+<tr><th id="748">748</th><td>	<b>for</b> (<a class="local col7 ref" href="#57j" title='j' data-ref="57j">j</a>=<var>0</var> ; <a class="local col7 ref" href="#57j" title='j' data-ref="57j">j</a>&lt;<a class="macro" href="r_main.h.html#72" title="48" data-ref="_M/MAXLIGHTSCALE">MAXLIGHTSCALE</a> ; <a class="local col7 ref" href="#57j" title='j' data-ref="57j">j</a>++)</td></tr>
+<tr><th id="749">749</th><td>	{</td></tr>
+<tr><th id="750">750</th><td>	    <a class="local col8 ref" href="#58level" title='level' data-ref="58level">level</a> = <a class="local col9 ref" href="#59startmap" title='startmap' data-ref="59startmap">startmap</a> - <a class="local col7 ref" href="#57j" title='j' data-ref="57j">j</a>*<a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>/(<a class="ref" href="r_state.h.html#viewwidth" title='viewwidth' data-ref="viewwidth">viewwidth</a>&lt;&lt;<a class="ref" href="r_main.h.html#detailshift" title='detailshift' data-ref="detailshift">detailshift</a>)/<a class="macro" href="#612" title="2" data-ref="_M/DISTMAP">DISTMAP</a>;</td></tr>
+<tr><th id="751">751</th><td>	    </td></tr>
+<tr><th id="752">752</th><td>	    <b>if</b> (<a class="local col8 ref" href="#58level" title='level' data-ref="58level">level</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="753">753</th><td>		<a class="local col8 ref" href="#58level" title='level' data-ref="58level">level</a> = <var>0</var>;</td></tr>
+<tr><th id="754">754</th><td></td></tr>
+<tr><th id="755">755</th><td>	    <b>if</b> (<a class="local col8 ref" href="#58level" title='level' data-ref="58level">level</a> &gt;= <a class="macro" href="r_main.h.html#87" title="32" data-ref="_M/NUMCOLORMAPS">NUMCOLORMAPS</a>)</td></tr>
+<tr><th id="756">756</th><td>		<a class="local col8 ref" href="#58level" title='level' data-ref="58level">level</a> = <a class="macro" href="r_main.h.html#87" title="32" data-ref="_M/NUMCOLORMAPS">NUMCOLORMAPS</a>-<var>1</var>;</td></tr>
+<tr><th id="757">757</th><td></td></tr>
+<tr><th id="758">758</th><td>	    <a class="ref" href="r_main.h.html#scalelight" title='scalelight' data-ref="scalelight">scalelight</a>[<a class="local col6 ref" href="#56i" title='i' data-ref="56i">i</a>][<a class="local col7 ref" href="#57j" title='j' data-ref="57j">j</a>] = <a class="ref" href="r_state.h.html#colormaps" title='colormaps' data-ref="colormaps">colormaps</a> + <a class="local col8 ref" href="#58level" title='level' data-ref="58level">level</a>*<var>256</var>;</td></tr>
+<tr><th id="759">759</th><td>	}</td></tr>
+<tr><th id="760">760</th><td>    }</td></tr>
+<tr><th id="761">761</th><td>}</td></tr>
+<tr><th id="762">762</th><td></td></tr>
+<tr><th id="763">763</th><td></td></tr>
+<tr><th id="764">764</th><td></td></tr>
+<tr><th id="765">765</th><td><i>//</i></td></tr>
+<tr><th id="766">766</th><td><i>// R_Init</i></td></tr>
+<tr><th id="767">767</th><td><i>//</i></td></tr>
+<tr><th id="768">768</th><td><b>extern</b> <em>int</em>	<dfn class="decl" id="detailLevel" title='detailLevel' data-ref="detailLevel">detailLevel</dfn>;</td></tr>
+<tr><th id="769">769</th><td><b>extern</b> <em>int</em>	<dfn class="decl" id="screenblocks" title='screenblocks' data-ref="screenblocks">screenblocks</dfn>;</td></tr>
+<tr><th id="770">770</th><td></td></tr>
+<tr><th id="771">771</th><td></td></tr>
+<tr><th id="772">772</th><td></td></tr>
+<tr><th id="773">773</th><td><em>void</em> <dfn class="decl def" id="R_Init" title='R_Init' data-ref="R_Init">R_Init</dfn> (<em>void</em>)</td></tr>
+<tr><th id="774">774</th><td>{</td></tr>
+<tr><th id="775">775</th><td>    <a class="ref" href="r_data.h.html#R_InitData" title='R_InitData' data-ref="R_InitData">R_InitData</a> ();</td></tr>
+<tr><th id="776">776</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"\nR_InitData"</q>);</td></tr>
+<tr><th id="777">777</th><td>    <a class="ref" href="#R_InitPointToAngle" title='R_InitPointToAngle' data-ref="R_InitPointToAngle">R_InitPointToAngle</a> ();</td></tr>
+<tr><th id="778">778</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"\nR_InitPointToAngle"</q>);</td></tr>
+<tr><th id="779">779</th><td>    <a class="ref" href="#R_InitTables" title='R_InitTables' data-ref="R_InitTables">R_InitTables</a> ();</td></tr>
+<tr><th id="780">780</th><td>    <i>// viewwidth / viewheight / detailLevel are set by the defaults</i></td></tr>
+<tr><th id="781">781</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"\nR_InitTables"</q>);</td></tr>
+<tr><th id="782">782</th><td></td></tr>
+<tr><th id="783">783</th><td>    <a class="ref" href="#R_SetViewSize" title='R_SetViewSize' data-ref="R_SetViewSize">R_SetViewSize</a> (<a class="ref" href="#screenblocks" title='screenblocks' data-ref="screenblocks">screenblocks</a>, <a class="ref" href="#detailLevel" title='detailLevel' data-ref="detailLevel">detailLevel</a>);</td></tr>
+<tr><th id="784">784</th><td>    <a class="ref" href="r_plane.h.html#R_InitPlanes" title='R_InitPlanes' data-ref="R_InitPlanes">R_InitPlanes</a> ();</td></tr>
+<tr><th id="785">785</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"\nR_InitPlanes"</q>);</td></tr>
+<tr><th id="786">786</th><td>    <a class="ref" href="#R_InitLightTables" title='R_InitLightTables' data-ref="R_InitLightTables">R_InitLightTables</a> ();</td></tr>
+<tr><th id="787">787</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"\nR_InitLightTables"</q>);</td></tr>
+<tr><th id="788">788</th><td>    <a class="ref" href="r_sky.h.html#R_InitSkyMap" title='R_InitSkyMap' data-ref="R_InitSkyMap">R_InitSkyMap</a> ();</td></tr>
+<tr><th id="789">789</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"\nR_InitSkyMap"</q>);</td></tr>
+<tr><th id="790">790</th><td>    <a class="ref" href="r_draw.h.html#R_InitTranslationTables" title='R_InitTranslationTables' data-ref="R_InitTranslationTables">R_InitTranslationTables</a> ();</td></tr>
+<tr><th id="791">791</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"\nR_InitTranslationsTables"</q>);</td></tr>
+<tr><th id="792">792</th><td>	</td></tr>
+<tr><th id="793">793</th><td>    <a class="ref" href="#framecount" title='framecount' data-ref="framecount">framecount</a> = <var>0</var>;</td></tr>
+<tr><th id="794">794</th><td>}</td></tr>
+<tr><th id="795">795</th><td></td></tr>
+<tr><th id="796">796</th><td></td></tr>
+<tr><th id="797">797</th><td><i>//</i></td></tr>
+<tr><th id="798">798</th><td><i>// R_PointInSubsector</i></td></tr>
+<tr><th id="799">799</th><td><i>//</i></td></tr>
+<tr><th id="800">800</th><td><a class="typedef" href="r_defs.h.html#subsector_t" title='subsector_t' data-type='struct subsector_s' data-ref="subsector_t">subsector_t</a>*</td></tr>
+<tr><th id="801">801</th><td><dfn class="decl def" id="R_PointInSubsector" title='R_PointInSubsector' data-ref="R_PointInSubsector">R_PointInSubsector</dfn></td></tr>
+<tr><th id="802">802</th><td>( <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col0 decl" id="60x" title='x' data-type='fixed_t' data-ref="60x">x</dfn>,</td></tr>
+<tr><th id="803">803</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col1 decl" id="61y" title='y' data-type='fixed_t' data-ref="61y">y</dfn> )</td></tr>
+<tr><th id="804">804</th><td>{</td></tr>
+<tr><th id="805">805</th><td>    <a class="typedef" href="r_defs.h.html#node_t" title='node_t' data-type='struct node_t' data-ref="node_t">node_t</a>*	<dfn class="local col2 decl" id="62node" title='node' data-type='node_t *' data-ref="62node">node</dfn>;</td></tr>
+<tr><th id="806">806</th><td>    <em>int</em>		<dfn class="local col3 decl" id="63side" title='side' data-type='int' data-ref="63side">side</dfn>;</td></tr>
+<tr><th id="807">807</th><td>    <em>int</em>		<dfn class="local col4 decl" id="64nodenum" title='nodenum' data-type='int' data-ref="64nodenum">nodenum</dfn>;</td></tr>
+<tr><th id="808">808</th><td></td></tr>
+<tr><th id="809">809</th><td>    <i>// single subsector is a special case</i></td></tr>
+<tr><th id="810">810</th><td>    <b>if</b> (!<a class="ref" href="r_state.h.html#numnodes" title='numnodes' data-ref="numnodes">numnodes</a>)				</td></tr>
+<tr><th id="811">811</th><td>	<b>return</b> <a class="ref" href="r_state.h.html#subsectors" title='subsectors' data-ref="subsectors">subsectors</a>;</td></tr>
+<tr><th id="812">812</th><td>		</td></tr>
+<tr><th id="813">813</th><td>    <a class="local col4 ref" href="#64nodenum" title='nodenum' data-ref="64nodenum">nodenum</a> = <a class="ref" href="r_state.h.html#numnodes" title='numnodes' data-ref="numnodes">numnodes</a>-<var>1</var>;</td></tr>
+<tr><th id="814">814</th><td></td></tr>
+<tr><th id="815">815</th><td>    <b>while</b> (! (<a class="local col4 ref" href="#64nodenum" title='nodenum' data-ref="64nodenum">nodenum</a> &amp; <a class="macro" href="doomdata.h.html#178" title="0x8000" data-ref="_M/NF_SUBSECTOR">NF_SUBSECTOR</a>) )</td></tr>
+<tr><th id="816">816</th><td>    {</td></tr>
+<tr><th id="817">817</th><td>	<a class="local col2 ref" href="#62node" title='node' data-ref="62node">node</a> = &amp;<a class="ref" href="r_state.h.html#nodes" title='nodes' data-ref="nodes">nodes</a>[<a class="local col4 ref" href="#64nodenum" title='nodenum' data-ref="64nodenum">nodenum</a>];</td></tr>
+<tr><th id="818">818</th><td>	<a class="local col3 ref" href="#63side" title='side' data-ref="63side">side</a> = <a class="ref" href="#R_PointOnSide" title='R_PointOnSide' data-ref="R_PointOnSide">R_PointOnSide</a> (<a class="local col0 ref" href="#60x" title='x' data-ref="60x">x</a>, <a class="local col1 ref" href="#61y" title='y' data-ref="61y">y</a>, <a class="local col2 ref" href="#62node" title='node' data-ref="62node">node</a>);</td></tr>
+<tr><th id="819">819</th><td>	<a class="local col4 ref" href="#64nodenum" title='nodenum' data-ref="64nodenum">nodenum</a> = <a class="local col2 ref" href="#62node" title='node' data-ref="62node">node</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::children" title='(anonymous struct)::children' data-ref="(anonymous)::children">children</a>[<a class="local col3 ref" href="#63side" title='side' data-ref="63side">side</a>];</td></tr>
+<tr><th id="820">820</th><td>    }</td></tr>
+<tr><th id="821">821</th><td>	</td></tr>
+<tr><th id="822">822</th><td>    <b>return</b> &amp;<a class="ref" href="r_state.h.html#subsectors" title='subsectors' data-ref="subsectors">subsectors</a>[<a class="local col4 ref" href="#64nodenum" title='nodenum' data-ref="64nodenum">nodenum</a> &amp; ~<a class="macro" href="doomdata.h.html#178" title="0x8000" data-ref="_M/NF_SUBSECTOR">NF_SUBSECTOR</a>];</td></tr>
+<tr><th id="823">823</th><td>}</td></tr>
+<tr><th id="824">824</th><td></td></tr>
+<tr><th id="825">825</th><td></td></tr>
+<tr><th id="826">826</th><td></td></tr>
+<tr><th id="827">827</th><td><i>//</i></td></tr>
+<tr><th id="828">828</th><td><i>// R_SetupFrame</i></td></tr>
+<tr><th id="829">829</th><td><i>//</i></td></tr>
+<tr><th id="830">830</th><td><em>void</em> <dfn class="decl def" id="R_SetupFrame" title='R_SetupFrame' data-ref="R_SetupFrame">R_SetupFrame</dfn> (<a class="typedef" href="d_player.h.html#player_t" title='player_t' data-type='struct player_s' data-ref="player_t">player_t</a>* <dfn class="local col5 decl" id="65player" title='player' data-type='player_t *' data-ref="65player">player</dfn>)</td></tr>
+<tr><th id="831">831</th><td>{		</td></tr>
+<tr><th id="832">832</th><td>    <em>int</em>		<dfn class="local col6 decl" id="66i" title='i' data-type='int' data-ref="66i">i</dfn>;</td></tr>
+<tr><th id="833">833</th><td>    </td></tr>
+<tr><th id="834">834</th><td>    <a class="ref" href="r_state.h.html#viewplayer" title='viewplayer' data-ref="viewplayer">viewplayer</a> = <a class="local col5 ref" href="#65player" title='player' data-ref="65player">player</a>;</td></tr>
+<tr><th id="835">835</th><td>    <a class="ref" href="r_state.h.html#viewx" title='viewx' data-ref="viewx">viewx</a> = <a class="local col5 ref" href="#65player" title='player' data-ref="65player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a>;</td></tr>
+<tr><th id="836">836</th><td>    <a class="ref" href="r_state.h.html#viewy" title='viewy' data-ref="viewy">viewy</a> = <a class="local col5 ref" href="#65player" title='player' data-ref="65player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a>;</td></tr>
+<tr><th id="837">837</th><td>    <a class="ref" href="r_state.h.html#viewangle" title='viewangle' data-ref="viewangle">viewangle</a> = <a class="local col5 ref" href="#65player" title='player' data-ref="65player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::angle" title='mobj_s::angle' data-ref="mobj_s::angle">angle</a> + <a class="ref" href="#viewangleoffset" title='viewangleoffset' data-ref="viewangleoffset">viewangleoffset</a>;</td></tr>
+<tr><th id="838">838</th><td>    <a class="ref" href="r_main.h.html#extralight" title='extralight' data-ref="extralight">extralight</a> = <a class="local col5 ref" href="#65player" title='player' data-ref="65player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::extralight" title='player_s::extralight' data-ref="player_s::extralight">extralight</a>;</td></tr>
+<tr><th id="839">839</th><td></td></tr>
+<tr><th id="840">840</th><td>    <a class="ref" href="r_state.h.html#viewz" title='viewz' data-ref="viewz">viewz</a> = <a class="local col5 ref" href="#65player" title='player' data-ref="65player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewz" title='player_s::viewz' data-ref="player_s::viewz">viewz</a>;</td></tr>
+<tr><th id="841">841</th><td>    </td></tr>
+<tr><th id="842">842</th><td>    <a class="ref" href="r_main.h.html#viewsin" title='viewsin' data-ref="viewsin">viewsin</a> = <a class="ref" href="tables.h.html#finesine" title='finesine' data-ref="finesine">finesine</a>[<a class="ref" href="r_state.h.html#viewangle" title='viewangle' data-ref="viewangle">viewangle</a>&gt;&gt;<a class="macro" href="tables.h.html#55" title="19" data-ref="_M/ANGLETOFINESHIFT">ANGLETOFINESHIFT</a>];</td></tr>
+<tr><th id="843">843</th><td>    <a class="ref" href="r_main.h.html#viewcos" title='viewcos' data-ref="viewcos">viewcos</a> = <a class="ref" href="tables.h.html#finecosine" title='finecosine' data-ref="finecosine">finecosine</a>[<a class="ref" href="r_state.h.html#viewangle" title='viewangle' data-ref="viewangle">viewangle</a>&gt;&gt;<a class="macro" href="tables.h.html#55" title="19" data-ref="_M/ANGLETOFINESHIFT">ANGLETOFINESHIFT</a>];</td></tr>
+<tr><th id="844">844</th><td>	</td></tr>
+<tr><th id="845">845</th><td>    <a class="ref" href="r_state.h.html#sscount" title='sscount' data-ref="sscount">sscount</a> = <var>0</var>;</td></tr>
+<tr><th id="846">846</th><td>	</td></tr>
+<tr><th id="847">847</th><td>    <b>if</b> (<a class="local col5 ref" href="#65player" title='player' data-ref="65player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::fixedcolormap" title='player_s::fixedcolormap' data-ref="player_s::fixedcolormap">fixedcolormap</a>)</td></tr>
+<tr><th id="848">848</th><td>    {</td></tr>
+<tr><th id="849">849</th><td>	<a class="ref" href="r_main.h.html#fixedcolormap" title='fixedcolormap' data-ref="fixedcolormap">fixedcolormap</a> =</td></tr>
+<tr><th id="850">850</th><td>	    <a class="ref" href="r_state.h.html#colormaps" title='colormaps' data-ref="colormaps">colormaps</a></td></tr>
+<tr><th id="851">851</th><td>	    + <a class="local col5 ref" href="#65player" title='player' data-ref="65player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::fixedcolormap" title='player_s::fixedcolormap' data-ref="player_s::fixedcolormap">fixedcolormap</a>*<var>256</var>*<b>sizeof</b>(<a class="typedef" href="r_defs.h.html#lighttable_t" title='lighttable_t' data-type='byte' data-ref="lighttable_t">lighttable_t</a>);</td></tr>
+<tr><th id="852">852</th><td>	</td></tr>
+<tr><th id="853">853</th><td>	<a class="ref" href="#walllights" title='walllights' data-ref="walllights">walllights</a> = <a class="ref" href="r_main.h.html#scalelightfixed" title='scalelightfixed' data-ref="scalelightfixed">scalelightfixed</a>;</td></tr>
+<tr><th id="854">854</th><td></td></tr>
+<tr><th id="855">855</th><td>	<b>for</b> (<a class="local col6 ref" href="#66i" title='i' data-ref="66i">i</a>=<var>0</var> ; <a class="local col6 ref" href="#66i" title='i' data-ref="66i">i</a>&lt;<a class="macro" href="r_main.h.html#72" title="48" data-ref="_M/MAXLIGHTSCALE">MAXLIGHTSCALE</a> ; <a class="local col6 ref" href="#66i" title='i' data-ref="66i">i</a>++)</td></tr>
+<tr><th id="856">856</th><td>	    <a class="ref" href="r_main.h.html#scalelightfixed" title='scalelightfixed' data-ref="scalelightfixed">scalelightfixed</a>[<a class="local col6 ref" href="#66i" title='i' data-ref="66i">i</a>] = <a class="ref" href="r_main.h.html#fixedcolormap" title='fixedcolormap' data-ref="fixedcolormap">fixedcolormap</a>;</td></tr>
+<tr><th id="857">857</th><td>    }</td></tr>
+<tr><th id="858">858</th><td>    <b>else</b></td></tr>
+<tr><th id="859">859</th><td>	<a class="ref" href="r_main.h.html#fixedcolormap" title='fixedcolormap' data-ref="fixedcolormap">fixedcolormap</a> = <var>0</var>;</td></tr>
+<tr><th id="860">860</th><td>		</td></tr>
+<tr><th id="861">861</th><td>    <a class="ref" href="#framecount" title='framecount' data-ref="framecount">framecount</a>++;</td></tr>
+<tr><th id="862">862</th><td>    <a class="ref" href="r_main.h.html#validcount" title='validcount' data-ref="validcount">validcount</a>++;</td></tr>
+<tr><th id="863">863</th><td>}</td></tr>
+<tr><th id="864">864</th><td></td></tr>
+<tr><th id="865">865</th><td></td></tr>
+<tr><th id="866">866</th><td></td></tr>
+<tr><th id="867">867</th><td><i>//</i></td></tr>
+<tr><th id="868">868</th><td><i>// R_RenderView</i></td></tr>
+<tr><th id="869">869</th><td><i>//</i></td></tr>
+<tr><th id="870">870</th><td><em>void</em> <dfn class="decl def" id="R_RenderPlayerView" title='R_RenderPlayerView' data-ref="R_RenderPlayerView">R_RenderPlayerView</dfn> (<a class="typedef" href="d_player.h.html#player_t" title='player_t' data-type='struct player_s' data-ref="player_t">player_t</a>* <dfn class="local col7 decl" id="67player" title='player' data-type='player_t *' data-ref="67player">player</dfn>)</td></tr>
+<tr><th id="871">871</th><td>{	</td></tr>
+<tr><th id="872">872</th><td>    <a class="ref" href="#R_SetupFrame" title='R_SetupFrame' data-ref="R_SetupFrame">R_SetupFrame</a> (<a class="local col7 ref" href="#67player" title='player' data-ref="67player">player</a>);</td></tr>
+<tr><th id="873">873</th><td></td></tr>
+<tr><th id="874">874</th><td>    <i>// Clear buffers.</i></td></tr>
+<tr><th id="875">875</th><td>    <a class="ref" href="r_bsp.h.html#R_ClearClipSegs" title='R_ClearClipSegs' data-ref="R_ClearClipSegs">R_ClearClipSegs</a> ();</td></tr>
+<tr><th id="876">876</th><td>    <a class="ref" href="r_bsp.h.html#R_ClearDrawSegs" title='R_ClearDrawSegs' data-ref="R_ClearDrawSegs">R_ClearDrawSegs</a> ();</td></tr>
+<tr><th id="877">877</th><td>    <a class="ref" href="r_plane.h.html#R_ClearPlanes" title='R_ClearPlanes' data-ref="R_ClearPlanes">R_ClearPlanes</a> ();</td></tr>
+<tr><th id="878">878</th><td>    <a class="ref" href="r_things.h.html#R_ClearSprites" title='R_ClearSprites' data-ref="R_ClearSprites">R_ClearSprites</a> ();</td></tr>
+<tr><th id="879">879</th><td>    </td></tr>
+<tr><th id="880">880</th><td>    <i>// check for new console commands.</i></td></tr>
+<tr><th id="881">881</th><td>    <a class="ref" href="d_net.h.html#NetUpdate" title='NetUpdate' data-ref="NetUpdate">NetUpdate</a> ();</td></tr>
+<tr><th id="882">882</th><td></td></tr>
+<tr><th id="883">883</th><td>    <i>// The head node is the last node output.</i></td></tr>
+<tr><th id="884">884</th><td>    <a class="ref" href="r_bsp.h.html#R_RenderBSPNode" title='R_RenderBSPNode' data-ref="R_RenderBSPNode">R_RenderBSPNode</a> (<a class="ref" href="r_state.h.html#numnodes" title='numnodes' data-ref="numnodes">numnodes</a>-<var>1</var>);</td></tr>
+<tr><th id="885">885</th><td>    </td></tr>
+<tr><th id="886">886</th><td>    <i>// Check for new console commands.</i></td></tr>
+<tr><th id="887">887</th><td>    <a class="ref" href="d_net.h.html#NetUpdate" title='NetUpdate' data-ref="NetUpdate">NetUpdate</a> ();</td></tr>
+<tr><th id="888">888</th><td>    </td></tr>
+<tr><th id="889">889</th><td>    <a class="ref" href="r_plane.h.html#R_DrawPlanes" title='R_DrawPlanes' data-ref="R_DrawPlanes">R_DrawPlanes</a> ();</td></tr>
+<tr><th id="890">890</th><td>    </td></tr>
+<tr><th id="891">891</th><td>    <i>// Check for new console commands.</i></td></tr>
+<tr><th id="892">892</th><td>    <a class="ref" href="d_net.h.html#NetUpdate" title='NetUpdate' data-ref="NetUpdate">NetUpdate</a> ();</td></tr>
+<tr><th id="893">893</th><td>    </td></tr>
+<tr><th id="894">894</th><td>    <a class="ref" href="r_things.h.html#R_DrawMasked" title='R_DrawMasked' data-ref="R_DrawMasked">R_DrawMasked</a> ();</td></tr>
+<tr><th id="895">895</th><td></td></tr>
+<tr><th id="896">896</th><td>    <i>// Check for new console commands.</i></td></tr>
+<tr><th id="897">897</th><td>    <a class="ref" href="d_net.h.html#NetUpdate" title='NetUpdate' data-ref="NetUpdate">NetUpdate</a> ();				</td></tr>
+<tr><th id="898">898</th><td>}</td></tr>
+<tr><th id="899">899</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/m_menu.c' l='186' type='void M_LoadGame(int choice)'/>
+<use f='codebrowser/m_menu.c' l='254'/>
+<use f='codebrowser/m_menu.c' l='254'/>
+<use f='codebrowser/m_menu.c' l='254'/>
+<use f='codebrowser/m_menu.c' l='254'/>
+<def f='codebrowser/m_menu.c' l='594' ll='604' type='void M_LoadGame(int choice)'/>
+<use f='codebrowser/m_menu.c' l='1557' u='c' c='M_Responder'/>
+<doc f='codebrowser/m_menu.c' l='591'>//
+// Selected from DOOM menu
+//</doc>

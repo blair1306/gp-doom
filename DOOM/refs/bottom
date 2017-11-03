@@ -1,0 +1,3 @@
+<dec f='codebrowser/p_spec.h' l='222' type='2'/>
+<use f='codebrowser/p_spec.c' l='1146' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_switch.c' l='256' u='r' c='P_ChangeSwitchTexture'/>

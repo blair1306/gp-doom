@@ -1,0 +1,13 @@
+<dec f='codebrowser/r_bsp.h' l='32' type='side_t *'/>
+<def f='codebrowser/r_bsp.c' l='48' type='side_t *'/>
+<use f='codebrowser/r_segs.c' l='394' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='459' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='465' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='474' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='573' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='583' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='592' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='603' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='604' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='607' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='635' u='r' c='R_StoreWallRange'/>

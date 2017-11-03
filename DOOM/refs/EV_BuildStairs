@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_spec.h' l='620' type='int EV_BuildStairs(line_t * line, stair_e type)'/>
+<def f='codebrowser/p_floor.c' l='452' ll='554' type='int EV_BuildStairs(line_t * line, stair_e type)'/>
+<doc f='codebrowser/p_floor.c' l='449'>//
+// BUILD A STAIRCASE!
+//</doc>
+<use f='codebrowser/p_spec.c' l='575' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='738' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='349' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='487' u='c' c='P_UseSpecialLine'/>

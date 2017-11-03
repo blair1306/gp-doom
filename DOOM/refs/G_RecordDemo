@@ -1,0 +1,7 @@
+<dec f='codebrowser/g_game.h' l='55' type='void G_RecordDemo(char * name)'/>
+<use f='codebrowser/d_main.c' l='1131' u='c' c='D_DoomMain'/>
+<doc f='codebrowser/g_game.h' l='54'>// Only called by startup code.</doc>
+<def f='codebrowser/g_game.c' l='1530' ll='1546' type='void G_RecordDemo(char * name)'/>
+<doc f='codebrowser/g_game.c' l='1527'>//
+// G_RecordDemo 
+// </doc>

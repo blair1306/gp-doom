@@ -1,0 +1,9 @@
+<dec f='codebrowser/r_defs.h' l='361' type='short'/>
+<offset>48</offset>
+<doc f='codebrowser/r_defs.h' l='361'>// pixels below the origin </doc>
+<use f='codebrowser/r_data.c' l='624' u='r' c='R_InitSpriteLumps'/>
+<use f='codebrowser/st_lib.c' l='228' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='277' u='r' c='STlib_updateBinIcon'/>
+<use f='codebrowser/v_video.c' l='219' u='r' c='V_DrawPatch'/>
+<use f='codebrowser/v_video.c' l='286' u='r' c='V_DrawPatchFlipped'/>
+<use f='codebrowser/wi_stuff.c' l='472' u='r' c='WI_drawOnLnode'/>

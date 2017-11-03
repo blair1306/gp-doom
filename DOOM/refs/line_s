@@ -1,0 +1,16 @@
+<def f='codebrowser/r_defs.h' l='179' ll='215'/>
+<size>88</size>
+<mbr r='line_s::v1' o='0' t='vertex_t *'/>
+<mbr r='line_s::v2' o='64' t='vertex_t *'/>
+<mbr r='line_s::dx' o='128' t='fixed_t'/>
+<mbr r='line_s::dy' o='160' t='fixed_t'/>
+<mbr r='line_s::flags' o='192' t='short'/>
+<mbr r='line_s::special' o='208' t='short'/>
+<mbr r='line_s::tag' o='224' t='short'/>
+<mbr r='line_s::sidenum' o='240' t='short [2]'/>
+<mbr r='line_s::bbox' o='288' t='fixed_t [4]'/>
+<mbr r='line_s::slopetype' o='416' t='slopetype_t'/>
+<mbr r='line_s::frontsector' o='448' t='sector_t *'/>
+<mbr r='line_s::backsector' o='512' t='sector_t *'/>
+<mbr r='line_s::validcount' o='576' t='int'/>
+<mbr r='line_s::specialdata' o='640' t='void *'/>

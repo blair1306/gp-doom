@@ -1,0 +1,5 @@
+<def f='codebrowser/r_main.c' l='509' ll='537' type='void R_InitTables()'/>
+<use f='codebrowser/r_main.c' l='779' u='c' c='R_Init'/>
+<doc f='codebrowser/r_main.c' l='506'>//
+// R_InitTables
+//</doc>

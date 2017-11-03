@@ -1,0 +1,10 @@
+<dec f='codebrowser/p_mobj.h' l='164' type='131072'/>
+<doc f='codebrowser/p_mobj.h' l='162'>// Dropped by a demon, not level spawned.
+    // E.g. ammo clips dropped by dying former humans.</doc>
+<use f='codebrowser/p_inter.c' l='534' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='610' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='638' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='645' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='757' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_map.c' l='1282' u='r' c='PIT_ChangeSector'/>
+<use f='codebrowser/p_mobj.c' l='549' u='r' c='P_RemoveMobj'/>

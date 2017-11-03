@@ -1,0 +1,22 @@
+<dec f='codebrowser/d_net.h' l='67' type='byte'/>
+<offset>32</offset>
+<doc f='codebrowser/d_net.h' l='66'>// Only valid if NCMD_RETRANSMIT.</doc>
+<use f='codebrowser/d_net.c' l='110' u='a' c='NetbufferChecksum'/>
+<use f='codebrowser/d_net.c' l='112' u='a' c='NetbufferChecksum'/>
+<use f='codebrowser/d_net.c' l='171' u='r' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='238' u='r' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='307' u='r' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='433' u='w' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='438' u='w' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='497' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='498' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='499' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='500' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='516' u='w' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='518' u='w' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='520' u='w' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='522' u='w' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/i_net.c' l='135' u='w' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='135' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='205' u='w' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='205' u='r' c='PacketGet'/>

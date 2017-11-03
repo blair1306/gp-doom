@@ -1,0 +1,7 @@
+<dec f='codebrowser/r_draw.h' l='84' type='void R_DrawSpan()'/>
+<doc f='codebrowser/r_draw.h' l='82'>// Span blitting for rows, floor/ceiling.
+// No Sepctre effect needed.</doc>
+<def f='codebrowser/r_draw.c' l='520' ll='563' type='void R_DrawSpan()'/>
+<doc f='codebrowser/r_draw.c' l='518'>//
+// Draws the actual span.</doc>
+<use f='codebrowser/r_main.c' l='707' u='r' c='R_ExecuteSetViewSize'/>

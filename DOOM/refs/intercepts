@@ -1,0 +1,8 @@
+<dec f='codebrowser/p_local.h' l='156' type='intercept_t [128]'/>
+<def f='codebrowser/p_maputl.c' l='544' type='intercept_t [128]'/>
+<use f='codebrowser/p_maputl.c' l='692' u='r' c='P_TraverseIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='699' u='r' c='P_TraverseIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='775' u='r' c='P_PathTraverse'/>
+<doc f='codebrowser/p_maputl.c' l='541'>//
+// INTERCEPT ROUTINES
+//</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/m_cheat.h' l='30'/>
+<doc f='codebrowser/m_cheat.h' l='26'>//
+// CHEAT SEQUENCE PACKAGE
+//</doc>
+<use f='codebrowser/m_cheat.c' l='53' u='c'/>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/p_mobj.h' l='228' type='struct mobj_s *'/>
+<offset>576</offset>
+<doc f='codebrowser/p_mobj.h' l='226'>// Interaction info, by BLOCKMAP.
+    // Links in blocks (if needed).</doc>
+<use f='codebrowser/p_maputl.c' l='369' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='370' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='373' u='w' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='373' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='382' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='438' u='w' c='P_SetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='447' u='w' c='P_SetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='531' u='r' c='P_BlockThingsIterator'/>

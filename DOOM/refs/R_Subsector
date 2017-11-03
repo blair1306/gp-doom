@@ -1,0 +1,9 @@
+<def f='codebrowser/r_bsp.c' l='497' ll='542' type='void R_Subsector(int num)'/>
+<use f='codebrowser/r_bsp.c' l='561' u='c' c='R_RenderBSPNode'/>
+<use f='codebrowser/r_bsp.c' l='563' u='c' c='R_RenderBSPNode'/>
+<doc f='codebrowser/r_bsp.c' l='491'>//
+// R_Subsector
+// Determine floor/ceiling planes.
+// Add sprites of things in sector.
+// Draw one or more line segments.
+//</doc>

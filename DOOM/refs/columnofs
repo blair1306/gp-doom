@@ -1,0 +1,9 @@
+<def f='codebrowser/r_draw.c' l='70' type='int [1120]'/>
+<use f='codebrowser/r_draw.c' l='128' u='r' c='R_DrawColumn'/>
+<use f='codebrowser/r_draw.c' l='238' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='239' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='343' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='428' u='r' c='R_DrawTranslatedColumn'/>
+<use f='codebrowser/r_draw.c' l='544' u='r' c='R_DrawSpan'/>
+<use f='codebrowser/r_draw.c' l='670' u='r' c='R_DrawSpanLow'/>
+<use f='codebrowser/r_draw.c' l='709' u='w' c='R_InitBuffer'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/r_draw.h' l='50' type='void R_DrawFuzzColumn()'/>
+<doc f='codebrowser/r_draw.h' l='49'>// The Spectre/Invisibility effect.</doc>
+<def f='codebrowser/r_draw.c' l='285' ll='368' type='void R_DrawFuzzColumn()'/>
+<doc f='codebrowser/r_draw.c' l='277'>//
+// Framebuffer postprocessing.
+// Creates a fuzzy image by copying pixels
+//  from adjacent ones to left and right.
+// Used with an all black colormap, this
+//  could create the SHADOW effect,
+//  i.e. spectres and invisible players.
+//</doc>
+<use f='codebrowser/r_main.c' l='705' u='r' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_main.c' l='712' u='r' c='R_ExecuteSetViewSize'/>

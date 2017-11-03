@@ -1,0 +1,5 @@
+<def f='codebrowser/r_main.c' l='653' type='int'/>
+<use f='codebrowser/r_main.c' l='663' u='w' c='R_SetViewSize'/>
+<use f='codebrowser/r_main.c' l='682' u='r' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_main.c' l='689' u='r' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_main.c' l='690' u='r' c='R_ExecuteSetViewSize'/>

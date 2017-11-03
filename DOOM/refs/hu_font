@@ -1,0 +1,28 @@
+<dec f='codebrowser/f_finale.c' l='258' type='patch_t *[63]'/>
+<use f='codebrowser/f_finale.c' l='320' u='r' c='F_TextWrite'/>
+<use f='codebrowser/f_finale.c' l='323' u='r' c='F_TextWrite'/>
+<use f='codebrowser/f_finale.c' l='547' u='r' c='F_CastPrint'/>
+<use f='codebrowser/f_finale.c' l='566' u='r' c='F_CastPrint'/>
+<use f='codebrowser/f_finale.c' l='567' u='r' c='F_CastPrint'/>
+<def f='codebrowser/hu_stuff.c' l='90' type='patch_t *[63]'/>
+<use f='codebrowser/hu_stuff.c' l='409' u='w' c='HU_Init'/>
+<use f='codebrowser/hu_stuff.c' l='437' u='r' c='HU_Start'/>
+<use f='codebrowser/hu_stuff.c' l='55' u='r' c='HU_Start'/>
+<use f='codebrowser/hu_stuff.c' l='443' u='r' c='HU_Start'/>
+<use f='codebrowser/hu_stuff.c' l='59' u='r' c='HU_Start'/>
+<use f='codebrowser/hu_stuff.c' l='475' u='r' c='HU_Start'/>
+<dec f='codebrowser/m_menu.c' l='68' type='patch_t *[63]'/>
+<use f='codebrowser/m_menu.c' l='1267' u='r' c='M_StringWidth'/>
+<use f='codebrowser/m_menu.c' l='1282' u='r' c='M_StringHeight'/>
+<use f='codebrowser/m_menu.c' l='1332' u='r' c='M_WriteText'/>
+<use f='codebrowser/m_menu.c' l='1335' u='r' c='M_WriteText'/>
+<use f='codebrowser/m_menu.c' l='1776' u='r' c='M_Drawer'/>
+<dec f='codebrowser/m_misc.c' l='67' type='patch_t *[63]'/>
+<use f='codebrowser/m_misc.c' l='89' u='r' c='M_DrawText'/>
+<use f='codebrowser/m_misc.c' l='93' u='r' c='M_DrawText'/>
+<use f='codebrowser/m_misc.c' l='95' u='r' c='M_DrawText'/>
+<doc f='codebrowser/m_misc.c' l='62'>//
+// M_DrawText
+// Returns the final X coordinate
+// HU_Init must have been called to init the font
+//</doc>

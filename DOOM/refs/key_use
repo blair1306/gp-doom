@@ -1,0 +1,7 @@
+<def f='codebrowser/g_game.c' l='156' type='int'/>
+<use f='codebrowser/g_game.c' l='334' u='r' c='G_BuildTiccmd'/>
+<dec f='codebrowser/m_misc.c' l='181' type='int'/>
+<use f='codebrowser/m_misc.c' l='251' u='a'/>
+<use f='codebrowser/m_misc.c' l='251' u='a'/>
+<use f='codebrowser/m_misc.c' l='251' u='a'/>
+<use f='codebrowser/m_misc.c' l='251' u='a'/>

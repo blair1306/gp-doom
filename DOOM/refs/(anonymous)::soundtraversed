@@ -1,0 +1,5 @@
+<dec f='codebrowser/r_defs.h' l='112' type='int'/>
+<offset>160</offset>
+<doc f='codebrowser/r_defs.h' l='111'>// 0 = untraversed, 1,2 = sndlines -1</doc>
+<use f='codebrowser/p_enemy.c' l='116' u='r' c='P_RecursiveSound'/>
+<use f='codebrowser/p_enemy.c' l='122' u='w' c='P_RecursiveSound'/>

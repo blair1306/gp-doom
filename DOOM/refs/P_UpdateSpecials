@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_spec.h' l='48' type='void P_UpdateSpecials()'/>
+<doc f='codebrowser/p_spec.h' l='47'>// every tic</doc>
+<def f='codebrowser/p_spec.c' l='1083' ll='1156' type='void P_UpdateSpecials()'/>
+<use f='codebrowser/p_tick.c' l='153' u='c' c='P_Ticker'/>

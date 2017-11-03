@@ -1,0 +1,11 @@
+<dec f='codebrowser/d_net.h' l='42'/>
+<doc f='codebrowser/d_net.h' l='34'>//
+// Network play related stuff.
+// There is a data struct that stores network
+//  communication related stuff, and another
+//  one that defines the actual packets to
+//  be transmitted.
+//</doc>
+<use f='codebrowser/d_net.c' l='569' u='c'/>
+<use f='codebrowser/i_net.c' l='286' u='c'/>
+<use f='codebrowser/i_net.c' l='323' u='c'/>

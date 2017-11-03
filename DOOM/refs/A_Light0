@@ -1,0 +1,14 @@
+<dec f='codebrowser/info.c' l='59' type='void A_Light0()'/>
+<use f='codebrowser/info.c' l='137'/>
+<use f='codebrowser/info.c' l='137'/>
+<use f='codebrowser/info.c' l='137'/>
+<use f='codebrowser/info.c' l='137'/>
+<use f='codebrowser/info.c' l='137'/>
+<use f='codebrowser/info.c' l='137'/>
+<use f='codebrowser/info.c' l='137'/>
+<use f='codebrowser/info.c' l='137'/>
+<doc f='codebrowser/info.c' l='58'>// Doesn&apos;t work with g++, needs actionf_p1</doc>
+<def f='codebrowser/p_pspr.c' l='761' ll='764' type='void A_Light0(player_t * player, pspdef_t * psp)'/>
+<doc f='codebrowser/p_pspr.c' l='758'>//
+// ?
+//</doc>

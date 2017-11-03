@@ -1,0 +1,6 @@
+<dec f='codebrowser/m_menu.c' l='195' type='void M_ChangeSensitivity(int choice)'/>
+<use f='codebrowser/m_menu.c' l='359'/>
+<use f='codebrowser/m_menu.c' l='359'/>
+<use f='codebrowser/m_menu.c' l='359'/>
+<use f='codebrowser/m_menu.c' l='359'/>
+<def f='codebrowser/m_menu.c' l='1113' ll='1126' type='void M_ChangeSensitivity(int choice)'/>

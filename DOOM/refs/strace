@@ -1,0 +1,13 @@
+<def f='codebrowser/p_sight.c' l='43' type='divline_t'/>
+<use f='codebrowser/p_sight.c' l='178' u='a' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='179' u='a' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='189' u='m' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='189' u='m' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='227' u='a' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='273' u='m' c='P_CrossBSPNode'/>
+<use f='codebrowser/p_sight.c' l='273' u='m' c='P_CrossBSPNode'/>
+<use f='codebrowser/p_sight.c' l='338' u='m' c='P_CheckSight'/>
+<use f='codebrowser/p_sight.c' l='339' u='m' c='P_CheckSight'/>
+<use f='codebrowser/p_sight.c' l='342' u='m' c='P_CheckSight'/>
+<use f='codebrowser/p_sight.c' l='343' u='m' c='P_CheckSight'/>
+<doc f='codebrowser/p_sight.c' l='43'>// from t1 to t2</doc>

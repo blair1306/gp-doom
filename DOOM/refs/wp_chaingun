@@ -1,0 +1,6 @@
+<dec f='codebrowser/doomdef.h' l='185' type='3'/>
+<use f='codebrowser/p_inter.c' l='124' u='r' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='125' u='r' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='610' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_pspr.c' l='197' u='r' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='200' u='r' c='P_CheckAmmo'/>

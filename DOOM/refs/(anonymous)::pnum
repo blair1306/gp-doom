@@ -1,0 +1,5 @@
+<dec f='codebrowser/d_player.h' l='207' type='int'/>
+<offset>288</offset>
+<doc f='codebrowser/d_player.h' l='206'>// index of this player in game</doc>
+<use f='codebrowser/g_game.c' l='1120' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/wi_stuff.c' l='1821' u='r' c='WI_initVariables'/>

@@ -1,0 +1,2 @@
+<def f='codebrowser/wi_stuff.c' l='761' ll='769' type='void WI_updateShowNextLoc()'/>
+<use f='codebrowser/wi_stuff.c' l='1528' u='c' c='WI_Ticker'/>

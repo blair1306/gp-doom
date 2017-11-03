@@ -1,0 +1,14 @@
+<def f='codebrowser/f_finale.c' l='85' type='char *'/>
+<use f='codebrowser/f_finale.c' l='120' u='w' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='124' u='w' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='128' u='w' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='132' u='w' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='150' u='w' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='154' u='w' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='158' u='w' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='162' u='w' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='166' u='w' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='170' u='w' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='184' u='w' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='241' u='r' c='F_Ticker'/>
+<use f='codebrowser/f_finale.c' l='296' u='r' c='F_TextWrite'/>

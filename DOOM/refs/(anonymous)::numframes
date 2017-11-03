@@ -1,0 +1,7 @@
+<dec f='codebrowser/r_defs.h' l='450' type='int'/>
+<offset>0</offset>
+<use f='codebrowser/r_data.c' l='834' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_things.c' l='243' u='w' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='275' u='w' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='513' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='666' u='r' c='R_DrawPSprite'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/tables.h' l='84' type='angle_t [2049]'/>
+<doc f='codebrowser/tables.h' l='81'>// Effective size is 2049;
+// The +1 size is to handle the case when x==y
+//  without additional checking.</doc>
+<use f='codebrowser/r_main.c' l='312' u='r' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='317' u='r' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='328' u='r' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='333' u='r' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='348' u='r' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='353' u='r' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='364' u='r' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='369' u='r' c='R_PointToAngle'/>
+<use f='codebrowser/r_main.c' l='412' u='r' c='R_PointToDist'/>
+<def f='codebrowser/tables.c' l='1870' ll='2129' type='angle_t [2049]'/>

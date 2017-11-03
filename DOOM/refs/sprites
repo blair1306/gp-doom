@@ -1,0 +1,19 @@
+<dec f='codebrowser/r_state.h' l='76' type='spritedef_t *'/>
+<use f='codebrowser/f_finale.c' l='593' u='r' c='F_CastDrawer'/>
+<use f='codebrowser/r_data.c' l='834' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='836' u='r' c='R_PrecacheLevel'/>
+<def f='codebrowser/r_things.c' l='91' type='spritedef_t *'/>
+<use f='codebrowser/r_things.c' l='199' u='w' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='199' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='243' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='275' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='276' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='278' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='511' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='664' u='r' c='R_DrawPSprite'/>
+<doc f='codebrowser/r_things.c' l='85'>//
+// INITIALIZATION FUNCTIONS
+//
+
+// variables used to look up
+//  and range check thing_t sprites patches</doc>

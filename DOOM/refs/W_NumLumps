@@ -1,0 +1,4 @@
+<def f='codebrowser/w_wad.c' l='339' ll='342' type='int W_NumLumps()'/>
+<doc f='codebrowser/w_wad.c' l='336'>//
+// W_NumLumps
+//</doc>

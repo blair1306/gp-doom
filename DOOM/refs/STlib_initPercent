@@ -1,0 +1,6 @@
+<dec f='codebrowser/st_lib.h' l='173' type='void STlib_initPercent(st_percent_t * p, int x, int y, patch_t ** pl, int * num, boolean * on, patch_t * percent)'/>
+<def f='codebrowser/st_lib.c' l='162' ll='174' type='void STlib_initPercent(st_percent_t * p, int x, int y, patch_t ** pl, int * num, boolean * on, patch_t * percent)'/>
+<doc f='codebrowser/st_lib.c' l='161'>//</doc>
+<doc f='codebrowser/st_lib.h' l='171'>// Percent widget routines</doc>
+<use f='codebrowser/st_stuff.c' l='1300' u='c' c='ST_createWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1344' u='c' c='ST_createWidgets'/>

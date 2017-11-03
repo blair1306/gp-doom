@@ -1,0 +1,6 @@
+<def f='codebrowser/p_map.c' l='1155' type='mobj_t *'/>
+<use f='codebrowser/p_map.c' l='1179' u='r' c='PIT_RadiusAttack'/>
+<use f='codebrowser/p_map.c' l='1180' u='r' c='PIT_RadiusAttack'/>
+<use f='codebrowser/p_map.c' l='1191' u='r' c='PIT_RadiusAttack'/>
+<use f='codebrowser/p_map.c' l='1194' u='r' c='PIT_RadiusAttack'/>
+<use f='codebrowser/p_map.c' l='1226' u='w' c='P_RadiusAttack'/>

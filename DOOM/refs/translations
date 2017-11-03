@@ -1,0 +1,5 @@
+<def f='codebrowser/r_draw.c' l='76' type='byte [3][256]'/>
+<doc f='codebrowser/r_draw.c' l='72'>// Color tables for different players,
+//  translate a limited part to another
+//  (color ramps used for  suit colors).
+//</doc>

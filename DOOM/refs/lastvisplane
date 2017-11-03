@@ -1,0 +1,13 @@
+<def f='codebrowser/r_plane.c' l='54' type='visplane_t *'/>
+<use f='codebrowser/r_plane.c' l='197' u='w' c='R_ClearPlanes'/>
+<use f='codebrowser/r_plane.c' l='231' u='r' c='R_FindPlane'/>
+<use f='codebrowser/r_plane.c' l='242' u='r' c='R_FindPlane'/>
+<use f='codebrowser/r_plane.c' l='245' u='r' c='R_FindPlane'/>
+<use f='codebrowser/r_plane.c' l='248' u='w' c='R_FindPlane'/>
+<use f='codebrowser/r_plane.c' l='313' u='r' c='R_CheckPlane'/>
+<use f='codebrowser/r_plane.c' l='314' u='r' c='R_CheckPlane'/>
+<use f='codebrowser/r_plane.c' l='315' u='r' c='R_CheckPlane'/>
+<use f='codebrowser/r_plane.c' l='317' u='w' c='R_CheckPlane'/>
+<use f='codebrowser/r_plane.c' l='380' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_plane.c' l='382' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_plane.c' l='389' u='r' c='R_DrawPlanes'/>

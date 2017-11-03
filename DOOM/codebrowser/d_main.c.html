@@ -1,0 +1,1189 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>d_main.c source code [codebrowser/d_main.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/d_main.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='d_main.c.html'>d_main.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION:</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//	DOOM main program (D_DoomMain) and game loop (D_DoomLoop),</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">//	plus functions to determine game mode (shareware, registered),</i></td></tr>
+<tr><th id="22">22</th><td><i  data-doc="rcsid">//	parse command line parameters, configure game parameters (turbo),</i></td></tr>
+<tr><th id="23">23</th><td><i  data-doc="rcsid">//	and call the startup functions.</i></td></tr>
+<tr><th id="24">24</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="25">25</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><em>static</em> <em>const</em> <em>char</em> <dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [49]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id: d_main.c,v 1.8 1997/02/03 22:45:09 b1 Exp $"</q>;</td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#define	<dfn class="macro" id="_M/BGCOLOR" data-ref="_M/BGCOLOR">BGCOLOR</dfn>		7</u></td></tr>
+<tr><th id="31">31</th><td><u>#define	<dfn class="macro" id="_M/FGCOLOR" data-ref="_M/FGCOLOR">FGCOLOR</dfn>		8</u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><u>#<span data-ppcond="34">ifdef</span> <span class="macro" data-ref="_M/NORMALUNIX">NORMALUNIX</span></u></td></tr>
+<tr><th id="35">35</th><td><u>#include <a href="../include/stdio.h.html">&lt;stdio.h&gt;</a></u></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="37">37</th><td><u>#include <a href="../include/unistd.h.html">&lt;unistd.h&gt;</a></u></td></tr>
+<tr><th id="38">38</th><td><u>#include <a href="../include/x86_64-linux-gnu/sys/types.h.html">&lt;sys/types.h&gt;</a></u></td></tr>
+<tr><th id="39">39</th><td><u>#include <a href="../include/x86_64-linux-gnu/sys/stat.h.html">&lt;sys/stat.h&gt;</a></u></td></tr>
+<tr><th id="40">40</th><td><u>#include <a href="../include/fcntl.h.html">&lt;fcntl.h&gt;</a></u></td></tr>
+<tr><th id="41">41</th><td><u>#<span data-ppcond="34">endif</span></u></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><u>#include <a href="doomdef.h.html">"doomdef.h"</a></u></td></tr>
+<tr><th id="45">45</th><td><u>#include <a href="doomstat.h.html">"doomstat.h"</a></u></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><u>#include <a href="dstrings.h.html">"dstrings.h"</a></u></td></tr>
+<tr><th id="48">48</th><td><u>#include <a href="sounds.h.html">"sounds.h"</a></u></td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><u>#include <a href="z_zone.h.html">"z_zone.h"</a></u></td></tr>
+<tr><th id="52">52</th><td><u>#include <a href="w_wad.h.html">"w_wad.h"</a></u></td></tr>
+<tr><th id="53">53</th><td><u>#include <a href="s_sound.h.html">"s_sound.h"</a></u></td></tr>
+<tr><th id="54">54</th><td><u>#include <a href="v_video.h.html">"v_video.h"</a></u></td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><u>#include <a href="f_finale.h.html">"f_finale.h"</a></u></td></tr>
+<tr><th id="57">57</th><td><u>#include <a href="f_wipe.h.html">"f_wipe.h"</a></u></td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td><u>#include <a href="m_argv.h.html">"m_argv.h"</a></u></td></tr>
+<tr><th id="60">60</th><td><u>#include <a href="m_misc.h.html">"m_misc.h"</a></u></td></tr>
+<tr><th id="61">61</th><td><u>#include <a href="m_menu.h.html">"m_menu.h"</a></u></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><u>#include <a href="i_system.h.html">"i_system.h"</a></u></td></tr>
+<tr><th id="64">64</th><td><u>#include <a href="i_sound.h.html">"i_sound.h"</a></u></td></tr>
+<tr><th id="65">65</th><td><u>#include <a href="i_video.h.html">"i_video.h"</a></u></td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><u>#include <a href="g_game.h.html">"g_game.h"</a></u></td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><u>#include <a href="hu_stuff.h.html">"hu_stuff.h"</a></u></td></tr>
+<tr><th id="70">70</th><td><u>#include <a href="wi_stuff.h.html">"wi_stuff.h"</a></u></td></tr>
+<tr><th id="71">71</th><td><u>#include <a href="st_stuff.h.html">"st_stuff.h"</a></u></td></tr>
+<tr><th id="72">72</th><td><u>#include <a href="am_map.h.html">"am_map.h"</a></u></td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><u>#include <a href="p_setup.h.html">"p_setup.h"</a></u></td></tr>
+<tr><th id="75">75</th><td><u>#include <a href="r_local.h.html">"r_local.h"</a></u></td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><u>#include <a href="d_main.h.html">"d_main.h"</a></u></td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><i>//</i></td></tr>
+<tr><th id="81">81</th><td><i>// D-DoomLoop()</i></td></tr>
+<tr><th id="82">82</th><td><i>// Not a globally visible function,</i></td></tr>
+<tr><th id="83">83</th><td><i>//  just included for source reference,</i></td></tr>
+<tr><th id="84">84</th><td><i>//  called by D_DoomMain, never exits.</i></td></tr>
+<tr><th id="85">85</th><td><i>// Manages timing and IO,</i></td></tr>
+<tr><th id="86">86</th><td><i>//  calls all ?_Responder, ?_Ticker, and ?_Drawer,</i></td></tr>
+<tr><th id="87">87</th><td><i>//  calls I_GetTime, I_StartFrame, and I_StartTic</i></td></tr>
+<tr><th id="88">88</th><td><i>//</i></td></tr>
+<tr><th id="89">89</th><td><em>void</em> <a class="decl" href="#D_DoomLoop" title='D_DoomLoop' data-ref="D_DoomLoop">D_DoomLoop</a> (<em>void</em>);</td></tr>
+<tr><th id="90">90</th><td></td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td><em>char</em>*		<dfn class="decl def" id="wadfiles" title='wadfiles' data-ref="wadfiles">wadfiles</dfn>[<a class="macro" href="d_main.h.html#36" title="20" data-ref="_M/MAXWADFILES">MAXWADFILES</a>];</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="decl def" id="devparm" title='devparm' data-ref="devparm">devparm</dfn>;	<i>// started game with -devparm</i></td></tr>
+<tr><th id="96">96</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>         <dfn class="decl def" id="nomonsters" title='nomonsters' data-ref="nomonsters">nomonsters</dfn>;	<i>// checkparm of -nomonsters</i></td></tr>
+<tr><th id="97">97</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>         <dfn class="decl def" id="respawnparm" title='respawnparm' data-ref="respawnparm">respawnparm</dfn>;	<i>// checkparm of -respawn</i></td></tr>
+<tr><th id="98">98</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>         <dfn class="decl def" id="fastparm" title='fastparm' data-ref="fastparm">fastparm</dfn>;	<i>// checkparm of -fast</i></td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>         <dfn class="decl def" id="drone" title='drone' data-ref="drone">drone</dfn>;</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="decl def" id="singletics" title='singletics' data-ref="singletics">singletics</dfn> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>; <i>// debug flag to cancel adaptiveness</i></td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td></td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td><i>//extern int soundVolume;</i></td></tr>
+<tr><th id="107">107</th><td><i>//extern  int	sfxVolume;</i></td></tr>
+<tr><th id="108">108</th><td><i>//extern  int	musicVolume;</i></td></tr>
+<tr><th id="109">109</th><td></td></tr>
+<tr><th id="110">110</th><td><b>extern</b>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>	<dfn class="decl" id="inhelpscreens" title='inhelpscreens' data-ref="inhelpscreens">inhelpscreens</dfn>;</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><a class="typedef" href="doomdef.h.html#skill_t" title='skill_t' data-type='enum skill_t' data-ref="skill_t">skill_t</a>		<dfn class="decl def" id="startskill" title='startskill' data-ref="startskill">startskill</dfn>;</td></tr>
+<tr><th id="113">113</th><td><em>int</em>             <dfn class="decl def" id="startepisode" title='startepisode' data-ref="startepisode">startepisode</dfn>;</td></tr>
+<tr><th id="114">114</th><td><em>int</em>		<dfn class="decl def" id="startmap" title='startmap' data-ref="startmap">startmap</dfn>;</td></tr>
+<tr><th id="115">115</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="decl def" id="autostart" title='autostart' data-ref="autostart">autostart</dfn>;</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><a class="typedef" href="../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a>*		<dfn class="decl def" id="debugfile" title='debugfile' data-ref="debugfile">debugfile</dfn>;</td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="decl def" id="advancedemo" title='advancedemo' data-ref="advancedemo">advancedemo</dfn>;</td></tr>
+<tr><th id="120">120</th><td></td></tr>
+<tr><th id="121">121</th><td></td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><em>char</em>		<dfn class="decl def" id="wadfile" title='wadfile' data-ref="wadfile">wadfile</dfn>[<var>1024</var>];		<i>// primary wad file</i></td></tr>
+<tr><th id="125">125</th><td><em>char</em>		<dfn class="decl def" id="mapdir" title='mapdir' data-ref="mapdir">mapdir</dfn>[<var>1024</var>];           <i>// directory of development maps</i></td></tr>
+<tr><th id="126">126</th><td><em>char</em>		<dfn class="decl def" id="basedefault" title='basedefault' data-ref="basedefault">basedefault</dfn>[<var>1024</var>];      <i>// default file</i></td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td><em>void</em> <dfn class="decl" id="D_CheckNetGame" title='D_CheckNetGame' data-ref="D_CheckNetGame">D_CheckNetGame</dfn> (<em>void</em>);</td></tr>
+<tr><th id="130">130</th><td><em>void</em> <a class="decl" href="#D_ProcessEvents" title='D_ProcessEvents' data-ref="D_ProcessEvents">D_ProcessEvents</a> (<em>void</em>);</td></tr>
+<tr><th id="131">131</th><td><em>void</em> <dfn class="decl" id="G_BuildTiccmd" title='G_BuildTiccmd' data-ref="G_BuildTiccmd">G_BuildTiccmd</dfn> (<a class="typedef" href="d_ticcmd.h.html#ticcmd_t" title='ticcmd_t' data-type='struct ticcmd_t' data-ref="ticcmd_t">ticcmd_t</a>* <dfn class="local col1 decl" id="541cmd" title='cmd' data-type='ticcmd_t *' data-ref="541cmd">cmd</dfn>);</td></tr>
+<tr><th id="132">132</th><td><em>void</em> <a class="decl" href="#D_DoAdvanceDemo" title='D_DoAdvanceDemo' data-ref="D_DoAdvanceDemo">D_DoAdvanceDemo</a> (<em>void</em>);</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td></td></tr>
+<tr><th id="135">135</th><td><i>//</i></td></tr>
+<tr><th id="136">136</th><td><i>// EVENT HANDLING</i></td></tr>
+<tr><th id="137">137</th><td><i>//</i></td></tr>
+<tr><th id="138">138</th><td><i>// Events are asynchronous inputs generally generated by the game user.</i></td></tr>
+<tr><th id="139">139</th><td><i>// Events can be discarded if no responder claims them</i></td></tr>
+<tr><th id="140">140</th><td><i>//</i></td></tr>
+<tr><th id="141">141</th><td><a class="typedef" href="d_event.h.html#event_t" title='event_t' data-type='struct event_t' data-ref="event_t">event_t</a>         <dfn class="decl def" id="events" title='events' data-ref="events">events</dfn>[<a class="macro" href="d_event.h.html#108" title="64" data-ref="_M/MAXEVENTS">MAXEVENTS</a>];</td></tr>
+<tr><th id="142">142</th><td><em>int</em>             <dfn class="decl def" id="eventhead" title='eventhead' data-ref="eventhead">eventhead</dfn>;</td></tr>
+<tr><th id="143">143</th><td><em>int</em> 		<dfn class="decl def" id="eventtail" title='eventtail' data-ref="eventtail">eventtail</dfn>;</td></tr>
+<tr><th id="144">144</th><td></td></tr>
+<tr><th id="145">145</th><td></td></tr>
+<tr><th id="146">146</th><td><i>//</i></td></tr>
+<tr><th id="147">147</th><td><i>// D_PostEvent</i></td></tr>
+<tr><th id="148">148</th><td><i>// Called by the I/O functions when input is detected</i></td></tr>
+<tr><th id="149">149</th><td><i>//</i></td></tr>
+<tr><th id="150">150</th><td><em>void</em> <dfn class="decl def" id="D_PostEvent" title='D_PostEvent' data-ref="D_PostEvent">D_PostEvent</dfn> (<a class="typedef" href="d_event.h.html#event_t" title='event_t' data-type='struct event_t' data-ref="event_t">event_t</a>* <dfn class="local col2 decl" id="542ev" title='ev' data-type='event_t *' data-ref="542ev">ev</dfn>)</td></tr>
+<tr><th id="151">151</th><td>{</td></tr>
+<tr><th id="152">152</th><td>    <a class="ref" href="d_event.h.html#events" title='events' data-ref="events">events</a>[<a class="ref" href="d_event.h.html#eventhead" title='eventhead' data-ref="eventhead">eventhead</a>] = *<a class="local col2 ref" href="#542ev" title='ev' data-ref="542ev">ev</a>;</td></tr>
+<tr><th id="153">153</th><td>    <a class="ref" href="d_event.h.html#eventhead" title='eventhead' data-ref="eventhead">eventhead</a> = (<span class='warning' title="multiple unsequenced modifications to &apos;eventhead&apos;">++</span><a class="ref" href="d_event.h.html#eventhead" title='eventhead' data-ref="eventhead">eventhead</a>)&amp;(<a class="macro" href="d_event.h.html#108" title="64" data-ref="_M/MAXEVENTS">MAXEVENTS</a>-<var>1</var>);</td></tr>
+<tr><th id="154">154</th><td>}</td></tr>
+<tr><th id="155">155</th><td></td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td><i>//</i></td></tr>
+<tr><th id="158">158</th><td><i>// D_ProcessEvents</i></td></tr>
+<tr><th id="159">159</th><td><i>// Send all the events of the given timestamp down the responder chain</i></td></tr>
+<tr><th id="160">160</th><td><i>//</i></td></tr>
+<tr><th id="161">161</th><td><em>void</em> <dfn class="decl def" id="D_ProcessEvents" title='D_ProcessEvents' data-ref="D_ProcessEvents">D_ProcessEvents</dfn> (<em>void</em>)</td></tr>
+<tr><th id="162">162</th><td>{</td></tr>
+<tr><th id="163">163</th><td>    <a class="typedef" href="d_event.h.html#event_t" title='event_t' data-type='struct event_t' data-ref="event_t">event_t</a>*	<dfn class="local col3 decl" id="543ev" title='ev' data-type='event_t *' data-ref="543ev">ev</dfn>;</td></tr>
+<tr><th id="164">164</th><td>	</td></tr>
+<tr><th id="165">165</th><td>    <i>// IF STORE DEMO, DO NOT ACCEPT INPUT</i></td></tr>
+<tr><th id="166">166</th><td>    <b>if</b> ( ( <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> == <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a> )</td></tr>
+<tr><th id="167">167</th><td>	 &amp;&amp; (<a class="ref" href="w_wad.h.html#W_CheckNumForName" title='W_CheckNumForName' data-ref="W_CheckNumForName">W_CheckNumForName</a>(<q>"map01"</q>)&lt;<var>0</var>) )</td></tr>
+<tr><th id="168">168</th><td>      <b>return</b>;</td></tr>
+<tr><th id="169">169</th><td>	</td></tr>
+<tr><th id="170">170</th><td>    <b>for</b> ( ; <a class="ref" href="d_event.h.html#eventtail" title='eventtail' data-ref="eventtail">eventtail</a> != <a class="ref" href="d_event.h.html#eventhead" title='eventhead' data-ref="eventhead">eventhead</a> ; <a class="ref" href="d_event.h.html#eventtail" title='eventtail' data-ref="eventtail">eventtail</a> = (<span class='warning' title="multiple unsequenced modifications to &apos;eventtail&apos;">++</span><a class="ref" href="d_event.h.html#eventtail" title='eventtail' data-ref="eventtail">eventtail</a>)&amp;(<a class="macro" href="d_event.h.html#108" title="64" data-ref="_M/MAXEVENTS">MAXEVENTS</a>-<var>1</var>) )</td></tr>
+<tr><th id="171">171</th><td>    {</td></tr>
+<tr><th id="172">172</th><td>	<a class="local col3 ref" href="#543ev" title='ev' data-ref="543ev">ev</a> = &amp;<a class="ref" href="d_event.h.html#events" title='events' data-ref="events">events</a>[<a class="ref" href="d_event.h.html#eventtail" title='eventtail' data-ref="eventtail">eventtail</a>];</td></tr>
+<tr><th id="173">173</th><td>	<b>if</b> (<a class="ref" href="m_menu.h.html#M_Responder" title='M_Responder' data-ref="M_Responder">M_Responder</a> (<a class="local col3 ref" href="#543ev" title='ev' data-ref="543ev">ev</a>))</td></tr>
+<tr><th id="174">174</th><td>	    <b>continue</b>;               <i>// menu ate the event</i></td></tr>
+<tr><th id="175">175</th><td>	<a class="ref" href="g_game.h.html#G_Responder" title='G_Responder' data-ref="G_Responder">G_Responder</a> (<a class="local col3 ref" href="#543ev" title='ev' data-ref="543ev">ev</a>);</td></tr>
+<tr><th id="176">176</th><td>    }</td></tr>
+<tr><th id="177">177</th><td>}</td></tr>
+<tr><th id="178">178</th><td></td></tr>
+<tr><th id="179">179</th><td></td></tr>
+<tr><th id="180">180</th><td></td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td><i>//</i></td></tr>
+<tr><th id="183">183</th><td><i>// D_Display</i></td></tr>
+<tr><th id="184">184</th><td><i>//  draw current display, possibly wiping it from the previous</i></td></tr>
+<tr><th id="185">185</th><td><i>//</i></td></tr>
+<tr><th id="186">186</th><td><i></i></td></tr>
+<tr><th id="187">187</th><td><i>// wipegamestate can be set to -1 to force a wipe on the next draw</i></td></tr>
+<tr><th id="188">188</th><td><a class="typedef" href="doomdef.h.html#gamestate_t" title='gamestate_t' data-type='enum gamestate_t' data-ref="gamestate_t">gamestate_t</a>     <dfn class="decl def" id="wipegamestate" title='wipegamestate' data-ref="wipegamestate">wipegamestate</dfn> = <a class="enum" href="doomdef.h.html#GS_DEMOSCREEN" title='GS_DEMOSCREEN' data-ref="GS_DEMOSCREEN">GS_DEMOSCREEN</a>;</td></tr>
+<tr><th id="189">189</th><td><b>extern</b>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a> <dfn class="decl" id="setsizeneeded" title='setsizeneeded' data-ref="setsizeneeded">setsizeneeded</dfn>;</td></tr>
+<tr><th id="190">190</th><td><b>extern</b>  <em>int</em>             <dfn class="decl" id="showMessages" title='showMessages' data-ref="showMessages">showMessages</dfn>;</td></tr>
+<tr><th id="191">191</th><td><em>void</em> <dfn class="decl" id="R_ExecuteSetViewSize" title='R_ExecuteSetViewSize' data-ref="R_ExecuteSetViewSize">R_ExecuteSetViewSize</dfn> (<em>void</em>);</td></tr>
+<tr><th id="192">192</th><td></td></tr>
+<tr><th id="193">193</th><td><em>void</em> <dfn class="decl def" id="D_Display" title='D_Display' data-ref="D_Display">D_Display</dfn> (<em>void</em>)</td></tr>
+<tr><th id="194">194</th><td>{</td></tr>
+<tr><th id="195">195</th><td>    <em>static</em>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="local col4 decl" id="544viewactivestate" title='viewactivestate' data-type='boolean' data-ref="544viewactivestate">viewactivestate</dfn> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="196">196</th><td>    <em>static</em>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="local col5 decl" id="545menuactivestate" title='menuactivestate' data-type='boolean' data-ref="545menuactivestate">menuactivestate</dfn> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="197">197</th><td>    <em>static</em>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="local col6 decl" id="546inhelpscreensstate" title='inhelpscreensstate' data-type='boolean' data-ref="546inhelpscreensstate">inhelpscreensstate</dfn> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="198">198</th><td>    <em>static</em>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="local col7 decl" id="547fullscreen" title='fullscreen' data-type='boolean' data-ref="547fullscreen">fullscreen</dfn> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="199">199</th><td>    <em>static</em>  <a class="typedef" href="doomdef.h.html#gamestate_t" title='gamestate_t' data-type='enum gamestate_t' data-ref="gamestate_t">gamestate_t</a>		<dfn class="local col8 decl" id="548oldgamestate" title='oldgamestate' data-type='gamestate_t' data-ref="548oldgamestate">oldgamestate</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="200">200</th><td>    <em>static</em>  <em>int</em>			<dfn class="local col9 decl" id="549borderdrawcount" title='borderdrawcount' data-type='int' data-ref="549borderdrawcount">borderdrawcount</dfn>;</td></tr>
+<tr><th id="201">201</th><td>    <em>int</em>				<dfn class="local col0 decl" id="550nowtime" title='nowtime' data-type='int' data-ref="550nowtime">nowtime</dfn>;</td></tr>
+<tr><th id="202">202</th><td>    <em>int</em>				<dfn class="local col1 decl" id="551tics" title='tics' data-type='int' data-ref="551tics">tics</dfn>;</td></tr>
+<tr><th id="203">203</th><td>    <em>int</em>				<dfn class="local col2 decl" id="552wipestart" title='wipestart' data-type='int' data-ref="552wipestart">wipestart</dfn>;</td></tr>
+<tr><th id="204">204</th><td>    <em>int</em>				<dfn class="local col3 decl" id="553y" title='y' data-type='int' data-ref="553y">y</dfn>;</td></tr>
+<tr><th id="205">205</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>			<dfn class="local col4 decl" id="554done" title='done' data-type='boolean' data-ref="554done">done</dfn>;</td></tr>
+<tr><th id="206">206</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>			<dfn class="local col5 decl" id="555wipe" title='wipe' data-type='boolean' data-ref="555wipe">wipe</dfn>;</td></tr>
+<tr><th id="207">207</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>			<dfn class="local col6 decl" id="556redrawsbar" title='redrawsbar' data-type='boolean' data-ref="556redrawsbar">redrawsbar</dfn>;</td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#nodrawers" title='nodrawers' data-ref="nodrawers">nodrawers</a>)</td></tr>
+<tr><th id="210">210</th><td>	<b>return</b>;                    <i>// for comparative timing / profiling</i></td></tr>
+<tr><th id="211">211</th><td>		</td></tr>
+<tr><th id="212">212</th><td>    <a class="local col6 ref" href="#556redrawsbar" title='redrawsbar' data-ref="556redrawsbar">redrawsbar</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="213">213</th><td>    </td></tr>
+<tr><th id="214">214</th><td>    <i>// change the view size if needed</i></td></tr>
+<tr><th id="215">215</th><td>    <b>if</b> (<a class="ref" href="#setsizeneeded" title='setsizeneeded' data-ref="setsizeneeded">setsizeneeded</a>)</td></tr>
+<tr><th id="216">216</th><td>    {</td></tr>
+<tr><th id="217">217</th><td>	<a class="ref" href="#R_ExecuteSetViewSize" title='R_ExecuteSetViewSize' data-ref="R_ExecuteSetViewSize">R_ExecuteSetViewSize</a> ();</td></tr>
+<tr><th id="218">218</th><td>	<a class="local col8 ref" href="#548oldgamestate" title='oldgamestate' data-ref="548oldgamestate">oldgamestate</a> = -<var>1</var>;                      <i>// force background redraw</i></td></tr>
+<tr><th id="219">219</th><td>	<a class="local col9 ref" href="#549borderdrawcount" title='borderdrawcount' data-ref="549borderdrawcount">borderdrawcount</a> = <var>3</var>;</td></tr>
+<tr><th id="220">220</th><td>    }</td></tr>
+<tr><th id="221">221</th><td></td></tr>
+<tr><th id="222">222</th><td>    <i>// save the current screen if about to wipe</i></td></tr>
+<tr><th id="223">223</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#gamestate" title='gamestate' data-ref="gamestate">gamestate</a> != <a class="ref" href="doomstat.h.html#wipegamestate" title='wipegamestate' data-ref="wipegamestate">wipegamestate</a>)</td></tr>
+<tr><th id="224">224</th><td>    {</td></tr>
+<tr><th id="225">225</th><td>	<a class="local col5 ref" href="#555wipe" title='wipe' data-ref="555wipe">wipe</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="226">226</th><td>	<a class="ref" href="f_wipe.h.html#wipe_StartScreen" title='wipe_StartScreen' data-ref="wipe_StartScreen">wipe_StartScreen</a>(<var>0</var>, <var>0</var>, <a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>, <a class="macro" href="doomdef.h.html#112" title="200" data-ref="_M/SCREENHEIGHT">SCREENHEIGHT</a>);</td></tr>
+<tr><th id="227">227</th><td>    }</td></tr>
+<tr><th id="228">228</th><td>    <b>else</b></td></tr>
+<tr><th id="229">229</th><td>	<a class="local col5 ref" href="#555wipe" title='wipe' data-ref="555wipe">wipe</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="230">230</th><td></td></tr>
+<tr><th id="231">231</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#gamestate" title='gamestate' data-ref="gamestate">gamestate</a> == <a class="enum" href="doomdef.h.html#GS_LEVEL" title='GS_LEVEL' data-ref="GS_LEVEL">GS_LEVEL</a> &amp;&amp; <a class="ref" href="doomstat.h.html#gametic" title='gametic' data-ref="gametic">gametic</a>)</td></tr>
+<tr><th id="232">232</th><td>	<a class="ref" href="hu_stuff.h.html#HU_Erase" title='HU_Erase' data-ref="HU_Erase">HU_Erase</a>();</td></tr>
+<tr><th id="233">233</th><td>    </td></tr>
+<tr><th id="234">234</th><td>    <i>// do buffered drawing</i></td></tr>
+<tr><th id="235">235</th><td>    <b>switch</b> (<a class="ref" href="doomstat.h.html#gamestate" title='gamestate' data-ref="gamestate">gamestate</a>)</td></tr>
+<tr><th id="236">236</th><td>    {</td></tr>
+<tr><th id="237">237</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#GS_LEVEL" title='GS_LEVEL' data-ref="GS_LEVEL">GS_LEVEL</a>:</td></tr>
+<tr><th id="238">238</th><td>	<b>if</b> (!<a class="ref" href="doomstat.h.html#gametic" title='gametic' data-ref="gametic">gametic</a>)</td></tr>
+<tr><th id="239">239</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="240">240</th><td>	<b>if</b> (<a class="ref" href="doomstat.h.html#automapactive" title='automapactive' data-ref="automapactive">automapactive</a>)</td></tr>
+<tr><th id="241">241</th><td>	    <a class="ref" href="am_map.h.html#AM_Drawer" title='AM_Drawer' data-ref="AM_Drawer">AM_Drawer</a> ();</td></tr>
+<tr><th id="242">242</th><td>	<b>if</b> (<a class="local col5 ref" href="#555wipe" title='wipe' data-ref="555wipe">wipe</a> || (<a class="ref" href="doomstat.h.html#viewheight" title='viewheight' data-ref="viewheight">viewheight</a> != <var>200</var> &amp;&amp; <a class="local col7 ref" href="#547fullscreen" title='fullscreen' data-ref="547fullscreen">fullscreen</a>) )</td></tr>
+<tr><th id="243">243</th><td>	    <a class="local col6 ref" href="#556redrawsbar" title='redrawsbar' data-ref="556redrawsbar">redrawsbar</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="244">244</th><td>	<b>if</b> (<a class="local col6 ref" href="#546inhelpscreensstate" title='inhelpscreensstate' data-ref="546inhelpscreensstate">inhelpscreensstate</a> &amp;&amp; !<a class="ref" href="#inhelpscreens" title='inhelpscreens' data-ref="inhelpscreens">inhelpscreens</a>)</td></tr>
+<tr><th id="245">245</th><td>	    <a class="local col6 ref" href="#556redrawsbar" title='redrawsbar' data-ref="556redrawsbar">redrawsbar</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;              <i>// just put away the help screen</i></td></tr>
+<tr><th id="246">246</th><td>	<a class="ref" href="st_stuff.h.html#ST_Drawer" title='ST_Drawer' data-ref="ST_Drawer">ST_Drawer</a> (<a class="ref" href="doomstat.h.html#viewheight" title='viewheight' data-ref="viewheight">viewheight</a> == <var>200</var>, <a class="local col6 ref" href="#556redrawsbar" title='redrawsbar' data-ref="556redrawsbar">redrawsbar</a> );</td></tr>
+<tr><th id="247">247</th><td>	<a class="local col7 ref" href="#547fullscreen" title='fullscreen' data-ref="547fullscreen">fullscreen</a> = <a class="ref" href="doomstat.h.html#viewheight" title='viewheight' data-ref="viewheight">viewheight</a> == <var>200</var>;</td></tr>
+<tr><th id="248">248</th><td>	<b>break</b>;</td></tr>
+<tr><th id="249">249</th><td></td></tr>
+<tr><th id="250">250</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#GS_INTERMISSION" title='GS_INTERMISSION' data-ref="GS_INTERMISSION">GS_INTERMISSION</a>:</td></tr>
+<tr><th id="251">251</th><td>	<a class="ref" href="wi_stuff.h.html#WI_Drawer" title='WI_Drawer' data-ref="WI_Drawer">WI_Drawer</a> ();</td></tr>
+<tr><th id="252">252</th><td>	<b>break</b>;</td></tr>
+<tr><th id="253">253</th><td></td></tr>
+<tr><th id="254">254</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#GS_FINALE" title='GS_FINALE' data-ref="GS_FINALE">GS_FINALE</a>:</td></tr>
+<tr><th id="255">255</th><td>	<a class="ref" href="f_finale.h.html#F_Drawer" title='F_Drawer' data-ref="F_Drawer">F_Drawer</a> ();</td></tr>
+<tr><th id="256">256</th><td>	<b>break</b>;</td></tr>
+<tr><th id="257">257</th><td></td></tr>
+<tr><th id="258">258</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#GS_DEMOSCREEN" title='GS_DEMOSCREEN' data-ref="GS_DEMOSCREEN">GS_DEMOSCREEN</a>:</td></tr>
+<tr><th id="259">259</th><td>	<a class="ref" href="#D_PageDrawer" title='D_PageDrawer' data-ref="D_PageDrawer">D_PageDrawer</a> ();</td></tr>
+<tr><th id="260">260</th><td>	<b>break</b>;</td></tr>
+<tr><th id="261">261</th><td>    }</td></tr>
+<tr><th id="262">262</th><td>    </td></tr>
+<tr><th id="263">263</th><td>    <i>// draw buffered stuff to screen</i></td></tr>
+<tr><th id="264">264</th><td>    <a class="ref" href="i_video.h.html#I_UpdateNoBlit" title='I_UpdateNoBlit' data-ref="I_UpdateNoBlit">I_UpdateNoBlit</a> ();</td></tr>
+<tr><th id="265">265</th><td>    </td></tr>
+<tr><th id="266">266</th><td>    <i>// draw the view directly</i></td></tr>
+<tr><th id="267">267</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#gamestate" title='gamestate' data-ref="gamestate">gamestate</a> == <a class="enum" href="doomdef.h.html#GS_LEVEL" title='GS_LEVEL' data-ref="GS_LEVEL">GS_LEVEL</a> &amp;&amp; !<a class="ref" href="doomstat.h.html#automapactive" title='automapactive' data-ref="automapactive">automapactive</a> &amp;&amp; <a class="ref" href="doomstat.h.html#gametic" title='gametic' data-ref="gametic">gametic</a>)</td></tr>
+<tr><th id="268">268</th><td>	<a class="ref" href="r_main.h.html#R_RenderPlayerView" title='R_RenderPlayerView' data-ref="R_RenderPlayerView">R_RenderPlayerView</a> (&amp;<a class="ref" href="doomstat.h.html#players" title='players' data-ref="players">players</a>[<a class="ref" href="doomstat.h.html#displayplayer" title='displayplayer' data-ref="displayplayer">displayplayer</a>]);</td></tr>
+<tr><th id="269">269</th><td></td></tr>
+<tr><th id="270">270</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#gamestate" title='gamestate' data-ref="gamestate">gamestate</a> == <a class="enum" href="doomdef.h.html#GS_LEVEL" title='GS_LEVEL' data-ref="GS_LEVEL">GS_LEVEL</a> &amp;&amp; <a class="ref" href="doomstat.h.html#gametic" title='gametic' data-ref="gametic">gametic</a>)</td></tr>
+<tr><th id="271">271</th><td>	<a class="ref" href="hu_stuff.h.html#HU_Drawer" title='HU_Drawer' data-ref="HU_Drawer">HU_Drawer</a> ();</td></tr>
+<tr><th id="272">272</th><td>    </td></tr>
+<tr><th id="273">273</th><td>    <i>// clean up border stuff</i></td></tr>
+<tr><th id="274">274</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#gamestate" title='gamestate' data-ref="gamestate">gamestate</a> != <a class="local col8 ref" href="#548oldgamestate" title='oldgamestate' data-ref="548oldgamestate">oldgamestate</a> &amp;&amp; <a class="ref" href="doomstat.h.html#gamestate" title='gamestate' data-ref="gamestate">gamestate</a> != <a class="enum" href="doomdef.h.html#GS_LEVEL" title='GS_LEVEL' data-ref="GS_LEVEL">GS_LEVEL</a>)</td></tr>
+<tr><th id="275">275</th><td>	<a class="ref" href="i_video.h.html#I_SetPalette" title='I_SetPalette' data-ref="I_SetPalette">I_SetPalette</a> (<a class="ref" href="w_wad.h.html#W_CacheLumpName" title='W_CacheLumpName' data-ref="W_CacheLumpName">W_CacheLumpName</a> (<q>"PLAYPAL"</q>,<a class="macro" href="z_zone.h.html#44" title="101" data-ref="_M/PU_CACHE">PU_CACHE</a>));</td></tr>
+<tr><th id="276">276</th><td></td></tr>
+<tr><th id="277">277</th><td>    <i>// see if the border needs to be initially drawn</i></td></tr>
+<tr><th id="278">278</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#gamestate" title='gamestate' data-ref="gamestate">gamestate</a> == <a class="enum" href="doomdef.h.html#GS_LEVEL" title='GS_LEVEL' data-ref="GS_LEVEL">GS_LEVEL</a> &amp;&amp; <a class="local col8 ref" href="#548oldgamestate" title='oldgamestate' data-ref="548oldgamestate">oldgamestate</a> != <a class="enum" href="doomdef.h.html#GS_LEVEL" title='GS_LEVEL' data-ref="GS_LEVEL">GS_LEVEL</a>)</td></tr>
+<tr><th id="279">279</th><td>    {</td></tr>
+<tr><th id="280">280</th><td>	<a class="local col4 ref" href="#544viewactivestate" title='viewactivestate' data-ref="544viewactivestate">viewactivestate</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;        <i>// view was not active</i></td></tr>
+<tr><th id="281">281</th><td>	<a class="ref" href="r_draw.h.html#R_FillBackScreen" title='R_FillBackScreen' data-ref="R_FillBackScreen">R_FillBackScreen</a> ();    <i>// draw the pattern into the back screen</i></td></tr>
+<tr><th id="282">282</th><td>    }</td></tr>
+<tr><th id="283">283</th><td></td></tr>
+<tr><th id="284">284</th><td>    <i>// see if the border needs to be updated to the screen</i></td></tr>
+<tr><th id="285">285</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#gamestate" title='gamestate' data-ref="gamestate">gamestate</a> == <a class="enum" href="doomdef.h.html#GS_LEVEL" title='GS_LEVEL' data-ref="GS_LEVEL">GS_LEVEL</a> &amp;&amp; !<a class="ref" href="doomstat.h.html#automapactive" title='automapactive' data-ref="automapactive">automapactive</a> &amp;&amp; <a class="ref" href="doomstat.h.html#scaledviewwidth" title='scaledviewwidth' data-ref="scaledviewwidth">scaledviewwidth</a> != <var>320</var>)</td></tr>
+<tr><th id="286">286</th><td>    {</td></tr>
+<tr><th id="287">287</th><td>	<b>if</b> (<a class="ref" href="doomstat.h.html#menuactive" title='menuactive' data-ref="menuactive">menuactive</a> || <a class="local col5 ref" href="#545menuactivestate" title='menuactivestate' data-ref="545menuactivestate">menuactivestate</a> || !<a class="local col4 ref" href="#544viewactivestate" title='viewactivestate' data-ref="544viewactivestate">viewactivestate</a>)</td></tr>
+<tr><th id="288">288</th><td>	    <a class="local col9 ref" href="#549borderdrawcount" title='borderdrawcount' data-ref="549borderdrawcount">borderdrawcount</a> = <var>3</var>;</td></tr>
+<tr><th id="289">289</th><td>	<b>if</b> (<a class="local col9 ref" href="#549borderdrawcount" title='borderdrawcount' data-ref="549borderdrawcount">borderdrawcount</a>)</td></tr>
+<tr><th id="290">290</th><td>	{</td></tr>
+<tr><th id="291">291</th><td>	    <a class="ref" href="r_draw.h.html#R_DrawViewBorder" title='R_DrawViewBorder' data-ref="R_DrawViewBorder">R_DrawViewBorder</a> ();    <i>// erase old menu stuff</i></td></tr>
+<tr><th id="292">292</th><td>	    <a class="local col9 ref" href="#549borderdrawcount" title='borderdrawcount' data-ref="549borderdrawcount">borderdrawcount</a>--;</td></tr>
+<tr><th id="293">293</th><td>	}</td></tr>
+<tr><th id="294">294</th><td></td></tr>
+<tr><th id="295">295</th><td>    }</td></tr>
+<tr><th id="296">296</th><td></td></tr>
+<tr><th id="297">297</th><td>    <a class="local col5 ref" href="#545menuactivestate" title='menuactivestate' data-ref="545menuactivestate">menuactivestate</a> = <a class="ref" href="doomstat.h.html#menuactive" title='menuactive' data-ref="menuactive">menuactive</a>;</td></tr>
+<tr><th id="298">298</th><td>    <a class="local col4 ref" href="#544viewactivestate" title='viewactivestate' data-ref="544viewactivestate">viewactivestate</a> = <a class="ref" href="doomstat.h.html#viewactive" title='viewactive' data-ref="viewactive">viewactive</a>;</td></tr>
+<tr><th id="299">299</th><td>    <a class="local col6 ref" href="#546inhelpscreensstate" title='inhelpscreensstate' data-ref="546inhelpscreensstate">inhelpscreensstate</a> = <a class="ref" href="#inhelpscreens" title='inhelpscreens' data-ref="inhelpscreens">inhelpscreens</a>;</td></tr>
+<tr><th id="300">300</th><td>    <a class="local col8 ref" href="#548oldgamestate" title='oldgamestate' data-ref="548oldgamestate">oldgamestate</a> = <a class="ref" href="doomstat.h.html#wipegamestate" title='wipegamestate' data-ref="wipegamestate">wipegamestate</a> = <a class="ref" href="doomstat.h.html#gamestate" title='gamestate' data-ref="gamestate">gamestate</a>;</td></tr>
+<tr><th id="301">301</th><td>    </td></tr>
+<tr><th id="302">302</th><td>    <i>// draw pause pic</i></td></tr>
+<tr><th id="303">303</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#paused" title='paused' data-ref="paused">paused</a>)</td></tr>
+<tr><th id="304">304</th><td>    {</td></tr>
+<tr><th id="305">305</th><td>	<b>if</b> (<a class="ref" href="doomstat.h.html#automapactive" title='automapactive' data-ref="automapactive">automapactive</a>)</td></tr>
+<tr><th id="306">306</th><td>	    <a class="local col3 ref" href="#553y" title='y' data-ref="553y">y</a> = <var>4</var>;</td></tr>
+<tr><th id="307">307</th><td>	<b>else</b></td></tr>
+<tr><th id="308">308</th><td>	    <a class="local col3 ref" href="#553y" title='y' data-ref="553y">y</a> = <a class="ref" href="doomstat.h.html#viewwindowy" title='viewwindowy' data-ref="viewwindowy">viewwindowy</a>+<var>4</var>;</td></tr>
+<tr><th id="309">309</th><td>	<a class="ref" href="v_video.h.html#V_DrawPatchDirect" title='V_DrawPatchDirect' data-ref="V_DrawPatchDirect">V_DrawPatchDirect</a>(<a class="ref" href="doomstat.h.html#viewwindowx" title='viewwindowx' data-ref="viewwindowx">viewwindowx</a>+(<a class="ref" href="doomstat.h.html#scaledviewwidth" title='scaledviewwidth' data-ref="scaledviewwidth">scaledviewwidth</a>-<var>68</var>)/<var>2</var>,</td></tr>
+<tr><th id="310">310</th><td>			  <a class="local col3 ref" href="#553y" title='y' data-ref="553y">y</a>,<var>0</var>,<a class="ref" href="w_wad.h.html#W_CacheLumpName" title='W_CacheLumpName' data-ref="W_CacheLumpName">W_CacheLumpName</a> (<q>"M_PAUSE"</q>, <a class="macro" href="z_zone.h.html#44" title="101" data-ref="_M/PU_CACHE">PU_CACHE</a>));</td></tr>
+<tr><th id="311">311</th><td>    }</td></tr>
+<tr><th id="312">312</th><td></td></tr>
+<tr><th id="313">313</th><td></td></tr>
+<tr><th id="314">314</th><td>    <i>// menus go directly to the screen</i></td></tr>
+<tr><th id="315">315</th><td>    <a class="ref" href="m_menu.h.html#M_Drawer" title='M_Drawer' data-ref="M_Drawer">M_Drawer</a> ();          <i>// menu is drawn even on top of everything</i></td></tr>
+<tr><th id="316">316</th><td>    <a class="ref" href="d_net.h.html#NetUpdate" title='NetUpdate' data-ref="NetUpdate">NetUpdate</a> ();         <i>// send out any new accumulation</i></td></tr>
+<tr><th id="317">317</th><td></td></tr>
+<tr><th id="318">318</th><td></td></tr>
+<tr><th id="319">319</th><td>    <i>// normal update</i></td></tr>
+<tr><th id="320">320</th><td>    <b>if</b> (!<a class="local col5 ref" href="#555wipe" title='wipe' data-ref="555wipe">wipe</a>)</td></tr>
+<tr><th id="321">321</th><td>    {</td></tr>
+<tr><th id="322">322</th><td>	<a class="ref" href="i_video.h.html#I_FinishUpdate" title='I_FinishUpdate' data-ref="I_FinishUpdate">I_FinishUpdate</a> ();              <i>// page flip or blit buffer</i></td></tr>
+<tr><th id="323">323</th><td>	<b>return</b>;</td></tr>
+<tr><th id="324">324</th><td>    }</td></tr>
+<tr><th id="325">325</th><td>    </td></tr>
+<tr><th id="326">326</th><td>    <i>// wipe update</i></td></tr>
+<tr><th id="327">327</th><td>    <a class="ref" href="f_wipe.h.html#wipe_EndScreen" title='wipe_EndScreen' data-ref="wipe_EndScreen">wipe_EndScreen</a>(<var>0</var>, <var>0</var>, <a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>, <a class="macro" href="doomdef.h.html#112" title="200" data-ref="_M/SCREENHEIGHT">SCREENHEIGHT</a>);</td></tr>
+<tr><th id="328">328</th><td></td></tr>
+<tr><th id="329">329</th><td>    <a class="local col2 ref" href="#552wipestart" title='wipestart' data-ref="552wipestart">wipestart</a> = <a class="ref" href="i_system.h.html#I_GetTime" title='I_GetTime' data-ref="I_GetTime">I_GetTime</a> () - <var>1</var>;</td></tr>
+<tr><th id="330">330</th><td></td></tr>
+<tr><th id="331">331</th><td>    <b>do</b></td></tr>
+<tr><th id="332">332</th><td>    {</td></tr>
+<tr><th id="333">333</th><td>	<b>do</b></td></tr>
+<tr><th id="334">334</th><td>	{</td></tr>
+<tr><th id="335">335</th><td>	    <a class="local col0 ref" href="#550nowtime" title='nowtime' data-ref="550nowtime">nowtime</a> = <a class="ref" href="i_system.h.html#I_GetTime" title='I_GetTime' data-ref="I_GetTime">I_GetTime</a> ();</td></tr>
+<tr><th id="336">336</th><td>	    <a class="local col1 ref" href="#551tics" title='tics' data-ref="551tics">tics</a> = <a class="local col0 ref" href="#550nowtime" title='nowtime' data-ref="550nowtime">nowtime</a> - <a class="local col2 ref" href="#552wipestart" title='wipestart' data-ref="552wipestart">wipestart</a>;</td></tr>
+<tr><th id="337">337</th><td>	} <b>while</b> (!<a class="local col1 ref" href="#551tics" title='tics' data-ref="551tics">tics</a>);</td></tr>
+<tr><th id="338">338</th><td>	<a class="local col2 ref" href="#552wipestart" title='wipestart' data-ref="552wipestart">wipestart</a> = <a class="local col0 ref" href="#550nowtime" title='nowtime' data-ref="550nowtime">nowtime</a>;</td></tr>
+<tr><th id="339">339</th><td>	<a class="local col4 ref" href="#554done" title='done' data-ref="554done">done</a> = <a class="ref" href="f_wipe.h.html#wipe_ScreenWipe" title='wipe_ScreenWipe' data-ref="wipe_ScreenWipe">wipe_ScreenWipe</a>(<a class="enum" href="f_wipe.h.html#wipe_Melt" title='wipe_Melt' data-ref="wipe_Melt">wipe_Melt</a></td></tr>
+<tr><th id="340">340</th><td>			       , <var>0</var>, <var>0</var>, <a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>, <a class="macro" href="doomdef.h.html#112" title="200" data-ref="_M/SCREENHEIGHT">SCREENHEIGHT</a>, <a class="local col1 ref" href="#551tics" title='tics' data-ref="551tics">tics</a>);</td></tr>
+<tr><th id="341">341</th><td>	<a class="ref" href="i_video.h.html#I_UpdateNoBlit" title='I_UpdateNoBlit' data-ref="I_UpdateNoBlit">I_UpdateNoBlit</a> ();</td></tr>
+<tr><th id="342">342</th><td>	<a class="ref" href="m_menu.h.html#M_Drawer" title='M_Drawer' data-ref="M_Drawer">M_Drawer</a> ();                            <i>// menu is drawn even on top of wipes</i></td></tr>
+<tr><th id="343">343</th><td>	<a class="ref" href="i_video.h.html#I_FinishUpdate" title='I_FinishUpdate' data-ref="I_FinishUpdate">I_FinishUpdate</a> ();                      <i>// page flip or blit buffer</i></td></tr>
+<tr><th id="344">344</th><td>    } <b>while</b> (!<a class="local col4 ref" href="#554done" title='done' data-ref="554done">done</a>);</td></tr>
+<tr><th id="345">345</th><td>}</td></tr>
+<tr><th id="346">346</th><td></td></tr>
+<tr><th id="347">347</th><td></td></tr>
+<tr><th id="348">348</th><td></td></tr>
+<tr><th id="349">349</th><td><i>//</i></td></tr>
+<tr><th id="350">350</th><td><i>//  D_DoomLoop</i></td></tr>
+<tr><th id="351">351</th><td><i>//</i></td></tr>
+<tr><th id="352">352</th><td><b>extern</b>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>         <a class="decl" href="doomstat.h.html#demorecording" title='demorecording' data-ref="demorecording" id="demorecording">demorecording</a>;</td></tr>
+<tr><th id="353">353</th><td></td></tr>
+<tr><th id="354">354</th><td><em>void</em> <dfn class="decl def" id="D_DoomLoop" title='D_DoomLoop' data-ref="D_DoomLoop">D_DoomLoop</dfn> (<em>void</em>)</td></tr>
+<tr><th id="355">355</th><td>{</td></tr>
+<tr><th id="356">356</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#demorecording" title='demorecording' data-ref="demorecording">demorecording</a>)</td></tr>
+<tr><th id="357">357</th><td>	<a class="ref" href="g_game.h.html#G_BeginRecording" title='G_BeginRecording' data-ref="G_BeginRecording">G_BeginRecording</a> ();</td></tr>
+<tr><th id="358">358</th><td>		</td></tr>
+<tr><th id="359">359</th><td>    <b>if</b> (<a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-debugfile"</q>))</td></tr>
+<tr><th id="360">360</th><td>    {</td></tr>
+<tr><th id="361">361</th><td>	<em>char</em>    <dfn class="local col7 decl" id="557filename" title='filename' data-type='char [20]' data-ref="557filename">filename</dfn>[<var>20</var>];</td></tr>
+<tr><th id="362">362</th><td>	<a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a> (<a class="local col7 ref" href="#557filename" title='filename' data-ref="557filename">filename</a>,<q>"debug%i.txt"</q>,<a class="ref" href="doomstat.h.html#consoleplayer" title='consoleplayer' data-ref="consoleplayer">consoleplayer</a>);</td></tr>
+<tr><th id="363">363</th><td>	<a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"debug output to: %s\n"</q>,<a class="local col7 ref" href="#557filename" title='filename' data-ref="557filename">filename</a>);</td></tr>
+<tr><th id="364">364</th><td>	<a class="ref" href="doomstat.h.html#debugfile" title='debugfile' data-ref="debugfile">debugfile</a> = <a class="ref" href="../include/stdio.h.html#fopen" title='fopen' data-ref="fopen">fopen</a> (<a class="local col7 ref" href="#557filename" title='filename' data-ref="557filename">filename</a>,<q>"w"</q>);</td></tr>
+<tr><th id="365">365</th><td>    }</td></tr>
+<tr><th id="366">366</th><td>	</td></tr>
+<tr><th id="367">367</th><td>    <a class="ref" href="i_video.h.html#I_InitGraphics" title='I_InitGraphics' data-ref="I_InitGraphics">I_InitGraphics</a> ();</td></tr>
+<tr><th id="368">368</th><td></td></tr>
+<tr><th id="369">369</th><td>    <b>while</b> (<var>1</var>)</td></tr>
+<tr><th id="370">370</th><td>    {</td></tr>
+<tr><th id="371">371</th><td>	<i>// frame syncronous IO operations</i></td></tr>
+<tr><th id="372">372</th><td>	<a class="ref" href="i_system.h.html#I_StartFrame" title='I_StartFrame' data-ref="I_StartFrame">I_StartFrame</a> ();                </td></tr>
+<tr><th id="373">373</th><td>	</td></tr>
+<tr><th id="374">374</th><td>	<i>// process one or more tics</i></td></tr>
+<tr><th id="375">375</th><td>	<b>if</b> (<a class="ref" href="doomstat.h.html#singletics" title='singletics' data-ref="singletics">singletics</a>)</td></tr>
+<tr><th id="376">376</th><td>	{</td></tr>
+<tr><th id="377">377</th><td>	    <a class="ref" href="i_system.h.html#I_StartTic" title='I_StartTic' data-ref="I_StartTic">I_StartTic</a> ();</td></tr>
+<tr><th id="378">378</th><td>	    <a class="ref" href="#D_ProcessEvents" title='D_ProcessEvents' data-ref="D_ProcessEvents">D_ProcessEvents</a> ();</td></tr>
+<tr><th id="379">379</th><td>	    <a class="ref" href="#G_BuildTiccmd" title='G_BuildTiccmd' data-ref="G_BuildTiccmd">G_BuildTiccmd</a> (&amp;<a class="ref" href="doomstat.h.html#netcmds" title='netcmds' data-ref="netcmds">netcmds</a>[<a class="ref" href="doomstat.h.html#consoleplayer" title='consoleplayer' data-ref="consoleplayer">consoleplayer</a>][<a class="ref" href="doomstat.h.html#maketic" title='maketic' data-ref="maketic">maketic</a>%<a class="macro" href="d_net.h.html#49" title="12" data-ref="_M/BACKUPTICS">BACKUPTICS</a>]);</td></tr>
+<tr><th id="380">380</th><td>	    <b>if</b> (<a class="ref" href="#advancedemo" title='advancedemo' data-ref="advancedemo">advancedemo</a>)</td></tr>
+<tr><th id="381">381</th><td>		<a class="ref" href="#D_DoAdvanceDemo" title='D_DoAdvanceDemo' data-ref="D_DoAdvanceDemo">D_DoAdvanceDemo</a> ();</td></tr>
+<tr><th id="382">382</th><td>	    <a class="ref" href="m_menu.h.html#M_Ticker" title='M_Ticker' data-ref="M_Ticker">M_Ticker</a> ();</td></tr>
+<tr><th id="383">383</th><td>	    <a class="ref" href="g_game.h.html#G_Ticker" title='G_Ticker' data-ref="G_Ticker">G_Ticker</a> ();</td></tr>
+<tr><th id="384">384</th><td>	    <a class="ref" href="doomstat.h.html#gametic" title='gametic' data-ref="gametic">gametic</a>++;</td></tr>
+<tr><th id="385">385</th><td>	    <a class="ref" href="doomstat.h.html#maketic" title='maketic' data-ref="maketic">maketic</a>++;</td></tr>
+<tr><th id="386">386</th><td>	}</td></tr>
+<tr><th id="387">387</th><td>	<b>else</b></td></tr>
+<tr><th id="388">388</th><td>	{</td></tr>
+<tr><th id="389">389</th><td>	    <a class="ref" href="d_net.h.html#TryRunTics" title='TryRunTics' data-ref="TryRunTics">TryRunTics</a> (); <i>// will run at least one tic</i></td></tr>
+<tr><th id="390">390</th><td>	}</td></tr>
+<tr><th id="391">391</th><td>		</td></tr>
+<tr><th id="392">392</th><td>	<a class="ref" href="s_sound.h.html#S_UpdateSounds" title='S_UpdateSounds' data-ref="S_UpdateSounds">S_UpdateSounds</a> (<a class="ref" href="doomstat.h.html#players" title='players' data-ref="players">players</a>[<a class="ref" href="doomstat.h.html#consoleplayer" title='consoleplayer' data-ref="consoleplayer">consoleplayer</a>].<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>);<i>// move positional sounds</i></td></tr>
+<tr><th id="393">393</th><td></td></tr>
+<tr><th id="394">394</th><td>	<i>// Update display, next frame, with current state.</i></td></tr>
+<tr><th id="395">395</th><td>	<a class="ref" href="#D_Display" title='D_Display' data-ref="D_Display">D_Display</a> ();</td></tr>
+<tr><th id="396">396</th><td></td></tr>
+<tr><th id="397">397</th><td><u>#<span data-ppcond="397">ifndef</span> <a class="macro" href="doomdef.h.html#84" data-ref="_M/SNDSERV">SNDSERV</a></u></td></tr>
+<tr><th id="398">398</th><td>	<i>// Sound mixing for the buffer is snychronous.</i></td></tr>
+<tr><th id="399">399</th><td>	I_UpdateSound();</td></tr>
+<tr><th id="400">400</th><td><u>#<span data-ppcond="397">endif</span></u>	</td></tr>
+<tr><th id="401">401</th><td>	<i>// Synchronous sound output is explicitly called.</i></td></tr>
+<tr><th id="402">402</th><td><u>#<span data-ppcond="402">ifndef</span> <span class="macro" data-ref="_M/SNDINTR">SNDINTR</span></u></td></tr>
+<tr><th id="403">403</th><td>	<i>// Update sound output.</i></td></tr>
+<tr><th id="404">404</th><td>	<a class="ref" href="i_sound.h.html#I_SubmitSound" title='I_SubmitSound' data-ref="I_SubmitSound">I_SubmitSound</a>();</td></tr>
+<tr><th id="405">405</th><td><u>#<span data-ppcond="402">endif</span></u></td></tr>
+<tr><th id="406">406</th><td>    }</td></tr>
+<tr><th id="407">407</th><td>}</td></tr>
+<tr><th id="408">408</th><td></td></tr>
+<tr><th id="409">409</th><td></td></tr>
+<tr><th id="410">410</th><td></td></tr>
+<tr><th id="411">411</th><td><i>//</i></td></tr>
+<tr><th id="412">412</th><td><i>//  DEMO LOOP</i></td></tr>
+<tr><th id="413">413</th><td><i>//</i></td></tr>
+<tr><th id="414">414</th><td><em>int</em>             <dfn class="decl def" id="demosequence" title='demosequence' data-ref="demosequence">demosequence</dfn>;</td></tr>
+<tr><th id="415">415</th><td><em>int</em>             <dfn class="decl def" id="pagetic" title='pagetic' data-ref="pagetic">pagetic</dfn>;</td></tr>
+<tr><th id="416">416</th><td><em>char</em>                    *<dfn class="decl def" id="pagename" title='pagename' data-ref="pagename">pagename</dfn>;</td></tr>
+<tr><th id="417">417</th><td></td></tr>
+<tr><th id="418">418</th><td></td></tr>
+<tr><th id="419">419</th><td><i>//</i></td></tr>
+<tr><th id="420">420</th><td><i>// D_PageTicker</i></td></tr>
+<tr><th id="421">421</th><td><i>// Handles timing for warped projection</i></td></tr>
+<tr><th id="422">422</th><td><i>//</i></td></tr>
+<tr><th id="423">423</th><td><em>void</em> <dfn class="decl def" id="D_PageTicker" title='D_PageTicker' data-ref="D_PageTicker">D_PageTicker</dfn> (<em>void</em>)</td></tr>
+<tr><th id="424">424</th><td>{</td></tr>
+<tr><th id="425">425</th><td>    <b>if</b> (--<a class="ref" href="#pagetic" title='pagetic' data-ref="pagetic">pagetic</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="426">426</th><td>	<a class="ref" href="#D_AdvanceDemo" title='D_AdvanceDemo' data-ref="D_AdvanceDemo">D_AdvanceDemo</a> ();</td></tr>
+<tr><th id="427">427</th><td>}</td></tr>
+<tr><th id="428">428</th><td></td></tr>
+<tr><th id="429">429</th><td></td></tr>
+<tr><th id="430">430</th><td></td></tr>
+<tr><th id="431">431</th><td><i>//</i></td></tr>
+<tr><th id="432">432</th><td><i>// D_PageDrawer</i></td></tr>
+<tr><th id="433">433</th><td><i>//</i></td></tr>
+<tr><th id="434">434</th><td><em>void</em> <dfn class="decl def" id="D_PageDrawer" title='D_PageDrawer' data-ref="D_PageDrawer">D_PageDrawer</dfn> (<em>void</em>)</td></tr>
+<tr><th id="435">435</th><td>{</td></tr>
+<tr><th id="436">436</th><td>    <a class="ref" href="v_video.h.html#V_DrawPatch" title='V_DrawPatch' data-ref="V_DrawPatch">V_DrawPatch</a> (<var>0</var>,<var>0</var>, <var>0</var>, <a class="ref" href="w_wad.h.html#W_CacheLumpName" title='W_CacheLumpName' data-ref="W_CacheLumpName">W_CacheLumpName</a>(<a class="ref" href="#pagename" title='pagename' data-ref="pagename">pagename</a>, <a class="macro" href="z_zone.h.html#44" title="101" data-ref="_M/PU_CACHE">PU_CACHE</a>));</td></tr>
+<tr><th id="437">437</th><td>}</td></tr>
+<tr><th id="438">438</th><td></td></tr>
+<tr><th id="439">439</th><td></td></tr>
+<tr><th id="440">440</th><td><i>//</i></td></tr>
+<tr><th id="441">441</th><td><i>// D_AdvanceDemo</i></td></tr>
+<tr><th id="442">442</th><td><i>// Called after each demo or intro demosequence finishes</i></td></tr>
+<tr><th id="443">443</th><td><i>//</i></td></tr>
+<tr><th id="444">444</th><td><em>void</em> <dfn class="decl def" id="D_AdvanceDemo" title='D_AdvanceDemo' data-ref="D_AdvanceDemo">D_AdvanceDemo</dfn> (<em>void</em>)</td></tr>
+<tr><th id="445">445</th><td>{</td></tr>
+<tr><th id="446">446</th><td>    <a class="ref" href="#advancedemo" title='advancedemo' data-ref="advancedemo">advancedemo</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="447">447</th><td>}</td></tr>
+<tr><th id="448">448</th><td></td></tr>
+<tr><th id="449">449</th><td></td></tr>
+<tr><th id="450">450</th><td><i>//</i></td></tr>
+<tr><th id="451">451</th><td><i>// This cycles through the demo sequences.</i></td></tr>
+<tr><th id="452">452</th><td><i>// FIXME - version dependend demo numbers?</i></td></tr>
+<tr><th id="453">453</th><td><i>//</i></td></tr>
+<tr><th id="454">454</th><td> <em>void</em> <dfn class="decl def" id="D_DoAdvanceDemo" title='D_DoAdvanceDemo' data-ref="D_DoAdvanceDemo">D_DoAdvanceDemo</dfn> (<em>void</em>)</td></tr>
+<tr><th id="455">455</th><td>{</td></tr>
+<tr><th id="456">456</th><td>    <a class="ref" href="doomstat.h.html#players" title='players' data-ref="players">players</a>[<a class="ref" href="doomstat.h.html#consoleplayer" title='consoleplayer' data-ref="consoleplayer">consoleplayer</a>].<a class="ref" href="d_player.h.html#player_s::playerstate" title='player_s::playerstate' data-ref="player_s::playerstate">playerstate</a> = <a class="enum" href="d_player.h.html#PST_LIVE" title='PST_LIVE' data-ref="PST_LIVE">PST_LIVE</a>;  <i>// not reborn</i></td></tr>
+<tr><th id="457">457</th><td>    <a class="ref" href="#advancedemo" title='advancedemo' data-ref="advancedemo">advancedemo</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="458">458</th><td>    <a class="ref" href="doomstat.h.html#usergame" title='usergame' data-ref="usergame">usergame</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;               <i>// no save / end game here</i></td></tr>
+<tr><th id="459">459</th><td>    <a class="ref" href="doomstat.h.html#paused" title='paused' data-ref="paused">paused</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="460">460</th><td>    <a class="ref" href="d_event.h.html#gameaction" title='gameaction' data-ref="gameaction">gameaction</a> = <a class="enum" href="d_event.h.html#ga_nothing" title='ga_nothing' data-ref="ga_nothing">ga_nothing</a>;</td></tr>
+<tr><th id="461">461</th><td></td></tr>
+<tr><th id="462">462</th><td>    <b>if</b> ( <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> == <a class="enum" href="doomdef.h.html#retail" title='retail' data-ref="retail">retail</a> )</td></tr>
+<tr><th id="463">463</th><td>      <a class="ref" href="#demosequence" title='demosequence' data-ref="demosequence">demosequence</a> = (<a class="ref" href="#demosequence" title='demosequence' data-ref="demosequence">demosequence</a>+<var>1</var>)%<var>7</var>;</td></tr>
+<tr><th id="464">464</th><td>    <b>else</b></td></tr>
+<tr><th id="465">465</th><td>      <a class="ref" href="#demosequence" title='demosequence' data-ref="demosequence">demosequence</a> = (<a class="ref" href="#demosequence" title='demosequence' data-ref="demosequence">demosequence</a>+<var>1</var>)%<var>6</var>;</td></tr>
+<tr><th id="466">466</th><td>    </td></tr>
+<tr><th id="467">467</th><td>    <b>switch</b> (<a class="ref" href="#demosequence" title='demosequence' data-ref="demosequence">demosequence</a>)</td></tr>
+<tr><th id="468">468</th><td>    {</td></tr>
+<tr><th id="469">469</th><td>      <b>case</b> <var>0</var>:</td></tr>
+<tr><th id="470">470</th><td>	<b>if</b> ( <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> == <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a> )</td></tr>
+<tr><th id="471">471</th><td>	    <a class="ref" href="#pagetic" title='pagetic' data-ref="pagetic">pagetic</a> = <var>35</var> * <var>11</var>;</td></tr>
+<tr><th id="472">472</th><td>	<b>else</b></td></tr>
+<tr><th id="473">473</th><td>	    <a class="ref" href="#pagetic" title='pagetic' data-ref="pagetic">pagetic</a> = <var>170</var>;</td></tr>
+<tr><th id="474">474</th><td>	<a class="ref" href="doomstat.h.html#gamestate" title='gamestate' data-ref="gamestate">gamestate</a> = <a class="enum" href="doomdef.h.html#GS_DEMOSCREEN" title='GS_DEMOSCREEN' data-ref="GS_DEMOSCREEN">GS_DEMOSCREEN</a>;</td></tr>
+<tr><th id="475">475</th><td>	<a class="ref" href="#pagename" title='pagename' data-ref="pagename">pagename</a> = <q>"TITLEPIC"</q>;</td></tr>
+<tr><th id="476">476</th><td>	<b>if</b> ( <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> == <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a> )</td></tr>
+<tr><th id="477">477</th><td>	  <a class="ref" href="s_sound.h.html#S_StartMusic" title='S_StartMusic' data-ref="S_StartMusic">S_StartMusic</a>(<a class="enum" href="sounds.h.html#mus_dm2ttl" title='mus_dm2ttl' data-ref="mus_dm2ttl">mus_dm2ttl</a>);</td></tr>
+<tr><th id="478">478</th><td>	<b>else</b></td></tr>
+<tr><th id="479">479</th><td>	  <a class="ref" href="s_sound.h.html#S_StartMusic" title='S_StartMusic' data-ref="S_StartMusic">S_StartMusic</a> (<a class="enum" href="sounds.h.html#mus_intro" title='mus_intro' data-ref="mus_intro">mus_intro</a>);</td></tr>
+<tr><th id="480">480</th><td>	<b>break</b>;</td></tr>
+<tr><th id="481">481</th><td>      <b>case</b> <var>1</var>:</td></tr>
+<tr><th id="482">482</th><td>	<a class="ref" href="g_game.h.html#G_DeferedPlayDemo" title='G_DeferedPlayDemo' data-ref="G_DeferedPlayDemo">G_DeferedPlayDemo</a> (<q>"demo1"</q>);</td></tr>
+<tr><th id="483">483</th><td>	<b>break</b>;</td></tr>
+<tr><th id="484">484</th><td>      <b>case</b> <var>2</var>:</td></tr>
+<tr><th id="485">485</th><td>	<a class="ref" href="#pagetic" title='pagetic' data-ref="pagetic">pagetic</a> = <var>200</var>;</td></tr>
+<tr><th id="486">486</th><td>	<a class="ref" href="doomstat.h.html#gamestate" title='gamestate' data-ref="gamestate">gamestate</a> = <a class="enum" href="doomdef.h.html#GS_DEMOSCREEN" title='GS_DEMOSCREEN' data-ref="GS_DEMOSCREEN">GS_DEMOSCREEN</a>;</td></tr>
+<tr><th id="487">487</th><td>	<a class="ref" href="#pagename" title='pagename' data-ref="pagename">pagename</a> = <q>"CREDIT"</q>;</td></tr>
+<tr><th id="488">488</th><td>	<b>break</b>;</td></tr>
+<tr><th id="489">489</th><td>      <b>case</b> <var>3</var>:</td></tr>
+<tr><th id="490">490</th><td>	<a class="ref" href="g_game.h.html#G_DeferedPlayDemo" title='G_DeferedPlayDemo' data-ref="G_DeferedPlayDemo">G_DeferedPlayDemo</a> (<q>"demo2"</q>);</td></tr>
+<tr><th id="491">491</th><td>	<b>break</b>;</td></tr>
+<tr><th id="492">492</th><td>      <b>case</b> <var>4</var>:</td></tr>
+<tr><th id="493">493</th><td>	<a class="ref" href="doomstat.h.html#gamestate" title='gamestate' data-ref="gamestate">gamestate</a> = <a class="enum" href="doomdef.h.html#GS_DEMOSCREEN" title='GS_DEMOSCREEN' data-ref="GS_DEMOSCREEN">GS_DEMOSCREEN</a>;</td></tr>
+<tr><th id="494">494</th><td>	<b>if</b> ( <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> == <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a>)</td></tr>
+<tr><th id="495">495</th><td>	{</td></tr>
+<tr><th id="496">496</th><td>	    <a class="ref" href="#pagetic" title='pagetic' data-ref="pagetic">pagetic</a> = <var>35</var> * <var>11</var>;</td></tr>
+<tr><th id="497">497</th><td>	    <a class="ref" href="#pagename" title='pagename' data-ref="pagename">pagename</a> = <q>"TITLEPIC"</q>;</td></tr>
+<tr><th id="498">498</th><td>	    <a class="ref" href="s_sound.h.html#S_StartMusic" title='S_StartMusic' data-ref="S_StartMusic">S_StartMusic</a>(<a class="enum" href="sounds.h.html#mus_dm2ttl" title='mus_dm2ttl' data-ref="mus_dm2ttl">mus_dm2ttl</a>);</td></tr>
+<tr><th id="499">499</th><td>	}</td></tr>
+<tr><th id="500">500</th><td>	<b>else</b></td></tr>
+<tr><th id="501">501</th><td>	{</td></tr>
+<tr><th id="502">502</th><td>	    <a class="ref" href="#pagetic" title='pagetic' data-ref="pagetic">pagetic</a> = <var>200</var>;</td></tr>
+<tr><th id="503">503</th><td></td></tr>
+<tr><th id="504">504</th><td>	    <b>if</b> ( <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> == <a class="enum" href="doomdef.h.html#retail" title='retail' data-ref="retail">retail</a> )</td></tr>
+<tr><th id="505">505</th><td>	      <a class="ref" href="#pagename" title='pagename' data-ref="pagename">pagename</a> = <q>"CREDIT"</q>;</td></tr>
+<tr><th id="506">506</th><td>	    <b>else</b></td></tr>
+<tr><th id="507">507</th><td>	      <a class="ref" href="#pagename" title='pagename' data-ref="pagename">pagename</a> = <q>"HELP2"</q>;</td></tr>
+<tr><th id="508">508</th><td>	}</td></tr>
+<tr><th id="509">509</th><td>	<b>break</b>;</td></tr>
+<tr><th id="510">510</th><td>      <b>case</b> <var>5</var>:</td></tr>
+<tr><th id="511">511</th><td>	<a class="ref" href="g_game.h.html#G_DeferedPlayDemo" title='G_DeferedPlayDemo' data-ref="G_DeferedPlayDemo">G_DeferedPlayDemo</a> (<q>"demo3"</q>);</td></tr>
+<tr><th id="512">512</th><td>	<b>break</b>;</td></tr>
+<tr><th id="513">513</th><td>        <i>// THE DEFINITIVE DOOM Special Edition demo</i></td></tr>
+<tr><th id="514">514</th><td>      <b>case</b> <var>6</var>:</td></tr>
+<tr><th id="515">515</th><td>	<a class="ref" href="g_game.h.html#G_DeferedPlayDemo" title='G_DeferedPlayDemo' data-ref="G_DeferedPlayDemo">G_DeferedPlayDemo</a> (<q>"demo4"</q>);</td></tr>
+<tr><th id="516">516</th><td>	<b>break</b>;</td></tr>
+<tr><th id="517">517</th><td>    }</td></tr>
+<tr><th id="518">518</th><td>}</td></tr>
+<tr><th id="519">519</th><td></td></tr>
+<tr><th id="520">520</th><td></td></tr>
+<tr><th id="521">521</th><td></td></tr>
+<tr><th id="522">522</th><td><i>//</i></td></tr>
+<tr><th id="523">523</th><td><i>// D_StartTitle</i></td></tr>
+<tr><th id="524">524</th><td><i>//</i></td></tr>
+<tr><th id="525">525</th><td><em>void</em> <dfn class="decl def" id="D_StartTitle" title='D_StartTitle' data-ref="D_StartTitle">D_StartTitle</dfn> (<em>void</em>)</td></tr>
+<tr><th id="526">526</th><td>{</td></tr>
+<tr><th id="527">527</th><td>    <a class="ref" href="d_event.h.html#gameaction" title='gameaction' data-ref="gameaction">gameaction</a> = <a class="enum" href="d_event.h.html#ga_nothing" title='ga_nothing' data-ref="ga_nothing">ga_nothing</a>;</td></tr>
+<tr><th id="528">528</th><td>    <a class="ref" href="#demosequence" title='demosequence' data-ref="demosequence">demosequence</a> = -<var>1</var>;</td></tr>
+<tr><th id="529">529</th><td>    <a class="ref" href="#D_AdvanceDemo" title='D_AdvanceDemo' data-ref="D_AdvanceDemo">D_AdvanceDemo</a> ();</td></tr>
+<tr><th id="530">530</th><td>}</td></tr>
+<tr><th id="531">531</th><td></td></tr>
+<tr><th id="532">532</th><td></td></tr>
+<tr><th id="533">533</th><td></td></tr>
+<tr><th id="534">534</th><td></td></tr>
+<tr><th id="535">535</th><td><i>//      print title for every printed line</i></td></tr>
+<tr><th id="536">536</th><td><em>char</em>            <dfn class="decl def" id="title" title='title' data-ref="title">title</dfn>[<var>128</var>];</td></tr>
+<tr><th id="537">537</th><td></td></tr>
+<tr><th id="538">538</th><td></td></tr>
+<tr><th id="539">539</th><td></td></tr>
+<tr><th id="540">540</th><td><i>//</i></td></tr>
+<tr><th id="541">541</th><td><i>// D_AddFile</i></td></tr>
+<tr><th id="542">542</th><td><i>//</i></td></tr>
+<tr><th id="543">543</th><td><em>void</em> <dfn class="decl def" id="D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</dfn> (<em>char</em> *<dfn class="local col8 decl" id="558file" title='file' data-type='char *' data-ref="558file">file</dfn>)</td></tr>
+<tr><th id="544">544</th><td>{</td></tr>
+<tr><th id="545">545</th><td>    <em>int</em>     <dfn class="local col9 decl" id="559numwadfiles" title='numwadfiles' data-type='int' data-ref="559numwadfiles">numwadfiles</dfn>;</td></tr>
+<tr><th id="546">546</th><td>    <em>char</em>    *<dfn class="local col0 decl" id="560newfile" title='newfile' data-type='char *' data-ref="560newfile">newfile</dfn>;</td></tr>
+<tr><th id="547">547</th><td>	</td></tr>
+<tr><th id="548">548</th><td>    <b>for</b> (<a class="local col9 ref" href="#559numwadfiles" title='numwadfiles' data-ref="559numwadfiles">numwadfiles</a> = <var>0</var> ; <a class="ref" href="d_main.h.html#wadfiles" title='wadfiles' data-ref="wadfiles">wadfiles</a>[<a class="local col9 ref" href="#559numwadfiles" title='numwadfiles' data-ref="559numwadfiles">numwadfiles</a>] ; <a class="local col9 ref" href="#559numwadfiles" title='numwadfiles' data-ref="559numwadfiles">numwadfiles</a>++)</td></tr>
+<tr><th id="549">549</th><td>	;</td></tr>
+<tr><th id="550">550</th><td></td></tr>
+<tr><th id="551">551</th><td>    <a class="local col0 ref" href="#560newfile" title='newfile' data-ref="560newfile">newfile</a> = <a class="ref" href="../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a> (<a class="ref" href="../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col8 ref" href="#558file" title='file' data-ref="558file">file</a>)+<var>1</var>);</td></tr>
+<tr><th id="552">552</th><td>    <a class="ref" href="../include/string.h.html#strcpy" title='strcpy' data-ref="strcpy">strcpy</a> (<a class="local col0 ref" href="#560newfile" title='newfile' data-ref="560newfile">newfile</a>, <a class="local col8 ref" href="#558file" title='file' data-ref="558file">file</a>);</td></tr>
+<tr><th id="553">553</th><td>	</td></tr>
+<tr><th id="554">554</th><td>    <a class="ref" href="d_main.h.html#wadfiles" title='wadfiles' data-ref="wadfiles">wadfiles</a>[<a class="local col9 ref" href="#559numwadfiles" title='numwadfiles' data-ref="559numwadfiles">numwadfiles</a>] = <a class="local col0 ref" href="#560newfile" title='newfile' data-ref="560newfile">newfile</a>;</td></tr>
+<tr><th id="555">555</th><td>}</td></tr>
+<tr><th id="556">556</th><td></td></tr>
+<tr><th id="557">557</th><td><i>//</i></td></tr>
+<tr><th id="558">558</th><td><i>// IdentifyVersion</i></td></tr>
+<tr><th id="559">559</th><td><i>// Checks availability of IWAD files by name,</i></td></tr>
+<tr><th id="560">560</th><td><i>// to determine whether registered/commercial features</i></td></tr>
+<tr><th id="561">561</th><td><i>// should be executed (notably loading PWAD's).</i></td></tr>
+<tr><th id="562">562</th><td><i>//</i></td></tr>
+<tr><th id="563">563</th><td><em>void</em> <dfn class="decl def" id="IdentifyVersion" title='IdentifyVersion' data-ref="IdentifyVersion">IdentifyVersion</dfn> (<em>void</em>)</td></tr>
+<tr><th id="564">564</th><td>{</td></tr>
+<tr><th id="565">565</th><td></td></tr>
+<tr><th id="566">566</th><td>    <em>char</em>*	<dfn class="local col1 decl" id="561doom1wad" title='doom1wad' data-type='char *' data-ref="561doom1wad">doom1wad</dfn>;</td></tr>
+<tr><th id="567">567</th><td>    <em>char</em>*	<dfn class="local col2 decl" id="562doomwad" title='doomwad' data-type='char *' data-ref="562doomwad">doomwad</dfn>;</td></tr>
+<tr><th id="568">568</th><td>    <em>char</em>*	<dfn class="local col3 decl" id="563doomuwad" title='doomuwad' data-type='char *' data-ref="563doomuwad">doomuwad</dfn>;</td></tr>
+<tr><th id="569">569</th><td>    <em>char</em>*	<dfn class="local col4 decl" id="564doom2wad" title='doom2wad' data-type='char *' data-ref="564doom2wad">doom2wad</dfn>;</td></tr>
+<tr><th id="570">570</th><td></td></tr>
+<tr><th id="571">571</th><td>    <em>char</em>*	<dfn class="local col5 decl" id="565doom2fwad" title='doom2fwad' data-type='char *' data-ref="565doom2fwad">doom2fwad</dfn>;</td></tr>
+<tr><th id="572">572</th><td>    <em>char</em>*	<dfn class="local col6 decl" id="566plutoniawad" title='plutoniawad' data-type='char *' data-ref="566plutoniawad">plutoniawad</dfn>;</td></tr>
+<tr><th id="573">573</th><td>    <em>char</em>*	<dfn class="local col7 decl" id="567tntwad" title='tntwad' data-type='char *' data-ref="567tntwad">tntwad</dfn>;</td></tr>
+<tr><th id="574">574</th><td></td></tr>
+<tr><th id="575">575</th><td><u>#<span data-ppcond="575">ifdef</span> <span class="macro" data-ref="_M/NORMALUNIX">NORMALUNIX</span></u></td></tr>
+<tr><th id="576">576</th><td>    <em>char</em> *<dfn class="local col8 decl" id="568home" title='home' data-type='char *' data-ref="568home">home</dfn>;</td></tr>
+<tr><th id="577">577</th><td>    <em>char</em> *<dfn class="local col9 decl" id="569doomwaddir" title='doomwaddir' data-type='char *' data-ref="569doomwaddir">doomwaddir</dfn>;</td></tr>
+<tr><th id="578">578</th><td>    <a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a> = <a class="ref" href="../include/stdlib.h.html#getenv" title='getenv' data-ref="getenv">getenv</a>(<q>"DOOMWADDIR"</q>);</td></tr>
+<tr><th id="579">579</th><td>    <b>if</b> (!<a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>)</td></tr>
+<tr><th id="580">580</th><td>	<a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a> = <q>"."</q>;</td></tr>
+<tr><th id="581">581</th><td></td></tr>
+<tr><th id="582">582</th><td>    <i>// Commercial.</i></td></tr>
+<tr><th id="583">583</th><td>    <a class="local col4 ref" href="#564doom2wad" title='doom2wad' data-ref="564doom2wad">doom2wad</a> = <a class="ref" href="../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a>(<a class="ref" href="../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>)+<var>1</var>+<var>9</var>+<var>1</var>);</td></tr>
+<tr><th id="584">584</th><td>    <a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a>(<a class="local col4 ref" href="#564doom2wad" title='doom2wad' data-ref="564doom2wad">doom2wad</a>, <q>"%s/doom2.wad"</q>, <a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>);</td></tr>
+<tr><th id="585">585</th><td></td></tr>
+<tr><th id="586">586</th><td>    <i>// Retail.</i></td></tr>
+<tr><th id="587">587</th><td>    <a class="local col3 ref" href="#563doomuwad" title='doomuwad' data-ref="563doomuwad">doomuwad</a> = <a class="ref" href="../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a>(<a class="ref" href="../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>)+<var>1</var>+<var>9</var>+<var>1</var>);</td></tr>
+<tr><th id="588">588</th><td>    <a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a>(<a class="local col3 ref" href="#563doomuwad" title='doomuwad' data-ref="563doomuwad">doomuwad</a>, <q>"%s/doomu.wad"</q>, <a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>);</td></tr>
+<tr><th id="589">589</th><td>    </td></tr>
+<tr><th id="590">590</th><td>    <i>// Registered.</i></td></tr>
+<tr><th id="591">591</th><td>    <a class="local col2 ref" href="#562doomwad" title='doomwad' data-ref="562doomwad">doomwad</a> = <a class="ref" href="../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a>(<a class="ref" href="../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>)+<var>1</var>+<var>8</var>+<var>1</var>);</td></tr>
+<tr><th id="592">592</th><td>    <a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a>(<a class="local col2 ref" href="#562doomwad" title='doomwad' data-ref="562doomwad">doomwad</a>, <q>"%s/doom.wad"</q>, <a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>);</td></tr>
+<tr><th id="593">593</th><td>    </td></tr>
+<tr><th id="594">594</th><td>    <i>// Shareware.</i></td></tr>
+<tr><th id="595">595</th><td>    <a class="local col1 ref" href="#561doom1wad" title='doom1wad' data-ref="561doom1wad">doom1wad</a> = <a class="ref" href="../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a>(<a class="ref" href="../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>)+<var>1</var>+<var>9</var>+<var>1</var>);</td></tr>
+<tr><th id="596">596</th><td>    <a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a>(<a class="local col1 ref" href="#561doom1wad" title='doom1wad' data-ref="561doom1wad">doom1wad</a>, <q>"%s/doom1.wad"</q>, <a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>);</td></tr>
+<tr><th id="597">597</th><td></td></tr>
+<tr><th id="598">598</th><td>     <i>// Bug, dear Shawn.</i></td></tr>
+<tr><th id="599">599</th><td><i>    // Insufficient malloc, caused spurious realloc errors.</i></td></tr>
+<tr><th id="600">600</th><td>    <a class="local col6 ref" href="#566plutoniawad" title='plutoniawad' data-ref="566plutoniawad">plutoniawad</a> = <a class="ref" href="../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a>(<a class="ref" href="../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>)+<var>1</var>+<i>/*9*/</i><var>12</var>+<var>1</var>);</td></tr>
+<tr><th id="601">601</th><td>    <a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a>(<a class="local col6 ref" href="#566plutoniawad" title='plutoniawad' data-ref="566plutoniawad">plutoniawad</a>, <q>"%s/plutonia.wad"</q>, <a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>);</td></tr>
+<tr><th id="602">602</th><td></td></tr>
+<tr><th id="603">603</th><td>    <a class="local col7 ref" href="#567tntwad" title='tntwad' data-ref="567tntwad">tntwad</a> = <a class="ref" href="../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a>(<a class="ref" href="../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>)+<var>1</var>+<var>9</var>+<var>1</var>);</td></tr>
+<tr><th id="604">604</th><td>    <a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a>(<a class="local col7 ref" href="#567tntwad" title='tntwad' data-ref="567tntwad">tntwad</a>, <q>"%s/tnt.wad"</q>, <a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>);</td></tr>
+<tr><th id="605">605</th><td></td></tr>
+<tr><th id="606">606</th><td></td></tr>
+<tr><th id="607">607</th><td>    <i>// French stuff.</i></td></tr>
+<tr><th id="608">608</th><td>    <a class="local col5 ref" href="#565doom2fwad" title='doom2fwad' data-ref="565doom2fwad">doom2fwad</a> = <a class="ref" href="../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a>(<a class="ref" href="../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>)+<var>1</var>+<var>10</var>+<var>1</var>);</td></tr>
+<tr><th id="609">609</th><td>    <a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a>(<a class="local col5 ref" href="#565doom2fwad" title='doom2fwad' data-ref="565doom2fwad">doom2fwad</a>, <q>"%s/doom2f.wad"</q>, <a class="local col9 ref" href="#569doomwaddir" title='doomwaddir' data-ref="569doomwaddir">doomwaddir</a>);</td></tr>
+<tr><th id="610">610</th><td></td></tr>
+<tr><th id="611">611</th><td>    <a class="local col8 ref" href="#568home" title='home' data-ref="568home">home</a> = <a class="ref" href="../include/stdlib.h.html#getenv" title='getenv' data-ref="getenv">getenv</a>(<q>"HOME"</q>);</td></tr>
+<tr><th id="612">612</th><td>    <b>if</b> (!<a class="local col8 ref" href="#568home" title='home' data-ref="568home">home</a>)</td></tr>
+<tr><th id="613">613</th><td>      <a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a>(<q>"Please set $HOME to your home directory"</q>);</td></tr>
+<tr><th id="614">614</th><td>    <a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a>(<a class="ref" href="doomstat.h.html#basedefault" title='basedefault' data-ref="basedefault">basedefault</a>, <q>"%s/.doomrc"</q>, <a class="local col8 ref" href="#568home" title='home' data-ref="568home">home</a>);</td></tr>
+<tr><th id="615">615</th><td><u>#<span data-ppcond="575">endif</span></u></td></tr>
+<tr><th id="616">616</th><td></td></tr>
+<tr><th id="617">617</th><td>    <b>if</b> (<a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-shdev"</q>))</td></tr>
+<tr><th id="618">618</th><td>    {</td></tr>
+<tr><th id="619">619</th><td>	<a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> = <a class="enum" href="doomdef.h.html#shareware" title='shareware' data-ref="shareware">shareware</a>;</td></tr>
+<tr><th id="620">620</th><td>	<a class="ref" href="doomstat.h.html#devparm" title='devparm' data-ref="devparm">devparm</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="621">621</th><td>	<a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="macro" href="dstrings.h.html#50" title="&quot;devdata&quot;" data-ref="_M/DEVDATA">DEVDATA</a><q>"doom1.wad"</q>);</td></tr>
+<tr><th id="622">622</th><td>	<a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="macro" href="dstrings.h.html#49" title="&quot;devmaps&quot;" data-ref="_M/DEVMAPS">DEVMAPS</a><q>"data_se/texture1.lmp"</q>);</td></tr>
+<tr><th id="623">623</th><td>	<a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="macro" href="dstrings.h.html#49" title="&quot;devmaps&quot;" data-ref="_M/DEVMAPS">DEVMAPS</a><q>"data_se/pnames.lmp"</q>);</td></tr>
+<tr><th id="624">624</th><td>	<a class="ref" href="../include/string.h.html#strcpy" title='strcpy' data-ref="strcpy">strcpy</a> (<a class="ref" href="doomstat.h.html#basedefault" title='basedefault' data-ref="basedefault">basedefault</a>,<a class="macro" href="dstrings.h.html#50" title="&quot;devdata&quot;" data-ref="_M/DEVDATA">DEVDATA</a><q>"default.cfg"</q>);</td></tr>
+<tr><th id="625">625</th><td>	<b>return</b>;</td></tr>
+<tr><th id="626">626</th><td>    }</td></tr>
+<tr><th id="627">627</th><td></td></tr>
+<tr><th id="628">628</th><td>    <b>if</b> (<a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-regdev"</q>))</td></tr>
+<tr><th id="629">629</th><td>    {</td></tr>
+<tr><th id="630">630</th><td>	<a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> = <a class="enum" href="doomdef.h.html#registered" title='registered' data-ref="registered">registered</a>;</td></tr>
+<tr><th id="631">631</th><td>	<a class="ref" href="doomstat.h.html#devparm" title='devparm' data-ref="devparm">devparm</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="632">632</th><td>	<a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="macro" href="dstrings.h.html#50" title="&quot;devdata&quot;" data-ref="_M/DEVDATA">DEVDATA</a><q>"doom.wad"</q>);</td></tr>
+<tr><th id="633">633</th><td>	<a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="macro" href="dstrings.h.html#49" title="&quot;devmaps&quot;" data-ref="_M/DEVMAPS">DEVMAPS</a><q>"data_se/texture1.lmp"</q>);</td></tr>
+<tr><th id="634">634</th><td>	<a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="macro" href="dstrings.h.html#49" title="&quot;devmaps&quot;" data-ref="_M/DEVMAPS">DEVMAPS</a><q>"data_se/texture2.lmp"</q>);</td></tr>
+<tr><th id="635">635</th><td>	<a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="macro" href="dstrings.h.html#49" title="&quot;devmaps&quot;" data-ref="_M/DEVMAPS">DEVMAPS</a><q>"data_se/pnames.lmp"</q>);</td></tr>
+<tr><th id="636">636</th><td>	<a class="ref" href="../include/string.h.html#strcpy" title='strcpy' data-ref="strcpy">strcpy</a> (<a class="ref" href="doomstat.h.html#basedefault" title='basedefault' data-ref="basedefault">basedefault</a>,<a class="macro" href="dstrings.h.html#50" title="&quot;devdata&quot;" data-ref="_M/DEVDATA">DEVDATA</a><q>"default.cfg"</q>);</td></tr>
+<tr><th id="637">637</th><td>	<b>return</b>;</td></tr>
+<tr><th id="638">638</th><td>    }</td></tr>
+<tr><th id="639">639</th><td></td></tr>
+<tr><th id="640">640</th><td>    <b>if</b> (<a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-comdev"</q>))</td></tr>
+<tr><th id="641">641</th><td>    {</td></tr>
+<tr><th id="642">642</th><td>	<a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> = <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a>;</td></tr>
+<tr><th id="643">643</th><td>	<a class="ref" href="doomstat.h.html#devparm" title='devparm' data-ref="devparm">devparm</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="644">644</th><td>	<i>/* I don't bother</i></td></tr>
+<tr><th id="645">645</th><td><i>	if(plutonia)</i></td></tr>
+<tr><th id="646">646</th><td><i>	    D_AddFile (DEVDATA"plutonia.wad");</i></td></tr>
+<tr><th id="647">647</th><td><i>	else if(tnt)</i></td></tr>
+<tr><th id="648">648</th><td><i>	    D_AddFile (DEVDATA"tnt.wad");</i></td></tr>
+<tr><th id="649">649</th><td><i>	else*/</i></td></tr>
+<tr><th id="650">650</th><td>	    <a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="macro" href="dstrings.h.html#50" title="&quot;devdata&quot;" data-ref="_M/DEVDATA">DEVDATA</a><q>"doom2.wad"</q>);</td></tr>
+<tr><th id="651">651</th><td>	    </td></tr>
+<tr><th id="652">652</th><td>	<a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="macro" href="dstrings.h.html#49" title="&quot;devmaps&quot;" data-ref="_M/DEVMAPS">DEVMAPS</a><q>"cdata/texture1.lmp"</q>);</td></tr>
+<tr><th id="653">653</th><td>	<a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="macro" href="dstrings.h.html#49" title="&quot;devmaps&quot;" data-ref="_M/DEVMAPS">DEVMAPS</a><q>"cdata/pnames.lmp"</q>);</td></tr>
+<tr><th id="654">654</th><td>	<a class="ref" href="../include/string.h.html#strcpy" title='strcpy' data-ref="strcpy">strcpy</a> (<a class="ref" href="doomstat.h.html#basedefault" title='basedefault' data-ref="basedefault">basedefault</a>,<a class="macro" href="dstrings.h.html#50" title="&quot;devdata&quot;" data-ref="_M/DEVDATA">DEVDATA</a><q>"default.cfg"</q>);</td></tr>
+<tr><th id="655">655</th><td>	<b>return</b>;</td></tr>
+<tr><th id="656">656</th><td>    }</td></tr>
+<tr><th id="657">657</th><td></td></tr>
+<tr><th id="658">658</th><td>    <b>if</b> ( !<a class="ref" href="../include/unistd.h.html#access" title='access' data-ref="access">access</a> (<a class="local col5 ref" href="#565doom2fwad" title='doom2fwad' data-ref="565doom2fwad">doom2fwad</a>,<a class="macro" href="../include/unistd.h.html#284" title="4" data-ref="_M/R_OK">R_OK</a>) )</td></tr>
+<tr><th id="659">659</th><td>    {</td></tr>
+<tr><th id="660">660</th><td>	<a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> = <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a>;</td></tr>
+<tr><th id="661">661</th><td>	<i>// C'est ridicule!</i></td></tr>
+<tr><th id="662">662</th><td><i>	// Let's handle languages in config files, okay?</i></td></tr>
+<tr><th id="663">663</th><td>	<a class="ref" href="doomstat.h.html#language" title='language' data-ref="language">language</a> = <a class="enum" href="doomdef.h.html#french" title='french' data-ref="french">french</a>;</td></tr>
+<tr><th id="664">664</th><td>	<a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"French version\n"</q>);</td></tr>
+<tr><th id="665">665</th><td>	<a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="local col5 ref" href="#565doom2fwad" title='doom2fwad' data-ref="565doom2fwad">doom2fwad</a>);</td></tr>
+<tr><th id="666">666</th><td>	<b>return</b>;</td></tr>
+<tr><th id="667">667</th><td>    }</td></tr>
+<tr><th id="668">668</th><td></td></tr>
+<tr><th id="669">669</th><td>    <b>if</b> ( !<a class="ref" href="../include/unistd.h.html#access" title='access' data-ref="access">access</a> (<a class="local col4 ref" href="#564doom2wad" title='doom2wad' data-ref="564doom2wad">doom2wad</a>,<a class="macro" href="../include/unistd.h.html#284" title="4" data-ref="_M/R_OK">R_OK</a>) )</td></tr>
+<tr><th id="670">670</th><td>    {</td></tr>
+<tr><th id="671">671</th><td>	<a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> = <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a>;</td></tr>
+<tr><th id="672">672</th><td>	<a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="local col4 ref" href="#564doom2wad" title='doom2wad' data-ref="564doom2wad">doom2wad</a>);</td></tr>
+<tr><th id="673">673</th><td>	<b>return</b>;</td></tr>
+<tr><th id="674">674</th><td>    }</td></tr>
+<tr><th id="675">675</th><td></td></tr>
+<tr><th id="676">676</th><td>    <b>if</b> ( !<a class="ref" href="../include/unistd.h.html#access" title='access' data-ref="access">access</a> (<a class="local col6 ref" href="#566plutoniawad" title='plutoniawad' data-ref="566plutoniawad">plutoniawad</a>, <a class="macro" href="../include/unistd.h.html#284" title="4" data-ref="_M/R_OK">R_OK</a> ) )</td></tr>
+<tr><th id="677">677</th><td>    {</td></tr>
+<tr><th id="678">678</th><td>      <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> = <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a>;</td></tr>
+<tr><th id="679">679</th><td>      <a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="local col6 ref" href="#566plutoniawad" title='plutoniawad' data-ref="566plutoniawad">plutoniawad</a>);</td></tr>
+<tr><th id="680">680</th><td>      <b>return</b>;</td></tr>
+<tr><th id="681">681</th><td>    }</td></tr>
+<tr><th id="682">682</th><td></td></tr>
+<tr><th id="683">683</th><td>    <b>if</b> ( !<a class="ref" href="../include/unistd.h.html#access" title='access' data-ref="access">access</a> ( <a class="local col7 ref" href="#567tntwad" title='tntwad' data-ref="567tntwad">tntwad</a>, <a class="macro" href="../include/unistd.h.html#284" title="4" data-ref="_M/R_OK">R_OK</a> ) )</td></tr>
+<tr><th id="684">684</th><td>    {</td></tr>
+<tr><th id="685">685</th><td>      <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> = <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a>;</td></tr>
+<tr><th id="686">686</th><td>      <a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="local col7 ref" href="#567tntwad" title='tntwad' data-ref="567tntwad">tntwad</a>);</td></tr>
+<tr><th id="687">687</th><td>      <b>return</b>;</td></tr>
+<tr><th id="688">688</th><td>    }</td></tr>
+<tr><th id="689">689</th><td></td></tr>
+<tr><th id="690">690</th><td>    <b>if</b> ( !<a class="ref" href="../include/unistd.h.html#access" title='access' data-ref="access">access</a> (<a class="local col3 ref" href="#563doomuwad" title='doomuwad' data-ref="563doomuwad">doomuwad</a>,<a class="macro" href="../include/unistd.h.html#284" title="4" data-ref="_M/R_OK">R_OK</a>) )</td></tr>
+<tr><th id="691">691</th><td>    {</td></tr>
+<tr><th id="692">692</th><td>      <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> = <a class="enum" href="doomdef.h.html#retail" title='retail' data-ref="retail">retail</a>;</td></tr>
+<tr><th id="693">693</th><td>      <a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="local col3 ref" href="#563doomuwad" title='doomuwad' data-ref="563doomuwad">doomuwad</a>);</td></tr>
+<tr><th id="694">694</th><td>      <b>return</b>;</td></tr>
+<tr><th id="695">695</th><td>    }</td></tr>
+<tr><th id="696">696</th><td></td></tr>
+<tr><th id="697">697</th><td>    <b>if</b> ( !<a class="ref" href="../include/unistd.h.html#access" title='access' data-ref="access">access</a> (<a class="local col2 ref" href="#562doomwad" title='doomwad' data-ref="562doomwad">doomwad</a>,<a class="macro" href="../include/unistd.h.html#284" title="4" data-ref="_M/R_OK">R_OK</a>) )</td></tr>
+<tr><th id="698">698</th><td>    {</td></tr>
+<tr><th id="699">699</th><td>      <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> = <a class="enum" href="doomdef.h.html#registered" title='registered' data-ref="registered">registered</a>;</td></tr>
+<tr><th id="700">700</th><td>      <a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="local col2 ref" href="#562doomwad" title='doomwad' data-ref="562doomwad">doomwad</a>);</td></tr>
+<tr><th id="701">701</th><td>      <b>return</b>;</td></tr>
+<tr><th id="702">702</th><td>    }</td></tr>
+<tr><th id="703">703</th><td></td></tr>
+<tr><th id="704">704</th><td>    <b>if</b> ( !<a class="ref" href="../include/unistd.h.html#access" title='access' data-ref="access">access</a> (<a class="local col1 ref" href="#561doom1wad" title='doom1wad' data-ref="561doom1wad">doom1wad</a>,<a class="macro" href="../include/unistd.h.html#284" title="4" data-ref="_M/R_OK">R_OK</a>) )</td></tr>
+<tr><th id="705">705</th><td>    {</td></tr>
+<tr><th id="706">706</th><td>      <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> = <a class="enum" href="doomdef.h.html#shareware" title='shareware' data-ref="shareware">shareware</a>;</td></tr>
+<tr><th id="707">707</th><td>      <a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="local col1 ref" href="#561doom1wad" title='doom1wad' data-ref="561doom1wad">doom1wad</a>);</td></tr>
+<tr><th id="708">708</th><td>      <b>return</b>;</td></tr>
+<tr><th id="709">709</th><td>    }</td></tr>
+<tr><th id="710">710</th><td></td></tr>
+<tr><th id="711">711</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"Game mode indeterminate.\n"</q>);</td></tr>
+<tr><th id="712">712</th><td>    <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> = <a class="enum" href="doomdef.h.html#indetermined" title='indetermined' data-ref="indetermined">indetermined</a>;</td></tr>
+<tr><th id="713">713</th><td></td></tr>
+<tr><th id="714">714</th><td>    <i>// We don't abort. Let's see what the PWAD contains.</i></td></tr>
+<tr><th id="715">715</th><td><i>    //exit(1);</i></td></tr>
+<tr><th id="716">716</th><td><i>    //I_Error ("Game mode indeterminate\n");</i></td></tr>
+<tr><th id="717">717</th><td>}</td></tr>
+<tr><th id="718">718</th><td></td></tr>
+<tr><th id="719">719</th><td><i>//</i></td></tr>
+<tr><th id="720">720</th><td><i>// Find a Response File</i></td></tr>
+<tr><th id="721">721</th><td><i>//</i></td></tr>
+<tr><th id="722">722</th><td><em>void</em> <dfn class="decl def" id="FindResponseFile" title='FindResponseFile' data-ref="FindResponseFile">FindResponseFile</dfn> (<em>void</em>)</td></tr>
+<tr><th id="723">723</th><td>{</td></tr>
+<tr><th id="724">724</th><td>    <em>int</em>             <dfn class="local col0 decl" id="570i" title='i' data-type='int' data-ref="570i">i</dfn>;</td></tr>
+<tr><th id="725">725</th><td><u>#define <dfn class="macro" id="_M/MAXARGVS" data-ref="_M/MAXARGVS">MAXARGVS</dfn>        100</u></td></tr>
+<tr><th id="726">726</th><td>	</td></tr>
+<tr><th id="727">727</th><td>    <b>for</b> (<a class="local col0 ref" href="#570i" title='i' data-ref="570i">i</a> = <var>1</var>;<a class="local col0 ref" href="#570i" title='i' data-ref="570i">i</a> &lt; <a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>;<a class="local col0 ref" href="#570i" title='i' data-ref="570i">i</a>++)</td></tr>
+<tr><th id="728">728</th><td>	<b>if</b> (<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#570i" title='i' data-ref="570i">i</a>][<var>0</var>] == <kbd>'@'</kbd>)</td></tr>
+<tr><th id="729">729</th><td>	{</td></tr>
+<tr><th id="730">730</th><td>	    <a class="typedef" href="../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *          <dfn class="local col1 decl" id="571handle" title='handle' data-type='FILE *' data-ref="571handle">handle</dfn>;</td></tr>
+<tr><th id="731">731</th><td>	    <em>int</em>             <dfn class="local col2 decl" id="572size" title='size' data-type='int' data-ref="572size">size</dfn>;</td></tr>
+<tr><th id="732">732</th><td>	    <em>int</em>             <dfn class="local col3 decl" id="573k" title='k' data-type='int' data-ref="573k">k</dfn>;</td></tr>
+<tr><th id="733">733</th><td>	    <em>int</em>             <dfn class="local col4 decl" id="574index" title='index' data-type='int' data-ref="574index">index</dfn>;</td></tr>
+<tr><th id="734">734</th><td>	    <em>int</em>             <dfn class="local col5 decl" id="575indexinfile" title='indexinfile' data-type='int' data-ref="575indexinfile">indexinfile</dfn>;</td></tr>
+<tr><th id="735">735</th><td>	    <em>char</em>    *<dfn class="local col6 decl" id="576infile" title='infile' data-type='char *' data-ref="576infile">infile</dfn>;</td></tr>
+<tr><th id="736">736</th><td>	    <em>char</em>    *<dfn class="local col7 decl" id="577file" title='file' data-type='char *' data-ref="577file">file</dfn>;</td></tr>
+<tr><th id="737">737</th><td>	    <em>char</em>    *<dfn class="local col8 decl" id="578moreargs" title='moreargs' data-type='char *[20]' data-ref="578moreargs">moreargs</dfn>[<var>20</var>];</td></tr>
+<tr><th id="738">738</th><td>	    <em>char</em>    *<dfn class="local col9 decl" id="579firstargv" title='firstargv' data-type='char *' data-ref="579firstargv">firstargv</dfn>;</td></tr>
+<tr><th id="739">739</th><td>			</td></tr>
+<tr><th id="740">740</th><td>	    <i>// READ THE RESPONSE FILE INTO MEMORY</i></td></tr>
+<tr><th id="741">741</th><td>	    <a class="local col1 ref" href="#571handle" title='handle' data-ref="571handle">handle</a> = <a class="ref" href="../include/stdio.h.html#fopen" title='fopen' data-ref="fopen">fopen</a> (&amp;<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#570i" title='i' data-ref="570i">i</a>][<var>1</var>],<q>"rb"</q>);</td></tr>
+<tr><th id="742">742</th><td>	    <b>if</b> (!<a class="local col1 ref" href="#571handle" title='handle' data-ref="571handle">handle</a>)</td></tr>
+<tr><th id="743">743</th><td>	    {</td></tr>
+<tr><th id="744">744</th><td>		<a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"\nNo such response file!"</q>);</td></tr>
+<tr><th id="745">745</th><td>		<a class="ref" href="../include/stdlib.h.html#exit" title='exit' data-ref="exit">exit</a>(<var>1</var>);</td></tr>
+<tr><th id="746">746</th><td>	    }</td></tr>
+<tr><th id="747">747</th><td>	    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"Found response file %s!\n"</q>,&amp;<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#570i" title='i' data-ref="570i">i</a>][<var>1</var>]);</td></tr>
+<tr><th id="748">748</th><td>	    <a class="ref" href="../include/stdio.h.html#fseek" title='fseek' data-ref="fseek">fseek</a> (<a class="local col1 ref" href="#571handle" title='handle' data-ref="571handle">handle</a>,<var>0</var>,<a class="macro" href="../include/fcntl.h.html#138" title="2" data-ref="_M/SEEK_END">SEEK_END</a>);</td></tr>
+<tr><th id="749">749</th><td>	    <a class="local col2 ref" href="#572size" title='size' data-ref="572size">size</a> = <a class="ref" href="../include/stdio.h.html#ftell" title='ftell' data-ref="ftell">ftell</a>(<a class="local col1 ref" href="#571handle" title='handle' data-ref="571handle">handle</a>);</td></tr>
+<tr><th id="750">750</th><td>	    <a class="ref" href="../include/stdio.h.html#fseek" title='fseek' data-ref="fseek">fseek</a> (<a class="local col1 ref" href="#571handle" title='handle' data-ref="571handle">handle</a>,<var>0</var>,<a class="macro" href="../include/fcntl.h.html#136" title="0" data-ref="_M/SEEK_SET">SEEK_SET</a>);</td></tr>
+<tr><th id="751">751</th><td>	    <a class="local col7 ref" href="#577file" title='file' data-ref="577file">file</a> = <a class="ref" href="../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a> (<a class="local col2 ref" href="#572size" title='size' data-ref="572size">size</a>);</td></tr>
+<tr><th id="752">752</th><td>	    <a class="ref" href="../include/stdio.h.html#fread" title='fread' data-ref="fread">fread</a> (<a class="local col7 ref" href="#577file" title='file' data-ref="577file">file</a>,<a class="local col2 ref" href="#572size" title='size' data-ref="572size">size</a>,<var>1</var>,<a class="local col1 ref" href="#571handle" title='handle' data-ref="571handle">handle</a>);</td></tr>
+<tr><th id="753">753</th><td>	    <a class="ref" href="../include/stdio.h.html#fclose" title='fclose' data-ref="fclose">fclose</a> (<a class="local col1 ref" href="#571handle" title='handle' data-ref="571handle">handle</a>);</td></tr>
+<tr><th id="754">754</th><td>			</td></tr>
+<tr><th id="755">755</th><td>	    <i>// KEEP ALL CMDLINE ARGS FOLLOWING @RESPONSEFILE ARG</i></td></tr>
+<tr><th id="756">756</th><td>	    <b>for</b> (<a class="local col4 ref" href="#574index" title='index' data-ref="574index">index</a> = <var>0</var>,<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a> = <a class="local col0 ref" href="#570i" title='i' data-ref="570i">i</a>+<var>1</var>; <a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a> &lt; <a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>; <a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>++)</td></tr>
+<tr><th id="757">757</th><td>		<a class="local col8 ref" href="#578moreargs" title='moreargs' data-ref="578moreargs">moreargs</a>[<a class="local col4 ref" href="#574index" title='index' data-ref="574index">index</a>++] = <a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>];</td></tr>
+<tr><th id="758">758</th><td>			</td></tr>
+<tr><th id="759">759</th><td>	    <a class="local col9 ref" href="#579firstargv" title='firstargv' data-ref="579firstargv">firstargv</a> = <a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<var>0</var>];</td></tr>
+<tr><th id="760">760</th><td>	    <a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a> = <a class="ref" href="../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a>(<b>sizeof</b>(<em>char</em> *)*<a class="macro" href="#725" title="100" data-ref="_M/MAXARGVS">MAXARGVS</a>);</td></tr>
+<tr><th id="761">761</th><td>	    <a class="ref" href="../include/string.h.html#memset" title='memset' data-ref="memset">memset</a>(<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>,<var>0</var>,<b>sizeof</b>(<em>char</em> *)*<a class="macro" href="#725" title="100" data-ref="_M/MAXARGVS">MAXARGVS</a>);</td></tr>
+<tr><th id="762">762</th><td>	    <a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<var>0</var>] = <a class="local col9 ref" href="#579firstargv" title='firstargv' data-ref="579firstargv">firstargv</a>;</td></tr>
+<tr><th id="763">763</th><td>			</td></tr>
+<tr><th id="764">764</th><td>	    <a class="local col6 ref" href="#576infile" title='infile' data-ref="576infile">infile</a> = <a class="local col7 ref" href="#577file" title='file' data-ref="577file">file</a>;</td></tr>
+<tr><th id="765">765</th><td>	    <a class="local col5 ref" href="#575indexinfile" title='indexinfile' data-ref="575indexinfile">indexinfile</a> = <a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a> = <var>0</var>;</td></tr>
+<tr><th id="766">766</th><td>	    <a class="local col5 ref" href="#575indexinfile" title='indexinfile' data-ref="575indexinfile">indexinfile</a>++;  <i>// SKIP PAST ARGV[0] (KEEP IT)</i></td></tr>
+<tr><th id="767">767</th><td>	    <b>do</b></td></tr>
+<tr><th id="768">768</th><td>	    {</td></tr>
+<tr><th id="769">769</th><td>		<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col5 ref" href="#575indexinfile" title='indexinfile' data-ref="575indexinfile">indexinfile</a>++] = <a class="local col6 ref" href="#576infile" title='infile' data-ref="576infile">infile</a>+<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>;</td></tr>
+<tr><th id="770">770</th><td>		<b>while</b>(<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a> &lt; <a class="local col2 ref" href="#572size" title='size' data-ref="572size">size</a> &amp;&amp;</td></tr>
+<tr><th id="771">771</th><td>		      ((*(<a class="local col6 ref" href="#576infile" title='infile' data-ref="576infile">infile</a>+<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>)&gt;= <kbd>' '</kbd>+<var>1</var>) &amp;&amp; (*(<a class="local col6 ref" href="#576infile" title='infile' data-ref="576infile">infile</a>+<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>)&lt;=<kbd>'z'</kbd>)))</td></tr>
+<tr><th id="772">772</th><td>		    <a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>++;</td></tr>
+<tr><th id="773">773</th><td>		*(<a class="local col6 ref" href="#576infile" title='infile' data-ref="576infile">infile</a>+<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>) = <var>0</var>;</td></tr>
+<tr><th id="774">774</th><td>		<b>while</b>(<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a> &lt; <a class="local col2 ref" href="#572size" title='size' data-ref="572size">size</a> &amp;&amp;</td></tr>
+<tr><th id="775">775</th><td>		      ((*(<a class="local col6 ref" href="#576infile" title='infile' data-ref="576infile">infile</a>+<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>)&lt;= <kbd>' '</kbd>) || (*(<a class="local col6 ref" href="#576infile" title='infile' data-ref="576infile">infile</a>+<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>)&gt;<kbd>'z'</kbd>)))</td></tr>
+<tr><th id="776">776</th><td>		    <a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>++;</td></tr>
+<tr><th id="777">777</th><td>	    } <b>while</b>(<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a> &lt; <a class="local col2 ref" href="#572size" title='size' data-ref="572size">size</a>);</td></tr>
+<tr><th id="778">778</th><td>			</td></tr>
+<tr><th id="779">779</th><td>	    <b>for</b> (<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a> = <var>0</var>;<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a> &lt; <a class="local col4 ref" href="#574index" title='index' data-ref="574index">index</a>;<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>++)</td></tr>
+<tr><th id="780">780</th><td>		<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col5 ref" href="#575indexinfile" title='indexinfile' data-ref="575indexinfile">indexinfile</a>++] = <a class="local col8 ref" href="#578moreargs" title='moreargs' data-ref="578moreargs">moreargs</a>[<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>];</td></tr>
+<tr><th id="781">781</th><td>	    <a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a> = <a class="local col5 ref" href="#575indexinfile" title='indexinfile' data-ref="575indexinfile">indexinfile</a>;</td></tr>
+<tr><th id="782">782</th><td>	</td></tr>
+<tr><th id="783">783</th><td>	    <i>// DISPLAY ARGS</i></td></tr>
+<tr><th id="784">784</th><td>	    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"%d command-line args:\n"</q>,<a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>);</td></tr>
+<tr><th id="785">785</th><td>	    <b>for</b> (<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>=<var>1</var>;<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>&lt;<a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>;<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>++)</td></tr>
+<tr><th id="786">786</th><td>		<a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"%s\n"</q>,<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col3 ref" href="#573k" title='k' data-ref="573k">k</a>]);</td></tr>
+<tr><th id="787">787</th><td></td></tr>
+<tr><th id="788">788</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="789">789</th><td>	}</td></tr>
+<tr><th id="790">790</th><td>}</td></tr>
+<tr><th id="791">791</th><td></td></tr>
+<tr><th id="792">792</th><td></td></tr>
+<tr><th id="793">793</th><td><i>//</i></td></tr>
+<tr><th id="794">794</th><td><i>// D_DoomMain</i></td></tr>
+<tr><th id="795">795</th><td><i>//</i></td></tr>
+<tr><th id="796">796</th><td><em>void</em> <dfn class="decl def" id="D_DoomMain" title='D_DoomMain' data-ref="D_DoomMain">D_DoomMain</dfn> (<em>void</em>)</td></tr>
+<tr><th id="797">797</th><td>{</td></tr>
+<tr><th id="798">798</th><td>    <em>int</em>             <dfn class="local col0 decl" id="580p" title='p' data-type='int' data-ref="580p">p</dfn>;</td></tr>
+<tr><th id="799">799</th><td>    <em>char</em>                    <dfn class="local col1 decl" id="581file" title='file' data-type='char [256]' data-ref="581file">file</dfn>[<var>256</var>];</td></tr>
+<tr><th id="800">800</th><td></td></tr>
+<tr><th id="801">801</th><td>    <a class="ref" href="#FindResponseFile" title='FindResponseFile' data-ref="FindResponseFile">FindResponseFile</a> ();</td></tr>
+<tr><th id="802">802</th><td>	</td></tr>
+<tr><th id="803">803</th><td>    <a class="ref" href="#IdentifyVersion" title='IdentifyVersion' data-ref="IdentifyVersion">IdentifyVersion</a> ();</td></tr>
+<tr><th id="804">804</th><td>	</td></tr>
+<tr><th id="805">805</th><td>    <a class="ref" href="../include/stdio.h.html#setbuf" title='setbuf' data-ref="setbuf">setbuf</a> (<a class="macro" href="../include/stdio.h.html#173" title="stdout" data-ref="_M/stdout">stdout</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="806">806</th><td>    <a class="ref" href="doomstat.h.html#modifiedgame" title='modifiedgame' data-ref="modifiedgame">modifiedgame</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="807">807</th><td>	</td></tr>
+<tr><th id="808">808</th><td>    <a class="ref" href="doomstat.h.html#nomonsters" title='nomonsters' data-ref="nomonsters">nomonsters</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-nomonsters"</q>);</td></tr>
+<tr><th id="809">809</th><td>    <a class="ref" href="doomstat.h.html#respawnparm" title='respawnparm' data-ref="respawnparm">respawnparm</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-respawn"</q>);</td></tr>
+<tr><th id="810">810</th><td>    <a class="ref" href="doomstat.h.html#fastparm" title='fastparm' data-ref="fastparm">fastparm</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-fast"</q>);</td></tr>
+<tr><th id="811">811</th><td>    <a class="ref" href="doomstat.h.html#devparm" title='devparm' data-ref="devparm">devparm</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-devparm"</q>);</td></tr>
+<tr><th id="812">812</th><td>    <b>if</b> (<a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-altdeath"</q>))</td></tr>
+<tr><th id="813">813</th><td>	<a class="ref" href="doomstat.h.html#deathmatch" title='deathmatch' data-ref="deathmatch">deathmatch</a> = <var>2</var>;</td></tr>
+<tr><th id="814">814</th><td>    <b>else</b> <b>if</b> (<a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-deathmatch"</q>))</td></tr>
+<tr><th id="815">815</th><td>	<a class="ref" href="doomstat.h.html#deathmatch" title='deathmatch' data-ref="deathmatch">deathmatch</a> = <var>1</var>;</td></tr>
+<tr><th id="816">816</th><td></td></tr>
+<tr><th id="817">817</th><td>    <b>switch</b> ( <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> )</td></tr>
+<tr><th id="818">818</th><td>    {</td></tr>
+<tr><th id="819">819</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#retail" title='retail' data-ref="retail">retail</a>:</td></tr>
+<tr><th id="820">820</th><td>	<a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a> (<a class="ref" href="#title" title='title' data-ref="title">title</a>,</td></tr>
+<tr><th id="821">821</th><td>		 <q>"                         "</q></td></tr>
+<tr><th id="822">822</th><td>		 <q>"The Ultimate DOOM Startup v%i.%i"</q></td></tr>
+<tr><th id="823">823</th><td>		 <q>"                           "</q>,</td></tr>
+<tr><th id="824">824</th><td>		 <a class="enum" href="doomdef.h.html#VERSION" title='VERSION' data-ref="VERSION">VERSION</a>/<var>100</var>,<a class="enum" href="doomdef.h.html#VERSION" title='VERSION' data-ref="VERSION">VERSION</a>%<var>100</var>);</td></tr>
+<tr><th id="825">825</th><td>	<b>break</b>;</td></tr>
+<tr><th id="826">826</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#shareware" title='shareware' data-ref="shareware">shareware</a>:</td></tr>
+<tr><th id="827">827</th><td>	<a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a> (<a class="ref" href="#title" title='title' data-ref="title">title</a>,</td></tr>
+<tr><th id="828">828</th><td>		 <q>"                            "</q></td></tr>
+<tr><th id="829">829</th><td>		 <q>"DOOM Shareware Startup v%i.%i"</q></td></tr>
+<tr><th id="830">830</th><td>		 <q>"                           "</q>,</td></tr>
+<tr><th id="831">831</th><td>		 <a class="enum" href="doomdef.h.html#VERSION" title='VERSION' data-ref="VERSION">VERSION</a>/<var>100</var>,<a class="enum" href="doomdef.h.html#VERSION" title='VERSION' data-ref="VERSION">VERSION</a>%<var>100</var>);</td></tr>
+<tr><th id="832">832</th><td>	<b>break</b>;</td></tr>
+<tr><th id="833">833</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#registered" title='registered' data-ref="registered">registered</a>:</td></tr>
+<tr><th id="834">834</th><td>	<a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a> (<a class="ref" href="#title" title='title' data-ref="title">title</a>,</td></tr>
+<tr><th id="835">835</th><td>		 <q>"                            "</q></td></tr>
+<tr><th id="836">836</th><td>		 <q>"DOOM Registered Startup v%i.%i"</q></td></tr>
+<tr><th id="837">837</th><td>		 <q>"                           "</q>,</td></tr>
+<tr><th id="838">838</th><td>		 <a class="enum" href="doomdef.h.html#VERSION" title='VERSION' data-ref="VERSION">VERSION</a>/<var>100</var>,<a class="enum" href="doomdef.h.html#VERSION" title='VERSION' data-ref="VERSION">VERSION</a>%<var>100</var>);</td></tr>
+<tr><th id="839">839</th><td>	<b>break</b>;</td></tr>
+<tr><th id="840">840</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a>:</td></tr>
+<tr><th id="841">841</th><td>	<a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a> (<a class="ref" href="#title" title='title' data-ref="title">title</a>,</td></tr>
+<tr><th id="842">842</th><td>		 <q>"                         "</q></td></tr>
+<tr><th id="843">843</th><td>		 <q>"DOOM 2: Hell on Earth v%i.%i"</q></td></tr>
+<tr><th id="844">844</th><td>		 <q>"                           "</q>,</td></tr>
+<tr><th id="845">845</th><td>		 <a class="enum" href="doomdef.h.html#VERSION" title='VERSION' data-ref="VERSION">VERSION</a>/<var>100</var>,<a class="enum" href="doomdef.h.html#VERSION" title='VERSION' data-ref="VERSION">VERSION</a>%<var>100</var>);</td></tr>
+<tr><th id="846">846</th><td>	<b>break</b>;</td></tr>
+<tr><th id="847">847</th><td><i>/*FIXME</i></td></tr>
+<tr><th id="848">848</th><td><i>       case pack_plut:</i></td></tr>
+<tr><th id="849">849</th><td><i>	sprintf (title,</i></td></tr>
+<tr><th id="850">850</th><td><i>		 "                   "</i></td></tr>
+<tr><th id="851">851</th><td><i>		 "DOOM 2: Plutonia Experiment v%i.%i"</i></td></tr>
+<tr><th id="852">852</th><td><i>		 "                           ",</i></td></tr>
+<tr><th id="853">853</th><td><i>		 VERSION/100,VERSION%100);</i></td></tr>
+<tr><th id="854">854</th><td><i>	break;</i></td></tr>
+<tr><th id="855">855</th><td><i>      case pack_tnt:</i></td></tr>
+<tr><th id="856">856</th><td><i>	sprintf (title,</i></td></tr>
+<tr><th id="857">857</th><td><i>		 "                     "</i></td></tr>
+<tr><th id="858">858</th><td><i>		 "DOOM 2: TNT - Evilution v%i.%i"</i></td></tr>
+<tr><th id="859">859</th><td><i>		 "                           ",</i></td></tr>
+<tr><th id="860">860</th><td><i>		 VERSION/100,VERSION%100);</i></td></tr>
+<tr><th id="861">861</th><td><i>	break;</i></td></tr>
+<tr><th id="862">862</th><td><i>*/</i></td></tr>
+<tr><th id="863">863</th><td>      <b>default</b>:</td></tr>
+<tr><th id="864">864</th><td>	<a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a> (<a class="ref" href="#title" title='title' data-ref="title">title</a>,</td></tr>
+<tr><th id="865">865</th><td>		 <q>"                     "</q></td></tr>
+<tr><th id="866">866</th><td>		 <q>"Public DOOM - v%i.%i"</q></td></tr>
+<tr><th id="867">867</th><td>		 <q>"                           "</q>,</td></tr>
+<tr><th id="868">868</th><td>		 <a class="enum" href="doomdef.h.html#VERSION" title='VERSION' data-ref="VERSION">VERSION</a>/<var>100</var>,<a class="enum" href="doomdef.h.html#VERSION" title='VERSION' data-ref="VERSION">VERSION</a>%<var>100</var>);</td></tr>
+<tr><th id="869">869</th><td>	<b>break</b>;</td></tr>
+<tr><th id="870">870</th><td>    }</td></tr>
+<tr><th id="871">871</th><td>    </td></tr>
+<tr><th id="872">872</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"%s\n"</q>,<a class="ref" href="#title" title='title' data-ref="title">title</a>);</td></tr>
+<tr><th id="873">873</th><td></td></tr>
+<tr><th id="874">874</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#devparm" title='devparm' data-ref="devparm">devparm</a>)</td></tr>
+<tr><th id="875">875</th><td>	<a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<a class="macro" href="d_englsh.h.html#33" title="&quot;Development mode ON.\n&quot;" data-ref="_M/D_DEVSTR">D_DEVSTR</a>);</td></tr>
+<tr><th id="876">876</th><td>    </td></tr>
+<tr><th id="877">877</th><td>    <b>if</b> (<a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a>(<q>"-cdrom"</q>))</td></tr>
+<tr><th id="878">878</th><td>    {</td></tr>
+<tr><th id="879">879</th><td>	<a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<a class="macro" href="d_englsh.h.html#34" title="&quot;CD-ROM Version: default.cfg from c:\\doomdata\n&quot;" data-ref="_M/D_CDROM">D_CDROM</a>);</td></tr>
+<tr><th id="880">880</th><td>	<a class="ref" href="../include/x86_64-linux-gnu/sys/stat.h.html#mkdir" title='mkdir' data-ref="mkdir">mkdir</a>(<q>"c:\\doomdata"</q>,<var>0</var>);</td></tr>
+<tr><th id="881">881</th><td>	<a class="ref" href="../include/string.h.html#strcpy" title='strcpy' data-ref="strcpy">strcpy</a> (<a class="ref" href="doomstat.h.html#basedefault" title='basedefault' data-ref="basedefault">basedefault</a>,<q>"c:/doomdata/default.cfg"</q>);</td></tr>
+<tr><th id="882">882</th><td>    }	</td></tr>
+<tr><th id="883">883</th><td>    </td></tr>
+<tr><th id="884">884</th><td>    <i>// turbo option</i></td></tr>
+<tr><th id="885">885</th><td>    <b>if</b> ( (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>=<a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-turbo"</q>)) )</td></tr>
+<tr><th id="886">886</th><td>    {</td></tr>
+<tr><th id="887">887</th><td>	<em>int</em>     <dfn class="local col2 decl" id="582scale" title='scale' data-type='int' data-ref="582scale">scale</dfn> = <var>200</var>;</td></tr>
+<tr><th id="888">888</th><td>	<b>extern</b> <em>int</em> <dfn class="decl" id="forwardmove" title='forwardmove' data-ref="forwardmove">forwardmove</dfn>[<var>2</var>];</td></tr>
+<tr><th id="889">889</th><td>	<b>extern</b> <em>int</em> <dfn class="decl" id="sidemove" title='sidemove' data-ref="sidemove">sidemove</dfn>[<var>2</var>];</td></tr>
+<tr><th id="890">890</th><td>	</td></tr>
+<tr><th id="891">891</th><td>	<b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>&lt;<a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>-<var>1</var>)</td></tr>
+<tr><th id="892">892</th><td>	    <a class="local col2 ref" href="#582scale" title='scale' data-ref="582scale">scale</a> = <a class="ref" href="../include/stdlib.h.html#atoi" title='atoi' data-ref="atoi">atoi</a> (<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>]);</td></tr>
+<tr><th id="893">893</th><td>	<b>if</b> (<a class="local col2 ref" href="#582scale" title='scale' data-ref="582scale">scale</a> &lt; <var>10</var>)</td></tr>
+<tr><th id="894">894</th><td>	    <a class="local col2 ref" href="#582scale" title='scale' data-ref="582scale">scale</a> = <var>10</var>;</td></tr>
+<tr><th id="895">895</th><td>	<b>if</b> (<a class="local col2 ref" href="#582scale" title='scale' data-ref="582scale">scale</a> &gt; <var>400</var>)</td></tr>
+<tr><th id="896">896</th><td>	    <a class="local col2 ref" href="#582scale" title='scale' data-ref="582scale">scale</a> = <var>400</var>;</td></tr>
+<tr><th id="897">897</th><td>	<a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"turbo scale: %i%%\n"</q>,<a class="local col2 ref" href="#582scale" title='scale' data-ref="582scale">scale</a>);</td></tr>
+<tr><th id="898">898</th><td>	<a class="ref" href="#forwardmove" title='forwardmove' data-ref="forwardmove">forwardmove</a>[<var>0</var>] = <a class="ref" href="#forwardmove" title='forwardmove' data-ref="forwardmove">forwardmove</a>[<var>0</var>]*<a class="local col2 ref" href="#582scale" title='scale' data-ref="582scale">scale</a>/<var>100</var>;</td></tr>
+<tr><th id="899">899</th><td>	<a class="ref" href="#forwardmove" title='forwardmove' data-ref="forwardmove">forwardmove</a>[<var>1</var>] = <a class="ref" href="#forwardmove" title='forwardmove' data-ref="forwardmove">forwardmove</a>[<var>1</var>]*<a class="local col2 ref" href="#582scale" title='scale' data-ref="582scale">scale</a>/<var>100</var>;</td></tr>
+<tr><th id="900">900</th><td>	<a class="ref" href="#sidemove" title='sidemove' data-ref="sidemove">sidemove</a>[<var>0</var>] = <a class="ref" href="#sidemove" title='sidemove' data-ref="sidemove">sidemove</a>[<var>0</var>]*<a class="local col2 ref" href="#582scale" title='scale' data-ref="582scale">scale</a>/<var>100</var>;</td></tr>
+<tr><th id="901">901</th><td>	<a class="ref" href="#sidemove" title='sidemove' data-ref="sidemove">sidemove</a>[<var>1</var>] = <a class="ref" href="#sidemove" title='sidemove' data-ref="sidemove">sidemove</a>[<var>1</var>]*<a class="local col2 ref" href="#582scale" title='scale' data-ref="582scale">scale</a>/<var>100</var>;</td></tr>
+<tr><th id="902">902</th><td>    }</td></tr>
+<tr><th id="903">903</th><td>    </td></tr>
+<tr><th id="904">904</th><td>    <i>// add any files specified on the command line with -file wadfile</i></td></tr>
+<tr><th id="905">905</th><td><i>    // to the wad list</i></td></tr>
+<tr><th id="906">906</th><td><i>    //</i></td></tr>
+<tr><th id="907">907</th><td><i>    // convenience hack to allow -wart e m to add a wad file</i></td></tr>
+<tr><th id="908">908</th><td><i>    // prepend a tilde to the filename so wadfile will be reloadable</i></td></tr>
+<tr><th id="909">909</th><td>    <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-wart"</q>);</td></tr>
+<tr><th id="910">910</th><td>    <b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>)</td></tr>
+<tr><th id="911">911</th><td>    {</td></tr>
+<tr><th id="912">912</th><td>	<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>][<var>4</var>] = <kbd>'p'</kbd>;     <i>// big hack, change to -warp</i></td></tr>
+<tr><th id="913">913</th><td></td></tr>
+<tr><th id="914">914</th><td>	<i>// Map name handling.</i></td></tr>
+<tr><th id="915">915</th><td>	<b>switch</b> (<a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> )</td></tr>
+<tr><th id="916">916</th><td>	{</td></tr>
+<tr><th id="917">917</th><td>	  <b>case</b> <a class="enum" href="doomdef.h.html#shareware" title='shareware' data-ref="shareware">shareware</a>:</td></tr>
+<tr><th id="918">918</th><td>	  <b>case</b> <a class="enum" href="doomdef.h.html#retail" title='retail' data-ref="retail">retail</a>:</td></tr>
+<tr><th id="919">919</th><td>	  <b>case</b> <a class="enum" href="doomdef.h.html#registered" title='registered' data-ref="registered">registered</a>:</td></tr>
+<tr><th id="920">920</th><td>	    <a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a> (<a class="local col1 ref" href="#581file" title='file' data-ref="581file">file</a>,<q>"~"</q><a class="macro" href="dstrings.h.html#49" title="&quot;devmaps&quot;" data-ref="_M/DEVMAPS">DEVMAPS</a><q>"E%cM%c.wad"</q>,</td></tr>
+<tr><th id="921">921</th><td>		     <a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>][<var>0</var>], <a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>2</var>][<var>0</var>]);</td></tr>
+<tr><th id="922">922</th><td>	    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"Warping to Episode %s, Map %s.\n"</q>,</td></tr>
+<tr><th id="923">923</th><td>		   <a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>],<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>2</var>]);</td></tr>
+<tr><th id="924">924</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="925">925</th><td>	    </td></tr>
+<tr><th id="926">926</th><td>	  <b>case</b> <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a>:</td></tr>
+<tr><th id="927">927</th><td>	  <b>default</b>:</td></tr>
+<tr><th id="928">928</th><td>	    <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="../include/stdlib.h.html#atoi" title='atoi' data-ref="atoi">atoi</a> (<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>]);</td></tr>
+<tr><th id="929">929</th><td>	    <b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>&lt;<var>10</var>)</td></tr>
+<tr><th id="930">930</th><td>	      <a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a> (<a class="local col1 ref" href="#581file" title='file' data-ref="581file">file</a>,<q>"~"</q><a class="macro" href="dstrings.h.html#49" title="&quot;devmaps&quot;" data-ref="_M/DEVMAPS">DEVMAPS</a><q>"cdata/map0%i.wad"</q>, <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>);</td></tr>
+<tr><th id="931">931</th><td>	    <b>else</b></td></tr>
+<tr><th id="932">932</th><td>	      <a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a> (<a class="local col1 ref" href="#581file" title='file' data-ref="581file">file</a>,<q>"~"</q><a class="macro" href="dstrings.h.html#49" title="&quot;devmaps&quot;" data-ref="_M/DEVMAPS">DEVMAPS</a><q>"cdata/map%i.wad"</q>, <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>);</td></tr>
+<tr><th id="933">933</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="934">934</th><td>	}</td></tr>
+<tr><th id="935">935</th><td>	<a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="local col1 ref" href="#581file" title='file' data-ref="581file">file</a>);</td></tr>
+<tr><th id="936">936</th><td>    }</td></tr>
+<tr><th id="937">937</th><td>	</td></tr>
+<tr><th id="938">938</th><td>    <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-file"</q>);</td></tr>
+<tr><th id="939">939</th><td>    <b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>)</td></tr>
+<tr><th id="940">940</th><td>    {</td></tr>
+<tr><th id="941">941</th><td>	<i>// the parms after p are wadfile/lump names,</i></td></tr>
+<tr><th id="942">942</th><td><i>	// until end of parms or another - preceded parm</i></td></tr>
+<tr><th id="943">943</th><td>	<a class="ref" href="doomstat.h.html#modifiedgame" title='modifiedgame' data-ref="modifiedgame">modifiedgame</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;            <i>// homebrew levels</i></td></tr>
+<tr><th id="944">944</th><td>	<b>while</b> (++<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> != <a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a> &amp;&amp; <a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>][<var>0</var>] != <kbd>'-'</kbd>)</td></tr>
+<tr><th id="945">945</th><td>	    <a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>]);</td></tr>
+<tr><th id="946">946</th><td>    }</td></tr>
+<tr><th id="947">947</th><td></td></tr>
+<tr><th id="948">948</th><td>    <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-playdemo"</q>);</td></tr>
+<tr><th id="949">949</th><td></td></tr>
+<tr><th id="950">950</th><td>    <b>if</b> (!<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>)</td></tr>
+<tr><th id="951">951</th><td>	<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-timedemo"</q>);</td></tr>
+<tr><th id="952">952</th><td></td></tr>
+<tr><th id="953">953</th><td>    <b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &amp;&amp; <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &lt; <a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>-<var>1</var>)</td></tr>
+<tr><th id="954">954</th><td>    {</td></tr>
+<tr><th id="955">955</th><td>	<a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a> (<a class="local col1 ref" href="#581file" title='file' data-ref="581file">file</a>,<q>"%s.lmp"</q>, <a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>]);</td></tr>
+<tr><th id="956">956</th><td>	<a class="ref" href="#D_AddFile" title='D_AddFile' data-ref="D_AddFile">D_AddFile</a> (<a class="local col1 ref" href="#581file" title='file' data-ref="581file">file</a>);</td></tr>
+<tr><th id="957">957</th><td>	<a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"Playing demo %s.lmp.\n"</q>,<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>]);</td></tr>
+<tr><th id="958">958</th><td>    }</td></tr>
+<tr><th id="959">959</th><td>    </td></tr>
+<tr><th id="960">960</th><td>    <i>// get skill / episode / map from parms</i></td></tr>
+<tr><th id="961">961</th><td>    <a class="ref" href="doomstat.h.html#startskill" title='startskill' data-ref="startskill">startskill</a> = <a class="enum" href="doomdef.h.html#sk_medium" title='sk_medium' data-ref="sk_medium">sk_medium</a>;</td></tr>
+<tr><th id="962">962</th><td>    <a class="ref" href="doomstat.h.html#startepisode" title='startepisode' data-ref="startepisode">startepisode</a> = <var>1</var>;</td></tr>
+<tr><th id="963">963</th><td>    <a class="ref" href="doomstat.h.html#startmap" title='startmap' data-ref="startmap">startmap</a> = <var>1</var>;</td></tr>
+<tr><th id="964">964</th><td>    <a class="ref" href="doomstat.h.html#autostart" title='autostart' data-ref="autostart">autostart</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="965">965</th><td></td></tr>
+<tr><th id="966">966</th><td>		</td></tr>
+<tr><th id="967">967</th><td>    <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-skill"</q>);</td></tr>
+<tr><th id="968">968</th><td>    <b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &amp;&amp; <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &lt; <a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>-<var>1</var>)</td></tr>
+<tr><th id="969">969</th><td>    {</td></tr>
+<tr><th id="970">970</th><td>	<a class="ref" href="doomstat.h.html#startskill" title='startskill' data-ref="startskill">startskill</a> = <a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>][<var>0</var>]-<kbd>'1'</kbd>;</td></tr>
+<tr><th id="971">971</th><td>	<a class="ref" href="doomstat.h.html#autostart" title='autostart' data-ref="autostart">autostart</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="972">972</th><td>    }</td></tr>
+<tr><th id="973">973</th><td></td></tr>
+<tr><th id="974">974</th><td>    <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-episode"</q>);</td></tr>
+<tr><th id="975">975</th><td>    <b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &amp;&amp; <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &lt; <a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>-<var>1</var>)</td></tr>
+<tr><th id="976">976</th><td>    {</td></tr>
+<tr><th id="977">977</th><td>	<a class="ref" href="doomstat.h.html#startepisode" title='startepisode' data-ref="startepisode">startepisode</a> = <a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>][<var>0</var>]-<kbd>'0'</kbd>;</td></tr>
+<tr><th id="978">978</th><td>	<a class="ref" href="doomstat.h.html#startmap" title='startmap' data-ref="startmap">startmap</a> = <var>1</var>;</td></tr>
+<tr><th id="979">979</th><td>	<a class="ref" href="doomstat.h.html#autostart" title='autostart' data-ref="autostart">autostart</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="980">980</th><td>    }</td></tr>
+<tr><th id="981">981</th><td>	</td></tr>
+<tr><th id="982">982</th><td>    <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-timer"</q>);</td></tr>
+<tr><th id="983">983</th><td>    <b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &amp;&amp; <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &lt; <a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>-<var>1</var> &amp;&amp; <a class="ref" href="doomstat.h.html#deathmatch" title='deathmatch' data-ref="deathmatch">deathmatch</a>)</td></tr>
+<tr><th id="984">984</th><td>    {</td></tr>
+<tr><th id="985">985</th><td>	<em>int</em>     <dfn class="local col3 decl" id="583time" title='time' data-type='int' data-ref="583time">time</dfn>;</td></tr>
+<tr><th id="986">986</th><td>	<a class="local col3 ref" href="#583time" title='time' data-ref="583time">time</a> = <a class="ref" href="../include/stdlib.h.html#atoi" title='atoi' data-ref="atoi">atoi</a>(<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>]);</td></tr>
+<tr><th id="987">987</th><td>	<a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"Levels will end after %d minute"</q>,<a class="local col3 ref" href="#583time" title='time' data-ref="583time">time</a>);</td></tr>
+<tr><th id="988">988</th><td>	<b>if</b> (<a class="local col3 ref" href="#583time" title='time' data-ref="583time">time</a>&gt;<var>1</var>)</td></tr>
+<tr><th id="989">989</th><td>	    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"s"</q>);</td></tr>
+<tr><th id="990">990</th><td>	<a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>".\n"</q>);</td></tr>
+<tr><th id="991">991</th><td>    }</td></tr>
+<tr><th id="992">992</th><td></td></tr>
+<tr><th id="993">993</th><td>    <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-avg"</q>);</td></tr>
+<tr><th id="994">994</th><td>    <b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &amp;&amp; <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &lt; <a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>-<var>1</var> &amp;&amp; <a class="ref" href="doomstat.h.html#deathmatch" title='deathmatch' data-ref="deathmatch">deathmatch</a>)</td></tr>
+<tr><th id="995">995</th><td>	<a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"Austin Virtual Gaming: Levels will end after 20 minutes\n"</q>);</td></tr>
+<tr><th id="996">996</th><td></td></tr>
+<tr><th id="997">997</th><td>    <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-warp"</q>);</td></tr>
+<tr><th id="998">998</th><td>    <b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &amp;&amp; <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &lt; <a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>-<var>1</var>)</td></tr>
+<tr><th id="999">999</th><td>    {</td></tr>
+<tr><th id="1000">1000</th><td>	<b>if</b> (<a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> == <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a>)</td></tr>
+<tr><th id="1001">1001</th><td>	    <a class="ref" href="doomstat.h.html#startmap" title='startmap' data-ref="startmap">startmap</a> = <a class="ref" href="../include/stdlib.h.html#atoi" title='atoi' data-ref="atoi">atoi</a> (<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>]);</td></tr>
+<tr><th id="1002">1002</th><td>	<b>else</b></td></tr>
+<tr><th id="1003">1003</th><td>	{</td></tr>
+<tr><th id="1004">1004</th><td>	    <a class="ref" href="doomstat.h.html#startepisode" title='startepisode' data-ref="startepisode">startepisode</a> = <a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>][<var>0</var>]-<kbd>'0'</kbd>;</td></tr>
+<tr><th id="1005">1005</th><td>	    <a class="ref" href="doomstat.h.html#startmap" title='startmap' data-ref="startmap">startmap</a> = <a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>2</var>][<var>0</var>]-<kbd>'0'</kbd>;</td></tr>
+<tr><th id="1006">1006</th><td>	}</td></tr>
+<tr><th id="1007">1007</th><td>	<a class="ref" href="doomstat.h.html#autostart" title='autostart' data-ref="autostart">autostart</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="1008">1008</th><td>    }</td></tr>
+<tr><th id="1009">1009</th><td>    </td></tr>
+<tr><th id="1010">1010</th><td>    <i>// init subsystems</i></td></tr>
+<tr><th id="1011">1011</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"V_Init: allocate screens.\n"</q>);</td></tr>
+<tr><th id="1012">1012</th><td>    <a class="ref" href="v_video.h.html#V_Init" title='V_Init' data-ref="V_Init">V_Init</a> ();</td></tr>
+<tr><th id="1013">1013</th><td></td></tr>
+<tr><th id="1014">1014</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"M_LoadDefaults: Load system defaults.\n"</q>);</td></tr>
+<tr><th id="1015">1015</th><td>    <a class="ref" href="m_misc.h.html#M_LoadDefaults" title='M_LoadDefaults' data-ref="M_LoadDefaults">M_LoadDefaults</a> ();              <i>// load before initing other systems</i></td></tr>
+<tr><th id="1016">1016</th><td></td></tr>
+<tr><th id="1017">1017</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"Z_Init: Init zone memory allocation daemon. \n"</q>);</td></tr>
+<tr><th id="1018">1018</th><td>    <a class="ref" href="z_zone.h.html#Z_Init" title='Z_Init' data-ref="Z_Init">Z_Init</a> ();</td></tr>
+<tr><th id="1019">1019</th><td></td></tr>
+<tr><th id="1020">1020</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"W_Init: Init WADfiles.\n"</q>);</td></tr>
+<tr><th id="1021">1021</th><td>    <a class="ref" href="w_wad.h.html#W_InitMultipleFiles" title='W_InitMultipleFiles' data-ref="W_InitMultipleFiles">W_InitMultipleFiles</a> (<a class="ref" href="d_main.h.html#wadfiles" title='wadfiles' data-ref="wadfiles">wadfiles</a>);</td></tr>
+<tr><th id="1022">1022</th><td>    </td></tr>
+<tr><th id="1023">1023</th><td></td></tr>
+<tr><th id="1024">1024</th><td>    <i>// Check for -file in shareware</i></td></tr>
+<tr><th id="1025">1025</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#modifiedgame" title='modifiedgame' data-ref="modifiedgame">modifiedgame</a>)</td></tr>
+<tr><th id="1026">1026</th><td>    {</td></tr>
+<tr><th id="1027">1027</th><td>	<i>// These are the lumps that will be checked in IWAD,</i></td></tr>
+<tr><th id="1028">1028</th><td><i>	// if any one is not present, execution will be aborted.</i></td></tr>
+<tr><th id="1029">1029</th><td>	<em>char</em> <dfn class="local col4 decl" id="584name" title='name' data-type='char [23][8]' data-ref="584name">name</dfn>[<var>23</var>][<var>8</var>]=</td></tr>
+<tr><th id="1030">1030</th><td>	{</td></tr>
+<tr><th id="1031">1031</th><td>	    <q>"e2m1"</q>,<q>"e2m2"</q>,<q>"e2m3"</q>,<q>"e2m4"</q>,<q>"e2m5"</q>,<q>"e2m6"</q>,<q>"e2m7"</q>,<q>"e2m8"</q>,<q>"e2m9"</q>,</td></tr>
+<tr><th id="1032">1032</th><td>	    <q>"e3m1"</q>,<q>"e3m3"</q>,<q>"e3m3"</q>,<q>"e3m4"</q>,<q>"e3m5"</q>,<q>"e3m6"</q>,<q>"e3m7"</q>,<q>"e3m8"</q>,<q>"e3m9"</q>,</td></tr>
+<tr><th id="1033">1033</th><td>	    <q>"dphoof"</q>,<q>"bfgga0"</q>,<q>"heada1"</q>,<q>"cybra1"</q>,<q>"spida1d1"</q></td></tr>
+<tr><th id="1034">1034</th><td>	};</td></tr>
+<tr><th id="1035">1035</th><td>	<em>int</em> <dfn class="local col5 decl" id="585i" title='i' data-type='int' data-ref="585i">i</dfn>;</td></tr>
+<tr><th id="1036">1036</th><td>	</td></tr>
+<tr><th id="1037">1037</th><td>	<b>if</b> ( <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> == <a class="enum" href="doomdef.h.html#shareware" title='shareware' data-ref="shareware">shareware</a>)</td></tr>
+<tr><th id="1038">1038</th><td>	    <a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a>(<q>"\nYou cannot -file with the shareware "</q></td></tr>
+<tr><th id="1039">1039</th><td>		    <q>"version. Register!"</q>);</td></tr>
+<tr><th id="1040">1040</th><td></td></tr>
+<tr><th id="1041">1041</th><td>	<i>// Check for fake IWAD with right name,</i></td></tr>
+<tr><th id="1042">1042</th><td><i>	// but w/o all the lumps of the registered version. </i></td></tr>
+<tr><th id="1043">1043</th><td>	<b>if</b> (<a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> == <a class="enum" href="doomdef.h.html#registered" title='registered' data-ref="registered">registered</a>)</td></tr>
+<tr><th id="1044">1044</th><td>	    <b>for</b> (<a class="local col5 ref" href="#585i" title='i' data-ref="585i">i</a> = <var>0</var>;<a class="local col5 ref" href="#585i" title='i' data-ref="585i">i</a> &lt; <var>23</var>; <a class="local col5 ref" href="#585i" title='i' data-ref="585i">i</a>++)</td></tr>
+<tr><th id="1045">1045</th><td>		<b>if</b> (<a class="ref" href="w_wad.h.html#W_CheckNumForName" title='W_CheckNumForName' data-ref="W_CheckNumForName">W_CheckNumForName</a>(<a class="local col4 ref" href="#584name" title='name' data-ref="584name">name</a>[<a class="local col5 ref" href="#585i" title='i' data-ref="585i">i</a>])&lt;<var>0</var>)</td></tr>
+<tr><th id="1046">1046</th><td>		    <a class="ref" href="i_system.h.html#I_Error" title='I_Error' data-ref="I_Error">I_Error</a>(<q>"\nThis is not the registered version."</q>);</td></tr>
+<tr><th id="1047">1047</th><td>    }</td></tr>
+<tr><th id="1048">1048</th><td>    </td></tr>
+<tr><th id="1049">1049</th><td>    <i>// Iff additonal PWAD files are used, print modified banner</i></td></tr>
+<tr><th id="1050">1050</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#modifiedgame" title='modifiedgame' data-ref="modifiedgame">modifiedgame</a>)</td></tr>
+<tr><th id="1051">1051</th><td>    {</td></tr>
+<tr><th id="1052">1052</th><td>	<i>/*m*/</i><a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (</td></tr>
+<tr><th id="1053">1053</th><td>	    <q>"===========================================================================\n"</q></td></tr>
+<tr><th id="1054">1054</th><td>	    <q>"ATTENTION:  This version of DOOM has been modified.  If you would like to\n"</q></td></tr>
+<tr><th id="1055">1055</th><td>	    <q>"get a copy of the original game, call 1-800-IDGAMES or see the readme file.\n"</q></td></tr>
+<tr><th id="1056">1056</th><td>	    <q>"        You will not receive technical support for modified games.\n"</q></td></tr>
+<tr><th id="1057">1057</th><td>	    <q>"                      press enter to continue\n"</q></td></tr>
+<tr><th id="1058">1058</th><td>	    <q>"===========================================================================\n"</q></td></tr>
+<tr><th id="1059">1059</th><td>	    );</td></tr>
+<tr><th id="1060">1060</th><td>	<a class="ref" href="../include/stdio.h.html#getchar" title='getchar' data-ref="getchar">getchar</a> ();</td></tr>
+<tr><th id="1061">1061</th><td>    }</td></tr>
+<tr><th id="1062">1062</th><td>	</td></tr>
+<tr><th id="1063">1063</th><td></td></tr>
+<tr><th id="1064">1064</th><td>    <i>// Check and print which version is executed.</i></td></tr>
+<tr><th id="1065">1065</th><td>    <b>switch</b> ( <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> )</td></tr>
+<tr><th id="1066">1066</th><td>    {</td></tr>
+<tr><th id="1067">1067</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#shareware" title='shareware' data-ref="shareware">shareware</a>:</td></tr>
+<tr><th id="1068">1068</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#indetermined" title='indetermined' data-ref="indetermined">indetermined</a>:</td></tr>
+<tr><th id="1069">1069</th><td>	<a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (</td></tr>
+<tr><th id="1070">1070</th><td>	    <q>"===========================================================================\n"</q></td></tr>
+<tr><th id="1071">1071</th><td>	    <q>"                                Shareware!\n"</q></td></tr>
+<tr><th id="1072">1072</th><td>	    <q>"===========================================================================\n"</q></td></tr>
+<tr><th id="1073">1073</th><td>	);</td></tr>
+<tr><th id="1074">1074</th><td>	<b>break</b>;</td></tr>
+<tr><th id="1075">1075</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#registered" title='registered' data-ref="registered">registered</a>:</td></tr>
+<tr><th id="1076">1076</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#retail" title='retail' data-ref="retail">retail</a>:</td></tr>
+<tr><th id="1077">1077</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a>:</td></tr>
+<tr><th id="1078">1078</th><td>	<a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (</td></tr>
+<tr><th id="1079">1079</th><td>	    <q>"===========================================================================\n"</q></td></tr>
+<tr><th id="1080">1080</th><td>	    <q>"                 Commercial product - do not distribute!\n"</q></td></tr>
+<tr><th id="1081">1081</th><td>	    <q>"         Please report software piracy to the SPA: 1-800-388-PIR8\n"</q></td></tr>
+<tr><th id="1082">1082</th><td>	    <q>"===========================================================================\n"</q></td></tr>
+<tr><th id="1083">1083</th><td>	);</td></tr>
+<tr><th id="1084">1084</th><td>	<b>break</b>;</td></tr>
+<tr><th id="1085">1085</th><td>	</td></tr>
+<tr><th id="1086">1086</th><td>      <b>default</b>:</td></tr>
+<tr><th id="1087">1087</th><td>	<i>// Ouch.</i></td></tr>
+<tr><th id="1088">1088</th><td>	<b>break</b>;</td></tr>
+<tr><th id="1089">1089</th><td>    }</td></tr>
+<tr><th id="1090">1090</th><td></td></tr>
+<tr><th id="1091">1091</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"M_Init: Init miscellaneous info.\n"</q>);</td></tr>
+<tr><th id="1092">1092</th><td>    <a class="ref" href="m_menu.h.html#M_Init" title='M_Init' data-ref="M_Init">M_Init</a> ();</td></tr>
+<tr><th id="1093">1093</th><td></td></tr>
+<tr><th id="1094">1094</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"R_Init: Init DOOM refresh daemon - "</q>);</td></tr>
+<tr><th id="1095">1095</th><td>    <a class="ref" href="r_main.h.html#R_Init" title='R_Init' data-ref="R_Init">R_Init</a> ();</td></tr>
+<tr><th id="1096">1096</th><td></td></tr>
+<tr><th id="1097">1097</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"\nP_Init: Init Playloop state.\n"</q>);</td></tr>
+<tr><th id="1098">1098</th><td>    <a class="ref" href="p_setup.h.html#P_Init" title='P_Init' data-ref="P_Init">P_Init</a> ();</td></tr>
+<tr><th id="1099">1099</th><td></td></tr>
+<tr><th id="1100">1100</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"I_Init: Setting up machine state.\n"</q>);</td></tr>
+<tr><th id="1101">1101</th><td>    <a class="ref" href="i_system.h.html#I_Init" title='I_Init' data-ref="I_Init">I_Init</a> ();</td></tr>
+<tr><th id="1102">1102</th><td></td></tr>
+<tr><th id="1103">1103</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"D_CheckNetGame: Checking network game status.\n"</q>);</td></tr>
+<tr><th id="1104">1104</th><td>    <a class="ref" href="#D_CheckNetGame" title='D_CheckNetGame' data-ref="D_CheckNetGame">D_CheckNetGame</a> ();</td></tr>
+<tr><th id="1105">1105</th><td></td></tr>
+<tr><th id="1106">1106</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"S_Init: Setting up sound.\n"</q>);</td></tr>
+<tr><th id="1107">1107</th><td>    <a class="ref" href="s_sound.h.html#S_Init" title='S_Init' data-ref="S_Init">S_Init</a> (<a class="ref" href="doomstat.h.html#snd_SfxVolume" title='snd_SfxVolume' data-ref="snd_SfxVolume">snd_SfxVolume</a> <i>/* *8 */</i>, <a class="ref" href="doomstat.h.html#snd_MusicVolume" title='snd_MusicVolume' data-ref="snd_MusicVolume">snd_MusicVolume</a> <i>/* *8*/</i> );</td></tr>
+<tr><th id="1108">1108</th><td></td></tr>
+<tr><th id="1109">1109</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"HU_Init: Setting up heads up display.\n"</q>);</td></tr>
+<tr><th id="1110">1110</th><td>    <a class="ref" href="hu_stuff.h.html#HU_Init" title='HU_Init' data-ref="HU_Init">HU_Init</a> ();</td></tr>
+<tr><th id="1111">1111</th><td></td></tr>
+<tr><th id="1112">1112</th><td>    <a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"ST_Init: Init status bar.\n"</q>);</td></tr>
+<tr><th id="1113">1113</th><td>    <a class="ref" href="st_stuff.h.html#ST_Init" title='ST_Init' data-ref="ST_Init">ST_Init</a> ();</td></tr>
+<tr><th id="1114">1114</th><td></td></tr>
+<tr><th id="1115">1115</th><td>    <i>// check for a driver that wants intermission stats</i></td></tr>
+<tr><th id="1116">1116</th><td>    <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-statcopy"</q>);</td></tr>
+<tr><th id="1117">1117</th><td>    <b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &amp;&amp; <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>&lt;<a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>-<var>1</var>)</td></tr>
+<tr><th id="1118">1118</th><td>    {</td></tr>
+<tr><th id="1119">1119</th><td>	<i>// for statistics driver</i></td></tr>
+<tr><th id="1120">1120</th><td>	<b>extern</b>  <em>void</em>*	<dfn class="decl" id="statcopy" title='statcopy' data-ref="statcopy">statcopy</dfn>;                            </td></tr>
+<tr><th id="1121">1121</th><td></td></tr>
+<tr><th id="1122">1122</th><td>	<a class="ref" href="#statcopy" title='statcopy' data-ref="statcopy">statcopy</a> = <span class='warning' title="cast to &apos;void *&apos; from smaller integer type &apos;int&apos;">(</span><em>void</em>*)<a class="ref" href="../include/stdlib.h.html#atoi" title='atoi' data-ref="atoi">atoi</a>(<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>]);</td></tr>
+<tr><th id="1123">1123</th><td>	<a class="ref" href="../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a> (<q>"External statistics registered.\n"</q>);</td></tr>
+<tr><th id="1124">1124</th><td>    }</td></tr>
+<tr><th id="1125">1125</th><td>    </td></tr>
+<tr><th id="1126">1126</th><td>    <i>// start the apropriate game based on parms</i></td></tr>
+<tr><th id="1127">1127</th><td>    <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-record"</q>);</td></tr>
+<tr><th id="1128">1128</th><td></td></tr>
+<tr><th id="1129">1129</th><td>    <b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &amp;&amp; <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &lt; <a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>-<var>1</var>)</td></tr>
+<tr><th id="1130">1130</th><td>    {</td></tr>
+<tr><th id="1131">1131</th><td>	<a class="ref" href="g_game.h.html#G_RecordDemo" title='G_RecordDemo' data-ref="G_RecordDemo">G_RecordDemo</a> (<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>]);</td></tr>
+<tr><th id="1132">1132</th><td>	<a class="ref" href="doomstat.h.html#autostart" title='autostart' data-ref="autostart">autostart</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="1133">1133</th><td>    }</td></tr>
+<tr><th id="1134">1134</th><td>	</td></tr>
+<tr><th id="1135">1135</th><td>    <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-playdemo"</q>);</td></tr>
+<tr><th id="1136">1136</th><td>    <b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &amp;&amp; <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &lt; <a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>-<var>1</var>)</td></tr>
+<tr><th id="1137">1137</th><td>    {</td></tr>
+<tr><th id="1138">1138</th><td>	<a class="ref" href="doomstat.h.html#singledemo" title='singledemo' data-ref="singledemo">singledemo</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;              <i>// quit after one demo</i></td></tr>
+<tr><th id="1139">1139</th><td>	<a class="ref" href="g_game.h.html#G_DeferedPlayDemo" title='G_DeferedPlayDemo' data-ref="G_DeferedPlayDemo">G_DeferedPlayDemo</a> (<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>]);</td></tr>
+<tr><th id="1140">1140</th><td>	<a class="ref" href="#D_DoomLoop" title='D_DoomLoop' data-ref="D_DoomLoop">D_DoomLoop</a> ();  <i>// never returns</i></td></tr>
+<tr><th id="1141">1141</th><td>    }</td></tr>
+<tr><th id="1142">1142</th><td>	</td></tr>
+<tr><th id="1143">1143</th><td>    <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-timedemo"</q>);</td></tr>
+<tr><th id="1144">1144</th><td>    <b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &amp;&amp; <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &lt; <a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>-<var>1</var>)</td></tr>
+<tr><th id="1145">1145</th><td>    {</td></tr>
+<tr><th id="1146">1146</th><td>	<a class="ref" href="g_game.h.html#G_TimeDemo" title='G_TimeDemo' data-ref="G_TimeDemo">G_TimeDemo</a> (<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>]);</td></tr>
+<tr><th id="1147">1147</th><td>	<a class="ref" href="#D_DoomLoop" title='D_DoomLoop' data-ref="D_DoomLoop">D_DoomLoop</a> ();  <i>// never returns</i></td></tr>
+<tr><th id="1148">1148</th><td>    }</td></tr>
+<tr><th id="1149">1149</th><td>	</td></tr>
+<tr><th id="1150">1150</th><td>    <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> = <a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a> (<q>"-loadgame"</q>);</td></tr>
+<tr><th id="1151">1151</th><td>    <b>if</b> (<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &amp;&amp; <a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a> &lt; <a class="ref" href="m_argv.h.html#myargc" title='myargc' data-ref="myargc">myargc</a>-<var>1</var>)</td></tr>
+<tr><th id="1152">1152</th><td>    {</td></tr>
+<tr><th id="1153">1153</th><td>	<b>if</b> (<a class="ref" href="m_argv.h.html#M_CheckParm" title='M_CheckParm' data-ref="M_CheckParm">M_CheckParm</a>(<q>"-cdrom"</q>))</td></tr>
+<tr><th id="1154">1154</th><td>	    <a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a>(<a class="local col1 ref" href="#581file" title='file' data-ref="581file">file</a>, <q>"c:\\doomdata\\"</q><a class="macro" href="dstrings.h.html#41" title="&quot;doomsav&quot;" data-ref="_M/SAVEGAMENAME">SAVEGAMENAME</a><q>"%c.dsg"</q>,<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>][<var>0</var>]);</td></tr>
+<tr><th id="1155">1155</th><td>	<b>else</b></td></tr>
+<tr><th id="1156">1156</th><td>	    <a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a>(<a class="local col1 ref" href="#581file" title='file' data-ref="581file">file</a>, <a class="macro" href="dstrings.h.html#41" title="&quot;doomsav&quot;" data-ref="_M/SAVEGAMENAME">SAVEGAMENAME</a><q>"%c.dsg"</q>,<a class="ref" href="m_argv.h.html#myargv" title='myargv' data-ref="myargv">myargv</a>[<a class="local col0 ref" href="#580p" title='p' data-ref="580p">p</a>+<var>1</var>][<var>0</var>]);</td></tr>
+<tr><th id="1157">1157</th><td>	<a class="ref" href="g_game.h.html#G_LoadGame" title='G_LoadGame' data-ref="G_LoadGame">G_LoadGame</a> (<a class="local col1 ref" href="#581file" title='file' data-ref="581file">file</a>);</td></tr>
+<tr><th id="1158">1158</th><td>    }</td></tr>
+<tr><th id="1159">1159</th><td>	</td></tr>
+<tr><th id="1160">1160</th><td></td></tr>
+<tr><th id="1161">1161</th><td>    <b>if</b> ( <a class="ref" href="d_event.h.html#gameaction" title='gameaction' data-ref="gameaction">gameaction</a> != <a class="enum" href="d_event.h.html#ga_loadgame" title='ga_loadgame' data-ref="ga_loadgame">ga_loadgame</a> )</td></tr>
+<tr><th id="1162">1162</th><td>    {</td></tr>
+<tr><th id="1163">1163</th><td>	<b>if</b> (<a class="ref" href="doomstat.h.html#autostart" title='autostart' data-ref="autostart">autostart</a> || <a class="ref" href="doomstat.h.html#netgame" title='netgame' data-ref="netgame">netgame</a>)</td></tr>
+<tr><th id="1164">1164</th><td>	    <a class="ref" href="g_game.h.html#G_InitNew" title='G_InitNew' data-ref="G_InitNew">G_InitNew</a> (<a class="ref" href="doomstat.h.html#startskill" title='startskill' data-ref="startskill">startskill</a>, <a class="ref" href="doomstat.h.html#startepisode" title='startepisode' data-ref="startepisode">startepisode</a>, <a class="ref" href="doomstat.h.html#startmap" title='startmap' data-ref="startmap">startmap</a>);</td></tr>
+<tr><th id="1165">1165</th><td>	<b>else</b></td></tr>
+<tr><th id="1166">1166</th><td>	    <a class="ref" href="#D_StartTitle" title='D_StartTitle' data-ref="D_StartTitle">D_StartTitle</a> ();                <i>// start up intro loop</i></td></tr>
+<tr><th id="1167">1167</th><td></td></tr>
+<tr><th id="1168">1168</th><td>    }</td></tr>
+<tr><th id="1169">1169</th><td></td></tr>
+<tr><th id="1170">1170</th><td>    <a class="ref" href="#D_DoomLoop" title='D_DoomLoop' data-ref="D_DoomLoop">D_DoomLoop</a> ();  <i>// never returns</i></td></tr>
+<tr><th id="1171">1171</th><td>}</td></tr>
+<tr><th id="1172">1172</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

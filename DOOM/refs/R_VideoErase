@@ -1,0 +1,11 @@
+<dec f='codebrowser/r_draw.h' l='60' type='void R_VideoErase(unsigned int ofs, int count)'/>
+<use f='codebrowser/hu_lib.c' l='161' u='c' c='HUlib_eraseTextLine'/>
+<use f='codebrowser/hu_lib.c' l='164' u='c' c='HUlib_eraseTextLine'/>
+<use f='codebrowser/hu_lib.c' l='165' u='c' c='HUlib_eraseTextLine'/>
+<def f='codebrowser/r_draw.c' l='817' ll='828' type='void R_VideoErase(unsigned int ofs, int count)'/>
+<use f='codebrowser/r_draw.c' l='857' u='c' c='R_DrawViewBorder'/>
+<use f='codebrowser/r_draw.c' l='861' u='c' c='R_DrawViewBorder'/>
+<use f='codebrowser/r_draw.c' l='869' u='c' c='R_DrawViewBorder'/>
+<doc f='codebrowser/r_draw.c' l='814'>//
+// Copy a screen buffer.
+//</doc>

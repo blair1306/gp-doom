@@ -1,0 +1,16 @@
+<dec f='codebrowser/p_mobj.h' l='253' type='state_t *'/>
+<offset>1216</offset>
+<use f='codebrowser/p_enemy.c' l='1920' u='r' c='A_BrainSpit'/>
+<use f='codebrowser/p_inter.c' l='912' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_mobj.c' l='64' u='w' c='P_SetMobjState'/>
+<use f='codebrowser/p_mobj.c' l='70' u='w' c='P_SetMobjState'/>
+<use f='codebrowser/p_mobj.c' l='230' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='447' u='r' c='P_MobjThinker'/>
+<use f='codebrowser/p_mobj.c' l='511' u='w' c='P_SpawnMobj'/>
+<use f='codebrowser/p_pspr.c' l='290' u='r' c='A_WeaponReady'/>
+<use f='codebrowser/p_pspr.c' l='291' u='r' c='A_WeaponReady'/>
+<use f='codebrowser/p_saveg.c' l='247' u='w' c='P_ArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='247' u='r' c='P_ArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='302' u='w' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='302' u='r' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_user.c' l='167' u='r' c='P_MovePlayer'/>

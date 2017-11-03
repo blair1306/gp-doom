@@ -1,0 +1,39 @@
+<dec f='codebrowser/doomstat.h' l='96' type='boolean'/>
+<use f='codebrowser/am_map.c' l='701' u='r' c='AM_Responder'/>
+<use f='codebrowser/am_map.c' l='1266' u='r' c='AM_drawPlayers'/>
+<doc f='codebrowser/doomstat.h' l='94'>// Flag: true only if started as net deathmatch.
+// An enum might handle altdeath/cooperative better.</doc>
+<use f='codebrowser/d_main.c' l='813' u='w' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='815' u='w' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='983' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='994' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_net.c' l='498' u='w' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='517' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='518' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='578' u='r' c='D_CheckNetGame'/>
+<def f='codebrowser/g_game.c' l='116' type='boolean'/>
+<use f='codebrowser/g_game.c' l='508' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='941' u='r' c='G_DoReborn'/>
+<use f='codebrowser/g_game.c' l='1350' u='w' c='G_DoNewGame'/>
+<use f='codebrowser/g_game.c' l='1559' u='r' c='G_BeginRecording'/>
+<use f='codebrowser/g_game.c' l='1599' u='w' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1667' u='w' c='G_CheckDemoStatus'/>
+<doc f='codebrowser/g_game.c' l='116'>// only if started as net death </doc>
+<use f='codebrowser/p_inter.c' l='177' u='r' c='P_GiveWeapon'/>
+<use f='codebrowser/p_inter.c' l='187' u='r' c='P_GiveWeapon'/>
+<use f='codebrowser/p_mobj.c' l='591' u='r' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='689' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_mobj.c' l='733' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_mobj.c' l='764' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_setup.c' l='667' u='r' c='P_SetupLevel'/>
+<use f='codebrowser/p_spec.c' l='1254' u='r' c='P_SpawnSpecials'/>
+<use f='codebrowser/p_spec.c' l='1261' u='r' c='P_SpawnSpecials'/>
+<use f='codebrowser/st_stuff.c' l='965' u='r' c='ST_updateWidgets'/>
+<use f='codebrowser/st_stuff.c' l='968' u='r' c='ST_updateWidgets'/>
+<use f='codebrowser/st_stuff.c' l='971' u='r' c='ST_updateWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1059' u='r' c='ST_drawWidgets'/>
+<use f='codebrowser/st_stuff.c' l='1062' u='r' c='ST_drawWidgets'/>
+<use f='codebrowser/wi_stuff.c' l='1522' u='r' c='WI_Ticker'/>
+<use f='codebrowser/wi_stuff.c' l='1658' u='r' c='WI_loadData'/>
+<use f='codebrowser/wi_stuff.c' l='1777' u='r' c='WI_Drawer'/>
+<use f='codebrowser/wi_stuff.c' l='1844' u='r' c='WI_Start'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/m_menu.c' l='194' type='void M_ChangeMessages(int choice)'/>
+<use f='codebrowser/m_menu.c' l='355'/>
+<use f='codebrowser/m_menu.c' l='355'/>
+<use f='codebrowser/m_menu.c' l='355'/>
+<use f='codebrowser/m_menu.c' l='355'/>
+<def f='codebrowser/m_menu.c' l='978' ll='990' type='void M_ChangeMessages(int choice)'/>
+<use f='codebrowser/m_menu.c' l='1583' u='c' c='M_Responder'/>
+<doc f='codebrowser/m_menu.c' l='975'>//
+//      Toggle messages on/off
+//</doc>

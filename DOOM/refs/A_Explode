@@ -1,0 +1,21 @@
+<dec f='codebrowser/info.c' l='82' type='void A_Explode()'/>
+<use f='codebrowser/info.c' l='263'/>
+<use f='codebrowser/info.c' l='263'/>
+<use f='codebrowser/info.c' l='263'/>
+<use f='codebrowser/info.c' l='263'/>
+<use f='codebrowser/info.c' l='947'/>
+<use f='codebrowser/info.c' l='947'/>
+<use f='codebrowser/info.c' l='947'/>
+<use f='codebrowser/info.c' l='947'/>
+<use f='codebrowser/info.c' l='263'/>
+<use f='codebrowser/info.c' l='263'/>
+<use f='codebrowser/info.c' l='263'/>
+<use f='codebrowser/info.c' l='263'/>
+<use f='codebrowser/info.c' l='947'/>
+<use f='codebrowser/info.c' l='947'/>
+<use f='codebrowser/info.c' l='947'/>
+<use f='codebrowser/info.c' l='947'/>
+<def f='codebrowser/p_enemy.c' l='1598' ll='1601' type='void A_Explode(mobj_t * thingy)'/>
+<doc f='codebrowser/p_enemy.c' l='1595'>//
+// A_Explode
+//</doc>

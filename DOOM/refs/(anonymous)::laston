@@ -1,0 +1,11 @@
+<dec f='codebrowser/hu_lib.h' l='73' type='boolean'/>
+<dec f='codebrowser/hu_lib.h' l='90' type='boolean'/>
+<use f='codebrowser/hu_lib.c' l='191' u='w' c='HUlib_initSText'/>
+<use f='codebrowser/hu_lib.c' l='261' u='r' c='HUlib_eraseSText'/>
+<use f='codebrowser/hu_lib.c' l='265' u='w' c='HUlib_eraseSText'/>
+<use f='codebrowser/hu_lib.c' l='280' u='w' c='HUlib_initIText'/>
+<use f='codebrowser/hu_lib.c' l='349' u='r' c='HUlib_eraseIText'/>
+<use f='codebrowser/hu_lib.c' l='352' u='w' c='HUlib_eraseIText'/>
+<offset>1024</offset>
+<doc f='codebrowser/hu_lib.h' l='73'>// last value of *-&gt;on.</doc>
+<doc f='codebrowser/hu_lib.h' l='90'>// last value of *-&gt;on;</doc>

@@ -1,0 +1,7 @@
+<def f='codebrowser/m_menu.c' l='119' type='int'/>
+<use f='codebrowser/m_menu.c' l='621' u='r' c='M_DrawSave'/>
+<use f='codebrowser/m_menu.c' l='647' u='w' c='M_SaveSelect'/>
+<use f='codebrowser/m_menu.c' l='1453' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1466' u='w' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1471' u='w' c='M_Responder'/>
+<doc f='codebrowser/m_menu.c' l='118'>// we are going to be entering a savegame string</doc>

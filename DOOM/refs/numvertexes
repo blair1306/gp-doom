@@ -1,0 +1,10 @@
+<dec f='codebrowser/r_state.h' l='78' type='int'/>
+<use f='codebrowser/am_map.c' l='398' u='r' c='AM_findMinMaxBoundaries'/>
+<def f='codebrowser/p_setup.c' l='56' type='int'/>
+<use f='codebrowser/p_setup.c' l='131' u='w' c='P_LoadVertexes'/>
+<use f='codebrowser/p_setup.c' l='134' u='r' c='P_LoadVertexes'/>
+<use f='codebrowser/p_setup.c' l='144' u='r' c='P_LoadVertexes'/>
+<doc f='codebrowser/p_setup.c' l='52'>//
+// MAP related Lookup tables.
+// Store VERTEXES, LINEDEFS, SIDEDEFS, etc.
+//</doc>

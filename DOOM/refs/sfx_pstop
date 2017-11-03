@@ -1,0 +1,10 @@
+<dec f='codebrowser/sounds.h' l='198' type='19'/>
+<use f='codebrowser/m_menu.c' l='1630' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1640' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1701' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1708' u='r' c='M_Responder'/>
+<use f='codebrowser/p_ceilng.c' l='92' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='129' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_floor.c' l='251' u='r' c='T_MoveFloor'/>
+<use f='codebrowser/p_plats.c' l='87' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='115' u='r' c='T_PlatRaise'/>

@@ -1,0 +1,2 @@
+<def f='codebrowser/m_menu.c' l='948' type='char [2][9]'/>
+<use f='codebrowser/m_menu.c' l='959' u='r' c='M_DrawOptions'/>

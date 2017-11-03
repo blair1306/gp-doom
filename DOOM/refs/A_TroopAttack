@@ -1,0 +1,13 @@
+<dec f='codebrowser/info.c' l='111' type='void A_TroopAttack()'/>
+<use f='codebrowser/info.c' l='590'/>
+<use f='codebrowser/info.c' l='590'/>
+<use f='codebrowser/info.c' l='590'/>
+<use f='codebrowser/info.c' l='590'/>
+<use f='codebrowser/info.c' l='590'/>
+<use f='codebrowser/info.c' l='590'/>
+<use f='codebrowser/info.c' l='590'/>
+<use f='codebrowser/info.c' l='590'/>
+<def f='codebrowser/p_enemy.c' l='913' ll='932' type='void A_TroopAttack(mobj_t * actor)'/>
+<doc f='codebrowser/p_enemy.c' l='910'>//
+// A_TroopAttack
+//</doc>

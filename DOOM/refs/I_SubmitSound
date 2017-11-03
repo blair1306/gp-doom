@@ -1,0 +1,11 @@
+<dec f='codebrowser/i_sound.h' l='45' type='void I_SubmitSound()'/>
+<use f='codebrowser/d_main.c' l='404' u='c' c='D_DoomLoop'/>
+<def f='codebrowser/i_sound.c' l='666' ll='671' type='void I_SubmitSound()'/>
+<doc f='codebrowser/i_sound.c' l='658'>// 
+// This would be used to write out the mixbuffer
+//  during each game loop update.
+// Updates sound buffer and audio device at runtime. 
+// It is called during Timer interrupt with SNDINTR.
+// Mixing now done synchronous, and
+//  only output be done asynchronous?
+//</doc>

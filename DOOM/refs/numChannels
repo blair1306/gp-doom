@@ -1,0 +1,20 @@
+<dec f='codebrowser/m_misc.c' l='207' type='int'/>
+<use f='codebrowser/m_misc.c' l='285' u='a'/>
+<use f='codebrowser/m_misc.c' l='285' u='a'/>
+<use f='codebrowser/m_misc.c' l='285' u='a'/>
+<use f='codebrowser/m_misc.c' l='285' u='a'/>
+<doc f='codebrowser/m_misc.c' l='206'>// machine-independent sound params</doc>
+<def f='codebrowser/s_sound.c' l='129' type='int'/>
+<use f='codebrowser/s_sound.c' l='180' u='r' c='S_Init'/>
+<use f='codebrowser/s_sound.c' l='183' u='r' c='S_Init'/>
+<use f='codebrowser/s_sound.c' l='209' u='r' c='S_Start'/>
+<use f='codebrowser/s_sound.c' l='476' u='r' c='S_StopSound'/>
+<use f='codebrowser/s_sound.c' l='553' u='r' c='S_UpdateSounds'/>
+<use f='codebrowser/s_sound.c' l='728' u='r' c='S_StopChannel'/>
+<use f='codebrowser/s_sound.c' l='838' u='r' c='S_getChannel'/>
+<use f='codebrowser/s_sound.c' l='850' u='r' c='S_getChannel'/>
+<use f='codebrowser/s_sound.c' l='853' u='r' c='S_getChannel'/>
+<use f='codebrowser/s_sound.c' l='856' u='r' c='S_getChannel'/>
+<doc f='codebrowser/s_sound.c' l='126'>// following is set
+//  by the defaults code in M_misc:
+// number of channels available</doc>

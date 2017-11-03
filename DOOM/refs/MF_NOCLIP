@@ -1,0 +1,14 @@
+<dec f='codebrowser/p_mobj.h' l='150' type='4096'/>
+<doc f='codebrowser/p_mobj.h' l='149'>// Player cheat. ???</doc>
+<use f='codebrowser/info.c' l='1858' u='r'/>
+<use f='codebrowser/info.c' l='1858' u='r'/>
+<use f='codebrowser/info.c' l='1858' u='r'/>
+<use f='codebrowser/info.c' l='1858' u='r'/>
+<use f='codebrowser/p_inter.c' l='807' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_map.c' l='412' u='r' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='466' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='500' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_mobj.c' l='314' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='343' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_user.c' l='243' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='245' u='r' c='P_PlayerThink'/>

@@ -1,0 +1,8 @@
+<dec f='include/X11/keysymdef.h' l='124'/>
+<dec f='include/X11/keysymdef.h' l='124'/>
+<use f='codebrowser/i_video.c' l='124' u='c'/>
+<doc f='include/X11/keysymdef.h' l='118'>/*
+ * TTY function keys, cleverly chosen to map to ASCII, for convenience of
+ * programming, but could have been arbitrary (at the cost of lookup
+ * tables in client code).
+ */</doc>

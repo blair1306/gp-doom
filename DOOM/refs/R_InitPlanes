@@ -1,0 +1,7 @@
+<dec f='codebrowser/r_plane.h' l='49' type='void R_InitPlanes()'/>
+<use f='codebrowser/r_main.c' l='784' u='c' c='R_Init'/>
+<def f='codebrowser/r_plane.c' l='101' ll='104' type='void R_InitPlanes()'/>
+<doc f='codebrowser/r_plane.c' l='97'>//
+// R_InitPlanes
+// Only at game startup.
+//</doc>

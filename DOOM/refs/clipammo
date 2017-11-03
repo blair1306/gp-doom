@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_local.h' l='261' type='int [4]'/>
+<def f='codebrowser/p_inter.c' l='59' type='int [4]'/>
+<use f='codebrowser/p_inter.c' l='91' u='r' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='93' u='r' c='P_GiveAmmo'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/sounds.h' l='236' type='57'/>
+<use f='codebrowser/info.c' l='1123'/>
+<use f='codebrowser/info.c' l='1123'/>
+<use f='codebrowser/info.c' l='1123'/>
+<use f='codebrowser/info.c' l='1123'/>
+<use f='codebrowser/m_menu.c' l='1056'/>
+<use f='codebrowser/m_menu.c' l='1056'/>
+<use f='codebrowser/p_enemy.c' l='1997' u='r' c='A_PlayerScream'/>
+<use f='codebrowser/wi_stuff.c' l='1234' u='r' c='WI_updateNetgameStats'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/p_local.h' l='173' type='void P_LineOpening(line_t * linedef)'/>
+<use f='codebrowser/p_enemy.c' l='131' u='c' c='P_RecursiveSound'/>
+<use f='codebrowser/p_map.c' l='224' u='c' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='656' u='c' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='835' u='c' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='926' u='c' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1101' u='c' c='PTR_UseTraverse'/>
+<def f='codebrowser/p_maputl.c' l='300' ll='332' type='void P_LineOpening(line_t * linedef)'/>

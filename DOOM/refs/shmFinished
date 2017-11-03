@@ -1,0 +1,4 @@
+<def f='codebrowser/i_video.c' l='192' type='boolean'/>
+<use f='codebrowser/i_video.c' l='275' u='w' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='497' u='w' c='I_FinishUpdate'/>
+<use f='codebrowser/i_video.c' l='501' u='r' c='I_FinishUpdate'/>

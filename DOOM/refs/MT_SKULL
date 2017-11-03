@@ -1,0 +1,11 @@
+<dec f='codebrowser/info.h' l='1182' type='18'/>
+<use f='codebrowser/f_finale.c' l='346'/>
+<use f='codebrowser/f_finale.c' l='346'/>
+<use f='codebrowser/f_finale.c' l='346'/>
+<use f='codebrowser/f_finale.c' l='346'/>
+<use f='codebrowser/p_enemy.c' l='241' u='r' c='P_CheckMissileRange'/>
+<use f='codebrowser/p_enemy.c' l='1471' u='r' c='A_PainShootSkull'/>
+<use f='codebrowser/p_enemy.c' l='1487' u='m' c='A_PainShootSkull'/>
+<use f='codebrowser/p_enemy.c' l='1493' u='r' c='A_PainShootSkull'/>
+<use f='codebrowser/p_inter.c' l='677' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_mobj.c' l='769' u='r' c='P_SpawnMapThing'/>

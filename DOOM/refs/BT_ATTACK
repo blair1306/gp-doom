@@ -1,0 +1,6 @@
+<dec f='codebrowser/d_event.h' l='75' type='1'/>
+<doc f='codebrowser/d_event.h' l='74'>// Press &quot;Fire&quot;.</doc>
+<use f='codebrowser/g_game.c' l='332' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/p_pspr.c' l='315' u='r' c='A_WeaponReady'/>
+<use f='codebrowser/p_pspr.c' l='350' u='r' c='A_ReFire'/>
+<use f='codebrowser/wi_stuff.c' l='1480' u='r' c='WI_checkForAccelerate'/>

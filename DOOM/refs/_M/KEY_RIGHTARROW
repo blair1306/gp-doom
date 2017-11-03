@@ -1,0 +1,11 @@
+<dec f='codebrowser/doomdef.h' l='250'/>
+<doc f='codebrowser/doomdef.h' l='245'>//
+// DOOM keyboard definition.
+// This is the stuff configured by Setup.Exe.
+// Most key data are simple ascii (uppercased).
+//</doc>
+<use f='codebrowser/i_video.c' l='105' u='c'/>
+<use f='codebrowser/m_menu.c' l='1382' u='c'/>
+<use f='codebrowser/m_menu.c' l='1424' u='c'/>
+<use f='codebrowser/m_menu.c' l='1653' u='c'/>
+<use f='codebrowser/m_misc.c' l='243' u='c'/>

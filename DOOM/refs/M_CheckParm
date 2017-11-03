@@ -1,0 +1,56 @@
+<dec f='codebrowser/m_argv.h' l='34' type='int M_CheckParm(char * check)'/>
+<use f='codebrowser/d_main.c' l='359' u='c' c='D_DoomLoop'/>
+<use f='codebrowser/d_main.c' l='617' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='628' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='640' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='808' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='809' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='810' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='811' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='812' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='814' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='877' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='885' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='909' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='938' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='948' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='951' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='967' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='974' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='982' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='993' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='997' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1116' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1127' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1135' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1143' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1150' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1153' u='c' c='D_DoomMain'/>
+<doc f='codebrowser/m_argv.h' l='32'>// Returns the position of the given parameter
+// in the arg list (0 if not found).</doc>
+<use f='codebrowser/g_game.c' l='1278' u='c' c='G_DoSaveGame'/>
+<use f='codebrowser/g_game.c' l='1539' u='c' c='G_RecordDemo'/>
+<use f='codebrowser/g_game.c' l='1627' u='c' c='G_TimeDemo'/>
+<use f='codebrowser/g_game.c' l='1628' u='c' c='G_TimeDemo'/>
+<use f='codebrowser/i_net.c' l='255' u='c' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='267' u='c' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='272' u='c' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='281' u='c' c='I_InitNetwork'/>
+<use f='codebrowser/i_video.c' l='718' u='c' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='721' u='c' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='724' u='c' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='731' u='c' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='737' u='c' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='740' u='c' c='I_InitGraphics'/>
+<def f='codebrowser/m_argv.c' l='41' ll='52' type='int M_CheckParm(char * check)'/>
+<doc f='codebrowser/m_argv.c' l='35'>//
+// M_CheckParm
+// Checks for the given parameter
+// in the program&apos;s command line arguments.
+// Returns the argument number (1 to argc-1)
+// or 0 if not present</doc>
+<use f='codebrowser/m_menu.c' l='520' u='c' c='M_ReadSaveStrings'/>
+<use f='codebrowser/m_menu.c' l='583' u='c' c='M_LoadSelect'/>
+<use f='codebrowser/m_misc.c' l='360' u='c' c='M_LoadDefaults'/>
+<use f='codebrowser/p_spec.c' l='1253' u='c' c='P_SpawnSpecials'/>
+<use f='codebrowser/p_spec.c' l='1260' u='c' c='P_SpawnSpecials'/>

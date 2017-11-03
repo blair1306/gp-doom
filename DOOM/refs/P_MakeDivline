@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_local.h' l='164' type='void P_MakeDivline(line_t * li, divline_t * dl)'/>
+<def f='codebrowser/p_maputl.c' l='210' ll='219' type='void P_MakeDivline(line_t * li, divline_t * dl)'/>
+<use f='codebrowser/p_maputl.c' l='588' u='c' c='PIT_AddLineIntercepts'/>
+<doc f='codebrowser/p_maputl.c' l='207'>//
+// P_MakeDivline
+//</doc>

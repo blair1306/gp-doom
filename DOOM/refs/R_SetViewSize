@@ -1,0 +1,5 @@
+<dec f='codebrowser/r_main.h' l='165' type='void R_SetViewSize(int blocks, int detail)'/>
+<doc f='codebrowser/r_main.h' l='164'>// Called by M_Responder.</doc>
+<use f='codebrowser/m_menu.c' l='1173' u='c' c='M_SizeDisplay'/>
+<def f='codebrowser/r_main.c' l='657' ll='665' type='void R_SetViewSize(int blocks, int detail)'/>
+<use f='codebrowser/r_main.c' l='783' u='c' c='R_Init'/>

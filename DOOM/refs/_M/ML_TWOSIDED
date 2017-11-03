@@ -1,0 +1,13 @@
+<dec f='codebrowser/doomdata.h' l='108'/>
+<doc f='codebrowser/doomdata.h' l='106'>// Backside will not be present at all
+//  if not two sided.</doc>
+<use f='codebrowser/p_enemy.c' l='128' u='c'/>
+<use f='codebrowser/p_floor.c' l='516' u='c'/>
+<use f='codebrowser/p_map.c' l='645' u='c'/>
+<use f='codebrowser/p_map.c' l='829' u='c'/>
+<use f='codebrowser/p_map.c' l='922' u='c'/>
+<use f='codebrowser/p_setup.c' l='189' u='c'/>
+<use f='codebrowser/p_sight.c' l='198' u='c'/>
+<use f='codebrowser/p_spec.c' l='239' u='c'/>
+<use f='codebrowser/p_spec.c' l='255' u='c'/>
+<use f='codebrowser/p_spec.c' l='1187' u='c'/>

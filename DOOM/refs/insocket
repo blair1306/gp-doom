@@ -1,0 +1,5 @@
+<def f='codebrowser/i_net.c' l='79' type='int'/>
+<use f='codebrowser/i_net.c' l='170' u='r' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='327' u='w' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='328' u='r' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='329' u='r' c='I_InitNetwork'/>

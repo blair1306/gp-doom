@@ -1,0 +1,5 @@
+<def f='codebrowser/r_main.c' l='426' ll='443' type='void R_InitPointToAngle()'/>
+<use f='codebrowser/r_main.c' l='777' u='c' c='R_Init'/>
+<doc f='codebrowser/r_main.c' l='423'>//
+// R_InitPointToAngle
+//</doc>

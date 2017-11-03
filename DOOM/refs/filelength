@@ -1,0 +1,2 @@
+<def f='codebrowser/w_wad.c' l='74' ll='82' type='int filelength(int handle)'/>
+<use f='codebrowser/w_wad.c' l='177' u='c' c='W_AddFile'/>

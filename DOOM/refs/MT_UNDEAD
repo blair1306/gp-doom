@@ -1,0 +1,7 @@
+<dec f='codebrowser/info.h' l='1169' type='5'/>
+<use f='codebrowser/f_finale.c' l='352'/>
+<use f='codebrowser/f_finale.c' l='352'/>
+<use f='codebrowser/f_finale.c' l='352'/>
+<use f='codebrowser/f_finale.c' l='352'/>
+<use f='codebrowser/p_enemy.c' l='231' u='r' c='P_CheckMissileRange'/>
+<use f='codebrowser/p_enemy.c' l='1971' u='r' c='A_SpawnFly'/>

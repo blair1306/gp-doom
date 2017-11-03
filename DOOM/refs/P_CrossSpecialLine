@@ -1,0 +1,14 @@
+<dec f='codebrowser/p_spec.h' l='63' type='void P_CrossSpecialLine(int linenum, int side, mobj_t * thing)'/>
+<use f='codebrowser/p_map.c' l='511' u='c' c='P_TryMove'/>
+<def f='codebrowser/p_spec.c' l='491' ll='950' type='void P_CrossSpecialLine(int linenum, int side, mobj_t * thing)'/>
+<doc f='codebrowser/p_spec.c' l='480'>//
+// EVENTS
+// Events are operations triggered by using, crossing,
+// or shooting special lines, or by timed thinkers.
+//
+
+//
+// P_CrossSpecialLine - TRIGGER
+// Called every time a thing origin is about
+//  to cross a line with a non 0 special.
+//</doc>

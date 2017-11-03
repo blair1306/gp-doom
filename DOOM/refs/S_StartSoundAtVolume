@@ -1,0 +1,4 @@
+<dec f='codebrowser/s_sound.h' l='67' type='void S_StartSoundAtVolume(void * origin, int sound_id, int volume)'/>
+<doc f='codebrowser/s_sound.h' l='65'>// Will start a sound at a given volume.</doc>
+<def f='codebrowser/s_sound.c' l='254' ll='395' type='void S_StartSoundAtVolume(void * origin_p, int sfx_id, int volume)'/>
+<use f='codebrowser/s_sound.c' l='407' u='c' c='S_StartSound'/>

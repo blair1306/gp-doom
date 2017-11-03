@@ -1,0 +1,4 @@
+<dec f='codebrowser/doomdef.h' l='145'/>
+<doc f='codebrowser/doomdef.h' l='144'>// Deaf monsters/do not react to sound.</doc>
+<use f='codebrowser/p_mobj.c' l='402' u='c'/>
+<use f='codebrowser/p_mobj.c' l='795' u='c'/>

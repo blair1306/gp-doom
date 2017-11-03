@@ -1,0 +1,6 @@
+<def f='codebrowser/i_net.c' l='90' ll='100' type='int UDPsocket()'/>
+<use f='codebrowser/i_net.c' l='327' u='c' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='331' u='c' c='I_InitNetwork'/>
+<doc f='codebrowser/i_net.c' l='87'>//
+// UDPsocket
+//</doc>

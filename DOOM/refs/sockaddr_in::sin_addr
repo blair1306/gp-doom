@@ -1,0 +1,8 @@
+<dec f='include/netinet/in.h' l='243' type='struct in_addr'/>
+<use f='codebrowser/i_net.c' l='115' u='m' c='BindToLocalPort'/>
+<use f='codebrowser/i_net.c' l='189' u='m' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='189' u='m' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='309' u='m' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='317' u='m' c='I_InitNetwork'/>
+<offset>32</offset>
+<doc f='include/netinet/in.h' l='243'>/* Internet address.  */</doc>

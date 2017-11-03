@@ -1,0 +1,4 @@
+<dec f='codebrowser/sounds.h' l='53' type='void *'/>
+<offset>256</offset>
+<doc f='codebrowser/sounds.h' l='52'>// sound data</doc>
+<use f='codebrowser/i_sound.c' l='331' u='r' c='addsfx'/>

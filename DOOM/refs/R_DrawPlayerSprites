@@ -1,0 +1,5 @@
+<def f='codebrowser/r_things.c' l='746' ll='776' type='void R_DrawPlayerSprites()'/>
+<use f='codebrowser/r_things.c' l='985' u='c' c='R_DrawMasked'/>
+<doc f='codebrowser/r_things.c' l='743'>//
+// R_DrawPlayerSprites
+//</doc>

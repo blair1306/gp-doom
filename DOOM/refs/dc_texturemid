@@ -1,0 +1,23 @@
+<dec f='codebrowser/r_draw.h' l='37' type='fixed_t'/>
+<def f='codebrowser/r_draw.c' l='90' type='fixed_t'/>
+<use f='codebrowser/r_draw.c' l='133' u='r' c='R_DrawColumn'/>
+<use f='codebrowser/r_draw.c' l='242' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='347' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='432' u='r' c='R_DrawTranslatedColumn'/>
+<use f='codebrowser/r_plane.c' l='405' u='w' c='R_DrawPlanes'/>
+<use f='codebrowser/r_segs.c' l='146' u='w' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='148' u='w' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='148' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='152' u='w' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='154' u='w' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='154' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='156' u='w' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='177' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='285' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='307' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='336' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_things.c' l='357' u='r' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='377' u='w' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='387' u='w' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='425' u='w' c='R_DrawVisSprite'/>
+<use f='codebrowser/r_things.c' l='428' u='r' c='R_DrawVisSprite'/>

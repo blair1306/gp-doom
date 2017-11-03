@@ -1,0 +1,12 @@
+<dec f='codebrowser/p_local.h' l='250' type='int'/>
+<doc f='codebrowser/p_local.h' l='250'>// in mapblocks</doc>
+<use f='codebrowser/p_maputl.c' l='380' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='434' u='r' c='P_SetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='484' u='r' c='P_BlockLinesIterator'/>
+<use f='codebrowser/p_maputl.c' l='523' u='r' c='P_BlockThingsIterator'/>
+<def f='codebrowser/p_setup.c' l='87' type='int'/>
+<use f='codebrowser/p_setup.c' l='484' u='w' c='P_LoadBlockMap'/>
+<use f='codebrowser/p_setup.c' l='487' u='r' c='P_LoadBlockMap'/>
+<use f='codebrowser/p_setup.c' l='561' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='561' u='r' c='P_GroupLines'/>
+<doc f='codebrowser/p_setup.c' l='87'>// size in mapblocks</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/z_zone.h' l='55' type='int Z_FreeMemory()'/>
+<def f='codebrowser/z_zone.c' l='451' ll='466' type='int Z_FreeMemory()'/>
+<doc f='codebrowser/z_zone.c' l='448'>//
+// Z_FreeMemory
+//</doc>

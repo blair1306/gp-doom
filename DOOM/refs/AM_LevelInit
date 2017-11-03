@@ -1,0 +1,6 @@
+<def f='codebrowser/am_map.c' l='537' ll='552' type='void AM_LevelInit()'/>
+<use f='codebrowser/am_map.c' l='581' u='c' c='AM_Start'/>
+<doc f='codebrowser/am_map.c' l='533'>//
+// should be called at the start of every level
+// right now, i figure it out myself
+//</doc>

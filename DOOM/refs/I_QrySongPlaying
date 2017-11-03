@@ -1,0 +1,2 @@
+<def f='codebrowser/i_sound.c' l='885' ll='890' type='int I_QrySongPlaying(int handle)'/>
+<doc f='codebrowser/i_sound.c' l='884'>// Is the song playing?</doc>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/d_player.h' l='129' type='int'/>
+<offset>1600</offset>
+<doc f='codebrowser/d_player.h' l='127'>// Bit flags, for cheats and debug.
+    // See cheat_t, above.</doc>
+<use f='codebrowser/p_inter.c' l='848' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_mobj.c' l='194' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_spec.c' l='1056' u='w' c='P_PlayerInSpecialSector'/>
+<use f='codebrowser/p_user.c' l='97' u='r' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='242' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/st_stuff.c' l='551' u='w' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='552' u='r' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='628' u='w' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='630' u='r' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='900' u='r' c='ST_updateFaceWidget'/>

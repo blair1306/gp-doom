@@ -1,0 +1,8 @@
+<def f='codebrowser/p_sight.c' l='108' ll='128' type='fixed_t P_InterceptVector2(divline_t * v2, divline_t * v1)'/>
+<use f='codebrowser/p_sight.c' l='227' u='c' c='P_CrossSubsector'/>
+<doc f='codebrowser/p_sight.c' l='102'>//
+// P_InterceptVector2
+// Returns the fractional intercept point
+// along the first divline.
+// This is only called by the addthings and addlines traversers.
+//</doc>

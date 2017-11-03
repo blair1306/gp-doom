@@ -1,0 +1,2 @@
+<def f='codebrowser/p_user.c' l='182' ll='229' type='void P_DeathThink(player_t * player)'/>
+<use f='codebrowser/p_user.c' l='260' u='c' c='P_PlayerThink'/>

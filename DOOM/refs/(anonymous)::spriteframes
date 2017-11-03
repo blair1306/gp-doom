@@ -1,0 +1,8 @@
+<dec f='codebrowser/r_defs.h' l='451' type='spriteframe_t *'/>
+<offset>64</offset>
+<use f='codebrowser/f_finale.c' l='594' u='r' c='F_CastDrawer'/>
+<use f='codebrowser/r_data.c' l='836' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_things.c' l='276' u='w' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='278' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='517' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='670' u='r' c='R_DrawPSprite'/>

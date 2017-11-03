@@ -1,0 +1,7 @@
+<def f='codebrowser/g_game.c' l='1574' type='char *'/>
+<use f='codebrowser/g_game.c' l='1578' u='w' c='G_DeferedPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1588' u='r' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1632' u='w' c='G_TimeDemo'/>
+<doc f='codebrowser/g_game.c' l='1570'>//
+// G_PlayDemo 
+//</doc>

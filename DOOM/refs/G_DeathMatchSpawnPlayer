@@ -1,0 +1,12 @@
+<dec f='codebrowser/g_game.h' l='34' type='void G_DeathMatchSpawnPlayer(int playernum)'/>
+<doc f='codebrowser/g_game.h' l='31'>//
+// GAME
+//</doc>
+<def f='codebrowser/g_game.c' l='897' ll='919' type='void G_DeathMatchSpawnPlayer(int playernum)'/>
+<use f='codebrowser/g_game.c' l='943' u='c' c='G_DoReborn'/>
+<doc f='codebrowser/g_game.c' l='892'>//
+// G_DeathMatchSpawnPlayer 
+// Spawns a player at one of the random death match spots 
+// called at level load and each death 
+//</doc>
+<use f='codebrowser/p_setup.c' l='673' u='c' c='P_SetupLevel'/>

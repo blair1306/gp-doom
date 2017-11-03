@@ -1,0 +1,12 @@
+<dec f='codebrowser/p_inter.h' l='32' type='boolean P_GivePower(player_t * , int )'/>
+<def f='codebrowser/p_inter.c' l='289' ll='331' type='boolean P_GivePower(player_t * player, int power)'/>
+<use f='codebrowser/p_inter.c' l='489' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='496' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='505' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='512' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='519' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='526' u='c' c='P_TouchSpecialThing'/>
+<doc f='codebrowser/p_inter.c' l='286'>//
+// P_GivePower
+//</doc>
+<use f='codebrowser/st_stuff.c' l='641' u='c' c='ST_Responder'/>

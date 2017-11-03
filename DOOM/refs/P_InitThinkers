@@ -1,0 +1,7 @@
+<dec f='codebrowser/p_local.h' l='73' type='void P_InitThinkers()'/>
+<use f='codebrowser/p_saveg.c' l='286' u='c' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_setup.c' l='622' u='c' c='P_SetupLevel'/>
+<def f='codebrowser/p_tick.c' l='53' ll='56' type='void P_InitThinkers()'/>
+<doc f='codebrowser/p_tick.c' l='50'>//
+// P_InitThinkers
+//</doc>

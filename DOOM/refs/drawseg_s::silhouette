@@ -1,0 +1,19 @@
+<dec f='codebrowser/r_defs.h' l='333' type='int'/>
+<offset>224</offset>
+<doc f='codebrowser/r_defs.h' l='332'>// 0=none, 1=bottom, 2=top, 3=both</doc>
+<use f='codebrowser/r_segs.c' l='476' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='486' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='490' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='495' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='502' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='507' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='516' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='523' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='718' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='726' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='734' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='736' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='739' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='741' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_things.c' l='865' u='r' c='R_DrawSprite'/>
+<use f='codebrowser/r_things.c' l='899' u='r' c='R_DrawSprite'/>

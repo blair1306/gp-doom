@@ -1,0 +1,12 @@
+<def f='codebrowser/r_defs.h' l='227' ll='233'/>
+<size>16</size>
+<doc f='codebrowser/r_defs.h' l='220'>//
+// A SubSector.
+// References a Sector.
+// Basically, this is a list of LineSegs,
+//  indicating the visible walls that define
+//  (all or some) sides of a convex BSP leaf.
+//</doc>
+<mbr r='subsector_s::sector' o='0' t='sector_t *'/>
+<mbr r='subsector_s::numlines' o='64' t='short'/>
+<mbr r='subsector_s::firstline' o='80' t='short'/>

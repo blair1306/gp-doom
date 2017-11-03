@@ -1,0 +1,2 @@
+<def f='codebrowser/p_pspr.c' l='110' type='fixed_t'/>
+<use f='codebrowser/p_pspr.c' l='127' u='w' c='P_CalcSwing'/>

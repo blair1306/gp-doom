@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_spec.h' l='265' type='1'/>
+<use f='codebrowser/p_plats.c' l='76' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='108' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='125' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='216' u='r' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='229' u='r' c='EV_DoPlat'/>

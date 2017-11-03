@@ -1,0 +1,7 @@
+<def f='codebrowser/m_random.c' l='31' ll='51' type='unsigned char [256]'/>
+<use f='codebrowser/m_random.c' l='60' u='r' c='P_Random'/>
+<use f='codebrowser/m_random.c' l='66' u='r' c='M_Random'/>
+<doc f='codebrowser/m_random.c' l='27'>//
+// M_Random
+// Returns a 0-255 number
+//</doc>

@@ -1,0 +1,18 @@
+<dec f='codebrowser/doomstat.h' l='267' type='int'/>
+<doc f='codebrowser/doomstat.h' l='264'>// Needed to store the number of the dummy sky flat.
+// Used for rendering,
+//  as well as tracking projectiles etc.</doc>
+<use f='codebrowser/g_game.c' l='454' u='w' c='G_DoLoadLevel'/>
+<use f='codebrowser/p_map.c' l='956' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='963' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_mobj.c' l='178' u='r' c='P_XYMovement'/>
+<use f='codebrowser/r_bsp.c' l='526' u='r' c='R_Subsector'/>
+<use f='codebrowser/r_plane.c' l='225' u='r' c='R_FindPlane'/>
+<use f='codebrowser/r_plane.c' l='396' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_segs.c' l='530' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='531' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='672' u='r' c='R_StoreWallRange'/>
+<def f='codebrowser/r_sky.c' l='47' type='int'/>
+<doc f='codebrowser/r_sky.c' l='44'>//
+// sky mapping
+//</doc>

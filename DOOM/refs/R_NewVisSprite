@@ -1,0 +1,2 @@
+<def f='codebrowser/r_things.c' l='328' ll='335' type='vissprite_t * R_NewVisSprite()'/>
+<use f='codebrowser/r_things.c' l='550' u='c' c='R_ProjectSprite'/>

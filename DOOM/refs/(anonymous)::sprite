@@ -1,0 +1,9 @@
+<dec f='codebrowser/info.h' l='1149' type='spritenum_t'/>
+<offset>0</offset>
+<use f='codebrowser/f_finale.c' l='593' u='r' c='F_CastDrawer'/>
+<use f='codebrowser/p_mobj.c' l='72' u='r' c='P_SetMobjState'/>
+<use f='codebrowser/p_mobj.c' l='513' u='r' c='P_SpawnMobj'/>
+<use f='codebrowser/r_things.c' l='660' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='662' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='664' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='668' u='r' c='R_DrawPSprite'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/m_misc.h' l='35' type='boolean M_WriteFile(const char * name, void * source, int length)'/>
+<doc f='codebrowser/m_misc.h' l='28'>//
+// MISC
+//</doc>
+<use f='codebrowser/g_game.c' l='1312' u='c' c='G_DoSaveGame'/>
+<use f='codebrowser/g_game.c' l='1680' u='c' c='G_CheckDemoStatus'/>
+<def f='codebrowser/m_misc.c' l='112' ll='133' type='boolean M_WriteFile(const char * name, void * source, int length)'/>
+<use f='codebrowser/m_misc.c' l='497' u='c' c='WritePCXfile'/>

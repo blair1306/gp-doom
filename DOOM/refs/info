@@ -1,0 +1,6 @@
+<def f='codebrowser/w_wad.c' l='519' type='int [2500][10]'/>
+<use f='codebrowser/w_wad.c' l='549' u='w' c='W_Profile'/>
+<use f='codebrowser/w_wad.c' l='570' u='r' c='W_Profile'/>
+<doc f='codebrowser/w_wad.c' l='516'>//
+// W_Profile
+//</doc>

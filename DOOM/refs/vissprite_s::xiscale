@@ -1,0 +1,11 @@
+<dec f='codebrowser/r_defs.h' l='398' type='fixed_t'/>
+<offset>384</offset>
+<doc f='codebrowser/r_defs.h' l='397'>// negative if flipped</doc>
+<use f='codebrowser/r_things.c' l='424' u='r' c='R_DrawVisSprite'/>
+<use f='codebrowser/r_things.c' l='430' u='r' c='R_DrawVisSprite'/>
+<use f='codebrowser/r_things.c' l='565' u='w' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='570' u='w' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='574' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='702' u='w' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='707' u='w' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='712' u='r' c='R_DrawPSprite'/>

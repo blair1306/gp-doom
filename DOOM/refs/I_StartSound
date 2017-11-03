@@ -1,0 +1,16 @@
+<dec f='codebrowser/i_sound.h' l='64' type='int I_StartSound(int id, int vol, int sep, int pitch, int priority)'/>
+<doc f='codebrowser/i_sound.h' l='62'>// Starts a sound in a particular sound channel.</doc>
+<def f='codebrowser/i_sound.c' l='471' ll='502' type='int I_StartSound(int id, int vol, int sep, int pitch, int priority)'/>
+<doc f='codebrowser/i_sound.c' l='459'>//
+// Starting a sound means adding it
+//  to the current list of active sounds
+//  in the internal channels.
+// As the SFX info struct contains
+//  e.g. a pointer to the raw data,
+//  it is ignored.
+// As our sound handling does not handle
+//  priority, it is ignored.
+// Pitching (that is, increased speed of playback)
+//  is set, but currently not used by mixing.
+//</doc>
+<use f='codebrowser/s_sound.c' l='389' u='c' c='S_StartSoundAtVolume'/>

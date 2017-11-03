@@ -1,0 +1,21 @@
+<dec f='codebrowser/doomdef.h' l='33' type='110'/>
+<doc f='codebrowser/doomdef.h' l='29'>//
+// Global parameters/defines.
+//
+// DOOM version</doc>
+<use f='codebrowser/d_main.c' l='824' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='824' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='831' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='831' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='838' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='838' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='845' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='845' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='868' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='868' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_net.c' l='495' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='524' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/g_game.c' l='1215' c='G_DoLoadGame'/>
+<use f='codebrowser/g_game.c' l='1289' c='G_DoSaveGame'/>
+<use f='codebrowser/g_game.c' l='1555' u='r' c='G_BeginRecording'/>
+<use f='codebrowser/g_game.c' l='1589' u='r' c='G_DoPlayDemo'/>

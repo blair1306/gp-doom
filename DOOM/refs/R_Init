@@ -1,0 +1,4 @@
+<dec f='codebrowser/r_main.h' l='162' type='void R_Init()'/>
+<doc f='codebrowser/r_main.h' l='161'>// Called by startup code.</doc>
+<use f='codebrowser/d_main.c' l='1095' u='c' c='D_DoomMain'/>
+<def f='codebrowser/r_main.c' l='773' ll='794' type='void R_Init()'/>

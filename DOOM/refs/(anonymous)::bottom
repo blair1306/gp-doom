@@ -1,0 +1,8 @@
+<dec f='codebrowser/r_defs.h' l='477' type='byte [320]'/>
+<offset>2744</offset>
+<doc f='codebrowser/r_defs.h' l='476'>// See above.</doc>
+<use f='codebrowser/r_plane.c' l='409' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_plane.c' l='446' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_plane.c' l='448' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_segs.c' l='239' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='257' u='w' c='R_RenderSegLoop'/>

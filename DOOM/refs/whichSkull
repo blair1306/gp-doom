@@ -1,0 +1,5 @@
+<def f='codebrowser/m_menu.c' l='171' type='short'/>
+<use f='codebrowser/m_menu.c' l='1803' u='r' c='M_Drawer'/>
+<use f='codebrowser/m_menu.c' l='1838' u='w' c='M_Ticker'/>
+<use f='codebrowser/m_menu.c' l='1852' u='w' c='M_Init'/>
+<doc f='codebrowser/m_menu.c' l='171'>// which skull to draw</doc>

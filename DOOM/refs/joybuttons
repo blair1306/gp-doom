@@ -1,0 +1,13 @@
+<def f='codebrowser/g_game.c' l='204' type='boolean *'/>
+<use f='codebrowser/g_game.c' l='257' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='258' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='331' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='334' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='381' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='496' u='r' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='496' u='r' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='584' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='585' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='586' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='587' u='r' c='G_Responder'/>
+<doc f='codebrowser/g_game.c' l='204'>// allow [-1] </doc>

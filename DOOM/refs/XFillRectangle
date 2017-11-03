@@ -1,0 +1,2 @@
+<dec f='include/X11/Xlib.h' l='2489' type='int XFillRectangle(Display * , Drawable , GC , int , int , unsigned int , unsigned int )'/>
+<use f='codebrowser/i_video.c' l='295' u='c' c='createnullcursor'/>

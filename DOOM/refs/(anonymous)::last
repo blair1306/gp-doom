@@ -1,0 +1,9 @@
+<dec f='codebrowser/d_player.h' l='195' type='int'/>
+<offset>64</offset>
+<doc f='codebrowser/d_player.h' l='194'>// previous and next levels, origin 0</doc>
+<use f='codebrowser/g_game.c' l='1066' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/wi_stuff.c' l='426' u='r' c='WI_drawLF'/>
+<use f='codebrowser/wi_stuff.c' l='427' u='r' c='WI_drawLF'/>
+<use f='codebrowser/wi_stuff.c' l='430' u='r' c='WI_drawLF'/>
+<use f='codebrowser/wi_stuff.c' l='790' u='r' c='WI_drawShowNextLoc'/>
+<use f='codebrowser/wi_stuff.c' l='790' u='r' c='WI_drawShowNextLoc'/>

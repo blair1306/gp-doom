@@ -1,0 +1,10 @@
+<def f='codebrowser/p_map.c' l='572' type='mobj_t *'/>
+<use f='codebrowser/p_map.c' l='608' u='r' c='P_HitSlideLine'/>
+<use f='codebrowser/p_map.c' l='608' u='r' c='P_HitSlideLine'/>
+<use f='codebrowser/p_map.c' l='647' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='647' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='658' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='661' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='661' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='664' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='705' u='w' c='P_SlideMove'/>

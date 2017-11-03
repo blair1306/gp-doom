@@ -1,0 +1,2 @@
+<def f='codebrowser/wi_stuff.c' l='981' ll='1072' type='void WI_drawDeathmatchStats()'/>
+<use f='codebrowser/wi_stuff.c' l='1778' u='c' c='WI_Drawer'/>

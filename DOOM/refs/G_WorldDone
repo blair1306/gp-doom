@@ -1,0 +1,6 @@
+<dec f='codebrowser/g_game.h' l='66' type='void G_WorldDone()'/>
+<def f='codebrowser/g_game.c' l='1147' ll='1170' type='void G_WorldDone()'/>
+<doc f='codebrowser/g_game.c' l='1144'>//
+// G_WorldDone 
+//</doc>
+<use f='codebrowser/wi_stuff.c' l='744' u='c' c='WI_updateNoState'/>

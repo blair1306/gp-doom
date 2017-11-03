@@ -1,0 +1,3 @@
+<def f='codebrowser/d_net.c' l='632' type='int'/>
+<use f='codebrowser/d_net.c' l='704' u='r' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='705' u='w' c='TryRunTics'/>

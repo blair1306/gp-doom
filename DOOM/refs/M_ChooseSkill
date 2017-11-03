@@ -1,0 +1,22 @@
+<dec f='codebrowser/m_menu.c' l='185' type='void M_ChooseSkill(int choice)'/>
+<use f='codebrowser/m_menu.c' l='317'/>
+<use f='codebrowser/m_menu.c' l='317'/>
+<use f='codebrowser/m_menu.c' l='318'/>
+<use f='codebrowser/m_menu.c' l='318'/>
+<use f='codebrowser/m_menu.c' l='319'/>
+<use f='codebrowser/m_menu.c' l='319'/>
+<use f='codebrowser/m_menu.c' l='320'/>
+<use f='codebrowser/m_menu.c' l='320'/>
+<use f='codebrowser/m_menu.c' l='321'/>
+<use f='codebrowser/m_menu.c' l='321'/>
+<use f='codebrowser/m_menu.c' l='317'/>
+<use f='codebrowser/m_menu.c' l='317'/>
+<use f='codebrowser/m_menu.c' l='318'/>
+<use f='codebrowser/m_menu.c' l='318'/>
+<use f='codebrowser/m_menu.c' l='319'/>
+<use f='codebrowser/m_menu.c' l='319'/>
+<use f='codebrowser/m_menu.c' l='320'/>
+<use f='codebrowser/m_menu.c' l='320'/>
+<use f='codebrowser/m_menu.c' l='321'/>
+<use f='codebrowser/m_menu.c' l='321'/>
+<def f='codebrowser/m_menu.c' l='907' ll='917' type='void M_ChooseSkill(int choice)'/>

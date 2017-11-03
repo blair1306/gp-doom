@@ -1,0 +1,5 @@
+<def f='codebrowser/am_map.c' l='741' ll='754' type='void AM_changeWindowScale()'/>
+<use f='codebrowser/am_map.c' l='818' u='c' c='AM_Ticker'/>
+<doc f='codebrowser/am_map.c' l='738'>//
+// Zooming
+//</doc>

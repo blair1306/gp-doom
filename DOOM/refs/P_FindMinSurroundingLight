@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_spec.h' l='104' type='int P_FindMinSurroundingLight(sector_t * sector, int max)'/>
+<use f='codebrowser/p_lights.c' l='83' u='c' c='P_SpawnFireFlicker'/>
+<use f='codebrowser/p_lights.c' l='139' u='c' c='P_SpawnLightFlash'/>
+<use f='codebrowser/p_lights.c' l='197' u='c' c='P_SpawnStrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='350' u='c' c='P_SpawnGlowingLight'/>
+<def f='codebrowser/p_spec.c' l='453' ll='476' type='int P_FindMinSurroundingLight(sector_t * sector, int max)'/>
+<doc f='codebrowser/p_spec.c' l='450'>//
+// Find minimum light from an adjacent sector
+//</doc>

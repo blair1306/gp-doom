@@ -1,0 +1,73 @@
+<dec f='codebrowser/info.h' l='1322' type='int'/>
+<dec f='codebrowser/p_spec.h' l='289' type='fixed_t'/>
+<dec f='codebrowser/p_spec.h' l='349' type='fixed_t'/>
+<dec f='codebrowser/p_spec.h' l='500' type='fixed_t'/>
+<dec f='codebrowser/p_spec.h' l='594' type='fixed_t'/>
+<offset>448</offset>
+<use f='codebrowser/g_game.c' l='1425' u='w' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1426' u='w' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1427' u='w' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1433' u='w' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1434' u='w' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1435' u='w' c='G_InitNew'/>
+<use f='codebrowser/p_ceilng.c' l='64' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='108' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='131' u='w' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='154' u='w' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='217' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='230' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='236' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_doors.c' l='121' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='171' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='292' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='300' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='325' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='465' u='w' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='487' u='w' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='492' u='w' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='520' u='w' c='P_SpawnDoorCloseIn30'/>
+<use f='codebrowser/p_doors.c' l='545' u='w' c='P_SpawnDoorRaiseIn5Mins'/>
+<use f='codebrowser/p_enemy.c' l='290' u='r' c='P_Move'/>
+<use f='codebrowser/p_enemy.c' l='291' u='r' c='P_Move'/>
+<use f='codebrowser/p_enemy.c' l='1073' u='r' c='A_Tracer'/>
+<use f='codebrowser/p_enemy.c' l='1074' u='r' c='A_Tracer'/>
+<use f='codebrowser/p_enemy.c' l='1080' u='r' c='A_Tracer'/>
+<use f='codebrowser/p_enemy.c' l='1184' u='r' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1186' u='r' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1371' u='r' c='A_FatAttack1'/>
+<use f='codebrowser/p_enemy.c' l='1372' u='r' c='A_FatAttack1'/>
+<use f='codebrowser/p_enemy.c' l='1388' u='r' c='A_FatAttack2'/>
+<use f='codebrowser/p_enemy.c' l='1389' u='r' c='A_FatAttack2'/>
+<use f='codebrowser/p_enemy.c' l='1402' u='r' c='A_FatAttack3'/>
+<use f='codebrowser/p_enemy.c' l='1403' u='r' c='A_FatAttack3'/>
+<use f='codebrowser/p_enemy.c' l='1408' u='r' c='A_FatAttack3'/>
+<use f='codebrowser/p_enemy.c' l='1409' u='r' c='A_FatAttack3'/>
+<use f='codebrowser/p_floor.c' l='214' u='r' c='T_MoveFloor'/>
+<use f='codebrowser/p_floor.c' l='294' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='302' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='310' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='322' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='334' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='342' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='350' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='357' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='365' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='379' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='406' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='502' u='w' c='EV_BuildStairs'/>
+<use f='codebrowser/p_floor.c' l='546' u='w' c='EV_BuildStairs'/>
+<use f='codebrowser/p_mobj.c' l='914' u='r' c='P_SpawnMissile'/>
+<use f='codebrowser/p_mobj.c' l='915' u='r' c='P_SpawnMissile'/>
+<use f='codebrowser/p_mobj.c' l='918' u='r' c='P_SpawnMissile'/>
+<use f='codebrowser/p_mobj.c' l='980' u='r' c='P_SpawnPlayerMissile'/>
+<use f='codebrowser/p_mobj.c' l='982' u='r' c='P_SpawnPlayerMissile'/>
+<use f='codebrowser/p_mobj.c' l='984' u='r' c='P_SpawnPlayerMissile'/>
+<use f='codebrowser/p_plats.c' l='60' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='109' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='186' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='198' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='208' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='221' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='234' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_spec.c' l='1201' u='w' c='EV_DoDonut'/>
+<use f='codebrowser/p_spec.c' l='1215' u='w' c='EV_DoDonut'/>

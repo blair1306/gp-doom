@@ -1,0 +1,5 @@
+<def f='codebrowser/p_mobj.c' l='51' type='int'/>
+<doc f='codebrowser/p_mobj.c' l='47'>//
+// P_SetMobjState
+// Returns true if the mobj is still present.
+//</doc>

@@ -1,0 +1,8 @@
+<def f='codebrowser/hu_stuff.c' l='99' type='boolean'/>
+<use f='codebrowser/hu_stuff.c' l='430' u='w' c='HU_Start'/>
+<use f='codebrowser/hu_stuff.c' l='518' u='r' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='523' u='r' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='529' u='r' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='530' u='w' c='HU_Ticker'/>
+<dec f='codebrowser/m_menu.c' l='69' type='boolean'/>
+<use f='codebrowser/m_menu.c' l='989' u='w' c='M_ChangeMessages'/>

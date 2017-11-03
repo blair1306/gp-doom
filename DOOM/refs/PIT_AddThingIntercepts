@@ -1,0 +1,5 @@
+<def f='codebrowser/p_maputl.c' l='616' ll='674' type='boolean PIT_AddThingIntercepts(mobj_t * thing)'/>
+<use f='codebrowser/p_maputl.c' l='856' u='r' c='P_PathTraverse'/>
+<doc f='codebrowser/p_maputl.c' l='613'>//
+// PIT_AddThingIntercepts
+//</doc>

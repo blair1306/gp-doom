@@ -1,0 +1,17 @@
+<def f='codebrowser/r_things.c' l='177' ll='281' type='void R_InitSpriteDefs(char ** namelist)'/>
+<use f='codebrowser/r_things.c' l='308' u='c' c='R_InitSprites'/>
+<doc f='codebrowser/r_things.c' l='162'>//
+// R_InitSpriteDefs
+// Pass a null terminated list of sprite names
+//  (4 chars exactly) to be used.
+// Builds the sprite rotation matrixes to account
+//  for horizontally flipped sprites.
+// Will report an error if the lumps are inconsistant. 
+// Only called at startup.
+//
+// Sprite lump names are 4 characters for the actor,
+//  a letter for the frame, and a number for the rotation.
+// A sprite that is flippable will have an additional
+//  letter/number appended.
+// The rotation character can be 0 to signify no rotations.
+//</doc>

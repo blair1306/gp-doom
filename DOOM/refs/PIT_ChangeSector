@@ -1,0 +1,5 @@
+<def f='codebrowser/p_map.c' l='1257' ll='1313' type='boolean PIT_ChangeSector(mobj_t * thing)'/>
+<use f='codebrowser/p_map.c' l='1334' u='r' c='P_ChangeSector'/>
+<doc f='codebrowser/p_map.c' l='1254'>//
+// PIT_ChangeSector
+//</doc>

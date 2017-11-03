@@ -1,0 +1,14 @@
+<dec f='codebrowser/doomdata.h' l='167' type='short'/>
+<dec f='codebrowser/doomdata.h' l='207' type='short'/>
+<dec f='codebrowser/r_defs.h' l='247' type='angle_t'/>
+<offset>160</offset>
+<use f='codebrowser/g_game.c' l='879' u='r' c='G_CheckSpot'/>
+<use f='codebrowser/p_mobj.c' l='400' u='r' c='P_NightmareRespawn'/>
+<use f='codebrowser/p_mobj.c' l='627' u='r' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='671' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_mobj.c' l='794' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_setup.c' l='181' u='w' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='181' u='r' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='342' u='w' c='P_LoadThings'/>
+<use f='codebrowser/p_setup.c' l='342' u='r' c='P_LoadThings'/>
+<use f='codebrowser/r_segs.c' l='401' u='r' c='R_StoreWallRange'/>

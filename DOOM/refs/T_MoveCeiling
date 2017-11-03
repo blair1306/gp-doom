@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_spec.h' l='527' type='void T_MoveCeiling(ceiling_t * ceiling)'/>
+<def f='codebrowser/p_ceilng.c' l='52' ll='164' type='void T_MoveCeiling(ceiling_t * ceiling)'/>
+<use f='codebrowser/p_ceilng.c' l='206' u='r' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='303' u='r' c='P_ActivateInStasisCeiling'/>
+<doc f='codebrowser/p_ceilng.c' l='48'>//
+// T_MoveCeiling
+//</doc>
+<use f='codebrowser/p_saveg.c' l='388' u='r' c='P_ArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='505' u='r' c='P_UnArchiveSpecials'/>

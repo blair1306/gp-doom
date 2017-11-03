@@ -1,0 +1,10 @@
+<dec f='codebrowser/i_sound.h' l='93' type='void I_InitMusic()'/>
+<doc f='codebrowser/i_sound.h' l='90'>//
+//  MUSIC I/O
+//</doc>
+<def f='codebrowser/i_sound.c' l='836' type='void I_InitMusic()'/>
+<doc f='codebrowser/i_sound.c' l='831'>//
+// MUSIC API.
+// Still no music done.
+// Remains. Dummies.
+//</doc>

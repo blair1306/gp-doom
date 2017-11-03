@@ -1,0 +1,5 @@
+<def f='codebrowser/p_enemy.c' l='1126' type='fixed_t'/>
+<use f='codebrowser/p_enemy.c' l='1145' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1183' u='w' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1188' u='r' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1189' u='r' c='A_VileChase'/>

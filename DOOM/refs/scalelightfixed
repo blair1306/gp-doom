@@ -1,0 +1,4 @@
+<dec f='codebrowser/r_main.h' l='78' type='lighttable_t *[48]'/>
+<def f='codebrowser/r_main.c' l='117' type='lighttable_t *[48]'/>
+<use f='codebrowser/r_main.c' l='853' u='r' c='R_SetupFrame'/>
+<use f='codebrowser/r_main.c' l='856' u='w' c='R_SetupFrame'/>

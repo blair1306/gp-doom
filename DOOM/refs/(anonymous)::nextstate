@@ -1,0 +1,8 @@
+<dec f='codebrowser/info.h' l='1154' type='statenum_t'/>
+<offset>256</offset>
+<use f='codebrowser/f_finale.c' l='403' u='r' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='420' u='r' c='F_CastTicker'/>
+<use f='codebrowser/p_mobj.c' l='80' u='r' c='P_SetMobjState'/>
+<use f='codebrowser/p_mobj.c' l='447' u='r' c='P_MobjThinker'/>
+<use f='codebrowser/p_pspr.c' l='98' u='r' c='P_SetPsprite'/>
+<use f='codebrowser/p_pspr.c' l='870' u='r' c='P_MovePsprites'/>

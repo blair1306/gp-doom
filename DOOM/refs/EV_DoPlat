@@ -1,0 +1,25 @@
+<dec f='codebrowser/p_spec.h' l='314' type='int EV_DoPlat(line_t * line, plattype_e type, int amount)'/>
+<def f='codebrowser/p_plats.c' l='138' ll='254' type='int EV_DoPlat(line_t * line, plattype_e type, int amount)'/>
+<doc f='codebrowser/p_plats.c' l='134'>//
+// Do Platforms
+//  &quot;amount&quot; is only used for SOME platforms.
+//</doc>
+<use f='codebrowser/p_spec.c' l='581' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='617' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='684' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='756' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='854' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='859' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='895' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='931' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='996' u='c' c='P_ShootSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='367' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='373' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='385' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='391' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='481' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='546' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='564' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='570' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='582' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='618' u='c' c='P_UseSpecialLine'/>

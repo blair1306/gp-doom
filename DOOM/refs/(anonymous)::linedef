@@ -1,0 +1,8 @@
+<dec f='codebrowser/doomdata.h' l='168' type='short'/>
+<dec f='codebrowser/r_defs.h' l='250' type='line_t *'/>
+<offset>256</offset>
+<use f='codebrowser/p_setup.c' l='183' u='r' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='185' u='w' c='P_LoadSegs'/>
+<use f='codebrowser/p_sight.c' l='168' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/r_segs.c' l='144' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='395' u='r' c='R_StoreWallRange'/>

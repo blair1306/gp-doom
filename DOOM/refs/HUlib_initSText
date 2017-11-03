@@ -1,0 +1,8 @@
+<dec f='codebrowser/hu_lib.h' l='130' type='void HUlib_initSText(hu_stext_t * s, int x, int y, int h, patch_t ** font, int startchar, boolean * on)'/>
+<def f='codebrowser/hu_lib.c' l='176' ll='198' type='void HUlib_initSText(hu_stext_t * s, int x, int y, int h, patch_t ** font, int startchar, boolean * on)'/>
+<doc f='codebrowser/hu_lib.h' l='124'>//
+// Scrolling Text window widget routines
+//
+
+// ?</doc>
+<use f='codebrowser/hu_stuff.c' l='435' u='c' c='HU_Start'/>

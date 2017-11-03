@@ -1,0 +1,3 @@
+<dec f='include/X11/Xlib.h' l='981' type='XExposeEvent'/>
+<use f='codebrowser/i_video.c' l='839' u='m' c='I_InitGraphics'/>
+<offset>0</offset>

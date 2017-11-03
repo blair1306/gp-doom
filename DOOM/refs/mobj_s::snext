@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_mobj.h' l='218' type='struct mobj_s *'/>
+<use f='codebrowser/am_map.c' l='1300' u='r' c='AM_drawThings'/>
+<offset>320</offset>
+<doc f='codebrowser/p_mobj.h' l='217'>// More list: links in sector (if needed)</doc>
+<use f='codebrowser/p_maputl.c' l='356' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='357' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='360' u='w' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='360' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='362' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='415' u='w' c='P_SetThingPosition'/>
+<use f='codebrowser/r_things.c' l='638' u='r' c='R_AddSprites'/>

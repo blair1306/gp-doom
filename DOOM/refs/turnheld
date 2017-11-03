@@ -1,0 +1,5 @@
+<def f='codebrowser/g_game.c' l='184' type='int'/>
+<use f='codebrowser/g_game.c' l='268' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='270' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='272' u='r' c='G_BuildTiccmd'/>
+<doc f='codebrowser/g_game.c' l='184'>// for accelerative turning </doc>

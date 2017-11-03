@@ -1,0 +1,13 @@
+<dec f='codebrowser/s_sound.h' l='39' type='void S_Init(int sfxVolume, int musicVolume)'/>
+<use f='codebrowser/d_main.c' l='1107' u='c' c='D_DoomMain'/>
+<doc f='codebrowser/s_sound.h' l='33'>//
+// Initializes sound stuff, including volume
+// Sets channels, SFX and music volume,
+//  allocates channel buffer, sets S_sfx lookup.
+//</doc>
+<def f='codebrowser/s_sound.c' l='161' ll='192' type='void S_Init(int sfxVolume, int musicVolume)'/>
+<doc f='codebrowser/s_sound.c' l='156'>//
+// Initializes sound stuff, including volume
+// Sets channels, SFX and music volume,
+//  allocates channel buffer, sets S_sfx lookup.
+//</doc>

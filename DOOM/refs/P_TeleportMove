@@ -1,0 +1,7 @@
+<dec f='codebrowser/p_local.h' l='212' type='boolean P_TeleportMove(mobj_t * thing, fixed_t x, fixed_t y)'/>
+<use f='codebrowser/p_enemy.c' l='1986' u='c' c='A_SpawnFly'/>
+<def f='codebrowser/p_map.c' l='114' ll='177' type='boolean P_TeleportMove(mobj_t * thing, fixed_t x, fixed_t y)'/>
+<doc f='codebrowser/p_map.c' l='111'>//
+// P_TeleportMove
+//</doc>
+<use f='codebrowser/p_telept.c' l='103' u='c' c='EV_Teleport'/>

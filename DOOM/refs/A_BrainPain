@@ -1,0 +1,10 @@
+<dec f='codebrowser/info.c' l='125' type='void A_BrainPain()'/>
+<use f='codebrowser/info.c' l='915'/>
+<use f='codebrowser/info.c' l='915'/>
+<use f='codebrowser/info.c' l='915'/>
+<use f='codebrowser/info.c' l='915'/>
+<use f='codebrowser/info.c' l='915'/>
+<use f='codebrowser/info.c' l='915'/>
+<use f='codebrowser/info.c' l='915'/>
+<use f='codebrowser/info.c' l='915'/>
+<def f='codebrowser/p_enemy.c' l='1843' ll='1846' type='void A_BrainPain(mobj_t * mo)'/>

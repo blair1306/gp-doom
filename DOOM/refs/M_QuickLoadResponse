@@ -1,0 +1,5 @@
+<def f='codebrowser/m_menu.c' l='718' ll='725' type='void M_QuickLoadResponse(int ch)'/>
+<use f='codebrowser/m_menu.c' l='742' u='r' c='M_QuickLoad'/>
+<doc f='codebrowser/m_menu.c' l='715'>//
+// M_QuickLoad
+//</doc>

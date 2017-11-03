@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_player.h' l='75' type='4'/>
+<doc f='codebrowser/d_player.h' l='74'>// Not really a cheat, just a debug aid.</doc>
+<use f='codebrowser/p_mobj.c' l='194' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_user.c' l='97' u='r' c='P_CalcHeight'/>

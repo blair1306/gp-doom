@@ -1,0 +1,89 @@
+<dec f='codebrowser/info.c' l='60' type='void A_WeaponReady()'/>
+<use f='codebrowser/info.c' l='138'/>
+<use f='codebrowser/info.c' l='138'/>
+<use f='codebrowser/info.c' l='138'/>
+<use f='codebrowser/info.c' l='138'/>
+<use f='codebrowser/info.c' l='146'/>
+<use f='codebrowser/info.c' l='146'/>
+<use f='codebrowser/info.c' l='146'/>
+<use f='codebrowser/info.c' l='146'/>
+<use f='codebrowser/info.c' l='154'/>
+<use f='codebrowser/info.c' l='154'/>
+<use f='codebrowser/info.c' l='154'/>
+<use f='codebrowser/info.c' l='154'/>
+<use f='codebrowser/info.c' l='168'/>
+<use f='codebrowser/info.c' l='168'/>
+<use f='codebrowser/info.c' l='168'/>
+<use f='codebrowser/info.c' l='168'/>
+<use f='codebrowser/info.c' l='185'/>
+<use f='codebrowser/info.c' l='185'/>
+<use f='codebrowser/info.c' l='185'/>
+<use f='codebrowser/info.c' l='185'/>
+<use f='codebrowser/info.c' l='193'/>
+<use f='codebrowser/info.c' l='193'/>
+<use f='codebrowser/info.c' l='193'/>
+<use f='codebrowser/info.c' l='193'/>
+<use f='codebrowser/info.c' l='203'/>
+<use f='codebrowser/info.c' l='203'/>
+<use f='codebrowser/info.c' l='203'/>
+<use f='codebrowser/info.c' l='203'/>
+<use f='codebrowser/info.c' l='204'/>
+<use f='codebrowser/info.c' l='204'/>
+<use f='codebrowser/info.c' l='204'/>
+<use f='codebrowser/info.c' l='204'/>
+<use f='codebrowser/info.c' l='210'/>
+<use f='codebrowser/info.c' l='210'/>
+<use f='codebrowser/info.c' l='210'/>
+<use f='codebrowser/info.c' l='210'/>
+<use f='codebrowser/info.c' l='217'/>
+<use f='codebrowser/info.c' l='217'/>
+<use f='codebrowser/info.c' l='217'/>
+<use f='codebrowser/info.c' l='217'/>
+<use f='codebrowser/info.c' l='138'/>
+<use f='codebrowser/info.c' l='138'/>
+<use f='codebrowser/info.c' l='138'/>
+<use f='codebrowser/info.c' l='138'/>
+<use f='codebrowser/info.c' l='146'/>
+<use f='codebrowser/info.c' l='146'/>
+<use f='codebrowser/info.c' l='146'/>
+<use f='codebrowser/info.c' l='146'/>
+<use f='codebrowser/info.c' l='154'/>
+<use f='codebrowser/info.c' l='154'/>
+<use f='codebrowser/info.c' l='154'/>
+<use f='codebrowser/info.c' l='154'/>
+<use f='codebrowser/info.c' l='168'/>
+<use f='codebrowser/info.c' l='168'/>
+<use f='codebrowser/info.c' l='168'/>
+<use f='codebrowser/info.c' l='168'/>
+<use f='codebrowser/info.c' l='185'/>
+<use f='codebrowser/info.c' l='185'/>
+<use f='codebrowser/info.c' l='185'/>
+<use f='codebrowser/info.c' l='185'/>
+<use f='codebrowser/info.c' l='193'/>
+<use f='codebrowser/info.c' l='193'/>
+<use f='codebrowser/info.c' l='193'/>
+<use f='codebrowser/info.c' l='193'/>
+<use f='codebrowser/info.c' l='203'/>
+<use f='codebrowser/info.c' l='203'/>
+<use f='codebrowser/info.c' l='203'/>
+<use f='codebrowser/info.c' l='203'/>
+<use f='codebrowser/info.c' l='204'/>
+<use f='codebrowser/info.c' l='204'/>
+<use f='codebrowser/info.c' l='204'/>
+<use f='codebrowser/info.c' l='204'/>
+<use f='codebrowser/info.c' l='210'/>
+<use f='codebrowser/info.c' l='210'/>
+<use f='codebrowser/info.c' l='210'/>
+<use f='codebrowser/info.c' l='210'/>
+<use f='codebrowser/info.c' l='217'/>
+<use f='codebrowser/info.c' l='217'/>
+<use f='codebrowser/info.c' l='217'/>
+<use f='codebrowser/info.c' l='217'/>
+<def f='codebrowser/p_pspr.c' l='281' ll='334' type='void A_WeaponReady(player_t * player, pspdef_t * psp)'/>
+<doc f='codebrowser/p_pspr.c' l='274'>//
+// A_WeaponReady
+// The player can fire the weapon
+// or change to another weapon at this time.
+// Follows after getting weapon up,
+// or after previous attack/fire sequence.
+//</doc>

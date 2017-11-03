@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_local.h' l='89' type='void P_PlayerThink(player_t * player)'/>
+<doc f='codebrowser/p_local.h' l='86'>//
+// P_USER
+//</doc>
+<use f='codebrowser/p_tick.c' l='150' u='c' c='P_Ticker'/>
+<def f='codebrowser/p_user.c' l='236' ll='384' type='void P_PlayerThink(player_t * player)'/>
+<doc f='codebrowser/p_user.c' l='233'>//
+// P_PlayerThink
+//</doc>

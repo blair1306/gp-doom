@@ -1,0 +1,30 @@
+<dec f='codebrowser/d_think.h' l='67' type='struct thinker_s *'/>
+<offset>64</offset>
+<use f='codebrowser/p_enemy.c' l='576' u='r' c='A_KeenDie'/>
+<use f='codebrowser/p_enemy.c' l='576' u='r' c='A_KeenDie'/>
+<use f='codebrowser/p_enemy.c' l='1467' u='r' c='A_PainShootSkull'/>
+<use f='codebrowser/p_enemy.c' l='1473' u='r' c='A_PainShootSkull'/>
+<use f='codebrowser/p_enemy.c' l='1692' u='r' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='1692' u='r' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='1822' u='r' c='A_BrainAwake'/>
+<use f='codebrowser/p_enemy.c' l='1823' u='r' c='A_BrainAwake'/>
+<use f='codebrowser/p_enemy.c' l='1825' u='r' c='A_BrainAwake'/>
+<use f='codebrowser/p_saveg.c' l='238' u='r' c='P_ArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='238' u='r' c='P_ArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='274' u='r' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='277' u='r' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='368' u='r' c='P_ArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='368' u='r' c='P_ArchiveSpecials'/>
+<use f='codebrowser/p_telept.c' l='79' u='r' c='EV_Teleport'/>
+<use f='codebrowser/p_telept.c' l='80' u='r' c='EV_Teleport'/>
+<use f='codebrowser/p_telept.c' l='82' u='r' c='EV_Teleport'/>
+<use f='codebrowser/p_tick.c' l='55' u='w' c='P_InitThinkers'/>
+<use f='codebrowser/p_tick.c' l='67' u='w' c='P_AddThinker'/>
+<use f='codebrowser/p_tick.c' l='68' u='w' c='P_AddThinker'/>
+<use f='codebrowser/p_tick.c' l='105' u='r' c='P_RunThinkers'/>
+<use f='codebrowser/p_tick.c' l='111' u='r' c='P_RunThinkers'/>
+<use f='codebrowser/p_tick.c' l='112' u='w' c='P_RunThinkers'/>
+<use f='codebrowser/p_tick.c' l='112' u='r' c='P_RunThinkers'/>
+<use f='codebrowser/p_tick.c' l='120' u='r' c='P_RunThinkers'/>
+<use f='codebrowser/r_data.c' l='822' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='822' u='r' c='R_PrecacheLevel'/>

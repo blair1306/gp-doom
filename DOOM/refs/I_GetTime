@@ -1,0 +1,32 @@
+<dec f='codebrowser/i_system.h' l='45' type='int I_GetTime()'/>
+<doc f='codebrowser/i_system.h' l='43'>// Called by D_DoomLoop,
+// returns current time in tics.</doc>
+<use f='codebrowser/d_main.c' l='329' u='c' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='335' u='c' c='D_Display'/>
+<use f='codebrowser/d_net.c' l='377' u='c' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='458' u='c' c='CheckAbort'/>
+<use f='codebrowser/d_net.c' l='459' u='c' c='CheckAbort'/>
+<use f='codebrowser/d_net.c' l='648' u='c' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='728' u='c' c='TryRunTics'/>
+<use f='codebrowser/g_game.c' l='486' u='c' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='1653' u='c' c='G_CheckDemoStatus'/>
+<def f='codebrowser/i_system.c' l='88' ll='100' type='int I_GetTime()'/>
+<doc f='codebrowser/i_system.c' l='84'>//
+// I_GetTime
+// returns time in 1/70th second tics
+//</doc>
+<use f='codebrowser/i_video.c' l='364' u='c' c='I_FinishUpdate'/>
+<use f='codebrowser/m_menu.c' l='1362' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1367' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1372' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1378' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1383' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1389' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1394' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1399' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1405' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1411' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1419' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1425' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1432' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1438' u='c' c='M_Responder'/>

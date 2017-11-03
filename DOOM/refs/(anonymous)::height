@@ -1,0 +1,42 @@
+<dec f='codebrowser/info.h' l='1324' type='int'/>
+<dec f='codebrowser/r_defs.h' l='359' type='short'/>
+<dec f='codebrowser/r_defs.h' l='462' type='fixed_t'/>
+<offset>0</offset>
+<use f='codebrowser/hu_lib.c' l='157' u='r' c='HUlib_eraseTextLine'/>
+<use f='codebrowser/hu_lib.c' l='195' u='r' c='HUlib_initSText'/>
+<use f='codebrowser/hu_stuff.c' l='55' u='r' c='HU_Start'/>
+<use f='codebrowser/hu_stuff.c' l='59' u='r' c='HU_Start'/>
+<dec f='include/X11/Xlib.h' l='261' type='int'/>
+<dec f='include/X11/Xlib.h' l='310' type='int'/>
+<dec f='include/X11/Xlib.h' l='401' type='int'/>
+<dec f='include/X11/Xlib.h' l='432' type='unsigned short'/>
+<dec f='include/X11/Xlib.h' l='437' type='unsigned short'/>
+<dec f='include/X11/Xlib.h' l='669' type='int'/>
+<dec f='include/X11/Xlib.h' l='680' type='int'/>
+<dec f='include/X11/Xlib.h' l='713' type='int'/>
+<dec f='include/X11/Xlib.h' l='776' type='int'/>
+<dec f='include/X11/Xlib.h' l='798' type='int'/>
+<dec f='include/X11/Xlib.h' l='809' type='int'/>
+<dec f='include/X11/Xutil.h' l='84' type='int'/>
+<offset>160</offset>
+<use f='codebrowser/m_menu.c' l='1282' u='r' c='M_StringHeight'/>
+<use f='codebrowser/m_menu.c' l='1776' u='r' c='M_Drawer'/>
+<use f='codebrowser/p_mobj.c' l='499' u='r' c='P_SpawnMobj'/>
+<use f='codebrowser/p_mobj.c' l='525' u='r' c='P_SpawnMobj'/>
+<use f='codebrowser/r_plane.c' l='233' u='r' c='R_FindPlane'/>
+<use f='codebrowser/r_plane.c' l='250' u='w' c='R_FindPlane'/>
+<use f='codebrowser/r_plane.c' l='313' u='w' c='R_CheckPlane'/>
+<use f='codebrowser/r_plane.c' l='313' u='r' c='R_CheckPlane'/>
+<use f='codebrowser/r_plane.c' l='427' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/st_lib.c' l='100' u='r' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='230' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='279' u='r' c='STlib_updateBinIcon'/>
+<use f='codebrowser/v_video.c' l='225' u='r' c='V_DrawPatch'/>
+<use f='codebrowser/v_video.c' l='236' u='r' c='V_DrawPatch'/>
+<use f='codebrowser/v_video.c' l='292' u='r' c='V_DrawPatchFlipped'/>
+<use f='codebrowser/v_video.c' l='301' u='r' c='V_DrawPatchFlipped'/>
+<use f='codebrowser/wi_stuff.c' l='430' u='r' c='WI_drawLF'/>
+<use f='codebrowser/wi_stuff.c' l='448' u='r' c='WI_drawEL'/>
+<use f='codebrowser/wi_stuff.c' l='474' u='r' c='WI_drawOnLnode'/>
+<use f='codebrowser/wi_stuff.c' l='1290' u='r' c='WI_drawNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1441' u='r' c='WI_drawStats'/>

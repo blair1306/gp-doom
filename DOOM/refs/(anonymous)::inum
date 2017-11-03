@@ -1,0 +1,8 @@
+<dec f='codebrowser/st_lib.h' l='99' type='int *'/>
+<use f='codebrowser/st_lib.c' l='204' u='w' c='STlib_initMultIcon'/>
+<use f='codebrowser/st_lib.c' l='222' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='223' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='237' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='238' u='r' c='STlib_updateMultIcon'/>
+<offset>128</offset>
+<doc f='codebrowser/st_lib.h' l='98'>// pointer to current icon</doc>

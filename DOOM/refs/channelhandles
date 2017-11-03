@@ -1,0 +1,6 @@
+<def f='codebrowser/i_sound.c' l='139' type='int [8]'/>
+<use f='codebrowser/i_sound.c' l='341' u='w' c='addsfx'/>
+<doc f='codebrowser/i_sound.c' l='135'>// The sound in channel handles,
+//  determined on registration,
+//  might be used to unregister/stop/modify,
+//  currently unused.</doc>

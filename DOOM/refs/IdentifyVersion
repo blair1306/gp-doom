@@ -1,0 +1,8 @@
+<def f='codebrowser/d_main.c' l='563' ll='717' type='void IdentifyVersion()'/>
+<use f='codebrowser/d_main.c' l='803' u='c' c='D_DoomMain'/>
+<doc f='codebrowser/d_main.c' l='557'>//
+// IdentifyVersion
+// Checks availability of IWAD files by name,
+// to determine whether registered/commercial features
+// should be executed (notably loading PWAD&apos;s).
+//</doc>

@@ -1,0 +1,2 @@
+<dec f='include/X11/Xlib.h' l='2729' type='int XGrabPointer(Display * , Window , int , unsigned int , int , int , Window , Cursor , Time )'/>
+<use f='codebrowser/i_video.c' l='847' u='c' c='I_InitGraphics'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/r_main.h' l='70'/>
+<use f='codebrowser/r_plane.c' l='428' u='c'/>
+<use f='codebrowser/r_segs.c' l='122' u='c'/>
+<use f='codebrowser/r_segs.c' l='644' u='c'/>
+<use f='codebrowser/r_things.c' l='628' u='c'/>
+<use f='codebrowser/r_things.c' l='754' u='c'/>

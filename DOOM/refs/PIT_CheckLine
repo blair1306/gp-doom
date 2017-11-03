@@ -1,0 +1,11 @@
+<def f='codebrowser/p_map.c' l='189' ll='247' type='boolean PIT_CheckLine(line_t * ld)'/>
+<use f='codebrowser/p_map.c' l='438' u='r' c='P_CheckPosition'/>
+<doc f='codebrowser/p_map.c' l='180'>//
+// MOVEMENT ITERATOR FUNCTIONS
+//
+
+
+//
+// PIT_CheckLine
+// Adjusts tmfloorz and tmceilingz as lines are contacted
+//</doc>

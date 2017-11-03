@@ -1,0 +1,8 @@
+<dec f='codebrowser/p_local.h' l='57'/>
+<use f='codebrowser/p_enemy.c' l='185' u='c'/>
+<use f='codebrowser/p_enemy.c' l='548' u='c'/>
+<use f='codebrowser/p_mobj.c' l='829' u='c'/>
+<use f='codebrowser/p_pspr.c' l='483' u='c'/>
+<use f='codebrowser/p_pspr.c' l='484' u='c'/>
+<use f='codebrowser/p_pspr.c' l='515' u='c'/>
+<use f='codebrowser/p_pspr.c' l='516' u='c'/>

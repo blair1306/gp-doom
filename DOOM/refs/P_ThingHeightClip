@@ -1,0 +1,12 @@
+<def f='codebrowser/p_map.c' l='530' ll='558' type='boolean P_ThingHeightClip(mobj_t * thing)'/>
+<use f='codebrowser/p_map.c' l='1261' u='c' c='PIT_ChangeSector'/>
+<doc f='codebrowser/p_map.c' l='520'>//
+// P_ThingHeightClip
+// Takes a valid thing and adjusts the thing-&gt;floorz,
+// thing-&gt;ceilingz, and possibly thing-&gt;z.
+// This is called for all nearby monsters
+// whenever a sector changes height.
+// If the thing doesn&apos;t fit,
+// the z will be set to the lowest value
+// and false will be returned.
+//</doc>

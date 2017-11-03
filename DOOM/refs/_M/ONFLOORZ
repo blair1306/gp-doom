@@ -1,0 +1,10 @@
+<dec f='codebrowser/p_local.h' l='95'/>
+<doc f='codebrowser/p_local.h' l='92'>//
+// P_MOBJ
+//</doc>
+<use f='codebrowser/p_inter.c' l='756' u='c'/>
+<use f='codebrowser/p_mobj.c' l='395' u='c'/>
+<use f='codebrowser/p_mobj.c' l='522' u='c'/>
+<use f='codebrowser/p_mobj.c' l='623' u='c'/>
+<use f='codebrowser/p_mobj.c' l='664' u='c'/>
+<use f='codebrowser/p_mobj.c' l='782' u='c'/>

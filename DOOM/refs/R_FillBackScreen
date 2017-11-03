@@ -1,0 +1,12 @@
+<dec f='codebrowser/r_draw.h' l='103' type='void R_FillBackScreen()'/>
+<doc f='codebrowser/r_draw.h' l='102'>// Rendering function.</doc>
+<use f='codebrowser/d_main.c' l='281' u='c' c='D_Display'/>
+<use f='codebrowser/g_game.c' l='1251' u='c' c='G_DoLoadGame'/>
+<use f='codebrowser/g_game.c' l='1319' u='c' c='G_DoSaveGame'/>
+<def f='codebrowser/r_draw.c' l='731' ll='811' type='void R_FillBackScreen()'/>
+<doc f='codebrowser/r_draw.c' l='725'>//
+// R_FillBackScreen
+// Fills the back screen with a pattern
+//  for variable screen sizes
+// Also draws a beveled edge.
+//</doc>

@@ -1,0 +1,3 @@
+<dec f='codebrowser/r_main.h' l='134' type='fixed_t R_PointToDist(fixed_t x, fixed_t y)'/>
+<def f='codebrowser/r_main.c' l='391' ll='418' type='fixed_t R_PointToDist(fixed_t x, fixed_t y)'/>
+<use f='codebrowser/r_segs.c' l='408' u='c' c='R_StoreWallRange'/>

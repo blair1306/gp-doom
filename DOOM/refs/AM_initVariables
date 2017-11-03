@@ -1,0 +1,5 @@
+<def f='codebrowser/am_map.c' l='458' ll='497' type='void AM_initVariables()'/>
+<use f='codebrowser/am_map.c' l='585' u='c' c='AM_Start'/>
+<doc f='codebrowser/am_map.c' l='455'>//
+//
+//</doc>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/r_defs.h' l='187' type='fixed_t'/>
+<offset>160</offset>
+<use f='codebrowser/p_map.c' l='610' u='r' c='P_HitSlideLine'/>
+<use f='codebrowser/p_maputl.c' l='79' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='81' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='83' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='94' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='132' u='r' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='218' u='r' c='P_MakeDivline'/>
+<use f='codebrowser/p_setup.c' l='381' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='385' u='r' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='389' u='r' c='P_LoadLineDefs'/>

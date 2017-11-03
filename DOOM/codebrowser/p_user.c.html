@@ -1,0 +1,404 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>p_user.c source code [codebrowser/p_user.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/p_user.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='p_user.c.html'>p_user.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION:</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//	Player related stuff.</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">//	Bobbing POV/weapon, movement.</i></td></tr>
+<tr><th id="22">22</th><td><i  data-doc="rcsid">//	Pending weapon.</i></td></tr>
+<tr><th id="23">23</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="24">24</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><em>static</em> <em>const</em> <em>char</em></td></tr>
+<tr><th id="28">28</th><td><dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [49]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id: p_user.c,v 1.3 1997/01/28 22:08:29 b1 Exp $"</q>;</td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="doomdef.h.html">"doomdef.h"</a></u></td></tr>
+<tr><th id="32">32</th><td><u>#include <a href="d_event.h.html">"d_event.h"</a></u></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="p_local.h.html">"p_local.h"</a></u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="doomstat.h.html">"doomstat.h"</a></u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><i>// Index of the special effects (INVUL inverse) map.</i></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/INVERSECOLORMAP" data-ref="_M/INVERSECOLORMAP">INVERSECOLORMAP</dfn>		32</u></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><i>//</i></td></tr>
+<tr><th id="45">45</th><td><i>// Movement.</i></td></tr>
+<tr><th id="46">46</th><td><i>//</i></td></tr>
+<tr><th id="47">47</th><td><i></i></td></tr>
+<tr><th id="48">48</th><td><i>// 16 pixels of bob</i></td></tr>
+<tr><th id="49">49</th><td><u>#define <dfn class="macro" id="_M/MAXBOB" data-ref="_M/MAXBOB">MAXBOB</dfn>	0x100000</u>	</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="decl def" id="onground" title='onground' data-ref="onground">onground</dfn>;</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><i>//</i></td></tr>
+<tr><th id="55">55</th><td><i>// P_Thrust</i></td></tr>
+<tr><th id="56">56</th><td><i>// Moves the given origin along a given angle.</i></td></tr>
+<tr><th id="57">57</th><td><i>//</i></td></tr>
+<tr><th id="58">58</th><td><em>void</em></td></tr>
+<tr><th id="59">59</th><td><dfn class="decl def" id="P_Thrust" title='P_Thrust' data-ref="P_Thrust">P_Thrust</dfn></td></tr>
+<tr><th id="60">60</th><td>( <a class="typedef" href="d_player.h.html#player_t" title='player_t' data-type='struct player_s' data-ref="player_t">player_t</a>*	<dfn class="local col1 decl" id="1player" title='player' data-type='player_t *' data-ref="1player">player</dfn>,</td></tr>
+<tr><th id="61">61</th><td>  <a class="typedef" href="tables.h.html#angle_t" title='angle_t' data-type='unsigned int' data-ref="angle_t">angle_t</a>	<dfn class="local col2 decl" id="2angle" title='angle' data-type='angle_t' data-ref="2angle">angle</dfn>,</td></tr>
+<tr><th id="62">62</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col3 decl" id="3move" title='move' data-type='fixed_t' data-ref="3move">move</dfn> ) </td></tr>
+<tr><th id="63">63</th><td>{</td></tr>
+<tr><th id="64">64</th><td>    <a class="local col2 ref" href="#2angle" title='angle' data-ref="2angle">angle</a> &gt;&gt;= <a class="macro" href="tables.h.html#55" title="19" data-ref="_M/ANGLETOFINESHIFT">ANGLETOFINESHIFT</a>;</td></tr>
+<tr><th id="65">65</th><td>    </td></tr>
+<tr><th id="66">66</th><td>    <a class="local col1 ref" href="#1player" title='player' data-ref="1player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::momx" title='mobj_s::momx' data-ref="mobj_s::momx">momx</a> += <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a>(<a class="local col3 ref" href="#3move" title='move' data-ref="3move">move</a>,<a class="ref" href="tables.h.html#finecosine" title='finecosine' data-ref="finecosine">finecosine</a>[<a class="local col2 ref" href="#2angle" title='angle' data-ref="2angle">angle</a>]); </td></tr>
+<tr><th id="67">67</th><td>    <a class="local col1 ref" href="#1player" title='player' data-ref="1player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::momy" title='mobj_s::momy' data-ref="mobj_s::momy">momy</a> += <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a>(<a class="local col3 ref" href="#3move" title='move' data-ref="3move">move</a>,<a class="ref" href="tables.h.html#finesine" title='finesine' data-ref="finesine">finesine</a>[<a class="local col2 ref" href="#2angle" title='angle' data-ref="2angle">angle</a>]);</td></tr>
+<tr><th id="68">68</th><td>}</td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><i>//</i></td></tr>
+<tr><th id="74">74</th><td><i>// P_CalcHeight</i></td></tr>
+<tr><th id="75">75</th><td><i>// Calculate the walking / running height adjustment</i></td></tr>
+<tr><th id="76">76</th><td><i>//</i></td></tr>
+<tr><th id="77">77</th><td><em>void</em> <dfn class="decl def" id="P_CalcHeight" title='P_CalcHeight' data-ref="P_CalcHeight">P_CalcHeight</dfn> (<a class="typedef" href="d_player.h.html#player_t" title='player_t' data-type='struct player_s' data-ref="player_t">player_t</a>* <dfn class="local col4 decl" id="4player" title='player' data-type='player_t *' data-ref="4player">player</dfn>) </td></tr>
+<tr><th id="78">78</th><td>{</td></tr>
+<tr><th id="79">79</th><td>    <em>int</em>		<dfn class="local col5 decl" id="5angle" title='angle' data-type='int' data-ref="5angle">angle</dfn>;</td></tr>
+<tr><th id="80">80</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col6 decl" id="6bob" title='bob' data-type='fixed_t' data-ref="6bob">bob</dfn>;</td></tr>
+<tr><th id="81">81</th><td>    </td></tr>
+<tr><th id="82">82</th><td>    <i>// Regular movement bobbing</i></td></tr>
+<tr><th id="83">83</th><td><i>    // (needs to be calculated for gun swing</i></td></tr>
+<tr><th id="84">84</th><td><i>    // even if not on ground)</i></td></tr>
+<tr><th id="85">85</th><td><i>    // OPTIMIZE: tablify angle</i></td></tr>
+<tr><th id="86">86</th><td><i>    // Note: a LUT allows for effects</i></td></tr>
+<tr><th id="87">87</th><td><i>    //  like a ramp with low health.</i></td></tr>
+<tr><th id="88">88</th><td>    <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::bob" title='player_s::bob' data-ref="player_s::bob">bob</a> =</td></tr>
+<tr><th id="89">89</th><td>	<a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> (<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::momx" title='mobj_s::momx' data-ref="mobj_s::momx">momx</a>, <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::momx" title='mobj_s::momx' data-ref="mobj_s::momx">momx</a>)</td></tr>
+<tr><th id="90">90</th><td>	+ <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> (<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::momy" title='mobj_s::momy' data-ref="mobj_s::momy">momy</a>,<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::momy" title='mobj_s::momy' data-ref="mobj_s::momy">momy</a>);</td></tr>
+<tr><th id="91">91</th><td>    </td></tr>
+<tr><th id="92">92</th><td>    <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::bob" title='player_s::bob' data-ref="player_s::bob">bob</a> &gt;&gt;= <var>2</var>;</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td>    <b>if</b> (<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::bob" title='player_s::bob' data-ref="player_s::bob">bob</a>&gt;<a class="macro" href="#49" title="0x100000" data-ref="_M/MAXBOB">MAXBOB</a>)</td></tr>
+<tr><th id="95">95</th><td>	<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::bob" title='player_s::bob' data-ref="player_s::bob">bob</a> = <a class="macro" href="#49" title="0x100000" data-ref="_M/MAXBOB">MAXBOB</a>;</td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td>    <b>if</b> ((<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cheats" title='player_s::cheats' data-ref="player_s::cheats">cheats</a> &amp; <a class="enum" href="d_player.h.html#CF_NOMOMENTUM" title='CF_NOMOMENTUM' data-ref="CF_NOMOMENTUM">CF_NOMOMENTUM</a>) || !<a class="ref" href="#onground" title='onground' data-ref="onground">onground</a>)</td></tr>
+<tr><th id="98">98</th><td>    {</td></tr>
+<tr><th id="99">99</th><td>	<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewz" title='player_s::viewz' data-ref="player_s::viewz">viewz</a> = <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::z" title='mobj_s::z' data-ref="mobj_s::z">z</a> + <a class="macro" href="p_local.h.html#34" title="(41*(1&lt;&lt;16))" data-ref="_M/VIEWHEIGHT">VIEWHEIGHT</a>;</td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td>	<b>if</b> (<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewz" title='player_s::viewz' data-ref="player_s::viewz">viewz</a> &gt; <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::ceilingz" title='mobj_s::ceilingz' data-ref="mobj_s::ceilingz">ceilingz</a>-<var>4</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>)</td></tr>
+<tr><th id="102">102</th><td>	    <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewz" title='player_s::viewz' data-ref="player_s::viewz">viewz</a> = <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::ceilingz" title='mobj_s::ceilingz' data-ref="mobj_s::ceilingz">ceilingz</a>-<var>4</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td>	<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewz" title='player_s::viewz' data-ref="player_s::viewz">viewz</a> = <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::z" title='mobj_s::z' data-ref="mobj_s::z">z</a> + <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewheight" title='player_s::viewheight' data-ref="player_s::viewheight">viewheight</a>;</td></tr>
+<tr><th id="105">105</th><td>	<b>return</b>;</td></tr>
+<tr><th id="106">106</th><td>    }</td></tr>
+<tr><th id="107">107</th><td>		</td></tr>
+<tr><th id="108">108</th><td>    <a class="local col5 ref" href="#5angle" title='angle' data-ref="5angle">angle</a> = (<a class="macro" href="tables.h.html#50" title="8192" data-ref="_M/FINEANGLES">FINEANGLES</a>/<var>20</var>*<a class="ref" href="doomstat.h.html#leveltime" title='leveltime' data-ref="leveltime">leveltime</a>)&amp;<a class="macro" href="tables.h.html#51" title="(8192-1)" data-ref="_M/FINEMASK">FINEMASK</a>;</td></tr>
+<tr><th id="109">109</th><td>    <a class="local col6 ref" href="#6bob" title='bob' data-ref="6bob">bob</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> ( <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::bob" title='player_s::bob' data-ref="player_s::bob">bob</a>/<var>2</var>, <a class="ref" href="tables.h.html#finesine" title='finesine' data-ref="finesine">finesine</a>[<a class="local col5 ref" href="#5angle" title='angle' data-ref="5angle">angle</a>]);</td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td>    </td></tr>
+<tr><th id="112">112</th><td>    <i>// move viewheight</i></td></tr>
+<tr><th id="113">113</th><td>    <b>if</b> (<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::playerstate" title='player_s::playerstate' data-ref="player_s::playerstate">playerstate</a> == <a class="enum" href="d_player.h.html#PST_LIVE" title='PST_LIVE' data-ref="PST_LIVE">PST_LIVE</a>)</td></tr>
+<tr><th id="114">114</th><td>    {</td></tr>
+<tr><th id="115">115</th><td>	<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewheight" title='player_s::viewheight' data-ref="player_s::viewheight">viewheight</a> += <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::deltaviewheight" title='player_s::deltaviewheight' data-ref="player_s::deltaviewheight">deltaviewheight</a>;</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td>	<b>if</b> (<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewheight" title='player_s::viewheight' data-ref="player_s::viewheight">viewheight</a> &gt; <a class="macro" href="p_local.h.html#34" title="(41*(1&lt;&lt;16))" data-ref="_M/VIEWHEIGHT">VIEWHEIGHT</a>)</td></tr>
+<tr><th id="118">118</th><td>	{</td></tr>
+<tr><th id="119">119</th><td>	    <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewheight" title='player_s::viewheight' data-ref="player_s::viewheight">viewheight</a> = <a class="macro" href="p_local.h.html#34" title="(41*(1&lt;&lt;16))" data-ref="_M/VIEWHEIGHT">VIEWHEIGHT</a>;</td></tr>
+<tr><th id="120">120</th><td>	    <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::deltaviewheight" title='player_s::deltaviewheight' data-ref="player_s::deltaviewheight">deltaviewheight</a> = <var>0</var>;</td></tr>
+<tr><th id="121">121</th><td>	}</td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td>	<b>if</b> (<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewheight" title='player_s::viewheight' data-ref="player_s::viewheight">viewheight</a> &lt; <a class="macro" href="p_local.h.html#34" title="(41*(1&lt;&lt;16))" data-ref="_M/VIEWHEIGHT">VIEWHEIGHT</a>/<var>2</var>)</td></tr>
+<tr><th id="124">124</th><td>	{</td></tr>
+<tr><th id="125">125</th><td>	    <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewheight" title='player_s::viewheight' data-ref="player_s::viewheight">viewheight</a> = <a class="macro" href="p_local.h.html#34" title="(41*(1&lt;&lt;16))" data-ref="_M/VIEWHEIGHT">VIEWHEIGHT</a>/<var>2</var>;</td></tr>
+<tr><th id="126">126</th><td>	    <b>if</b> (<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::deltaviewheight" title='player_s::deltaviewheight' data-ref="player_s::deltaviewheight">deltaviewheight</a> &lt;= <var>0</var>)</td></tr>
+<tr><th id="127">127</th><td>		<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::deltaviewheight" title='player_s::deltaviewheight' data-ref="player_s::deltaviewheight">deltaviewheight</a> = <var>1</var>;</td></tr>
+<tr><th id="128">128</th><td>	}</td></tr>
+<tr><th id="129">129</th><td>	</td></tr>
+<tr><th id="130">130</th><td>	<b>if</b> (<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::deltaviewheight" title='player_s::deltaviewheight' data-ref="player_s::deltaviewheight">deltaviewheight</a>)	</td></tr>
+<tr><th id="131">131</th><td>	{</td></tr>
+<tr><th id="132">132</th><td>	    <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::deltaviewheight" title='player_s::deltaviewheight' data-ref="player_s::deltaviewheight">deltaviewheight</a> += <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>/<var>4</var>;</td></tr>
+<tr><th id="133">133</th><td>	    <b>if</b> (!<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::deltaviewheight" title='player_s::deltaviewheight' data-ref="player_s::deltaviewheight">deltaviewheight</a>)</td></tr>
+<tr><th id="134">134</th><td>		<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::deltaviewheight" title='player_s::deltaviewheight' data-ref="player_s::deltaviewheight">deltaviewheight</a> = <var>1</var>;</td></tr>
+<tr><th id="135">135</th><td>	}</td></tr>
+<tr><th id="136">136</th><td>    }</td></tr>
+<tr><th id="137">137</th><td>    <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewz" title='player_s::viewz' data-ref="player_s::viewz">viewz</a> = <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::z" title='mobj_s::z' data-ref="mobj_s::z">z</a> + <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewheight" title='player_s::viewheight' data-ref="player_s::viewheight">viewheight</a> + <a class="local col6 ref" href="#6bob" title='bob' data-ref="6bob">bob</a>;</td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td>    <b>if</b> (<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewz" title='player_s::viewz' data-ref="player_s::viewz">viewz</a> &gt; <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::ceilingz" title='mobj_s::ceilingz' data-ref="mobj_s::ceilingz">ceilingz</a>-<var>4</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>)</td></tr>
+<tr><th id="140">140</th><td>	<a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewz" title='player_s::viewz' data-ref="player_s::viewz">viewz</a> = <a class="local col4 ref" href="#4player" title='player' data-ref="4player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::ceilingz" title='mobj_s::ceilingz' data-ref="mobj_s::ceilingz">ceilingz</a>-<var>4</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="141">141</th><td>}</td></tr>
+<tr><th id="142">142</th><td></td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td></td></tr>
+<tr><th id="145">145</th><td><i>//</i></td></tr>
+<tr><th id="146">146</th><td><i>// P_MovePlayer</i></td></tr>
+<tr><th id="147">147</th><td><i>//</i></td></tr>
+<tr><th id="148">148</th><td><em>void</em> <dfn class="decl def" id="P_MovePlayer" title='P_MovePlayer' data-ref="P_MovePlayer">P_MovePlayer</dfn> (<a class="typedef" href="d_player.h.html#player_t" title='player_t' data-type='struct player_s' data-ref="player_t">player_t</a>* <dfn class="local col7 decl" id="7player" title='player' data-type='player_t *' data-ref="7player">player</dfn>)</td></tr>
+<tr><th id="149">149</th><td>{</td></tr>
+<tr><th id="150">150</th><td>    <a class="typedef" href="d_ticcmd.h.html#ticcmd_t" title='ticcmd_t' data-type='struct ticcmd_t' data-ref="ticcmd_t">ticcmd_t</a>*		<dfn class="local col8 decl" id="8cmd" title='cmd' data-type='ticcmd_t *' data-ref="8cmd">cmd</dfn>;</td></tr>
+<tr><th id="151">151</th><td>	</td></tr>
+<tr><th id="152">152</th><td>    <a class="local col8 ref" href="#8cmd" title='cmd' data-ref="8cmd">cmd</a> = &amp;<a class="local col7 ref" href="#7player" title='player' data-ref="7player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cmd" title='player_s::cmd' data-ref="player_s::cmd">cmd</a>;</td></tr>
+<tr><th id="153">153</th><td>	</td></tr>
+<tr><th id="154">154</th><td>    <a class="local col7 ref" href="#7player" title='player' data-ref="7player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::angle" title='mobj_s::angle' data-ref="mobj_s::angle">angle</a> += (<a class="local col8 ref" href="#8cmd" title='cmd' data-ref="8cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::angleturn" title='(anonymous struct)::angleturn' data-ref="(anonymous)::angleturn">angleturn</a>&lt;&lt;<var>16</var>);</td></tr>
+<tr><th id="155">155</th><td></td></tr>
+<tr><th id="156">156</th><td>    <i>// Do not let the player control movement</i></td></tr>
+<tr><th id="157">157</th><td><i>    //  if not onground.</i></td></tr>
+<tr><th id="158">158</th><td>    <a class="ref" href="#onground" title='onground' data-ref="onground">onground</a> = (<a class="local col7 ref" href="#7player" title='player' data-ref="7player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::z" title='mobj_s::z' data-ref="mobj_s::z">z</a> &lt;= <a class="local col7 ref" href="#7player" title='player' data-ref="7player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::floorz" title='mobj_s::floorz' data-ref="mobj_s::floorz">floorz</a>);</td></tr>
+<tr><th id="159">159</th><td>	</td></tr>
+<tr><th id="160">160</th><td>    <b>if</b> (<a class="local col8 ref" href="#8cmd" title='cmd' data-ref="8cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::forwardmove" title='(anonymous struct)::forwardmove' data-ref="(anonymous)::forwardmove">forwardmove</a> &amp;&amp; <a class="ref" href="#onground" title='onground' data-ref="onground">onground</a>)</td></tr>
+<tr><th id="161">161</th><td>	<a class="ref" href="#P_Thrust" title='P_Thrust' data-ref="P_Thrust">P_Thrust</a> (<a class="local col7 ref" href="#7player" title='player' data-ref="7player">player</a>, <a class="local col7 ref" href="#7player" title='player' data-ref="7player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::angle" title='mobj_s::angle' data-ref="mobj_s::angle">angle</a>, <a class="local col8 ref" href="#8cmd" title='cmd' data-ref="8cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::forwardmove" title='(anonymous struct)::forwardmove' data-ref="(anonymous)::forwardmove">forwardmove</a>*<var>2048</var>);</td></tr>
+<tr><th id="162">162</th><td>    </td></tr>
+<tr><th id="163">163</th><td>    <b>if</b> (<a class="local col8 ref" href="#8cmd" title='cmd' data-ref="8cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::sidemove" title='(anonymous struct)::sidemove' data-ref="(anonymous)::sidemove">sidemove</a> &amp;&amp; <a class="ref" href="#onground" title='onground' data-ref="onground">onground</a>)</td></tr>
+<tr><th id="164">164</th><td>	<a class="ref" href="#P_Thrust" title='P_Thrust' data-ref="P_Thrust">P_Thrust</a> (<a class="local col7 ref" href="#7player" title='player' data-ref="7player">player</a>, <a class="local col7 ref" href="#7player" title='player' data-ref="7player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::angle" title='mobj_s::angle' data-ref="mobj_s::angle">angle</a>-<a class="macro" href="tables.h.html#69" title="0x40000000" data-ref="_M/ANG90">ANG90</a>, <a class="local col8 ref" href="#8cmd" title='cmd' data-ref="8cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::sidemove" title='(anonymous struct)::sidemove' data-ref="(anonymous)::sidemove">sidemove</a>*<var>2048</var>);</td></tr>
+<tr><th id="165">165</th><td></td></tr>
+<tr><th id="166">166</th><td>    <b>if</b> ( (<a class="local col8 ref" href="#8cmd" title='cmd' data-ref="8cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::forwardmove" title='(anonymous struct)::forwardmove' data-ref="(anonymous)::forwardmove">forwardmove</a> || <a class="local col8 ref" href="#8cmd" title='cmd' data-ref="8cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::sidemove" title='(anonymous struct)::sidemove' data-ref="(anonymous)::sidemove">sidemove</a>) </td></tr>
+<tr><th id="167">167</th><td>	 &amp;&amp; <a class="local col7 ref" href="#7player" title='player' data-ref="7player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::state" title='mobj_s::state' data-ref="mobj_s::state">state</a> == &amp;<a class="ref" href="info.h.html#states" title='states' data-ref="states">states</a>[<a class="enum" href="info.h.html#S_PLAY" title='S_PLAY' data-ref="S_PLAY">S_PLAY</a>] )</td></tr>
+<tr><th id="168">168</th><td>    {</td></tr>
+<tr><th id="169">169</th><td>	<a class="ref" href="p_local.h.html#P_SetMobjState" title='P_SetMobjState' data-ref="P_SetMobjState">P_SetMobjState</a> (<a class="local col7 ref" href="#7player" title='player' data-ref="7player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>, <a class="enum" href="info.h.html#S_PLAY_RUN1" title='S_PLAY_RUN1' data-ref="S_PLAY_RUN1">S_PLAY_RUN1</a>);</td></tr>
+<tr><th id="170">170</th><td>    }</td></tr>
+<tr><th id="171">171</th><td>}	</td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td></td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td><i>//</i></td></tr>
+<tr><th id="176">176</th><td><i>// P_DeathThink</i></td></tr>
+<tr><th id="177">177</th><td><i>// Fall on your face when dying.</i></td></tr>
+<tr><th id="178">178</th><td><i>// Decrease POV height to floor height.</i></td></tr>
+<tr><th id="179">179</th><td><i>//</i></td></tr>
+<tr><th id="180">180</th><td><u>#define <dfn class="macro" id="_M/ANG5" data-ref="_M/ANG5">ANG5</dfn>   	(ANG90/18)</u></td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td><em>void</em> <dfn class="decl def" id="P_DeathThink" title='P_DeathThink' data-ref="P_DeathThink">P_DeathThink</dfn> (<a class="typedef" href="d_player.h.html#player_t" title='player_t' data-type='struct player_s' data-ref="player_t">player_t</a>* <dfn class="local col9 decl" id="9player" title='player' data-type='player_t *' data-ref="9player">player</dfn>)</td></tr>
+<tr><th id="183">183</th><td>{</td></tr>
+<tr><th id="184">184</th><td>    <a class="typedef" href="tables.h.html#angle_t" title='angle_t' data-type='unsigned int' data-ref="angle_t">angle_t</a>		<dfn class="local col0 decl" id="10angle" title='angle' data-type='angle_t' data-ref="10angle">angle</dfn>;</td></tr>
+<tr><th id="185">185</th><td>    <a class="typedef" href="tables.h.html#angle_t" title='angle_t' data-type='unsigned int' data-ref="angle_t">angle_t</a>		<dfn class="local col1 decl" id="11delta" title='delta' data-type='angle_t' data-ref="11delta">delta</dfn>;</td></tr>
+<tr><th id="186">186</th><td></td></tr>
+<tr><th id="187">187</th><td>    <a class="ref" href="p_local.h.html#P_MovePsprites" title='P_MovePsprites' data-ref="P_MovePsprites">P_MovePsprites</a> (<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>);</td></tr>
+<tr><th id="188">188</th><td>	</td></tr>
+<tr><th id="189">189</th><td>    <i>// fall to the ground</i></td></tr>
+<tr><th id="190">190</th><td>    <b>if</b> (<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewheight" title='player_s::viewheight' data-ref="player_s::viewheight">viewheight</a> &gt; <var>6</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>)</td></tr>
+<tr><th id="191">191</th><td>	<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewheight" title='player_s::viewheight' data-ref="player_s::viewheight">viewheight</a> -= <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="192">192</th><td></td></tr>
+<tr><th id="193">193</th><td>    <b>if</b> (<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewheight" title='player_s::viewheight' data-ref="player_s::viewheight">viewheight</a> &lt; <var>6</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>)</td></tr>
+<tr><th id="194">194</th><td>	<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::viewheight" title='player_s::viewheight' data-ref="player_s::viewheight">viewheight</a> = <var>6</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="195">195</th><td></td></tr>
+<tr><th id="196">196</th><td>    <a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::deltaviewheight" title='player_s::deltaviewheight' data-ref="player_s::deltaviewheight">deltaviewheight</a> = <var>0</var>;</td></tr>
+<tr><th id="197">197</th><td>    <a class="ref" href="#onground" title='onground' data-ref="onground">onground</a> = (<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::z" title='mobj_s::z' data-ref="mobj_s::z">z</a> &lt;= <a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::floorz" title='mobj_s::floorz' data-ref="mobj_s::floorz">floorz</a>);</td></tr>
+<tr><th id="198">198</th><td>    <a class="ref" href="#P_CalcHeight" title='P_CalcHeight' data-ref="P_CalcHeight">P_CalcHeight</a> (<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>);</td></tr>
+<tr><th id="199">199</th><td>	</td></tr>
+<tr><th id="200">200</th><td>    <b>if</b> (<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::attacker" title='player_s::attacker' data-ref="player_s::attacker">attacker</a> &amp;&amp; <a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::attacker" title='player_s::attacker' data-ref="player_s::attacker">attacker</a> != <a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>)</td></tr>
+<tr><th id="201">201</th><td>    {</td></tr>
+<tr><th id="202">202</th><td>	<a class="local col0 ref" href="#10angle" title='angle' data-ref="10angle">angle</a> = <a class="ref" href="r_main.h.html#R_PointToAngle2" title='R_PointToAngle2' data-ref="R_PointToAngle2">R_PointToAngle2</a> (<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a>,</td></tr>
+<tr><th id="203">203</th><td>				 <a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a>,</td></tr>
+<tr><th id="204">204</th><td>				 <a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::attacker" title='player_s::attacker' data-ref="player_s::attacker">attacker</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a>,</td></tr>
+<tr><th id="205">205</th><td>				 <a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::attacker" title='player_s::attacker' data-ref="player_s::attacker">attacker</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a>);</td></tr>
+<tr><th id="206">206</th><td>	</td></tr>
+<tr><th id="207">207</th><td>	<a class="local col1 ref" href="#11delta" title='delta' data-ref="11delta">delta</a> = <a class="local col0 ref" href="#10angle" title='angle' data-ref="10angle">angle</a> - <a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::angle" title='mobj_s::angle' data-ref="mobj_s::angle">angle</a>;</td></tr>
+<tr><th id="208">208</th><td>	</td></tr>
+<tr><th id="209">209</th><td>	<b>if</b> (<a class="local col1 ref" href="#11delta" title='delta' data-ref="11delta">delta</a> &lt; <a class="macro" href="#180" title="(0x40000000/18)" data-ref="_M/ANG5">ANG5</a> || <a class="local col1 ref" href="#11delta" title='delta' data-ref="11delta">delta</a> &gt; (<em>unsigned</em>)-<a class="macro" href="#180" title="(0x40000000/18)" data-ref="_M/ANG5">ANG5</a>)</td></tr>
+<tr><th id="210">210</th><td>	{</td></tr>
+<tr><th id="211">211</th><td>	    <i>// Looking at killer,</i></td></tr>
+<tr><th id="212">212</th><td><i>	    //  so fade damage flash down.</i></td></tr>
+<tr><th id="213">213</th><td>	    <a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::angle" title='mobj_s::angle' data-ref="mobj_s::angle">angle</a> = <a class="local col0 ref" href="#10angle" title='angle' data-ref="10angle">angle</a>;</td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td>	    <b>if</b> (<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::damagecount" title='player_s::damagecount' data-ref="player_s::damagecount">damagecount</a>)</td></tr>
+<tr><th id="216">216</th><td>		<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::damagecount" title='player_s::damagecount' data-ref="player_s::damagecount">damagecount</a>--;</td></tr>
+<tr><th id="217">217</th><td>	}</td></tr>
+<tr><th id="218">218</th><td>	<b>else</b> <b>if</b> (<a class="local col1 ref" href="#11delta" title='delta' data-ref="11delta">delta</a> &lt; <a class="macro" href="tables.h.html#70" title="0x80000000" data-ref="_M/ANG180">ANG180</a>)</td></tr>
+<tr><th id="219">219</th><td>	    <a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::angle" title='mobj_s::angle' data-ref="mobj_s::angle">angle</a> += <a class="macro" href="#180" title="(0x40000000/18)" data-ref="_M/ANG5">ANG5</a>;</td></tr>
+<tr><th id="220">220</th><td>	<b>else</b></td></tr>
+<tr><th id="221">221</th><td>	    <a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::angle" title='mobj_s::angle' data-ref="mobj_s::angle">angle</a> -= <a class="macro" href="#180" title="(0x40000000/18)" data-ref="_M/ANG5">ANG5</a>;</td></tr>
+<tr><th id="222">222</th><td>    }</td></tr>
+<tr><th id="223">223</th><td>    <b>else</b> <b>if</b> (<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::damagecount" title='player_s::damagecount' data-ref="player_s::damagecount">damagecount</a>)</td></tr>
+<tr><th id="224">224</th><td>	<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::damagecount" title='player_s::damagecount' data-ref="player_s::damagecount">damagecount</a>--;</td></tr>
+<tr><th id="225">225</th><td>	</td></tr>
+<tr><th id="226">226</th><td></td></tr>
+<tr><th id="227">227</th><td>    <b>if</b> (<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cmd" title='player_s::cmd' data-ref="player_s::cmd">cmd</a>.<a class="ref" href="d_ticcmd.h.html#(anonymous)::buttons" title='(anonymous struct)::buttons' data-ref="(anonymous)::buttons">buttons</a> &amp; <a class="enum" href="d_event.h.html#BT_USE" title='BT_USE' data-ref="BT_USE">BT_USE</a>)</td></tr>
+<tr><th id="228">228</th><td>	<a class="local col9 ref" href="#9player" title='player' data-ref="9player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::playerstate" title='player_s::playerstate' data-ref="player_s::playerstate">playerstate</a> = <a class="enum" href="d_player.h.html#PST_REBORN" title='PST_REBORN' data-ref="PST_REBORN">PST_REBORN</a>;</td></tr>
+<tr><th id="229">229</th><td>}</td></tr>
+<tr><th id="230">230</th><td></td></tr>
+<tr><th id="231">231</th><td></td></tr>
+<tr><th id="232">232</th><td></td></tr>
+<tr><th id="233">233</th><td><i>//</i></td></tr>
+<tr><th id="234">234</th><td><i>// P_PlayerThink</i></td></tr>
+<tr><th id="235">235</th><td><i>//</i></td></tr>
+<tr><th id="236">236</th><td><em>void</em> <dfn class="decl def" id="P_PlayerThink" title='P_PlayerThink' data-ref="P_PlayerThink">P_PlayerThink</dfn> (<a class="typedef" href="d_player.h.html#player_t" title='player_t' data-type='struct player_s' data-ref="player_t">player_t</a>* <dfn class="local col2 decl" id="12player" title='player' data-type='player_t *' data-ref="12player">player</dfn>)</td></tr>
+<tr><th id="237">237</th><td>{</td></tr>
+<tr><th id="238">238</th><td>    <a class="typedef" href="d_ticcmd.h.html#ticcmd_t" title='ticcmd_t' data-type='struct ticcmd_t' data-ref="ticcmd_t">ticcmd_t</a>*		<dfn class="local col3 decl" id="13cmd" title='cmd' data-type='ticcmd_t *' data-ref="13cmd">cmd</dfn>;</td></tr>
+<tr><th id="239">239</th><td>    <a class="typedef" href="doomdef.h.html#weapontype_t" title='weapontype_t' data-type='enum weapontype_t' data-ref="weapontype_t">weapontype_t</a>	<dfn class="local col4 decl" id="14newweapon" title='newweapon' data-type='weapontype_t' data-ref="14newweapon">newweapon</dfn>;</td></tr>
+<tr><th id="240">240</th><td>	</td></tr>
+<tr><th id="241">241</th><td>    <i>// fixme: do this in the cheat code</i></td></tr>
+<tr><th id="242">242</th><td>    <b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cheats" title='player_s::cheats' data-ref="player_s::cheats">cheats</a> &amp; <a class="enum" href="d_player.h.html#CF_NOCLIP" title='CF_NOCLIP' data-ref="CF_NOCLIP">CF_NOCLIP</a>)</td></tr>
+<tr><th id="243">243</th><td>	<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::flags" title='mobj_s::flags' data-ref="mobj_s::flags">flags</a> |= <a class="enum" href="p_mobj.h.html#MF_NOCLIP" title='MF_NOCLIP' data-ref="MF_NOCLIP">MF_NOCLIP</a>;</td></tr>
+<tr><th id="244">244</th><td>    <b>else</b></td></tr>
+<tr><th id="245">245</th><td>	<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::flags" title='mobj_s::flags' data-ref="mobj_s::flags">flags</a> &amp;= ~<a class="enum" href="p_mobj.h.html#MF_NOCLIP" title='MF_NOCLIP' data-ref="MF_NOCLIP">MF_NOCLIP</a>;</td></tr>
+<tr><th id="246">246</th><td>    </td></tr>
+<tr><th id="247">247</th><td>    <i>// chain saw run forward</i></td></tr>
+<tr><th id="248">248</th><td>    <a class="local col3 ref" href="#13cmd" title='cmd' data-ref="13cmd">cmd</a> = &amp;<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::cmd" title='player_s::cmd' data-ref="player_s::cmd">cmd</a>;</td></tr>
+<tr><th id="249">249</th><td>    <b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::flags" title='mobj_s::flags' data-ref="mobj_s::flags">flags</a> &amp; <a class="enum" href="p_mobj.h.html#MF_JUSTATTACKED" title='MF_JUSTATTACKED' data-ref="MF_JUSTATTACKED">MF_JUSTATTACKED</a>)</td></tr>
+<tr><th id="250">250</th><td>    {</td></tr>
+<tr><th id="251">251</th><td>	<a class="local col3 ref" href="#13cmd" title='cmd' data-ref="13cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::angleturn" title='(anonymous struct)::angleturn' data-ref="(anonymous)::angleturn">angleturn</a> = <var>0</var>;</td></tr>
+<tr><th id="252">252</th><td>	<a class="local col3 ref" href="#13cmd" title='cmd' data-ref="13cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::forwardmove" title='(anonymous struct)::forwardmove' data-ref="(anonymous)::forwardmove">forwardmove</a> = <var>0xc800</var>/<var>512</var>;</td></tr>
+<tr><th id="253">253</th><td>	<a class="local col3 ref" href="#13cmd" title='cmd' data-ref="13cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::sidemove" title='(anonymous struct)::sidemove' data-ref="(anonymous)::sidemove">sidemove</a> = <var>0</var>;</td></tr>
+<tr><th id="254">254</th><td>	<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::flags" title='mobj_s::flags' data-ref="mobj_s::flags">flags</a> &amp;= ~<a class="enum" href="p_mobj.h.html#MF_JUSTATTACKED" title='MF_JUSTATTACKED' data-ref="MF_JUSTATTACKED">MF_JUSTATTACKED</a>;</td></tr>
+<tr><th id="255">255</th><td>    }</td></tr>
+<tr><th id="256">256</th><td>			</td></tr>
+<tr><th id="257">257</th><td>	</td></tr>
+<tr><th id="258">258</th><td>    <b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::playerstate" title='player_s::playerstate' data-ref="player_s::playerstate">playerstate</a> == <a class="enum" href="d_player.h.html#PST_DEAD" title='PST_DEAD' data-ref="PST_DEAD">PST_DEAD</a>)</td></tr>
+<tr><th id="259">259</th><td>    {</td></tr>
+<tr><th id="260">260</th><td>	<a class="ref" href="#P_DeathThink" title='P_DeathThink' data-ref="P_DeathThink">P_DeathThink</a> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>);</td></tr>
+<tr><th id="261">261</th><td>	<b>return</b>;</td></tr>
+<tr><th id="262">262</th><td>    }</td></tr>
+<tr><th id="263">263</th><td>    </td></tr>
+<tr><th id="264">264</th><td>    <i>// Move around.</i></td></tr>
+<tr><th id="265">265</th><td><i>    // Reactiontime is used to prevent movement</i></td></tr>
+<tr><th id="266">266</th><td><i>    //  for a bit after a teleport.</i></td></tr>
+<tr><th id="267">267</th><td>    <b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::reactiontime" title='mobj_s::reactiontime' data-ref="mobj_s::reactiontime">reactiontime</a>)</td></tr>
+<tr><th id="268">268</th><td>	<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::reactiontime" title='mobj_s::reactiontime' data-ref="mobj_s::reactiontime">reactiontime</a>--;</td></tr>
+<tr><th id="269">269</th><td>    <b>else</b></td></tr>
+<tr><th id="270">270</th><td>	<a class="ref" href="#P_MovePlayer" title='P_MovePlayer' data-ref="P_MovePlayer">P_MovePlayer</a> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>);</td></tr>
+<tr><th id="271">271</th><td>    </td></tr>
+<tr><th id="272">272</th><td>    <a class="ref" href="#P_CalcHeight" title='P_CalcHeight' data-ref="P_CalcHeight">P_CalcHeight</a> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>);</td></tr>
+<tr><th id="273">273</th><td></td></tr>
+<tr><th id="274">274</th><td>    <b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::subsector" title='mobj_s::subsector' data-ref="mobj_s::subsector">subsector</a>-&gt;<a class="ref" href="r_defs.h.html#subsector_s::sector" title='subsector_s::sector' data-ref="subsector_s::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::special" title='(anonymous struct)::special' data-ref="(anonymous)::special">special</a>)</td></tr>
+<tr><th id="275">275</th><td>	<a class="ref" href="p_spec.h.html#P_PlayerInSpecialSector" title='P_PlayerInSpecialSector' data-ref="P_PlayerInSpecialSector">P_PlayerInSpecialSector</a> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>);</td></tr>
+<tr><th id="276">276</th><td>    </td></tr>
+<tr><th id="277">277</th><td>    <i>// Check for weapon change.</i></td></tr>
+<tr><th id="278">278</th><td><i></i></td></tr>
+<tr><th id="279">279</th><td><i>    // A special event has no other buttons.</i></td></tr>
+<tr><th id="280">280</th><td>    <b>if</b> (<a class="local col3 ref" href="#13cmd" title='cmd' data-ref="13cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::buttons" title='(anonymous struct)::buttons' data-ref="(anonymous)::buttons">buttons</a> &amp; <a class="enum" href="d_event.h.html#BT_SPECIAL" title='BT_SPECIAL' data-ref="BT_SPECIAL">BT_SPECIAL</a>)</td></tr>
+<tr><th id="281">281</th><td>	<a class="local col3 ref" href="#13cmd" title='cmd' data-ref="13cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::buttons" title='(anonymous struct)::buttons' data-ref="(anonymous)::buttons">buttons</a> = <var>0</var>;			</td></tr>
+<tr><th id="282">282</th><td>		</td></tr>
+<tr><th id="283">283</th><td>    <b>if</b> (<a class="local col3 ref" href="#13cmd" title='cmd' data-ref="13cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::buttons" title='(anonymous struct)::buttons' data-ref="(anonymous)::buttons">buttons</a> &amp; <a class="enum" href="d_event.h.html#BT_CHANGE" title='BT_CHANGE' data-ref="BT_CHANGE">BT_CHANGE</a>)</td></tr>
+<tr><th id="284">284</th><td>    {</td></tr>
+<tr><th id="285">285</th><td>	<i>// The actual changing of the weapon is done</i></td></tr>
+<tr><th id="286">286</th><td><i>	//  when the weapon psprite can do it</i></td></tr>
+<tr><th id="287">287</th><td><i>	//  (read: not in the middle of an attack).</i></td></tr>
+<tr><th id="288">288</th><td>	<a class="local col4 ref" href="#14newweapon" title='newweapon' data-ref="14newweapon">newweapon</a> = (<a class="local col3 ref" href="#13cmd" title='cmd' data-ref="13cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::buttons" title='(anonymous struct)::buttons' data-ref="(anonymous)::buttons">buttons</a>&amp;<a class="enum" href="d_event.h.html#BT_WEAPONMASK" title='BT_WEAPONMASK' data-ref="BT_WEAPONMASK">BT_WEAPONMASK</a>)&gt;&gt;<a class="enum" href="d_event.h.html#BT_WEAPONSHIFT" title='BT_WEAPONSHIFT' data-ref="BT_WEAPONSHIFT">BT_WEAPONSHIFT</a>;</td></tr>
+<tr><th id="289">289</th><td>	</td></tr>
+<tr><th id="290">290</th><td>	<b>if</b> (<a class="local col4 ref" href="#14newweapon" title='newweapon' data-ref="14newweapon">newweapon</a> == <a class="enum" href="doomdef.h.html#wp_fist" title='wp_fist' data-ref="wp_fist">wp_fist</a></td></tr>
+<tr><th id="291">291</th><td>	    &amp;&amp; <a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::weaponowned" title='player_s::weaponowned' data-ref="player_s::weaponowned">weaponowned</a>[<a class="enum" href="doomdef.h.html#wp_chainsaw" title='wp_chainsaw' data-ref="wp_chainsaw">wp_chainsaw</a>]</td></tr>
+<tr><th id="292">292</th><td>	    &amp;&amp; !(<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::readyweapon" title='player_s::readyweapon' data-ref="player_s::readyweapon">readyweapon</a> == <a class="enum" href="doomdef.h.html#wp_chainsaw" title='wp_chainsaw' data-ref="wp_chainsaw">wp_chainsaw</a></td></tr>
+<tr><th id="293">293</th><td>		 &amp;&amp; <a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_strength" title='pw_strength' data-ref="pw_strength">pw_strength</a>]))</td></tr>
+<tr><th id="294">294</th><td>	{</td></tr>
+<tr><th id="295">295</th><td>	    <a class="local col4 ref" href="#14newweapon" title='newweapon' data-ref="14newweapon">newweapon</a> = <a class="enum" href="doomdef.h.html#wp_chainsaw" title='wp_chainsaw' data-ref="wp_chainsaw">wp_chainsaw</a>;</td></tr>
+<tr><th id="296">296</th><td>	}</td></tr>
+<tr><th id="297">297</th><td>	</td></tr>
+<tr><th id="298">298</th><td>	<b>if</b> ( (<a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> == <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a>)</td></tr>
+<tr><th id="299">299</th><td>	    &amp;&amp; <a class="local col4 ref" href="#14newweapon" title='newweapon' data-ref="14newweapon">newweapon</a> == <a class="enum" href="doomdef.h.html#wp_shotgun" title='wp_shotgun' data-ref="wp_shotgun">wp_shotgun</a> </td></tr>
+<tr><th id="300">300</th><td>	    &amp;&amp; <a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::weaponowned" title='player_s::weaponowned' data-ref="player_s::weaponowned">weaponowned</a>[<a class="enum" href="doomdef.h.html#wp_supershotgun" title='wp_supershotgun' data-ref="wp_supershotgun">wp_supershotgun</a>]</td></tr>
+<tr><th id="301">301</th><td>	    &amp;&amp; <a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::readyweapon" title='player_s::readyweapon' data-ref="player_s::readyweapon">readyweapon</a> != <a class="enum" href="doomdef.h.html#wp_supershotgun" title='wp_supershotgun' data-ref="wp_supershotgun">wp_supershotgun</a>)</td></tr>
+<tr><th id="302">302</th><td>	{</td></tr>
+<tr><th id="303">303</th><td>	    <a class="local col4 ref" href="#14newweapon" title='newweapon' data-ref="14newweapon">newweapon</a> = <a class="enum" href="doomdef.h.html#wp_supershotgun" title='wp_supershotgun' data-ref="wp_supershotgun">wp_supershotgun</a>;</td></tr>
+<tr><th id="304">304</th><td>	}</td></tr>
+<tr><th id="305">305</th><td>	</td></tr>
+<tr><th id="306">306</th><td></td></tr>
+<tr><th id="307">307</th><td>	<b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::weaponowned" title='player_s::weaponowned' data-ref="player_s::weaponowned">weaponowned</a>[<a class="local col4 ref" href="#14newweapon" title='newweapon' data-ref="14newweapon">newweapon</a>]</td></tr>
+<tr><th id="308">308</th><td>	    &amp;&amp; <a class="local col4 ref" href="#14newweapon" title='newweapon' data-ref="14newweapon">newweapon</a> != <a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::readyweapon" title='player_s::readyweapon' data-ref="player_s::readyweapon">readyweapon</a>)</td></tr>
+<tr><th id="309">309</th><td>	{</td></tr>
+<tr><th id="310">310</th><td>	    <i>// Do not go to plasma or BFG in shareware,</i></td></tr>
+<tr><th id="311">311</th><td><i>	    //  even if cheated.</i></td></tr>
+<tr><th id="312">312</th><td>	    <b>if</b> ((<a class="local col4 ref" href="#14newweapon" title='newweapon' data-ref="14newweapon">newweapon</a> != <a class="enum" href="doomdef.h.html#wp_plasma" title='wp_plasma' data-ref="wp_plasma">wp_plasma</a></td></tr>
+<tr><th id="313">313</th><td>		 &amp;&amp; <a class="local col4 ref" href="#14newweapon" title='newweapon' data-ref="14newweapon">newweapon</a> != <a class="enum" href="doomdef.h.html#wp_bfg" title='wp_bfg' data-ref="wp_bfg">wp_bfg</a>)</td></tr>
+<tr><th id="314">314</th><td>		|| (<a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> != <a class="enum" href="doomdef.h.html#shareware" title='shareware' data-ref="shareware">shareware</a>) )</td></tr>
+<tr><th id="315">315</th><td>	    {</td></tr>
+<tr><th id="316">316</th><td>		<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::pendingweapon" title='player_s::pendingweapon' data-ref="player_s::pendingweapon">pendingweapon</a> = <a class="local col4 ref" href="#14newweapon" title='newweapon' data-ref="14newweapon">newweapon</a>;</td></tr>
+<tr><th id="317">317</th><td>	    }</td></tr>
+<tr><th id="318">318</th><td>	}</td></tr>
+<tr><th id="319">319</th><td>    }</td></tr>
+<tr><th id="320">320</th><td>    </td></tr>
+<tr><th id="321">321</th><td>    <i>// check for use</i></td></tr>
+<tr><th id="322">322</th><td>    <b>if</b> (<a class="local col3 ref" href="#13cmd" title='cmd' data-ref="13cmd">cmd</a>-&gt;<a class="ref" href="d_ticcmd.h.html#(anonymous)::buttons" title='(anonymous struct)::buttons' data-ref="(anonymous)::buttons">buttons</a> &amp; <a class="enum" href="d_event.h.html#BT_USE" title='BT_USE' data-ref="BT_USE">BT_USE</a>)</td></tr>
+<tr><th id="323">323</th><td>    {</td></tr>
+<tr><th id="324">324</th><td>	<b>if</b> (!<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::usedown" title='player_s::usedown' data-ref="player_s::usedown">usedown</a>)</td></tr>
+<tr><th id="325">325</th><td>	{</td></tr>
+<tr><th id="326">326</th><td>	    <a class="ref" href="p_local.h.html#P_UseLines" title='P_UseLines' data-ref="P_UseLines">P_UseLines</a> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>);</td></tr>
+<tr><th id="327">327</th><td>	    <a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::usedown" title='player_s::usedown' data-ref="player_s::usedown">usedown</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="328">328</th><td>	}</td></tr>
+<tr><th id="329">329</th><td>    }</td></tr>
+<tr><th id="330">330</th><td>    <b>else</b></td></tr>
+<tr><th id="331">331</th><td>	<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::usedown" title='player_s::usedown' data-ref="player_s::usedown">usedown</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="332">332</th><td>    </td></tr>
+<tr><th id="333">333</th><td>    <i>// cycle psprites</i></td></tr>
+<tr><th id="334">334</th><td>    <a class="ref" href="p_local.h.html#P_MovePsprites" title='P_MovePsprites' data-ref="P_MovePsprites">P_MovePsprites</a> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>);</td></tr>
+<tr><th id="335">335</th><td>    </td></tr>
+<tr><th id="336">336</th><td>    <i>// Counters, time dependend power ups.</i></td></tr>
+<tr><th id="337">337</th><td><i></i></td></tr>
+<tr><th id="338">338</th><td><i>    // Strength counts up to diminish fade.</i></td></tr>
+<tr><th id="339">339</th><td>    <b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_strength" title='pw_strength' data-ref="pw_strength">pw_strength</a>])</td></tr>
+<tr><th id="340">340</th><td>	<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_strength" title='pw_strength' data-ref="pw_strength">pw_strength</a>]++;	</td></tr>
+<tr><th id="341">341</th><td>		</td></tr>
+<tr><th id="342">342</th><td>    <b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_invulnerability" title='pw_invulnerability' data-ref="pw_invulnerability">pw_invulnerability</a>])</td></tr>
+<tr><th id="343">343</th><td>	<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_invulnerability" title='pw_invulnerability' data-ref="pw_invulnerability">pw_invulnerability</a>]--;</td></tr>
+<tr><th id="344">344</th><td></td></tr>
+<tr><th id="345">345</th><td>    <b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_invisibility" title='pw_invisibility' data-ref="pw_invisibility">pw_invisibility</a>])</td></tr>
+<tr><th id="346">346</th><td>	<b>if</b> (! --<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_invisibility" title='pw_invisibility' data-ref="pw_invisibility">pw_invisibility</a>] )</td></tr>
+<tr><th id="347">347</th><td>	    <a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::mo" title='player_s::mo' data-ref="player_s::mo">mo</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::flags" title='mobj_s::flags' data-ref="mobj_s::flags">flags</a> &amp;= ~<a class="enum" href="p_mobj.h.html#MF_SHADOW" title='MF_SHADOW' data-ref="MF_SHADOW">MF_SHADOW</a>;</td></tr>
+<tr><th id="348">348</th><td>			</td></tr>
+<tr><th id="349">349</th><td>    <b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_infrared" title='pw_infrared' data-ref="pw_infrared">pw_infrared</a>])</td></tr>
+<tr><th id="350">350</th><td>	<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_infrared" title='pw_infrared' data-ref="pw_infrared">pw_infrared</a>]--;</td></tr>
+<tr><th id="351">351</th><td>		</td></tr>
+<tr><th id="352">352</th><td>    <b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_ironfeet" title='pw_ironfeet' data-ref="pw_ironfeet">pw_ironfeet</a>])</td></tr>
+<tr><th id="353">353</th><td>	<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_ironfeet" title='pw_ironfeet' data-ref="pw_ironfeet">pw_ironfeet</a>]--;</td></tr>
+<tr><th id="354">354</th><td>		</td></tr>
+<tr><th id="355">355</th><td>    <b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::damagecount" title='player_s::damagecount' data-ref="player_s::damagecount">damagecount</a>)</td></tr>
+<tr><th id="356">356</th><td>	<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::damagecount" title='player_s::damagecount' data-ref="player_s::damagecount">damagecount</a>--;</td></tr>
+<tr><th id="357">357</th><td>		</td></tr>
+<tr><th id="358">358</th><td>    <b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::bonuscount" title='player_s::bonuscount' data-ref="player_s::bonuscount">bonuscount</a>)</td></tr>
+<tr><th id="359">359</th><td>	<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::bonuscount" title='player_s::bonuscount' data-ref="player_s::bonuscount">bonuscount</a>--;</td></tr>
+<tr><th id="360">360</th><td></td></tr>
+<tr><th id="361">361</th><td>    </td></tr>
+<tr><th id="362">362</th><td>    <i>// Handling colormaps.</i></td></tr>
+<tr><th id="363">363</th><td>    <b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_invulnerability" title='pw_invulnerability' data-ref="pw_invulnerability">pw_invulnerability</a>])</td></tr>
+<tr><th id="364">364</th><td>    {</td></tr>
+<tr><th id="365">365</th><td>	<b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_invulnerability" title='pw_invulnerability' data-ref="pw_invulnerability">pw_invulnerability</a>] &gt; <var>4</var>*<var>32</var></td></tr>
+<tr><th id="366">366</th><td>	    || (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_invulnerability" title='pw_invulnerability' data-ref="pw_invulnerability">pw_invulnerability</a>]&amp;<var>8</var>) )</td></tr>
+<tr><th id="367">367</th><td>	    <a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::fixedcolormap" title='player_s::fixedcolormap' data-ref="player_s::fixedcolormap">fixedcolormap</a> = <a class="macro" href="#41" title="32" data-ref="_M/INVERSECOLORMAP">INVERSECOLORMAP</a>;</td></tr>
+<tr><th id="368">368</th><td>	<b>else</b></td></tr>
+<tr><th id="369">369</th><td>	    <a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::fixedcolormap" title='player_s::fixedcolormap' data-ref="player_s::fixedcolormap">fixedcolormap</a> = <var>0</var>;</td></tr>
+<tr><th id="370">370</th><td>    }</td></tr>
+<tr><th id="371">371</th><td>    <b>else</b> <b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_infrared" title='pw_infrared' data-ref="pw_infrared">pw_infrared</a>])	</td></tr>
+<tr><th id="372">372</th><td>    {</td></tr>
+<tr><th id="373">373</th><td>	<b>if</b> (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_infrared" title='pw_infrared' data-ref="pw_infrared">pw_infrared</a>] &gt; <var>4</var>*<var>32</var></td></tr>
+<tr><th id="374">374</th><td>	    || (<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::powers" title='player_s::powers' data-ref="player_s::powers">powers</a>[<a class="enum" href="doomdef.h.html#pw_infrared" title='pw_infrared' data-ref="pw_infrared">pw_infrared</a>]&amp;<var>8</var>) )</td></tr>
+<tr><th id="375">375</th><td>	{</td></tr>
+<tr><th id="376">376</th><td>	    <i>// almost full bright</i></td></tr>
+<tr><th id="377">377</th><td>	    <a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::fixedcolormap" title='player_s::fixedcolormap' data-ref="player_s::fixedcolormap">fixedcolormap</a> = <var>1</var>;</td></tr>
+<tr><th id="378">378</th><td>	}</td></tr>
+<tr><th id="379">379</th><td>	<b>else</b></td></tr>
+<tr><th id="380">380</th><td>	    <a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::fixedcolormap" title='player_s::fixedcolormap' data-ref="player_s::fixedcolormap">fixedcolormap</a> = <var>0</var>;</td></tr>
+<tr><th id="381">381</th><td>    }</td></tr>
+<tr><th id="382">382</th><td>    <b>else</b></td></tr>
+<tr><th id="383">383</th><td>	<a class="local col2 ref" href="#12player" title='player' data-ref="12player">player</a>-&gt;<a class="ref" href="d_player.h.html#player_s::fixedcolormap" title='player_s::fixedcolormap' data-ref="player_s::fixedcolormap">fixedcolormap</a> = <var>0</var>;</td></tr>
+<tr><th id="384">384</th><td>}</td></tr>
+<tr><th id="385">385</th><td></td></tr>
+<tr><th id="386">386</th><td></td></tr>
+<tr><th id="387">387</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

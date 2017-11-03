@@ -1,0 +1,4 @@
+<dec f='codebrowser/sounds.h' l='35' type='char *'/>
+<offset>0</offset>
+<doc f='codebrowser/sounds.h' l='34'>// up to 6-character name</doc>
+<use f='codebrowser/i_sound.c' l='455' u='r' c='I_GetSfxLumpNum'/>

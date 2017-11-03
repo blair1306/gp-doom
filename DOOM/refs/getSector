@@ -1,0 +1,10 @@
+<dec f='codebrowser/p_spec.h' l='76' type='sector_t * getSector(int currentSector, int line, int side)'/>
+<use f='codebrowser/p_floor.c' l='417' u='c' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='428' u='c' c='EV_DoFloor'/>
+<def f='codebrowser/p_spec.c' l='219' ll='226' type='sector_t * getSector(int currentSector, int line, int side)'/>
+<doc f='codebrowser/p_spec.c' l='213'>//
+// getSector()
+// Will return a sector_t*
+//  given the number of the current sector,
+//  the line number and the side (0/1) that you want.
+//</doc>

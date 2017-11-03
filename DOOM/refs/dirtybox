@@ -1,0 +1,4 @@
+<dec f='codebrowser/v_video.h' l='49' type='int [4]'/>
+<def f='codebrowser/v_video.c' l='46' type='int [4]'/>
+<use f='codebrowser/v_video.c' l='149' u='r' c='V_MarkRect'/>
+<use f='codebrowser/v_video.c' l='150' u='r' c='V_MarkRect'/>

@@ -1,0 +1,23 @@
+<dec f='codebrowser/m_bbox.h' l='35' type='1'/>
+<use f='codebrowser/m_bbox.c' l='42' u='w' c='M_ClearBox'/>
+<use f='codebrowser/m_bbox.c' l='55' u='r' c='M_AddToBox'/>
+<use f='codebrowser/m_bbox.c' l='56' u='w' c='M_AddToBox'/>
+<use f='codebrowser/p_map.c' l='137' u='w' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='157' u='r' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='193' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='194' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='395' u='w' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='422' u='r' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='433' u='r' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='1333' u='r' c='P_ChangeSector'/>
+<use f='codebrowser/p_maputl.c' l='121' u='r' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='141' u='r' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='146' u='r' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_setup.c' l='408' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='413' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='557' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='564' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='566' u='w' c='P_GroupLines'/>
+<use f='codebrowser/r_bsp.c' l='413' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_main.c' l='148' u='r' c='R_AddPointToBox'/>
+<use f='codebrowser/r_main.c' l='149' u='w' c='R_AddPointToBox'/>

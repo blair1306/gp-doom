@@ -1,0 +1,14 @@
+<dec f='codebrowser/p_map.c' l='808' type='fixed_t'/>
+<use f='codebrowser/p_map.c' l='845' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='846' u='w' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='856' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='874' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='886' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='887' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='1040' u='w' c='P_AimLineAttack'/>
+<def f='codebrowser/p_sight.c' l='41' type='fixed_t'/>
+<use f='codebrowser/p_sight.c' l='232' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='233' u='w' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='243' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='336' u='w' c='P_CheckSight'/>
+<doc f='codebrowser/p_sight.c' l='41'>// slopes to top and bottom of target</doc>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/r_defs.h' l='124' type='int'/>
+<offset>704</offset>
+<doc f='codebrowser/r_defs.h' l='123'>// if == validcount, already checked</doc>
+<use f='codebrowser/p_enemy.c' l='115' u='r' c='P_RecursiveSound'/>
+<use f='codebrowser/p_enemy.c' l='121' u='w' c='P_RecursiveSound'/>
+<use f='codebrowser/r_things.c' l='622' u='r' c='R_AddSprites'/>
+<use f='codebrowser/r_things.c' l='626' u='w' c='R_AddSprites'/>

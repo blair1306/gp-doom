@@ -1,0 +1,2 @@
+<def f='codebrowser/am_map.c' l='1305' ll='1324' type='void AM_drawMarks()'/>
+<use f='codebrowser/am_map.c' l='1345' u='c' c='AM_Drawer'/>

@@ -1,0 +1,2 @@
+<def f='codebrowser/d_net.c' l='261' ll='358' type='void GetPackets()'/>
+<use f='codebrowser/d_net.c' l='445' u='c' c='NetUpdate'/>

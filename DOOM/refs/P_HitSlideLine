@@ -1,0 +1,7 @@
+<def f='codebrowser/p_map.c' l='584' ll='630' type='void P_HitSlideLine(line_t * ld)'/>
+<use f='codebrowser/p_map.c' l='779' u='c' c='P_SlideMove'/>
+<doc f='codebrowser/p_map.c' l='579'>//
+// P_HitSlideLine
+// Adjusts the xmove / ymove
+// so that the next move will slide along the wall.
+//</doc>

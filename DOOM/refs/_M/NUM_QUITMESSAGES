@@ -1,0 +1,6 @@
+<dec f='codebrowser/dstrings.h' l='56'/>
+<doc f='codebrowser/dstrings.h' l='53'>// Not done in french?
+
+// QuitDOOM messages</doc>
+<use f='codebrowser/dstrings.c' l='35' u='c'/>
+<use f='codebrowser/m_menu.c' l='1105' u='c'/>

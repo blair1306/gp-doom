@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>s_sound.h source code [codebrowser/s_sound.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/s_sound.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='s_sound.h.html'>s_sound.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>// DESCRIPTION:</i></td></tr>
+<tr><th id="18">18</th><td><i>//	The not so system specific sound interface.</i></td></tr>
+<tr><th id="19">19</th><td><i>//</i></td></tr>
+<tr><th id="20">20</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="23">ifndef</span> <span class="macro" data-ref="_M/__S_SOUND__">__S_SOUND__</span></u></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/__S_SOUND__" data-ref="_M/__S_SOUND__">__S_SOUND__</dfn></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><u>#<span data-ppcond="27">ifdef</span> <span class="macro" data-ref="_M/__GNUG__">__GNUG__</span></u></td></tr>
+<tr><th id="28">28</th><td><u>#pragma interface</u></td></tr>
+<tr><th id="29">29</th><td><u>#<span data-ppcond="27">endif</span></u></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><i>//</i></td></tr>
+<tr><th id="34">34</th><td><i>// Initializes sound stuff, including volume</i></td></tr>
+<tr><th id="35">35</th><td><i>// Sets channels, SFX and music volume,</i></td></tr>
+<tr><th id="36">36</th><td><i>//  allocates channel buffer, sets S_sfx lookup.</i></td></tr>
+<tr><th id="37">37</th><td><i>//</i></td></tr>
+<tr><th id="38">38</th><td><em>void</em></td></tr>
+<tr><th id="39">39</th><td><dfn class="decl" id="S_Init" title='S_Init' data-ref="S_Init">S_Init</dfn></td></tr>
+<tr><th id="40">40</th><td>( <em>int</em>		<dfn class="local col5 decl" id="455sfxVolume" title='sfxVolume' data-type='int' data-ref="455sfxVolume">sfxVolume</dfn>,</td></tr>
+<tr><th id="41">41</th><td>  <em>int</em>		<dfn class="local col6 decl" id="456musicVolume" title='musicVolume' data-type='int' data-ref="456musicVolume">musicVolume</dfn> );</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><i>//</i></td></tr>
+<tr><th id="47">47</th><td><i>// Per level startup code.</i></td></tr>
+<tr><th id="48">48</th><td><i>// Kills playing sounds at start of level,</i></td></tr>
+<tr><th id="49">49</th><td><i>//  determines music if any, changes music.</i></td></tr>
+<tr><th id="50">50</th><td><i>//</i></td></tr>
+<tr><th id="51">51</th><td><em>void</em> <dfn class="decl" id="S_Start" title='S_Start' data-ref="S_Start">S_Start</dfn>(<em>void</em>);</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><i>//</i></td></tr>
+<tr><th id="55">55</th><td><i>// Start sound for thing at &lt;origin&gt;</i></td></tr>
+<tr><th id="56">56</th><td><i>//  using &lt;sound_id&gt; from sounds.h</i></td></tr>
+<tr><th id="57">57</th><td><i>//</i></td></tr>
+<tr><th id="58">58</th><td><em>void</em></td></tr>
+<tr><th id="59">59</th><td><dfn class="decl" id="S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</dfn></td></tr>
+<tr><th id="60">60</th><td>( <em>void</em>*		<dfn class="local col7 decl" id="457origin" title='origin' data-type='void *' data-ref="457origin">origin</dfn>,</td></tr>
+<tr><th id="61">61</th><td>  <em>int</em>		<dfn class="local col8 decl" id="458sound_id" title='sound_id' data-type='int' data-ref="458sound_id">sound_id</dfn> );</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><i>// Will start a sound at a given volume.</i></td></tr>
+<tr><th id="66">66</th><td><em>void</em></td></tr>
+<tr><th id="67">67</th><td><dfn class="decl" id="S_StartSoundAtVolume" title='S_StartSoundAtVolume' data-ref="S_StartSoundAtVolume">S_StartSoundAtVolume</dfn></td></tr>
+<tr><th id="68">68</th><td>( <em>void</em>*		<dfn class="local col9 decl" id="459origin" title='origin' data-type='void *' data-ref="459origin">origin</dfn>,</td></tr>
+<tr><th id="69">69</th><td>  <em>int</em>		<dfn class="local col0 decl" id="460sound_id" title='sound_id' data-type='int' data-ref="460sound_id">sound_id</dfn>,</td></tr>
+<tr><th id="70">70</th><td>  <em>int</em>		<dfn class="local col1 decl" id="461volume" title='volume' data-type='int' data-ref="461volume">volume</dfn> );</td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><i>// Stop sound for thing at &lt;origin&gt;</i></td></tr>
+<tr><th id="74">74</th><td><em>void</em> <dfn class="decl" id="S_StopSound" title='S_StopSound' data-ref="S_StopSound">S_StopSound</dfn>(<em>void</em>* <dfn class="local col2 decl" id="462origin" title='origin' data-type='void *' data-ref="462origin">origin</dfn>);</td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td><i>// Start music using &lt;music_id&gt; from sounds.h</i></td></tr>
+<tr><th id="78">78</th><td><em>void</em> <dfn class="decl" id="S_StartMusic" title='S_StartMusic' data-ref="S_StartMusic">S_StartMusic</dfn>(<em>int</em> <dfn class="local col3 decl" id="463music_id" title='music_id' data-type='int' data-ref="463music_id">music_id</dfn>);</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><i>// Start music using &lt;music_id&gt; from sounds.h,</i></td></tr>
+<tr><th id="81">81</th><td><i>//  and set whether looping</i></td></tr>
+<tr><th id="82">82</th><td><em>void</em></td></tr>
+<tr><th id="83">83</th><td><dfn class="decl" id="S_ChangeMusic" title='S_ChangeMusic' data-ref="S_ChangeMusic">S_ChangeMusic</dfn></td></tr>
+<tr><th id="84">84</th><td>( <em>int</em>		<dfn class="local col4 decl" id="464music_id" title='music_id' data-type='int' data-ref="464music_id">music_id</dfn>,</td></tr>
+<tr><th id="85">85</th><td>  <em>int</em>		<dfn class="local col5 decl" id="465looping" title='looping' data-type='int' data-ref="465looping">looping</dfn> );</td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td><i>// Stops the music fer sure.</i></td></tr>
+<tr><th id="88">88</th><td><em>void</em> <dfn class="decl" id="S_StopMusic" title='S_StopMusic' data-ref="S_StopMusic">S_StopMusic</dfn>(<em>void</em>);</td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td><i>// Stop and resume music, during game PAUSE.</i></td></tr>
+<tr><th id="91">91</th><td><em>void</em> <dfn class="decl" id="S_PauseSound" title='S_PauseSound' data-ref="S_PauseSound">S_PauseSound</dfn>(<em>void</em>);</td></tr>
+<tr><th id="92">92</th><td><em>void</em> <dfn class="decl" id="S_ResumeSound" title='S_ResumeSound' data-ref="S_ResumeSound">S_ResumeSound</dfn>(<em>void</em>);</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td><i>//</i></td></tr>
+<tr><th id="96">96</th><td><i>// Updates music &amp; sounds</i></td></tr>
+<tr><th id="97">97</th><td><i>//</i></td></tr>
+<tr><th id="98">98</th><td><em>void</em> <dfn class="decl" id="S_UpdateSounds" title='S_UpdateSounds' data-ref="S_UpdateSounds">S_UpdateSounds</dfn>(<em>void</em>* <dfn class="local col6 decl" id="466listener" title='listener' data-type='void *' data-ref="466listener">listener</dfn>);</td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td><em>void</em> <dfn class="decl" id="S_SetMusicVolume" title='S_SetMusicVolume' data-ref="S_SetMusicVolume">S_SetMusicVolume</dfn>(<em>int</em> <dfn class="local col7 decl" id="467volume" title='volume' data-type='int' data-ref="467volume">volume</dfn>);</td></tr>
+<tr><th id="101">101</th><td><em>void</em> <dfn class="decl" id="S_SetSfxVolume" title='S_SetSfxVolume' data-ref="S_SetSfxVolume">S_SetSfxVolume</dfn>(<em>int</em> <dfn class="local col8 decl" id="468volume" title='volume' data-type='int' data-ref="468volume">volume</dfn>);</td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><u>#<span data-ppcond="23">endif</span></u></td></tr>
+<tr><th id="105">105</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="106">106</th><td><i>//</i></td></tr>
+<tr><th id="107">107</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="108">108</th><td><i>//</i></td></tr>
+<tr><th id="109">109</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="110">110</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='d_main.c.html'>codebrowser/d_main.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

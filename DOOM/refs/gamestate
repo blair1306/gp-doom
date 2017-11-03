@@ -1,0 +1,27 @@
+<dec f='codebrowser/doomstat.h' l='193' type='gamestate_t'/>
+<doc f='codebrowser/doomstat.h' l='192'>//?</doc>
+<use f='codebrowser/d_main.c' l='223' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='231' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='235' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='267' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='270' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='274' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='274' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='278' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='285' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='300' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='474' u='w' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='486' u='w' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='493' u='w' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/f_finale.c' l='99' u='w' c='F_StartFinale'/>
+<def f='codebrowser/g_game.c' l='98' type='gamestate_t'/>
+<use f='codebrowser/g_game.c' l='475' u='w' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='507' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='522' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='535' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='552' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='727' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1133' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1174' u='w' c='G_DoWorldDone'/>
+<use f='codebrowser/m_menu.c' l='667' u='r' c='M_SaveGame'/>
+<use f='codebrowser/m_menu.c' l='698' u='r' c='M_QuickSave'/>

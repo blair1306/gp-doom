@@ -1,0 +1,9 @@
+<dec f='codebrowser/m_menu.c' l='183' type='void M_NewGame(int choice)'/>
+<use f='codebrowser/m_menu.c' l='252'/>
+<use f='codebrowser/m_menu.c' l='252'/>
+<use f='codebrowser/m_menu.c' l='252'/>
+<use f='codebrowser/m_menu.c' l='252'/>
+<def f='codebrowser/m_menu.c' l='873' ll='885' type='void M_NewGame(int choice)'/>
+<doc f='codebrowser/m_menu.c' l='180'>//
+// PROTOTYPES
+//</doc>

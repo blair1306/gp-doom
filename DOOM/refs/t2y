@@ -1,0 +1,4 @@
+<def f='codebrowser/p_sight.c' l='45' type='fixed_t'/>
+<use f='codebrowser/p_sight.c' l='190' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='282' u='r' c='P_CrossBSPNode'/>
+<use f='codebrowser/p_sight.c' l='341' u='w' c='P_CheckSight'/>

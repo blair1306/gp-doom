@@ -1,0 +1,7 @@
+<dec f='codebrowser/r_things.h' l='61' type='void R_ClearSprites()'/>
+<use f='codebrowser/r_main.c' l='878' u='c' c='R_RenderPlayerView'/>
+<def f='codebrowser/r_things.c' l='317' ll='320' type='void R_ClearSprites()'/>
+<doc f='codebrowser/r_things.c' l='313'>//
+// R_ClearSprites
+// Called at frame start.
+//</doc>

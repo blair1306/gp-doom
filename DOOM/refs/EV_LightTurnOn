@@ -1,0 +1,13 @@
+<dec f='codebrowser/p_spec.h' l='196' type='void EV_LightTurnOn(line_t * line, int bright)'/>
+<def f='codebrowser/p_lights.c' l='270' ll='307' type='void EV_LightTurnOn(line_t * line, int bright)'/>
+<doc f='codebrowser/p_lights.c' l='267'>//
+// TURN LINE&apos;S TAG LIGHTS ON
+//</doc>
+<use f='codebrowser/p_spec.c' l='587' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='593' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='636' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='819' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='824' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='829' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='640' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='646' u='c' c='P_UseSpecialLine'/>

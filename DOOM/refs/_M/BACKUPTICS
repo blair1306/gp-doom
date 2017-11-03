@@ -1,0 +1,19 @@
+<dec f='codebrowser/d_net.h' l='49'/>
+<use f='codebrowser/d_net.h' l='72' u='c'/>
+<use f='codebrowser/doomstat.h' l='280' u='c'/>
+<use f='codebrowser/doomstat.h' l='286' u='c'/>
+<doc f='codebrowser/d_net.h' l='48'>// Networking and tick handling related.</doc>
+<use f='codebrowser/d_main.c' l='379' u='c'/>
+<use f='codebrowser/d_net.c' l='60' u='c'/>
+<use f='codebrowser/d_net.c' l='62' u='c'/>
+<use f='codebrowser/d_net.c' l='351' u='c'/>
+<use f='codebrowser/d_net.c' l='404' u='c'/>
+<use f='codebrowser/d_net.c' l='408' u='c'/>
+<use f='codebrowser/d_net.c' l='422' u='c'/>
+<use f='codebrowser/d_net.c' l='429' u='c'/>
+<use f='codebrowser/d_net.c' l='582' u='c'/>
+<use f='codebrowser/d_net.c' l='755' u='c'/>
+<use f='codebrowser/g_game.c' l='140' u='c'/>
+<use f='codebrowser/g_game.c' l='253' u='c'/>
+<use f='codebrowser/g_game.c' l='656' u='c'/>
+<use f='codebrowser/g_game.c' l='683' u='c'/>

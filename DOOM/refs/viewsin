@@ -1,0 +1,5 @@
+<dec f='codebrowser/r_main.h' l='39' type='fixed_t'/>
+<def f='codebrowser/r_main.c' l='82' type='fixed_t'/>
+<use f='codebrowser/r_main.c' l='842' u='w' c='R_SetupFrame'/>
+<use f='codebrowser/r_things.c' l='487' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='497' u='r' c='R_ProjectSprite'/>

@@ -1,0 +1,5 @@
+<def f='codebrowser/p_tick.c' l='101' ll='122' type='void P_RunThinkers()'/>
+<use f='codebrowser/p_tick.c' l='152' u='c' c='P_Ticker'/>
+<doc f='codebrowser/p_tick.c' l='98'>//
+// P_RunThinkers
+//</doc>

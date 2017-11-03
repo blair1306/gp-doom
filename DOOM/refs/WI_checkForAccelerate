@@ -1,0 +1,2 @@
+<def f='codebrowser/wi_stuff.c' l='1470' ll='1498' type='void WI_checkForAccelerate()'/>
+<use f='codebrowser/wi_stuff.c' l='1517' u='c' c='WI_Ticker'/>

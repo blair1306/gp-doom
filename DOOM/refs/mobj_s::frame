@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_mobj.h' l='224' type='int'/>
+<offset>512</offset>
+<doc f='codebrowser/p_mobj.h' l='224'>// might be ORed with FF_FULLBRIGHT</doc>
+<use f='codebrowser/p_mobj.c' l='73' u='w' c='P_SetMobjState'/>
+<use f='codebrowser/p_mobj.c' l='514' u='w' c='P_SpawnMobj'/>
+<use f='codebrowser/r_things.c' l='513' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='515' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='517' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='588' u='r' c='R_ProjectSprite'/>

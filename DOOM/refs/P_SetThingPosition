@@ -1,0 +1,13 @@
+<dec f='codebrowser/p_local.h' l='194' type='void P_SetThingPosition(mobj_t * thing)'/>
+<use f='codebrowser/p_enemy.c' l='1276' u='c' c='A_Fire'/>
+<use f='codebrowser/p_map.c' l='174' u='c' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='497' u='c' c='P_TryMove'/>
+<def f='codebrowser/p_maputl.c' l='395' ll='450' type='void P_SetThingPosition(mobj_t * thing)'/>
+<doc f='codebrowser/p_maputl.c' l='389'>//
+// P_SetThingPosition
+// Links a thing into both a block and a subsector
+// based on it&apos;s x y.
+// Sets thing-&gt;subsector properly
+//</doc>
+<use f='codebrowser/p_mobj.c' l='517' u='c' c='P_SpawnMobj'/>
+<use f='codebrowser/p_saveg.c' l='309' u='c' c='P_UnArchiveThinkers'/>

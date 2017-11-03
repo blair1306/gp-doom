@@ -1,0 +1,2 @@
+<def f='codebrowser/r_main.c' l='614' ll='642' type='void R_InitLightTables()'/>
+<use f='codebrowser/r_main.c' l='786' u='c' c='R_Init'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/r_draw.h' l='46' type='void R_DrawColumn()'/>
+<doc f='codebrowser/r_draw.h' l='43'>// The span blitting interface.
+// Hook in assembler or system specific BLT
+//  here.</doc>
+<def f='codebrowser/r_draw.c' l='105' ll='148' type='void R_DrawColumn()'/>
+<doc f='codebrowser/r_draw.c' l='98'>//
+// A column is a vertical slice/span from a wall texture that,
+//  given the DOOM style restrictions on the view orientation,
+//  will always have constant z depth.
+// Thus a special case loop for very fast rendering can
+//  be used. It has also been used with Wolfenstein 3D.
+// </doc>
+<use f='codebrowser/r_main.c' l='704' u='r' c='R_ExecuteSetViewSize'/>

@@ -1,0 +1,4 @@
+<def f='codebrowser/i_sound.c' l='108' type='int'/>
+<use f='codebrowser/i_sound.c' l='670' u='r' c='I_SubmitSound'/>
+<use f='codebrowser/i_sound.c' l='928' u='r' c='I_HandleSoundTimer'/>
+<doc f='codebrowser/i_sound.c' l='107'>// The actual output device.</doc>

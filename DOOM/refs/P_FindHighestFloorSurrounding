@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_spec.h' l='88' type='fixed_t P_FindHighestFloorSurrounding(sector_t * sec)'/>
+<use f='codebrowser/p_floor.c' l='296' u='c' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='312' u='c' c='EV_DoFloor'/>
+<use f='codebrowser/p_plats.c' l='240' u='c' c='EV_DoPlat'/>
+<def f='codebrowser/p_spec.c' l='297' ll='316' type='fixed_t P_FindHighestFloorSurrounding(sector_t * sec)'/>
+<doc f='codebrowser/p_spec.c' l='293'>//
+// P_FindHighestFloorSurrounding()
+// FIND HIGHEST FLOOR HEIGHT IN SURROUNDING SECTORS
+//</doc>

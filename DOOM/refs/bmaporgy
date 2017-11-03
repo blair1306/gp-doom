@@ -1,0 +1,23 @@
+<dec f='codebrowser/p_local.h' l='252' type='fixed_t'/>
+<use f='codebrowser/am_map.c' l='1096' u='r' c='AM_drawGrid'/>
+<use f='codebrowser/am_map.c' l='1098' u='r' c='AM_drawGrid'/>
+<doc f='codebrowser/p_local.h' l='252'>// origin of block map</doc>
+<use f='codebrowser/p_enemy.c' l='1190' u='r' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1191' u='r' c='A_VileChase'/>
+<use f='codebrowser/p_map.c' l='157' u='r' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='158' u='r' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='422' u='r' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='423' u='r' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='433' u='r' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='434' u='r' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='1222' u='r' c='P_RadiusAttack'/>
+<use f='codebrowser/p_map.c' l='1223' u='r' c='P_RadiusAttack'/>
+<use f='codebrowser/p_maputl.c' l='377' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='429' u='r' c='P_SetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='780' u='r' c='P_PathTraverse'/>
+<use f='codebrowser/p_maputl.c' l='789' u='r' c='P_PathTraverse'/>
+<use f='codebrowser/p_maputl.c' l='794' u='r' c='P_PathTraverse'/>
+<def f='codebrowser/p_setup.c' l='93' type='fixed_t'/>
+<use f='codebrowser/p_setup.c' l='482' u='w' c='P_LoadBlockMap'/>
+<use f='codebrowser/p_setup.c' l='560' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='564' u='r' c='P_GroupLines'/>

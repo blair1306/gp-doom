@@ -1,0 +1,5 @@
+<def f='codebrowser/i_net.c' l='105' ll='121' type='void BindToLocalPort(int s, int port)'/>
+<use f='codebrowser/i_net.c' l='328' u='c' c='I_InitNetwork'/>
+<doc f='codebrowser/i_net.c' l='102'>//
+// BindToLocalPort
+//</doc>

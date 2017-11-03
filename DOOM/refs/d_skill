@@ -1,0 +1,8 @@
+<def f='codebrowser/g_game.c' l='1328' type='skill_t'/>
+<use f='codebrowser/g_game.c' l='1338' u='w' c='G_DeferedInitNew'/>
+<use f='codebrowser/g_game.c' l='1356' u='r' c='G_DoNewGame'/>
+<doc f='codebrowser/g_game.c' l='1323'>//
+// G_InitNew
+// Can be called by the startup code or the menu task,
+// consoleplayer, displayplayer, playeringame[] should be set. 
+//</doc>

@@ -1,0 +1,4 @@
+<def f='codebrowser/r_plane.c' l='60' type='short [20480]'/>
+<use f='codebrowser/r_plane.c' l='198' u='r' c='R_ClearPlanes'/>
+<use f='codebrowser/r_plane.c' l='384' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_plane.c' l='386' u='r' c='R_DrawPlanes'/>

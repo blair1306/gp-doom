@@ -1,0 +1,9 @@
+<dec f='codebrowser/sounds.h' l='215' type='36'/>
+<use f='codebrowser/info.c' l='1139'/>
+<use f='codebrowser/info.c' l='1139'/>
+<use f='codebrowser/info.c' l='1139'/>
+<use f='codebrowser/info.c' l='1139'/>
+<use f='codebrowser/m_menu.c' l='1061'/>
+<use f='codebrowser/m_menu.c' l='1061'/>
+<use f='codebrowser/p_enemy.c' l='637' c='A_Look'/>
+<use f='codebrowser/p_enemy.c' l='640' u='r' c='A_Look'/>

@@ -1,0 +1,58 @@
+<dec f='codebrowser/p_spec.h' l='252' type='void P_ChangeSwitchTexture(line_t * line, int useAgain)'/>
+<use f='codebrowser/p_spec.c' l='985' u='c' c='P_ShootSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='991' u='c' c='P_ShootSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='997' u='c' c='P_ShootSpecialLine'/>
+<def f='codebrowser/p_switch.c' l='200' ll='263' type='void P_ChangeSwitchTexture(line_t * line, int useAgain)'/>
+<use f='codebrowser/p_switch.c' l='350' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='356' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='361' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='368' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='374' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='380' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='386' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='392' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='398' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='404' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='410' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='416' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='422' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='428' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='433' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='440' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='446' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='452' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='458' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='464' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='470' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='476' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='482' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='488' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='494' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='504' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='510' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='517' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='523' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='529' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='535' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='541' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='547' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='553' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='559' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='565' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='571' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='577' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='583' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='589' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='595' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='601' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='607' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='613' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='619' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='625' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='635' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='641' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='647' u='c' c='P_UseSpecialLine'/>
+<doc f='codebrowser/p_switch.c' l='196'>//
+// Function that changes wall texture.
+// Tell it if switch is ok to use again (1=yes, it&apos;s a button).
+//</doc>

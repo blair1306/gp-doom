@@ -1,0 +1,5 @@
+<def f='codebrowser/am_map.c' l='161' ll='169' type='mline_t [7]'/>
+<use f='codebrowser/am_map.c' l='1256' u='r' c='AM_drawPlayers'/>
+<use f='codebrowser/am_map.c' l='171' u='r' c='AM_drawPlayers'/>
+<use f='codebrowser/am_map.c' l='1278' u='r' c='AM_drawPlayers'/>
+<use f='codebrowser/am_map.c' l='171' u='r' c='AM_drawPlayers'/>

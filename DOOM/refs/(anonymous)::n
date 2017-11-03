@@ -1,0 +1,8 @@
+<dec f='codebrowser/st_lib.h' l='79' type='st_number_t'/>
+<use f='codebrowser/st_lib.c' l='172' u='a' c='STlib_initPercent'/>
+<use f='codebrowser/st_lib.c' l='184' u='m' c='STlib_updatePercent'/>
+<use f='codebrowser/st_lib.c' l='185' u='m' c='STlib_updatePercent'/>
+<use f='codebrowser/st_lib.c' l='185' u='m' c='STlib_updatePercent'/>
+<use f='codebrowser/st_lib.c' l='187' u='a' c='STlib_updatePercent'/>
+<offset>0</offset>
+<doc f='codebrowser/st_lib.h' l='78'>// number information</doc>

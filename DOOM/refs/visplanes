@@ -1,0 +1,7 @@
+<def f='codebrowser/r_plane.c' l='53' type='visplane_t [128]'/>
+<use f='codebrowser/r_plane.c' l='197' u='r' c='R_ClearPlanes'/>
+<use f='codebrowser/r_plane.c' l='231' u='r' c='R_FindPlane'/>
+<use f='codebrowser/r_plane.c' l='245' u='r' c='R_FindPlane'/>
+<use f='codebrowser/r_plane.c' l='380' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_plane.c' l='382' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_plane.c' l='389' u='r' c='R_DrawPlanes'/>

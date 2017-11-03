@@ -1,0 +1,2 @@
+<dec f='include/X11/Xlib.h' l='3388' type='int XStoreColors(Display * , Colormap , XColor * , int )'/>
+<use f='codebrowser/i_video.c' l='574' u='c' c='UploadNewPalette'/>

@@ -1,0 +1,8 @@
+<dec f='include/alloca.h' l='35'/>
+<use f='codebrowser/r_data.c' l='322' u='c'/>
+<use f='codebrowser/r_data.c' l='451' u='c'/>
+<use f='codebrowser/r_data.c' l='762' u='c'/>
+<use f='codebrowser/r_data.c' l='784' u='c'/>
+<use f='codebrowser/r_data.c' l='819' u='c'/>
+<use f='codebrowser/w_wad.c' l='199' u='c'/>
+<use f='codebrowser/w_wad.c' l='256' u='c'/>

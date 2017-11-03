@@ -1,0 +1,5 @@
+<dec f='codebrowser/am_map.h' l='39' type='void AM_Drawer()'/>
+<def f='codebrowser/am_map.c' l='1332' ll='1349' type='void AM_Drawer()'/>
+<doc f='codebrowser/am_map.h' l='37'>// Called by main loop,
+// called instead of view drawer if automap active.</doc>
+<use f='codebrowser/d_main.c' l='241' u='c' c='D_Display'/>

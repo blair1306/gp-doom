@@ -1,0 +1,7 @@
+<def f='codebrowser/m_menu.c' l='439' ll='447' type='menu_t'/>
+<use f='codebrowser/m_menu.c' l='804' u='m' c='M_DrawSound'/>
+<use f='codebrowser/m_menu.c' l='804' u='m' c='M_DrawSound'/>
+<use f='codebrowser/m_menu.c' l='807' u='m' c='M_DrawSound'/>
+<use f='codebrowser/m_menu.c' l='807' u='m' c='M_DrawSound'/>
+<use f='codebrowser/m_menu.c' l='813' u='a' c='M_Sound'/>
+<use f='codebrowser/m_menu.c' l='1562' u='a' c='M_Responder'/>

@@ -1,0 +1,3 @@
+<dec f='codebrowser/sounds.h' l='183' type='4'/>
+<use f='codebrowser/f_finale.c' l='427' u='r' c='F_CastTicker'/>
+<use f='codebrowser/p_pspr.c' l='705' u='r' c='A_FireShotgun2'/>

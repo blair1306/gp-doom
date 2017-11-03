@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>hu_stuff.h source code [codebrowser/hu_stuff.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/hu_stuff.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='hu_stuff.h.html'>hu_stuff.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>// DESCRIPTION:  Head up display</i></td></tr>
+<tr><th id="18">18</th><td><i>//</i></td></tr>
+<tr><th id="19">19</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><u>#<span data-ppcond="21">ifndef</span> <span class="macro" data-ref="_M/__HU_STUFF_H__">__HU_STUFF_H__</span></u></td></tr>
+<tr><th id="22">22</th><td><u>#define <dfn class="macro" id="_M/__HU_STUFF_H__" data-ref="_M/__HU_STUFF_H__">__HU_STUFF_H__</dfn></u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="d_event.h.html">"d_event.h"</a></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><i>//</i></td></tr>
+<tr><th id="28">28</th><td><i>// Globally visible constants.</i></td></tr>
+<tr><th id="29">29</th><td><i>//</i></td></tr>
+<tr><th id="30">30</th><td><u>#define <dfn class="macro" id="_M/HU_FONTSTART" data-ref="_M/HU_FONTSTART">HU_FONTSTART</dfn>	'!'	// the first font characters</u></td></tr>
+<tr><th id="31">31</th><td><u>#define <dfn class="macro" id="_M/HU_FONTEND" data-ref="_M/HU_FONTEND">HU_FONTEND</dfn>	'_'	// the last font characters</u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><i>// Calculate # of glyphs in font.</i></td></tr>
+<tr><th id="34">34</th><td><u>#define <dfn class="macro" id="_M/HU_FONTSIZE" data-ref="_M/HU_FONTSIZE">HU_FONTSIZE</dfn>	(HU_FONTEND - HU_FONTSTART + 1)</u>	</td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><u>#define <dfn class="macro" id="_M/HU_BROADCAST" data-ref="_M/HU_BROADCAST">HU_BROADCAST</dfn>	5</u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><u>#define <dfn class="macro" id="_M/HU_MSGREFRESH" data-ref="_M/HU_MSGREFRESH">HU_MSGREFRESH</dfn>	KEY_ENTER</u></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/HU_MSGX" data-ref="_M/HU_MSGX">HU_MSGX</dfn>		0</u></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/HU_MSGY" data-ref="_M/HU_MSGY">HU_MSGY</dfn>		0</u></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/HU_MSGWIDTH" data-ref="_M/HU_MSGWIDTH">HU_MSGWIDTH</dfn>	64	// in characters</u></td></tr>
+<tr><th id="42">42</th><td><u>#define <dfn class="macro" id="_M/HU_MSGHEIGHT" data-ref="_M/HU_MSGHEIGHT">HU_MSGHEIGHT</dfn>	1	// in lines</u></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><u>#define <dfn class="macro" id="_M/HU_MSGTIMEOUT" data-ref="_M/HU_MSGTIMEOUT">HU_MSGTIMEOUT</dfn>	(4*TICRATE)</u></td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><i>//</i></td></tr>
+<tr><th id="47">47</th><td><i>// HEADS UP TEXT</i></td></tr>
+<tr><th id="48">48</th><td><i>//</i></td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><em>void</em> <dfn class="decl" id="HU_Init" title='HU_Init' data-ref="HU_Init">HU_Init</dfn>(<em>void</em>);</td></tr>
+<tr><th id="51">51</th><td><em>void</em> <dfn class="decl" id="HU_Start" title='HU_Start' data-ref="HU_Start">HU_Start</dfn>(<em>void</em>);</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a> <dfn class="decl" id="HU_Responder" title='HU_Responder' data-ref="HU_Responder">HU_Responder</dfn>(<a class="typedef" href="d_event.h.html#event_t" title='event_t' data-type='struct event_t' data-ref="event_t">event_t</a>* <dfn class="local col3 decl" id="533ev" title='ev' data-type='event_t *' data-ref="533ev">ev</dfn>);</td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><em>void</em> <dfn class="decl" id="HU_Ticker" title='HU_Ticker' data-ref="HU_Ticker">HU_Ticker</dfn>(<em>void</em>);</td></tr>
+<tr><th id="56">56</th><td><em>void</em> <dfn class="decl" id="HU_Drawer" title='HU_Drawer' data-ref="HU_Drawer">HU_Drawer</dfn>(<em>void</em>);</td></tr>
+<tr><th id="57">57</th><td><em>char</em> <dfn class="decl" id="HU_dequeueChatChar" title='HU_dequeueChatChar' data-ref="HU_dequeueChatChar">HU_dequeueChatChar</dfn>(<em>void</em>);</td></tr>
+<tr><th id="58">58</th><td><em>void</em> <dfn class="decl" id="HU_Erase" title='HU_Erase' data-ref="HU_Erase">HU_Erase</dfn>(<em>void</em>);</td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><u>#<span data-ppcond="21">endif</span></u></td></tr>
+<tr><th id="62">62</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="63">63</th><td><i>//</i></td></tr>
+<tr><th id="64">64</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="65">65</th><td><i>//</i></td></tr>
+<tr><th id="66">66</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="67">67</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='d_main.c.html'>codebrowser/d_main.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

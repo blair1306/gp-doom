@@ -1,0 +1,10 @@
+<dec f='codebrowser/r_data.h' l='42' type='void R_InitData()'/>
+<doc f='codebrowser/r_data.h' l='41'>// I/O, setting up the stuff.</doc>
+<def f='codebrowser/r_data.c' l='654' ll='664' type='void R_InitData()'/>
+<doc f='codebrowser/r_data.c' l='648'>//
+// R_InitData
+// Locates all the lumps
+//  that will be used by all views
+// Must be called after W_Init.
+//</doc>
+<use f='codebrowser/r_main.c' l='775' u='c' c='R_Init'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/i_video.h' l='51' type='void I_ReadScreen(byte * scr)'/>
+<use f='codebrowser/f_wipe.c' l='244' u='c' c='wipe_StartScreen'/>
+<use f='codebrowser/f_wipe.c' l='256' u='c' c='wipe_EndScreen'/>
+<def f='codebrowser/i_video.c' l='527' ll='530' type='void I_ReadScreen(byte * scr)'/>
+<doc f='codebrowser/i_video.c' l='524'>//
+// I_ReadScreen
+//</doc>
+<use f='codebrowser/m_misc.c' l='514' u='c' c='M_ScreenShot'/>

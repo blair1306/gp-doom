@@ -1,0 +1,5 @@
+<dec f='codebrowser/wi_stuff.h' l='44' type='void WI_Drawer()'/>
+<use f='codebrowser/d_main.c' l='251' u='c' c='D_Display'/>
+<doc f='codebrowser/wi_stuff.h' l='42'>// Called by main loop,
+// draws the intermission directly into the screen buffer.</doc>
+<def f='codebrowser/wi_stuff.c' l='1772' ll='1793' type='void WI_Drawer()'/>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/d_main.c' l='889' type='int [2]'/>
+<use f='codebrowser/d_main.c' l='900' u='w' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='900' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='901' u='w' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='901' u='r' c='D_DoomMain'/>
+<def f='codebrowser/g_game.c' l='176' type='fixed_t [2]'/>
+<use f='codebrowser/g_game.c' l='283' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='288' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='291' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='293' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='323' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='325' u='r' c='G_BuildTiccmd'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/d_ticcmd.h' l='42' type='byte'/>
+<offset>48</offset>
+<use f='codebrowser/d_net.c' l='759' u='w' c='TryRunTics'/>
+<use f='codebrowser/g_game.c' l='328' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/hu_stuff.c' l='543' u='r' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='573' u='w' c='HU_Ticker'/>
+<use f='codebrowser/i_net.c' l='144' u='w' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='144' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='215' u='w' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='215' u='r' c='PacketGet'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/p_spec.h' l='247'/>
+<doc f='codebrowser/p_spec.h' l='246'>// 1 second, in ticks. </doc>
+<use f='codebrowser/p_switch.c' l='232' u='c'/>
+<use f='codebrowser/p_switch.c' l='244' u='c'/>
+<use f='codebrowser/p_switch.c' l='256' u='c'/>

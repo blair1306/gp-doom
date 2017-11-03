@@ -1,0 +1,6 @@
+<def f='codebrowser/r_plane.c' l='82' type='lighttable_t **'/>
+<use f='codebrowser/r_plane.c' l='169' u='r' c='R_MapPlane'/>
+<use f='codebrowser/r_plane.c' l='436' u='w' c='R_DrawPlanes'/>
+<doc f='codebrowser/r_plane.c' l='79'>//
+// texture mapping
+//</doc>

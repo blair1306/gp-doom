@@ -1,0 +1,5 @@
+<dec f='codebrowser/tables.h' l='51'/>
+<use f='codebrowser/p_pspr.c' l='123' u='c'/>
+<use f='codebrowser/p_pspr.c' l='126' u='c'/>
+<use f='codebrowser/p_pspr.c' l='330' u='c'/>
+<use f='codebrowser/p_user.c' l='108' u='c'/>

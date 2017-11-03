@@ -1,0 +1,7 @@
+<def f='codebrowser/r_things.c' l='452' ll='604' type='void R_ProjectSprite(mobj_t * thing)'/>
+<use f='codebrowser/r_things.c' l='639' u='c' c='R_AddSprites'/>
+<doc f='codebrowser/r_things.c' l='447'>//
+// R_ProjectSprite
+// Generates a vissprite for a thing
+//  if it might be visible.
+//</doc>

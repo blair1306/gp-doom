@@ -1,0 +1,19 @@
+<dec f='include/string.h' l='394' type='unsigned long strlen(const char * __s)'/>
+<doc f='include/string.h' l='393'>/* Return the length of S.  */</doc>
+<use f='codebrowser/d_main.c' l='551' u='c' c='D_AddFile'/>
+<use f='codebrowser/d_main.c' l='583' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='587' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='591' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='595' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='600' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='603' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='608' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/f_finale.c' l='241' u='c' c='F_Ticker'/>
+<use f='codebrowser/m_menu.c' l='653' u='c' c='M_SaveSelect'/>
+<use f='codebrowser/m_menu.c' l='1261' u='c' c='M_StringWidth'/>
+<use f='codebrowser/m_menu.c' l='1285' u='c' c='M_StringHeight'/>
+<use f='codebrowser/m_menu.c' l='1759' u='c' c='M_Drawer'/>
+<use f='codebrowser/m_menu.c' l='1768' u='c' c='M_Drawer'/>
+<use f='codebrowser/m_misc.c' l='382' u='c' c='M_LoadDefaults'/>
+<use f='codebrowser/w_wad.c' l='93' u='c' c='ExtractFileBase'/>
+<use f='codebrowser/w_wad.c' l='172' u='c' c='W_AddFile'/>

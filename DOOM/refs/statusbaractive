@@ -1,0 +1,8 @@
+<dec f='codebrowser/doomstat.h' l='130' type='boolean'/>
+<doc f='codebrowser/doomstat.h' l='123'>// -------------------------
+// Status flags for refresh.
+//
+
+// Depending on view size - no status bar?
+// Note that there is no way to disable the
+//  status bar explicitely.</doc>

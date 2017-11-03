@@ -1,0 +1,7 @@
+<dec f='codebrowser/i_sound.h' l='107' type='void I_PlaySong(int handle, int looping)'/>
+<doc f='codebrowser/i_sound.h' l='102'>// Called by anything that wishes to start music.
+//  plays a song, and when the song is done,
+//  starts playing it again in an endless loop.
+// Horrible thing to do, considering.</doc>
+<def f='codebrowser/i_sound.c' l='842' ll='847' type='void I_PlaySong(int handle, int looping)'/>
+<use f='codebrowser/s_sound.c' l='683' u='c' c='S_ChangeMusic'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/hu_lib.h' l='150' type='void HUlib_drawSText(hu_stext_t * s)'/>
+<def f='codebrowser/hu_lib.c' l='231' ll='252' type='void HUlib_drawSText(hu_stext_t * s)'/>
+<doc f='codebrowser/hu_lib.h' l='149'>// draws stext</doc>
+<use f='codebrowser/hu_stuff.c' l='489' u='c' c='HU_Drawer'/>

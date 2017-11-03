@@ -1,0 +1,13 @@
+<dec f='codebrowser/r_things.h' l='48' type='fixed_t'/>
+<use f='codebrowser/r_main.c' l='722' u='w' c='R_ExecuteSetViewSize'/>
+<def f='codebrowser/r_things.c' l='74' type='fixed_t'/>
+<use f='codebrowser/r_things.c' l='679' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='686' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='698' u='r' c='R_DrawPSprite'/>
+<doc f='codebrowser/r_things.c' l='67'>//
+// Sprite rotation 0 is facing the viewer,
+//  rotation 1 is one angle turn CLOCKWISE around the axis.
+// This is not the same as the angle,
+//  which increases counter clockwise (protractor).
+// There was a lot of stuff grabbed wrong, so I changed it...
+//</doc>

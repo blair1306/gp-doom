@@ -1,0 +1,19 @@
+<dec f='codebrowser/sounds.h' l='195' type='16'/>
+<use f='codebrowser/f_finale.c' l='436' u='r' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='444' u='r' c='F_CastTicker'/>
+<use f='codebrowser/info.c' l='1347'/>
+<use f='codebrowser/info.c' l='1347'/>
+<use f='codebrowser/info.c' l='1529'/>
+<use f='codebrowser/info.c' l='1529'/>
+<use f='codebrowser/info.c' l='1919'/>
+<use f='codebrowser/info.c' l='1919'/>
+<use f='codebrowser/info.c' l='1945'/>
+<use f='codebrowser/info.c' l='1945'/>
+<use f='codebrowser/info.c' l='1347'/>
+<use f='codebrowser/info.c' l='1347'/>
+<use f='codebrowser/info.c' l='1529'/>
+<use f='codebrowser/info.c' l='1529'/>
+<use f='codebrowser/info.c' l='1919'/>
+<use f='codebrowser/info.c' l='1919'/>
+<use f='codebrowser/info.c' l='1945'/>
+<use f='codebrowser/info.c' l='1945'/>

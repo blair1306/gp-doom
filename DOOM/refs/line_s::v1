@@ -1,0 +1,21 @@
+<dec f='codebrowser/r_defs.h' l='182' type='vertex_t *'/>
+<use f='codebrowser/am_map.c' l='1124' u='r' c='AM_drawWalls'/>
+<use f='codebrowser/am_map.c' l='1125' u='r' c='AM_drawWalls'/>
+<offset>0</offset>
+<doc f='codebrowser/r_defs.h' l='181'>// Vertices, from v1 to v2.</doc>
+<use f='codebrowser/p_maputl.c' l='78' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='85' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='91' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='92' u='r' c='P_PointOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='120' u='r' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='121' u='r' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='130' u='r' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='131' u='r' c='P_BoxOnLineSide'/>
+<use f='codebrowser/p_maputl.c' l='215' u='r' c='P_MakeDivline'/>
+<use f='codebrowser/p_maputl.c' l='216' u='r' c='P_MakeDivline'/>
+<use f='codebrowser/p_maputl.c' l='575' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='575' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_setup.c' l='378' u='w' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='548' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='548' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_sight.c' l='176' u='r' c='P_CrossSubsector'/>

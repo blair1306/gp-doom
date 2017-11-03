@@ -1,0 +1,15 @@
+<dec f='codebrowser/d_main.c' l='190' type='int'/>
+<dec f='codebrowser/hu_stuff.c' l='105' type='int'/>
+<use f='codebrowser/hu_stuff.c' l='518' u='r' c='HU_Ticker'/>
+<def f='codebrowser/m_menu.c' l='79' type='int'/>
+<use f='codebrowser/m_menu.c' l='959' u='r' c='M_DrawOptions'/>
+<use f='codebrowser/m_menu.c' l='982' u='w' c='M_ChangeMessages'/>
+<use f='codebrowser/m_menu.c' l='982' u='r' c='M_ChangeMessages'/>
+<use f='codebrowser/m_menu.c' l='984' u='r' c='M_ChangeMessages'/>
+<doc f='codebrowser/m_menu.c' l='78'>// Show messages has default, 0 = off, 1 = on</doc>
+<dec f='codebrowser/m_misc.c' l='198' type='int'/>
+<dec f='codebrowser/m_misc.c' l='204' type='int'/>
+<use f='codebrowser/m_misc.c' l='239' u='a'/>
+<use f='codebrowser/m_misc.c' l='239' u='a'/>
+<use f='codebrowser/m_misc.c' l='239' u='a'/>
+<use f='codebrowser/m_misc.c' l='239' u='a'/>

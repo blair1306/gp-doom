@@ -1,0 +1,2 @@
+<def f='codebrowser/p_enemy.c' l='1129' ll='1159' type='boolean PIT_VileCheck(mobj_t * thing)'/>
+<use f='codebrowser/p_enemy.c' l='1201' u='r' c='A_VileChase'/>

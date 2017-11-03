@@ -1,0 +1,15 @@
+<dec f='codebrowser/p_local.h' l='118' type='void P_MobjThinker(mobj_t * mobj)'/>
+<use f='codebrowser/p_enemy.c' l='578' u='r' c='A_KeenDie'/>
+<use f='codebrowser/p_enemy.c' l='1470' u='r' c='A_PainShootSkull'/>
+<use f='codebrowser/p_enemy.c' l='1694' u='r' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='1827' u='r' c='A_BrainAwake'/>
+<def f='codebrowser/p_mobj.c' l='415' ll='473' type='void P_MobjThinker(mobj_t * mobj)'/>
+<use f='codebrowser/p_mobj.c' l='529' u='r' c='P_SpawnMobj'/>
+<doc f='codebrowser/p_mobj.c' l='412'>//
+// P_MobjThinker
+//</doc>
+<use f='codebrowser/p_saveg.c' l='240' u='r' c='P_ArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='279' u='r' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='313' u='r' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_telept.c' l='85' u='r' c='EV_Teleport'/>
+<use f='codebrowser/r_data.c' l='824' u='r' c='R_PrecacheLevel'/>

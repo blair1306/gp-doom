@@ -1,0 +1,26 @@
+<def f='codebrowser/p_spec.c' l='101' ll='132' type='animdef_t [23]'/>
+<use f='codebrowser/p_spec.c' l='155' u='m' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='157' u='m' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='160' u='m' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='163' u='m' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='164' u='m' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='168' u='m' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='171' u='m' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='172' u='m' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='175' u='m' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='180' u='m' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='181' u='m' c='P_InitPicAnims'/>
+<use f='codebrowser/p_spec.c' l='183' u='m' c='P_InitPicAnims'/>
+<doc f='codebrowser/p_spec.c' l='88'>//
+// P_InitPicAnims
+//
+
+// Floor/ceiling animation sequences,
+//  defined by first and last frame,
+//  i.e. the flat (64x64 tile) name to
+//  be used.
+// The full animation sequence is given
+//  using all the flats between the start
+//  and end entry, in the order found in
+//  the WAD file.
+//</doc>

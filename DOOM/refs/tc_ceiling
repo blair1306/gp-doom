@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_saveg.c' l='331' type='0'/>
+<use f='codebrowser/p_saveg.c' l='378' u='r' c='P_ArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='390' u='r' c='P_ArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='496' c='P_UnArchiveSpecials'/>

@@ -1,0 +1,9 @@
+<dec f='include/X11/Xlib.h' l='587' type='unsigned int'/>
+<use f='codebrowser/i_video.c' l='221' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='222' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='223' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='237' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='238' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='239' u='r' c='I_GetEvent'/>
+<offset>672</offset>
+<doc f='include/X11/Xlib.h' l='587'>/* detail */</doc>

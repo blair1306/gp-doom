@@ -1,0 +1,5 @@
+<dec f='codebrowser/r_things.h' l='46' type='fixed_t'/>
+<use f='codebrowser/r_segs.c' l='177' u='w' c='R_RenderMaskedSegRange'/>
+<def f='codebrowser/r_things.c' l='349' type='fixed_t'/>
+<use f='codebrowser/r_things.c' l='363' u='r' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='428' u='w' c='R_DrawVisSprite'/>

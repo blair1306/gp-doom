@@ -1,0 +1,9 @@
+<dec f='codebrowser/d_player.h' l='150' type='int'/>
+<offset>1984</offset>
+<doc f='codebrowser/d_player.h' l='149'>// So gun flashes light up areas.</doc>
+<use f='codebrowser/g_game.c' l='788' u='w' c='G_PlayerFinishLevel'/>
+<use f='codebrowser/p_mobj.c' l='681' u='w' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_pspr.c' l='763' u='w' c='A_Light0'/>
+<use f='codebrowser/p_pspr.c' l='768' u='w' c='A_Light1'/>
+<use f='codebrowser/p_pspr.c' l='773' u='w' c='A_Light2'/>
+<use f='codebrowser/r_main.c' l='838' u='r' c='R_SetupFrame'/>

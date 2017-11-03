@@ -1,0 +1,13 @@
+<dec f='codebrowser/p_spec.h' l='290' type='fixed_t'/>
+<offset>288</offset>
+<use f='codebrowser/p_plats.c' l='109' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='122' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='209' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='211' u='r' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='212' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='222' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='224' u='r' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='225' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='235' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='237' u='r' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='238' u='w' c='EV_DoPlat'/>

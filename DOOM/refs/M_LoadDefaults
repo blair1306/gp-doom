@@ -1,0 +1,3 @@
+<dec f='codebrowser/m_misc.h' l='47' type='void M_LoadDefaults()'/>
+<use f='codebrowser/d_main.c' l='1015' u='c' c='D_DoomMain'/>
+<def f='codebrowser/m_misc.c' l='343' ll='406' type='void M_LoadDefaults()'/>

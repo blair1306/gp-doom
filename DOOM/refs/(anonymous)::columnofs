@@ -1,0 +1,9 @@
+<dec f='codebrowser/r_defs.h' l='362' type='int [8]'/>
+<offset>64</offset>
+<doc f='codebrowser/r_defs.h' l='362'>// only [width] used</doc>
+<use f='codebrowser/f_finale.c' l='621' u='r' c='F_DrawPatchCol'/>
+<use f='codebrowser/r_data.c' l='277' u='r' c='R_GenerateComposite'/>
+<use f='codebrowser/r_data.c' l='345' u='r' c='R_GenerateLookup'/>
+<use f='codebrowser/r_things.c' l='438' u='r' c='R_DrawVisSprite'/>
+<use f='codebrowser/v_video.c' l='245' u='r' c='V_DrawPatch'/>
+<use f='codebrowser/v_video.c' l='310' u='r' c='V_DrawPatchFlipped'/>

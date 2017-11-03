@@ -1,0 +1,6 @@
+<def f='codebrowser/g_game.c' l='177' type='fixed_t [3]'/>
+<use f='codebrowser/g_game.c' l='299' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='301' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='303' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='305' u='r' c='G_BuildTiccmd'/>
+<doc f='codebrowser/g_game.c' l='177'>// + slow turn </doc>

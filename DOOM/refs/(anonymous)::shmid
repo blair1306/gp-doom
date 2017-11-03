@@ -1,0 +1,5 @@
+<dec f='include/X11/extensions/XShm.h' l='52' type='int'/>
+<use f='codebrowser/i_video.c' l='172' u='r' c='I_ShutdownGraphics'/>
+<use f='codebrowser/i_video.c' l='682' u='w' c='grabsharedmemory'/>
+<offset>64</offset>
+<doc f='include/X11/extensions/XShm.h' l='52'>/* kernel id */</doc>

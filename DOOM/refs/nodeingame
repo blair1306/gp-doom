@@ -1,0 +1,10 @@
+<def f='codebrowser/d_net.c' l='64' type='boolean [8]'/>
+<use f='codebrowser/d_net.c' l='285' u='r' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='287' u='w' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='418' u='r' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='561' u='w' c='D_CheckNetGame'/>
+<use f='codebrowser/d_net.c' l='589' u='w' c='D_CheckNetGame'/>
+<use f='codebrowser/d_net.c' l='618' u='r' c='D_QuitNetGame'/>
+<use f='codebrowser/d_net.c' l='659' u='r' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='721' u='r' c='TryRunTics'/>
+<doc f='codebrowser/d_net.c' l='64'>// set false as nodes leave game</doc>

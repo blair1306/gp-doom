@@ -1,0 +1,26 @@
+<dec f='codebrowser/p_mobj.h' l='255' type='int'/>
+<offset>1312</offset>
+<use f='codebrowser/p_enemy.c' l='584' u='r' c='A_KeenDie'/>
+<use f='codebrowser/p_enemy.c' l='684' u='r' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='874' u='r' c='A_CPosRefire'/>
+<use f='codebrowser/p_enemy.c' l='891' u='r' c='A_SpidRefire'/>
+<use f='codebrowser/p_enemy.c' l='1047' u='r' c='A_Tracer'/>
+<use f='codebrowser/p_enemy.c' l='1216' u='w' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1700' u='r' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='2000' u='r' c='A_PlayerScream'/>
+<use f='codebrowser/p_inter.c' l='239' u='w' c='P_GiveBody'/>
+<use f='codebrowser/p_inter.c' l='363' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='387' u='w' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='404' u='w' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='413' u='w' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='719' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='790' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='821' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='839' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='841' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='887' u='w' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='888' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_map.c' l='1269' u='r' c='PIT_ChangeSector'/>
+<use f='codebrowser/p_mobj.c' l='501' u='w' c='P_SpawnMobj'/>
+<use f='codebrowser/p_mobj.c' l='673' u='w' c='P_SpawnPlayer'/>
+<use f='codebrowser/st_stuff.c' l='555' u='w' c='ST_Responder'/>

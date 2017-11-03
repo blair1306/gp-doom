@@ -1,0 +1,9 @@
+<def f='codebrowser/p_sight.c' l='257' ll='290' type='boolean P_CrossBSPNode(int bspnum)'/>
+<use f='codebrowser/p_sight.c' l='278' u='c' c='P_CrossBSPNode'/>
+<use f='codebrowser/p_sight.c' l='289' u='c' c='P_CrossBSPNode'/>
+<use f='codebrowser/p_sight.c' l='346' u='c' c='P_CheckSight'/>
+<doc f='codebrowser/p_sight.c' l='252'>//
+// P_CrossBSPNode
+// Returns true
+//  if strace crosses the given node successfully.
+//</doc>

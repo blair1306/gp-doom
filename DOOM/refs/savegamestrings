@@ -1,0 +1,19 @@
+<def f='codebrowser/m_menu.c' l='132' type='char [10][24]'/>
+<use f='codebrowser/m_menu.c' l='528' u='a' c='M_ReadSaveStrings'/>
+<use f='codebrowser/m_menu.c' l='532' u='a' c='M_ReadSaveStrings'/>
+<use f='codebrowser/m_menu.c' l='550' u='r' c='M_DrawLoad'/>
+<use f='codebrowser/m_menu.c' l='618' u='r' c='M_DrawSave'/>
+<use f='codebrowser/m_menu.c' l='623' u='r' c='M_DrawSave'/>
+<use f='codebrowser/m_menu.c' l='633' u='r' c='M_DoSave'/>
+<use f='codebrowser/m_menu.c' l='650' u='r' c='M_SaveSelect'/>
+<use f='codebrowser/m_menu.c' l='651' u='r' c='M_SaveSelect'/>
+<use f='codebrowser/m_menu.c' l='652' u='w' c='M_SaveSelect'/>
+<use f='codebrowser/m_menu.c' l='653' u='r' c='M_SaveSelect'/>
+<use f='codebrowser/m_menu.c' l='709' c='M_QuickSave'/>
+<use f='codebrowser/m_menu.c' l='741' c='M_QuickLoad'/>
+<use f='codebrowser/m_menu.c' l='1461' u='w' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1467' u='a' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1472' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1483' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1486' u='w' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1487' u='w' c='M_Responder'/>

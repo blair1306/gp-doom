@@ -1,0 +1,18 @@
+<dec f='codebrowser/r_state.h' l='44' type='fixed_t *'/>
+<doc f='codebrowser/r_state.h' l='38'>//
+// Refresh internal data structures,
+//  for rendering.
+//
+
+// needed for texture pegging</doc>
+<use f='codebrowser/p_floor.c' l='386' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='389' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='392' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='395' u='r' c='EV_DoFloor'/>
+<def f='codebrowser/r_data.c' l='147' type='fixed_t *'/>
+<use f='codebrowser/r_data.c' l='488' u='w' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='556' u='r' c='R_InitTextures'/>
+<doc f='codebrowser/r_data.c' l='146'>// needed for texture pegging</doc>
+<use f='codebrowser/r_segs.c' l='148' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='465' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='583' u='r' c='R_StoreWallRange'/>

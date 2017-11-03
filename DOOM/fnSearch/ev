@@ -1,0 +1,14 @@
+EV_CeilingCrushStop|EV_CeilingCrushStop
+EV_DoCeiling|EV_DoCeiling
+EV_DoDoor|EV_DoDoor
+EV_DoLockedDoor|EV_DoLockedDoor
+EV_VerticalDoor|EV_VerticalDoor
+EV_BuildStairs|EV_BuildStairs
+EV_DoFloor|EV_DoFloor
+EV_LightTurnOn|EV_LightTurnOn
+EV_StartLightStrobing|EV_StartLightStrobing
+EV_TurnTagLightsOff|EV_TurnTagLightsOff
+EV_DoPlat|EV_DoPlat
+EV_StopPlat|EV_StopPlat
+EV_DoDonut|EV_DoDonut
+EV_Teleport|EV_Teleport

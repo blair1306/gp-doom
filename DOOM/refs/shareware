@@ -1,0 +1,19 @@
+<dec f='codebrowser/doomdef.h' l='40' type='0'/>
+<doc f='codebrowser/doomdef.h' l='40'>// DOOM 1 shareware, E1, M9</doc>
+<use f='codebrowser/d_main.c' l='619' u='r' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='706' u='r' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='826' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='917' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1037' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1067' c='D_DoomMain'/>
+<use f='codebrowser/f_finale.c' l='110' c='F_StartFinale'/>
+<use f='codebrowser/g_game.c' l='1394' u='r' c='G_InitNew'/>
+<use f='codebrowser/hu_stuff.c' l='448' c='HU_Start'/>
+<use f='codebrowser/m_menu.c' l='760' c='M_DrawReadThis1'/>
+<use f='codebrowser/m_menu.c' l='786' c='M_DrawReadThis2'/>
+<use f='codebrowser/m_menu.c' l='921' u='r' c='M_Episode'/>
+<use f='codebrowser/m_menu.c' l='1879' c='M_Init'/>
+<use f='codebrowser/p_pspr.c' l='187' u='r' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='222' u='r' c='P_CheckAmmo'/>
+<use f='codebrowser/p_user.c' l='314' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/st_stuff.c' l='711' u='r' c='ST_Responder'/>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/p_local.h' l='211' type='boolean P_TryMove(mobj_t * thing, fixed_t x, fixed_t y)'/>
+<use f='codebrowser/p_enemy.c' l='293' u='c' c='P_Move'/>
+<use f='codebrowser/p_enemy.c' l='1496' u='c' c='A_PainShootSkull'/>
+<def f='codebrowser/p_map.c' l='450' ll='517' type='boolean P_TryMove(mobj_t * thing, fixed_t x, fixed_t y)'/>
+<use f='codebrowser/p_map.c' l='750' u='c' c='P_SlideMove'/>
+<use f='codebrowser/p_map.c' l='751' u='c' c='P_SlideMove'/>
+<use f='codebrowser/p_map.c' l='762' u='c' c='P_SlideMove'/>
+<use f='codebrowser/p_map.c' l='784' u='c' c='P_SlideMove'/>
+<doc f='codebrowser/p_map.c' l='445'>//
+// P_TryMove
+// Attempt to move to a new position,
+// crossing special lines unless MF_TELEPORT is set.
+//</doc>
+<use f='codebrowser/p_mobj.c' l='166' u='c' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='880' u='c' c='P_CheckMissileSpawn'/>

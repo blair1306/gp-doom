@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_mobj.c' l='44' type='void P_SpawnMapThing(mapthing_t * mthing)'/>
+<def f='codebrowser/p_mobj.c' l='708' ll='797' type='void P_SpawnMapThing(mapthing_t * mthing)'/>
+<doc f='codebrowser/p_mobj.c' l='703'>//
+// P_SpawnMapThing
+// The fields of the mapthing should
+// already be in host byte order.
+//</doc>
+<dec f='codebrowser/p_setup.c' l='49' type='void P_SpawnMapThing(mapthing_t * mthing)'/>
+<use f='codebrowser/p_setup.c' l='346' u='c' c='P_LoadThings'/>

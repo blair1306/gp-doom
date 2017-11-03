@@ -1,0 +1,9 @@
+<def f='codebrowser/r_segs.c' l='79' type='int'/>
+<use f='codebrowser/r_segs.c' l='527' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='537' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='589' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='601' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='692' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='700' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='702' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='703' u='r' c='R_StoreWallRange'/>

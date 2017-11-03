@@ -1,0 +1,4 @@
+<dec f='codebrowser/sounds.h' l='234' type='55'/>
+<use f='codebrowser/f_finale.c' l='440' u='r' c='F_CastTicker'/>
+<use f='codebrowser/p_enemy.c' l='923' u='r' c='A_TroopAttack'/>
+<use f='codebrowser/p_enemy.c' l='988' u='r' c='A_BruisAttack'/>

@@ -1,0 +1,12 @@
+<def f='codebrowser/i_sound.c' l='124' type='unsigned char *[8]'/>
+<use f='codebrowser/i_sound.c' l='297' u='r' c='addsfx'/>
+<use f='codebrowser/i_sound.c' l='301' u='w' c='addsfx'/>
+<use f='codebrowser/i_sound.c' l='310' u='r' c='addsfx'/>
+<use f='codebrowser/i_sound.c' l='331' u='w' c='addsfx'/>
+<use f='codebrowser/i_sound.c' l='333' u='r' c='addsfx'/>
+<use f='codebrowser/i_sound.c' l='589' u='r' c='I_UpdateSound'/>
+<use f='codebrowser/i_sound.c' l='592' u='r' c='I_UpdateSound'/>
+<use f='codebrowser/i_sound.c' l='602' u='w' c='I_UpdateSound'/>
+<use f='codebrowser/i_sound.c' l='607' u='r' c='I_UpdateSound'/>
+<use f='codebrowser/i_sound.c' l='608' u='w' c='I_UpdateSound'/>
+<doc f='codebrowser/i_sound.c' l='123'>// The channel data pointers, start and end.</doc>

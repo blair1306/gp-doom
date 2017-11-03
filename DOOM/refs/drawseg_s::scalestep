@@ -1,0 +1,4 @@
+<dec f='codebrowser/r_defs.h' l='330' type='fixed_t'/>
+<offset>192</offset>
+<use f='codebrowser/r_segs.c' l='138' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='425' u='w' c='R_StoreWallRange'/>

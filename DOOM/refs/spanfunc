@@ -1,0 +1,6 @@
+<dec f='codebrowser/r_main.h' l='104' type='void (*)(void)'/>
+<doc f='codebrowser/r_main.h' l='103'>// No shadow effects on floors.</doc>
+<def f='codebrowser/r_main.c' l='129' type='void (*)(void)'/>
+<use f='codebrowser/r_main.c' l='707' u='w' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_main.c' l='714' u='w' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_plane.c' l='177' u='r' c='R_MapPlane'/>

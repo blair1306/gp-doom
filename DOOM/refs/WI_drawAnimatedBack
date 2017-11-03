@@ -1,0 +1,5 @@
+<def f='codebrowser/wi_stuff.c' l='583' ll='602' type='void WI_drawAnimatedBack()'/>
+<use f='codebrowser/wi_stuff.c' l='780' u='c' c='WI_drawShowNextLoc'/>
+<use f='codebrowser/wi_stuff.c' l='997' u='c' c='WI_drawDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1271' u='c' c='WI_drawNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1446' u='c' c='WI_drawStats'/>

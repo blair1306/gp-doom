@@ -1,0 +1,9 @@
+<dec f='codebrowser/w_wad.h' l='76' type='void W_ReadLump(int lump, void * dest)'/>
+<use f='codebrowser/r_data.c' l='643' u='c' c='R_InitColormaps'/>
+<def f='codebrowser/w_wad.c' l='431' ll='467' type='void W_ReadLump(int lump, void * dest)'/>
+<use f='codebrowser/w_wad.c' l='491' u='c' c='W_CacheLumpNum'/>
+<doc f='codebrowser/w_wad.c' l='426'>//
+// W_ReadLump
+// Loads the lump into the given buffer,
+//  which must be &gt;= W_LumpLength().
+//</doc>

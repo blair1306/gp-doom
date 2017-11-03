@@ -1,0 +1,10 @@
+<dec f='codebrowser/p_spec.h' l='52' type='boolean P_UseSpecialLine(mobj_t * thing, line_t * line, int side)'/>
+<doc f='codebrowser/p_spec.h' l='50'>// when needed</doc>
+<use f='codebrowser/p_enemy.c' l='321' u='c' c='P_Move'/>
+<use f='codebrowser/p_map.c' l='1119' u='c' c='PTR_UseTraverse'/>
+<def f='codebrowser/p_switch.c' l='275' ll='653' type='boolean P_UseSpecialLine(mobj_t * thing, line_t * line, int side)'/>
+<doc f='codebrowser/p_switch.c' l='270'>//
+// P_UseSpecialLine
+// Called when a thing uses a special line.
+// Only the front sides of lines are usable.
+//</doc>

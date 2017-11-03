@@ -1,0 +1,8 @@
+<dec f='codebrowser/r_main.h' l='38' type='fixed_t'/>
+<doc f='codebrowser/r_main.h' l='35'>//
+// POV related.
+//</doc>
+<def f='codebrowser/r_main.c' l='81' type='fixed_t'/>
+<use f='codebrowser/r_main.c' l='843' u='w' c='R_SetupFrame'/>
+<use f='codebrowser/r_things.c' l='486' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='498' u='r' c='R_ProjectSprite'/>

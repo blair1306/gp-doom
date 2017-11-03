@@ -1,0 +1,10 @@
+<dec f='codebrowser/r_draw.h' l='76' type='byte *'/>
+<doc f='codebrowser/r_draw.h' l='75'>// start of a 64*64 tile image</doc>
+<def f='codebrowser/r_draw.c' l='512' type='byte *'/>
+<use f='codebrowser/r_draw.c' l='556' u='r' c='R_DrawSpan'/>
+<use f='codebrowser/r_draw.c' l='679' u='r' c='R_DrawSpanLow'/>
+<use f='codebrowser/r_draw.c' l='680' u='r' c='R_DrawSpanLow'/>
+<doc f='codebrowser/r_draw.c' l='511'>// start of a 64*64 tile image </doc>
+<use f='codebrowser/r_plane.c' l='423' u='w' c='R_DrawPlanes'/>
+<use f='codebrowser/r_plane.c' l='451' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_plane.c' l='451' u='r' c='R_DrawPlanes'/>

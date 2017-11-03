@@ -1,0 +1,10 @@
+<dec f='codebrowser/d_player.h' l='178' type='int'/>
+<offset>32</offset>
+<doc f='codebrowser/d_player.h' l='177'>// Player stats, kills, collected items etc.</doc>
+<use f='codebrowser/g_game.c' l='1125' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/wi_stuff.c' l='1125' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1150' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1151' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1338' u='r' c='WI_updateStats'/>
+<use f='codebrowser/wi_stuff.c' l='1354' u='r' c='WI_updateStats'/>
+<use f='codebrowser/wi_stuff.c' l='1356' u='r' c='WI_updateStats'/>

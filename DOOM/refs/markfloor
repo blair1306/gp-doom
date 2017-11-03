@@ -1,0 +1,12 @@
+<dec f='codebrowser/r_bsp.h' l='43' type='boolean'/>
+<doc f='codebrowser/r_bsp.h' l='42'>// false if the back side is the same plane</doc>
+<def f='codebrowser/r_segs.c' l='49' type='boolean'/>
+<use f='codebrowser/r_segs.c' l='248' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='348' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='461' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='541' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='546' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='566' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='668' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='711' u='r' c='R_StoreWallRange'/>
+<doc f='codebrowser/r_segs.c' l='48'>// False if the back side is the same plane.</doc>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_player.h' l='158' type='int'/>
+<offset>2048</offset>
+<doc f='codebrowser/d_player.h' l='156'>// Player skin colorshift,
+    //  0-3 for which color to draw player.</doc>

@@ -1,0 +1,3 @@
+<dec f='codebrowser/hu_lib.h' l='169' type='void HUlib_eraseLineFromIText(hu_itext_t * it)'/>
+<def f='codebrowser/hu_lib.c' l='292' ll='296' type='void HUlib_eraseLineFromIText(hu_itext_t * it)'/>
+<doc f='codebrowser/hu_lib.h' l='168'>// enforces left margin</doc>

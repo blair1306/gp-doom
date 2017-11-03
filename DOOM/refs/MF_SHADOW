@@ -1,0 +1,13 @@
+<dec f='codebrowser/p_mobj.h' l='167' type='262144'/>
+<doc f='codebrowser/p_mobj.h' l='165'>// Use fuzzy draw (shadow demons or spectres),
+    //  temporary player invisibility powerup.</doc>
+<use f='codebrowser/g_game.c' l='787' u='r' c='G_PlayerFinishLevel'/>
+<use f='codebrowser/info.c' l='1468' u='r'/>
+<use f='codebrowser/info.c' l='1468' u='r'/>
+<use f='codebrowser/info.c' l='1468' u='r'/>
+<use f='codebrowser/info.c' l='1468' u='r'/>
+<use f='codebrowser/p_enemy.c' l='794' u='r' c='A_FaceTarget'/>
+<use f='codebrowser/p_inter.c' l='303' u='r' c='P_GivePower'/>
+<use f='codebrowser/p_mobj.c' l='909' u='r' c='P_SpawnMissile'/>
+<use f='codebrowser/p_user.c' l='347' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/r_things.c' l='578' u='r' c='R_ProjectSprite'/>

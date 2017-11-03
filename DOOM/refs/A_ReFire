@@ -1,0 +1,81 @@
+<dec f='codebrowser/info.c' l='64' type='void A_ReFire()'/>
+<use f='codebrowser/info.c' l='145'/>
+<use f='codebrowser/info.c' l='145'/>
+<use f='codebrowser/info.c' l='145'/>
+<use f='codebrowser/info.c' l='145'/>
+<use f='codebrowser/info.c' l='152'/>
+<use f='codebrowser/info.c' l='152'/>
+<use f='codebrowser/info.c' l='152'/>
+<use f='codebrowser/info.c' l='152'/>
+<use f='codebrowser/info.c' l='165'/>
+<use f='codebrowser/info.c' l='165'/>
+<use f='codebrowser/info.c' l='165'/>
+<use f='codebrowser/info.c' l='165'/>
+<use f='codebrowser/info.c' l='180'/>
+<use f='codebrowser/info.c' l='180'/>
+<use f='codebrowser/info.c' l='180'/>
+<use f='codebrowser/info.c' l='180'/>
+<use f='codebrowser/info.c' l='190'/>
+<use f='codebrowser/info.c' l='190'/>
+<use f='codebrowser/info.c' l='190'/>
+<use f='codebrowser/info.c' l='190'/>
+<use f='codebrowser/info.c' l='198'/>
+<use f='codebrowser/info.c' l='198'/>
+<use f='codebrowser/info.c' l='198'/>
+<use f='codebrowser/info.c' l='198'/>
+<use f='codebrowser/info.c' l='209'/>
+<use f='codebrowser/info.c' l='209'/>
+<use f='codebrowser/info.c' l='209'/>
+<use f='codebrowser/info.c' l='209'/>
+<use f='codebrowser/info.c' l='214'/>
+<use f='codebrowser/info.c' l='214'/>
+<use f='codebrowser/info.c' l='214'/>
+<use f='codebrowser/info.c' l='214'/>
+<use f='codebrowser/info.c' l='223'/>
+<use f='codebrowser/info.c' l='223'/>
+<use f='codebrowser/info.c' l='223'/>
+<use f='codebrowser/info.c' l='223'/>
+<use f='codebrowser/info.c' l='145'/>
+<use f='codebrowser/info.c' l='145'/>
+<use f='codebrowser/info.c' l='145'/>
+<use f='codebrowser/info.c' l='145'/>
+<use f='codebrowser/info.c' l='152'/>
+<use f='codebrowser/info.c' l='152'/>
+<use f='codebrowser/info.c' l='152'/>
+<use f='codebrowser/info.c' l='152'/>
+<use f='codebrowser/info.c' l='165'/>
+<use f='codebrowser/info.c' l='165'/>
+<use f='codebrowser/info.c' l='165'/>
+<use f='codebrowser/info.c' l='165'/>
+<use f='codebrowser/info.c' l='180'/>
+<use f='codebrowser/info.c' l='180'/>
+<use f='codebrowser/info.c' l='180'/>
+<use f='codebrowser/info.c' l='180'/>
+<use f='codebrowser/info.c' l='190'/>
+<use f='codebrowser/info.c' l='190'/>
+<use f='codebrowser/info.c' l='190'/>
+<use f='codebrowser/info.c' l='190'/>
+<use f='codebrowser/info.c' l='198'/>
+<use f='codebrowser/info.c' l='198'/>
+<use f='codebrowser/info.c' l='198'/>
+<use f='codebrowser/info.c' l='198'/>
+<use f='codebrowser/info.c' l='209'/>
+<use f='codebrowser/info.c' l='209'/>
+<use f='codebrowser/info.c' l='209'/>
+<use f='codebrowser/info.c' l='209'/>
+<use f='codebrowser/info.c' l='214'/>
+<use f='codebrowser/info.c' l='214'/>
+<use f='codebrowser/info.c' l='214'/>
+<use f='codebrowser/info.c' l='214'/>
+<use f='codebrowser/info.c' l='223'/>
+<use f='codebrowser/info.c' l='223'/>
+<use f='codebrowser/info.c' l='223'/>
+<use f='codebrowser/info.c' l='223'/>
+<dec f='codebrowser/p_enemy.c' l='1794' type='void A_ReFire(player_t * player, pspdef_t * psp)'/>
+<use f='codebrowser/p_enemy.c' l='1804' u='c' c='A_CloseShotgun2'/>
+<def f='codebrowser/p_pspr.c' l='343' ll='362' type='void A_ReFire(player_t * player, pspdef_t * psp)'/>
+<doc f='codebrowser/p_pspr.c' l='338'>//
+// A_ReFire
+// The player can re-fire the weapon
+// without lowering it entirely.
+//</doc>

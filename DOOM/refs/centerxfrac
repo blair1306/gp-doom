@@ -1,0 +1,12 @@
+<dec f='codebrowser/r_main.h' l='51' type='fixed_t'/>
+<def f='codebrowser/r_main.c' l='64' type='fixed_t'/>
+<use f='codebrowser/r_main.c' l='557' u='r' c='R_InitTextureMapping'/>
+<use f='codebrowser/r_main.c' l='569' u='r' c='R_InitTextureMapping'/>
+<use f='codebrowser/r_main.c' l='698' u='w' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_main.c' l='700' u='r' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_plane.c' l='207' u='r' c='R_ClearPlanes'/>
+<use f='codebrowser/r_plane.c' l='208' u='r' c='R_ClearPlanes'/>
+<use f='codebrowser/r_things.c' l='536' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='543' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='679' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='686' u='r' c='R_DrawPSprite'/>

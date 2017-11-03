@@ -1,0 +1,5 @@
+<def f='codebrowser/r_plane.c' l='83' type='fixed_t'/>
+<use f='codebrowser/r_plane.c' l='141' u='r' c='R_MapPlane'/>
+<use f='codebrowser/r_plane.c' l='143' u='r' c='R_MapPlane'/>
+<use f='codebrowser/r_plane.c' l='144' u='r' c='R_MapPlane'/>
+<use f='codebrowser/r_plane.c' l='427' u='w' c='R_DrawPlanes'/>

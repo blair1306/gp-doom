@@ -1,0 +1,5 @@
+<def f='codebrowser/p_inter.c' l='667' ll='758' type='void P_KillMobj(mobj_t * source, mobj_t * target)'/>
+<use f='codebrowser/p_inter.c' l='890' u='c' c='P_DamageMobj'/>
+<doc f='codebrowser/p_inter.c' l='664'>//
+// KillMobj
+//</doc>

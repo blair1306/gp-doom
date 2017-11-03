@@ -1,0 +1,4 @@
+<dec f='codebrowser/s_sound.h' l='101' type='void S_SetSfxVolume(int volume)'/>
+<use f='codebrowser/m_menu.c' l='830' u='c' c='M_SfxVol'/>
+<use f='codebrowser/s_sound.c' l='172' u='c' c='S_Init'/>
+<def f='codebrowser/s_sound.c' l='631' ll='639' type='void S_SetSfxVolume(int volume)'/>

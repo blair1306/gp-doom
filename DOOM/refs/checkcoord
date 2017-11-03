@@ -1,0 +1,11 @@
+<def f='codebrowser/r_bsp.c' l='365' ll='378' type='int [12][4]'/>
+<use f='codebrowser/r_bsp.c' l='422' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='423' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='424' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='425' u='r' c='R_CheckBBox'/>
+<doc f='codebrowser/r_bsp.c' l='359'>//
+// R_CheckBBox
+// Checks BSP node/subtree bounding box.
+// Returns true
+//  if some part of the bbox might be visible.
+//</doc>

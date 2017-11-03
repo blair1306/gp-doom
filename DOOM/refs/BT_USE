@@ -1,0 +1,8 @@
+<dec f='codebrowser/d_event.h' l='77' type='2'/>
+<doc f='codebrowser/d_event.h' l='76'>// Use button, to open doors, activate switches.</doc>
+<use f='codebrowser/g_game.c' l='336' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='362' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='389' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/p_user.c' l='227' u='r' c='P_DeathThink'/>
+<use f='codebrowser/p_user.c' l='322' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/wi_stuff.c' l='1488' u='r' c='WI_checkForAccelerate'/>

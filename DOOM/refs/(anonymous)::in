@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_player.h' l='175' type='boolean'/>
+<offset>0</offset>
+<doc f='codebrowser/d_player.h' l='175'>// whether the player is in game</doc>
+<use f='codebrowser/g_game.c' l='1124' u='w' c='G_DoCompleted'/>

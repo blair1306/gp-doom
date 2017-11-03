@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_spec.h' l='368' type='void EV_VerticalDoor(line_t * line, mobj_t * thing)'/>
+<def f='codebrowser/p_doors.c' l='353' ll='499' type='void EV_VerticalDoor(line_t * line, mobj_t * thing)'/>
+<doc f='codebrowser/p_doors.c' l='350'>//
+// EV_VerticalDoor : open a door manually, no tag value
+//</doc>
+<use f='codebrowser/p_switch.c' l='338' u='c' c='P_UseSpecialLine'/>

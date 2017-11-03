@@ -1,0 +1,5 @@
+<def f='codebrowser/r_main.c' l='830' ll='863' type='void R_SetupFrame(player_t * player)'/>
+<use f='codebrowser/r_main.c' l='872' u='c' c='R_RenderPlayerView'/>
+<doc f='codebrowser/r_main.c' l='827'>//
+// R_SetupFrame
+//</doc>

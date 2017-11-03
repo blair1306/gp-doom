@@ -1,0 +1,3 @@
+<def f='codebrowser/f_wipe.c' l='128' ll='135' type='int wipe_exitColorXForm(int width, int height, int ticks)'/>
+<use f='codebrowser/f_wipe.c' l='273' u='r' c='wipe_ScreenWipe'/>
+<use f='codebrowser/f_wipe.c' l='273' u='r' c='wipe_ScreenWipe'/>

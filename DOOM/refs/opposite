@@ -1,0 +1,5 @@
+<def f='codebrowser/p_enemy.c' l='70' ll='74' type='dirtype_t [9]'/>
+<use f='codebrowser/p_enemy.c' l='379' u='r' c='P_NewChaseDir'/>
+<doc f='codebrowser/p_enemy.c' l='67'>//
+// P_NewChaseDir related LUT.
+//</doc>

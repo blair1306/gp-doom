@@ -1,0 +1,4 @@
+<dec f='codebrowser/sounds.h' l='288' type='109'/>
+<use f='codebrowser/i_sound.c' l='105'/>
+<use f='codebrowser/s_sound.c' l='190' u='r' c='S_Init'/>
+<use f='codebrowser/s_sound.c' l='277' u='r' c='S_StartSoundAtVolume'/>

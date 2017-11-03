@@ -1,0 +1,10 @@
+<dec f='codebrowser/dstrings.h' l='41'/>
+<doc f='codebrowser/dstrings.h' l='40'>// Misc. other strings.</doc>
+<use f='codebrowser/d_main.c' l='1154' u='c'/>
+<use f='codebrowser/d_main.c' l='1156' u='c'/>
+<use f='codebrowser/g_game.c' l='1279' u='c'/>
+<use f='codebrowser/g_game.c' l='1281' u='c'/>
+<use f='codebrowser/m_menu.c' l='521' u='c'/>
+<use f='codebrowser/m_menu.c' l='523' u='c'/>
+<use f='codebrowser/m_menu.c' l='584' u='c'/>
+<use f='codebrowser/m_menu.c' l='586' u='c'/>

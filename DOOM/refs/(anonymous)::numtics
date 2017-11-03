@@ -1,0 +1,18 @@
+<dec f='codebrowser/d_net.h' l='71' type='byte'/>
+<offset>56</offset>
+<use f='codebrowser/d_net.c' l='92' u='r' c='NetbufferSize'/>
+<use f='codebrowser/d_net.c' l='177' u='r' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='245' u='r' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='280' u='r' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='324' u='r' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='421' u='w' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='422' u='r' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='427' u='r' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='525' u='w' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='614' u='w' c='D_QuitNetGame'/>
+<use f='codebrowser/i_net.c' l='137' u='w' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='137' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='138' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='207' u='w' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='207' u='r' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='209' u='r' c='PacketGet'/>

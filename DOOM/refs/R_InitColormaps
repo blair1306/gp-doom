@@ -1,0 +1,5 @@
+<def f='codebrowser/r_data.c' l='633' ll='644' type='void R_InitColormaps()'/>
+<use f='codebrowser/r_data.c' l='662' u='c' c='R_InitData'/>
+<doc f='codebrowser/r_data.c' l='630'>//
+// R_InitColormaps
+//</doc>

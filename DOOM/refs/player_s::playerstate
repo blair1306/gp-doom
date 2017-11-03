@@ -1,0 +1,15 @@
+<dec f='codebrowser/d_player.h' l='86' type='playerstate_t'/>
+<offset>64</offset>
+<use f='codebrowser/d_main.c' l='456' u='w' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/g_game.c' l='479' u='r' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='480' u='w' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='613' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='823' u='w' c='G_PlayerReborn'/>
+<use f='codebrowser/g_game.c' l='1441' u='w' c='G_InitNew'/>
+<use f='codebrowser/p_inter.c' l='706' u='w' c='P_KillMobj'/>
+<use f='codebrowser/p_mobj.c' l='659' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_mobj.c' l='676' u='w' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_pspr.c' l='396' u='r' c='A_Lower'/>
+<use f='codebrowser/p_user.c' l='113' u='r' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='228' u='w' c='P_DeathThink'/>
+<use f='codebrowser/p_user.c' l='258' u='r' c='P_PlayerThink'/>

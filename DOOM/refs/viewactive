@@ -1,0 +1,11 @@
+<dec f='codebrowser/doomstat.h' l='137' type='boolean'/>
+<dec f='codebrowser/am_map.c' l='292' type='boolean'/>
+<use f='codebrowser/am_map.c' l='630' u='w' c='AM_Responder'/>
+<use f='codebrowser/am_map.c' l='667' u='w' c='AM_Responder'/>
+<use f='codebrowser/d_main.c' l='298' u='r' c='D_Display'/>
+<use f='codebrowser/f_finale.c' l='100' u='w' c='F_StartFinale'/>
+<def f='codebrowser/g_game.c' l='114' type='boolean'/>
+<use f='codebrowser/g_game.c' l='1134' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1178' u='w' c='G_DoWorldDone'/>
+<use f='codebrowser/g_game.c' l='1447' u='w' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1452' u='w' c='G_InitNew'/>

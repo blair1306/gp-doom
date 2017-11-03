@@ -1,0 +1,10 @@
+<dec f='codebrowser/s_sound.c' l='139' type='int S_getChannel(void * origin, sfxinfo_t * sfxinfo)'/>
+<use f='codebrowser/s_sound.c' l='352' u='c' c='S_StartSoundAtVolume'/>
+<def f='codebrowser/s_sound.c' l='827' ll='875' type='int S_getChannel(void * origin, sfxinfo_t * sfxinfo)'/>
+<doc f='codebrowser/s_sound.c' l='135'>//
+// Internals.
+//</doc>
+<doc f='codebrowser/s_sound.c' l='823'>//
+// S_getChannel :
+//   If none available, return -1.  Otherwise channel #.
+//</doc>

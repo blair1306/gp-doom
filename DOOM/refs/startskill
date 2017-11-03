@@ -1,0 +1,13 @@
+<dec f='codebrowser/doomstat.h' l='77' type='skill_t'/>
+<doc f='codebrowser/doomstat.h' l='72'>// -------------------------------------------
+// Selected skill type, map etc.
+//
+
+// Defaults for menu, methinks.</doc>
+<def f='codebrowser/d_main.c' l='112' type='skill_t'/>
+<use f='codebrowser/d_main.c' l='961' u='w' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='970' u='w' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1164' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_net.c' l='497' u='w' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='516' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='578' u='r' c='D_CheckNetGame'/>

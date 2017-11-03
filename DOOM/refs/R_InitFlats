@@ -1,0 +1,5 @@
+<def f='codebrowser/r_data.c' l='581' ll='594' type='void R_InitFlats()'/>
+<use f='codebrowser/r_data.c' l='658' u='c' c='R_InitData'/>
+<doc f='codebrowser/r_data.c' l='578'>//
+// R_InitFlats
+//</doc>

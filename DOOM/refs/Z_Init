@@ -1,0 +1,6 @@
+<dec f='codebrowser/z_zone.h' l='47' type='void Z_Init()'/>
+<use f='codebrowser/d_main.c' l='1018' u='c' c='D_DoomMain'/>
+<def f='codebrowser/z_zone.c' l='93' ll='116' type='void Z_Init()'/>
+<doc f='codebrowser/z_zone.c' l='90'>//
+// Z_Init
+//</doc>

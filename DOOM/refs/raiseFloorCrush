@@ -1,0 +1,7 @@
+<dec f='codebrowser/p_spec.h' l='563' type='9'/>
+<use f='codebrowser/p_floor.c' l='317' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='328' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_spec.c' l='696' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='889' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='439' u='r' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='576' u='r' c='P_UseSpecialLine'/>

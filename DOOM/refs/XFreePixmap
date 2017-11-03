@@ -1,0 +1,2 @@
+<dec f='include/X11/Xlib.h' l='2570' type='int XFreePixmap(Display * , Pixmap )'/>
+<use f='codebrowser/i_video.c' l='301' u='c' c='createnullcursor'/>

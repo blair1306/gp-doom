@@ -1,0 +1,7 @@
+<dec f='include/netinet/in.h' l='33' type='in_addr_t'/>
+<use f='codebrowser/i_net.c' l='115' u='w' c='BindToLocalPort'/>
+<use f='codebrowser/i_net.c' l='189' u='r' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='189' u='r' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='309' u='w' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='317' u='w' c='I_InitNetwork'/>
+<offset>0</offset>

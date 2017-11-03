@@ -1,0 +1,14 @@
+<dec f='codebrowser/r_main.h' l='127' type='angle_t R_PointToAngle2(fixed_t x1, fixed_t y1, fixed_t x2, fixed_t y2)'/>
+<use f='codebrowser/p_enemy.c' l='537' u='c' c='P_LookForPlayers'/>
+<use f='codebrowser/p_enemy.c' l='789' u='c' c='A_FaceTarget'/>
+<use f='codebrowser/p_enemy.c' l='1051' u='c' c='A_Tracer'/>
+<use f='codebrowser/p_inter.c' l='812' u='c' c='P_DamageMobj'/>
+<use f='codebrowser/p_map.c' l='610' u='c' c='P_HitSlideLine'/>
+<use f='codebrowser/p_map.c' l='615' u='c' c='P_HitSlideLine'/>
+<use f='codebrowser/p_mobj.c' l='906' u='c' c='P_SpawnMissile'/>
+<use f='codebrowser/p_pspr.c' l='490' u='c' c='A_Punch'/>
+<use f='codebrowser/p_pspr.c' l='526' u='c' c='A_Saw'/>
+<use f='codebrowser/p_user.c' l='202' u='c' c='P_DeathThink'/>
+<def f='codebrowser/r_main.c' l='377' ll='388' type='angle_t R_PointToAngle2(fixed_t x1, fixed_t y1, fixed_t x2, fixed_t y2)'/>
+<use f='codebrowser/s_sound.c' l='780' u='c' c='S_AdjustSoundParams'/>
+<use f='codebrowser/st_stuff.c' l='814' u='c' c='ST_updateFaceWidget'/>

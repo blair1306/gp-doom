@@ -1,0 +1,6 @@
+<dec f='codebrowser/r_plane.h' l='59' type='void R_MakeSpans(int x, int t1, int b1, int t2, int b2)'/>
+<def f='codebrowser/r_plane.c' l='330' ll='359' type='void R_MakeSpans(int x, int t1, int b1, int t2, int b2)'/>
+<use f='codebrowser/r_plane.c' l='445' u='c' c='R_DrawPlanes'/>
+<doc f='codebrowser/r_plane.c' l='327'>//
+// R_MakeSpans
+//</doc>

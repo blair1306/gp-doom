@@ -1,0 +1,2 @@
+<def f='codebrowser/r_draw.c' l='263' ll='272' type='int [50]'/>
+<use f='codebrowser/r_draw.c' l='358' u='r' c='R_DrawFuzzColumn'/>

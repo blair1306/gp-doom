@@ -1,0 +1,7 @@
+<def f='codebrowser/p_pspr.c' l='625' ll='640' type='void P_GunShot(mobj_t * mo, boolean accurate)'/>
+<use f='codebrowser/p_pspr.c' l='661' u='c' c='A_FirePistol'/>
+<use f='codebrowser/p_pspr.c' l='687' u='c' c='A_FireShotgun'/>
+<use f='codebrowser/p_pspr.c' l='753' u='c' c='A_FireCGun'/>
+<doc f='codebrowser/p_pspr.c' l='622'>//
+// P_GunShot
+//</doc>

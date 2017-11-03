@@ -1,0 +1,2 @@
+<def f='codebrowser/st_stuff.c' l='1207' ll='1242' type='void ST_unloadGraphics()'/>
+<use f='codebrowser/st_stuff.c' l='1246' u='c' c='ST_unloadData'/>

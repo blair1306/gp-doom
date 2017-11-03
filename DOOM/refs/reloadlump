@@ -1,0 +1,21 @@
+<def f='codebrowser/w_wad.c' l='137' type='int'/>
+<use f='codebrowser/w_wad.c' l='160' u='w' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='261' u='r' c='W_Reload'/>
+<use f='codebrowser/w_wad.c' l='263' u='r' c='W_Reload'/>
+<use f='codebrowser/w_wad.c' l='264' u='r' c='W_Reload'/>
+<doc f='codebrowser/w_wad.c' l='120'>//
+// LUMP BASED ROUTINES.
+//
+
+//
+// W_AddFile
+// All files are optional, but at least one file must be
+//  found (PWAD, if all required lumps are present).
+// Files with a .wad extension are wadlink files
+//  with multiple lumps.
+// Other files are single lumps with the base filename
+//  for the lump name.
+//
+// If filename starts with a tilde, the file is handled
+//  specially to allow map reloads.
+// But: the reload feature is a fragile hack...</doc>

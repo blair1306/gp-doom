@@ -1,0 +1,4 @@
+<dec f='include/string.h' l='143' type='int strncmp(const char * __s1, const char * __s2, size_t __n)'/>
+<doc f='include/string.h' l='142'>/* Compare N characters of S1 and S2.  */</doc>
+<use f='codebrowser/w_wad.c' l='185' u='c' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='188' u='c' c='W_AddFile'/>

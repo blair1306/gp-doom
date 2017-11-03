@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_pspr.h' l='63' type='1'/>
+<use f='codebrowser/p_pspr.c' l='454' u='r' c='A_GunFlash'/>
+<use f='codebrowser/p_pspr.c' l='585' u='r' c='A_FirePlasma'/>
+<use f='codebrowser/p_pspr.c' l='657' u='r' c='A_FirePistol'/>
+<use f='codebrowser/p_pspr.c' l='681' u='r' c='A_FireShotgun'/>
+<use f='codebrowser/p_pspr.c' l='711' u='r' c='A_FireShotgun2'/>
+<use f='codebrowser/p_pspr.c' l='746' u='r' c='A_FireCGun'/>
+<use f='codebrowser/p_pspr.c' l='875' u='m' c='P_MovePsprites'/>
+<use f='codebrowser/p_pspr.c' l='876' u='m' c='P_MovePsprites'/>

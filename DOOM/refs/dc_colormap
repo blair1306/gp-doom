@@ -1,0 +1,15 @@
+<dec f='codebrowser/r_draw.h' l='32' type='lighttable_t *'/>
+<def f='codebrowser/r_draw.c' l='85' type='lighttable_t *'/>
+<use f='codebrowser/r_draw.c' l='142' u='r' c='R_DrawColumn'/>
+<use f='codebrowser/r_draw.c' l='247' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='442' u='r' c='R_DrawTranslatedColumn'/>
+<doc f='codebrowser/r_draw.c' l='81'>//
+// R_DrawColumn
+// Source is the top of the column to scale.
+//</doc>
+<use f='codebrowser/r_plane.c' l='404' u='w' c='R_DrawPlanes'/>
+<use f='codebrowser/r_segs.c' l='159' u='w' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='174' u='w' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='274' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_things.c' l='410' u='w' c='R_DrawVisSprite'/>
+<use f='codebrowser/r_things.c' l='412' u='r' c='R_DrawVisSprite'/>

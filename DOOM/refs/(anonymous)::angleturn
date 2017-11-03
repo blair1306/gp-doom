@@ -1,0 +1,18 @@
+<dec f='codebrowser/d_ticcmd.h' l='40' type='short'/>
+<offset>16</offset>
+<doc f='codebrowser/d_ticcmd.h' l='40'>// &lt;&lt;16 for angle delta</doc>
+<use f='codebrowser/g_game.c' l='299' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='301' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='303' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='305' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='409' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='1501' u='w' c='G_ReadDemoTiccmd'/>
+<use f='codebrowser/g_game.c' l='1512' u='r' c='G_WriteDemoTiccmd'/>
+<use f='codebrowser/i_net.c' l='142' u='w' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='142' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='142' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='213' u='w' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='213' u='r' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='213' u='r' c='PacketGet'/>
+<use f='codebrowser/p_user.c' l='154' u='r' c='P_MovePlayer'/>
+<use f='codebrowser/p_user.c' l='251' u='w' c='P_PlayerThink'/>

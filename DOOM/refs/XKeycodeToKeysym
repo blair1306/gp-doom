@@ -1,0 +1,2 @@
+<dec f='include/X11/Xlib.h' l='1687' type='KeySym XKeycodeToKeysym(Display * , KeyCode , int )'/>
+<use f='codebrowser/i_video.c' l='102' u='c' c='xlatekey'/>

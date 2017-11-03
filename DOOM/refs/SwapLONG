@@ -1,0 +1,2 @@
+<def f='codebrowser/m_swap.c' l='45' ll='52' type='unsigned long SwapLONG(unsigned long x)'/>
+<doc f='codebrowser/m_swap.c' l='44'>// Swapping 32bit.</doc>

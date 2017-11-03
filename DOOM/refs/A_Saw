@@ -1,0 +1,21 @@
+<dec f='codebrowser/info.c' l='77' type='void A_Saw()'/>
+<use f='codebrowser/info.c' l='207'/>
+<use f='codebrowser/info.c' l='207'/>
+<use f='codebrowser/info.c' l='207'/>
+<use f='codebrowser/info.c' l='207'/>
+<use f='codebrowser/info.c' l='208'/>
+<use f='codebrowser/info.c' l='208'/>
+<use f='codebrowser/info.c' l='208'/>
+<use f='codebrowser/info.c' l='208'/>
+<use f='codebrowser/info.c' l='207'/>
+<use f='codebrowser/info.c' l='207'/>
+<use f='codebrowser/info.c' l='207'/>
+<use f='codebrowser/info.c' l='207'/>
+<use f='codebrowser/info.c' l='208'/>
+<use f='codebrowser/info.c' l='208'/>
+<use f='codebrowser/info.c' l='208'/>
+<use f='codebrowser/info.c' l='208'/>
+<def f='codebrowser/p_pspr.c' l='501' ll='543' type='void A_Saw(player_t * player, pspdef_t * psp)'/>
+<doc f='codebrowser/p_pspr.c' l='498'>//
+// A_Saw
+//</doc>

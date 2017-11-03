@@ -1,0 +1,10 @@
+<dec f='codebrowser/hu_lib.h' l='107' type='void HUlib_clearTextLine(hu_textline_t * t)'/>
+<def f='codebrowser/hu_lib.c' l='46' ll='51' type='void HUlib_clearTextLine(hu_textline_t * t)'/>
+<use f='codebrowser/hu_lib.c' l='65' u='c' c='HUlib_initTextLine'/>
+<use f='codebrowser/hu_lib.c' l='208' u='c' c='HUlib_addLineToSText'/>
+<use f='codebrowser/hu_lib.c' l='302' u='c' c='HUlib_resetIText'/>
+<doc f='codebrowser/hu_lib.h' l='102'>//
+// textline code
+//
+
+// clear a line of text</doc>

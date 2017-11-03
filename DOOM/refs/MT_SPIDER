@@ -1,0 +1,11 @@
+<dec f='codebrowser/info.h' l='1183' type='19'/>
+<use f='codebrowser/f_finale.c' l='355'/>
+<use f='codebrowser/f_finale.c' l='355'/>
+<use f='codebrowser/f_finale.c' l='355'/>
+<use f='codebrowser/f_finale.c' l='355'/>
+<use f='codebrowser/p_enemy.c' l='240' u='r' c='P_CheckMissileRange'/>
+<use f='codebrowser/p_enemy.c' l='653' u='r' c='A_Look'/>
+<use f='codebrowser/p_enemy.c' l='1561' u='r' c='A_Scream'/>
+<use f='codebrowser/p_enemy.c' l='1649' u='r' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='1663' u='r' c='A_BossDeath'/>
+<use f='codebrowser/p_map.c' l='1176' u='r' c='PIT_RadiusAttack'/>

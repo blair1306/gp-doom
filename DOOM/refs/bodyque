@@ -1,0 +1,3 @@
+<def f='codebrowser/g_game.c' l='212' type='mobj_t *[32]'/>
+<use f='codebrowser/g_game.c' l='873' u='r' c='G_CheckSpot'/>
+<use f='codebrowser/g_game.c' l='874' u='w' c='G_CheckSpot'/>

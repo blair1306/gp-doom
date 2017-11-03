@@ -1,0 +1,10 @@
+<dec f='codebrowser/s_sound.h' l='78' type='void S_StartMusic(int music_id)'/>
+<use f='codebrowser/d_main.c' l='477' u='c' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='479' u='c' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='498' u='c' c='D_DoAdvanceDemo'/>
+<doc f='codebrowser/s_sound.h' l='77'>// Start music using &lt;music_id&gt; from sounds.h</doc>
+<use f='codebrowser/f_finale.c' l='247' u='c' c='F_Ticker'/>
+<def f='codebrowser/s_sound.c' l='644' ll='647' type='void S_StartMusic(int m_id)'/>
+<doc f='codebrowser/s_sound.c' l='641'>//
+// Starts some music with the music id found in sounds.h.
+//</doc>

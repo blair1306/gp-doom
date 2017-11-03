@@ -1,0 +1,18 @@
+<dec f='codebrowser/d_player.h' l='161' type='pspdef_t [2]'/>
+<offset>2112</offset>
+<doc f='codebrowser/d_player.h' l='160'>// Overlay view sprites (gun, etc).</doc>
+<use f='codebrowser/p_pspr.c' l='67' u='a' c='P_SetPsprite'/>
+<use f='codebrowser/p_pspr.c' l='151' u='m' c='P_BringUpWeapon'/>
+<use f='codebrowser/p_pspr.c' l='837' u='m' c='P_SetupPsprites'/>
+<use f='codebrowser/p_pspr.c' l='857' u='a' c='P_MovePsprites'/>
+<use f='codebrowser/p_pspr.c' l='875' u='m' c='P_MovePsprites'/>
+<use f='codebrowser/p_pspr.c' l='875' u='m' c='P_MovePsprites'/>
+<use f='codebrowser/p_pspr.c' l='876' u='m' c='P_MovePsprites'/>
+<use f='codebrowser/p_pspr.c' l='876' u='m' c='P_MovePsprites'/>
+<use f='codebrowser/p_saveg.c' l='65' u='m' c='P_ArchivePlayers'/>
+<use f='codebrowser/p_saveg.c' l='67' u='m' c='P_ArchivePlayers'/>
+<use f='codebrowser/p_saveg.c' l='68' u='m' c='P_ArchivePlayers'/>
+<use f='codebrowser/p_saveg.c' l='101' u='m' c='P_UnArchivePlayers'/>
+<use f='codebrowser/p_saveg.c' l='103' u='m' c='P_UnArchivePlayers'/>
+<use f='codebrowser/p_saveg.c' l='104' u='m' c='P_UnArchivePlayers'/>
+<use f='codebrowser/r_things.c' l='769' u='r' c='R_DrawPlayerSprites'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/r_things.h' l='60' type='void R_InitSprites(char ** namelist)'/>
+<use f='codebrowser/p_setup.c' l='704' u='c' c='P_Init'/>
+<def f='codebrowser/r_things.c' l='299' ll='309' type='void R_InitSprites(char ** namelist)'/>
+<doc f='codebrowser/r_things.c' l='295'>//
+// R_InitSprites
+// Called at program start.
+//</doc>

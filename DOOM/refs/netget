@@ -1,0 +1,3 @@
+<def f='codebrowser/i_net.c' l='83' type='void (*)(void)'/>
+<use f='codebrowser/i_net.c' l='294' u='w' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='343' u='r' c='I_NetCmd'/>

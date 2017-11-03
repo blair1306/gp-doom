@@ -1,0 +1,7 @@
+<dec f='codebrowser/f_finale.h' l='40' type='void F_Drawer()'/>
+<use f='codebrowser/d_main.c' l='255' u='c' c='D_Display'/>
+<doc f='codebrowser/f_finale.h' l='39'>// Called by main loop.</doc>
+<def f='codebrowser/f_finale.c' l='700' ll='736' type='void F_Drawer()'/>
+<doc f='codebrowser/f_finale.c' l='697'>//
+// F_Drawer
+//</doc>

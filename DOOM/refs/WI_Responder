@@ -1,0 +1,3 @@
+<def f='codebrowser/wi_stuff.c' l='414' ll='417' type='boolean WI_Responder(event_t * ev)'/>
+<doc f='codebrowser/wi_stuff.c' l='412'>// The ticker is used to detect keys
+//  because of timing issues in netgames.</doc>

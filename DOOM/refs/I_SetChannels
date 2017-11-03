@@ -1,0 +1,17 @@
+<dec f='codebrowser/i_sound.h' l='56' type='void I_SetChannels()'/>
+<doc f='codebrowser/i_sound.h' l='51'>//
+//  SFX I/O
+//
+
+// Initialize channels?</doc>
+<def f='codebrowser/i_sound.c' l='397' ll='425' type='void I_SetChannels()'/>
+<doc f='codebrowser/i_sound.c' l='388'>//
+// SFX API
+// Note: this was called by S_Init.
+// However, whatever they did in the
+// old DPMS based DOS version, this
+// were simply dummies in the Linux
+// version.
+// See soundserver initdata().
+//</doc>
+<use f='codebrowser/s_sound.c' l='170' u='c' c='S_Init'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/info.c' l='106' type='void A_FatAttack2()'/>
+<use f='codebrowser/info.c' l='516'/>
+<use f='codebrowser/info.c' l='516'/>
+<use f='codebrowser/info.c' l='516'/>
+<use f='codebrowser/info.c' l='516'/>
+<use f='codebrowser/info.c' l='516'/>
+<use f='codebrowser/info.c' l='516'/>
+<use f='codebrowser/info.c' l='516'/>
+<use f='codebrowser/info.c' l='516'/>
+<def f='codebrowser/p_enemy.c' l='1375' ll='1390' type='void A_FatAttack2(mobj_t * actor)'/>

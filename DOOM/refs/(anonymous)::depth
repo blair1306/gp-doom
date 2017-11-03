@@ -1,0 +1,10 @@
+<dec f='include/X11/Xlib.h' l='172' type='int'/>
+<dec f='include/X11/Xlib.h' l='244' type='int'/>
+<dec f='include/X11/Xlib.h' l='282' type='int'/>
+<dec f='include/X11/Xlib.h' l='312' type='int'/>
+<dec f='include/X11/Xutil.h' l='291' type='int'/>
+<use f='codebrowser/i_video.c' l='548' u='r' c='UploadNewPalette'/>
+<offset>160</offset>
+<doc f='include/X11/Xlib.h' l='244'>/* this depth (Z) of the depth */</doc>
+<doc f='include/X11/Xlib.h' l='282'>/* depth of this image format */</doc>
+<doc f='include/X11/Xlib.h' l='312'>/* depth of window */</doc>

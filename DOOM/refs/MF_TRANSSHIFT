@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_mobj.h' l='201' type='26'/>
+<doc f='codebrowser/p_mobj.h' l='200'>// Hmm ???.</doc>
+<use f='codebrowser/p_mobj.c' l='669' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/r_things.c' l='421' u='r' c='R_DrawVisSprite'/>

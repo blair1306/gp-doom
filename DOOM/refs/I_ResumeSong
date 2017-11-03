@@ -1,0 +1,4 @@
+<dec f='codebrowser/i_sound.h' l='99' type='void I_ResumeSong(int handle)'/>
+<def f='codebrowser/i_sound.c' l='855' ll='859' type='void I_ResumeSong(int handle)'/>
+<use f='codebrowser/s_sound.c' l='510' u='c' c='S_ResumeSound'/>
+<use f='codebrowser/s_sound.c' l='694' u='c' c='S_StopMusic'/>

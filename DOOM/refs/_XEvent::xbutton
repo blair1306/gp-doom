@@ -1,0 +1,14 @@
+<dec f='include/X11/Xlib.h' l='977' type='XButtonEvent'/>
+<use f='codebrowser/i_video.c' l='218' u='m' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='219' u='m' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='220' u='m' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='221' u='m' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='222' u='m' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='223' u='m' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='231' u='m' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='232' u='m' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='233' u='m' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='237' u='m' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='238' u='m' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='239' u='m' c='I_GetEvent'/>
+<offset>0</offset>

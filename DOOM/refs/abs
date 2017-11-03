@@ -1,0 +1,30 @@
+<dec f='include/stdlib.h' l='774' type='int abs(int __x)'/>
+<doc f='include/stdlib.h' l='773'>/* Return the absolute value of X.  */</doc>
+<use f='codebrowser/m_fixed.c' l='62' u='c' c='FixedDiv'/>
+<use f='codebrowser/m_fixed.c' l='62' u='c' c='FixedDiv'/>
+<use f='codebrowser/p_enemy.c' l='409' u='c' c='P_NewChaseDir'/>
+<use f='codebrowser/p_enemy.c' l='409' u='c' c='P_NewChaseDir'/>
+<use f='codebrowser/p_enemy.c' l='1145' u='c' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1146' u='c' c='PIT_VileCheck'/>
+<use f='codebrowser/p_map.c' l='90' u='c' c='PIT_StompThing'/>
+<use f='codebrowser/p_map.c' l='91' u='c' c='PIT_StompThing'/>
+<use f='codebrowser/p_map.c' l='263' u='c' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='264' u='c' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='1179' u='c' c='PIT_RadiusAttack'/>
+<use f='codebrowser/p_map.c' l='1180' u='c' c='PIT_RadiusAttack'/>
+<use f='codebrowser/p_maputl.c' l='53' u='c' c='P_AproxDistance'/>
+<use f='codebrowser/p_maputl.c' l='54' u='c' c='P_AproxDistance'/>
+<use f='codebrowser/p_maputl.c' l='802' u='c' c='P_PathTraverse'/>
+<use f='codebrowser/p_maputl.c' l='808' u='c' c='P_PathTraverse'/>
+<use f='codebrowser/p_maputl.c' l='824' u='c' c='P_PathTraverse'/>
+<use f='codebrowser/p_maputl.c' l='830' u='c' c='P_PathTraverse'/>
+<use f='codebrowser/r_main.c' l='402' u='c' c='R_PointToDist'/>
+<use f='codebrowser/r_main.c' l='403' u='c' c='R_PointToDist'/>
+<use f='codebrowser/r_main.c' l='733' u='c' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_main.c' l='739' u='c' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_plane.c' l='427' u='c' c='R_DrawPlanes'/>
+<use f='codebrowser/r_segs.c' l='402' u='c' c='R_StoreWallRange'/>
+<use f='codebrowser/r_things.c' l='424' u='c' c='R_DrawVisSprite'/>
+<use f='codebrowser/r_things.c' l='502' u='c' c='R_ProjectSprite'/>
+<use f='codebrowser/s_sound.c' l='767' u='c' c='S_AdjustSoundParams'/>
+<use f='codebrowser/s_sound.c' l='768' u='c' c='S_AdjustSoundParams'/>

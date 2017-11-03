@@ -1,0 +1,6 @@
+<dec f='codebrowser/info.h' l='1318' type='int'/>
+<offset>352</offset>
+<use f='codebrowser/f_finale.c' l='467' u='r' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='476' u='r' c='F_CastTicker'/>
+<use f='codebrowser/p_enemy.c' l='736' u='r' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='747' u='r' c='A_Chase'/>

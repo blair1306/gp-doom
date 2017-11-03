@@ -1,0 +1,7 @@
+<def f='codebrowser/st_lib.c' l='56' type='patch_t *'/>
+<use f='codebrowser/st_lib.c' l='60' u='w' c='STlib_init'/>
+<use f='codebrowser/st_lib.c' l='147' u='r' c='STlib_drawNum'/>
+<doc f='codebrowser/st_lib.c' l='52'>//
+// Hack display negative frags.
+//  Loads and store the stminus lump.
+//</doc>

@@ -1,0 +1,5 @@
+<def f='codebrowser/p_mobj.c' l='246' ll='349' type='void P_ZMovement(mobj_t * mo)'/>
+<use f='codebrowser/p_mobj.c' l='431' u='c' c='P_MobjThinker'/>
+<doc f='codebrowser/p_mobj.c' l='243'>//
+// P_ZMovement
+//</doc>

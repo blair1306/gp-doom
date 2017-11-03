@@ -1,0 +1,4 @@
+<dec f='include/X11/extensions/XShm.h' l='63' type='int XShmGetEventBase(Display * )'/>
+<dec f='codebrowser/i_video.c' l='40' type='int XShmGetEventBase(Display * dpy)'/>
+<use f='codebrowser/i_video.c' l='855' u='c' c='I_InitGraphics'/>
+<doc f='codebrowser/i_video.c' l='40'>// problems with g++?</doc>

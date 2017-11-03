@@ -1,0 +1,121 @@
+<dec f='codebrowser/d_event.h' l='46' type='evtype_t'/>
+<dec f='codebrowser/doomdata.h' l='208' type='short'/>
+<dec f='codebrowser/p_spec.h' l='298' type='plattype_e'/>
+<dec f='codebrowser/p_spec.h' l='346' type='vldoor_e'/>
+<dec f='codebrowser/p_spec.h' l='496' type='ceiling_e'/>
+<dec f='codebrowser/p_spec.h' l='587' type='floor_e'/>
+<use f='codebrowser/am_map.c' l='627' u='r' c='AM_Responder'/>
+<use f='codebrowser/am_map.c' l='635' u='r' c='AM_Responder'/>
+<use f='codebrowser/am_map.c' l='708' u='r' c='AM_Responder'/>
+<offset>192</offset>
+<use f='codebrowser/d_net.c' l='467' u='r' c='CheckAbort'/>
+<use f='codebrowser/f_finale.c' l='504' u='r' c='F_CastResponder'/>
+<use f='codebrowser/g_game.c' l='507' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='525' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='526' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='527' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='558' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='911' u='w' c='G_DeathMatchSpawnPlayer'/>
+<use f='codebrowser/g_game.c' l='958' u='w' c='G_DoReborn'/>
+<use f='codebrowser/g_game.c' l='960' u='w' c='G_DoReborn'/>
+<use f='codebrowser/hu_stuff.c' l='645' u='r' c='HU_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='650' u='r' c='HU_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='654' u='r' c='HU_Responder'/>
+<dec f='include/X11/Xlib.h' l='353' type='char *'/>
+<dec f='include/X11/Xlib.h' l='558' type='int'/>
+<dec f='include/X11/Xlib.h' l='576' type='int'/>
+<dec f='include/X11/Xlib.h' l='594' type='int'/>
+<dec f='include/X11/Xlib.h' l='611' type='int'/>
+<dec f='include/X11/Xlib.h' l='635' type='int'/>
+<dec f='include/X11/Xlib.h' l='654' type='int'/>
+<dec f='include/X11/Xlib.h' l='663' type='int'/>
+<dec f='include/X11/Xlib.h' l='674' type='int'/>
+<dec f='include/X11/Xlib.h' l='687' type='int'/>
+<dec f='include/X11/Xlib.h' l='697' type='int'/>
+<dec f='include/X11/Xlib.h' l='706' type='int'/>
+<dec f='include/X11/Xlib.h' l='719' type='int'/>
+<dec f='include/X11/Xlib.h' l='728' type='int'/>
+<dec f='include/X11/Xlib.h' l='738' type='int'/>
+<dec f='include/X11/Xlib.h' l='748' type='int'/>
+<dec f='include/X11/Xlib.h' l='757' type='int'/>
+<dec f='include/X11/Xlib.h' l='769' type='int'/>
+<dec f='include/X11/Xlib.h' l='783' type='int'/>
+<dec f='include/X11/Xlib.h' l='793' type='int'/>
+<dec f='include/X11/Xlib.h' l='802' type='int'/>
+<dec f='include/X11/Xlib.h' l='817' type='int'/>
+<dec f='include/X11/Xlib.h' l='827' type='int'/>
+<dec f='include/X11/Xlib.h' l='837' type='int'/>
+<dec f='include/X11/Xlib.h' l='848' type='int'/>
+<dec f='include/X11/Xlib.h' l='858' type='int'/>
+<dec f='include/X11/Xlib.h' l='871' type='int'/>
+<dec f='include/X11/Xlib.h' l='883' type='int'/>
+<dec f='include/X11/Xlib.h' l='898' type='int'/>
+<dec f='include/X11/Xlib.h' l='913' type='int'/>
+<dec f='include/X11/Xlib.h' l='925' type='int'/>
+<dec f='include/X11/Xlib.h' l='935' type='int'/>
+<dec f='include/X11/Xlib.h' l='950' type='int'/>
+<dec f='include/X11/Xlib.h' l='959' type='int'/>
+<dec f='include/X11/extensions/XShm.h' l='39' type='int'/>
+<use f='codebrowser/i_video.c' l='204' u='w' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='210' u='w' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='216' u='w' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='229' u='w' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='245' u='w' c='I_GetEvent'/>
+<offset>0</offset>
+<doc f='include/X11/Xlib.h' l='353'>/* pointer to where to find the type string */</doc>
+<doc f='include/X11/Xlib.h' l='558'>/* of event */</doc>
+<doc f='include/X11/Xlib.h' l='576'>/* of event */</doc>
+<doc f='include/X11/Xlib.h' l='594'>/* of event */</doc>
+<doc f='include/X11/Xlib.h' l='611'>/* of event */</doc>
+<doc f='include/X11/Xlib.h' l='635'>/* FocusIn or FocusOut */</doc>
+<doc f='include/X11/Xlib.h' l='950'>/* of event. Always GenericEvent */</doc>
+<doc f='include/X11/Xlib.h' l='959'>/* of event. Always GenericEvent */</doc>
+<doc f='include/X11/extensions/XShm.h' l='39'>/* of event */</doc>
+<use f='codebrowser/m_menu.c' l='1362' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1399' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1442' u='r' c='M_Responder'/>
+<use f='codebrowser/p_ceilng.c' l='70' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='84' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='114' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='125' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='149' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='241' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_doors.c' l='73' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='103' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='107' u='w' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='126' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='153' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='177' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='290' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='474' u='w' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='481' u='w' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='486' u='w' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='490' u='w' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='519' u='w' c='P_SpawnDoorCloseIn30'/>
+<use f='codebrowser/p_doors.c' l='544' u='w' c='P_SpawnDoorRaiseIn5Mins'/>
+<use f='codebrowser/p_floor.c' l='228' u='r' c='T_MoveFloor'/>
+<use f='codebrowser/p_floor.c' l='239' u='r' c='T_MoveFloor'/>
+<use f='codebrowser/p_floor.c' l='286' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_mobj.c' l='615' u='r' c='P_RespawnSpecials'/>
+<use f='codebrowser/p_mobj.c' l='654' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_mobj.c' l='657' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_mobj.c' l='660' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_mobj.c' l='668' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_mobj.c' l='669' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_mobj.c' l='693' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_mobj.c' l='718' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_mobj.c' l='729' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_mobj.c' l='732' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_mobj.c' l='755' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_mobj.c' l='760' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_plats.c' l='64' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='65' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='89' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='176' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_setup.c' l='320' u='r' c='P_LoadThings'/>
+<use f='codebrowser/p_setup.c' l='343' u='w' c='P_LoadThings'/>
+<use f='codebrowser/p_setup.c' l='343' u='r' c='P_LoadThings'/>
+<use f='codebrowser/p_spec.c' l='1197' u='w' c='EV_DoDonut'/>
+<use f='codebrowser/p_spec.c' l='1211' u='w' c='EV_DoDonut'/>
+<use f='codebrowser/st_stuff.c' l='523' u='r' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='541' u='r' c='ST_Responder'/>

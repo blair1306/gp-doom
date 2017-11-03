@@ -1,0 +1,10 @@
+<dec f='codebrowser/info.c' l='120' type='void A_Hoof()'/>
+<use f='codebrowser/info.c' l='812'/>
+<use f='codebrowser/info.c' l='812'/>
+<use f='codebrowser/info.c' l='812'/>
+<use f='codebrowser/info.c' l='812'/>
+<use f='codebrowser/info.c' l='812'/>
+<use f='codebrowser/info.c' l='812'/>
+<use f='codebrowser/info.c' l='812'/>
+<use f='codebrowser/info.c' l='812'/>
+<def f='codebrowser/p_enemy.c' l='1759' ll='1763' type='void A_Hoof(mobj_t * mo)'/>

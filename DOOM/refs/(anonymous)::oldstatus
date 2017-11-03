@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_spec.h' l='295' type='plat_e'/>
+<offset>448</offset>
+<use f='codebrowser/p_plats.c' l='267' u='r' c='P_ActivateInStasis'/>
+<use f='codebrowser/p_plats.c' l='282' u='w' c='EV_StopPlat'/>

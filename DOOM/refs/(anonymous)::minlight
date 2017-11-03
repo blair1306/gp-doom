@@ -1,0 +1,17 @@
+<dec f='codebrowser/p_spec.h' l='130' type='int'/>
+<dec f='codebrowser/p_spec.h' l='142' type='int'/>
+<dec f='codebrowser/p_spec.h' l='155' type='int'/>
+<dec f='codebrowser/p_spec.h' l='169' type='int'/>
+<offset>256</offset>
+<use f='codebrowser/p_lights.c' l='55' u='r' c='T_FireFlicker'/>
+<use f='codebrowser/p_lights.c' l='56' u='r' c='T_FireFlicker'/>
+<use f='codebrowser/p_lights.c' l='83' u='w' c='P_SpawnFireFlicker'/>
+<use f='codebrowser/p_lights.c' l='105' u='r' c='T_LightFlash'/>
+<use f='codebrowser/p_lights.c' l='139' u='w' c='P_SpawnLightFlash'/>
+<use f='codebrowser/p_lights.c' l='160' u='r' c='T_StrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='167' u='r' c='T_StrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='197' u='w' c='P_SpawnStrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='199' u='r' c='P_SpawnStrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='200' u='w' c='P_SpawnStrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='321' u='r' c='T_Glow'/>
+<use f='codebrowser/p_lights.c' l='350' u='w' c='P_SpawnGlowingLight'/>

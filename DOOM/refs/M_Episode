@@ -1,0 +1,18 @@
+<dec f='codebrowser/m_menu.c' l='184' type='void M_Episode(int choice)'/>
+<use f='codebrowser/m_menu.c' l='286'/>
+<use f='codebrowser/m_menu.c' l='286'/>
+<use f='codebrowser/m_menu.c' l='287'/>
+<use f='codebrowser/m_menu.c' l='287'/>
+<use f='codebrowser/m_menu.c' l='288'/>
+<use f='codebrowser/m_menu.c' l='288'/>
+<use f='codebrowser/m_menu.c' l='289'/>
+<use f='codebrowser/m_menu.c' l='289'/>
+<use f='codebrowser/m_menu.c' l='286'/>
+<use f='codebrowser/m_menu.c' l='286'/>
+<use f='codebrowser/m_menu.c' l='287'/>
+<use f='codebrowser/m_menu.c' l='287'/>
+<use f='codebrowser/m_menu.c' l='288'/>
+<use f='codebrowser/m_menu.c' l='288'/>
+<use f='codebrowser/m_menu.c' l='289'/>
+<use f='codebrowser/m_menu.c' l='289'/>
+<def f='codebrowser/m_menu.c' l='919' ll='940' type='void M_Episode(int choice)'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/d_net.h' l='69' type='byte'/>
+<offset>40</offset>
+<use f='codebrowser/d_net.c' l='176' u='r' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='244' u='r' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='279' u='r' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='420' u='w' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='501' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='502' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='523' u='w' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/i_net.c' l='136' u='w' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='136' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='206' u='w' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='206' u='r' c='PacketGet'/>

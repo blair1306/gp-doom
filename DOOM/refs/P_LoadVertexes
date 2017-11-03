@@ -1,0 +1,5 @@
+<def f='codebrowser/p_setup.c' l='122' ll='152' type='void P_LoadVertexes(int lump)'/>
+<use f='codebrowser/p_setup.c' l='650' u='c' c='P_SetupLevel'/>
+<doc f='codebrowser/p_setup.c' l='119'>//
+// P_LoadVertexes
+//</doc>

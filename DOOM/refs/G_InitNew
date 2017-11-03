@@ -1,0 +1,7 @@
+<dec f='codebrowser/g_game.h' l='36' type='void G_InitNew(skill_t skill, int episode, int map)'/>
+<use f='codebrowser/d_main.c' l='1164' u='c' c='D_DoomMain'/>
+<dec f='codebrowser/g_game.c' l='83' type='void G_InitNew(skill_t skill, int episode, int map)'/>
+<use f='codebrowser/g_game.c' l='1227' u='c' c='G_DoLoadGame'/>
+<use f='codebrowser/g_game.c' l='1356' u='c' c='G_DoNewGame'/>
+<def f='codebrowser/g_game.c' l='1364' ll='1482' type='void G_InitNew(skill_t skill, int episode, int map)'/>
+<use f='codebrowser/g_game.c' l='1615' u='c' c='G_DoPlayDemo'/>

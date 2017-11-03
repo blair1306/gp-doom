@@ -1,0 +1,8 @@
+<def f='codebrowser/p_mobj.c' l='868' ll='882' type='void P_CheckMissileSpawn(mobj_t * th)'/>
+<use f='codebrowser/p_mobj.c' l='924' u='c' c='P_SpawnMissile'/>
+<use f='codebrowser/p_mobj.c' l='986' u='c' c='P_SpawnPlayerMissile'/>
+<doc f='codebrowser/p_mobj.c' l='863'>//
+// P_CheckMissileSpawn
+// Moves the missile forward a bit
+//  and possibly explodes it right there.
+//</doc>

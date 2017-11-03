@@ -1,0 +1,5 @@
+<dec f='codebrowser/hu_lib.h' l='115' type='boolean HUlib_delCharFromTextLine(hu_textline_t * t)'/>
+<def f='codebrowser/hu_lib.c' l='86' ll='97' type='boolean HUlib_delCharFromTextLine(hu_textline_t * t)'/>
+<use f='codebrowser/hu_lib.c' l='289' u='c' c='HUlib_delCharFromIText'/>
+<use f='codebrowser/hu_lib.c' l='295' u='c' c='HUlib_eraseLineFromIText'/>
+<doc f='codebrowser/hu_lib.h' l='114'>// returns success</doc>

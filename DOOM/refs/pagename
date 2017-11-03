@@ -1,0 +1,8 @@
+<def f='codebrowser/d_main.c' l='416' type='char *'/>
+<use f='codebrowser/d_main.c' l='436' u='r' c='D_PageDrawer'/>
+<use f='codebrowser/d_main.c' l='475' u='w' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='487' u='w' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='497' u='w' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='505' u='w' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='507' u='w' c='D_DoAdvanceDemo'/>
+<dec f='codebrowser/g_game.c' l='1000' type='char *'/>

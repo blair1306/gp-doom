@@ -1,0 +1,6 @@
+<dec f='codebrowser/m_misc.h' l='41' type='int M_ReadFile(const char * name, byte ** buffer)'/>
+<use f='codebrowser/g_game.c' l='1210' u='c' c='G_DoLoadGame'/>
+<def f='codebrowser/m_misc.c' l='139' ll='163' type='int M_ReadFile(const char * name, byte ** buffer)'/>
+<doc f='codebrowser/m_misc.c' l='136'>//
+// M_ReadFile
+//</doc>

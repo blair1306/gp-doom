@@ -1,0 +1,35 @@
+<dec f='codebrowser/r_defs.h' l='130' type='void *'/>
+<offset>832</offset>
+<doc f='codebrowser/r_defs.h' l='129'>// thinker_t for reversable actions</doc>
+<use f='codebrowser/p_ceilng.c' l='198' u='r' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='205' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='278' u='w' c='P_RemoveActiveCeiling'/>
+<use f='codebrowser/p_doors.c' l='130' u='w' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='138' u='w' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='188' u='w' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='278' u='r' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='286' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='416' u='r' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='418' u='r' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='461' u='w' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='513' u='w' c='P_SpawnDoorCloseIn30'/>
+<use f='codebrowser/p_doors.c' l='538' u='w' c='P_SpawnDoorRaiseIn5Mins'/>
+<use f='codebrowser/p_floor.c' l='224' u='w' c='T_MoveFloor'/>
+<use f='codebrowser/p_floor.c' l='277' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='284' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='480' u='r' c='EV_BuildStairs'/>
+<use f='codebrowser/p_floor.c' l='487' u='w' c='EV_BuildStairs'/>
+<use f='codebrowser/p_floor.c' l='533' u='r' c='EV_BuildStairs'/>
+<use f='codebrowser/p_floor.c' l='542' u='w' c='EV_BuildStairs'/>
+<use f='codebrowser/p_lights.c' l='224' u='r' c='EV_StartLightStrobing'/>
+<use f='codebrowser/p_plats.c' l='168' u='r' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='178' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='307' u='w' c='P_RemoveActivePlat'/>
+<use f='codebrowser/p_saveg.c' l='188' u='w' c='P_UnArchiveWorld'/>
+<use f='codebrowser/p_saveg.c' l='502' u='w' c='P_UnArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='517' u='w' c='P_UnArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='528' u='w' c='P_UnArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='539' u='w' c='P_UnArchiveSpecials'/>
+<use f='codebrowser/p_spec.c' l='1180' u='r' c='EV_DoDonut'/>
+<use f='codebrowser/p_spec.c' l='1195' u='w' c='EV_DoDonut'/>
+<use f='codebrowser/p_spec.c' l='1209' u='w' c='EV_DoDonut'/>

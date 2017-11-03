@@ -1,0 +1,4 @@
+<def f='codebrowser/p_map.c' l='1156' type='int'/>
+<use f='codebrowser/p_map.c' l='1188' u='r' c='PIT_RadiusAttack'/>
+<use f='codebrowser/p_map.c' l='1194' u='r' c='PIT_RadiusAttack'/>
+<use f='codebrowser/p_map.c' l='1228' u='w' c='P_RadiusAttack'/>

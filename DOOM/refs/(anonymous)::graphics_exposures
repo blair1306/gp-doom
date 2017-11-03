@@ -1,0 +1,3 @@
+<dec f='include/X11/Xlib.h' l='201' type='int'/>
+<use f='codebrowser/i_video.c' l='824' u='w' c='I_InitGraphics'/>
+<offset>800</offset>

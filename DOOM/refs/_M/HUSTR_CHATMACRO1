@@ -1,0 +1,24 @@
+<dec f='codebrowser/d_englsh.h' l='312'/>
+<doc f='codebrowser/d_englsh.h' l='290'>// #define HUSTR_CHATMACRO1	&quot;I&apos;m ready to kick butt!&quot;
+// #define HUSTR_CHATMACRO2	&quot;I&apos;m OK.&quot;
+// #define HUSTR_CHATMACRO3	&quot;I&apos;m not looking too good!&quot;
+// #define HUSTR_CHATMACRO4	&quot;Help!&quot;
+// #define HUSTR_CHATMACRO5	&quot;You suck!&quot;
+// #define HUSTR_CHATMACRO6	&quot;Next time, scumbag...&quot;
+// #define HUSTR_CHATMACRO7	&quot;Come here!&quot;
+// #define HUSTR_CHATMACRO8	&quot;I&apos;ll take care of it.&quot;
+// #define HUSTR_CHATMACRO9	&quot;Yes&quot;
+// #define HUSTR_CHATMACRO0	&quot;No&quot;
+
+// #define HUSTR_CHATMACRO1	&quot;I&apos;m ready to kick butt!&quot;
+// #define HUSTR_CHATMACRO2	&quot;I&apos;m OK.&quot;
+// #define HUSTR_CHATMACRO3	&quot;I&apos;m not looking too good!&quot;
+// #define HUSTR_CHATMACRO4	&quot;Help!&quot;
+// #define HUSTR_CHATMACRO5	&quot;You suck!&quot;
+// #define HUSTR_CHATMACRO6	&quot;Next time, scumbag...&quot;
+// #define HUSTR_CHATMACRO7	&quot;Come here!&quot;
+// #define HUSTR_CHATMACRO8	&quot;I&apos;ll take care of it.&quot;
+// #define HUSTR_CHATMACRO9	&quot;Yes&quot;
+// #define HUSTR_CHATMACRO0	&quot;No&quot;</doc>
+<use f='codebrowser/hu_stuff.c' l='68' u='c'/>
+<use f='codebrowser/m_misc.c' l='292' u='c'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/m_menu.c' l='198' type='void M_ChangeDetail(int choice)'/>
+<use f='codebrowser/m_menu.c' l='356'/>
+<use f='codebrowser/m_menu.c' l='356'/>
+<use f='codebrowser/m_menu.c' l='356'/>
+<use f='codebrowser/m_menu.c' l='356'/>
+<def f='codebrowser/m_menu.c' l='1131' ll='1147' type='void M_ChangeDetail(int choice)'/>
+<use f='codebrowser/m_menu.c' l='1568' u='c' c='M_Responder'/>

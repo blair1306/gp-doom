@@ -1,0 +1,7 @@
+<def f='codebrowser/r_bsp.c' l='259' ll='356' type='void R_AddLine(seg_t * line)'/>
+<use f='codebrowser/r_bsp.c' l='539' u='c' c='R_Subsector'/>
+<doc f='codebrowser/r_bsp.c' l='254'>//
+// R_AddLine
+// Clips the given segment
+// and adds any visible pieces to the line list.
+//</doc>

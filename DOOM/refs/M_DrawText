@@ -1,0 +1,2 @@
+<dec f='codebrowser/m_misc.h' l='53' type='int M_DrawText(int x, int y, boolean direct, char * string)'/>
+<def f='codebrowser/m_misc.c' l='69' ll='100' type='int M_DrawText(int x, int y, boolean direct, char * string)'/>

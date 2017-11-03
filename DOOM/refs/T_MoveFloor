@@ -1,0 +1,12 @@
+<dec f='codebrowser/p_spec.h' l='629' type='void T_MoveFloor(floormove_t * floor)'/>
+<def f='codebrowser/p_floor.c' l='209' ll='254' type='void T_MoveFloor(floormove_t * floor)'/>
+<use f='codebrowser/p_floor.c' l='285' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='488' u='r' c='EV_BuildStairs'/>
+<use f='codebrowser/p_floor.c' l='543' u='r' c='EV_BuildStairs'/>
+<doc f='codebrowser/p_floor.c' l='206'>//
+// MOVE A FLOOR TO IT&apos;S DESTINATION (UP OR DOWN)
+//</doc>
+<use f='codebrowser/p_saveg.c' l='410' u='r' c='P_ArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='529' u='r' c='P_UnArchiveSpecials'/>
+<use f='codebrowser/p_spec.c' l='1196' u='r' c='EV_DoDonut'/>
+<use f='codebrowser/p_spec.c' l='1210' u='r' c='EV_DoDonut'/>

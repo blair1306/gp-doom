@@ -1,0 +1,14 @@
+<dec f='codebrowser/d_event.h' l='37' type='0'/>
+<use f='codebrowser/am_map.c' l='627' u='r' c='AM_Responder'/>
+<use f='codebrowser/am_map.c' l='635' u='r' c='AM_Responder'/>
+<use f='codebrowser/d_net.c' l='467' u='r' c='CheckAbort'/>
+<use f='codebrowser/f_finale.c' l='504' u='r' c='F_CastResponder'/>
+<use f='codebrowser/g_game.c' l='507' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='525' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='560' c='G_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='645' u='r' c='HU_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='650' u='r' c='HU_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='654' u='r' c='HU_Responder'/>
+<use f='codebrowser/i_video.c' l='204' u='r' c='I_GetEvent'/>
+<use f='codebrowser/m_menu.c' l='1442' u='r' c='M_Responder'/>
+<use f='codebrowser/st_stuff.c' l='541' u='r' c='ST_Responder'/>

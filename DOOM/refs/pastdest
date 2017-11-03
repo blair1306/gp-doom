@@ -1,0 +1,12 @@
+<dec f='codebrowser/p_spec.h' l='606' type='2'/>
+<use f='codebrowser/p_ceilng.c' l='82' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='123' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_doors.c' l='124' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='175' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_floor.c' l='79' u='r' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='108' u='r' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='147' u='r' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='180' u='r' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='222' u='r' c='T_MoveFloor'/>
+<use f='codebrowser/p_plats.c' l='82' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='111' u='r' c='T_PlatRaise'/>

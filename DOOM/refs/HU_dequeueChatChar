@@ -1,0 +1,3 @@
+<dec f='codebrowser/hu_stuff.h' l='57' type='char HU_dequeueChatChar()'/>
+<use f='codebrowser/g_game.c' l='328' u='c' c='G_BuildTiccmd'/>
+<def f='codebrowser/hu_stuff.c' l='600' ll='615' type='char HU_dequeueChatChar()'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/i_video.c' l='479' type='void Expand4(unsigned int * , double * )'/>
+<use f='codebrowser/i_video.c' l='480' u='c' c='I_FinishUpdate'/>
+<def f='codebrowser/i_video.c' l='957' ll='1047' type='void Expand4(unsigned int * lineptr, double * xline)'/>
+<doc f='codebrowser/i_video.c' l='478'>// Broken. Gotta fix this some day.</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/sounds.h' l='235' type='56'/>
+<use f='codebrowser/f_finale.c' l='431' u='r' c='F_CastTicker'/>
+<use f='codebrowser/m_menu.c' l='1072'/>
+<use f='codebrowser/m_menu.c' l='1072'/>
+<use f='codebrowser/p_enemy.c' l='1098' u='r' c='A_SkelWhoosh'/>

@@ -1,0 +1,17 @@
+<dec f='codebrowser/d_player.h' l='143' type='int'/>
+<offset>1856</offset>
+<doc f='codebrowser/d_player.h' l='142'>// For screen flashing (red or bright).</doc>
+<use f='codebrowser/g_game.c' l='790' u='w' c='G_PlayerFinishLevel'/>
+<use f='codebrowser/p_inter.c' l='875' u='w' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='877' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='878' u='w' c='P_DamageMobj'/>
+<use f='codebrowser/p_mobj.c' l='679' u='w' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_user.c' l='215' u='r' c='P_DeathThink'/>
+<use f='codebrowser/p_user.c' l='216' u='w' c='P_DeathThink'/>
+<use f='codebrowser/p_user.c' l='223' u='r' c='P_DeathThink'/>
+<use f='codebrowser/p_user.c' l='224' u='w' c='P_DeathThink'/>
+<use f='codebrowser/p_user.c' l='355' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='356' u='w' c='P_PlayerThink'/>
+<use f='codebrowser/st_stuff.c' l='800' u='r' c='ST_updateFaceWidget'/>
+<use f='codebrowser/st_stuff.c' l='858' u='r' c='ST_updateFaceWidget'/>
+<use f='codebrowser/st_stuff.c' l='1008' u='r' c='ST_doPaletteStuff'/>

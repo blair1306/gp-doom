@@ -1,0 +1,9 @@
+<dec f='codebrowser/doomstat.h' l='64' type='boolean'/>
+<doc f='codebrowser/doomstat.h' l='63'>// Set if homebrew PWAD stuff has been added.</doc>
+<use f='codebrowser/d_main.c' l='806' u='w' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='943' u='w' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1025' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1050' u='r' c='D_DoomMain'/>
+<def f='codebrowser/doomstat.c' l='42' type='boolean'/>
+<doc f='codebrowser/doomstat.c' l='41'>// Set if homebrew PWAD stuff has been added.</doc>
+<use f='codebrowser/r_things.c' l='224' u='r' c='R_InitSpriteDefs'/>

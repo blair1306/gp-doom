@@ -1,0 +1,9 @@
+<dec f='codebrowser/sounds.h' l='58' type='int'/>
+<offset>320</offset>
+<doc f='codebrowser/sounds.h' l='55'>// this is checked every second to see if sound
+    // can be thrown out (if 0, then decrement, if -1,
+    // then throw out, if &gt; 0, then it is in use)</doc>
+<use f='codebrowser/s_sound.c' l='191' u='w' c='S_Init'/>
+<use f='codebrowser/s_sound.c' l='384' u='w' c='S_StartSoundAtVolume'/>
+<use f='codebrowser/s_sound.c' l='385' u='w' c='S_StartSoundAtVolume'/>
+<use f='codebrowser/s_sound.c' l='738' u='w' c='S_StopChannel'/>

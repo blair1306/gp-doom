@@ -1,0 +1,13 @@
+<dec f='codebrowser/st_stuff.h' l='42' type='boolean ST_Responder(event_t * ev)'/>
+<dec f='codebrowser/st_stuff.h' l='77' type='boolean ST_Responder(event_t * ev)'/>
+<use f='codebrowser/am_map.c' l='495' u='c' c='AM_initVariables'/>
+<use f='codebrowser/am_map.c' l='566' u='c' c='AM_Stop'/>
+<doc f='codebrowser/st_stuff.h' l='37'>//
+// STATUS BAR
+//
+
+// Called by main loop.</doc>
+<use f='codebrowser/g_game.c' l='546' u='c' c='G_Responder'/>
+<def f='codebrowser/st_stuff.c' l='517' ll='725' type='boolean ST_Responder(event_t * ev)'/>
+<doc f='codebrowser/st_stuff.c' l='515'>// Respond to keyboard input events,
+//  intercept cheats.</doc>

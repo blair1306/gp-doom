@@ -1,0 +1,4 @@
+<dec f='codebrowser/g_game.c' l='80' type='void G_ReadDemoTiccmd(ticcmd_t * cmd)'/>
+<use f='codebrowser/g_game.c' l='667' u='c' c='G_Ticker'/>
+<def f='codebrowser/g_game.c' l='1491' ll='1503' type='void G_ReadDemoTiccmd(ticcmd_t * cmd)'/>
+<use f='codebrowser/g_game.c' l='1522' u='c' c='G_WriteDemoTiccmd'/>

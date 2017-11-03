@@ -1,0 +1,18 @@
+<dec f='codebrowser/info.c' l='100' type='void A_Tracer()'/>
+<use f='codebrowser/info.c' l='452'/>
+<use f='codebrowser/info.c' l='452'/>
+<use f='codebrowser/info.c' l='452'/>
+<use f='codebrowser/info.c' l='452'/>
+<use f='codebrowser/info.c' l='453'/>
+<use f='codebrowser/info.c' l='453'/>
+<use f='codebrowser/info.c' l='453'/>
+<use f='codebrowser/info.c' l='453'/>
+<use f='codebrowser/info.c' l='452'/>
+<use f='codebrowser/info.c' l='452'/>
+<use f='codebrowser/info.c' l='452'/>
+<use f='codebrowser/info.c' l='452'/>
+<use f='codebrowser/info.c' l='453'/>
+<use f='codebrowser/info.c' l='453'/>
+<use f='codebrowser/info.c' l='453'/>
+<use f='codebrowser/info.c' l='453'/>
+<def f='codebrowser/p_enemy.c' l='1021' ll='1090' type='void A_Tracer(mobj_t * actor)'/>

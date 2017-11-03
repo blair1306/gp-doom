@@ -1,0 +1,24 @@
+<dec f='codebrowser/doomdef.h' l='75'/>
+<doc f='codebrowser/doomdef.h' l='73'>// If rangecheck is undefined,
+// most parameter validation debugging code will not be compiled</doc>
+<use f='codebrowser/p_sight.c' l='153' u='a'/>
+<use f='codebrowser/r_bsp.c' l='503' u='a'/>
+<use f='codebrowser/r_draw.c' l='118' u='a'/>
+<use f='codebrowser/r_draw.c' l='225' u='a'/>
+<use f='codebrowser/r_draw.c' l='307' u='a'/>
+<use f='codebrowser/r_draw.c' l='396' u='a'/>
+<use f='codebrowser/r_draw.c' l='528' u='a'/>
+<use f='codebrowser/r_draw.c' l='651' u='a'/>
+<use f='codebrowser/r_plane.c' l='131' u='a'/>
+<use f='codebrowser/r_plane.c' l='375' u='a'/>
+<use f='codebrowser/r_segs.c' l='389' u='a'/>
+<use f='codebrowser/r_things.c' l='433' u='a'/>
+<use f='codebrowser/r_things.c' l='506' u='a'/>
+<use f='codebrowser/r_things.c' l='512' u='a'/>
+<use f='codebrowser/r_things.c' l='659' u='a'/>
+<use f='codebrowser/r_things.c' l='665' u='a'/>
+<use f='codebrowser/v_video.c' l='171' u='a'/>
+<use f='codebrowser/v_video.c' l='221' u='a'/>
+<use f='codebrowser/v_video.c' l='288' u='a'/>
+<use f='codebrowser/v_video.c' l='415' u='a'/>
+<use f='codebrowser/v_video.c' l='455' u='a'/>

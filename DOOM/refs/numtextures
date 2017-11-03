@@ -1,0 +1,18 @@
+<def f='codebrowser/r_data.c' l='141' type='int'/>
+<use f='codebrowser/r_data.c' l='480' u='w' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='482' u='r' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='483' u='r' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='484' u='r' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='485' u='r' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='486' u='r' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='487' u='r' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='488' u='r' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='495' u='r' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='504' u='r' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='566' u='r' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='570' u='r' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='572' u='r' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='704' u='r' c='R_CheckTextureNumForName'/>
+<use f='codebrowser/r_data.c' l='784' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='785' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='803' u='r' c='R_PrecacheLevel'/>

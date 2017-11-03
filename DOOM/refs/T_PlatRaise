@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_spec.h' l='311' type='void T_PlatRaise(plat_t * plat)'/>
+<def f='codebrowser/p_plats.c' l='52' ll='131' type='void T_PlatRaise(plat_t * plat)'/>
+<use f='codebrowser/p_plats.c' l='179' u='r' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='269' u='r' c='P_ActivateInStasis'/>
+<doc f='codebrowser/p_plats.c' l='49'>//
+// Move a plat up and down
+//</doc>
+<use f='codebrowser/p_saveg.c' l='421' u='r' c='P_ArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='542' u='r' c='P_UnArchiveSpecials'/>

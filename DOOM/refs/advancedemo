@@ -1,0 +1,6 @@
+<def f='codebrowser/d_main.c' l='119' type='boolean'/>
+<use f='codebrowser/d_main.c' l='380' u='r' c='D_DoomLoop'/>
+<use f='codebrowser/d_main.c' l='446' u='w' c='D_AdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='457' u='w' c='D_DoAdvanceDemo'/>
+<dec f='codebrowser/d_net.c' l='634' type='boolean'/>
+<use f='codebrowser/d_net.c' l='742' u='r' c='TryRunTics'/>

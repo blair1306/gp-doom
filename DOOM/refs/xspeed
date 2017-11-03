@@ -1,0 +1,8 @@
+<def f='codebrowser/p_enemy.c' l='264' type='fixed_t [8]'/>
+<use f='codebrowser/p_enemy.c' l='290' u='r' c='P_Move'/>
+<use f='codebrowser/p_enemy.c' l='1184' u='r' c='A_VileChase'/>
+<doc f='codebrowser/p_enemy.c' l='259'>//
+// P_Move
+// Move in the current direction,
+// returns false if the move is blocked.
+//</doc>

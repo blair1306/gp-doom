@@ -1,0 +1,426 @@
+<dec f='codebrowser/doomtype.h' l='34' type='1'/>
+<use f='codebrowser/am_map.c' l='290'/>
+<use f='codebrowser/am_map.c' l='463' u='r' c='AM_initVariables'/>
+<use f='codebrowser/am_map.c' l='567' u='r' c='AM_Stop'/>
+<use f='codebrowser/am_map.c' l='631' u='r' c='AM_Responder'/>
+<use f='codebrowser/am_map.c' l='638' u='r' c='AM_Responder'/>
+<use f='codebrowser/am_map.c' l='667' u='r' c='AM_Responder'/>
+<use f='codebrowser/am_map.c' l='969' u='r' c='AM_clipMline'/>
+<use f='codebrowser/d_main.c' l='225' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='243' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='245' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='446' u='r' c='D_AdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='620' u='r' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='631' u='r' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='643' u='r' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='943' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='971' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='979' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1007' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1132' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1138' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_net.c' l='152' u='r' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='199' u='r' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='252' u='r' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='336' u='r' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='481' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='533' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/d_net.c' l='587' u='r' c='D_CheckNetGame'/>
+<use f='codebrowser/d_net.c' l='589' u='r' c='D_CheckNetGame'/>
+<use f='codebrowser/f_finale.c' l='114' u='r' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='144' u='r' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='182' u='r' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='388' u='r' c='F_StartCast'/>
+<use f='codebrowser/f_finale.c' l='463' u='r' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='508' u='r' c='F_CastResponder'/>
+<use f='codebrowser/f_finale.c' l='511' u='r' c='F_CastResponder'/>
+<use f='codebrowser/f_finale.c' l='519' u='r' c='F_CastResponder'/>
+<use f='codebrowser/f_wipe.c' l='108' u='r' c='wipe_doColorXForm'/>
+<use f='codebrowser/f_wipe.c' l='117' u='r' c='wipe_doColorXForm'/>
+<use f='codebrowser/f_wipe.c' l='184' u='r' c='wipe_doMelt'/>
+<use f='codebrowser/g_game.c' l='136'/>
+<use f='codebrowser/g_game.c' l='517' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='530' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='545' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='547' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='549' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='555' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='563' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='564' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='567' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='568' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='581' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='590' u='r' c='G_Responder'/>
+<use f='codebrowser/g_game.c' l='822' u='r' c='G_PlayerReborn'/>
+<use f='codebrowser/g_game.c' l='826' u='r' c='G_PlayerReborn'/>
+<use f='codebrowser/g_game.c' l='827' u='r' c='G_PlayerReborn'/>
+<use f='codebrowser/g_game.c' l='862' u='r' c='G_CheckSpot'/>
+<use f='codebrowser/g_game.c' l='888' u='r' c='G_CheckSpot'/>
+<use f='codebrowser/g_game.c' l='1016' u='r' c='G_SecretExitLevel'/>
+<use f='codebrowser/g_game.c' l='1041' u='r' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1059' u='r' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1152' u='r' c='G_WorldDone'/>
+<use f='codebrowser/g_game.c' l='1178' u='r' c='G_DoWorldDone'/>
+<use f='codebrowser/g_game.c' l='1267' u='r' c='G_SaveGame'/>
+<use f='codebrowser/g_game.c' l='1417' u='r' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1443' u='r' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1447' u='r' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1452' u='r' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1545' u='r' c='G_RecordDemo'/>
+<use f='codebrowser/g_game.c' l='1609' u='r' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1610' u='r' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1616' u='r' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1619' u='r' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1629' u='r' c='G_TimeDemo'/>
+<use f='codebrowser/g_game.c' l='1630' u='r' c='G_TimeDemo'/>
+<use f='codebrowser/g_game.c' l='1674' u='r' c='G_CheckDemoStatus'/>
+<use f='codebrowser/hu_lib.c' l='50' u='r' c='HUlib_clearTextLine'/>
+<use f='codebrowser/hu_lib.c' l='81' u='r' c='HUlib_addCharToTextLine'/>
+<use f='codebrowser/hu_lib.c' l='94' u='r' c='HUlib_delCharFromTextLine'/>
+<use f='codebrowser/hu_lib.c' l='148' u='r' c='HUlib_eraseTextLine'/>
+<use f='codebrowser/hu_lib.c' l='191' u='r' c='HUlib_initSText'/>
+<use f='codebrowser/hu_lib.c' l='280' u='r' c='HUlib_initIText'/>
+<use f='codebrowser/hu_lib.c' l='332' u='r' c='HUlib_keyInIText'/>
+<use f='codebrowser/hu_lib.c' l='343' u='r' c='HUlib_drawIText'/>
+<use f='codebrowser/hu_stuff.c' l='482' u='r' c='HU_Start'/>
+<use f='codebrowser/hu_stuff.c' l='527' u='r' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='562' u='r' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='563' u='r' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='661' u='r' c='HU_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='663' u='r' c='HU_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='667' u='r' c='HU_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='679' u='r' c='HU_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='726' u='r' c='HU_Responder'/>
+<use f='codebrowser/i_net.c' l='246' u='r' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='295' u='r' c='I_InitNetwork'/>
+<use f='codebrowser/i_video.c' l='265' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='275' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='543' u='r' c='UploadNewPalette'/>
+<use f='codebrowser/m_menu.c' l='710' u='r' c='M_QuickSave'/>
+<use f='codebrowser/m_menu.c' l='742' u='r' c='M_QuickLoad'/>
+<use f='codebrowser/m_menu.c' l='754' u='r' c='M_DrawReadThis1'/>
+<use f='codebrowser/m_menu.c' l='778' u='r' c='M_DrawReadThis2'/>
+<use f='codebrowser/m_menu.c' l='911' u='r' c='M_ChooseSkill'/>
+<use f='codebrowser/m_menu.c' l='989' u='r' c='M_ChangeMessages'/>
+<use f='codebrowser/m_menu.c' l='1021' u='r' c='M_EndGame'/>
+<use f='codebrowser/m_menu.c' l='1107' u='r' c='M_QuitDOOM'/>
+<use f='codebrowser/m_menu.c' l='1238' u='r' c='M_StartMessage'/>
+<use f='codebrowser/m_menu.c' l='1491' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1497' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1508' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1514' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1527' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1534' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1546' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1552' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1558' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1565' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1570' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1575' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1580' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1585' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1590' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1595' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1603' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1615' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1632' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1642' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1651' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1660' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1678' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1684' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1694' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1702' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1709' u='r' c='M_Responder'/>
+<use f='codebrowser/m_misc.c' l='132' u='r' c='M_WriteFile'/>
+<use f='codebrowser/m_misc.c' l='381' u='r' c='M_LoadDefaults'/>
+<use f='codebrowser/p_ceilng.c' l='213' u='r' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='222' u='r' c='EV_DoCeiling'/>
+<use f='codebrowser/p_enemy.c' l='191' u='r' c='P_CheckMeleeRange'/>
+<use f='codebrowser/p_enemy.c' l='209' u='r' c='P_CheckMissileRange'/>
+<use f='codebrowser/p_enemy.c' l='255' u='r' c='P_CheckMissileRange'/>
+<use f='codebrowser/p_enemy.c' l='307' u='r' c='P_Move'/>
+<use f='codebrowser/p_enemy.c' l='322' u='r' c='P_Move'/>
+<use f='codebrowser/p_enemy.c' l='334' u='r' c='P_Move'/>
+<use f='codebrowser/p_enemy.c' l='357' u='r' c='P_TryWalk'/>
+<use f='codebrowser/p_enemy.c' l='554' u='r' c='P_LookForPlayers'/>
+<use f='codebrowser/p_enemy.c' l='708' u='r' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='759' u='r' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='1135' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1138' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1141' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1147' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1156' u='r' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1982' u='r' c='A_SpawnFly'/>
+<use f='codebrowser/p_floor.c' l='73' u='r' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='86' u='r' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='102' u='r' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='116' u='r' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='118' u='r' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='141' u='r' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='156' u='r' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='158' u='r' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='174' u='r' c='T_MovePlane'/>
+<use f='codebrowser/p_floor.c' l='318' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_inter.c' l='114' u='r' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='159' u='r' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='185' u='r' c='P_GiveWeapon'/>
+<use f='codebrowser/p_inter.c' l='214' u='r' c='P_GiveWeapon'/>
+<use f='codebrowser/p_inter.c' l='215' u='r' c='P_GiveWeapon'/>
+<use f='codebrowser/p_inter.c' l='241' u='r' c='P_GiveBody'/>
+<use f='codebrowser/p_inter.c' l='265' u='r' c='P_GiveArmor'/>
+<use f='codebrowser/p_inter.c' l='297' u='r' c='P_GivePower'/>
+<use f='codebrowser/p_inter.c' l='304' u='r' c='P_GivePower'/>
+<use f='codebrowser/p_inter.c' l='310' u='r' c='P_GivePower'/>
+<use f='codebrowser/p_inter.c' l='316' u='r' c='P_GivePower'/>
+<use f='codebrowser/p_inter.c' l='323' u='r' c='P_GivePower'/>
+<use f='codebrowser/p_inter.c' l='330' u='r' c='P_GivePower'/>
+<use f='codebrowser/p_inter.c' l='594' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_map.c' l='86' u='r' c='PIT_StompThing'/>
+<use f='codebrowser/p_map.c' l='94' u='r' c='PIT_StompThing'/>
+<use f='codebrowser/p_map.c' l='99' u='r' c='PIT_StompThing'/>
+<use f='codebrowser/p_map.c' l='107' u='r' c='PIT_StompThing'/>
+<use f='codebrowser/p_map.c' l='176' u='r' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='195' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='198' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='246' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='259' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='267' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='272' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='295' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='297' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='306' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='413' u='r' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='441' u='r' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='471' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='516' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='557' u='r' c='P_ThingHeightClip'/>
+<use f='codebrowser/p_map.c' l='650' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='668' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='859' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='865' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='868' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='875' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='880' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='945' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='977' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='980' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='987' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='992' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1110' u='r' c='PTR_UseTraverse'/>
+<use f='codebrowser/p_map.c' l='1171' u='r' c='PIT_RadiusAttack'/>
+<use f='codebrowser/p_map.c' l='1177' u='r' c='PIT_RadiusAttack'/>
+<use f='codebrowser/p_map.c' l='1189' u='r' c='PIT_RadiusAttack'/>
+<use f='codebrowser/p_map.c' l='1197' u='r' c='PIT_RadiusAttack'/>
+<use f='codebrowser/p_map.c' l='1264' u='r' c='PIT_ChangeSector'/>
+<use f='codebrowser/p_map.c' l='1278' u='r' c='PIT_ChangeSector'/>
+<use f='codebrowser/p_map.c' l='1287' u='r' c='PIT_ChangeSector'/>
+<use f='codebrowser/p_map.c' l='1293' u='r' c='PIT_ChangeSector'/>
+<use f='codebrowser/p_map.c' l='1296' u='r' c='PIT_ChangeSector'/>
+<use f='codebrowser/p_map.c' l='1312' u='r' c='PIT_ChangeSector'/>
+<use f='codebrowser/p_maputl.c' l='486' u='r' c='P_BlockLinesIterator'/>
+<use f='codebrowser/p_maputl.c' l='505' u='r' c='P_BlockLinesIterator'/>
+<use f='codebrowser/p_maputl.c' l='525' u='r' c='P_BlockThingsIterator'/>
+<use f='codebrowser/p_maputl.c' l='536' u='r' c='P_BlockThingsIterator'/>
+<use f='codebrowser/p_maputl.c' l='585' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='592' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='604' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='608' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='656' u='r' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='666' u='r' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='673' u='r' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='709' u='r' c='P_TraverseIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='729' u='r' c='P_TraverseIntercepts'/>
+<use f='codebrowser/p_mobj.c' l='83' u='r' c='P_SetMobjState'/>
+<use f='codebrowser/p_mobj.c' l='691' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_pspr.c' l='179' u='r' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='321' u='r' c='A_WeaponReady'/>
+<use f='codebrowser/p_setup.c' l='315' u='r' c='P_LoadThings'/>
+<use f='codebrowser/p_sight.c' l='247' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/p_sight.c' l='285' u='r' c='P_CrossBSPNode'/>
+<use f='codebrowser/p_spec.c' l='115'/>
+<use f='codebrowser/p_spec.c' l='115'/>
+<use f='codebrowser/p_spec.c' l='116'/>
+<use f='codebrowser/p_spec.c' l='116'/>
+<use f='codebrowser/p_spec.c' l='118'/>
+<use f='codebrowser/p_spec.c' l='118'/>
+<use f='codebrowser/p_spec.c' l='119'/>
+<use f='codebrowser/p_spec.c' l='119'/>
+<use f='codebrowser/p_spec.c' l='120'/>
+<use f='codebrowser/p_spec.c' l='120'/>
+<use f='codebrowser/p_spec.c' l='121'/>
+<use f='codebrowser/p_spec.c' l='121'/>
+<use f='codebrowser/p_spec.c' l='122'/>
+<use f='codebrowser/p_spec.c' l='122'/>
+<use f='codebrowser/p_spec.c' l='123'/>
+<use f='codebrowser/p_spec.c' l='123'/>
+<use f='codebrowser/p_spec.c' l='124'/>
+<use f='codebrowser/p_spec.c' l='124'/>
+<use f='codebrowser/p_spec.c' l='126'/>
+<use f='codebrowser/p_spec.c' l='126'/>
+<use f='codebrowser/p_spec.c' l='127'/>
+<use f='codebrowser/p_spec.c' l='127'/>
+<use f='codebrowser/p_spec.c' l='128'/>
+<use f='codebrowser/p_spec.c' l='128'/>
+<use f='codebrowser/p_spec.c' l='129'/>
+<use f='codebrowser/p_spec.c' l='129'/>
+<use f='codebrowser/p_spec.c' l='115'/>
+<use f='codebrowser/p_spec.c' l='115'/>
+<use f='codebrowser/p_spec.c' l='116'/>
+<use f='codebrowser/p_spec.c' l='116'/>
+<use f='codebrowser/p_spec.c' l='118'/>
+<use f='codebrowser/p_spec.c' l='118'/>
+<use f='codebrowser/p_spec.c' l='119'/>
+<use f='codebrowser/p_spec.c' l='119'/>
+<use f='codebrowser/p_spec.c' l='120'/>
+<use f='codebrowser/p_spec.c' l='120'/>
+<use f='codebrowser/p_spec.c' l='121'/>
+<use f='codebrowser/p_spec.c' l='121'/>
+<use f='codebrowser/p_spec.c' l='122'/>
+<use f='codebrowser/p_spec.c' l='122'/>
+<use f='codebrowser/p_spec.c' l='123'/>
+<use f='codebrowser/p_spec.c' l='123'/>
+<use f='codebrowser/p_spec.c' l='124'/>
+<use f='codebrowser/p_spec.c' l='124'/>
+<use f='codebrowser/p_spec.c' l='126'/>
+<use f='codebrowser/p_spec.c' l='126'/>
+<use f='codebrowser/p_spec.c' l='127'/>
+<use f='codebrowser/p_spec.c' l='127'/>
+<use f='codebrowser/p_spec.c' l='128'/>
+<use f='codebrowser/p_spec.c' l='128'/>
+<use f='codebrowser/p_spec.c' l='129'/>
+<use f='codebrowser/p_spec.c' l='129'/>
+<use f='codebrowser/p_spec.c' l='1092' u='r' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_spec.c' l='1256' u='r' c='P_SpawnSpecials'/>
+<use f='codebrowser/p_spec.c' l='1265' u='r' c='P_SpawnSpecials'/>
+<use f='codebrowser/p_switch.c' l='652' u='r' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_user.c' l='327' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/r_bsp.c' l='420' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='435' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='486' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_main.c' l='662' u='r' c='R_SetViewSize'/>
+<use f='codebrowser/r_segs.c' l='461' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='541' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='554' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='566' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='610' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_things.c' l='128' u='r' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='146' u='r' c='R_InstallSpriteLump'/>
+<use f='codebrowser/r_things.c' l='235' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/s_sound.c' l='245' u='r' c='S_Start'/>
+<use f='codebrowser/s_sound.c' l='502' u='r' c='S_PauseSound'/>
+<use f='codebrowser/sounds.c' l='150'/>
+<use f='codebrowser/sounds.c' l='150'/>
+<use f='codebrowser/sounds.c' l='151'/>
+<use f='codebrowser/sounds.c' l='151'/>
+<use f='codebrowser/sounds.c' l='154'/>
+<use f='codebrowser/sounds.c' l='154'/>
+<use f='codebrowser/sounds.c' l='155'/>
+<use f='codebrowser/sounds.c' l='155'/>
+<use f='codebrowser/sounds.c' l='156'/>
+<use f='codebrowser/sounds.c' l='156'/>
+<use f='codebrowser/sounds.c' l='157'/>
+<use f='codebrowser/sounds.c' l='157'/>
+<use f='codebrowser/sounds.c' l='158'/>
+<use f='codebrowser/sounds.c' l='158'/>
+<use f='codebrowser/sounds.c' l='159'/>
+<use f='codebrowser/sounds.c' l='159'/>
+<use f='codebrowser/sounds.c' l='160'/>
+<use f='codebrowser/sounds.c' l='160'/>
+<use f='codebrowser/sounds.c' l='161'/>
+<use f='codebrowser/sounds.c' l='161'/>
+<use f='codebrowser/sounds.c' l='162'/>
+<use f='codebrowser/sounds.c' l='162'/>
+<use f='codebrowser/sounds.c' l='163'/>
+<use f='codebrowser/sounds.c' l='163'/>
+<use f='codebrowser/sounds.c' l='164'/>
+<use f='codebrowser/sounds.c' l='164'/>
+<use f='codebrowser/sounds.c' l='165'/>
+<use f='codebrowser/sounds.c' l='165'/>
+<use f='codebrowser/sounds.c' l='166'/>
+<use f='codebrowser/sounds.c' l='166'/>
+<use f='codebrowser/sounds.c' l='167'/>
+<use f='codebrowser/sounds.c' l='167'/>
+<use f='codebrowser/sounds.c' l='168'/>
+<use f='codebrowser/sounds.c' l='168'/>
+<use f='codebrowser/sounds.c' l='193'/>
+<use f='codebrowser/sounds.c' l='193'/>
+<use f='codebrowser/sounds.c' l='194'/>
+<use f='codebrowser/sounds.c' l='194'/>
+<use f='codebrowser/sounds.c' l='195'/>
+<use f='codebrowser/sounds.c' l='195'/>
+<use f='codebrowser/sounds.c' l='196'/>
+<use f='codebrowser/sounds.c' l='196'/>
+<use f='codebrowser/sounds.c' l='197'/>
+<use f='codebrowser/sounds.c' l='197'/>
+<use f='codebrowser/sounds.c' l='198'/>
+<use f='codebrowser/sounds.c' l='198'/>
+<use f='codebrowser/sounds.c' l='150'/>
+<use f='codebrowser/sounds.c' l='150'/>
+<use f='codebrowser/sounds.c' l='151'/>
+<use f='codebrowser/sounds.c' l='151'/>
+<use f='codebrowser/sounds.c' l='154'/>
+<use f='codebrowser/sounds.c' l='154'/>
+<use f='codebrowser/sounds.c' l='155'/>
+<use f='codebrowser/sounds.c' l='155'/>
+<use f='codebrowser/sounds.c' l='156'/>
+<use f='codebrowser/sounds.c' l='156'/>
+<use f='codebrowser/sounds.c' l='157'/>
+<use f='codebrowser/sounds.c' l='157'/>
+<use f='codebrowser/sounds.c' l='158'/>
+<use f='codebrowser/sounds.c' l='158'/>
+<use f='codebrowser/sounds.c' l='159'/>
+<use f='codebrowser/sounds.c' l='159'/>
+<use f='codebrowser/sounds.c' l='160'/>
+<use f='codebrowser/sounds.c' l='160'/>
+<use f='codebrowser/sounds.c' l='161'/>
+<use f='codebrowser/sounds.c' l='161'/>
+<use f='codebrowser/sounds.c' l='162'/>
+<use f='codebrowser/sounds.c' l='162'/>
+<use f='codebrowser/sounds.c' l='163'/>
+<use f='codebrowser/sounds.c' l='163'/>
+<use f='codebrowser/sounds.c' l='164'/>
+<use f='codebrowser/sounds.c' l='164'/>
+<use f='codebrowser/sounds.c' l='165'/>
+<use f='codebrowser/sounds.c' l='165'/>
+<use f='codebrowser/sounds.c' l='166'/>
+<use f='codebrowser/sounds.c' l='166'/>
+<use f='codebrowser/sounds.c' l='167'/>
+<use f='codebrowser/sounds.c' l='167'/>
+<use f='codebrowser/sounds.c' l='168'/>
+<use f='codebrowser/sounds.c' l='168'/>
+<use f='codebrowser/sounds.c' l='193'/>
+<use f='codebrowser/sounds.c' l='193'/>
+<use f='codebrowser/sounds.c' l='194'/>
+<use f='codebrowser/sounds.c' l='194'/>
+<use f='codebrowser/sounds.c' l='195'/>
+<use f='codebrowser/sounds.c' l='195'/>
+<use f='codebrowser/sounds.c' l='196'/>
+<use f='codebrowser/sounds.c' l='196'/>
+<use f='codebrowser/sounds.c' l='197'/>
+<use f='codebrowser/sounds.c' l='197'/>
+<use f='codebrowser/sounds.c' l='198'/>
+<use f='codebrowser/sounds.c' l='198'/>
+<use f='codebrowser/st_stuff.c' l='530' u='r' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='570' u='r' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='584' u='r' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='590' u='r' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='659' u='r' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='660' u='r' c='ST_Responder'/>
+<use f='codebrowser/st_stuff.c' l='783' u='r' c='ST_updateFaceWidget'/>
+<use f='codebrowser/st_stuff.c' l='1098' u='r' c='ST_doRefresh'/>
+<use f='codebrowser/st_stuff.c' l='1254' u='r' c='ST_initData'/>
+<use f='codebrowser/st_stuff.c' l='1261' u='r' c='ST_initData'/>
+<use f='codebrowser/st_stuff.c' l='1441'/>
+<use f='codebrowser/st_stuff.c' l='1463' u='r' c='ST_Stop'/>
+<use f='codebrowser/wi_stuff.c' l='481' u='r' c='WI_drawOnLnode'/>
+<use f='codebrowser/wi_stuff.c' l='814' u='r' c='WI_drawNoState'/>
+<use f='codebrowser/wi_stuff.c' l='937' u='r' c='WI_updateDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1153' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1178' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1203' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1229' u='r' c='WI_updateNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1484' u='r' c='WI_checkForAccelerate'/>
+<use f='codebrowser/wi_stuff.c' l='1492' u='r' c='WI_checkForAccelerate'/>
+<use f='codebrowser/wi_stuff.c' l='1512' u='r' c='WI_Ticker'/>
+<use f='codebrowser/wi_stuff.c' l='1514' u='r' c='WI_Ticker'/>

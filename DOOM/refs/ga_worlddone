@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_event.h' l='63' type='8'/>
+<use f='codebrowser/f_finale.c' l='225' u='r' c='F_Ticker'/>
+<use f='codebrowser/g_game.c' l='642' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1149' u='r' c='G_WorldDone'/>

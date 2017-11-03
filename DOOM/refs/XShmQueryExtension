@@ -1,0 +1,2 @@
+<dec f='include/X11/extensions/XShm.h' l='59' type='int XShmQueryExtension(Display * )'/>
+<use f='codebrowser/i_video.c' l='775' u='c' c='I_InitGraphics'/>

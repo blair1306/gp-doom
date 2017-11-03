@@ -1,0 +1,14 @@
+<dec f='codebrowser/r_defs.h' l='287' type='byte'/>
+<offset>0</offset>
+<doc f='codebrowser/r_defs.h' l='287'>// -1 is the last post in a column</doc>
+<use f='codebrowser/f_finale.c' l='625' u='r' c='F_DrawPatchCol'/>
+<use f='codebrowser/f_finale.c' l='628' u='r' c='F_DrawPatchCol'/>
+<use f='codebrowser/r_data.c' l='198' u='r' c='R_DrawColumnInCache'/>
+<use f='codebrowser/r_data.c' l='202' u='r' c='R_DrawColumnInCache'/>
+<use f='codebrowser/r_things.c' l='359' u='r' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='363' u='r' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='377' u='r' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/v_video.c' l='248' u='r' c='V_DrawPatch'/>
+<use f='codebrowser/v_video.c' l='251' u='r' c='V_DrawPatch'/>
+<use f='codebrowser/v_video.c' l='313' u='r' c='V_DrawPatchFlipped'/>
+<use f='codebrowser/v_video.c' l='316' u='r' c='V_DrawPatchFlipped'/>

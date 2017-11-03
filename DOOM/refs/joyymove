@@ -1,0 +1,5 @@
+<def f='codebrowser/g_game.c' l='202' type='int'/>
+<use f='codebrowser/g_game.c' l='318' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='320' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='492' u='w' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='589' u='w' c='G_Responder'/>

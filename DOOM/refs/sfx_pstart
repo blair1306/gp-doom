@@ -1,0 +1,6 @@
+<dec f='codebrowser/sounds.h' l='197' type='18'/>
+<use f='codebrowser/p_plats.c' l='78' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='126' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='217' u='r' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='230' u='r' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='248' u='r' c='EV_DoPlat'/>

@@ -1,0 +1,9 @@
+<def f='codebrowser/p_enemy.c' l='1449' ll='1505' type='void A_PainShootSkull(mobj_t * actor, angle_t angle)'/>
+<use f='codebrowser/p_enemy.c' l='1518' u='c' c='A_PainAttack'/>
+<use f='codebrowser/p_enemy.c' l='1525' u='c' c='A_PainDie'/>
+<use f='codebrowser/p_enemy.c' l='1526' u='c' c='A_PainDie'/>
+<use f='codebrowser/p_enemy.c' l='1527' u='c' c='A_PainDie'/>
+<doc f='codebrowser/p_enemy.c' l='1445'>//
+// A_PainShootSkull
+// Spawn a lost soul and launch it at the target
+//</doc>

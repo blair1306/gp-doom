@@ -1,0 +1,4 @@
+<dec f='include/X11/Xlib.h' l='569' type='unsigned int'/>
+<use f='codebrowser/i_video.c' l='102' u='r' c='xlatekey'/>
+<offset>672</offset>
+<doc f='include/X11/Xlib.h' l='569'>/* detail */</doc>

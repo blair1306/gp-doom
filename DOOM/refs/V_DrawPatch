@@ -1,0 +1,66 @@
+<dec f='codebrowser/v_video.h' l='72' type='void V_DrawPatch(int x, int y, int scrn, patch_t * patch)'/>
+<use f='codebrowser/am_map.c' l='1320' u='c' c='AM_drawMarks'/>
+<use f='codebrowser/d_main.c' l='436' u='c' c='D_PageDrawer'/>
+<use f='codebrowser/f_finale.c' l='323' u='c' c='F_TextWrite'/>
+<use f='codebrowser/f_finale.c' l='567' u='c' c='F_CastPrint'/>
+<use f='codebrowser/f_finale.c' l='588' u='c' c='F_CastDrawer'/>
+<use f='codebrowser/f_finale.c' l='602' u='c' c='F_CastDrawer'/>
+<use f='codebrowser/f_finale.c' l='677' u='c' c='F_BunnyScroll'/>
+<use f='codebrowser/f_finale.c' l='693' u='c' c='F_BunnyScroll'/>
+<use f='codebrowser/f_finale.c' l='716' u='c' c='F_Drawer'/>
+<use f='codebrowser/f_finale.c' l='719' u='c' c='F_Drawer'/>
+<use f='codebrowser/f_finale.c' l='723' u='c' c='F_Drawer'/>
+<use f='codebrowser/f_finale.c' l='730' u='c' c='F_Drawer'/>
+<use f='codebrowser/m_misc.c' l='95' u='c' c='M_DrawText'/>
+<use f='codebrowser/r_draw.c' l='776' u='c' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='780' u='c' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='784' u='c' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='788' u='c' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='792' u='c' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='797' u='c' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='802' u='c' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='807' u='c' c='R_FillBackScreen'/>
+<use f='codebrowser/st_lib.c' l='135' u='c' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='141' u='c' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='147' u='c' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='185' u='c' c='STlib_updatePercent'/>
+<use f='codebrowser/st_lib.c' l='237' u='c' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='285' u='c' c='STlib_updateBinIcon'/>
+<use f='codebrowser/st_stuff.c' l='504' u='c' c='ST_refreshBackground'/>
+<use f='codebrowser/st_stuff.c' l='507' u='c' c='ST_refreshBackground'/>
+<def f='codebrowser/v_video.c' l='203' ll='263' type='void V_DrawPatch(int x, int y, int scrn, patch_t * patch)'/>
+<use f='codebrowser/v_video.c' l='343' u='c' c='V_DrawPatchDirect'/>
+<doc f='codebrowser/v_video.c' l='199'>//
+// V_DrawPatch
+// Masks a column based masked pic to the screen. 
+//</doc>
+<use f='codebrowser/wi_stuff.c' l='426' u='c' c='WI_drawLF'/>
+<use f='codebrowser/wi_stuff.c' l='432' u='c' c='WI_drawLF'/>
+<use f='codebrowser/wi_stuff.c' l='444' u='c' c='WI_drawEL'/>
+<use f='codebrowser/wi_stuff.c' l='450' u='c' c='WI_drawEL'/>
+<use f='codebrowser/wi_stuff.c' l='491' u='c' c='WI_drawOnLnode'/>
+<use f='codebrowser/wi_stuff.c' l='599' u='c' c='WI_drawAnimatedBack'/>
+<use f='codebrowser/wi_stuff.c' l='656' u='c' c='WI_drawNum'/>
+<use f='codebrowser/wi_stuff.c' l='662' u='c' c='WI_drawNum'/>
+<use f='codebrowser/wi_stuff.c' l='677' u='c' c='WI_drawPercent'/>
+<use f='codebrowser/wi_stuff.c' l='712' u='c' c='WI_drawTime'/>
+<use f='codebrowser/wi_stuff.c' l='719' u='c' c='WI_drawTime'/>
+<use f='codebrowser/wi_stuff.c' l='1001' u='c' c='WI_drawDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1006' u='c' c='WI_drawDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1007' u='c' c='WI_drawDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1017' u='c' c='WI_drawDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1022' u='c' c='WI_drawDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1029' u='c' c='WI_drawDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1034' u='c' c='WI_drawDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1276' u='c' c='WI_drawNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1279' u='c' c='WI_drawNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1282' u='c' c='WI_drawNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1286' u='c' c='WI_drawNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1298' u='c' c='WI_drawNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1301' u='c' c='WI_drawNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1450' u='c' c='WI_drawStats'/>
+<use f='codebrowser/wi_stuff.c' l='1453' u='c' c='WI_drawStats'/>
+<use f='codebrowser/wi_stuff.c' l='1456' u='c' c='WI_drawStats'/>
+<use f='codebrowser/wi_stuff.c' l='1459' u='c' c='WI_drawStats'/>
+<use f='codebrowser/wi_stuff.c' l='1464' u='c' c='WI_drawStats'/>
+<use f='codebrowser/wi_stuff.c' l='1558' u='c' c='WI_loadData'/>

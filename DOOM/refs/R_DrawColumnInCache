@@ -1,0 +1,21 @@
+<def f='codebrowser/r_data.c' l='184' ll='218' type='void R_DrawColumnInCache(column_t * patch, byte * cache, int originy, int cacheheight)'/>
+<use f='codebrowser/r_data.c' l='278' u='c' c='R_GenerateComposite'/>
+<doc f='codebrowser/r_data.c' l='165'>//
+// MAPTEXTURE_T CACHING
+// When a texture is first needed,
+//  it counts the number of composite columns
+//  required in the texture and allocates space
+//  for a column directory and any new columns.
+// The directory will simply point inside other patches
+//  if there is only one patch in a given column,
+//  but any columns with multiple patches
+//  will have new column_ts generated.
+//
+
+
+
+//
+// R_DrawColumnInCache
+// Clip and draw a column
+//  from a patch into a cached post.
+//</doc>

@@ -1,0 +1,18 @@
+<def f='codebrowser/p_pspr.c' l='58' ll='102' type='void P_SetPsprite(player_t * player, int position, statenum_t stnum)'/>
+<use f='codebrowser/p_pspr.c' l='153' u='c' c='P_BringUpWeapon'/>
+<use f='codebrowser/p_pspr.c' l='235' u='c' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='255' u='c' c='P_FireWeapon'/>
+<use f='codebrowser/p_pspr.c' l='267' u='c' c='P_DropWeapon'/>
+<use f='codebrowser/p_pspr.c' l='309' u='c' c='A_WeaponReady'/>
+<use f='codebrowser/p_pspr.c' l='409' u='c' c='A_Lower'/>
+<use f='codebrowser/p_pspr.c' l='440' u='c' c='A_Raise'/>
+<use f='codebrowser/p_pspr.c' l='454' u='c' c='A_GunFlash'/>
+<use f='codebrowser/p_pspr.c' l='584' u='c' c='A_FirePlasma'/>
+<use f='codebrowser/p_pspr.c' l='656' u='c' c='A_FirePistol'/>
+<use f='codebrowser/p_pspr.c' l='680' u='c' c='A_FireShotgun'/>
+<use f='codebrowser/p_pspr.c' l='710' u='c' c='A_FireShotgun2'/>
+<use f='codebrowser/p_pspr.c' l='745' u='c' c='A_FireCGun'/>
+<use f='codebrowser/p_pspr.c' l='870' u='c' c='P_MovePsprites'/>
+<doc f='codebrowser/p_pspr.c' l='55'>//
+// P_SetPsprite
+//</doc>

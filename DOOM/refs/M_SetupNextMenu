@@ -1,0 +1,17 @@
+<dec f='codebrowser/m_menu.c' l='221' type='void M_SetupNextMenu(menu_t * menudef)'/>
+<use f='codebrowser/m_menu.c' l='602' u='c' c='M_LoadGame'/>
+<use f='codebrowser/m_menu.c' l='670' u='c' c='M_SaveGame'/>
+<use f='codebrowser/m_menu.c' l='705' u='c' c='M_QuickSave'/>
+<use f='codebrowser/m_menu.c' l='813' u='c' c='M_Sound'/>
+<use f='codebrowser/m_menu.c' l='882' u='c' c='M_NewGame'/>
+<use f='codebrowser/m_menu.c' l='884' u='c' c='M_NewGame'/>
+<use f='codebrowser/m_menu.c' l='925' u='c' c='M_Episode'/>
+<use f='codebrowser/m_menu.c' l='939' u='c' c='M_Episode'/>
+<use f='codebrowser/m_menu.c' l='970' u='c' c='M_Options'/>
+<use f='codebrowser/m_menu.c' l='1033' u='c' c='M_ReadThis'/>
+<use f='codebrowser/m_menu.c' l='1039' u='c' c='M_ReadThis2'/>
+<use f='codebrowser/m_menu.c' l='1045' u='c' c='M_FinishReadThis'/>
+<def f='codebrowser/m_menu.c' l='1824' ll='1828' type='void M_SetupNextMenu(menu_t * menudef)'/>
+<doc f='codebrowser/m_menu.c' l='1821'>//
+// M_SetupNextMenu
+//</doc>

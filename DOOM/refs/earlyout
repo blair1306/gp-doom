@@ -1,0 +1,3 @@
+<def f='codebrowser/p_maputl.c' l='548' type='boolean'/>
+<use f='codebrowser/p_maputl.c' l='595' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='772' u='w' c='P_PathTraverse'/>

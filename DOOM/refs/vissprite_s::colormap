@@ -1,0 +1,13 @@
+<dec f='codebrowser/r_defs.h' l='405' type='lighttable_t *'/>
+<offset>512</offset>
+<doc f='codebrowser/r_defs.h' l='403'>// for color translation and shadow draw,
+    //  maxbright frames as well</doc>
+<use f='codebrowser/r_things.c' l='410' u='r' c='R_DrawVisSprite'/>
+<use f='codebrowser/r_things.c' l='581' u='w' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='586' u='w' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='591' u='w' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='602' u='w' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='720' u='w' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='725' u='w' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='730' u='w' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='735' u='w' c='R_DrawPSprite'/>

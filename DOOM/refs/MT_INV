@@ -1,0 +1,2 @@
+<dec f='codebrowser/info.h' l='1220' type='56'/>
+<use f='codebrowser/p_mobj.c' l='550' u='r' c='P_RemoveMobj'/>

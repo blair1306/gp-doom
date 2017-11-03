@@ -1,0 +1,27 @@
+<dec f='codebrowser/doomdata.h' l='145' type='char [8]'/>
+<dec f='codebrowser/r_defs.h' l='105' type='short'/>
+<offset>64</offset>
+<use f='codebrowser/p_floor.c' l='232' u='w' c='T_MoveFloor'/>
+<use f='codebrowser/p_floor.c' l='243' u='w' c='T_MoveFloor'/>
+<use f='codebrowser/p_floor.c' l='368' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='368' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='409' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='421' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='432' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='506' u='r' c='EV_BuildStairs'/>
+<use f='codebrowser/p_floor.c' l='528' u='r' c='EV_BuildStairs'/>
+<use f='codebrowser/p_plats.c' l='187' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='187' u='r' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='199' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='199' u='r' c='EV_DoPlat'/>
+<use f='codebrowser/p_saveg.c' l='130' u='r' c='P_ArchiveWorld'/>
+<use f='codebrowser/p_saveg.c' l='183' u='w' c='P_UnArchiveWorld'/>
+<use f='codebrowser/p_setup.c' l='249' u='w' c='P_LoadSectors'/>
+<use f='codebrowser/p_setup.c' l='249' u='r' c='P_LoadSectors'/>
+<use f='codebrowser/p_spec.c' l='1202' u='r' c='EV_DoDonut'/>
+<use f='codebrowser/r_bsp.c' l='342' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='342' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='519' u='r' c='R_Subsector'/>
+<use f='codebrowser/r_data.c' l='767' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_segs.c' l='538' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='538' u='r' c='R_StoreWallRange'/>

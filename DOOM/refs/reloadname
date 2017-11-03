@@ -1,0 +1,9 @@
+<def f='codebrowser/w_wad.c' l='138' type='char *'/>
+<use f='codebrowser/w_wad.c' l='159' u='w' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='214' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='224' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='246' u='r' c='W_Reload'/>
+<use f='codebrowser/w_wad.c' l='249' u='r' c='W_Reload'/>
+<use f='codebrowser/w_wad.c' l='250' u='r' c='W_Reload'/>
+<use f='codebrowser/w_wad.c' l='450' u='r' c='W_ReadLump'/>
+<use f='codebrowser/w_wad.c' l='451' u='r' c='W_ReadLump'/>

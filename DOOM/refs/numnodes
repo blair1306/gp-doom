@@ -1,0 +1,9 @@
+<dec f='codebrowser/r_state.h' l='90' type='int'/>
+<def f='codebrowser/p_setup.c' l='68' type='int'/>
+<use f='codebrowser/p_setup.c' l='273' u='w' c='P_LoadNodes'/>
+<use f='codebrowser/p_setup.c' l='274' u='r' c='P_LoadNodes'/>
+<use f='codebrowser/p_setup.c' l='280' u='r' c='P_LoadNodes'/>
+<use f='codebrowser/p_sight.c' l='346' u='r' c='P_CheckSight'/>
+<use f='codebrowser/r_main.c' l='810' u='r' c='R_PointInSubsector'/>
+<use f='codebrowser/r_main.c' l='813' u='r' c='R_PointInSubsector'/>
+<use f='codebrowser/r_main.c' l='884' u='r' c='R_RenderPlayerView'/>

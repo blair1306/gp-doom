@@ -1,0 +1,20 @@
+<dec f='codebrowser/doomdef.h' l='44' type='3'/>
+<doc f='codebrowser/doomdef.h' l='43'>// DOOM 2 german edition not handled</doc>
+<doc f='codebrowser/doomdef.h' l='44'>// DOOM 1 retail, E4, M36</doc>
+<use f='codebrowser/d_main.c' l='462' u='r' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='504' u='r' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_main.c' l='692' u='r' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='819' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='918' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1076' c='D_DoomMain'/>
+<use f='codebrowser/f_finale.c' l='112' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='715' u='r' c='F_Drawer'/>
+<use f='codebrowser/g_game.c' l='1389' u='r' c='G_InitNew'/>
+<use f='codebrowser/hu_stuff.c' l='450' c='HU_Start'/>
+<use f='codebrowser/m_menu.c' l='762' c='M_DrawReadThis1'/>
+<use f='codebrowser/m_menu.c' l='781' c='M_DrawReadThis2'/>
+<use f='codebrowser/m_menu.c' l='1539' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1886' c='M_Init'/>
+<use f='codebrowser/st_stuff.c' l='703' u='r' c='ST_Responder'/>
+<use f='codebrowser/wi_stuff.c' l='1550' u='r' c='WI_loadData'/>
+<use f='codebrowser/wi_stuff.c' l='1833' u='r' c='WI_initVariables'/>

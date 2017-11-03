@@ -1,0 +1,38 @@
+<dec f='codebrowser/tables.h' l='58' type='fixed_t [10240]'/>
+<use f='codebrowser/am_map.c' l='1182' u='r' c='AM_rotate'/>
+<use f='codebrowser/am_map.c' l='1185' u='r' c='AM_rotate'/>
+<doc f='codebrowser/tables.h' l='57'>// Effective size is 10240.</doc>
+<use f='codebrowser/g_game.c' l='881' u='r' c='G_CheckSpot'/>
+<use f='codebrowser/p_enemy.c' l='1074' u='r' c='A_Tracer'/>
+<use f='codebrowser/p_enemy.c' l='1274' u='r' c='A_Fire'/>
+<use f='codebrowser/p_enemy.c' l='1336' u='r' c='A_VileAttack'/>
+<use f='codebrowser/p_enemy.c' l='1372' u='r' c='A_FatAttack1'/>
+<use f='codebrowser/p_enemy.c' l='1389' u='r' c='A_FatAttack2'/>
+<use f='codebrowser/p_enemy.c' l='1403' u='r' c='A_FatAttack3'/>
+<use f='codebrowser/p_enemy.c' l='1409' u='r' c='A_FatAttack3'/>
+<use f='codebrowser/p_enemy.c' l='1435' u='r' c='A_SkullAttack'/>
+<use f='codebrowser/p_enemy.c' l='1490' u='r' c='A_PainShootSkull'/>
+<use f='codebrowser/p_inter.c' l='831' u='r' c='P_DamageMobj'/>
+<use f='codebrowser/p_map.c' l='629' u='r' c='P_HitSlideLine'/>
+<use f='codebrowser/p_map.c' l='1035' u='r' c='P_AimLineAttack'/>
+<use f='codebrowser/p_map.c' l='1077' u='r' c='P_LineAttack'/>
+<use f='codebrowser/p_map.c' l='1145' u='r' c='P_UseLines'/>
+<use f='codebrowser/p_mobj.c' l='915' u='r' c='P_SpawnMissile'/>
+<use f='codebrowser/p_mobj.c' l='983' u='r' c='P_SpawnPlayerMissile'/>
+<use f='codebrowser/p_pspr.c' l='124' u='r' c='P_CalcSwing'/>
+<use f='codebrowser/p_pspr.c' l='127' u='r' c='P_CalcSwing'/>
+<use f='codebrowser/p_pspr.c' l='333' u='r' c='A_WeaponReady'/>
+<use f='codebrowser/p_telept.c' l='114' u='r' c='EV_Teleport'/>
+<use f='codebrowser/p_user.c' l='67' u='r' c='P_Thrust'/>
+<use f='codebrowser/p_user.c' l='109' u='r' c='P_CalcHeight'/>
+<use f='codebrowser/r_main.c' l='113' u='a'/>
+<use f='codebrowser/r_main.c' l='415' u='r' c='R_PointToDist'/>
+<use f='codebrowser/r_main.c' l='484' u='r' c='R_ScaleFromGlobalAngle'/>
+<use f='codebrowser/r_main.c' l='485' u='r' c='R_ScaleFromGlobalAngle'/>
+<use f='codebrowser/r_main.c' l='842' u='r' c='R_SetupFrame'/>
+<use f='codebrowser/r_plane.c' l='158' u='r' c='R_MapPlane'/>
+<use f='codebrowser/r_plane.c' l='208' u='r' c='R_ClearPlanes'/>
+<use f='codebrowser/r_segs.c' l='409' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='629' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/s_sound.c' l='793' u='r' c='S_AdjustSoundParams'/>
+<def f='codebrowser/tables.c' l='584' ll='1866' type='int [10240]'/>

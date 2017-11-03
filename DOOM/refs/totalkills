@@ -1,0 +1,9 @@
+<dec f='codebrowser/doomstat.h' l='166' type='int'/>
+<doc f='codebrowser/doomstat.h' l='162'>// -------------------------------------
+// Scores, rating.
+// Statistics on a given map, for intermission.
+//</doc>
+<def f='codebrowser/g_game.c' l='125' type='int'/>
+<use f='codebrowser/g_game.c' l='1112' u='r' c='G_DoCompleted'/>
+<use f='codebrowser/p_mobj.c' l='790' u='w' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_setup.c' l='594' u='w' c='P_SetupLevel'/>

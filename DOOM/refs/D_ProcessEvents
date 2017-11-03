@@ -1,0 +1,9 @@
+<dec f='codebrowser/d_main.c' l='130' type='void D_ProcessEvents()'/>
+<def f='codebrowser/d_main.c' l='161' ll='177' type='void D_ProcessEvents()'/>
+<use f='codebrowser/d_main.c' l='378' u='c' c='D_DoomLoop'/>
+<doc f='codebrowser/d_main.c' l='157'>//
+// D_ProcessEvents
+// Send all the events of the given timestamp down the responder chain
+//</doc>
+<dec f='codebrowser/d_net.c' l='78' type='void D_ProcessEvents()'/>
+<use f='codebrowser/d_net.c' l='403' u='c' c='NetUpdate'/>

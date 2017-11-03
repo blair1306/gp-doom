@@ -1,0 +1,28 @@
+<dec f='codebrowser/z_zone.h' l='49' type='void Z_Free(void * ptr)'/>
+<use f='codebrowser/f_wipe.c' l='68' u='c' c='wipe_shittyColMajorXform'/>
+<use f='codebrowser/f_wipe.c' l='232' u='c' c='wipe_exitMelt'/>
+<use f='codebrowser/g_game.c' l='1245' u='c' c='G_DoLoadGame'/>
+<use f='codebrowser/g_game.c' l='1681' u='c' c='G_CheckDemoStatus'/>
+<use f='codebrowser/i_sound.c' l='245' u='c' c='getsfx'/>
+<use f='codebrowser/m_misc.c' l='499' u='c' c='WritePCXfile'/>
+<use f='codebrowser/p_saveg.c' l='282' u='c' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_setup.c' l='151' u='c' c='P_LoadVertexes'/>
+<use f='codebrowser/p_setup.c' l='195' u='c' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='223' u='c' c='P_LoadSubsectors'/>
+<use f='codebrowser/p_setup.c' l='257' u='c' c='P_LoadSectors'/>
+<use f='codebrowser/p_setup.c' l='294' u='c' c='P_LoadNodes'/>
+<use f='codebrowser/p_setup.c' l='349' u='c' c='P_LoadThings'/>
+<use f='codebrowser/p_setup.c' l='431' u='c' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='462' u='c' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_tick.c' l='113' u='c' c='P_RunThinkers'/>
+<use f='codebrowser/r_data.c' l='458' u='c' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='561' u='c' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='563' u='c' c='R_InitTextures'/>
+<use f='codebrowser/w_wad.c' l='268' u='c' c='W_Reload'/>
+<use f='codebrowser/wi_stuff.c' l='1744' u='c' c='WI_unloadData'/>
+<def f='codebrowser/z_zone.c' l='122' ll='172' type='void Z_Free(void * ptr)'/>
+<use f='codebrowser/z_zone.c' l='237' u='c' c='Z_Malloc'/>
+<use f='codebrowser/z_zone.c' l='316' u='c' c='Z_FreeTags'/>
+<doc f='codebrowser/z_zone.c' l='119'>//
+// Z_Free
+//</doc>

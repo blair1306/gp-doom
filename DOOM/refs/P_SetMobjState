@@ -1,0 +1,34 @@
+<dec f='codebrowser/p_local.h' l='117' type='boolean P_SetMobjState(mobj_t * mobj, statenum_t state)'/>
+<use f='codebrowser/p_enemy.c' l='663' u='c' c='A_Look'/>
+<use f='codebrowser/p_enemy.c' l='711' u='c' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='731' u='c' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='747' u='c' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='877' u='c' c='A_CPosRefire'/>
+<use f='codebrowser/p_enemy.c' l='894' u='c' c='A_SpidRefire'/>
+<use f='codebrowser/p_enemy.c' l='1209' u='c' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1213' u='c' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1863' u='c' c='A_BrainScream'/>
+<use f='codebrowser/p_enemy.c' l='1888' u='c' c='A_BrainExplode'/>
+<use f='codebrowser/p_enemy.c' l='1983' u='c' c='A_SpawnFly'/>
+<use f='codebrowser/p_inter.c' l='722' u='c' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='725' u='c' c='P_KillMobj'/>
+<use f='codebrowser/p_inter.c' l='899' u='c' c='P_DamageMobj'/>
+<use f='codebrowser/p_inter.c' l='914' u='c' c='P_DamageMobj'/>
+<use f='codebrowser/p_map.c' l='284' u='c' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='1271' u='c' c='PIT_ChangeSector'/>
+<def f='codebrowser/p_mobj.c' l='53' ll='84' type='boolean P_SetMobjState(mobj_t * mobj, statenum_t state)'/>
+<use f='codebrowser/p_mobj.c' l='94' u='c' c='P_ExplodeMissile'/>
+<use f='codebrowser/p_mobj.c' l='130' u='c' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='231' u='c' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='447' u='c' c='P_MobjThinker'/>
+<use f='codebrowser/p_mobj.c' l='830' u='c' c='P_SpawnPuff'/>
+<use f='codebrowser/p_mobj.c' l='856' u='c' c='P_SpawnBlood'/>
+<use f='codebrowser/p_mobj.c' l='858' u='c' c='P_SpawnBlood'/>
+<use f='codebrowser/p_pspr.c' l='253' u='c' c='P_FireWeapon'/>
+<use f='codebrowser/p_pspr.c' l='293' u='c' c='A_WeaponReady'/>
+<use f='codebrowser/p_pspr.c' l='453' u='c' c='A_GunFlash'/>
+<use f='codebrowser/p_pspr.c' l='653' u='c' c='A_FirePistol'/>
+<use f='codebrowser/p_pspr.c' l='676' u='c' c='A_FireShotgun'/>
+<use f='codebrowser/p_pspr.c' l='706' u='c' c='A_FireShotgun2'/>
+<use f='codebrowser/p_pspr.c' l='742' u='c' c='A_FireCGun'/>
+<use f='codebrowser/p_user.c' l='169' u='c' c='P_MovePlayer'/>

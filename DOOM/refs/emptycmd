@@ -1,0 +1,2 @@
+<def f='codebrowser/i_system.c' l='64' type='ticcmd_t'/>
+<use f='codebrowser/i_system.c' l='67' u='a' c='I_BaseTiccmd'/>

@@ -1,0 +1,5 @@
+<def f='codebrowser/am_map.c' l='353' ll='372' type='void AM_restoreScaleAndLoc()'/>
+<use f='codebrowser/am_map.c' l='677' u='c' c='AM_Responder'/>
+<doc f='codebrowser/am_map.c' l='350'>//
+//
+//</doc>

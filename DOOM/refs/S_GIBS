@@ -1,0 +1,6 @@
+<dec f='codebrowser/info.h' l='1071' type='895'/>
+<use f='codebrowser/info.c' l='4256'/>
+<use f='codebrowser/info.c' l='4256'/>
+<use f='codebrowser/info.c' l='4256'/>
+<use f='codebrowser/info.c' l='4256'/>
+<use f='codebrowser/p_map.c' l='1271' u='r' c='PIT_ChangeSector'/>

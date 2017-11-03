@@ -1,0 +1,3 @@
+<dec f='codebrowser/p_spec.h' l='322' type='void P_ActivateInStasis(int tag)'/>
+<use f='codebrowser/p_plats.c' l='157' u='c' c='EV_DoPlat'/>
+<def f='codebrowser/p_plats.c' l='258' ll='271' type='void P_ActivateInStasis(int tag)'/>

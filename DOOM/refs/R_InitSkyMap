@@ -1,0 +1,8 @@
+<dec f='codebrowser/r_sky.h' l='41' type='void R_InitSkyMap()'/>
+<doc f='codebrowser/r_sky.h' l='40'>// Called whenever the view size changes.</doc>
+<use f='codebrowser/r_main.c' l='788' u='c' c='R_Init'/>
+<def f='codebrowser/r_sky.c' l='57' ll='61' type='void R_InitSkyMap()'/>
+<doc f='codebrowser/r_sky.c' l='53'>//
+// R_InitSkyMap
+// Called whenever the view size changes.
+//</doc>

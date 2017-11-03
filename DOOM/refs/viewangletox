@@ -1,0 +1,16 @@
+<dec f='codebrowser/r_state.h' l='114' type='int [4096]'/>
+<use f='codebrowser/r_bsp.c' l='313' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='314' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='467' u='r' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='468' u='r' c='R_CheckBBox'/>
+<def f='codebrowser/r_main.c' l='98' type='int [4096]'/>
+<use f='codebrowser/r_main.c' l='576' u='w' c='R_InitTextureMapping'/>
+<use f='codebrowser/r_main.c' l='585' u='r' c='R_InitTextureMapping'/>
+<use f='codebrowser/r_main.c' l='596' u='r' c='R_InitTextureMapping'/>
+<use f='codebrowser/r_main.c' l='597' u='w' c='R_InitTextureMapping'/>
+<use f='codebrowser/r_main.c' l='598' u='r' c='R_InitTextureMapping'/>
+<use f='codebrowser/r_main.c' l='599' u='w' c='R_InitTextureMapping'/>
+<doc f='codebrowser/r_main.c' l='94'>// The viewangletox[viewangle + FINEANGLES/4] lookup
+// maps the visible view angles to screen X coordinates,
+// flattening the arc to a flat projection plane.
+// There will be many angles mapped to the same X. </doc>

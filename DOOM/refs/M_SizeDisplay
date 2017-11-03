@@ -1,0 +1,8 @@
+<dec f='codebrowser/m_menu.c' l='199' type='void M_SizeDisplay(int choice)'/>
+<use f='codebrowser/m_menu.c' l='357'/>
+<use f='codebrowser/m_menu.c' l='357'/>
+<use f='codebrowser/m_menu.c' l='357'/>
+<use f='codebrowser/m_menu.c' l='357'/>
+<def f='codebrowser/m_menu.c' l='1152' ll='1174' type='void M_SizeDisplay(int choice)'/>
+<use f='codebrowser/m_menu.c' l='1525' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1532' u='c' c='M_Responder'/>

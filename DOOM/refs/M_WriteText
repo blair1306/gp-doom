@@ -1,0 +1,9 @@
+<dec f='codebrowser/m_menu.c' l='225' type='void M_WriteText(int x, int y, char * string)'/>
+<use f='codebrowser/m_menu.c' l='550' u='c' c='M_DrawLoad'/>
+<use f='codebrowser/m_menu.c' l='618' u='c' c='M_DrawSave'/>
+<use f='codebrowser/m_menu.c' l='624' u='c' c='M_DrawSave'/>
+<def f='codebrowser/m_menu.c' l='1296' ll='1338' type='void M_WriteText(int x, int y, char * string)'/>
+<use f='codebrowser/m_menu.c' l='1775' u='c' c='M_Drawer'/>
+<doc f='codebrowser/m_menu.c' l='1293'>//
+//      Write a string using the hu_font
+//</doc>

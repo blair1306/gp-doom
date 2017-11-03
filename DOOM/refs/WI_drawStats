@@ -1,0 +1,2 @@
+<def f='codebrowser/wi_stuff.c' l='1436' ll='1468' type='void WI_drawStats()'/>
+<use f='codebrowser/wi_stuff.c' l='1782' u='c' c='WI_Drawer'/>

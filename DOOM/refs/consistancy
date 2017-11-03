@@ -1,0 +1,6 @@
+<def f='codebrowser/g_game.c' l='140' type='short [4][12]'/>
+<use f='codebrowser/g_game.c' l='253' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='684' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='687' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='690' u='w' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='692' u='w' c='G_Ticker'/>

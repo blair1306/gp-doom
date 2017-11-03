@@ -1,0 +1,8 @@
+<def f='codebrowser/i_sound.c' l='265' ll='382' type='int addsfx(int sfxid, int volume, int step, int seperation)'/>
+<doc f='codebrowser/i_sound.c' l='258'>//
+// This function adds a sound to the
+//  list of currently active sounds,
+//  which is maintained as a given number
+//  (eight, usually) of internal channels.
+// Returns a handle.
+//</doc>

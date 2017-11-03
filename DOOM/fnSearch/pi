@@ -1,0 +1,8 @@
+PIT_VileCheck|PIT_VileCheck
+PIT_ChangeSector|PIT_ChangeSector
+PIT_CheckLine|PIT_CheckLine
+PIT_CheckThing|PIT_CheckThing
+PIT_RadiusAttack|PIT_RadiusAttack
+PIT_StompThing|PIT_StompThing
+PIT_AddLineIntercepts|PIT_AddLineIntercepts
+PIT_AddThingIntercepts|PIT_AddThingIntercepts

@@ -1,0 +1,34 @@
+<dec f='codebrowser/info.c' l='116' type='void A_Metal()'/>
+<use f='codebrowser/info.c' l='739'/>
+<use f='codebrowser/info.c' l='739'/>
+<use f='codebrowser/info.c' l='739'/>
+<use f='codebrowser/info.c' l='739'/>
+<use f='codebrowser/info.c' l='743'/>
+<use f='codebrowser/info.c' l='743'/>
+<use f='codebrowser/info.c' l='743'/>
+<use f='codebrowser/info.c' l='743'/>
+<use f='codebrowser/info.c' l='747'/>
+<use f='codebrowser/info.c' l='747'/>
+<use f='codebrowser/info.c' l='747'/>
+<use f='codebrowser/info.c' l='747'/>
+<use f='codebrowser/info.c' l='818'/>
+<use f='codebrowser/info.c' l='818'/>
+<use f='codebrowser/info.c' l='818'/>
+<use f='codebrowser/info.c' l='818'/>
+<use f='codebrowser/info.c' l='739'/>
+<use f='codebrowser/info.c' l='739'/>
+<use f='codebrowser/info.c' l='739'/>
+<use f='codebrowser/info.c' l='739'/>
+<use f='codebrowser/info.c' l='743'/>
+<use f='codebrowser/info.c' l='743'/>
+<use f='codebrowser/info.c' l='743'/>
+<use f='codebrowser/info.c' l='743'/>
+<use f='codebrowser/info.c' l='747'/>
+<use f='codebrowser/info.c' l='747'/>
+<use f='codebrowser/info.c' l='747'/>
+<use f='codebrowser/info.c' l='747'/>
+<use f='codebrowser/info.c' l='818'/>
+<use f='codebrowser/info.c' l='818'/>
+<use f='codebrowser/info.c' l='818'/>
+<use f='codebrowser/info.c' l='818'/>
+<def f='codebrowser/p_enemy.c' l='1765' ll='1769' type='void A_Metal(mobj_t * mo)'/>

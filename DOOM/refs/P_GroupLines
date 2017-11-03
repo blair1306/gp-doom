@@ -1,0 +1,7 @@
+<def f='codebrowser/p_setup.c' l='499' ll='577' type='void P_GroupLines()'/>
+<use f='codebrowser/p_setup.c' l='660' u='c' c='P_SetupLevel'/>
+<doc f='codebrowser/p_setup.c' l='494'>//
+// P_GroupLines
+// Builds sector line lists and subsector sector numbers.
+// Finds block bounding boxes for sectors.
+//</doc>

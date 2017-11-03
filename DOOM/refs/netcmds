@@ -1,0 +1,6 @@
+<dec f='codebrowser/doomstat.h' l='286' type='ticcmd_t [4][12]'/>
+<use f='codebrowser/d_main.c' l='379' u='a' c='D_DoomLoop'/>
+<def f='codebrowser/d_net.c' l='62' type='ticcmd_t [4][12]'/>
+<use f='codebrowser/d_net.c' l='351' u='a' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='758' u='a' c='TryRunTics'/>
+<use f='codebrowser/g_game.c' l='664' u='a' c='G_Ticker'/>

@@ -1,0 +1,2 @@
+<def f='codebrowser/st_stuff.c' l='499' ll='512' type='void ST_refreshBackground()'/>
+<use f='codebrowser/st_stuff.c' l='1095' u='c' c='ST_doRefresh'/>

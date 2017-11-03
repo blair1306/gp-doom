@@ -1,0 +1,2 @@
+<dec f='include/X11/extensions/XShm.h' l='88' type='int XShmPutImage(Display * , Drawable , GC , XImage * , int , int , int , int , unsigned int , unsigned int , int )'/>
+<use f='codebrowser/i_video.c' l='486' u='c' c='I_FinishUpdate'/>

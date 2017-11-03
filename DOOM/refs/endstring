@@ -1,0 +1,4 @@
+<def f='codebrowser/m_menu.c' l='134' type='char [160]'/>
+<use f='codebrowser/m_menu.c' l='1103' u='r' c='M_QuitDOOM'/>
+<use f='codebrowser/m_menu.c' l='1105' u='r' c='M_QuitDOOM'/>
+<use f='codebrowser/m_menu.c' l='1107' u='r' c='M_QuitDOOM'/>

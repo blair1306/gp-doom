@@ -1,0 +1,13 @@
+<dec f='codebrowser/info.c' l='79' type='void A_BFGsound()'/>
+<use f='codebrowser/info.c' l='220'/>
+<use f='codebrowser/info.c' l='220'/>
+<use f='codebrowser/info.c' l='220'/>
+<use f='codebrowser/info.c' l='220'/>
+<use f='codebrowser/info.c' l='220'/>
+<use f='codebrowser/info.c' l='220'/>
+<use f='codebrowser/info.c' l='220'/>
+<use f='codebrowser/info.c' l='220'/>
+<def f='codebrowser/p_pspr.c' l='817' ll='823' type='void A_BFGsound(player_t * player, pspdef_t * psp)'/>
+<doc f='codebrowser/p_pspr.c' l='814'>//
+// A_BFGsound
+//</doc>

@@ -1,0 +1,6 @@
+<def f='codebrowser/g_game.c' l='206' type='int'/>
+<use f='codebrowser/g_game.c' l='435' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='717' u='w' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1265' u='w' c='G_SaveGame'/>
+<use f='codebrowser/g_game.c' l='1279' u='r' c='G_DoSaveGame'/>
+<use f='codebrowser/g_game.c' l='1281' u='r' c='G_DoSaveGame'/>

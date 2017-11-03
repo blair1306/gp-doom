@@ -1,0 +1,16 @@
+<dec f='codebrowser/doomdata.h' l='75' type='char [8]'/>
+<dec f='codebrowser/r_defs.h' l='156' type='short'/>
+<offset>96</offset>
+<use f='codebrowser/p_saveg.c' l='155' u='r' c='P_ArchiveWorld'/>
+<use f='codebrowser/p_saveg.c' l='207' u='w' c='P_UnArchiveWorld'/>
+<use f='codebrowser/p_setup.c' l='458' u='w' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_setup.c' l='458' u='r' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_spec.c' l='1142' u='w' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_switch.c' l='215' u='r' c='P_ChangeSwitchTexture'/>
+<use f='codebrowser/p_switch.c' l='241' u='w' c='P_ChangeSwitchTexture'/>
+<use f='codebrowser/r_bsp.c' l='344' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_data.c' l='790' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_segs.c' l='120' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='459' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='465' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='607' u='r' c='R_StoreWallRange'/>

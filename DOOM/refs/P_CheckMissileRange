@@ -1,0 +1,5 @@
+<def f='codebrowser/p_enemy.c' l='197' ll='256' type='boolean P_CheckMissileRange(mobj_t * actor)'/>
+<use f='codebrowser/p_enemy.c' l='744' u='c' c='A_Chase'/>
+<doc f='codebrowser/p_enemy.c' l='194'>//
+// P_CheckMissileRange
+//</doc>

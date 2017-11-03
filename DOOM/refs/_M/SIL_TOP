@@ -1,0 +1,8 @@
+<dec f='codebrowser/r_defs.h' l='52'/>
+<use f='codebrowser/r_segs.c' l='502' u='c'/>
+<use f='codebrowser/r_segs.c' l='507' u='c'/>
+<use f='codebrowser/r_segs.c' l='523' u='c'/>
+<use f='codebrowser/r_segs.c' l='718' u='c'/>
+<use f='codebrowser/r_segs.c' l='734' u='c'/>
+<use f='codebrowser/r_segs.c' l='736' u='c'/>
+<use f='codebrowser/r_things.c' l='905' u='c'/>

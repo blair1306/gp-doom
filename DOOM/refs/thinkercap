@@ -1,0 +1,47 @@
+<dec f='codebrowser/p_local.h' l='70' type='thinker_t'/>
+<doc f='codebrowser/p_local.h' l='65'>//
+// P_TICK
+//
+
+// both the head and tail of the thinker list</doc>
+<use f='codebrowser/p_enemy.c' l='576' u='m' c='A_KeenDie'/>
+<use f='codebrowser/p_enemy.c' l='576' u='a' c='A_KeenDie'/>
+<use f='codebrowser/p_enemy.c' l='1467' u='m' c='A_PainShootSkull'/>
+<use f='codebrowser/p_enemy.c' l='1468' u='a' c='A_PainShootSkull'/>
+<use f='codebrowser/p_enemy.c' l='1692' u='m' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='1692' u='a' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='1822' u='m' c='A_BrainAwake'/>
+<use f='codebrowser/p_enemy.c' l='1823' u='m' c='A_BrainAwake'/>
+<use f='codebrowser/p_enemy.c' l='1824' u='a' c='A_BrainAwake'/>
+<use f='codebrowser/p_saveg.c' l='238' u='m' c='P_ArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='238' u='a' c='P_ArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='274' u='m' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='275' u='a' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='368' u='m' c='P_ArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='368' u='a' c='P_ArchiveSpecials'/>
+<use f='codebrowser/p_telept.c' l='79' u='m' c='EV_Teleport'/>
+<use f='codebrowser/p_telept.c' l='80' u='m' c='EV_Teleport'/>
+<use f='codebrowser/p_telept.c' l='81' u='a' c='EV_Teleport'/>
+<def f='codebrowser/p_tick.c' l='47' type='thinker_t'/>
+<use f='codebrowser/p_tick.c' l='55' u='m' c='P_InitThinkers'/>
+<use f='codebrowser/p_tick.c' l='55' u='m' c='P_InitThinkers'/>
+<use f='codebrowser/p_tick.c' l='55' u='a' c='P_InitThinkers'/>
+<use f='codebrowser/p_tick.c' l='67' u='m' c='P_AddThinker'/>
+<use f='codebrowser/p_tick.c' l='68' u='a' c='P_AddThinker'/>
+<use f='codebrowser/p_tick.c' l='69' u='m' c='P_AddThinker'/>
+<use f='codebrowser/p_tick.c' l='70' u='m' c='P_AddThinker'/>
+<use f='codebrowser/p_tick.c' l='105' u='m' c='P_RunThinkers'/>
+<use f='codebrowser/p_tick.c' l='106' u='a' c='P_RunThinkers'/>
+<doc f='codebrowser/p_tick.c' l='36'>//
+// THINKERS
+// All thinkers should be allocated by Z_Malloc
+// so they can be operated on uniformly.
+// The actual structures will vary in size,
+// but the first element must be thinker_t.
+//
+
+
+
+// Both the head and tail of the thinker list.</doc>
+<use f='codebrowser/r_data.c' l='822' u='m' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='822' u='a' c='R_PrecacheLevel'/>

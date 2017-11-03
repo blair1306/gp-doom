@@ -1,0 +1,16 @@
+<def f='codebrowser/f_finale.c' l='340' ll='360' type='castinfo_t [18]'/>
+<use f='codebrowser/f_finale.c' l='381' u='m' c='F_StartCast'/>
+<use f='codebrowser/f_finale.c' l='408' u='m' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='410' u='m' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='411' u='m' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='412' u='m' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='465' u='m' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='467' u='m' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='473' u='m' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='476' u='m' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='483' u='m' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='488' u='m' c='F_CastTicker'/>
+<use f='codebrowser/f_finale.c' l='512' u='m' c='F_CastResponder'/>
+<use f='codebrowser/f_finale.c' l='516' u='m' c='F_CastResponder'/>
+<use f='codebrowser/f_finale.c' l='517' u='m' c='F_CastResponder'/>
+<use f='codebrowser/f_finale.c' l='590' u='m' c='F_CastDrawer'/>

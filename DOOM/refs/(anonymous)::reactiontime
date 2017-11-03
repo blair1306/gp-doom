@@ -1,0 +1,3 @@
+<dec f='codebrowser/info.h' l='1312' type='int'/>
+<offset>160</offset>
+<use f='codebrowser/p_mobj.c' l='504' u='r' c='P_SpawnMobj'/>

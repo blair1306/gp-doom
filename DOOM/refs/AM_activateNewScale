@@ -1,0 +1,7 @@
+<def f='codebrowser/am_map.c' l='327' ll='337' type='void AM_activateNewScale()'/>
+<use f='codebrowser/am_map.c' l='596' u='c' c='AM_minOutWindowScale'/>
+<use f='codebrowser/am_map.c' l='606' u='c' c='AM_maxOutWindowScale'/>
+<use f='codebrowser/am_map.c' l='753' u='c' c='AM_changeWindowScale'/>
+<doc f='codebrowser/am_map.c' l='324'>//
+//
+//</doc>

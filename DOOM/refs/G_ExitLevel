@@ -1,0 +1,8 @@
+<dec f='codebrowser/g_game.h' l='63' type='void G_ExitLevel()'/>
+<def f='codebrowser/g_game.c' l='1002' ll='1006' type='void G_ExitLevel()'/>
+<use f='codebrowser/p_enemy.c' l='1755' u='c' c='A_BossDeath'/>
+<use f='codebrowser/p_enemy.c' l='1898' u='c' c='A_BrainDie'/>
+<use f='codebrowser/p_spec.c' l='679' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='1062' u='c' c='P_PlayerInSpecialSector'/>
+<use f='codebrowser/p_spec.c' l='1096' u='c' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_switch.c' l='362' u='c' c='P_UseSpecialLine'/>

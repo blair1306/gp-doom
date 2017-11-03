@@ -1,0 +1,8 @@
+<dec f='codebrowser/r_state.h' l='119' type='angle_t'/>
+<use f='codebrowser/r_main.c' l='481' u='r' c='R_ScaleFromGlobalAngle'/>
+<def f='codebrowser/r_segs.c' l='58' type='angle_t'/>
+<use f='codebrowser/r_segs.c' l='401' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='402' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='621' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='632' u='r' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='636' u='r' c='R_StoreWallRange'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/info.c' l='69' type='void A_FireShotgun2()'/>
+<use f='codebrowser/info.c' l='172'/>
+<use f='codebrowser/info.c' l='172'/>
+<use f='codebrowser/info.c' l='172'/>
+<use f='codebrowser/info.c' l='172'/>
+<use f='codebrowser/info.c' l='172'/>
+<use f='codebrowser/info.c' l='172'/>
+<use f='codebrowser/info.c' l='172'/>
+<use f='codebrowser/info.c' l='172'/>
+<def f='codebrowser/p_pspr.c' l='695' ll='726' type='void A_FireShotgun2(player_t * player, pspdef_t * psp)'/>
+<doc f='codebrowser/p_pspr.c' l='692'>//
+// A_FireShotgun2
+//</doc>

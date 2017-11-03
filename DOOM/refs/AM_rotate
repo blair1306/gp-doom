@@ -1,0 +1,7 @@
+<def f='codebrowser/am_map.c' l='1172' ll='1189' type='void AM_rotate(fixed_t * x, fixed_t * y, angle_t a)'/>
+<use f='codebrowser/am_map.c' l='1216' u='c' c='AM_drawLineCharacter'/>
+<use f='codebrowser/am_map.c' l='1231' u='c' c='AM_drawLineCharacter'/>
+<doc f='codebrowser/am_map.c' l='1168'>//
+// Rotation in 2D.
+// Used to rotate player arrow line character.
+//</doc>

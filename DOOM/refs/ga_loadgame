@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_event.h' l='58' type='3'/>
+<use f='codebrowser/d_main.c' l='1161' u='r' c='D_DoomMain'/>
+<use f='codebrowser/g_game.c' l='627' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1195' u='r' c='G_LoadGame'/>

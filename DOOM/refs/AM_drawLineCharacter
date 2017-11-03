@@ -1,0 +1,5 @@
+<def f='codebrowser/am_map.c' l='1191' ll='1238' type='void AM_drawLineCharacter(mline_t * lineguy, int lineguylines, fixed_t scale, angle_t angle, int color, fixed_t x, fixed_t y)'/>
+<use f='codebrowser/am_map.c' l='1251' u='c' c='AM_drawPlayers'/>
+<use f='codebrowser/am_map.c' l='1255' u='c' c='AM_drawPlayers'/>
+<use f='codebrowser/am_map.c' l='1277' u='c' c='AM_drawPlayers'/>
+<use f='codebrowser/am_map.c' l='1297' u='c' c='AM_drawThings'/>

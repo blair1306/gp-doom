@@ -1,0 +1,5 @@
+<def f='codebrowser/g_game.c' l='130' type='boolean'/>
+<use f='codebrowser/g_game.c' l='681' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1348' u='w' c='G_DoNewGame'/>
+<use f='codebrowser/g_game.c' l='1610' u='w' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1665' u='w' c='G_CheckDemoStatus'/>

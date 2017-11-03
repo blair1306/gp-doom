@@ -1,0 +1,4 @@
+<dec f='codebrowser/i_sound.h' l='41' type='void I_InitSound()'/>
+<doc f='codebrowser/i_sound.h' l='40'>// Init at program start...</doc>
+<def f='codebrowser/i_sound.c' l='738' ll='826' type='void I_InitSound()'/>
+<use f='codebrowser/i_system.c' l='109' u='c' c='I_Init'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/p_spec.h' l='378' type='int EV_DoLockedDoor(line_t * line, vldoor_e type, mobj_t * thing)'/>
+<def f='codebrowser/p_doors.c' l='206' ll='260' type='int EV_DoLockedDoor(line_t * line, vldoor_e type, mobj_t * thing)'/>
+<doc f='codebrowser/p_doors.c' l='201'>//
+// EV_DoLockedDoor
+// Move a locked door up/down
+//</doc>
+<use f='codebrowser/p_switch.c' l='503' u='c' c='P_UseSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='634' u='c' c='P_UseSpecialLine'/>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dstrings.c source code [codebrowser/dstrings.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/dstrings.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='dstrings.c.html'>dstrings.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION:</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//	Globally defined strings.</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">// </i></td></tr>
+<tr><th id="22">22</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><em>static</em> <em>const</em> <em>char</em></td></tr>
+<tr><th id="25">25</th><td><dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [49]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id: m_bbox.c,v 1.1 1997/02/03 22:45:10 b1 Exp $"</q>;</td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><u>#<span data-ppcond="28">ifdef</span> <span class="macro" data-ref="_M/__GNUG__">__GNUG__</span></u></td></tr>
+<tr><th id="29">29</th><td><u>#pragma implementation "dstrings.h"</u></td></tr>
+<tr><th id="30">30</th><td><u>#<span data-ppcond="28">endif</span></u></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="dstrings.h.html">"dstrings.h"</a></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><em>char</em>* <dfn class="decl def" id="endmsg" title='endmsg' data-ref="endmsg">endmsg</dfn>[<a class="macro" href="dstrings.h.html#56" title="22" data-ref="_M/NUM_QUITMESSAGES">NUM_QUITMESSAGES</a>+<var>1</var>]=</td></tr>
+<tr><th id="36">36</th><td>{</td></tr>
+<tr><th id="37">37</th><td>  <i>// DOOM1</i></td></tr>
+<tr><th id="38">38</th><td>  <a class="macro" href="d_englsh.h.html#41" title="&quot;are you sure you want to\nquit this great game?&quot;" data-ref="_M/QUITMSG">QUITMSG</a>,</td></tr>
+<tr><th id="39">39</th><td>  <q>"please don't leave, there's more\ndemons to toast!"</q>,</td></tr>
+<tr><th id="40">40</th><td>  <q>"let's beat it -- this is turning\ninto a bloodbath!"</q>,</td></tr>
+<tr><th id="41">41</th><td>  <q>"i wouldn't leave if i were you.\ndos is much worse."</q>,</td></tr>
+<tr><th id="42">42</th><td>  <q>"you're trying to say you like dos\nbetter than me, right?"</q>,</td></tr>
+<tr><th id="43">43</th><td>  <q>"don't leave yet -- there's a\ndemon around that corner!"</q>,</td></tr>
+<tr><th id="44">44</th><td>  <q>"ya know, next time you come in here\ni'm gonna toast ya."</q>,</td></tr>
+<tr><th id="45">45</th><td>  <q>"go ahead and leave. see if i care."</q></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td>  <i>// QuitDOOM II messages</i></td></tr>
+<tr><th id="48">48</th><td>  <q>"you want to quit?\nthen, thou hast lost an eighth!"</q>,</td></tr>
+<tr><th id="49">49</th><td>  <q>"don't go now, there's a \ndimensional shambler waiting\nat the dos prompt!"</q>,</td></tr>
+<tr><th id="50">50</th><td>  <q>"get outta here and go back\nto your boring programs."</q>,</td></tr>
+<tr><th id="51">51</th><td>  <q>"if i were your boss, i'd \n deathmatch ya in a minute!"</q>,</td></tr>
+<tr><th id="52">52</th><td>  <q>"look, bud. you leave now\nand you forfeit your body count!"</q>,</td></tr>
+<tr><th id="53">53</th><td>  <q>"just leave. when you come\nback, i'll be waiting with a bat."</q>,</td></tr>
+<tr><th id="54">54</th><td>  <q>"you're lucky i don't smack\nyou for thinking about leaving."</q></td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td>  <i>// FinalDOOM?</i></td></tr>
+<tr><th id="57">57</th><td>  <q>"fuck you, pussy!\nget the fuck out!"</q>,</td></tr>
+<tr><th id="58">58</th><td>  <q>"you quit and i'll jizz\nin your cystholes!"</q>,</td></tr>
+<tr><th id="59">59</th><td>  <q>"if you leave, i'll make\nthe lord drink my jizz."</q>,</td></tr>
+<tr><th id="60">60</th><td>  <q>"hey, ron! can we say\n'fuck' in the game?"</q>,</td></tr>
+<tr><th id="61">61</th><td>  <q>"i'd leave: this is just\nmore monsters and levels.\nwhat a load."</q>,</td></tr>
+<tr><th id="62">62</th><td>  <q>"suck it down, asshole!\nyou're a fucking wimp!"</q>,</td></tr>
+<tr><th id="63">63</th><td>  <q>"don't quit now! we're \nstill spending your money!"</q>,</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td>  <i>// Internal debug. Different style, too.</i></td></tr>
+<tr><th id="66">66</th><td>  <q>"THIS IS NO MESSAGE!\nPage intentionally left blank."</q></td></tr>
+<tr><th id="67">67</th><td>};</td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td>  </td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

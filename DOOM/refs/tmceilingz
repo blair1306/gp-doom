@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_local.h' l='205' type='fixed_t'/>
+<def f='codebrowser/p_map.c' l='58' type='fixed_t'/>
+<use f='codebrowser/p_map.c' l='149' u='w' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='170' u='r' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='227' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='229' u='w' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='407' u='w' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='468' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='474' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='493' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='540' u='r' c='P_ThingHeightClip'/>

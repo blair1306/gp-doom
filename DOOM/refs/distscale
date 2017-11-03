@@ -1,0 +1,4 @@
+<dec f='codebrowser/r_plane.h' l='47' type='fixed_t [320]'/>
+<use f='codebrowser/r_main.c' l='740' u='w' c='R_ExecuteSetViewSize'/>
+<def f='codebrowser/r_plane.c' l='86' type='fixed_t [320]'/>
+<use f='codebrowser/r_plane.c' l='155' u='r' c='R_MapPlane'/>

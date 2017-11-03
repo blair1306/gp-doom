@@ -1,0 +1,2 @@
+<def f='codebrowser/am_map.c' l='515' ll='522' type='void AM_unloadPics()'/>
+<use f='codebrowser/am_map.c' l='564' u='c' c='AM_Stop'/>

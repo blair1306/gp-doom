@@ -1,0 +1,5 @@
+<dec f='codebrowser/r_main.h' l='101' type='void (*)(void)'/>
+<def f='codebrowser/r_main.c' l='126' type='void (*)(void)'/>
+<use f='codebrowser/r_main.c' l='704' u='w' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_main.c' l='711' u='w' c='R_ExecuteSetViewSize'/>
+<use f='codebrowser/r_things.c' l='442' u='r' c='R_DrawVisSprite'/>

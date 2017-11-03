@@ -1,0 +1,10 @@
+<dec f='codebrowser/doomdef.h' l='182' type='0'/>
+<use f='codebrowser/g_game.c' l='826' u='w' c='G_PlayerReborn'/>
+<use f='codebrowser/p_inter.c' l='122' u='r' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='132' u='r' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='141' u='r' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='150' u='r' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='499' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='500' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_pspr.c' l='229' u='r' c='P_CheckAmmo'/>
+<use f='codebrowser/p_user.c' l='290' u='r' c='P_PlayerThink'/>

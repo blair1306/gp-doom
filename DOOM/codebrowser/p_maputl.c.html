@@ -1,0 +1,901 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>p_maputl.c source code [codebrowser/p_maputl.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/p_maputl.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='p_maputl.c.html'>p_maputl.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION:</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//	Movement/collision utility functions,</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">//	as used by function in p_map.c. </i></td></tr>
+<tr><th id="22">22</th><td><i  data-doc="rcsid">//	BLOCKMAP Iterator functions,</i></td></tr>
+<tr><th id="23">23</th><td><i  data-doc="rcsid">//	and some PIT_* functions to use for iteration.</i></td></tr>
+<tr><th id="24">24</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="25">25</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><em>static</em> <em>const</em> <em>char</em></td></tr>
+<tr><th id="28">28</th><td><dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [51]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id: p_maputl.c,v 1.5 1997/02/03 22:45:11 b1 Exp $"</q>;</td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="m_bbox.h.html">"m_bbox.h"</a></u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="doomdef.h.html">"doomdef.h"</a></u></td></tr>
+<tr><th id="37">37</th><td><u>#include <a href="p_local.h.html">"p_local.h"</a></u></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><i>// State.</i></td></tr>
+<tr><th id="41">41</th><td><u>#include <a href="r_state.h.html">"r_state.h"</a></u></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><i>//</i></td></tr>
+<tr><th id="44">44</th><td><i>// P_AproxDistance</i></td></tr>
+<tr><th id="45">45</th><td><i>// Gives an estimation of distance (not exact)</i></td></tr>
+<tr><th id="46">46</th><td><i>//</i></td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a></td></tr>
+<tr><th id="49">49</th><td><dfn class="decl def" id="P_AproxDistance" title='P_AproxDistance' data-ref="P_AproxDistance">P_AproxDistance</dfn></td></tr>
+<tr><th id="50">50</th><td>( <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col1 decl" id="1dx" title='dx' data-type='fixed_t' data-ref="1dx">dx</dfn>,</td></tr>
+<tr><th id="51">51</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col2 decl" id="2dy" title='dy' data-type='fixed_t' data-ref="2dy">dy</dfn> )</td></tr>
+<tr><th id="52">52</th><td>{</td></tr>
+<tr><th id="53">53</th><td>    <a class="local col1 ref" href="#1dx" title='dx' data-ref="1dx">dx</a> = <a class="ref" href="../include/stdlib.h.html#abs" title='abs' data-ref="abs">abs</a>(<a class="local col1 ref" href="#1dx" title='dx' data-ref="1dx">dx</a>);</td></tr>
+<tr><th id="54">54</th><td>    <a class="local col2 ref" href="#2dy" title='dy' data-ref="2dy">dy</a> = <a class="ref" href="../include/stdlib.h.html#abs" title='abs' data-ref="abs">abs</a>(<a class="local col2 ref" href="#2dy" title='dy' data-ref="2dy">dy</a>);</td></tr>
+<tr><th id="55">55</th><td>    <b>if</b> (<a class="local col1 ref" href="#1dx" title='dx' data-ref="1dx">dx</a> &lt; <a class="local col2 ref" href="#2dy" title='dy' data-ref="2dy">dy</a>)</td></tr>
+<tr><th id="56">56</th><td>	<b>return</b> <a class="local col1 ref" href="#1dx" title='dx' data-ref="1dx">dx</a>+<a class="local col2 ref" href="#2dy" title='dy' data-ref="2dy">dy</a>-(<a class="local col1 ref" href="#1dx" title='dx' data-ref="1dx">dx</a>&gt;&gt;<var>1</var>);</td></tr>
+<tr><th id="57">57</th><td>    <b>return</b> <a class="local col1 ref" href="#1dx" title='dx' data-ref="1dx">dx</a>+<a class="local col2 ref" href="#2dy" title='dy' data-ref="2dy">dy</a>-(<a class="local col2 ref" href="#2dy" title='dy' data-ref="2dy">dy</a>&gt;&gt;<var>1</var>);</td></tr>
+<tr><th id="58">58</th><td>}</td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><i>//</i></td></tr>
+<tr><th id="62">62</th><td><i>// P_PointOnLineSide</i></td></tr>
+<tr><th id="63">63</th><td><i>// Returns 0 or 1</i></td></tr>
+<tr><th id="64">64</th><td><i>//</i></td></tr>
+<tr><th id="65">65</th><td><em>int</em></td></tr>
+<tr><th id="66">66</th><td><dfn class="decl def" id="P_PointOnLineSide" title='P_PointOnLineSide' data-ref="P_PointOnLineSide">P_PointOnLineSide</dfn></td></tr>
+<tr><th id="67">67</th><td>( <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col3 decl" id="3x" title='x' data-type='fixed_t' data-ref="3x">x</dfn>,</td></tr>
+<tr><th id="68">68</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col4 decl" id="4y" title='y' data-type='fixed_t' data-ref="4y">y</dfn>,</td></tr>
+<tr><th id="69">69</th><td>  <a class="typedef" href="r_defs.h.html#line_t" title='line_t' data-type='struct line_s' data-ref="line_t">line_t</a>*	<dfn class="local col5 decl" id="5line" title='line' data-type='line_t *' data-ref="5line">line</dfn> )</td></tr>
+<tr><th id="70">70</th><td>{</td></tr>
+<tr><th id="71">71</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col6 decl" id="6dx" title='dx' data-type='fixed_t' data-ref="6dx">dx</dfn>;</td></tr>
+<tr><th id="72">72</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col7 decl" id="7dy" title='dy' data-type='fixed_t' data-ref="7dy">dy</dfn>;</td></tr>
+<tr><th id="73">73</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col8 decl" id="8left" title='left' data-type='fixed_t' data-ref="8left">left</dfn>;</td></tr>
+<tr><th id="74">74</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col9 decl" id="9right" title='right' data-type='fixed_t' data-ref="9right">right</dfn>;</td></tr>
+<tr><th id="75">75</th><td>	</td></tr>
+<tr><th id="76">76</th><td>    <b>if</b> (!<a class="local col5 ref" href="#5line" title='line' data-ref="5line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::dx" title='line_s::dx' data-ref="line_s::dx">dx</a>)</td></tr>
+<tr><th id="77">77</th><td>    {</td></tr>
+<tr><th id="78">78</th><td>	<b>if</b> (<a class="local col3 ref" href="#3x" title='x' data-ref="3x">x</a> &lt;= <a class="local col5 ref" href="#5line" title='line' data-ref="5line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::v1" title='line_s::v1' data-ref="line_s::v1">v1</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>)</td></tr>
+<tr><th id="79">79</th><td>	    <b>return</b> <a class="local col5 ref" href="#5line" title='line' data-ref="5line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::dy" title='line_s::dy' data-ref="line_s::dy">dy</a> &gt; <var>0</var>;</td></tr>
+<tr><th id="80">80</th><td>	</td></tr>
+<tr><th id="81">81</th><td>	<b>return</b> <a class="local col5 ref" href="#5line" title='line' data-ref="5line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::dy" title='line_s::dy' data-ref="line_s::dy">dy</a> &lt; <var>0</var>;</td></tr>
+<tr><th id="82">82</th><td>    }</td></tr>
+<tr><th id="83">83</th><td>    <b>if</b> (!<a class="local col5 ref" href="#5line" title='line' data-ref="5line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::dy" title='line_s::dy' data-ref="line_s::dy">dy</a>)</td></tr>
+<tr><th id="84">84</th><td>    {</td></tr>
+<tr><th id="85">85</th><td>	<b>if</b> (<a class="local col4 ref" href="#4y" title='y' data-ref="4y">y</a> &lt;= <a class="local col5 ref" href="#5line" title='line' data-ref="5line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::v1" title='line_s::v1' data-ref="line_s::v1">v1</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>)</td></tr>
+<tr><th id="86">86</th><td>	    <b>return</b> <a class="local col5 ref" href="#5line" title='line' data-ref="5line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::dx" title='line_s::dx' data-ref="line_s::dx">dx</a> &lt; <var>0</var>;</td></tr>
+<tr><th id="87">87</th><td>	</td></tr>
+<tr><th id="88">88</th><td>	<b>return</b> <a class="local col5 ref" href="#5line" title='line' data-ref="5line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::dx" title='line_s::dx' data-ref="line_s::dx">dx</a> &gt; <var>0</var>;</td></tr>
+<tr><th id="89">89</th><td>    }</td></tr>
+<tr><th id="90">90</th><td>	</td></tr>
+<tr><th id="91">91</th><td>    <a class="local col6 ref" href="#6dx" title='dx' data-ref="6dx">dx</a> = (<a class="local col3 ref" href="#3x" title='x' data-ref="3x">x</a> - <a class="local col5 ref" href="#5line" title='line' data-ref="5line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::v1" title='line_s::v1' data-ref="line_s::v1">v1</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>);</td></tr>
+<tr><th id="92">92</th><td>    <a class="local col7 ref" href="#7dy" title='dy' data-ref="7dy">dy</a> = (<a class="local col4 ref" href="#4y" title='y' data-ref="4y">y</a> - <a class="local col5 ref" href="#5line" title='line' data-ref="5line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::v1" title='line_s::v1' data-ref="line_s::v1">v1</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>);</td></tr>
+<tr><th id="93">93</th><td>	</td></tr>
+<tr><th id="94">94</th><td>    <a class="local col8 ref" href="#8left" title='left' data-ref="8left">left</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> ( <a class="local col5 ref" href="#5line" title='line' data-ref="5line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::dy" title='line_s::dy' data-ref="line_s::dy">dy</a>&gt;&gt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a> , <a class="local col6 ref" href="#6dx" title='dx' data-ref="6dx">dx</a> );</td></tr>
+<tr><th id="95">95</th><td>    <a class="local col9 ref" href="#9right" title='right' data-ref="9right">right</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> ( <a class="local col7 ref" href="#7dy" title='dy' data-ref="7dy">dy</a> , <a class="local col5 ref" href="#5line" title='line' data-ref="5line">line</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::dx" title='line_s::dx' data-ref="line_s::dx">dx</a>&gt;&gt;<a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a> );</td></tr>
+<tr><th id="96">96</th><td>	</td></tr>
+<tr><th id="97">97</th><td>    <b>if</b> (<a class="local col9 ref" href="#9right" title='right' data-ref="9right">right</a> &lt; <a class="local col8 ref" href="#8left" title='left' data-ref="8left">left</a>)</td></tr>
+<tr><th id="98">98</th><td>	<b>return</b> <var>0</var>;		<i>// front side</i></td></tr>
+<tr><th id="99">99</th><td>    <b>return</b> <var>1</var>;			<i>// back side</i></td></tr>
+<tr><th id="100">100</th><td>}</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><i>//</i></td></tr>
+<tr><th id="105">105</th><td><i>// P_BoxOnLineSide</i></td></tr>
+<tr><th id="106">106</th><td><i>// Considers the line to be infinite</i></td></tr>
+<tr><th id="107">107</th><td><i>// Returns side 0 or 1, -1 if box crosses the line.</i></td></tr>
+<tr><th id="108">108</th><td><i>//</i></td></tr>
+<tr><th id="109">109</th><td><em>int</em></td></tr>
+<tr><th id="110">110</th><td><dfn class="decl def" id="P_BoxOnLineSide" title='P_BoxOnLineSide' data-ref="P_BoxOnLineSide">P_BoxOnLineSide</dfn></td></tr>
+<tr><th id="111">111</th><td>( <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>*	<dfn class="local col0 decl" id="10tmbox" title='tmbox' data-type='fixed_t *' data-ref="10tmbox">tmbox</dfn>,</td></tr>
+<tr><th id="112">112</th><td>  <a class="typedef" href="r_defs.h.html#line_t" title='line_t' data-type='struct line_s' data-ref="line_t">line_t</a>*	<dfn class="local col1 decl" id="11ld" title='ld' data-type='line_t *' data-ref="11ld">ld</dfn> )</td></tr>
+<tr><th id="113">113</th><td>{</td></tr>
+<tr><th id="114">114</th><td>    <em>int</em>		<dfn class="local col2 decl" id="12p1" title='p1' data-type='int' data-ref="12p1">p1</dfn>;</td></tr>
+<tr><th id="115">115</th><td>    <em>int</em>		<dfn class="local col3 decl" id="13p2" title='p2' data-type='int' data-ref="13p2">p2</dfn>;</td></tr>
+<tr><th id="116">116</th><td>	</td></tr>
+<tr><th id="117">117</th><td>    <b>switch</b> (<a class="local col1 ref" href="#11ld" title='ld' data-ref="11ld">ld</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::slopetype" title='line_s::slopetype' data-ref="line_s::slopetype">slopetype</a>)</td></tr>
+<tr><th id="118">118</th><td>    {</td></tr>
+<tr><th id="119">119</th><td>      <b>case</b> <a class="enum" href="r_defs.h.html#ST_HORIZONTAL" title='ST_HORIZONTAL' data-ref="ST_HORIZONTAL">ST_HORIZONTAL</a>:</td></tr>
+<tr><th id="120">120</th><td>	<a class="local col2 ref" href="#12p1" title='p1' data-ref="12p1">p1</a> = <a class="local col0 ref" href="#10tmbox" title='tmbox' data-ref="10tmbox">tmbox</a>[<a class="enum" href="m_bbox.h.html#BOXTOP" title='BOXTOP' data-ref="BOXTOP">BOXTOP</a>] &gt; <a class="local col1 ref" href="#11ld" title='ld' data-ref="11ld">ld</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::v1" title='line_s::v1' data-ref="line_s::v1">v1</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>;</td></tr>
+<tr><th id="121">121</th><td>	<a class="local col3 ref" href="#13p2" title='p2' data-ref="13p2">p2</a> = <a class="local col0 ref" href="#10tmbox" title='tmbox' data-ref="10tmbox">tmbox</a>[<a class="enum" href="m_bbox.h.html#BOXBOTTOM" title='BOXBOTTOM' data-ref="BOXBOTTOM">BOXBOTTOM</a>] &gt; <a class="local col1 ref" href="#11ld" title='ld' data-ref="11ld">ld</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::v1" title='line_s::v1' data-ref="line_s::v1">v1</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>;</td></tr>
+<tr><th id="122">122</th><td>	<b>if</b> (<a class="local col1 ref" href="#11ld" title='ld' data-ref="11ld">ld</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::dx" title='line_s::dx' data-ref="line_s::dx">dx</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="123">123</th><td>	{</td></tr>
+<tr><th id="124">124</th><td>	    <a class="local col2 ref" href="#12p1" title='p1' data-ref="12p1">p1</a> ^= <var>1</var>;</td></tr>
+<tr><th id="125">125</th><td>	    <a class="local col3 ref" href="#13p2" title='p2' data-ref="13p2">p2</a> ^= <var>1</var>;</td></tr>
+<tr><th id="126">126</th><td>	}</td></tr>
+<tr><th id="127">127</th><td>	<b>break</b>;</td></tr>
+<tr><th id="128">128</th><td>	</td></tr>
+<tr><th id="129">129</th><td>      <b>case</b> <a class="enum" href="r_defs.h.html#ST_VERTICAL" title='ST_VERTICAL' data-ref="ST_VERTICAL">ST_VERTICAL</a>:</td></tr>
+<tr><th id="130">130</th><td>	<a class="local col2 ref" href="#12p1" title='p1' data-ref="12p1">p1</a> = <a class="local col0 ref" href="#10tmbox" title='tmbox' data-ref="10tmbox">tmbox</a>[<a class="enum" href="m_bbox.h.html#BOXRIGHT" title='BOXRIGHT' data-ref="BOXRIGHT">BOXRIGHT</a>] &lt; <a class="local col1 ref" href="#11ld" title='ld' data-ref="11ld">ld</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::v1" title='line_s::v1' data-ref="line_s::v1">v1</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>;</td></tr>
+<tr><th id="131">131</th><td>	<a class="local col3 ref" href="#13p2" title='p2' data-ref="13p2">p2</a> = <a class="local col0 ref" href="#10tmbox" title='tmbox' data-ref="10tmbox">tmbox</a>[<a class="enum" href="m_bbox.h.html#BOXLEFT" title='BOXLEFT' data-ref="BOXLEFT">BOXLEFT</a>] &lt; <a class="local col1 ref" href="#11ld" title='ld' data-ref="11ld">ld</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::v1" title='line_s::v1' data-ref="line_s::v1">v1</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>;</td></tr>
+<tr><th id="132">132</th><td>	<b>if</b> (<a class="local col1 ref" href="#11ld" title='ld' data-ref="11ld">ld</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::dy" title='line_s::dy' data-ref="line_s::dy">dy</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="133">133</th><td>	{</td></tr>
+<tr><th id="134">134</th><td>	    <a class="local col2 ref" href="#12p1" title='p1' data-ref="12p1">p1</a> ^= <var>1</var>;</td></tr>
+<tr><th id="135">135</th><td>	    <a class="local col3 ref" href="#13p2" title='p2' data-ref="13p2">p2</a> ^= <var>1</var>;</td></tr>
+<tr><th id="136">136</th><td>	}</td></tr>
+<tr><th id="137">137</th><td>	<b>break</b>;</td></tr>
+<tr><th id="138">138</th><td>	</td></tr>
+<tr><th id="139">139</th><td>      <b>case</b> <a class="enum" href="r_defs.h.html#ST_POSITIVE" title='ST_POSITIVE' data-ref="ST_POSITIVE">ST_POSITIVE</a>:</td></tr>
+<tr><th id="140">140</th><td>	<a class="local col2 ref" href="#12p1" title='p1' data-ref="12p1">p1</a> = <a class="ref" href="#P_PointOnLineSide" title='P_PointOnLineSide' data-ref="P_PointOnLineSide">P_PointOnLineSide</a> (<a class="local col0 ref" href="#10tmbox" title='tmbox' data-ref="10tmbox">tmbox</a>[<a class="enum" href="m_bbox.h.html#BOXLEFT" title='BOXLEFT' data-ref="BOXLEFT">BOXLEFT</a>], <a class="local col0 ref" href="#10tmbox" title='tmbox' data-ref="10tmbox">tmbox</a>[<a class="enum" href="m_bbox.h.html#BOXTOP" title='BOXTOP' data-ref="BOXTOP">BOXTOP</a>], <a class="local col1 ref" href="#11ld" title='ld' data-ref="11ld">ld</a>);</td></tr>
+<tr><th id="141">141</th><td>	<a class="local col3 ref" href="#13p2" title='p2' data-ref="13p2">p2</a> = <a class="ref" href="#P_PointOnLineSide" title='P_PointOnLineSide' data-ref="P_PointOnLineSide">P_PointOnLineSide</a> (<a class="local col0 ref" href="#10tmbox" title='tmbox' data-ref="10tmbox">tmbox</a>[<a class="enum" href="m_bbox.h.html#BOXRIGHT" title='BOXRIGHT' data-ref="BOXRIGHT">BOXRIGHT</a>], <a class="local col0 ref" href="#10tmbox" title='tmbox' data-ref="10tmbox">tmbox</a>[<a class="enum" href="m_bbox.h.html#BOXBOTTOM" title='BOXBOTTOM' data-ref="BOXBOTTOM">BOXBOTTOM</a>], <a class="local col1 ref" href="#11ld" title='ld' data-ref="11ld">ld</a>);</td></tr>
+<tr><th id="142">142</th><td>	<b>break</b>;</td></tr>
+<tr><th id="143">143</th><td>	</td></tr>
+<tr><th id="144">144</th><td>      <b>case</b> <a class="enum" href="r_defs.h.html#ST_NEGATIVE" title='ST_NEGATIVE' data-ref="ST_NEGATIVE">ST_NEGATIVE</a>:</td></tr>
+<tr><th id="145">145</th><td>	<a class="local col2 ref" href="#12p1" title='p1' data-ref="12p1">p1</a> = <a class="ref" href="#P_PointOnLineSide" title='P_PointOnLineSide' data-ref="P_PointOnLineSide">P_PointOnLineSide</a> (<a class="local col0 ref" href="#10tmbox" title='tmbox' data-ref="10tmbox">tmbox</a>[<a class="enum" href="m_bbox.h.html#BOXRIGHT" title='BOXRIGHT' data-ref="BOXRIGHT">BOXRIGHT</a>], <a class="local col0 ref" href="#10tmbox" title='tmbox' data-ref="10tmbox">tmbox</a>[<a class="enum" href="m_bbox.h.html#BOXTOP" title='BOXTOP' data-ref="BOXTOP">BOXTOP</a>], <a class="local col1 ref" href="#11ld" title='ld' data-ref="11ld">ld</a>);</td></tr>
+<tr><th id="146">146</th><td>	<a class="local col3 ref" href="#13p2" title='p2' data-ref="13p2">p2</a> = <a class="ref" href="#P_PointOnLineSide" title='P_PointOnLineSide' data-ref="P_PointOnLineSide">P_PointOnLineSide</a> (<a class="local col0 ref" href="#10tmbox" title='tmbox' data-ref="10tmbox">tmbox</a>[<a class="enum" href="m_bbox.h.html#BOXLEFT" title='BOXLEFT' data-ref="BOXLEFT">BOXLEFT</a>], <a class="local col0 ref" href="#10tmbox" title='tmbox' data-ref="10tmbox">tmbox</a>[<a class="enum" href="m_bbox.h.html#BOXBOTTOM" title='BOXBOTTOM' data-ref="BOXBOTTOM">BOXBOTTOM</a>], <a class="local col1 ref" href="#11ld" title='ld' data-ref="11ld">ld</a>);</td></tr>
+<tr><th id="147">147</th><td>	<b>break</b>;</td></tr>
+<tr><th id="148">148</th><td>    }</td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td>    <b>if</b> (<a class="local col2 ref" href="#12p1" title='p1' data-ref="12p1">p1</a> == <a class="local col3 ref" href="#13p2" title='p2' data-ref="13p2">p2</a>)</td></tr>
+<tr><th id="151">151</th><td>	<b>return</b> <a class="local col2 ref" href="#12p1" title='p1' data-ref="12p1">p1</a>;</td></tr>
+<tr><th id="152">152</th><td>    <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="153">153</th><td>}</td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td></td></tr>
+<tr><th id="156">156</th><td><i>//</i></td></tr>
+<tr><th id="157">157</th><td><i>// P_PointOnDivlineSide</i></td></tr>
+<tr><th id="158">158</th><td><i>// Returns 0 or 1.</i></td></tr>
+<tr><th id="159">159</th><td><i>//</i></td></tr>
+<tr><th id="160">160</th><td><em>int</em></td></tr>
+<tr><th id="161">161</th><td><dfn class="decl def" id="P_PointOnDivlineSide" title='P_PointOnDivlineSide' data-ref="P_PointOnDivlineSide">P_PointOnDivlineSide</dfn></td></tr>
+<tr><th id="162">162</th><td>( <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col4 decl" id="14x" title='x' data-type='fixed_t' data-ref="14x">x</dfn>,</td></tr>
+<tr><th id="163">163</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col5 decl" id="15y" title='y' data-type='fixed_t' data-ref="15y">y</dfn>,</td></tr>
+<tr><th id="164">164</th><td>  <a class="typedef" href="p_local.h.html#divline_t" title='divline_t' data-type='struct divline_t' data-ref="divline_t">divline_t</a>*	<dfn class="local col6 decl" id="16line" title='line' data-type='divline_t *' data-ref="16line">line</dfn> )</td></tr>
+<tr><th id="165">165</th><td>{</td></tr>
+<tr><th id="166">166</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col7 decl" id="17dx" title='dx' data-type='fixed_t' data-ref="17dx">dx</dfn>;</td></tr>
+<tr><th id="167">167</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col8 decl" id="18dy" title='dy' data-type='fixed_t' data-ref="18dy">dy</dfn>;</td></tr>
+<tr><th id="168">168</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col9 decl" id="19left" title='left' data-type='fixed_t' data-ref="19left">left</dfn>;</td></tr>
+<tr><th id="169">169</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col0 decl" id="20right" title='right' data-type='fixed_t' data-ref="20right">right</dfn>;</td></tr>
+<tr><th id="170">170</th><td>	</td></tr>
+<tr><th id="171">171</th><td>    <b>if</b> (!<a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a>)</td></tr>
+<tr><th id="172">172</th><td>    {</td></tr>
+<tr><th id="173">173</th><td>	<b>if</b> (<a class="local col4 ref" href="#14x" title='x' data-ref="14x">x</a> &lt;= <a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>)</td></tr>
+<tr><th id="174">174</th><td>	    <b>return</b> <a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a> &gt; <var>0</var>;</td></tr>
+<tr><th id="175">175</th><td>	</td></tr>
+<tr><th id="176">176</th><td>	<b>return</b> <a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a> &lt; <var>0</var>;</td></tr>
+<tr><th id="177">177</th><td>    }</td></tr>
+<tr><th id="178">178</th><td>    <b>if</b> (!<a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a>)</td></tr>
+<tr><th id="179">179</th><td>    {</td></tr>
+<tr><th id="180">180</th><td>	<b>if</b> (<a class="local col5 ref" href="#15y" title='y' data-ref="15y">y</a> &lt;= <a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>)</td></tr>
+<tr><th id="181">181</th><td>	    <b>return</b> <a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a> &lt; <var>0</var>;</td></tr>
+<tr><th id="182">182</th><td></td></tr>
+<tr><th id="183">183</th><td>	<b>return</b> <a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a> &gt; <var>0</var>;</td></tr>
+<tr><th id="184">184</th><td>    }</td></tr>
+<tr><th id="185">185</th><td>	</td></tr>
+<tr><th id="186">186</th><td>    <a class="local col7 ref" href="#17dx" title='dx' data-ref="17dx">dx</a> = (<a class="local col4 ref" href="#14x" title='x' data-ref="14x">x</a> - <a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>);</td></tr>
+<tr><th id="187">187</th><td>    <a class="local col8 ref" href="#18dy" title='dy' data-ref="18dy">dy</a> = (<a class="local col5 ref" href="#15y" title='y' data-ref="15y">y</a> - <a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>);</td></tr>
+<tr><th id="188">188</th><td>	</td></tr>
+<tr><th id="189">189</th><td>    <i>// try to quickly decide by looking at sign bits</i></td></tr>
+<tr><th id="190">190</th><td>    <b>if</b> ( (<a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a> ^ <a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a> ^ <a class="local col7 ref" href="#17dx" title='dx' data-ref="17dx">dx</a> ^ <a class="local col8 ref" href="#18dy" title='dy' data-ref="18dy">dy</a>)&amp;<var>0x80000000</var> )</td></tr>
+<tr><th id="191">191</th><td>    {</td></tr>
+<tr><th id="192">192</th><td>	<b>if</b> ( (<a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a> ^ <a class="local col7 ref" href="#17dx" title='dx' data-ref="17dx">dx</a>) &amp; <var>0x80000000</var> )</td></tr>
+<tr><th id="193">193</th><td>	    <b>return</b> <var>1</var>;		<i>// (left is negative)</i></td></tr>
+<tr><th id="194">194</th><td>	<b>return</b> <var>0</var>;</td></tr>
+<tr><th id="195">195</th><td>    }</td></tr>
+<tr><th id="196">196</th><td>	</td></tr>
+<tr><th id="197">197</th><td>    <a class="local col9 ref" href="#19left" title='left' data-ref="19left">left</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> ( <a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a>&gt;&gt;<var>8</var>, <a class="local col7 ref" href="#17dx" title='dx' data-ref="17dx">dx</a>&gt;&gt;<var>8</var> );</td></tr>
+<tr><th id="198">198</th><td>    <a class="local col0 ref" href="#20right" title='right' data-ref="20right">right</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> ( <a class="local col8 ref" href="#18dy" title='dy' data-ref="18dy">dy</a>&gt;&gt;<var>8</var> , <a class="local col6 ref" href="#16line" title='line' data-ref="16line">line</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a>&gt;&gt;<var>8</var> );</td></tr>
+<tr><th id="199">199</th><td>	</td></tr>
+<tr><th id="200">200</th><td>    <b>if</b> (<a class="local col0 ref" href="#20right" title='right' data-ref="20right">right</a> &lt; <a class="local col9 ref" href="#19left" title='left' data-ref="19left">left</a>)</td></tr>
+<tr><th id="201">201</th><td>	<b>return</b> <var>0</var>;		<i>// front side</i></td></tr>
+<tr><th id="202">202</th><td>    <b>return</b> <var>1</var>;			<i>// back side</i></td></tr>
+<tr><th id="203">203</th><td>}</td></tr>
+<tr><th id="204">204</th><td></td></tr>
+<tr><th id="205">205</th><td></td></tr>
+<tr><th id="206">206</th><td></td></tr>
+<tr><th id="207">207</th><td><i>//</i></td></tr>
+<tr><th id="208">208</th><td><i>// P_MakeDivline</i></td></tr>
+<tr><th id="209">209</th><td><i>//</i></td></tr>
+<tr><th id="210">210</th><td><em>void</em></td></tr>
+<tr><th id="211">211</th><td><dfn class="decl def" id="P_MakeDivline" title='P_MakeDivline' data-ref="P_MakeDivline">P_MakeDivline</dfn></td></tr>
+<tr><th id="212">212</th><td>( <a class="typedef" href="r_defs.h.html#line_t" title='line_t' data-type='struct line_s' data-ref="line_t">line_t</a>*	<dfn class="local col1 decl" id="21li" title='li' data-type='line_t *' data-ref="21li">li</dfn>,</td></tr>
+<tr><th id="213">213</th><td>  <a class="typedef" href="p_local.h.html#divline_t" title='divline_t' data-type='struct divline_t' data-ref="divline_t">divline_t</a>*	<dfn class="local col2 decl" id="22dl" title='dl' data-type='divline_t *' data-ref="22dl">dl</dfn> )</td></tr>
+<tr><th id="214">214</th><td>{</td></tr>
+<tr><th id="215">215</th><td>    <a class="local col2 ref" href="#22dl" title='dl' data-ref="22dl">dl</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a> = <a class="local col1 ref" href="#21li" title='li' data-ref="21li">li</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::v1" title='line_s::v1' data-ref="line_s::v1">v1</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>;</td></tr>
+<tr><th id="216">216</th><td>    <a class="local col2 ref" href="#22dl" title='dl' data-ref="22dl">dl</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a> = <a class="local col1 ref" href="#21li" title='li' data-ref="21li">li</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::v1" title='line_s::v1' data-ref="line_s::v1">v1</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>;</td></tr>
+<tr><th id="217">217</th><td>    <a class="local col2 ref" href="#22dl" title='dl' data-ref="22dl">dl</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a> = <a class="local col1 ref" href="#21li" title='li' data-ref="21li">li</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::dx" title='line_s::dx' data-ref="line_s::dx">dx</a>;</td></tr>
+<tr><th id="218">218</th><td>    <a class="local col2 ref" href="#22dl" title='dl' data-ref="22dl">dl</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a> = <a class="local col1 ref" href="#21li" title='li' data-ref="21li">li</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::dy" title='line_s::dy' data-ref="line_s::dy">dy</a>;</td></tr>
+<tr><th id="219">219</th><td>}</td></tr>
+<tr><th id="220">220</th><td></td></tr>
+<tr><th id="221">221</th><td></td></tr>
+<tr><th id="222">222</th><td></td></tr>
+<tr><th id="223">223</th><td><i>//</i></td></tr>
+<tr><th id="224">224</th><td><i>// P_InterceptVector</i></td></tr>
+<tr><th id="225">225</th><td><i>// Returns the fractional intercept point</i></td></tr>
+<tr><th id="226">226</th><td><i>// along the first divline.</i></td></tr>
+<tr><th id="227">227</th><td><i>// This is only called by the addthings</i></td></tr>
+<tr><th id="228">228</th><td><i>// and addlines traversers.</i></td></tr>
+<tr><th id="229">229</th><td><i>//</i></td></tr>
+<tr><th id="230">230</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a></td></tr>
+<tr><th id="231">231</th><td><dfn class="decl def" id="P_InterceptVector" title='P_InterceptVector' data-ref="P_InterceptVector">P_InterceptVector</dfn></td></tr>
+<tr><th id="232">232</th><td>( <a class="typedef" href="p_local.h.html#divline_t" title='divline_t' data-type='struct divline_t' data-ref="divline_t">divline_t</a>*	<dfn class="local col3 decl" id="23v2" title='v2' data-type='divline_t *' data-ref="23v2">v2</dfn>,</td></tr>
+<tr><th id="233">233</th><td>  <a class="typedef" href="p_local.h.html#divline_t" title='divline_t' data-type='struct divline_t' data-ref="divline_t">divline_t</a>*	<dfn class="local col4 decl" id="24v1" title='v1' data-type='divline_t *' data-ref="24v1">v1</dfn> )</td></tr>
+<tr><th id="234">234</th><td>{</td></tr>
+<tr><th id="235">235</th><td><u>#<span data-ppcond="235">if</span> 1</u></td></tr>
+<tr><th id="236">236</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col5 decl" id="25frac" title='frac' data-type='fixed_t' data-ref="25frac">frac</dfn>;</td></tr>
+<tr><th id="237">237</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col6 decl" id="26num" title='num' data-type='fixed_t' data-ref="26num">num</dfn>;</td></tr>
+<tr><th id="238">238</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col7 decl" id="27den" title='den' data-type='fixed_t' data-ref="27den">den</dfn>;</td></tr>
+<tr><th id="239">239</th><td>	</td></tr>
+<tr><th id="240">240</th><td>    <a class="local col7 ref" href="#27den" title='den' data-ref="27den">den</a> = <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> (<a class="local col4 ref" href="#24v1" title='v1' data-ref="24v1">v1</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a>&gt;&gt;<var>8</var>,<a class="local col3 ref" href="#23v2" title='v2' data-ref="23v2">v2</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a>) - <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a>(<a class="local col4 ref" href="#24v1" title='v1' data-ref="24v1">v1</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a>&gt;&gt;<var>8</var>,<a class="local col3 ref" href="#23v2" title='v2' data-ref="23v2">v2</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a>);</td></tr>
+<tr><th id="241">241</th><td></td></tr>
+<tr><th id="242">242</th><td>    <b>if</b> (<a class="local col7 ref" href="#27den" title='den' data-ref="27den">den</a> == <var>0</var>)</td></tr>
+<tr><th id="243">243</th><td>	<b>return</b> <var>0</var>;</td></tr>
+<tr><th id="244">244</th><td>    <i>//	I_Error ("P_InterceptVector: parallel");</i></td></tr>
+<tr><th id="245">245</th><td>    </td></tr>
+<tr><th id="246">246</th><td>    <a class="local col6 ref" href="#26num" title='num' data-ref="26num">num</a> =</td></tr>
+<tr><th id="247">247</th><td>	<a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> ( (<a class="local col4 ref" href="#24v1" title='v1' data-ref="24v1">v1</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a> - <a class="local col3 ref" href="#23v2" title='v2' data-ref="23v2">v2</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>)&gt;&gt;<var>8</var> ,<a class="local col4 ref" href="#24v1" title='v1' data-ref="24v1">v1</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a> )</td></tr>
+<tr><th id="248">248</th><td>	+<a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> ( (<a class="local col3 ref" href="#23v2" title='v2' data-ref="23v2">v2</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a> - <a class="local col4 ref" href="#24v1" title='v1' data-ref="24v1">v1</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>)&gt;&gt;<var>8</var>, <a class="local col4 ref" href="#24v1" title='v1' data-ref="24v1">v1</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a> );</td></tr>
+<tr><th id="249">249</th><td></td></tr>
+<tr><th id="250">250</th><td>    <a class="local col5 ref" href="#25frac" title='frac' data-ref="25frac">frac</a> = <a class="ref" href="m_fixed.h.html#FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</a> (<a class="local col6 ref" href="#26num" title='num' data-ref="26num">num</a> , <a class="local col7 ref" href="#27den" title='den' data-ref="27den">den</a>);</td></tr>
+<tr><th id="251">251</th><td></td></tr>
+<tr><th id="252">252</th><td>    <b>return</b> <a class="local col5 ref" href="#25frac" title='frac' data-ref="25frac">frac</a>;</td></tr>
+<tr><th id="253">253</th><td><u>#<span data-ppcond="235">else</span>	// UNUSED, float debug.</u></td></tr>
+<tr><th id="254">254</th><td>    <em>float</em>	frac;</td></tr>
+<tr><th id="255">255</th><td>    <em>float</em>	num;</td></tr>
+<tr><th id="256">256</th><td>    <em>float</em>	den;</td></tr>
+<tr><th id="257">257</th><td>    <em>float</em>	v1x;</td></tr>
+<tr><th id="258">258</th><td>    <em>float</em>	v1y;</td></tr>
+<tr><th id="259">259</th><td>    <em>float</em>	v1dx;</td></tr>
+<tr><th id="260">260</th><td>    <em>float</em>	v1dy;</td></tr>
+<tr><th id="261">261</th><td>    <em>float</em>	v2x;</td></tr>
+<tr><th id="262">262</th><td>    <em>float</em>	v2y;</td></tr>
+<tr><th id="263">263</th><td>    <em>float</em>	v2dx;</td></tr>
+<tr><th id="264">264</th><td>    <em>float</em>	v2dy;</td></tr>
+<tr><th id="265">265</th><td></td></tr>
+<tr><th id="266">266</th><td>    v1x = (<em>float</em>)v1-&gt;x/FRACUNIT;</td></tr>
+<tr><th id="267">267</th><td>    v1y = (<em>float</em>)v1-&gt;y/FRACUNIT;</td></tr>
+<tr><th id="268">268</th><td>    v1dx = (<em>float</em>)v1-&gt;dx/FRACUNIT;</td></tr>
+<tr><th id="269">269</th><td>    v1dy = (<em>float</em>)v1-&gt;dy/FRACUNIT;</td></tr>
+<tr><th id="270">270</th><td>    v2x = (<em>float</em>)v2-&gt;x/FRACUNIT;</td></tr>
+<tr><th id="271">271</th><td>    v2y = (<em>float</em>)v2-&gt;y/FRACUNIT;</td></tr>
+<tr><th id="272">272</th><td>    v2dx = (<em>float</em>)v2-&gt;dx/FRACUNIT;</td></tr>
+<tr><th id="273">273</th><td>    v2dy = (<em>float</em>)v2-&gt;dy/FRACUNIT;</td></tr>
+<tr><th id="274">274</th><td>	</td></tr>
+<tr><th id="275">275</th><td>    den = v1dy*v2dx - v1dx*v2dy;</td></tr>
+<tr><th id="276">276</th><td></td></tr>
+<tr><th id="277">277</th><td>    <b>if</b> (den == <var>0</var>)</td></tr>
+<tr><th id="278">278</th><td>	<b>return</b> <var>0</var>;	<i>// parallel</i></td></tr>
+<tr><th id="279">279</th><td>    </td></tr>
+<tr><th id="280">280</th><td>    num = (v1x - v2x)*v1dy + (v2y - v1y)*v1dx;</td></tr>
+<tr><th id="281">281</th><td>    frac = num / den;</td></tr>
+<tr><th id="282">282</th><td></td></tr>
+<tr><th id="283">283</th><td>    <b>return</b> frac*FRACUNIT;</td></tr>
+<tr><th id="284">284</th><td><u>#<span data-ppcond="235">endif</span></u></td></tr>
+<tr><th id="285">285</th><td>}</td></tr>
+<tr><th id="286">286</th><td></td></tr>
+<tr><th id="287">287</th><td></td></tr>
+<tr><th id="288">288</th><td><i>//</i></td></tr>
+<tr><th id="289">289</th><td><i>// P_LineOpening</i></td></tr>
+<tr><th id="290">290</th><td><i>// Sets opentop and openbottom to the window</i></td></tr>
+<tr><th id="291">291</th><td><i>// through a two sided line.</i></td></tr>
+<tr><th id="292">292</th><td><i>// OPTIMIZE: keep this precalculated</i></td></tr>
+<tr><th id="293">293</th><td><i>//</i></td></tr>
+<tr><th id="294">294</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a> <dfn class="decl def" id="opentop" title='opentop' data-ref="opentop">opentop</dfn>;</td></tr>
+<tr><th id="295">295</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a> <dfn class="decl def" id="openbottom" title='openbottom' data-ref="openbottom">openbottom</dfn>;</td></tr>
+<tr><th id="296">296</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a> <dfn class="decl def" id="openrange" title='openrange' data-ref="openrange">openrange</dfn>;</td></tr>
+<tr><th id="297">297</th><td><a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="decl def" id="lowfloor" title='lowfloor' data-ref="lowfloor">lowfloor</dfn>;</td></tr>
+<tr><th id="298">298</th><td></td></tr>
+<tr><th id="299">299</th><td></td></tr>
+<tr><th id="300">300</th><td><em>void</em> <dfn class="decl def" id="P_LineOpening" title='P_LineOpening' data-ref="P_LineOpening">P_LineOpening</dfn> (<a class="typedef" href="r_defs.h.html#line_t" title='line_t' data-type='struct line_s' data-ref="line_t">line_t</a>* <dfn class="local col8 decl" id="28linedef" title='linedef' data-type='line_t *' data-ref="28linedef">linedef</dfn>)</td></tr>
+<tr><th id="301">301</th><td>{</td></tr>
+<tr><th id="302">302</th><td>    <a class="typedef" href="r_defs.h.html#sector_t" title='sector_t' data-type='struct sector_t' data-ref="sector_t">sector_t</a>*	<dfn class="local col9 decl" id="29front" title='front' data-type='sector_t *' data-ref="29front">front</dfn>;</td></tr>
+<tr><th id="303">303</th><td>    <a class="typedef" href="r_defs.h.html#sector_t" title='sector_t' data-type='struct sector_t' data-ref="sector_t">sector_t</a>*	<dfn class="local col0 decl" id="30back" title='back' data-type='sector_t *' data-ref="30back">back</dfn>;</td></tr>
+<tr><th id="304">304</th><td>	</td></tr>
+<tr><th id="305">305</th><td>    <b>if</b> (<a class="local col8 ref" href="#28linedef" title='linedef' data-ref="28linedef">linedef</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::sidenum" title='line_s::sidenum' data-ref="line_s::sidenum">sidenum</a>[<var>1</var>] == -<var>1</var>)</td></tr>
+<tr><th id="306">306</th><td>    {</td></tr>
+<tr><th id="307">307</th><td>	<i>// single sided line</i></td></tr>
+<tr><th id="308">308</th><td>	<a class="ref" href="p_local.h.html#openrange" title='openrange' data-ref="openrange">openrange</a> = <var>0</var>;</td></tr>
+<tr><th id="309">309</th><td>	<b>return</b>;</td></tr>
+<tr><th id="310">310</th><td>    }</td></tr>
+<tr><th id="311">311</th><td>	 </td></tr>
+<tr><th id="312">312</th><td>    <a class="local col9 ref" href="#29front" title='front' data-ref="29front">front</a> = <a class="local col8 ref" href="#28linedef" title='linedef' data-ref="28linedef">linedef</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::frontsector" title='line_s::frontsector' data-ref="line_s::frontsector">frontsector</a>;</td></tr>
+<tr><th id="313">313</th><td>    <a class="local col0 ref" href="#30back" title='back' data-ref="30back">back</a> = <a class="local col8 ref" href="#28linedef" title='linedef' data-ref="28linedef">linedef</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::backsector" title='line_s::backsector' data-ref="line_s::backsector">backsector</a>;</td></tr>
+<tr><th id="314">314</th><td>	</td></tr>
+<tr><th id="315">315</th><td>    <b>if</b> (<a class="local col9 ref" href="#29front" title='front' data-ref="29front">front</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::ceilingheight" title='(anonymous struct)::ceilingheight' data-ref="(anonymous)::ceilingheight">ceilingheight</a> &lt; <a class="local col0 ref" href="#30back" title='back' data-ref="30back">back</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::ceilingheight" title='(anonymous struct)::ceilingheight' data-ref="(anonymous)::ceilingheight">ceilingheight</a>)</td></tr>
+<tr><th id="316">316</th><td>	<a class="ref" href="p_local.h.html#opentop" title='opentop' data-ref="opentop">opentop</a> = <a class="local col9 ref" href="#29front" title='front' data-ref="29front">front</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::ceilingheight" title='(anonymous struct)::ceilingheight' data-ref="(anonymous)::ceilingheight">ceilingheight</a>;</td></tr>
+<tr><th id="317">317</th><td>    <b>else</b></td></tr>
+<tr><th id="318">318</th><td>	<a class="ref" href="p_local.h.html#opentop" title='opentop' data-ref="opentop">opentop</a> = <a class="local col0 ref" href="#30back" title='back' data-ref="30back">back</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::ceilingheight" title='(anonymous struct)::ceilingheight' data-ref="(anonymous)::ceilingheight">ceilingheight</a>;</td></tr>
+<tr><th id="319">319</th><td></td></tr>
+<tr><th id="320">320</th><td>    <b>if</b> (<a class="local col9 ref" href="#29front" title='front' data-ref="29front">front</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::floorheight" title='(anonymous struct)::floorheight' data-ref="(anonymous)::floorheight">floorheight</a> &gt; <a class="local col0 ref" href="#30back" title='back' data-ref="30back">back</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::floorheight" title='(anonymous struct)::floorheight' data-ref="(anonymous)::floorheight">floorheight</a>)</td></tr>
+<tr><th id="321">321</th><td>    {</td></tr>
+<tr><th id="322">322</th><td>	<a class="ref" href="p_local.h.html#openbottom" title='openbottom' data-ref="openbottom">openbottom</a> = <a class="local col9 ref" href="#29front" title='front' data-ref="29front">front</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::floorheight" title='(anonymous struct)::floorheight' data-ref="(anonymous)::floorheight">floorheight</a>;</td></tr>
+<tr><th id="323">323</th><td>	<a class="ref" href="p_local.h.html#lowfloor" title='lowfloor' data-ref="lowfloor">lowfloor</a> = <a class="local col0 ref" href="#30back" title='back' data-ref="30back">back</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::floorheight" title='(anonymous struct)::floorheight' data-ref="(anonymous)::floorheight">floorheight</a>;</td></tr>
+<tr><th id="324">324</th><td>    }</td></tr>
+<tr><th id="325">325</th><td>    <b>else</b></td></tr>
+<tr><th id="326">326</th><td>    {</td></tr>
+<tr><th id="327">327</th><td>	<a class="ref" href="p_local.h.html#openbottom" title='openbottom' data-ref="openbottom">openbottom</a> = <a class="local col0 ref" href="#30back" title='back' data-ref="30back">back</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::floorheight" title='(anonymous struct)::floorheight' data-ref="(anonymous)::floorheight">floorheight</a>;</td></tr>
+<tr><th id="328">328</th><td>	<a class="ref" href="p_local.h.html#lowfloor" title='lowfloor' data-ref="lowfloor">lowfloor</a> = <a class="local col9 ref" href="#29front" title='front' data-ref="29front">front</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::floorheight" title='(anonymous struct)::floorheight' data-ref="(anonymous)::floorheight">floorheight</a>;</td></tr>
+<tr><th id="329">329</th><td>    }</td></tr>
+<tr><th id="330">330</th><td>	</td></tr>
+<tr><th id="331">331</th><td>    <a class="ref" href="p_local.h.html#openrange" title='openrange' data-ref="openrange">openrange</a> = <a class="ref" href="p_local.h.html#opentop" title='opentop' data-ref="opentop">opentop</a> - <a class="ref" href="p_local.h.html#openbottom" title='openbottom' data-ref="openbottom">openbottom</a>;</td></tr>
+<tr><th id="332">332</th><td>}</td></tr>
+<tr><th id="333">333</th><td></td></tr>
+<tr><th id="334">334</th><td></td></tr>
+<tr><th id="335">335</th><td><i>//</i></td></tr>
+<tr><th id="336">336</th><td><i>// THING POSITION SETTING</i></td></tr>
+<tr><th id="337">337</th><td><i>//</i></td></tr>
+<tr><th id="338">338</th><td><i></i></td></tr>
+<tr><th id="339">339</th><td><i></i></td></tr>
+<tr><th id="340">340</th><td><i>//</i></td></tr>
+<tr><th id="341">341</th><td><i>// P_UnsetThingPosition</i></td></tr>
+<tr><th id="342">342</th><td><i>// Unlinks a thing from block map and sectors.</i></td></tr>
+<tr><th id="343">343</th><td><i>// On each position change, BLOCKMAP and other</i></td></tr>
+<tr><th id="344">344</th><td><i>// lookups maintaining lists ot things inside</i></td></tr>
+<tr><th id="345">345</th><td><i>// these structures need to be updated.</i></td></tr>
+<tr><th id="346">346</th><td><i>//</i></td></tr>
+<tr><th id="347">347</th><td><em>void</em> <dfn class="decl def" id="P_UnsetThingPosition" title='P_UnsetThingPosition' data-ref="P_UnsetThingPosition">P_UnsetThingPosition</dfn> (<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>* <dfn class="local col1 decl" id="31thing" title='thing' data-type='mobj_t *' data-ref="31thing">thing</dfn>)</td></tr>
+<tr><th id="348">348</th><td>{</td></tr>
+<tr><th id="349">349</th><td>    <em>int</em>		<dfn class="local col2 decl" id="32blockx" title='blockx' data-type='int' data-ref="32blockx">blockx</dfn>;</td></tr>
+<tr><th id="350">350</th><td>    <em>int</em>		<dfn class="local col3 decl" id="33blocky" title='blocky' data-type='int' data-ref="33blocky">blocky</dfn>;</td></tr>
+<tr><th id="351">351</th><td></td></tr>
+<tr><th id="352">352</th><td>    <b>if</b> ( ! (<a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::flags" title='mobj_s::flags' data-ref="mobj_s::flags">flags</a> &amp; <a class="enum" href="p_mobj.h.html#MF_NOSECTOR" title='MF_NOSECTOR' data-ref="MF_NOSECTOR">MF_NOSECTOR</a>) )</td></tr>
+<tr><th id="353">353</th><td>    {</td></tr>
+<tr><th id="354">354</th><td>	<i>// inert things don't need to be in blockmap?</i></td></tr>
+<tr><th id="355">355</th><td><i>	// unlink from subsector</i></td></tr>
+<tr><th id="356">356</th><td>	<b>if</b> (<a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::snext" title='mobj_s::snext' data-ref="mobj_s::snext">snext</a>)</td></tr>
+<tr><th id="357">357</th><td>	    <a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::snext" title='mobj_s::snext' data-ref="mobj_s::snext">snext</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::sprev" title='mobj_s::sprev' data-ref="mobj_s::sprev">sprev</a> = <a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::sprev" title='mobj_s::sprev' data-ref="mobj_s::sprev">sprev</a>;</td></tr>
+<tr><th id="358">358</th><td></td></tr>
+<tr><th id="359">359</th><td>	<b>if</b> (<a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::sprev" title='mobj_s::sprev' data-ref="mobj_s::sprev">sprev</a>)</td></tr>
+<tr><th id="360">360</th><td>	    <a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::sprev" title='mobj_s::sprev' data-ref="mobj_s::sprev">sprev</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::snext" title='mobj_s::snext' data-ref="mobj_s::snext">snext</a> = <a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::snext" title='mobj_s::snext' data-ref="mobj_s::snext">snext</a>;</td></tr>
+<tr><th id="361">361</th><td>	<b>else</b></td></tr>
+<tr><th id="362">362</th><td>	    <a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::subsector" title='mobj_s::subsector' data-ref="mobj_s::subsector">subsector</a>-&gt;<a class="ref" href="r_defs.h.html#subsector_s::sector" title='subsector_s::sector' data-ref="subsector_s::sector">sector</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::thinglist" title='(anonymous struct)::thinglist' data-ref="(anonymous)::thinglist">thinglist</a> = <a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::snext" title='mobj_s::snext' data-ref="mobj_s::snext">snext</a>;</td></tr>
+<tr><th id="363">363</th><td>    }</td></tr>
+<tr><th id="364">364</th><td>	</td></tr>
+<tr><th id="365">365</th><td>    <b>if</b> ( ! (<a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::flags" title='mobj_s::flags' data-ref="mobj_s::flags">flags</a> &amp; <a class="enum" href="p_mobj.h.html#MF_NOBLOCKMAP" title='MF_NOBLOCKMAP' data-ref="MF_NOBLOCKMAP">MF_NOBLOCKMAP</a>) )</td></tr>
+<tr><th id="366">366</th><td>    {</td></tr>
+<tr><th id="367">367</th><td>	<i>// inert things don't need to be in blockmap</i></td></tr>
+<tr><th id="368">368</th><td><i>	// unlink from block map</i></td></tr>
+<tr><th id="369">369</th><td>	<b>if</b> (<a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bnext" title='mobj_s::bnext' data-ref="mobj_s::bnext">bnext</a>)</td></tr>
+<tr><th id="370">370</th><td>	    <a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bnext" title='mobj_s::bnext' data-ref="mobj_s::bnext">bnext</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bprev" title='mobj_s::bprev' data-ref="mobj_s::bprev">bprev</a> = <a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bprev" title='mobj_s::bprev' data-ref="mobj_s::bprev">bprev</a>;</td></tr>
+<tr><th id="371">371</th><td>	</td></tr>
+<tr><th id="372">372</th><td>	<b>if</b> (<a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bprev" title='mobj_s::bprev' data-ref="mobj_s::bprev">bprev</a>)</td></tr>
+<tr><th id="373">373</th><td>	    <a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bprev" title='mobj_s::bprev' data-ref="mobj_s::bprev">bprev</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bnext" title='mobj_s::bnext' data-ref="mobj_s::bnext">bnext</a> = <a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bnext" title='mobj_s::bnext' data-ref="mobj_s::bnext">bnext</a>;</td></tr>
+<tr><th id="374">374</th><td>	<b>else</b></td></tr>
+<tr><th id="375">375</th><td>	{</td></tr>
+<tr><th id="376">376</th><td>	    <a class="local col2 ref" href="#32blockx" title='blockx' data-ref="32blockx">blockx</a> = (<a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a> - <a class="ref" href="p_local.h.html#bmaporgx" title='bmaporgx' data-ref="bmaporgx">bmaporgx</a>)&gt;&gt;<a class="macro" href="p_local.h.html#40" title="(16+7)" data-ref="_M/MAPBLOCKSHIFT">MAPBLOCKSHIFT</a>;</td></tr>
+<tr><th id="377">377</th><td>	    <a class="local col3 ref" href="#33blocky" title='blocky' data-ref="33blocky">blocky</a> = (<a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a> - <a class="ref" href="p_local.h.html#bmaporgy" title='bmaporgy' data-ref="bmaporgy">bmaporgy</a>)&gt;&gt;<a class="macro" href="p_local.h.html#40" title="(16+7)" data-ref="_M/MAPBLOCKSHIFT">MAPBLOCKSHIFT</a>;</td></tr>
+<tr><th id="378">378</th><td></td></tr>
+<tr><th id="379">379</th><td>	    <b>if</b> (<a class="local col2 ref" href="#32blockx" title='blockx' data-ref="32blockx">blockx</a>&gt;=<var>0</var> &amp;&amp; <a class="local col2 ref" href="#32blockx" title='blockx' data-ref="32blockx">blockx</a> &lt; <a class="ref" href="p_local.h.html#bmapwidth" title='bmapwidth' data-ref="bmapwidth">bmapwidth</a></td></tr>
+<tr><th id="380">380</th><td>		&amp;&amp; <a class="local col3 ref" href="#33blocky" title='blocky' data-ref="33blocky">blocky</a>&gt;=<var>0</var> &amp;&amp; <a class="local col3 ref" href="#33blocky" title='blocky' data-ref="33blocky">blocky</a> &lt;<a class="ref" href="p_local.h.html#bmapheight" title='bmapheight' data-ref="bmapheight">bmapheight</a>)</td></tr>
+<tr><th id="381">381</th><td>	    {</td></tr>
+<tr><th id="382">382</th><td>		<a class="ref" href="p_local.h.html#blocklinks" title='blocklinks' data-ref="blocklinks">blocklinks</a>[<a class="local col3 ref" href="#33blocky" title='blocky' data-ref="33blocky">blocky</a>*<a class="ref" href="p_local.h.html#bmapwidth" title='bmapwidth' data-ref="bmapwidth">bmapwidth</a>+<a class="local col2 ref" href="#32blockx" title='blockx' data-ref="32blockx">blockx</a>] = <a class="local col1 ref" href="#31thing" title='thing' data-ref="31thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bnext" title='mobj_s::bnext' data-ref="mobj_s::bnext">bnext</a>;</td></tr>
+<tr><th id="383">383</th><td>	    }</td></tr>
+<tr><th id="384">384</th><td>	}</td></tr>
+<tr><th id="385">385</th><td>    }</td></tr>
+<tr><th id="386">386</th><td>}</td></tr>
+<tr><th id="387">387</th><td></td></tr>
+<tr><th id="388">388</th><td></td></tr>
+<tr><th id="389">389</th><td><i>//</i></td></tr>
+<tr><th id="390">390</th><td><i>// P_SetThingPosition</i></td></tr>
+<tr><th id="391">391</th><td><i>// Links a thing into both a block and a subsector</i></td></tr>
+<tr><th id="392">392</th><td><i>// based on it's x y.</i></td></tr>
+<tr><th id="393">393</th><td><i>// Sets thing-&gt;subsector properly</i></td></tr>
+<tr><th id="394">394</th><td><i>//</i></td></tr>
+<tr><th id="395">395</th><td><em>void</em></td></tr>
+<tr><th id="396">396</th><td><dfn class="decl def" id="P_SetThingPosition" title='P_SetThingPosition' data-ref="P_SetThingPosition">P_SetThingPosition</dfn> (<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>* <dfn class="local col4 decl" id="34thing" title='thing' data-type='mobj_t *' data-ref="34thing">thing</dfn>)</td></tr>
+<tr><th id="397">397</th><td>{</td></tr>
+<tr><th id="398">398</th><td>    <a class="typedef" href="r_defs.h.html#subsector_t" title='subsector_t' data-type='struct subsector_s' data-ref="subsector_t">subsector_t</a>*	<dfn class="local col5 decl" id="35ss" title='ss' data-type='subsector_t *' data-ref="35ss">ss</dfn>;</td></tr>
+<tr><th id="399">399</th><td>    <a class="typedef" href="r_defs.h.html#sector_t" title='sector_t' data-type='struct sector_t' data-ref="sector_t">sector_t</a>*		<dfn class="local col6 decl" id="36sec" title='sec' data-type='sector_t *' data-ref="36sec">sec</dfn>;</td></tr>
+<tr><th id="400">400</th><td>    <em>int</em>			<dfn class="local col7 decl" id="37blockx" title='blockx' data-type='int' data-ref="37blockx">blockx</dfn>;</td></tr>
+<tr><th id="401">401</th><td>    <em>int</em>			<dfn class="local col8 decl" id="38blocky" title='blocky' data-type='int' data-ref="38blocky">blocky</dfn>;</td></tr>
+<tr><th id="402">402</th><td>    <a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>**		<dfn class="local col9 decl" id="39link" title='link' data-type='mobj_t **' data-ref="39link">link</dfn>;</td></tr>
+<tr><th id="403">403</th><td></td></tr>
+<tr><th id="404">404</th><td>    </td></tr>
+<tr><th id="405">405</th><td>    <i>// link into subsector</i></td></tr>
+<tr><th id="406">406</th><td>    <a class="local col5 ref" href="#35ss" title='ss' data-ref="35ss">ss</a> = <a class="ref" href="r_main.h.html#R_PointInSubsector" title='R_PointInSubsector' data-ref="R_PointInSubsector">R_PointInSubsector</a> (<a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a>,<a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a>);</td></tr>
+<tr><th id="407">407</th><td>    <a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::subsector" title='mobj_s::subsector' data-ref="mobj_s::subsector">subsector</a> = <a class="local col5 ref" href="#35ss" title='ss' data-ref="35ss">ss</a>;</td></tr>
+<tr><th id="408">408</th><td>    </td></tr>
+<tr><th id="409">409</th><td>    <b>if</b> ( ! (<a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::flags" title='mobj_s::flags' data-ref="mobj_s::flags">flags</a> &amp; <a class="enum" href="p_mobj.h.html#MF_NOSECTOR" title='MF_NOSECTOR' data-ref="MF_NOSECTOR">MF_NOSECTOR</a>) )</td></tr>
+<tr><th id="410">410</th><td>    {</td></tr>
+<tr><th id="411">411</th><td>	<i>// invisible things don't go into the sector links</i></td></tr>
+<tr><th id="412">412</th><td>	<a class="local col6 ref" href="#36sec" title='sec' data-ref="36sec">sec</a> = <a class="local col5 ref" href="#35ss" title='ss' data-ref="35ss">ss</a>-&gt;<a class="ref" href="r_defs.h.html#subsector_s::sector" title='subsector_s::sector' data-ref="subsector_s::sector">sector</a>;</td></tr>
+<tr><th id="413">413</th><td>	</td></tr>
+<tr><th id="414">414</th><td>	<a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::sprev" title='mobj_s::sprev' data-ref="mobj_s::sprev">sprev</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="415">415</th><td>	<a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::snext" title='mobj_s::snext' data-ref="mobj_s::snext">snext</a> = <a class="local col6 ref" href="#36sec" title='sec' data-ref="36sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::thinglist" title='(anonymous struct)::thinglist' data-ref="(anonymous)::thinglist">thinglist</a>;</td></tr>
+<tr><th id="416">416</th><td></td></tr>
+<tr><th id="417">417</th><td>	<b>if</b> (<a class="local col6 ref" href="#36sec" title='sec' data-ref="36sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::thinglist" title='(anonymous struct)::thinglist' data-ref="(anonymous)::thinglist">thinglist</a>)</td></tr>
+<tr><th id="418">418</th><td>	    <a class="local col6 ref" href="#36sec" title='sec' data-ref="36sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::thinglist" title='(anonymous struct)::thinglist' data-ref="(anonymous)::thinglist">thinglist</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::sprev" title='mobj_s::sprev' data-ref="mobj_s::sprev">sprev</a> = <a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>;</td></tr>
+<tr><th id="419">419</th><td></td></tr>
+<tr><th id="420">420</th><td>	<a class="local col6 ref" href="#36sec" title='sec' data-ref="36sec">sec</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::thinglist" title='(anonymous struct)::thinglist' data-ref="(anonymous)::thinglist">thinglist</a> = <a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>;</td></tr>
+<tr><th id="421">421</th><td>    }</td></tr>
+<tr><th id="422">422</th><td></td></tr>
+<tr><th id="423">423</th><td>    </td></tr>
+<tr><th id="424">424</th><td>    <i>// link into blockmap</i></td></tr>
+<tr><th id="425">425</th><td>    <b>if</b> ( ! (<a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::flags" title='mobj_s::flags' data-ref="mobj_s::flags">flags</a> &amp; <a class="enum" href="p_mobj.h.html#MF_NOBLOCKMAP" title='MF_NOBLOCKMAP' data-ref="MF_NOBLOCKMAP">MF_NOBLOCKMAP</a>) )</td></tr>
+<tr><th id="426">426</th><td>    {</td></tr>
+<tr><th id="427">427</th><td>	<i>// inert things don't need to be in blockmap		</i></td></tr>
+<tr><th id="428">428</th><td>	<a class="local col7 ref" href="#37blockx" title='blockx' data-ref="37blockx">blockx</a> = (<a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a> - <a class="ref" href="p_local.h.html#bmaporgx" title='bmaporgx' data-ref="bmaporgx">bmaporgx</a>)&gt;&gt;<a class="macro" href="p_local.h.html#40" title="(16+7)" data-ref="_M/MAPBLOCKSHIFT">MAPBLOCKSHIFT</a>;</td></tr>
+<tr><th id="429">429</th><td>	<a class="local col8 ref" href="#38blocky" title='blocky' data-ref="38blocky">blocky</a> = (<a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a> - <a class="ref" href="p_local.h.html#bmaporgy" title='bmaporgy' data-ref="bmaporgy">bmaporgy</a>)&gt;&gt;<a class="macro" href="p_local.h.html#40" title="(16+7)" data-ref="_M/MAPBLOCKSHIFT">MAPBLOCKSHIFT</a>;</td></tr>
+<tr><th id="430">430</th><td></td></tr>
+<tr><th id="431">431</th><td>	<b>if</b> (<a class="local col7 ref" href="#37blockx" title='blockx' data-ref="37blockx">blockx</a>&gt;=<var>0</var></td></tr>
+<tr><th id="432">432</th><td>	    &amp;&amp; <a class="local col7 ref" href="#37blockx" title='blockx' data-ref="37blockx">blockx</a> &lt; <a class="ref" href="p_local.h.html#bmapwidth" title='bmapwidth' data-ref="bmapwidth">bmapwidth</a></td></tr>
+<tr><th id="433">433</th><td>	    &amp;&amp; <a class="local col8 ref" href="#38blocky" title='blocky' data-ref="38blocky">blocky</a>&gt;=<var>0</var></td></tr>
+<tr><th id="434">434</th><td>	    &amp;&amp; <a class="local col8 ref" href="#38blocky" title='blocky' data-ref="38blocky">blocky</a> &lt; <a class="ref" href="p_local.h.html#bmapheight" title='bmapheight' data-ref="bmapheight">bmapheight</a>)</td></tr>
+<tr><th id="435">435</th><td>	{</td></tr>
+<tr><th id="436">436</th><td>	    <a class="local col9 ref" href="#39link" title='link' data-ref="39link">link</a> = &amp;<a class="ref" href="p_local.h.html#blocklinks" title='blocklinks' data-ref="blocklinks">blocklinks</a>[<a class="local col8 ref" href="#38blocky" title='blocky' data-ref="38blocky">blocky</a>*<a class="ref" href="p_local.h.html#bmapwidth" title='bmapwidth' data-ref="bmapwidth">bmapwidth</a>+<a class="local col7 ref" href="#37blockx" title='blockx' data-ref="37blockx">blockx</a>];</td></tr>
+<tr><th id="437">437</th><td>	    <a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bprev" title='mobj_s::bprev' data-ref="mobj_s::bprev">bprev</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="438">438</th><td>	    <a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bnext" title='mobj_s::bnext' data-ref="mobj_s::bnext">bnext</a> = *<a class="local col9 ref" href="#39link" title='link' data-ref="39link">link</a>;</td></tr>
+<tr><th id="439">439</th><td>	    <b>if</b> (*<a class="local col9 ref" href="#39link" title='link' data-ref="39link">link</a>)</td></tr>
+<tr><th id="440">440</th><td>		(*<a class="local col9 ref" href="#39link" title='link' data-ref="39link">link</a>)-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bprev" title='mobj_s::bprev' data-ref="mobj_s::bprev">bprev</a> = <a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>;</td></tr>
+<tr><th id="441">441</th><td></td></tr>
+<tr><th id="442">442</th><td>	    *<a class="local col9 ref" href="#39link" title='link' data-ref="39link">link</a> = <a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>;</td></tr>
+<tr><th id="443">443</th><td>	}</td></tr>
+<tr><th id="444">444</th><td>	<b>else</b></td></tr>
+<tr><th id="445">445</th><td>	{</td></tr>
+<tr><th id="446">446</th><td>	    <i>// thing is off the map</i></td></tr>
+<tr><th id="447">447</th><td>	    <a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bnext" title='mobj_s::bnext' data-ref="mobj_s::bnext">bnext</a> = <a class="local col4 ref" href="#34thing" title='thing' data-ref="34thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bprev" title='mobj_s::bprev' data-ref="mobj_s::bprev">bprev</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="448">448</th><td>	}</td></tr>
+<tr><th id="449">449</th><td>    }</td></tr>
+<tr><th id="450">450</th><td>}</td></tr>
+<tr><th id="451">451</th><td></td></tr>
+<tr><th id="452">452</th><td></td></tr>
+<tr><th id="453">453</th><td></td></tr>
+<tr><th id="454">454</th><td><i>//</i></td></tr>
+<tr><th id="455">455</th><td><i>// BLOCK MAP ITERATORS</i></td></tr>
+<tr><th id="456">456</th><td><i>// For each line/thing in the given mapblock,</i></td></tr>
+<tr><th id="457">457</th><td><i>// call the passed PIT_* function.</i></td></tr>
+<tr><th id="458">458</th><td><i>// If the function returns false,</i></td></tr>
+<tr><th id="459">459</th><td><i>// exit with false without checking anything else.</i></td></tr>
+<tr><th id="460">460</th><td><i>//</i></td></tr>
+<tr><th id="461">461</th><td><i></i></td></tr>
+<tr><th id="462">462</th><td><i></i></td></tr>
+<tr><th id="463">463</th><td><i>//</i></td></tr>
+<tr><th id="464">464</th><td><i>// P_BlockLinesIterator</i></td></tr>
+<tr><th id="465">465</th><td><i>// The validcount flags are used to avoid checking lines</i></td></tr>
+<tr><th id="466">466</th><td><i>// that are marked in multiple mapblocks,</i></td></tr>
+<tr><th id="467">467</th><td><i>// so increment validcount before the first call</i></td></tr>
+<tr><th id="468">468</th><td><i>// to P_BlockLinesIterator, then make one or more calls</i></td></tr>
+<tr><th id="469">469</th><td><i>// to it.</i></td></tr>
+<tr><th id="470">470</th><td><i>//</i></td></tr>
+<tr><th id="471">471</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a></td></tr>
+<tr><th id="472">472</th><td><dfn class="decl def" id="P_BlockLinesIterator" title='P_BlockLinesIterator' data-ref="P_BlockLinesIterator">P_BlockLinesIterator</dfn></td></tr>
+<tr><th id="473">473</th><td>( <em>int</em>			<dfn class="local col0 decl" id="40x" title='x' data-type='int' data-ref="40x">x</dfn>,</td></tr>
+<tr><th id="474">474</th><td>  <em>int</em>			<dfn class="local col1 decl" id="41y" title='y' data-type='int' data-ref="41y">y</dfn>,</td></tr>
+<tr><th id="475">475</th><td>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>(*<dfn class="local col2 decl" id="42func" title='func' data-type='boolean (*)(line_t *)' data-ref="42func">func</dfn>)(<a class="typedef" href="r_defs.h.html#line_t" title='line_t' data-type='struct line_s' data-ref="line_t">line_t</a>*) )</td></tr>
+<tr><th id="476">476</th><td>{</td></tr>
+<tr><th id="477">477</th><td>    <em>int</em>			<dfn class="local col3 decl" id="43offset" title='offset' data-type='int' data-ref="43offset">offset</dfn>;</td></tr>
+<tr><th id="478">478</th><td>    <em>short</em>*		<dfn class="local col4 decl" id="44list" title='list' data-type='short *' data-ref="44list">list</dfn>;</td></tr>
+<tr><th id="479">479</th><td>    <a class="typedef" href="r_defs.h.html#line_t" title='line_t' data-type='struct line_s' data-ref="line_t">line_t</a>*		<dfn class="local col5 decl" id="45ld" title='ld' data-type='line_t *' data-ref="45ld">ld</dfn>;</td></tr>
+<tr><th id="480">480</th><td>	</td></tr>
+<tr><th id="481">481</th><td>    <b>if</b> (<a class="local col0 ref" href="#40x" title='x' data-ref="40x">x</a>&lt;<var>0</var></td></tr>
+<tr><th id="482">482</th><td>	|| <a class="local col1 ref" href="#41y" title='y' data-ref="41y">y</a>&lt;<var>0</var></td></tr>
+<tr><th id="483">483</th><td>	|| <a class="local col0 ref" href="#40x" title='x' data-ref="40x">x</a>&gt;=<a class="ref" href="p_local.h.html#bmapwidth" title='bmapwidth' data-ref="bmapwidth">bmapwidth</a></td></tr>
+<tr><th id="484">484</th><td>	|| <a class="local col1 ref" href="#41y" title='y' data-ref="41y">y</a>&gt;=<a class="ref" href="p_local.h.html#bmapheight" title='bmapheight' data-ref="bmapheight">bmapheight</a>)</td></tr>
+<tr><th id="485">485</th><td>    {</td></tr>
+<tr><th id="486">486</th><td>	<b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="487">487</th><td>    }</td></tr>
+<tr><th id="488">488</th><td>    </td></tr>
+<tr><th id="489">489</th><td>    <a class="local col3 ref" href="#43offset" title='offset' data-ref="43offset">offset</a> = <a class="local col1 ref" href="#41y" title='y' data-ref="41y">y</a>*<a class="ref" href="p_local.h.html#bmapwidth" title='bmapwidth' data-ref="bmapwidth">bmapwidth</a>+<a class="local col0 ref" href="#40x" title='x' data-ref="40x">x</a>;</td></tr>
+<tr><th id="490">490</th><td>	</td></tr>
+<tr><th id="491">491</th><td>    <a class="local col3 ref" href="#43offset" title='offset' data-ref="43offset">offset</a> = *(<a class="ref" href="p_local.h.html#blockmap" title='blockmap' data-ref="blockmap">blockmap</a>+<a class="local col3 ref" href="#43offset" title='offset' data-ref="43offset">offset</a>);</td></tr>
+<tr><th id="492">492</th><td></td></tr>
+<tr><th id="493">493</th><td>    <b>for</b> ( <a class="local col4 ref" href="#44list" title='list' data-ref="44list">list</a> = <a class="ref" href="p_local.h.html#blockmaplump" title='blockmaplump' data-ref="blockmaplump">blockmaplump</a>+<a class="local col3 ref" href="#43offset" title='offset' data-ref="43offset">offset</a> ; *<a class="local col4 ref" href="#44list" title='list' data-ref="44list">list</a> != -<var>1</var> ; <a class="local col4 ref" href="#44list" title='list' data-ref="44list">list</a>++)</td></tr>
+<tr><th id="494">494</th><td>    {</td></tr>
+<tr><th id="495">495</th><td>	<a class="local col5 ref" href="#45ld" title='ld' data-ref="45ld">ld</a> = &amp;<a class="ref" href="r_state.h.html#lines" title='lines' data-ref="lines">lines</a>[*<a class="local col4 ref" href="#44list" title='list' data-ref="44list">list</a>];</td></tr>
+<tr><th id="496">496</th><td></td></tr>
+<tr><th id="497">497</th><td>	<b>if</b> (<a class="local col5 ref" href="#45ld" title='ld' data-ref="45ld">ld</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::validcount" title='line_s::validcount' data-ref="line_s::validcount">validcount</a> == <a class="ref" href="r_main.h.html#validcount" title='validcount' data-ref="validcount">validcount</a>)</td></tr>
+<tr><th id="498">498</th><td>	    <b>continue</b>; 	<i>// line has already been checked</i></td></tr>
+<tr><th id="499">499</th><td></td></tr>
+<tr><th id="500">500</th><td>	<a class="local col5 ref" href="#45ld" title='ld' data-ref="45ld">ld</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::validcount" title='line_s::validcount' data-ref="line_s::validcount">validcount</a> = <a class="ref" href="r_main.h.html#validcount" title='validcount' data-ref="validcount">validcount</a>;</td></tr>
+<tr><th id="501">501</th><td>		</td></tr>
+<tr><th id="502">502</th><td>	<b>if</b> ( !<a class="local col2 ref" href="#42func" title='func' data-ref="42func">func</a>(<a class="local col5 ref" href="#45ld" title='ld' data-ref="45ld">ld</a>) )</td></tr>
+<tr><th id="503">503</th><td>	    <b>return</b> <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="504">504</th><td>    }</td></tr>
+<tr><th id="505">505</th><td>    <b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;	<i>// everything was checked</i></td></tr>
+<tr><th id="506">506</th><td>}</td></tr>
+<tr><th id="507">507</th><td></td></tr>
+<tr><th id="508">508</th><td></td></tr>
+<tr><th id="509">509</th><td><i>//</i></td></tr>
+<tr><th id="510">510</th><td><i>// P_BlockThingsIterator</i></td></tr>
+<tr><th id="511">511</th><td><i>//</i></td></tr>
+<tr><th id="512">512</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a></td></tr>
+<tr><th id="513">513</th><td><dfn class="decl def" id="P_BlockThingsIterator" title='P_BlockThingsIterator' data-ref="P_BlockThingsIterator">P_BlockThingsIterator</dfn></td></tr>
+<tr><th id="514">514</th><td>( <em>int</em>			<dfn class="local col6 decl" id="46x" title='x' data-type='int' data-ref="46x">x</dfn>,</td></tr>
+<tr><th id="515">515</th><td>  <em>int</em>			<dfn class="local col7 decl" id="47y" title='y' data-type='int' data-ref="47y">y</dfn>,</td></tr>
+<tr><th id="516">516</th><td>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>(*<dfn class="local col8 decl" id="48func" title='func' data-type='boolean (*)(mobj_t *)' data-ref="48func">func</dfn>)(<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>*) )</td></tr>
+<tr><th id="517">517</th><td>{</td></tr>
+<tr><th id="518">518</th><td>    <a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>*		<dfn class="local col9 decl" id="49mobj" title='mobj' data-type='mobj_t *' data-ref="49mobj">mobj</dfn>;</td></tr>
+<tr><th id="519">519</th><td>	</td></tr>
+<tr><th id="520">520</th><td>    <b>if</b> ( <a class="local col6 ref" href="#46x" title='x' data-ref="46x">x</a>&lt;<var>0</var></td></tr>
+<tr><th id="521">521</th><td>	 || <a class="local col7 ref" href="#47y" title='y' data-ref="47y">y</a>&lt;<var>0</var></td></tr>
+<tr><th id="522">522</th><td>	 || <a class="local col6 ref" href="#46x" title='x' data-ref="46x">x</a>&gt;=<a class="ref" href="p_local.h.html#bmapwidth" title='bmapwidth' data-ref="bmapwidth">bmapwidth</a></td></tr>
+<tr><th id="523">523</th><td>	 || <a class="local col7 ref" href="#47y" title='y' data-ref="47y">y</a>&gt;=<a class="ref" href="p_local.h.html#bmapheight" title='bmapheight' data-ref="bmapheight">bmapheight</a>)</td></tr>
+<tr><th id="524">524</th><td>    {</td></tr>
+<tr><th id="525">525</th><td>	<b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="526">526</th><td>    }</td></tr>
+<tr><th id="527">527</th><td>    </td></tr>
+<tr><th id="528">528</th><td></td></tr>
+<tr><th id="529">529</th><td>    <b>for</b> (<a class="local col9 ref" href="#49mobj" title='mobj' data-ref="49mobj">mobj</a> = <a class="ref" href="p_local.h.html#blocklinks" title='blocklinks' data-ref="blocklinks">blocklinks</a>[<a class="local col7 ref" href="#47y" title='y' data-ref="47y">y</a>*<a class="ref" href="p_local.h.html#bmapwidth" title='bmapwidth' data-ref="bmapwidth">bmapwidth</a>+<a class="local col6 ref" href="#46x" title='x' data-ref="46x">x</a>] ;</td></tr>
+<tr><th id="530">530</th><td>	 <a class="local col9 ref" href="#49mobj" title='mobj' data-ref="49mobj">mobj</a> ;</td></tr>
+<tr><th id="531">531</th><td>	 <a class="local col9 ref" href="#49mobj" title='mobj' data-ref="49mobj">mobj</a> = <a class="local col9 ref" href="#49mobj" title='mobj' data-ref="49mobj">mobj</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::bnext" title='mobj_s::bnext' data-ref="mobj_s::bnext">bnext</a>)</td></tr>
+<tr><th id="532">532</th><td>    {</td></tr>
+<tr><th id="533">533</th><td>	<b>if</b> (!<a class="local col8 ref" href="#48func" title='func' data-ref="48func">func</a>( <a class="local col9 ref" href="#49mobj" title='mobj' data-ref="49mobj">mobj</a> ) )</td></tr>
+<tr><th id="534">534</th><td>	    <b>return</b> <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="535">535</th><td>    }</td></tr>
+<tr><th id="536">536</th><td>    <b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="537">537</th><td>}</td></tr>
+<tr><th id="538">538</th><td></td></tr>
+<tr><th id="539">539</th><td></td></tr>
+<tr><th id="540">540</th><td></td></tr>
+<tr><th id="541">541</th><td><i>//</i></td></tr>
+<tr><th id="542">542</th><td><i>// INTERCEPT ROUTINES</i></td></tr>
+<tr><th id="543">543</th><td><i>//</i></td></tr>
+<tr><th id="544">544</th><td><a class="typedef" href="p_local.h.html#intercept_t" title='intercept_t' data-type='struct intercept_t' data-ref="intercept_t">intercept_t</a>	<dfn class="decl def" id="intercepts" title='intercepts' data-ref="intercepts">intercepts</dfn>[<a class="macro" href="p_local.h.html#154" title="128" data-ref="_M/MAXINTERCEPTS">MAXINTERCEPTS</a>];</td></tr>
+<tr><th id="545">545</th><td><a class="typedef" href="p_local.h.html#intercept_t" title='intercept_t' data-type='struct intercept_t' data-ref="intercept_t">intercept_t</a>*	<dfn class="decl def" id="intercept_p" title='intercept_p' data-ref="intercept_p">intercept_p</dfn>;</td></tr>
+<tr><th id="546">546</th><td></td></tr>
+<tr><th id="547">547</th><td><a class="typedef" href="p_local.h.html#divline_t" title='divline_t' data-type='struct divline_t' data-ref="divline_t">divline_t</a> 	<dfn class="decl def" id="trace" title='trace' data-ref="trace">trace</dfn>;</td></tr>
+<tr><th id="548">548</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a> 	<dfn class="decl def" id="earlyout" title='earlyout' data-ref="earlyout">earlyout</dfn>;</td></tr>
+<tr><th id="549">549</th><td><em>int</em>		<dfn class="decl def" id="ptflags" title='ptflags' data-ref="ptflags">ptflags</dfn>;</td></tr>
+<tr><th id="550">550</th><td></td></tr>
+<tr><th id="551">551</th><td><i>//</i></td></tr>
+<tr><th id="552">552</th><td><i>// PIT_AddLineIntercepts.</i></td></tr>
+<tr><th id="553">553</th><td><i>// Looks for lines in the given block</i></td></tr>
+<tr><th id="554">554</th><td><i>// that intercept the given trace</i></td></tr>
+<tr><th id="555">555</th><td><i>// to add to the intercepts list.</i></td></tr>
+<tr><th id="556">556</th><td><i>//</i></td></tr>
+<tr><th id="557">557</th><td><i>// A line is crossed if its endpoints</i></td></tr>
+<tr><th id="558">558</th><td><i>// are on opposite sides of the trace.</i></td></tr>
+<tr><th id="559">559</th><td><i>// Returns true if earlyout and a solid line hit.</i></td></tr>
+<tr><th id="560">560</th><td><i>//</i></td></tr>
+<tr><th id="561">561</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a></td></tr>
+<tr><th id="562">562</th><td><dfn class="decl def" id="PIT_AddLineIntercepts" title='PIT_AddLineIntercepts' data-ref="PIT_AddLineIntercepts">PIT_AddLineIntercepts</dfn> (<a class="typedef" href="r_defs.h.html#line_t" title='line_t' data-type='struct line_s' data-ref="line_t">line_t</a>* <dfn class="local col0 decl" id="50ld" title='ld' data-type='line_t *' data-ref="50ld">ld</dfn>)</td></tr>
+<tr><th id="563">563</th><td>{</td></tr>
+<tr><th id="564">564</th><td>    <em>int</em>			<dfn class="local col1 decl" id="51s1" title='s1' data-type='int' data-ref="51s1">s1</dfn>;</td></tr>
+<tr><th id="565">565</th><td>    <em>int</em>			<dfn class="local col2 decl" id="52s2" title='s2' data-type='int' data-ref="52s2">s2</dfn>;</td></tr>
+<tr><th id="566">566</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col3 decl" id="53frac" title='frac' data-type='fixed_t' data-ref="53frac">frac</dfn>;</td></tr>
+<tr><th id="567">567</th><td>    <a class="typedef" href="p_local.h.html#divline_t" title='divline_t' data-type='struct divline_t' data-ref="divline_t">divline_t</a>		<dfn class="local col4 decl" id="54dl" title='dl' data-type='divline_t' data-ref="54dl">dl</dfn>;</td></tr>
+<tr><th id="568">568</th><td>	</td></tr>
+<tr><th id="569">569</th><td>    <i>// avoid precision problems with two routines</i></td></tr>
+<tr><th id="570">570</th><td>    <b>if</b> ( <a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a> &gt; <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>*<var>16</var></td></tr>
+<tr><th id="571">571</th><td>	 || <a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a> &gt; <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>*<var>16</var></td></tr>
+<tr><th id="572">572</th><td>	 || <a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a> &lt; -<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>*<var>16</var></td></tr>
+<tr><th id="573">573</th><td>	 || <a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a> &lt; -<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>*<var>16</var>)</td></tr>
+<tr><th id="574">574</th><td>    {</td></tr>
+<tr><th id="575">575</th><td>	<a class="local col1 ref" href="#51s1" title='s1' data-ref="51s1">s1</a> = <a class="ref" href="#P_PointOnDivlineSide" title='P_PointOnDivlineSide' data-ref="P_PointOnDivlineSide">P_PointOnDivlineSide</a> (<a class="local col0 ref" href="#50ld" title='ld' data-ref="50ld">ld</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::v1" title='line_s::v1' data-ref="line_s::v1">v1</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>, <a class="local col0 ref" href="#50ld" title='ld' data-ref="50ld">ld</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::v1" title='line_s::v1' data-ref="line_s::v1">v1</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>, &amp;<a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>);</td></tr>
+<tr><th id="576">576</th><td>	<a class="local col2 ref" href="#52s2" title='s2' data-ref="52s2">s2</a> = <a class="ref" href="#P_PointOnDivlineSide" title='P_PointOnDivlineSide' data-ref="P_PointOnDivlineSide">P_PointOnDivlineSide</a> (<a class="local col0 ref" href="#50ld" title='ld' data-ref="50ld">ld</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::v2" title='line_s::v2' data-ref="line_s::v2">v2</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>, <a class="local col0 ref" href="#50ld" title='ld' data-ref="50ld">ld</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::v2" title='line_s::v2' data-ref="line_s::v2">v2</a>-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>, &amp;<a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>);</td></tr>
+<tr><th id="577">577</th><td>    }</td></tr>
+<tr><th id="578">578</th><td>    <b>else</b></td></tr>
+<tr><th id="579">579</th><td>    {</td></tr>
+<tr><th id="580">580</th><td>	<a class="local col1 ref" href="#51s1" title='s1' data-ref="51s1">s1</a> = <a class="ref" href="#P_PointOnLineSide" title='P_PointOnLineSide' data-ref="P_PointOnLineSide">P_PointOnLineSide</a> (<a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>, <a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>, <a class="local col0 ref" href="#50ld" title='ld' data-ref="50ld">ld</a>);</td></tr>
+<tr><th id="581">581</th><td>	<a class="local col2 ref" href="#52s2" title='s2' data-ref="52s2">s2</a> = <a class="ref" href="#P_PointOnLineSide" title='P_PointOnLineSide' data-ref="P_PointOnLineSide">P_PointOnLineSide</a> (<a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a>+<a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a>, <a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a>+<a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a>, <a class="local col0 ref" href="#50ld" title='ld' data-ref="50ld">ld</a>);</td></tr>
+<tr><th id="582">582</th><td>    }</td></tr>
+<tr><th id="583">583</th><td>    </td></tr>
+<tr><th id="584">584</th><td>    <b>if</b> (<a class="local col1 ref" href="#51s1" title='s1' data-ref="51s1">s1</a> == <a class="local col2 ref" href="#52s2" title='s2' data-ref="52s2">s2</a>)</td></tr>
+<tr><th id="585">585</th><td>	<b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;	<i>// line isn't crossed</i></td></tr>
+<tr><th id="586">586</th><td>    </td></tr>
+<tr><th id="587">587</th><td>    <i>// hit the line</i></td></tr>
+<tr><th id="588">588</th><td>    <a class="ref" href="#P_MakeDivline" title='P_MakeDivline' data-ref="P_MakeDivline">P_MakeDivline</a> (<a class="local col0 ref" href="#50ld" title='ld' data-ref="50ld">ld</a>, &amp;<a class="local col4 ref" href="#54dl" title='dl' data-ref="54dl">dl</a>);</td></tr>
+<tr><th id="589">589</th><td>    <a class="local col3 ref" href="#53frac" title='frac' data-ref="53frac">frac</a> = <a class="ref" href="#P_InterceptVector" title='P_InterceptVector' data-ref="P_InterceptVector">P_InterceptVector</a> (&amp;<a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>, &amp;<a class="local col4 ref" href="#54dl" title='dl' data-ref="54dl">dl</a>);</td></tr>
+<tr><th id="590">590</th><td></td></tr>
+<tr><th id="591">591</th><td>    <b>if</b> (<a class="local col3 ref" href="#53frac" title='frac' data-ref="53frac">frac</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="592">592</th><td>	<b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;	<i>// behind source</i></td></tr>
+<tr><th id="593">593</th><td>	</td></tr>
+<tr><th id="594">594</th><td>    <i>// try to early out the check</i></td></tr>
+<tr><th id="595">595</th><td>    <b>if</b> (<a class="ref" href="#earlyout" title='earlyout' data-ref="earlyout">earlyout</a></td></tr>
+<tr><th id="596">596</th><td>	&amp;&amp; <a class="local col3 ref" href="#53frac" title='frac' data-ref="53frac">frac</a> &lt; <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a></td></tr>
+<tr><th id="597">597</th><td>	&amp;&amp; !<a class="local col0 ref" href="#50ld" title='ld' data-ref="50ld">ld</a>-&gt;<a class="ref" href="r_defs.h.html#line_s::backsector" title='line_s::backsector' data-ref="line_s::backsector">backsector</a>)</td></tr>
+<tr><th id="598">598</th><td>    {</td></tr>
+<tr><th id="599">599</th><td>	<b>return</b> <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;	<i>// stop checking</i></td></tr>
+<tr><th id="600">600</th><td>    }</td></tr>
+<tr><th id="601">601</th><td>    </td></tr>
+<tr><th id="602">602</th><td>	</td></tr>
+<tr><th id="603">603</th><td>    <a class="ref" href="p_local.h.html#intercept_p" title='intercept_p' data-ref="intercept_p">intercept_p</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::frac" title='(anonymous struct)::frac' data-ref="(anonymous)::frac">frac</a> = <a class="local col3 ref" href="#53frac" title='frac' data-ref="53frac">frac</a>;</td></tr>
+<tr><th id="604">604</th><td>    <a class="ref" href="p_local.h.html#intercept_p" title='intercept_p' data-ref="intercept_p">intercept_p</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::isaline" title='(anonymous struct)::isaline' data-ref="(anonymous)::isaline">isaline</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="605">605</th><td>    <a class="ref" href="p_local.h.html#intercept_p" title='intercept_p' data-ref="intercept_p">intercept_p</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::d" title='(anonymous struct)::d' data-ref="(anonymous)::d">d</a>.<a class="ref" href="p_local.h.html#(anonymousstruct)::(anonymous)::line" title='(anonymous struct)::(anonymous union)::line' data-ref="(anonymousstruct)::(anonymous)::line">line</a> = <a class="local col0 ref" href="#50ld" title='ld' data-ref="50ld">ld</a>;</td></tr>
+<tr><th id="606">606</th><td>    <a class="ref" href="p_local.h.html#intercept_p" title='intercept_p' data-ref="intercept_p">intercept_p</a>++;</td></tr>
+<tr><th id="607">607</th><td></td></tr>
+<tr><th id="608">608</th><td>    <b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;	<i>// continue</i></td></tr>
+<tr><th id="609">609</th><td>}</td></tr>
+<tr><th id="610">610</th><td></td></tr>
+<tr><th id="611">611</th><td></td></tr>
+<tr><th id="612">612</th><td></td></tr>
+<tr><th id="613">613</th><td><i>//</i></td></tr>
+<tr><th id="614">614</th><td><i>// PIT_AddThingIntercepts</i></td></tr>
+<tr><th id="615">615</th><td><i>//</i></td></tr>
+<tr><th id="616">616</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a> <dfn class="decl def" id="PIT_AddThingIntercepts" title='PIT_AddThingIntercepts' data-ref="PIT_AddThingIntercepts">PIT_AddThingIntercepts</dfn> (<a class="typedef" href="p_mobj.h.html#mobj_t" title='mobj_t' data-type='struct mobj_s' data-ref="mobj_t">mobj_t</a>* <dfn class="local col5 decl" id="55thing" title='thing' data-type='mobj_t *' data-ref="55thing">thing</dfn>)</td></tr>
+<tr><th id="617">617</th><td>{</td></tr>
+<tr><th id="618">618</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col6 decl" id="56x1" title='x1' data-type='fixed_t' data-ref="56x1">x1</dfn>;</td></tr>
+<tr><th id="619">619</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col7 decl" id="57y1" title='y1' data-type='fixed_t' data-ref="57y1">y1</dfn>;</td></tr>
+<tr><th id="620">620</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col8 decl" id="58x2" title='x2' data-type='fixed_t' data-ref="58x2">x2</dfn>;</td></tr>
+<tr><th id="621">621</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col9 decl" id="59y2" title='y2' data-type='fixed_t' data-ref="59y2">y2</dfn>;</td></tr>
+<tr><th id="622">622</th><td>    </td></tr>
+<tr><th id="623">623</th><td>    <em>int</em>			<dfn class="local col0 decl" id="60s1" title='s1' data-type='int' data-ref="60s1">s1</dfn>;</td></tr>
+<tr><th id="624">624</th><td>    <em>int</em>			<dfn class="local col1 decl" id="61s2" title='s2' data-type='int' data-ref="61s2">s2</dfn>;</td></tr>
+<tr><th id="625">625</th><td>    </td></tr>
+<tr><th id="626">626</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="local col2 decl" id="62tracepositive" title='tracepositive' data-type='boolean' data-ref="62tracepositive">tracepositive</dfn>;</td></tr>
+<tr><th id="627">627</th><td></td></tr>
+<tr><th id="628">628</th><td>    <a class="typedef" href="p_local.h.html#divline_t" title='divline_t' data-type='struct divline_t' data-ref="divline_t">divline_t</a>		<dfn class="local col3 decl" id="63dl" title='dl' data-type='divline_t' data-ref="63dl">dl</dfn>;</td></tr>
+<tr><th id="629">629</th><td>    </td></tr>
+<tr><th id="630">630</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col4 decl" id="64frac" title='frac' data-type='fixed_t' data-ref="64frac">frac</dfn>;</td></tr>
+<tr><th id="631">631</th><td>	</td></tr>
+<tr><th id="632">632</th><td>    <a class="local col2 ref" href="#62tracepositive" title='tracepositive' data-ref="62tracepositive">tracepositive</a> = (<a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a> ^ <a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a>)&gt;<var>0</var>;</td></tr>
+<tr><th id="633">633</th><td>		</td></tr>
+<tr><th id="634">634</th><td>    <i>// check a corner to corner crossection for hit</i></td></tr>
+<tr><th id="635">635</th><td>    <b>if</b> (<a class="local col2 ref" href="#62tracepositive" title='tracepositive' data-ref="62tracepositive">tracepositive</a>)</td></tr>
+<tr><th id="636">636</th><td>    {</td></tr>
+<tr><th id="637">637</th><td>	<a class="local col6 ref" href="#56x1" title='x1' data-ref="56x1">x1</a> = <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a> - <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::radius" title='mobj_s::radius' data-ref="mobj_s::radius">radius</a>;</td></tr>
+<tr><th id="638">638</th><td>	<a class="local col7 ref" href="#57y1" title='y1' data-ref="57y1">y1</a> = <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a> + <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::radius" title='mobj_s::radius' data-ref="mobj_s::radius">radius</a>;</td></tr>
+<tr><th id="639">639</th><td>		</td></tr>
+<tr><th id="640">640</th><td>	<a class="local col8 ref" href="#58x2" title='x2' data-ref="58x2">x2</a> = <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a> + <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::radius" title='mobj_s::radius' data-ref="mobj_s::radius">radius</a>;</td></tr>
+<tr><th id="641">641</th><td>	<a class="local col9 ref" href="#59y2" title='y2' data-ref="59y2">y2</a> = <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a> - <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::radius" title='mobj_s::radius' data-ref="mobj_s::radius">radius</a>;			</td></tr>
+<tr><th id="642">642</th><td>    }</td></tr>
+<tr><th id="643">643</th><td>    <b>else</b></td></tr>
+<tr><th id="644">644</th><td>    {</td></tr>
+<tr><th id="645">645</th><td>	<a class="local col6 ref" href="#56x1" title='x1' data-ref="56x1">x1</a> = <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a> - <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::radius" title='mobj_s::radius' data-ref="mobj_s::radius">radius</a>;</td></tr>
+<tr><th id="646">646</th><td>	<a class="local col7 ref" href="#57y1" title='y1' data-ref="57y1">y1</a> = <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a> - <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::radius" title='mobj_s::radius' data-ref="mobj_s::radius">radius</a>;</td></tr>
+<tr><th id="647">647</th><td>		</td></tr>
+<tr><th id="648">648</th><td>	<a class="local col8 ref" href="#58x2" title='x2' data-ref="58x2">x2</a> = <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::x" title='mobj_s::x' data-ref="mobj_s::x">x</a> + <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::radius" title='mobj_s::radius' data-ref="mobj_s::radius">radius</a>;</td></tr>
+<tr><th id="649">649</th><td>	<a class="local col9 ref" href="#59y2" title='y2' data-ref="59y2">y2</a> = <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::y" title='mobj_s::y' data-ref="mobj_s::y">y</a> + <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>-&gt;<a class="ref" href="p_mobj.h.html#mobj_s::radius" title='mobj_s::radius' data-ref="mobj_s::radius">radius</a>;			</td></tr>
+<tr><th id="650">650</th><td>    }</td></tr>
+<tr><th id="651">651</th><td>    </td></tr>
+<tr><th id="652">652</th><td>    <a class="local col0 ref" href="#60s1" title='s1' data-ref="60s1">s1</a> = <a class="ref" href="#P_PointOnDivlineSide" title='P_PointOnDivlineSide' data-ref="P_PointOnDivlineSide">P_PointOnDivlineSide</a> (<a class="local col6 ref" href="#56x1" title='x1' data-ref="56x1">x1</a>, <a class="local col7 ref" href="#57y1" title='y1' data-ref="57y1">y1</a>, &amp;<a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>);</td></tr>
+<tr><th id="653">653</th><td>    <a class="local col1 ref" href="#61s2" title='s2' data-ref="61s2">s2</a> = <a class="ref" href="#P_PointOnDivlineSide" title='P_PointOnDivlineSide' data-ref="P_PointOnDivlineSide">P_PointOnDivlineSide</a> (<a class="local col8 ref" href="#58x2" title='x2' data-ref="58x2">x2</a>, <a class="local col9 ref" href="#59y2" title='y2' data-ref="59y2">y2</a>, &amp;<a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>);</td></tr>
+<tr><th id="654">654</th><td></td></tr>
+<tr><th id="655">655</th><td>    <b>if</b> (<a class="local col0 ref" href="#60s1" title='s1' data-ref="60s1">s1</a> == <a class="local col1 ref" href="#61s2" title='s2' data-ref="61s2">s2</a>)</td></tr>
+<tr><th id="656">656</th><td>	<b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;		<i>// line isn't crossed</i></td></tr>
+<tr><th id="657">657</th><td>	</td></tr>
+<tr><th id="658">658</th><td>    <a class="local col3 ref" href="#63dl" title='dl' data-ref="63dl">dl</a>.<a class="ref" href="p_local.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a> = <a class="local col6 ref" href="#56x1" title='x1' data-ref="56x1">x1</a>;</td></tr>
+<tr><th id="659">659</th><td>    <a class="local col3 ref" href="#63dl" title='dl' data-ref="63dl">dl</a>.<a class="ref" href="p_local.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a> = <a class="local col7 ref" href="#57y1" title='y1' data-ref="57y1">y1</a>;</td></tr>
+<tr><th id="660">660</th><td>    <a class="local col3 ref" href="#63dl" title='dl' data-ref="63dl">dl</a>.<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a> = <a class="local col8 ref" href="#58x2" title='x2' data-ref="58x2">x2</a>-<a class="local col6 ref" href="#56x1" title='x1' data-ref="56x1">x1</a>;</td></tr>
+<tr><th id="661">661</th><td>    <a class="local col3 ref" href="#63dl" title='dl' data-ref="63dl">dl</a>.<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a> = <a class="local col9 ref" href="#59y2" title='y2' data-ref="59y2">y2</a>-<a class="local col7 ref" href="#57y1" title='y1' data-ref="57y1">y1</a>;</td></tr>
+<tr><th id="662">662</th><td>    </td></tr>
+<tr><th id="663">663</th><td>    <a class="local col4 ref" href="#64frac" title='frac' data-ref="64frac">frac</a> = <a class="ref" href="#P_InterceptVector" title='P_InterceptVector' data-ref="P_InterceptVector">P_InterceptVector</a> (&amp;<a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>, &amp;<a class="local col3 ref" href="#63dl" title='dl' data-ref="63dl">dl</a>);</td></tr>
+<tr><th id="664">664</th><td></td></tr>
+<tr><th id="665">665</th><td>    <b>if</b> (<a class="local col4 ref" href="#64frac" title='frac' data-ref="64frac">frac</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="666">666</th><td>	<b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;		<i>// behind source</i></td></tr>
+<tr><th id="667">667</th><td></td></tr>
+<tr><th id="668">668</th><td>    <a class="ref" href="p_local.h.html#intercept_p" title='intercept_p' data-ref="intercept_p">intercept_p</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::frac" title='(anonymous struct)::frac' data-ref="(anonymous)::frac">frac</a> = <a class="local col4 ref" href="#64frac" title='frac' data-ref="64frac">frac</a>;</td></tr>
+<tr><th id="669">669</th><td>    <a class="ref" href="p_local.h.html#intercept_p" title='intercept_p' data-ref="intercept_p">intercept_p</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::isaline" title='(anonymous struct)::isaline' data-ref="(anonymous)::isaline">isaline</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="670">670</th><td>    <a class="ref" href="p_local.h.html#intercept_p" title='intercept_p' data-ref="intercept_p">intercept_p</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::d" title='(anonymous struct)::d' data-ref="(anonymous)::d">d</a>.<a class="ref" href="p_local.h.html#(anonymousstruct)::(anonymous)::thing" title='(anonymous struct)::(anonymous union)::thing' data-ref="(anonymousstruct)::(anonymous)::thing">thing</a> = <a class="local col5 ref" href="#55thing" title='thing' data-ref="55thing">thing</a>;</td></tr>
+<tr><th id="671">671</th><td>    <a class="ref" href="p_local.h.html#intercept_p" title='intercept_p' data-ref="intercept_p">intercept_p</a>++;</td></tr>
+<tr><th id="672">672</th><td></td></tr>
+<tr><th id="673">673</th><td>    <b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;		<i>// keep going</i></td></tr>
+<tr><th id="674">674</th><td>}</td></tr>
+<tr><th id="675">675</th><td></td></tr>
+<tr><th id="676">676</th><td></td></tr>
+<tr><th id="677">677</th><td><i>//</i></td></tr>
+<tr><th id="678">678</th><td><i>// P_TraverseIntercepts</i></td></tr>
+<tr><th id="679">679</th><td><i>// Returns true if the traverser function returns true</i></td></tr>
+<tr><th id="680">680</th><td><i>// for all lines.</i></td></tr>
+<tr><th id="681">681</th><td><i>// </i></td></tr>
+<tr><th id="682">682</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a></td></tr>
+<tr><th id="683">683</th><td><dfn class="decl def" id="P_TraverseIntercepts" title='P_TraverseIntercepts' data-ref="P_TraverseIntercepts">P_TraverseIntercepts</dfn></td></tr>
+<tr><th id="684">684</th><td>( <a class="typedef" href="p_local.h.html#traverser_t" title='traverser_t' data-type='boolean (*)(intercept_t *)' data-ref="traverser_t">traverser_t</a>	<dfn class="local col5 decl" id="65func" title='func' data-type='traverser_t' data-ref="65func">func</dfn>,</td></tr>
+<tr><th id="685">685</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col6 decl" id="66maxfrac" title='maxfrac' data-type='fixed_t' data-ref="66maxfrac">maxfrac</dfn> )</td></tr>
+<tr><th id="686">686</th><td>{</td></tr>
+<tr><th id="687">687</th><td>    <em>int</em>			<dfn class="local col7 decl" id="67count" title='count' data-type='int' data-ref="67count">count</dfn>;</td></tr>
+<tr><th id="688">688</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col8 decl" id="68dist" title='dist' data-type='fixed_t' data-ref="68dist">dist</dfn>;</td></tr>
+<tr><th id="689">689</th><td>    <a class="typedef" href="p_local.h.html#intercept_t" title='intercept_t' data-type='struct intercept_t' data-ref="intercept_t">intercept_t</a>*	<dfn class="local col9 decl" id="69scan" title='scan' data-type='intercept_t *' data-ref="69scan">scan</dfn>;</td></tr>
+<tr><th id="690">690</th><td>    <a class="typedef" href="p_local.h.html#intercept_t" title='intercept_t' data-type='struct intercept_t' data-ref="intercept_t">intercept_t</a>*	<dfn class="local col0 decl" id="70in" title='in' data-type='intercept_t *' data-ref="70in">in</dfn>;</td></tr>
+<tr><th id="691">691</th><td>	</td></tr>
+<tr><th id="692">692</th><td>    <a class="local col7 ref" href="#67count" title='count' data-ref="67count">count</a> = <a class="ref" href="p_local.h.html#intercept_p" title='intercept_p' data-ref="intercept_p">intercept_p</a> - <a class="ref" href="p_local.h.html#intercepts" title='intercepts' data-ref="intercepts">intercepts</a>;</td></tr>
+<tr><th id="693">693</th><td>    </td></tr>
+<tr><th id="694">694</th><td>    <a class="local col0 ref" href="#70in" title='in' data-ref="70in">in</a> = <var>0</var>;			<i>// shut up compiler warning</i></td></tr>
+<tr><th id="695">695</th><td>	</td></tr>
+<tr><th id="696">696</th><td>    <b>while</b> (<a class="local col7 ref" href="#67count" title='count' data-ref="67count">count</a>--)</td></tr>
+<tr><th id="697">697</th><td>    {</td></tr>
+<tr><th id="698">698</th><td>	<a class="local col8 ref" href="#68dist" title='dist' data-ref="68dist">dist</a> = <a class="macro" href="../include/values.h.html#44" title="2147483647" data-ref="_M/MAXINT">MAXINT</a>;</td></tr>
+<tr><th id="699">699</th><td>	<b>for</b> (<a class="local col9 ref" href="#69scan" title='scan' data-ref="69scan">scan</a> = <a class="ref" href="p_local.h.html#intercepts" title='intercepts' data-ref="intercepts">intercepts</a> ; <a class="local col9 ref" href="#69scan" title='scan' data-ref="69scan">scan</a>&lt;<a class="ref" href="p_local.h.html#intercept_p" title='intercept_p' data-ref="intercept_p">intercept_p</a> ; <a class="local col9 ref" href="#69scan" title='scan' data-ref="69scan">scan</a>++)</td></tr>
+<tr><th id="700">700</th><td>	{</td></tr>
+<tr><th id="701">701</th><td>	    <b>if</b> (<a class="local col9 ref" href="#69scan" title='scan' data-ref="69scan">scan</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::frac" title='(anonymous struct)::frac' data-ref="(anonymous)::frac">frac</a> &lt; <a class="local col8 ref" href="#68dist" title='dist' data-ref="68dist">dist</a>)</td></tr>
+<tr><th id="702">702</th><td>	    {</td></tr>
+<tr><th id="703">703</th><td>		<a class="local col8 ref" href="#68dist" title='dist' data-ref="68dist">dist</a> = <a class="local col9 ref" href="#69scan" title='scan' data-ref="69scan">scan</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::frac" title='(anonymous struct)::frac' data-ref="(anonymous)::frac">frac</a>;</td></tr>
+<tr><th id="704">704</th><td>		<a class="local col0 ref" href="#70in" title='in' data-ref="70in">in</a> = <a class="local col9 ref" href="#69scan" title='scan' data-ref="69scan">scan</a>;</td></tr>
+<tr><th id="705">705</th><td>	    }</td></tr>
+<tr><th id="706">706</th><td>	}</td></tr>
+<tr><th id="707">707</th><td>	</td></tr>
+<tr><th id="708">708</th><td>	<b>if</b> (<a class="local col8 ref" href="#68dist" title='dist' data-ref="68dist">dist</a> &gt; <a class="local col6 ref" href="#66maxfrac" title='maxfrac' data-ref="66maxfrac">maxfrac</a>)</td></tr>
+<tr><th id="709">709</th><td>	    <b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;	<i>// checked everything in range		</i></td></tr>
+<tr><th id="710">710</th><td></td></tr>
+<tr><th id="711">711</th><td><u>#<span data-ppcond="711">if</span> 0  // UNUSED</u></td></tr>
+<tr><th id="712">712</th><td>    {</td></tr>
+<tr><th id="713">713</th><td>	<i>// don't check these yet, there may be others inserted</i></td></tr>
+<tr><th id="714">714</th><td>	in = scan = intercepts;</td></tr>
+<tr><th id="715">715</th><td>	<b>for</b> ( scan = intercepts ; scan&lt;intercept_p ; scan++)</td></tr>
+<tr><th id="716">716</th><td>	    <b>if</b> (scan-&gt;frac &gt; maxfrac)</td></tr>
+<tr><th id="717">717</th><td>		*in++ = *scan;</td></tr>
+<tr><th id="718">718</th><td>	intercept_p = in;</td></tr>
+<tr><th id="719">719</th><td>	<b>return</b> false;</td></tr>
+<tr><th id="720">720</th><td>    }</td></tr>
+<tr><th id="721">721</th><td><u>#<span data-ppcond="711">endif</span></u></td></tr>
+<tr><th id="722">722</th><td></td></tr>
+<tr><th id="723">723</th><td>        <b>if</b> ( !<a class="local col5 ref" href="#65func" title='func' data-ref="65func">func</a> (<a class="local col0 ref" href="#70in" title='in' data-ref="70in">in</a>) )</td></tr>
+<tr><th id="724">724</th><td>	    <b>return</b> <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;	<i>// don't bother going farther</i></td></tr>
+<tr><th id="725">725</th><td></td></tr>
+<tr><th id="726">726</th><td>	<a class="local col0 ref" href="#70in" title='in' data-ref="70in">in</a>-&gt;<a class="ref" href="p_local.h.html#(anonymous)::frac" title='(anonymous struct)::frac' data-ref="(anonymous)::frac">frac</a> = <a class="macro" href="../include/values.h.html#44" title="2147483647" data-ref="_M/MAXINT">MAXINT</a>;</td></tr>
+<tr><th id="727">727</th><td>    }</td></tr>
+<tr><th id="728">728</th><td>	</td></tr>
+<tr><th id="729">729</th><td>    <b>return</b> <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;		<i>// everything was traversed</i></td></tr>
+<tr><th id="730">730</th><td>}</td></tr>
+<tr><th id="731">731</th><td></td></tr>
+<tr><th id="732">732</th><td></td></tr>
+<tr><th id="733">733</th><td></td></tr>
+<tr><th id="734">734</th><td></td></tr>
+<tr><th id="735">735</th><td><i>//</i></td></tr>
+<tr><th id="736">736</th><td><i>// P_PathTraverse</i></td></tr>
+<tr><th id="737">737</th><td><i>// Traces a line from x1,y1 to x2,y2,</i></td></tr>
+<tr><th id="738">738</th><td><i>// calling the traverser function for each.</i></td></tr>
+<tr><th id="739">739</th><td><i>// Returns true if the traverser function returns true</i></td></tr>
+<tr><th id="740">740</th><td><i>// for all lines.</i></td></tr>
+<tr><th id="741">741</th><td><i>//</i></td></tr>
+<tr><th id="742">742</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a></td></tr>
+<tr><th id="743">743</th><td><dfn class="decl def" id="P_PathTraverse" title='P_PathTraverse' data-ref="P_PathTraverse">P_PathTraverse</dfn></td></tr>
+<tr><th id="744">744</th><td>( <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col1 decl" id="71x1" title='x1' data-type='fixed_t' data-ref="71x1">x1</dfn>,</td></tr>
+<tr><th id="745">745</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col2 decl" id="72y1" title='y1' data-type='fixed_t' data-ref="72y1">y1</dfn>,</td></tr>
+<tr><th id="746">746</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col3 decl" id="73x2" title='x2' data-type='fixed_t' data-ref="73x2">x2</dfn>,</td></tr>
+<tr><th id="747">747</th><td>  <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="local col4 decl" id="74y2" title='y2' data-type='fixed_t' data-ref="74y2">y2</dfn>,</td></tr>
+<tr><th id="748">748</th><td>  <em>int</em>			<dfn class="local col5 decl" id="75flags" title='flags' data-type='int' data-ref="75flags">flags</dfn>,</td></tr>
+<tr><th id="749">749</th><td>  <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a> (*<dfn class="local col6 decl" id="76trav" title='trav' data-type='boolean (*)(intercept_t *)' data-ref="76trav">trav</dfn>) (<a class="typedef" href="p_local.h.html#intercept_t" title='intercept_t' data-type='struct intercept_t' data-ref="intercept_t">intercept_t</a> *))</td></tr>
+<tr><th id="750">750</th><td>{</td></tr>
+<tr><th id="751">751</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col7 decl" id="77xt1" title='xt1' data-type='fixed_t' data-ref="77xt1">xt1</dfn>;</td></tr>
+<tr><th id="752">752</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col8 decl" id="78yt1" title='yt1' data-type='fixed_t' data-ref="78yt1">yt1</dfn>;</td></tr>
+<tr><th id="753">753</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col9 decl" id="79xt2" title='xt2' data-type='fixed_t' data-ref="79xt2">xt2</dfn>;</td></tr>
+<tr><th id="754">754</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col0 decl" id="80yt2" title='yt2' data-type='fixed_t' data-ref="80yt2">yt2</dfn>;</td></tr>
+<tr><th id="755">755</th><td>    </td></tr>
+<tr><th id="756">756</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col1 decl" id="81xstep" title='xstep' data-type='fixed_t' data-ref="81xstep">xstep</dfn>;</td></tr>
+<tr><th id="757">757</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col2 decl" id="82ystep" title='ystep' data-type='fixed_t' data-ref="82ystep">ystep</dfn>;</td></tr>
+<tr><th id="758">758</th><td>    </td></tr>
+<tr><th id="759">759</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col3 decl" id="83partial" title='partial' data-type='fixed_t' data-ref="83partial">partial</dfn>;</td></tr>
+<tr><th id="760">760</th><td>    </td></tr>
+<tr><th id="761">761</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col4 decl" id="84xintercept" title='xintercept' data-type='fixed_t' data-ref="84xintercept">xintercept</dfn>;</td></tr>
+<tr><th id="762">762</th><td>    <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>	<dfn class="local col5 decl" id="85yintercept" title='yintercept' data-type='fixed_t' data-ref="85yintercept">yintercept</dfn>;</td></tr>
+<tr><th id="763">763</th><td>    </td></tr>
+<tr><th id="764">764</th><td>    <em>int</em>		<dfn class="local col6 decl" id="86mapx" title='mapx' data-type='int' data-ref="86mapx">mapx</dfn>;</td></tr>
+<tr><th id="765">765</th><td>    <em>int</em>		<dfn class="local col7 decl" id="87mapy" title='mapy' data-type='int' data-ref="87mapy">mapy</dfn>;</td></tr>
+<tr><th id="766">766</th><td>    </td></tr>
+<tr><th id="767">767</th><td>    <em>int</em>		<dfn class="local col8 decl" id="88mapxstep" title='mapxstep' data-type='int' data-ref="88mapxstep">mapxstep</dfn>;</td></tr>
+<tr><th id="768">768</th><td>    <em>int</em>		<dfn class="local col9 decl" id="89mapystep" title='mapystep' data-type='int' data-ref="89mapystep">mapystep</dfn>;</td></tr>
+<tr><th id="769">769</th><td></td></tr>
+<tr><th id="770">770</th><td>    <em>int</em>		<dfn class="local col0 decl" id="90count" title='count' data-type='int' data-ref="90count">count</dfn>;</td></tr>
+<tr><th id="771">771</th><td>		</td></tr>
+<tr><th id="772">772</th><td>    <a class="ref" href="#earlyout" title='earlyout' data-ref="earlyout">earlyout</a> = <a class="local col5 ref" href="#75flags" title='flags' data-ref="75flags">flags</a> &amp; <a class="macro" href="p_local.h.html#180" title="4" data-ref="_M/PT_EARLYOUT">PT_EARLYOUT</a>;</td></tr>
+<tr><th id="773">773</th><td>		</td></tr>
+<tr><th id="774">774</th><td>    <a class="ref" href="r_main.h.html#validcount" title='validcount' data-ref="validcount">validcount</a>++;</td></tr>
+<tr><th id="775">775</th><td>    <a class="ref" href="p_local.h.html#intercept_p" title='intercept_p' data-ref="intercept_p">intercept_p</a> = <a class="ref" href="p_local.h.html#intercepts" title='intercepts' data-ref="intercepts">intercepts</a>;</td></tr>
+<tr><th id="776">776</th><td>	</td></tr>
+<tr><th id="777">777</th><td>    <b>if</b> ( ((<a class="local col1 ref" href="#71x1" title='x1' data-ref="71x1">x1</a>-<a class="ref" href="p_local.h.html#bmaporgx" title='bmaporgx' data-ref="bmaporgx">bmaporgx</a>)&amp;(<a class="macro" href="p_local.h.html#39" title="(128*(1&lt;&lt;16))" data-ref="_M/MAPBLOCKSIZE">MAPBLOCKSIZE</a>-<var>1</var>)) == <var>0</var>)</td></tr>
+<tr><th id="778">778</th><td>	<a class="local col1 ref" href="#71x1" title='x1' data-ref="71x1">x1</a> += <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;	<i>// don't side exactly on a line</i></td></tr>
+<tr><th id="779">779</th><td>    </td></tr>
+<tr><th id="780">780</th><td>    <b>if</b> ( ((<a class="local col2 ref" href="#72y1" title='y1' data-ref="72y1">y1</a>-<a class="ref" href="p_local.h.html#bmaporgy" title='bmaporgy' data-ref="bmaporgy">bmaporgy</a>)&amp;(<a class="macro" href="p_local.h.html#39" title="(128*(1&lt;&lt;16))" data-ref="_M/MAPBLOCKSIZE">MAPBLOCKSIZE</a>-<var>1</var>)) == <var>0</var>)</td></tr>
+<tr><th id="781">781</th><td>	<a class="local col2 ref" href="#72y1" title='y1' data-ref="72y1">y1</a> += <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;	<i>// don't side exactly on a line</i></td></tr>
+<tr><th id="782">782</th><td></td></tr>
+<tr><th id="783">783</th><td>    <a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</a> = <a class="local col1 ref" href="#71x1" title='x1' data-ref="71x1">x1</a>;</td></tr>
+<tr><th id="784">784</th><td>    <a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</a> = <a class="local col2 ref" href="#72y1" title='y1' data-ref="72y1">y1</a>;</td></tr>
+<tr><th id="785">785</th><td>    <a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</a> = <a class="local col3 ref" href="#73x2" title='x2' data-ref="73x2">x2</a> - <a class="local col1 ref" href="#71x1" title='x1' data-ref="71x1">x1</a>;</td></tr>
+<tr><th id="786">786</th><td>    <a class="ref" href="p_local.h.html#trace" title='trace' data-ref="trace">trace</a>.<a class="ref" href="p_local.h.html#(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</a> = <a class="local col4 ref" href="#74y2" title='y2' data-ref="74y2">y2</a> - <a class="local col2 ref" href="#72y1" title='y1' data-ref="72y1">y1</a>;</td></tr>
+<tr><th id="787">787</th><td></td></tr>
+<tr><th id="788">788</th><td>    <a class="local col1 ref" href="#71x1" title='x1' data-ref="71x1">x1</a> -= <a class="ref" href="p_local.h.html#bmaporgx" title='bmaporgx' data-ref="bmaporgx">bmaporgx</a>;</td></tr>
+<tr><th id="789">789</th><td>    <a class="local col2 ref" href="#72y1" title='y1' data-ref="72y1">y1</a> -= <a class="ref" href="p_local.h.html#bmaporgy" title='bmaporgy' data-ref="bmaporgy">bmaporgy</a>;</td></tr>
+<tr><th id="790">790</th><td>    <a class="local col7 ref" href="#77xt1" title='xt1' data-ref="77xt1">xt1</a> = <a class="local col1 ref" href="#71x1" title='x1' data-ref="71x1">x1</a>&gt;&gt;<a class="macro" href="p_local.h.html#40" title="(16+7)" data-ref="_M/MAPBLOCKSHIFT">MAPBLOCKSHIFT</a>;</td></tr>
+<tr><th id="791">791</th><td>    <a class="local col8 ref" href="#78yt1" title='yt1' data-ref="78yt1">yt1</a> = <a class="local col2 ref" href="#72y1" title='y1' data-ref="72y1">y1</a>&gt;&gt;<a class="macro" href="p_local.h.html#40" title="(16+7)" data-ref="_M/MAPBLOCKSHIFT">MAPBLOCKSHIFT</a>;</td></tr>
+<tr><th id="792">792</th><td></td></tr>
+<tr><th id="793">793</th><td>    <a class="local col3 ref" href="#73x2" title='x2' data-ref="73x2">x2</a> -= <a class="ref" href="p_local.h.html#bmaporgx" title='bmaporgx' data-ref="bmaporgx">bmaporgx</a>;</td></tr>
+<tr><th id="794">794</th><td>    <a class="local col4 ref" href="#74y2" title='y2' data-ref="74y2">y2</a> -= <a class="ref" href="p_local.h.html#bmaporgy" title='bmaporgy' data-ref="bmaporgy">bmaporgy</a>;</td></tr>
+<tr><th id="795">795</th><td>    <a class="local col9 ref" href="#79xt2" title='xt2' data-ref="79xt2">xt2</a> = <a class="local col3 ref" href="#73x2" title='x2' data-ref="73x2">x2</a>&gt;&gt;<a class="macro" href="p_local.h.html#40" title="(16+7)" data-ref="_M/MAPBLOCKSHIFT">MAPBLOCKSHIFT</a>;</td></tr>
+<tr><th id="796">796</th><td>    <a class="local col0 ref" href="#80yt2" title='yt2' data-ref="80yt2">yt2</a> = <a class="local col4 ref" href="#74y2" title='y2' data-ref="74y2">y2</a>&gt;&gt;<a class="macro" href="p_local.h.html#40" title="(16+7)" data-ref="_M/MAPBLOCKSHIFT">MAPBLOCKSHIFT</a>;</td></tr>
+<tr><th id="797">797</th><td></td></tr>
+<tr><th id="798">798</th><td>    <b>if</b> (<a class="local col9 ref" href="#79xt2" title='xt2' data-ref="79xt2">xt2</a> &gt; <a class="local col7 ref" href="#77xt1" title='xt1' data-ref="77xt1">xt1</a>)</td></tr>
+<tr><th id="799">799</th><td>    {</td></tr>
+<tr><th id="800">800</th><td>	<a class="local col8 ref" href="#88mapxstep" title='mapxstep' data-ref="88mapxstep">mapxstep</a> = <var>1</var>;</td></tr>
+<tr><th id="801">801</th><td>	<a class="local col3 ref" href="#83partial" title='partial' data-ref="83partial">partial</a> = <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a> - ((<a class="local col1 ref" href="#71x1" title='x1' data-ref="71x1">x1</a>&gt;&gt;<a class="macro" href="p_local.h.html#42" title="((16+7)-16)" data-ref="_M/MAPBTOFRAC">MAPBTOFRAC</a>)&amp;(<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>-<var>1</var>));</td></tr>
+<tr><th id="802">802</th><td>	<a class="local col2 ref" href="#82ystep" title='ystep' data-ref="82ystep">ystep</a> = <a class="ref" href="m_fixed.h.html#FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</a> (<a class="local col4 ref" href="#74y2" title='y2' data-ref="74y2">y2</a>-<a class="local col2 ref" href="#72y1" title='y1' data-ref="72y1">y1</a>,<a class="ref" href="../include/stdlib.h.html#abs" title='abs' data-ref="abs">abs</a>(<a class="local col3 ref" href="#73x2" title='x2' data-ref="73x2">x2</a>-<a class="local col1 ref" href="#71x1" title='x1' data-ref="71x1">x1</a>));</td></tr>
+<tr><th id="803">803</th><td>    }</td></tr>
+<tr><th id="804">804</th><td>    <b>else</b> <b>if</b> (<a class="local col9 ref" href="#79xt2" title='xt2' data-ref="79xt2">xt2</a> &lt; <a class="local col7 ref" href="#77xt1" title='xt1' data-ref="77xt1">xt1</a>)</td></tr>
+<tr><th id="805">805</th><td>    {</td></tr>
+<tr><th id="806">806</th><td>	<a class="local col8 ref" href="#88mapxstep" title='mapxstep' data-ref="88mapxstep">mapxstep</a> = -<var>1</var>;</td></tr>
+<tr><th id="807">807</th><td>	<a class="local col3 ref" href="#83partial" title='partial' data-ref="83partial">partial</a> = (<a class="local col1 ref" href="#71x1" title='x1' data-ref="71x1">x1</a>&gt;&gt;<a class="macro" href="p_local.h.html#42" title="((16+7)-16)" data-ref="_M/MAPBTOFRAC">MAPBTOFRAC</a>)&amp;(<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>-<var>1</var>);</td></tr>
+<tr><th id="808">808</th><td>	<a class="local col2 ref" href="#82ystep" title='ystep' data-ref="82ystep">ystep</a> = <a class="ref" href="m_fixed.h.html#FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</a> (<a class="local col4 ref" href="#74y2" title='y2' data-ref="74y2">y2</a>-<a class="local col2 ref" href="#72y1" title='y1' data-ref="72y1">y1</a>,<a class="ref" href="../include/stdlib.h.html#abs" title='abs' data-ref="abs">abs</a>(<a class="local col3 ref" href="#73x2" title='x2' data-ref="73x2">x2</a>-<a class="local col1 ref" href="#71x1" title='x1' data-ref="71x1">x1</a>));</td></tr>
+<tr><th id="809">809</th><td>    }</td></tr>
+<tr><th id="810">810</th><td>    <b>else</b></td></tr>
+<tr><th id="811">811</th><td>    {</td></tr>
+<tr><th id="812">812</th><td>	<a class="local col8 ref" href="#88mapxstep" title='mapxstep' data-ref="88mapxstep">mapxstep</a> = <var>0</var>;</td></tr>
+<tr><th id="813">813</th><td>	<a class="local col3 ref" href="#83partial" title='partial' data-ref="83partial">partial</a> = <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="814">814</th><td>	<a class="local col2 ref" href="#82ystep" title='ystep' data-ref="82ystep">ystep</a> = <var>256</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="815">815</th><td>    }	</td></tr>
+<tr><th id="816">816</th><td></td></tr>
+<tr><th id="817">817</th><td>    <a class="local col5 ref" href="#85yintercept" title='yintercept' data-ref="85yintercept">yintercept</a> = (<a class="local col2 ref" href="#72y1" title='y1' data-ref="72y1">y1</a>&gt;&gt;<a class="macro" href="p_local.h.html#42" title="((16+7)-16)" data-ref="_M/MAPBTOFRAC">MAPBTOFRAC</a>) + <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> (<a class="local col3 ref" href="#83partial" title='partial' data-ref="83partial">partial</a>, <a class="local col2 ref" href="#82ystep" title='ystep' data-ref="82ystep">ystep</a>);</td></tr>
+<tr><th id="818">818</th><td></td></tr>
+<tr><th id="819">819</th><td>	</td></tr>
+<tr><th id="820">820</th><td>    <b>if</b> (<a class="local col0 ref" href="#80yt2" title='yt2' data-ref="80yt2">yt2</a> &gt; <a class="local col8 ref" href="#78yt1" title='yt1' data-ref="78yt1">yt1</a>)</td></tr>
+<tr><th id="821">821</th><td>    {</td></tr>
+<tr><th id="822">822</th><td>	<a class="local col9 ref" href="#89mapystep" title='mapystep' data-ref="89mapystep">mapystep</a> = <var>1</var>;</td></tr>
+<tr><th id="823">823</th><td>	<a class="local col3 ref" href="#83partial" title='partial' data-ref="83partial">partial</a> = <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a> - ((<a class="local col2 ref" href="#72y1" title='y1' data-ref="72y1">y1</a>&gt;&gt;<a class="macro" href="p_local.h.html#42" title="((16+7)-16)" data-ref="_M/MAPBTOFRAC">MAPBTOFRAC</a>)&amp;(<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>-<var>1</var>));</td></tr>
+<tr><th id="824">824</th><td>	<a class="local col1 ref" href="#81xstep" title='xstep' data-ref="81xstep">xstep</a> = <a class="ref" href="m_fixed.h.html#FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</a> (<a class="local col3 ref" href="#73x2" title='x2' data-ref="73x2">x2</a>-<a class="local col1 ref" href="#71x1" title='x1' data-ref="71x1">x1</a>,<a class="ref" href="../include/stdlib.h.html#abs" title='abs' data-ref="abs">abs</a>(<a class="local col4 ref" href="#74y2" title='y2' data-ref="74y2">y2</a>-<a class="local col2 ref" href="#72y1" title='y1' data-ref="72y1">y1</a>));</td></tr>
+<tr><th id="825">825</th><td>    }</td></tr>
+<tr><th id="826">826</th><td>    <b>else</b> <b>if</b> (<a class="local col0 ref" href="#80yt2" title='yt2' data-ref="80yt2">yt2</a> &lt; <a class="local col8 ref" href="#78yt1" title='yt1' data-ref="78yt1">yt1</a>)</td></tr>
+<tr><th id="827">827</th><td>    {</td></tr>
+<tr><th id="828">828</th><td>	<a class="local col9 ref" href="#89mapystep" title='mapystep' data-ref="89mapystep">mapystep</a> = -<var>1</var>;</td></tr>
+<tr><th id="829">829</th><td>	<a class="local col3 ref" href="#83partial" title='partial' data-ref="83partial">partial</a> = (<a class="local col2 ref" href="#72y1" title='y1' data-ref="72y1">y1</a>&gt;&gt;<a class="macro" href="p_local.h.html#42" title="((16+7)-16)" data-ref="_M/MAPBTOFRAC">MAPBTOFRAC</a>)&amp;(<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>-<var>1</var>);</td></tr>
+<tr><th id="830">830</th><td>	<a class="local col1 ref" href="#81xstep" title='xstep' data-ref="81xstep">xstep</a> = <a class="ref" href="m_fixed.h.html#FixedDiv" title='FixedDiv' data-ref="FixedDiv">FixedDiv</a> (<a class="local col3 ref" href="#73x2" title='x2' data-ref="73x2">x2</a>-<a class="local col1 ref" href="#71x1" title='x1' data-ref="71x1">x1</a>,<a class="ref" href="../include/stdlib.h.html#abs" title='abs' data-ref="abs">abs</a>(<a class="local col4 ref" href="#74y2" title='y2' data-ref="74y2">y2</a>-<a class="local col2 ref" href="#72y1" title='y1' data-ref="72y1">y1</a>));</td></tr>
+<tr><th id="831">831</th><td>    }</td></tr>
+<tr><th id="832">832</th><td>    <b>else</b></td></tr>
+<tr><th id="833">833</th><td>    {</td></tr>
+<tr><th id="834">834</th><td>	<a class="local col9 ref" href="#89mapystep" title='mapystep' data-ref="89mapystep">mapystep</a> = <var>0</var>;</td></tr>
+<tr><th id="835">835</th><td>	<a class="local col3 ref" href="#83partial" title='partial' data-ref="83partial">partial</a> = <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="836">836</th><td>	<a class="local col1 ref" href="#81xstep" title='xstep' data-ref="81xstep">xstep</a> = <var>256</var>*<a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a>;</td></tr>
+<tr><th id="837">837</th><td>    }	</td></tr>
+<tr><th id="838">838</th><td>    <a class="local col4 ref" href="#84xintercept" title='xintercept' data-ref="84xintercept">xintercept</a> = (<a class="local col1 ref" href="#71x1" title='x1' data-ref="71x1">x1</a>&gt;&gt;<a class="macro" href="p_local.h.html#42" title="((16+7)-16)" data-ref="_M/MAPBTOFRAC">MAPBTOFRAC</a>) + <a class="ref" href="m_fixed.h.html#FixedMul" title='FixedMul' data-ref="FixedMul">FixedMul</a> (<a class="local col3 ref" href="#83partial" title='partial' data-ref="83partial">partial</a>, <a class="local col1 ref" href="#81xstep" title='xstep' data-ref="81xstep">xstep</a>);</td></tr>
+<tr><th id="839">839</th><td>    </td></tr>
+<tr><th id="840">840</th><td>    <i>// Step through map blocks.</i></td></tr>
+<tr><th id="841">841</th><td><i>    // Count is present to prevent a round off error</i></td></tr>
+<tr><th id="842">842</th><td><i>    // from skipping the break.</i></td></tr>
+<tr><th id="843">843</th><td>    <a class="local col6 ref" href="#86mapx" title='mapx' data-ref="86mapx">mapx</a> = <a class="local col7 ref" href="#77xt1" title='xt1' data-ref="77xt1">xt1</a>;</td></tr>
+<tr><th id="844">844</th><td>    <a class="local col7 ref" href="#87mapy" title='mapy' data-ref="87mapy">mapy</a> = <a class="local col8 ref" href="#78yt1" title='yt1' data-ref="78yt1">yt1</a>;</td></tr>
+<tr><th id="845">845</th><td>	</td></tr>
+<tr><th id="846">846</th><td>    <b>for</b> (<a class="local col0 ref" href="#90count" title='count' data-ref="90count">count</a> = <var>0</var> ; <a class="local col0 ref" href="#90count" title='count' data-ref="90count">count</a> &lt; <var>64</var> ; <a class="local col0 ref" href="#90count" title='count' data-ref="90count">count</a>++)</td></tr>
+<tr><th id="847">847</th><td>    {</td></tr>
+<tr><th id="848">848</th><td>	<b>if</b> (<a class="local col5 ref" href="#75flags" title='flags' data-ref="75flags">flags</a> &amp; <a class="macro" href="p_local.h.html#178" title="1" data-ref="_M/PT_ADDLINES">PT_ADDLINES</a>)</td></tr>
+<tr><th id="849">849</th><td>	{</td></tr>
+<tr><th id="850">850</th><td>	    <b>if</b> (!<a class="ref" href="#P_BlockLinesIterator" title='P_BlockLinesIterator' data-ref="P_BlockLinesIterator">P_BlockLinesIterator</a> (<a class="local col6 ref" href="#86mapx" title='mapx' data-ref="86mapx">mapx</a>, <a class="local col7 ref" href="#87mapy" title='mapy' data-ref="87mapy">mapy</a>,<a class="ref" href="#PIT_AddLineIntercepts" title='PIT_AddLineIntercepts' data-ref="PIT_AddLineIntercepts">PIT_AddLineIntercepts</a>))</td></tr>
+<tr><th id="851">851</th><td>		<b>return</b> <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;	<i>// early out</i></td></tr>
+<tr><th id="852">852</th><td>	}</td></tr>
+<tr><th id="853">853</th><td>	</td></tr>
+<tr><th id="854">854</th><td>	<b>if</b> (<a class="local col5 ref" href="#75flags" title='flags' data-ref="75flags">flags</a> &amp; <a class="macro" href="p_local.h.html#179" title="2" data-ref="_M/PT_ADDTHINGS">PT_ADDTHINGS</a>)</td></tr>
+<tr><th id="855">855</th><td>	{</td></tr>
+<tr><th id="856">856</th><td>	    <b>if</b> (!<a class="ref" href="#P_BlockThingsIterator" title='P_BlockThingsIterator' data-ref="P_BlockThingsIterator">P_BlockThingsIterator</a> (<a class="local col6 ref" href="#86mapx" title='mapx' data-ref="86mapx">mapx</a>, <a class="local col7 ref" href="#87mapy" title='mapy' data-ref="87mapy">mapy</a>,<a class="ref" href="#PIT_AddThingIntercepts" title='PIT_AddThingIntercepts' data-ref="PIT_AddThingIntercepts">PIT_AddThingIntercepts</a>))</td></tr>
+<tr><th id="857">857</th><td>		<b>return</b> <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;	<i>// early out</i></td></tr>
+<tr><th id="858">858</th><td>	}</td></tr>
+<tr><th id="859">859</th><td>		</td></tr>
+<tr><th id="860">860</th><td>	<b>if</b> (<a class="local col6 ref" href="#86mapx" title='mapx' data-ref="86mapx">mapx</a> == <a class="local col9 ref" href="#79xt2" title='xt2' data-ref="79xt2">xt2</a></td></tr>
+<tr><th id="861">861</th><td>	    &amp;&amp; <a class="local col7 ref" href="#87mapy" title='mapy' data-ref="87mapy">mapy</a> == <a class="local col0 ref" href="#80yt2" title='yt2' data-ref="80yt2">yt2</a>)</td></tr>
+<tr><th id="862">862</th><td>	{</td></tr>
+<tr><th id="863">863</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="864">864</th><td>	}</td></tr>
+<tr><th id="865">865</th><td>	</td></tr>
+<tr><th id="866">866</th><td>	<b>if</b> ( (<a class="local col5 ref" href="#85yintercept" title='yintercept' data-ref="85yintercept">yintercept</a> &gt;&gt; <a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>) == <a class="local col7 ref" href="#87mapy" title='mapy' data-ref="87mapy">mapy</a>)</td></tr>
+<tr><th id="867">867</th><td>	{</td></tr>
+<tr><th id="868">868</th><td>	    <a class="local col5 ref" href="#85yintercept" title='yintercept' data-ref="85yintercept">yintercept</a> += <a class="local col2 ref" href="#82ystep" title='ystep' data-ref="82ystep">ystep</a>;</td></tr>
+<tr><th id="869">869</th><td>	    <a class="local col6 ref" href="#86mapx" title='mapx' data-ref="86mapx">mapx</a> += <a class="local col8 ref" href="#88mapxstep" title='mapxstep' data-ref="88mapxstep">mapxstep</a>;</td></tr>
+<tr><th id="870">870</th><td>	}</td></tr>
+<tr><th id="871">871</th><td>	<b>else</b> <b>if</b> ( (<a class="local col4 ref" href="#84xintercept" title='xintercept' data-ref="84xintercept">xintercept</a> &gt;&gt; <a class="macro" href="m_fixed.h.html#35" title="16" data-ref="_M/FRACBITS">FRACBITS</a>) == <a class="local col6 ref" href="#86mapx" title='mapx' data-ref="86mapx">mapx</a>)</td></tr>
+<tr><th id="872">872</th><td>	{</td></tr>
+<tr><th id="873">873</th><td>	    <a class="local col4 ref" href="#84xintercept" title='xintercept' data-ref="84xintercept">xintercept</a> += <a class="local col1 ref" href="#81xstep" title='xstep' data-ref="81xstep">xstep</a>;</td></tr>
+<tr><th id="874">874</th><td>	    <a class="local col7 ref" href="#87mapy" title='mapy' data-ref="87mapy">mapy</a> += <a class="local col9 ref" href="#89mapystep" title='mapystep' data-ref="89mapystep">mapystep</a>;</td></tr>
+<tr><th id="875">875</th><td>	}</td></tr>
+<tr><th id="876">876</th><td>		</td></tr>
+<tr><th id="877">877</th><td>    }</td></tr>
+<tr><th id="878">878</th><td>    <i>// go through the sorted list</i></td></tr>
+<tr><th id="879">879</th><td>    <b>return</b> <a class="ref" href="#P_TraverseIntercepts" title='P_TraverseIntercepts' data-ref="P_TraverseIntercepts">P_TraverseIntercepts</a> ( <a class="local col6 ref" href="#76trav" title='trav' data-ref="76trav">trav</a>, <a class="macro" href="m_fixed.h.html#36" title="(1&lt;&lt;16)" data-ref="_M/FRACUNIT">FRACUNIT</a> );</td></tr>
+<tr><th id="880">880</th><td>}</td></tr>
+<tr><th id="881">881</th><td></td></tr>
+<tr><th id="882">882</th><td></td></tr>
+<tr><th id="883">883</th><td></td></tr>
+<tr><th id="884">884</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

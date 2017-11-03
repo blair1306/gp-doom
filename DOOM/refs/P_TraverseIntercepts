@@ -1,0 +1,7 @@
+<def f='codebrowser/p_maputl.c' l='682' ll='730' type='boolean P_TraverseIntercepts(traverser_t func, fixed_t maxfrac)'/>
+<use f='codebrowser/p_maputl.c' l='879' u='c' c='P_PathTraverse'/>
+<doc f='codebrowser/p_maputl.c' l='677'>//
+// P_TraverseIntercepts
+// Returns true if the traverser function returns true
+// for all lines.
+// </doc>

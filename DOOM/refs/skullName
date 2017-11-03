@@ -1,0 +1,5 @@
+<def f='codebrowser/m_menu.c' l='175' type='char [2][9]'/>
+<use f='codebrowser/m_menu.c' l='1803' u='r' c='M_Drawer'/>
+<doc f='codebrowser/m_menu.c' l='173'>// graphic name of skulls
+// warning: initializer-string for array of chars is too long</doc>
+<doc f='codebrowser/m_menu.c' l='175'>/*8*/</doc>

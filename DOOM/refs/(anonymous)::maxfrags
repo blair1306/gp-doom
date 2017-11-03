@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_player.h' l='201' type='int'/>
+<offset>224</offset>
+<use f='codebrowser/g_game.c' l='1115' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/p_setup.c' l='594' u='w' c='P_SetupLevel'/>

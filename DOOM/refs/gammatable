@@ -1,0 +1,6 @@
+<dec f='codebrowser/v_video.h' l='51' type='byte [5][256]'/>
+<use f='codebrowser/i_video.c' l='565' u='r' c='UploadNewPalette'/>
+<use f='codebrowser/i_video.c' l='567' u='r' c='UploadNewPalette'/>
+<use f='codebrowser/i_video.c' l='569' u='r' c='UploadNewPalette'/>
+<def f='codebrowser/v_video.c' l='51' ll='133' type='byte [5][256]'/>
+<doc f='codebrowser/v_video.c' l='50'>// Now where did these came from?</doc>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/m_menu.c' l='190' type='void M_ReadThis(int choice)'/>
+<use f='codebrowser/m_menu.c' l='257'/>
+<use f='codebrowser/m_menu.c' l='257'/>
+<use f='codebrowser/m_menu.c' l='257'/>
+<use f='codebrowser/m_menu.c' l='257'/>
+<def f='codebrowser/m_menu.c' l='1030' ll='1034' type='void M_ReadThis(int choice)'/>
+<doc f='codebrowser/m_menu.c' l='1027'>//
+// M_ReadThis
+//</doc>

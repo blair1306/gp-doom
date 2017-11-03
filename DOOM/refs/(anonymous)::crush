@@ -1,0 +1,16 @@
+<dec f='codebrowser/p_spec.h' l='296' type='boolean'/>
+<dec f='codebrowser/p_spec.h' l='501' type='boolean'/>
+<dec f='codebrowser/p_spec.h' l='588' type='boolean'/>
+<offset>224</offset>
+<use f='codebrowser/p_ceilng.c' l='110' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='208' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='213' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='222' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_floor.c' l='216' u='r' c='T_MoveFloor'/>
+<use f='codebrowser/p_floor.c' l='287' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='318' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_plats.c' l='62' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='73' u='r' c='T_PlatRaise'/>
+<use f='codebrowser/p_plats.c' l='180' u='w' c='EV_DoPlat'/>
+<use f='codebrowser/p_spec.c' l='1198' u='w' c='EV_DoDonut'/>
+<use f='codebrowser/p_spec.c' l='1212' u='w' c='EV_DoDonut'/>

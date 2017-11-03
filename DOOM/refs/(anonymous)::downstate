@@ -1,0 +1,5 @@
+<dec f='codebrowser/d_items.h' l='38' type='int'/>
+<offset>64</offset>
+<use f='codebrowser/p_pspr.c' l='237' u='r' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='269' u='r' c='P_DropWeapon'/>
+<use f='codebrowser/p_pspr.c' l='308' u='r' c='A_WeaponReady'/>

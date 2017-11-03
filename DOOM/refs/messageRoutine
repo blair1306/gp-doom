@@ -1,0 +1,4 @@
+<def f='codebrowser/m_menu.c' l='105' type='void (*)(int)'/>
+<use f='codebrowser/m_menu.c' l='1236' u='w' c='M_StartMessage'/>
+<use f='codebrowser/m_menu.c' l='1503' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1504' u='r' c='M_Responder'/>

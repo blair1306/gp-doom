@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_local.h' l='171' type='fixed_t'/>
+<use f='codebrowser/p_map.c' l='236' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='237' u='r' c='PIT_CheckLine'/>
+<def f='codebrowser/p_maputl.c' l='297' type='fixed_t'/>
+<use f='codebrowser/p_maputl.c' l='323' u='w' c='P_LineOpening'/>
+<use f='codebrowser/p_maputl.c' l='328' u='w' c='P_LineOpening'/>

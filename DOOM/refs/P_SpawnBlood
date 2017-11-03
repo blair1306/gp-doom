@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_local.h' l='121' type='void P_SpawnBlood(fixed_t x, fixed_t y, fixed_t z, int damage)'/>
+<use f='codebrowser/p_map.c' l='1008' u='c' c='PTR_ShootTraverse'/>
+<def f='codebrowser/p_mobj.c' l='838' ll='859' type='void P_SpawnBlood(fixed_t x, fixed_t y, fixed_t z, int damage)'/>
+<doc f='codebrowser/p_mobj.c' l='835'>//
+// P_SpawnBlood
+// </doc>

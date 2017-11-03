@@ -1,0 +1,7 @@
+<dec f='codebrowser/m_menu.c' l='220' type='void M_DrawSaveLoadBorder(int x, int y)'/>
+<use f='codebrowser/m_menu.c' l='549' u='c' c='M_DrawLoad'/>
+<def f='codebrowser/m_menu.c' l='559' ll='572' type='void M_DrawSaveLoadBorder(int x, int y)'/>
+<use f='codebrowser/m_menu.c' l='617' u='c' c='M_DrawSave'/>
+<doc f='codebrowser/m_menu.c' l='556'>//
+// Draw border for the savegame description
+//</doc>

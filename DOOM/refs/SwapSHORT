@@ -1,0 +1,2 @@
+<def f='codebrowser/m_swap.c' l='38' ll='42' type='unsigned short SwapSHORT(unsigned short x)'/>
+<doc f='codebrowser/m_swap.c' l='37'>// Swap 16bit, that is, MSB and LSB byte.</doc>

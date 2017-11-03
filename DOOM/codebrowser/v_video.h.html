@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>v_video.h source code [codebrowser/v_video.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/v_video.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='v_video.h.html'>v_video.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>// DESCRIPTION:</i></td></tr>
+<tr><th id="18">18</th><td><i>//	Gamma correction LUT.</i></td></tr>
+<tr><th id="19">19</th><td><i>//	Functions to draw patches (by post) directly to screen.</i></td></tr>
+<tr><th id="20">20</th><td><i>//	Functions to blit a block to the screen.</i></td></tr>
+<tr><th id="21">21</th><td><i>//</i></td></tr>
+<tr><th id="22">22</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><u>#<span data-ppcond="25">ifndef</span> <span class="macro" data-ref="_M/__V_VIDEO__">__V_VIDEO__</span></u></td></tr>
+<tr><th id="26">26</th><td><u>#define <dfn class="macro" id="_M/__V_VIDEO__" data-ref="_M/__V_VIDEO__">__V_VIDEO__</dfn></u></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="doomtype.h.html">"doomtype.h"</a></u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#include <a href="doomdef.h.html">"doomdef.h"</a></u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><i>// Needed because we are refering to patches.</i></td></tr>
+<tr><th id="33">33</th><td><u>#include <a href="r_data.h.html">"r_data.h"</a></u></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><i>//</i></td></tr>
+<tr><th id="36">36</th><td><i>// VIDEO</i></td></tr>
+<tr><th id="37">37</th><td><i>//</i></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/CENTERY" data-ref="_M/CENTERY">CENTERY</dfn>			(SCREENHEIGHT/2)</u></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><i>// Screen 0 is the screen updated by I_Update screen.</i></td></tr>
+<tr><th id="43">43</th><td><i>// Screen 1 is an extra buffer.</i></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><b>extern</b>	<a class="typedef" href="doomtype.h.html#byte" title='byte' data-type='unsigned char' data-ref="byte">byte</a>*		<dfn class="decl" id="screens" title='screens' data-ref="screens">screens</dfn>[<var>5</var>];</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><b>extern</b>  <em>int</em>	<dfn class="decl" id="dirtybox" title='dirtybox' data-ref="dirtybox">dirtybox</dfn>[<var>4</var>];</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><b>extern</b>	<a class="typedef" href="doomtype.h.html#byte" title='byte' data-type='unsigned char' data-ref="byte">byte</a>	<dfn class="decl" id="gammatable" title='gammatable' data-ref="gammatable">gammatable</dfn>[<var>5</var>][<var>256</var>];</td></tr>
+<tr><th id="52">52</th><td><b>extern</b>	<em>int</em>	<dfn class="decl" id="usegamma" title='usegamma' data-ref="usegamma">usegamma</dfn>;</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><i>// Allocates buffer screens, call before R_Init.</i></td></tr>
+<tr><th id="57">57</th><td><em>void</em> <dfn class="decl" id="V_Init" title='V_Init' data-ref="V_Init">V_Init</dfn> (<em>void</em>);</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td><em>void</em></td></tr>
+<tr><th id="61">61</th><td><dfn class="decl" id="V_CopyRect" title='V_CopyRect' data-ref="V_CopyRect">V_CopyRect</dfn></td></tr>
+<tr><th id="62">62</th><td>( <em>int</em>		<dfn class="local col3 decl" id="1073srcx" title='srcx' data-type='int' data-ref="1073srcx">srcx</dfn>,</td></tr>
+<tr><th id="63">63</th><td>  <em>int</em>		<dfn class="local col4 decl" id="1074srcy" title='srcy' data-type='int' data-ref="1074srcy">srcy</dfn>,</td></tr>
+<tr><th id="64">64</th><td>  <em>int</em>		<dfn class="local col5 decl" id="1075srcscrn" title='srcscrn' data-type='int' data-ref="1075srcscrn">srcscrn</dfn>,</td></tr>
+<tr><th id="65">65</th><td>  <em>int</em>		<dfn class="local col6 decl" id="1076width" title='width' data-type='int' data-ref="1076width">width</dfn>,</td></tr>
+<tr><th id="66">66</th><td>  <em>int</em>		<dfn class="local col7 decl" id="1077height" title='height' data-type='int' data-ref="1077height">height</dfn>,</td></tr>
+<tr><th id="67">67</th><td>  <em>int</em>		<dfn class="local col8 decl" id="1078destx" title='destx' data-type='int' data-ref="1078destx">destx</dfn>,</td></tr>
+<tr><th id="68">68</th><td>  <em>int</em>		<dfn class="local col9 decl" id="1079desty" title='desty' data-type='int' data-ref="1079desty">desty</dfn>,</td></tr>
+<tr><th id="69">69</th><td>  <em>int</em>		<dfn class="local col0 decl" id="1080destscrn" title='destscrn' data-type='int' data-ref="1080destscrn">destscrn</dfn> );</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><em>void</em></td></tr>
+<tr><th id="72">72</th><td><dfn class="decl" id="V_DrawPatch" title='V_DrawPatch' data-ref="V_DrawPatch">V_DrawPatch</dfn></td></tr>
+<tr><th id="73">73</th><td>( <em>int</em>		<dfn class="local col1 decl" id="1081x" title='x' data-type='int' data-ref="1081x">x</dfn>,</td></tr>
+<tr><th id="74">74</th><td>  <em>int</em>		<dfn class="local col2 decl" id="1082y" title='y' data-type='int' data-ref="1082y">y</dfn>,</td></tr>
+<tr><th id="75">75</th><td>  <em>int</em>		<dfn class="local col3 decl" id="1083scrn" title='scrn' data-type='int' data-ref="1083scrn">scrn</dfn>,</td></tr>
+<tr><th id="76">76</th><td>  <a class="typedef" href="r_defs.h.html#patch_t" title='patch_t' data-type='struct patch_t' data-ref="patch_t">patch_t</a>*	<dfn class="local col4 decl" id="1084patch" title='patch' data-type='patch_t *' data-ref="1084patch">patch</dfn>);</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><em>void</em></td></tr>
+<tr><th id="79">79</th><td><dfn class="decl" id="V_DrawPatchDirect" title='V_DrawPatchDirect' data-ref="V_DrawPatchDirect">V_DrawPatchDirect</dfn></td></tr>
+<tr><th id="80">80</th><td>( <em>int</em>		<dfn class="local col5 decl" id="1085x" title='x' data-type='int' data-ref="1085x">x</dfn>,</td></tr>
+<tr><th id="81">81</th><td>  <em>int</em>		<dfn class="local col6 decl" id="1086y" title='y' data-type='int' data-ref="1086y">y</dfn>,</td></tr>
+<tr><th id="82">82</th><td>  <em>int</em>		<dfn class="local col7 decl" id="1087scrn" title='scrn' data-type='int' data-ref="1087scrn">scrn</dfn>,</td></tr>
+<tr><th id="83">83</th><td>  <a class="typedef" href="r_defs.h.html#patch_t" title='patch_t' data-type='struct patch_t' data-ref="patch_t">patch_t</a>*	<dfn class="local col8 decl" id="1088patch" title='patch' data-type='patch_t *' data-ref="1088patch">patch</dfn> );</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td><i>// Draw a linear block of pixels into the view buffer.</i></td></tr>
+<tr><th id="87">87</th><td><em>void</em></td></tr>
+<tr><th id="88">88</th><td><dfn class="decl" id="V_DrawBlock" title='V_DrawBlock' data-ref="V_DrawBlock">V_DrawBlock</dfn></td></tr>
+<tr><th id="89">89</th><td>( <em>int</em>		<dfn class="local col9 decl" id="1089x" title='x' data-type='int' data-ref="1089x">x</dfn>,</td></tr>
+<tr><th id="90">90</th><td>  <em>int</em>		<dfn class="local col0 decl" id="1090y" title='y' data-type='int' data-ref="1090y">y</dfn>,</td></tr>
+<tr><th id="91">91</th><td>  <em>int</em>		<dfn class="local col1 decl" id="1091scrn" title='scrn' data-type='int' data-ref="1091scrn">scrn</dfn>,</td></tr>
+<tr><th id="92">92</th><td>  <em>int</em>		<dfn class="local col2 decl" id="1092width" title='width' data-type='int' data-ref="1092width">width</dfn>,</td></tr>
+<tr><th id="93">93</th><td>  <em>int</em>		<dfn class="local col3 decl" id="1093height" title='height' data-type='int' data-ref="1093height">height</dfn>,</td></tr>
+<tr><th id="94">94</th><td>  <a class="typedef" href="doomtype.h.html#byte" title='byte' data-type='unsigned char' data-ref="byte">byte</a>*		<dfn class="local col4 decl" id="1094src" title='src' data-type='byte *' data-ref="1094src">src</dfn> );</td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td><i>// Reads a linear block of pixels into the view buffer.</i></td></tr>
+<tr><th id="97">97</th><td><em>void</em></td></tr>
+<tr><th id="98">98</th><td><dfn class="decl" id="V_GetBlock" title='V_GetBlock' data-ref="V_GetBlock">V_GetBlock</dfn></td></tr>
+<tr><th id="99">99</th><td>( <em>int</em>		<dfn class="local col5 decl" id="1095x" title='x' data-type='int' data-ref="1095x">x</dfn>,</td></tr>
+<tr><th id="100">100</th><td>  <em>int</em>		<dfn class="local col6 decl" id="1096y" title='y' data-type='int' data-ref="1096y">y</dfn>,</td></tr>
+<tr><th id="101">101</th><td>  <em>int</em>		<dfn class="local col7 decl" id="1097scrn" title='scrn' data-type='int' data-ref="1097scrn">scrn</dfn>,</td></tr>
+<tr><th id="102">102</th><td>  <em>int</em>		<dfn class="local col8 decl" id="1098width" title='width' data-type='int' data-ref="1098width">width</dfn>,</td></tr>
+<tr><th id="103">103</th><td>  <em>int</em>		<dfn class="local col9 decl" id="1099height" title='height' data-type='int' data-ref="1099height">height</dfn>,</td></tr>
+<tr><th id="104">104</th><td>  <a class="typedef" href="doomtype.h.html#byte" title='byte' data-type='unsigned char' data-ref="byte">byte</a>*		<dfn class="local col0 decl" id="1100dest" title='dest' data-type='byte *' data-ref="1100dest">dest</dfn> );</td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td><em>void</em></td></tr>
+<tr><th id="108">108</th><td><dfn class="decl" id="V_MarkRect" title='V_MarkRect' data-ref="V_MarkRect">V_MarkRect</dfn></td></tr>
+<tr><th id="109">109</th><td>( <em>int</em>		<dfn class="local col1 decl" id="1101x" title='x' data-type='int' data-ref="1101x">x</dfn>,</td></tr>
+<tr><th id="110">110</th><td>  <em>int</em>		<dfn class="local col2 decl" id="1102y" title='y' data-type='int' data-ref="1102y">y</dfn>,</td></tr>
+<tr><th id="111">111</th><td>  <em>int</em>		<dfn class="local col3 decl" id="1103width" title='width' data-type='int' data-ref="1103width">width</dfn>,</td></tr>
+<tr><th id="112">112</th><td>  <em>int</em>		<dfn class="local col4 decl" id="1104height" title='height' data-type='int' data-ref="1104height">height</dfn> );</td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td><u>#<span data-ppcond="25">endif</span></u></td></tr>
+<tr><th id="115">115</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="116">116</th><td><i>//</i></td></tr>
+<tr><th id="117">117</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="118">118</th><td><i>//</i></td></tr>
+<tr><th id="119">119</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="120">120</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='am_map.c.html'>codebrowser/am_map.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

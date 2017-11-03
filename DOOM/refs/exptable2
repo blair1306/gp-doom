@@ -1,0 +1,3 @@
+<def f='codebrowser/i_video.c' l='927' type='double [65536]'/>
+<use f='codebrowser/i_video.c' l='942' u='r' c='InitExpand2'/>
+<use f='codebrowser/i_video.c' l='969' u='r' c='Expand4'/>

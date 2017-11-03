@@ -1,0 +1,12 @@
+<def f='codebrowser/g_game.c' l='148' type='int'/>
+<use f='codebrowser/g_game.c' l='266' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='280' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='298' u='r' c='G_BuildTiccmd'/>
+<doc f='codebrowser/g_game.c' l='145'>// 
+// controls (have defaults) 
+// </doc>
+<dec f='codebrowser/m_misc.c' l='172' type='int'/>
+<use f='codebrowser/m_misc.c' l='243' u='a'/>
+<use f='codebrowser/m_misc.c' l='243' u='a'/>
+<use f='codebrowser/m_misc.c' l='243' u='a'/>
+<use f='codebrowser/m_misc.c' l='243' u='a'/>

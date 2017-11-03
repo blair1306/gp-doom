@@ -1,0 +1,4 @@
+<def f='codebrowser/r_data.c' l='145' type='int *'/>
+<use f='codebrowser/r_data.c' l='390' u='r' c='R_GetColumn'/>
+<use f='codebrowser/r_data.c' l='487' u='w' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='555' u='r' c='R_InitTextures'/>

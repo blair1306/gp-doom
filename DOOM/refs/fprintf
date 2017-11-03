@@ -1,0 +1,53 @@
+<dec f='include/stdio.h' l='356' type='int fprintf(FILE *restrict __stream, const char *restrict __format)'/>
+<use f='codebrowser/am_map.c' l='1000' u='c' c='AM_drawFline'/>
+<doc f='include/stdio.h' l='352'>/* Write formatted output to STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/d_net.c' l='175' u='c' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='180' u='c' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='182' u='c' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='217' u='c' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='224' u='c' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='234' u='c' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='242' u='c' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='248' u='c' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='249' u='c' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='309' u='c' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='322' u='c' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='333' u='c' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='682' u='c' c='TryRunTics'/>
+<use f='codebrowser/g_game.c' l='1591' u='c' c='G_DoPlayDemo'/>
+<use f='codebrowser/i_sound.c' l='172' u='c' c='myioctl'/>
+<use f='codebrowser/i_sound.c' l='173' u='c' c='myioctl'/>
+<use f='codebrowser/i_sound.c' l='486' u='c' c='I_StartSound'/>
+<use f='codebrowser/i_sound.c' l='700' u='c' c='I_ShutdownSound'/>
+<use f='codebrowser/i_sound.c' l='758' u='c' c='I_InitSound'/>
+<use f='codebrowser/i_sound.c' l='974' u='c' c='I_SoundSetTimer'/>
+<use f='codebrowser/i_sound.c' l='985' u='c' c='I_SoundDelTimer'/>
+<use f='codebrowser/i_system.c' l='168' u='c' c='I_Error'/>
+<use f='codebrowser/i_system.c' l='170' u='c' c='I_Error'/>
+<use f='codebrowser/i_video.c' l='617' u='c' c='grabsharedmemory'/>
+<use f='codebrowser/i_video.c' l='627' u='c' c='grabsharedmemory'/>
+<use f='codebrowser/i_video.c' l='643' u='c' c='grabsharedmemory'/>
+<use f='codebrowser/i_video.c' l='650' u='c' c='grabsharedmemory'/>
+<use f='codebrowser/i_video.c' l='669' u='c' c='grabsharedmemory'/>
+<use f='codebrowser/i_video.c' l='687' u='c' c='grabsharedmemory'/>
+<use f='codebrowser/i_video.c' l='790' u='c' c='I_InitGraphics'/>
+<use f='codebrowser/m_menu.c' l='933' u='c' c='M_Episode'/>
+<use f='codebrowser/m_menu.c' l='1137' u='c' c='M_ChangeDetail'/>
+<use f='codebrowser/m_misc.c' l='327' u='c' c='M_SaveDefaults'/>
+<use f='codebrowser/m_misc.c' l='329' u='c' c='M_SaveDefaults'/>
+<use f='codebrowser/p_spec.c' l='357' u='c' c='P_FindNextHighestFloor'/>
+<use f='codebrowser/s_sound.c' l='167' u='c' c='S_Init'/>
+<use f='codebrowser/v_video.c' l='228' u='c' c='V_DrawPatch'/>
+<use f='codebrowser/v_video.c' l='230' u='c' c='V_DrawPatch'/>
+<use f='codebrowser/v_video.c' l='295' u='c' c='V_DrawPatchFlipped'/>
+<use f='codebrowser/w_wad.c' l='567' u='c' c='W_Profile'/>
+<use f='codebrowser/w_wad.c' l='570' u='c' c='W_Profile'/>
+<use f='codebrowser/w_wad.c' l='572' u='c' c='W_Profile'/>
+<use f='codebrowser/z_zone.c' l='370' u='c' c='Z_FileDumpHeap'/>
+<use f='codebrowser/z_zone.c' l='374' u='c' c='Z_FileDumpHeap'/>
+<use f='codebrowser/z_zone.c' l='384' u='c' c='Z_FileDumpHeap'/>
+<use f='codebrowser/z_zone.c' l='387' u='c' c='Z_FileDumpHeap'/>
+<use f='codebrowser/z_zone.c' l='390' u='c' c='Z_FileDumpHeap'/>

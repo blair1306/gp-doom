@@ -1,0 +1,23 @@
+<dec f='codebrowser/p_spec.h' l='348' type='fixed_t'/>
+<dec f='codebrowser/p_spec.h' l='499' type='fixed_t'/>
+<offset>352</offset>
+<use f='codebrowser/p_ceilng.c' l='65' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='214' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='223' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='234' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_doors.c' l='172' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='297' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='298' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='306' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='307' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='314' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='323' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='324' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='326' u='r' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='334' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='335' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='336' u='r' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='497' u='w' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='498' u='w' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='546' u='w' c='P_SpawnDoorRaiseIn5Mins'/>
+<use f='codebrowser/p_doors.c' l='547' u='w' c='P_SpawnDoorRaiseIn5Mins'/>

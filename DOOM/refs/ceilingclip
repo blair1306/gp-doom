@@ -1,0 +1,15 @@
+<dec f='codebrowser/r_plane.h' l='44' type='short [320]'/>
+<def f='codebrowser/r_plane.c' l='70' type='short [320]'/>
+<use f='codebrowser/r_plane.c' l='194' u='w' c='R_ClearPlanes'/>
+<use f='codebrowser/r_segs.c' l='225' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='226' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='230' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='252' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='253' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='288' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='310' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='313' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='319' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='329' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='330' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='721' u='r' c='R_StoreWallRange'/>

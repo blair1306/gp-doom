@@ -1,0 +1,7 @@
+<dec f='codebrowser/p_local.h' l='147' type='boolean'/>
+<offset>32</offset>
+<use f='codebrowser/p_map.c' l='640' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='825' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='915' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_maputl.c' l='604' u='w' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='669' u='w' c='PIT_AddThingIntercepts'/>

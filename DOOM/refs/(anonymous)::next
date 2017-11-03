@@ -1,0 +1,20 @@
+<dec f='codebrowser/d_player.h' l='196' type='int'/>
+<offset>96</offset>
+<use f='codebrowser/g_game.c' l='1074' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1075' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1081' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1082' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1088' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1095' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1098' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1101' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1104' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1109' u='w' c='G_DoCompleted'/>
+<use f='codebrowser/g_game.c' l='1175' u='r' c='G_DoWorldDone'/>
+<use f='codebrowser/wi_stuff.c' l='448' u='r' c='WI_drawEL'/>
+<use f='codebrowser/wi_stuff.c' l='450' u='r' c='WI_drawEL'/>
+<use f='codebrowser/wi_stuff.c' l='451' u='r' c='WI_drawEL'/>
+<use f='codebrowser/wi_stuff.c' l='569' u='r' c='WI_updateAnimatedBack'/>
+<use f='codebrowser/wi_stuff.c' l='790' u='r' c='WI_drawShowNextLoc'/>
+<use f='codebrowser/wi_stuff.c' l='802' u='r' c='WI_drawShowNextLoc'/>
+<use f='codebrowser/wi_stuff.c' l='807' u='r' c='WI_drawShowNextLoc'/>

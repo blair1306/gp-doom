@@ -1,0 +1,11 @@
+<dec f='include/unistd.h' l='290' type='int access(const char * __name, int __type)'/>
+<use f='codebrowser/d_main.c' l='658' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='669' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='676' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='683' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='690' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='697' u='c' c='IdentifyVersion'/>
+<use f='codebrowser/d_main.c' l='704' u='c' c='IdentifyVersion'/>
+<doc f='include/unistd.h' l='289'>/* Test for access to NAME using the real UID and real GID.  */</doc>
+<use f='codebrowser/i_sound.c' l='752' u='c' c='I_InitSound'/>
+<use f='codebrowser/m_misc.c' l='523' u='c' c='M_ScreenShot'/>

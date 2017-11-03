@@ -1,0 +1,7 @@
+<dec f='codebrowser/r_state.h' l='91' type='node_t *'/>
+<def f='codebrowser/p_setup.c' l='69' type='node_t *'/>
+<use f='codebrowser/p_setup.c' l='274' u='w' c='P_LoadNodes'/>
+<use f='codebrowser/p_setup.c' l='278' u='r' c='P_LoadNodes'/>
+<use f='codebrowser/p_sight.c' l='270' u='r' c='P_CrossBSPNode'/>
+<use f='codebrowser/r_bsp.c' l='567' u='r' c='R_RenderBSPNode'/>
+<use f='codebrowser/r_main.c' l='817' u='r' c='R_PointInSubsector'/>

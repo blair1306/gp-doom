@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_event.h' l='93' type='2'/>
+<doc f='codebrowser/d_event.h' l='92'>// Save the game at each console.</doc>
+<use f='codebrowser/g_game.c' l='435' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='714' c='G_Ticker'/>

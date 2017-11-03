@@ -1,0 +1,18 @@
+<dec f='codebrowser/p_local.h' l='122' type='mobj_t * P_SpawnMissile(mobj_t * source, mobj_t * dest, mobjtype_t type)'/>
+<use f='codebrowser/p_enemy.c' l='906' u='c' c='A_BspiAttack'/>
+<use f='codebrowser/p_enemy.c' l='931' u='c' c='A_TroopAttack'/>
+<use f='codebrowser/p_enemy.c' l='966' u='c' c='A_HeadAttack'/>
+<use f='codebrowser/p_enemy.c' l='975' u='c' c='A_CyberAttack'/>
+<use f='codebrowser/p_enemy.c' l='995' u='c' c='A_BruisAttack'/>
+<use f='codebrowser/p_enemy.c' l='1011' u='c' c='A_SkelMissile'/>
+<use f='codebrowser/p_enemy.c' l='1366' u='c' c='A_FatAttack1'/>
+<use f='codebrowser/p_enemy.c' l='1368' u='c' c='A_FatAttack1'/>
+<use f='codebrowser/p_enemy.c' l='1383' u='c' c='A_FatAttack2'/>
+<use f='codebrowser/p_enemy.c' l='1385' u='c' c='A_FatAttack2'/>
+<use f='codebrowser/p_enemy.c' l='1399' u='c' c='A_FatAttack3'/>
+<use f='codebrowser/p_enemy.c' l='1405' u='c' c='A_FatAttack3'/>
+<use f='codebrowser/p_enemy.c' l='1917' u='c' c='A_BrainSpit'/>
+<def f='codebrowser/p_mobj.c' l='888' ll='927' type='mobj_t * P_SpawnMissile(mobj_t * source, mobj_t * dest, mobjtype_t type)'/>
+<doc f='codebrowser/p_mobj.c' l='885'>//
+// P_SpawnMissile
+//</doc>

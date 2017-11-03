@@ -1,0 +1,17 @@
+<dec f='codebrowser/d_main.c' l='189' type='boolean'/>
+<use f='codebrowser/d_main.c' l='215' u='r' c='D_Display'/>
+<dec f='codebrowser/g_game.c' l='1187' type='boolean'/>
+<use f='codebrowser/g_game.c' l='1247' u='r' c='G_DoLoadGame'/>
+<doc f='codebrowser/g_game.c' l='1183'>//
+// G_InitFromSavegame
+// Can be called by the startup code or the menu task. 
+//</doc>
+<def f='codebrowser/r_main.c' l='652' type='boolean'/>
+<use f='codebrowser/r_main.c' l='662' u='w' c='R_SetViewSize'/>
+<use f='codebrowser/r_main.c' l='680' u='w' c='R_ExecuteSetViewSize'/>
+<doc f='codebrowser/r_main.c' l='646'>//
+// R_SetViewSize
+// Do not really change anything here,
+//  because it might be in the middle of a refresh.
+// The change will take effect next refresh.
+//</doc>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/sounds.h' l='61' type='int'/>
+<offset>352</offset>
+<doc f='codebrowser/sounds.h' l='60'>// lump number of sfx</doc>
+<use f='codebrowser/s_sound.c' l='191' u='w' c='S_Init'/>
+<use f='codebrowser/s_sound.c' l='364' u='r' c='S_StartSoundAtVolume'/>
+<use f='codebrowser/s_sound.c' l='365' u='w' c='S_StartSoundAtVolume'/>

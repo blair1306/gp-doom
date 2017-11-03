@@ -1,0 +1,4 @@
+<dec f='include/X11/Xlib.h' l='411' type='unsigned long'/>
+<use f='codebrowser/i_video.c' l='296' u='w' c='createnullcursor'/>
+<use f='codebrowser/i_video.c' l='557' u='w' c='UploadNewPalette'/>
+<offset>0</offset>

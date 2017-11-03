@@ -1,0 +1,15 @@
+<def f='codebrowser/am_map.c' l='1055' ll='1064' type='void AM_drawMline(mline_t * ml, int color)'/>
+<use f='codebrowser/am_map.c' l='1091' u='c' c='AM_drawGrid'/>
+<use f='codebrowser/am_map.c' l='1108' u='c' c='AM_drawGrid'/>
+<use f='codebrowser/am_map.c' l='1134' u='c' c='AM_drawWalls'/>
+<use f='codebrowser/am_map.c' l='1140' u='c' c='AM_drawWalls'/>
+<use f='codebrowser/am_map.c' l='1144' u='c' c='AM_drawWalls'/>
+<use f='codebrowser/am_map.c' l='1145' u='c' c='AM_drawWalls'/>
+<use f='codebrowser/am_map.c' l='1149' u='c' c='AM_drawWalls'/>
+<use f='codebrowser/am_map.c' l='1153' u='c' c='AM_drawWalls'/>
+<use f='codebrowser/am_map.c' l='1156' u='c' c='AM_drawWalls'/>
+<use f='codebrowser/am_map.c' l='1162' u='c' c='AM_drawWalls'/>
+<use f='codebrowser/am_map.c' l='1236' u='c' c='AM_drawLineCharacter'/>
+<doc f='codebrowser/am_map.c' l='1052'>//
+// Clip lines, draw visible part sof lines.
+//</doc>

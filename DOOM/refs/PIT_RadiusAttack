@@ -1,0 +1,7 @@
+<def f='codebrowser/p_map.c' l='1164' ll='1198' type='boolean PIT_RadiusAttack(mobj_t * thing)'/>
+<use f='codebrowser/p_map.c' l='1232' u='r' c='P_RadiusAttack'/>
+<doc f='codebrowser/p_map.c' l='1159'>//
+// PIT_RadiusAttack
+// &quot;bombsource&quot; is the creature
+// that caused the explosion at &quot;bombspot&quot;.
+//</doc>

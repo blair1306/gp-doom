@@ -1,0 +1,8 @@
+<dec f='include/stdlib.h' l='543' type='void exit(int __status)'/>
+<use f='codebrowser/d_main.c' l='745' u='c' c='FindResponseFile'/>
+<doc f='include/stdlib.h' l='540'>/* Call all functions registered with `atexit&apos; and `on_exit&apos;,
+   in the reverse of the order in which they were registered,
+   perform stdio cleanup, and terminate program execution with STATUS.  */</doc>
+<use f='codebrowser/i_sound.c' l='174' u='c' c='myioctl'/>
+<use f='codebrowser/i_system.c' l='123' u='c' c='I_Quit'/>
+<use f='codebrowser/i_system.c' l='182' u='c' c='I_Error'/>

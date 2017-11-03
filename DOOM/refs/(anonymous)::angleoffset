@@ -1,0 +1,8 @@
+<dec f='codebrowser/d_net.h' l='120' type='short'/>
+<offset>288</offset>
+<doc f='codebrowser/d_net.h' l='114'>// These are related to the 3-display mode,
+    //  in which two drones looking left and right
+    //  were used to render two additional views
+    //  on two additional computers.
+    // Probably not operational anymore.
+    // 1 = left, 0 = center, -1 = right</doc>

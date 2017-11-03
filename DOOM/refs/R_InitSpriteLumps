@@ -1,0 +1,8 @@
+<def f='codebrowser/r_data.c' l='603' ll='626' type='void R_InitSpriteLumps()'/>
+<use f='codebrowser/r_data.c' l='660' u='c' c='R_InitData'/>
+<doc f='codebrowser/r_data.c' l='597'>//
+// R_InitSpriteLumps
+// Finds the width and hoffset of all sprites in the wad,
+//  so the sprite does not need to be cached completely
+//  just for having the header info ready during rendering.
+//</doc>

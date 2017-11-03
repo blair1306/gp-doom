@@ -1,0 +1,4 @@
+<dec f='codebrowser/wi_stuff.h' l='47' type='void WI_Start(wbstartstruct_t * wbstartstruct)'/>
+<doc f='codebrowser/wi_stuff.h' l='46'>// Setup for an intermission screen.</doc>
+<use f='codebrowser/g_game.c' l='1140' u='c' c='G_DoCompleted'/>
+<def f='codebrowser/wi_stuff.c' l='1838' ll='1850' type='void WI_Start(wbstartstruct_t * wbstartstruct)'/>

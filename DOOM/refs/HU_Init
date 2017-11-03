@@ -1,0 +1,6 @@
+<dec f='codebrowser/hu_stuff.h' l='50' type='void HU_Init()'/>
+<use f='codebrowser/d_main.c' l='1110' u='c' c='D_DoomMain'/>
+<doc f='codebrowser/hu_stuff.h' l='46'>//
+// HEADS UP TEXT
+//</doc>
+<def f='codebrowser/hu_stuff.c' l='392' ll='412' type='void HU_Init()'/>

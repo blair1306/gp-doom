@@ -1,0 +1,10 @@
+<dec f='codebrowser/r_state.h' l='47' type='fixed_t *'/>
+<doc f='codebrowser/r_state.h' l='46'>// needed for pre rendering (fracs)</doc>
+<def f='codebrowser/r_data.c' l='158' type='fixed_t *'/>
+<use f='codebrowser/r_data.c' l='612' u='w' c='R_InitSpriteLumps'/>
+<use f='codebrowser/r_data.c' l='622' u='r' c='R_InitSpriteLumps'/>
+<doc f='codebrowser/r_data.c' l='157'>// needed for pre rendering</doc>
+<use f='codebrowser/r_things.c' l='542' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='564' u='r' c='R_ProjectSprite'/>
+<use f='codebrowser/r_things.c' l='685' u='r' c='R_DrawPSprite'/>
+<use f='codebrowser/r_things.c' l='703' u='r' c='R_DrawPSprite'/>

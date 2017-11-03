@@ -1,0 +1,9 @@
+<dec f='codebrowser/d_net.h' l='88' type='short'/>
+<offset>80</offset>
+<doc f='codebrowser/d_net.h' l='86'>// Communication between DOOM and the driver.
+    // Is CMD_SEND or CMD_GET.</doc>
+<use f='codebrowser/d_net.c' l='162' u='w' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='208' u='w' c='HGetPacket'/>
+<use f='codebrowser/i_net.c' l='337' u='r' c='I_NetCmd'/>
+<use f='codebrowser/i_net.c' l='341' u='r' c='I_NetCmd'/>
+<use f='codebrowser/i_net.c' l='346' u='r' c='I_NetCmd'/>

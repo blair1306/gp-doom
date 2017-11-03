@@ -1,0 +1,18 @@
+<dec f='codebrowser/r_main.h' l='122' type='angle_t R_PointToAngle(fixed_t x, fixed_t y)'/>
+<use f='codebrowser/r_bsp.c' l='271' u='c' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='272' u='c' c='R_AddLine'/>
+<use f='codebrowser/r_bsp.c' l='428' u='c' c='R_CheckBBox'/>
+<use f='codebrowser/r_bsp.c' l='429' u='c' c='R_CheckBBox'/>
+<def f='codebrowser/r_main.c' l='291' ll='374' type='angle_t R_PointToAngle(fixed_t x, fixed_t y)'/>
+<use f='codebrowser/r_main.c' l='387' u='c' c='R_PointToAngle2'/>
+<doc f='codebrowser/r_main.c' l='277'>//
+// R_PointToAngle
+// To get a global angle from cartesian coordinates,
+//  the coordinates are flipped until they are in
+//  the first octant of the coordinate system, then
+//  the y (&lt;=x) is scaled and divided by x to get a
+//  tangent (slope) value which is looked up in the
+//  tantoangle[] table.
+
+//</doc>
+<use f='codebrowser/r_things.c' l='522' u='c' c='R_ProjectSprite'/>

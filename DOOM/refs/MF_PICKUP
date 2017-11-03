@@ -1,0 +1,7 @@
+<dec f='codebrowser/p_mobj.h' l='148' type='2048'/>
+<doc f='codebrowser/p_mobj.h' l='147'>// For players, will pick up items.</doc>
+<use f='codebrowser/info.c' l='1130' u='r'/>
+<use f='codebrowser/info.c' l='1130' u='r'/>
+<use f='codebrowser/info.c' l='1130' u='r'/>
+<use f='codebrowser/info.c' l='1130' u='r'/>
+<use f='codebrowser/p_map.c' l='334' u='r' c='PIT_CheckThing'/>

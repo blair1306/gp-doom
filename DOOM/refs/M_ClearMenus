@@ -1,0 +1,11 @@
+<dec f='codebrowser/m_menu.c' l='231' type='void M_ClearMenus()'/>
+<use f='codebrowser/m_menu.c' l='588' u='c' c='M_LoadSelect'/>
+<use f='codebrowser/m_menu.c' l='634' u='c' c='M_DoSave'/>
+<use f='codebrowser/m_menu.c' l='904' u='c' c='M_VerifyNightmare'/>
+<use f='codebrowser/m_menu.c' l='916' u='c' c='M_ChooseSkill'/>
+<use f='codebrowser/m_menu.c' l='1002' u='c' c='M_EndGameResponse'/>
+<use f='codebrowser/m_menu.c' l='1682' u='c' c='M_Responder'/>
+<def f='codebrowser/m_menu.c' l='1811' ll='1816' type='void M_ClearMenus()'/>
+<doc f='codebrowser/m_menu.c' l='1808'>//
+// M_ClearMenus
+//</doc>

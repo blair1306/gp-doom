@@ -1,0 +1,8 @@
+<def f='codebrowser/i_video.c' l='75' type='boolean'/>
+<use f='codebrowser/i_video.c' l='275' u='r' c='I_GetEvent'/>
+<use f='codebrowser/i_video.c' l='483' u='r' c='I_FinishUpdate'/>
+<use f='codebrowser/i_video.c' l='775' u='w' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='778' u='r' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='786' u='w' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='852' u='r' c='I_InitGraphics'/>
+<doc f='codebrowser/i_video.c' l='74'>// MIT SHared Memory extension.</doc>

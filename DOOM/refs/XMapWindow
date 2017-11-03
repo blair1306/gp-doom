@@ -1,0 +1,2 @@
+<dec f='include/X11/Xlib.h' l='2806' type='int XMapWindow(Display * , Window )'/>
+<use f='codebrowser/i_video.c' l='831' u='c' c='I_InitGraphics'/>

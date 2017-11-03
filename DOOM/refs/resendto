@@ -1,0 +1,7 @@
+<def f='codebrowser/d_net.c' l='66' type='int [8]'/>
+<use f='codebrowser/d_net.c' l='307' u='w' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='309' u='r' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='420' u='r' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='425' u='w' c='NetUpdate'/>
+<use f='codebrowser/d_net.c' l='564' u='w' c='D_CheckNetGame'/>
+<doc f='codebrowser/d_net.c' l='66'>// set when remote needs tics</doc>

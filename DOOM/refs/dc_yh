@@ -1,0 +1,25 @@
+<dec f='codebrowser/r_draw.h' l='35' type='int'/>
+<def f='codebrowser/r_draw.c' l='88' type='int'/>
+<use f='codebrowser/r_draw.c' l='112' u='r' c='R_DrawColumn'/>
+<use f='codebrowser/r_draw.c' l='121' u='r' c='R_DrawColumn'/>
+<use f='codebrowser/r_draw.c' l='122' u='r' c='R_DrawColumn'/>
+<use f='codebrowser/r_draw.c' l='219' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='228' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='231' u='r' c='R_DrawColumnLow'/>
+<use f='codebrowser/r_draw.c' l='297' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='298' u='w' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='300' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='309' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='312' u='r' c='R_DrawFuzzColumn'/>
+<use f='codebrowser/r_draw.c' l='392' u='r' c='R_DrawTranslatedColumn'/>
+<use f='codebrowser/r_draw.c' l='399' u='r' c='R_DrawTranslatedColumn'/>
+<use f='codebrowser/r_draw.c' l='402' u='r' c='R_DrawTranslatedColumn'/>
+<use f='codebrowser/r_plane.c' l='409' u='w' c='R_DrawPlanes'/>
+<use f='codebrowser/r_plane.c' l='411' u='r' c='R_DrawPlanes'/>
+<use f='codebrowser/r_segs.c' l='284' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='306' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='335' u='w' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_things.c' l='367' u='w' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='369' u='r' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='370' u='w' c='R_DrawMaskedColumn'/>
+<use f='codebrowser/r_things.c' l='374' u='r' c='R_DrawMaskedColumn'/>

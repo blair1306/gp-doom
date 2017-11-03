@@ -1,0 +1,8 @@
+<dec f='codebrowser/g_game.h' l='68' type='void G_Ticker()'/>
+<use f='codebrowser/d_main.c' l='383' u='c' c='D_DoomLoop'/>
+<use f='codebrowser/d_net.c' l='745' u='c' c='TryRunTics'/>
+<def f='codebrowser/g_game.c' l='605' ll='748' type='void G_Ticker()'/>
+<doc f='codebrowser/g_game.c' l='601'>//
+// G_Ticker
+// Make ticcmd_ts for the players.
+//</doc>

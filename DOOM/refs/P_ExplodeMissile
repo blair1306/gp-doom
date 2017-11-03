@@ -1,0 +1,8 @@
+<def f='codebrowser/p_mobj.c' l='90' ll='105' type='void P_ExplodeMissile(mobj_t * mo)'/>
+<use f='codebrowser/p_mobj.c' l='186' u='c' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='316' u='c' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='345' u='c' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='881' u='c' c='P_CheckMissileSpawn'/>
+<doc f='codebrowser/p_mobj.c' l='87'>//
+// P_ExplodeMissile  
+//</doc>

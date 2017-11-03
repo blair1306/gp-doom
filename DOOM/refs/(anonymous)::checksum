@@ -1,0 +1,23 @@
+<dec f='codebrowser/d_net.h' l='65' type='unsigned int'/>
+<offset>0</offset>
+<doc f='codebrowser/d_net.h' l='64'>// High bit is retransmit request.</doc>
+<use f='codebrowser/d_net.c' l='147' u='w' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='170' u='r' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='221' u='r' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='233' u='r' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='237' u='r' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='271' u='r' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='283' u='r' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='298' u='r' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='305' u='r' c='GetPackets'/>
+<use f='codebrowser/d_net.c' l='493' u='r' c='D_ArbitrateNetStart'/>
+<use f='codebrowser/i_net.c' l='133' u='w' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='133' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='133' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='133' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='133' u='r' c='PacketSend'/>
+<use f='codebrowser/i_net.c' l='203' u='w' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='203' u='r' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='203' u='r' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='203' u='r' c='PacketGet'/>
+<use f='codebrowser/i_net.c' l='203' u='r' c='PacketGet'/>

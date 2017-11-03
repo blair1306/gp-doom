@@ -1,0 +1,14 @@
+<def f='codebrowser/m_misc.c' l='234' ll='302' type='default_t [41]'/>
+<use f='codebrowser/m_misc.c' l='323' u='m' c='M_SaveDefaults'/>
+<use f='codebrowser/m_misc.c' l='324' u='m' c='M_SaveDefaults'/>
+<use f='codebrowser/m_misc.c' l='326' u='m' c='M_SaveDefaults'/>
+<use f='codebrowser/m_misc.c' l='327' u='m' c='M_SaveDefaults'/>
+<use f='codebrowser/m_misc.c' l='329' u='m' c='M_SaveDefaults'/>
+<use f='codebrowser/m_misc.c' l='330' u='m' c='M_SaveDefaults'/>
+<use f='codebrowser/m_misc.c' l='355' u='r' c='M_LoadDefaults'/>
+<use f='codebrowser/m_misc.c' l='355' u='r' c='M_LoadDefaults'/>
+<use f='codebrowser/m_misc.c' l='357' u='m' c='M_LoadDefaults'/>
+<use f='codebrowser/m_misc.c' l='357' u='m' c='M_LoadDefaults'/>
+<use f='codebrowser/m_misc.c' l='392' u='m' c='M_LoadDefaults'/>
+<use f='codebrowser/m_misc.c' l='395' u='m' c='M_LoadDefaults'/>
+<use f='codebrowser/m_misc.c' l='397' u='m' c='M_LoadDefaults'/>

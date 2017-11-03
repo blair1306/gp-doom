@@ -1,0 +1,3 @@
+<dec f='codebrowser/st_lib.h' l='217' type='void STlib_updateBinIcon(st_binicon_t * bi, boolean refresh)'/>
+<def f='codebrowser/st_lib.c' l='263' ll='292' type='void STlib_updateBinIcon(st_binicon_t * bi, boolean refresh)'/>
+<use f='codebrowser/st_stuff.c' l='1075' u='c' c='ST_drawWidgets'/>

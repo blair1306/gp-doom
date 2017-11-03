@@ -1,0 +1,4 @@
+<dec f='include/X11/X.h' l='564'/>
+<use f='codebrowser/i_video.c' l='294' u='c'/>
+<doc f='include/X11/X.h' l='561'>/* GC components: masks used in CreateGC, CopyGC, ChangeGC, OR&apos;ed into
+   GC.stateChanges */</doc>

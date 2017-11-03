@@ -1,0 +1,4 @@
+<dec f='codebrowser/m_menu.c' l='214' type='void M_DrawEpisode()'/>
+<use f='codebrowser/m_menu.c' l='297'/>
+<use f='codebrowser/m_menu.c' l='297'/>
+<def f='codebrowser/m_menu.c' l='893' ll='896' type='void M_DrawEpisode()'/>

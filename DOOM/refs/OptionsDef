@@ -1,0 +1,12 @@
+<def f='codebrowser/m_menu.c' l='364' ll='372' type='menu_t'/>
+<use f='codebrowser/m_menu.c' l='442' u='a'/>
+<use f='codebrowser/m_menu.c' l='442' u='a'/>
+<use f='codebrowser/m_menu.c' l='955' u='m' c='M_DrawOptions'/>
+<use f='codebrowser/m_menu.c' l='955' u='m' c='M_DrawOptions'/>
+<use f='codebrowser/m_menu.c' l='958' u='m' c='M_DrawOptions'/>
+<use f='codebrowser/m_menu.c' l='958' u='m' c='M_DrawOptions'/>
+<use f='codebrowser/m_menu.c' l='961' u='m' c='M_DrawOptions'/>
+<use f='codebrowser/m_menu.c' l='961' u='m' c='M_DrawOptions'/>
+<use f='codebrowser/m_menu.c' l='964' u='m' c='M_DrawOptions'/>
+<use f='codebrowser/m_menu.c' l='964' u='m' c='M_DrawOptions'/>
+<use f='codebrowser/m_menu.c' l='970' u='a' c='M_Options'/>

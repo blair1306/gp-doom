@@ -1,0 +1,42 @@
+<dec f='codebrowser/doomstat.h' l='92' type='boolean'/>
+<use f='codebrowser/am_map.c' l='1248' u='r' c='AM_drawPlayers'/>
+<doc f='codebrowser/doomstat.h' l='91'>// Netgame? Only true if &gt;1 player.</doc>
+<use f='codebrowser/d_main.c' l='1163' u='r' c='D_DoomMain'/>
+<use f='codebrowser/d_net.c' l='159' u='r' c='HSendPacket'/>
+<use f='codebrowser/d_net.c' l='202' u='r' c='HGetPacket'/>
+<use f='codebrowser/d_net.c' l='574' u='r' c='D_CheckNetGame'/>
+<use f='codebrowser/d_net.c' l='609' u='r' c='D_QuitNetGame'/>
+<def f='codebrowser/g_game.c' l='117' type='boolean'/>
+<use f='codebrowser/g_game.c' l='681' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='928' u='r' c='G_DoReborn'/>
+<use f='codebrowser/g_game.c' l='1349' u='w' c='G_DoNewGame'/>
+<use f='codebrowser/g_game.c' l='1609' u='w' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1666' u='w' c='G_CheckDemoStatus'/>
+<doc f='codebrowser/g_game.c' l='117'>// only true if packets are broadcast </doc>
+<use f='codebrowser/hu_stuff.c' l='536' u='r' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='665' u='r' c='HU_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='671' u='r' c='HU_Responder'/>
+<use f='codebrowser/i_net.c' l='285' u='w' c='I_InitNetwork'/>
+<use f='codebrowser/i_net.c' l='295' u='w' c='I_InitNetwork'/>
+<use f='codebrowser/m_menu.c' l='596' u='r' c='M_LoadGame'/>
+<use f='codebrowser/m_menu.c' l='730' u='r' c='M_QuickLoad'/>
+<use f='codebrowser/m_menu.c' l='875' u='r' c='M_NewGame'/>
+<use f='codebrowser/m_menu.c' l='1015' u='r' c='M_EndGame'/>
+<use f='codebrowser/m_menu.c' l='1084' u='r' c='M_QuitResponse'/>
+<use f='codebrowser/p_enemy.c' l='755' u='r' c='A_Chase'/>
+<use f='codebrowser/p_inter.c' l='176' u='r' c='P_GiveWeapon'/>
+<use f='codebrowser/p_inter.c' l='425' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='433' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='441' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='449' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='457' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='465' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='692' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_mobj.c' l='740' u='r' c='P_SpawnMapThing'/>
+<use f='codebrowser/p_tick.c' l='139' u='r' c='P_Ticker'/>
+<use f='codebrowser/st_stuff.c' l='506' u='r' c='ST_refreshBackground'/>
+<use f='codebrowser/st_stuff.c' l='543' u='r' c='ST_Responder'/>
+<use f='codebrowser/wi_stuff.c' l='1523' u='r' c='WI_Ticker'/>
+<use f='codebrowser/wi_stuff.c' l='1658' u='r' c='WI_loadData'/>
+<use f='codebrowser/wi_stuff.c' l='1779' u='r' c='WI_Drawer'/>
+<use f='codebrowser/wi_stuff.c' l='1846' u='r' c='WI_Start'/>

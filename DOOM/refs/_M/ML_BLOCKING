@@ -1,0 +1,7 @@
+<dec f='codebrowser/doomdata.h' l='101'/>
+<doc f='codebrowser/doomdata.h' l='96'>//
+// LineDef attributes.
+//
+
+// Solid, is an obstacle.</doc>
+<use f='codebrowser/p_map.c' l='216' u='c'/>

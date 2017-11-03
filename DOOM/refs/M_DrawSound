@@ -1,0 +1,7 @@
+<dec f='codebrowser/m_menu.c' l='216' type='void M_DrawSound()'/>
+<use f='codebrowser/m_menu.c' l='444'/>
+<use f='codebrowser/m_menu.c' l='444'/>
+<def f='codebrowser/m_menu.c' l='800' ll='809' type='void M_DrawSound()'/>
+<doc f='codebrowser/m_menu.c' l='797'>//
+// Change Sfx &amp; Music volumes
+//</doc>

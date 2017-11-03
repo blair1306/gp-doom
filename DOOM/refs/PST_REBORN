@@ -1,0 +1,7 @@
+<dec f='codebrowser/d_player.h' l='60' type='2'/>
+<doc f='codebrowser/d_player.h' l='59'>// Ready to restart/respawn???</doc>
+<use f='codebrowser/g_game.c' l='480' u='r' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='613' u='r' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1441' u='r' c='G_InitNew'/>
+<use f='codebrowser/p_mobj.c' l='659' u='r' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_user.c' l='228' u='r' c='P_DeathThink'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/info.h' l='243' type='67'/>
+<use f='codebrowser/d_items.c' l='117'/>
+<use f='codebrowser/d_items.c' l='117'/>
+<use f='codebrowser/d_items.c' l='117'/>
+<use f='codebrowser/d_items.c' l='117'/>
+<use f='codebrowser/info.c' l='204'/>
+<use f='codebrowser/info.c' l='204'/>
+<use f='codebrowser/info.c' l='209'/>
+<use f='codebrowser/info.c' l='209'/>
+<use f='codebrowser/info.c' l='204'/>
+<use f='codebrowser/info.c' l='204'/>
+<use f='codebrowser/info.c' l='209'/>
+<use f='codebrowser/info.c' l='209'/>
+<use f='codebrowser/p_pspr.c' l='297' u='a' c='A_WeaponReady'/>

@@ -1,0 +1,6 @@
+<def f='codebrowser/p_map.c' l='59' type='fixed_t'/>
+<use f='codebrowser/p_map.c' l='148' u='w' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='236' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='237' u='w' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='406' u='w' c='P_CheckPosition'/>
+<use f='codebrowser/p_map.c' l='482' u='r' c='P_TryMove'/>

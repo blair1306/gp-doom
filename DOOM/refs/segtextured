@@ -1,0 +1,8 @@
+<dec f='codebrowser/r_bsp.h' l='40' type='boolean'/>
+<def f='codebrowser/r_segs.c' l='46' type='boolean'/>
+<use f='codebrowser/r_segs.c' l='262' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='617' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='619' u='r' c='R_StoreWallRange'/>
+<doc f='codebrowser/r_segs.c' l='43'>// OPTIMIZE: closed two sided lines as single sided
+
+// True if any of the segs textures might be visible.</doc>

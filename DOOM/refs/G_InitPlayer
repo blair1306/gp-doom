@@ -1,0 +1,11 @@
+<def f='codebrowser/g_game.c' l='761' ll='771' type='void G_InitPlayer(int player)'/>
+<doc f='codebrowser/g_game.c' l='751'>//
+// PLAYER STRUCTURE FUNCTIONS
+// also see P_SpawnPlayer in P_Things
+//
+
+//
+// G_InitPlayer 
+// Called at the start.
+// Called by the game initialization functions.
+//</doc>

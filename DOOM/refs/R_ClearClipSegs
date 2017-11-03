@@ -1,0 +1,7 @@
+<dec f='codebrowser/r_bsp.h' l='60' type='void R_ClearClipSegs()'/>
+<doc f='codebrowser/r_bsp.h' l='59'>// BSP?</doc>
+<def f='codebrowser/r_bsp.c' l='245' ll='252' type='void R_ClearClipSegs()'/>
+<doc f='codebrowser/r_bsp.c' l='242'>//
+// R_ClearClipSegs
+//</doc>
+<use f='codebrowser/r_main.c' l='875' u='c' c='R_RenderPlayerView'/>

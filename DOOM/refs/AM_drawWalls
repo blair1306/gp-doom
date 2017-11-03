@@ -1,0 +1,6 @@
+<def f='codebrowser/am_map.c' l='1117' ll='1165' type='void AM_drawWalls()'/>
+<use f='codebrowser/am_map.c' l='1339' u='c' c='AM_Drawer'/>
+<doc f='codebrowser/am_map.c' l='1113'>//
+// Determines visible lines, draws them.
+// This is LineDef based, not LineSeg based.
+//</doc>

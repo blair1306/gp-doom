@@ -1,0 +1,11 @@
+<dec f='codebrowser/p_spec.h' l='87' type='fixed_t P_FindLowestFloorSurrounding(sector_t * sec)'/>
+<use f='codebrowser/p_floor.c' l='304' u='c' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='408' u='c' c='EV_DoFloor'/>
+<use f='codebrowser/p_plats.c' l='209' u='c' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='222' u='c' c='EV_DoPlat'/>
+<use f='codebrowser/p_plats.c' l='235' u='c' c='EV_DoPlat'/>
+<def f='codebrowser/p_spec.c' l='270' ll='289' type='fixed_t P_FindLowestFloorSurrounding(sector_t * sec)'/>
+<doc f='codebrowser/p_spec.c' l='266'>//
+// P_FindLowestFloorSurrounding()
+// FIND LOWEST FLOOR HEIGHT IN SURROUNDING SECTORS
+//</doc>

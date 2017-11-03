@@ -1,0 +1,8 @@
+<dec f='codebrowser/m_menu.c' l='226' type='int M_StringWidth(char * string)'/>
+<use f='codebrowser/m_menu.c' l='623' u='c' c='M_DrawSave'/>
+<def f='codebrowser/m_menu.c' l='1255' ll='1271' type='int M_StringWidth(char * string)'/>
+<use f='codebrowser/m_menu.c' l='1483' u='c' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1774' u='c' c='M_Drawer'/>
+<doc f='codebrowser/m_menu.c' l='1252'>//
+// Find string width from hu_font chars
+//</doc>

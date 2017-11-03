@@ -1,0 +1,17 @@
+<dec f='codebrowser/p_local.h' l='168' type='fixed_t'/>
+<use f='codebrowser/p_map.c' l='227' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='229' u='r' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='661' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='837' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='851' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='939' u='r' c='PTR_ShootTraverse'/>
+<def f='codebrowser/p_maputl.c' l='294' type='fixed_t'/>
+<use f='codebrowser/p_maputl.c' l='316' u='w' c='P_LineOpening'/>
+<use f='codebrowser/p_maputl.c' l='318' u='w' c='P_LineOpening'/>
+<use f='codebrowser/p_maputl.c' l='331' u='r' c='P_LineOpening'/>
+<doc f='codebrowser/p_maputl.c' l='288'>//
+// P_LineOpening
+// Sets opentop and openbottom to the window
+// through a two sided line.
+// OPTIMIZE: keep this precalculated
+//</doc>

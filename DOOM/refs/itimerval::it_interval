@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/sys/time.h' l='110' type='struct timeval'/>
+<use f='codebrowser/i_sound.c' l='964' u='m' c='I_SoundSetTimer'/>
+<use f='codebrowser/i_sound.c' l='965' u='m' c='I_SoundSetTimer'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/sys/time.h' l='109'>/* Value to put into `it_value&apos; when the timer expires.  */</doc>

@@ -1,0 +1,16 @@
+<dec f='codebrowser/r_defs.h' l='379' type='struct vissprite_s *'/>
+<offset>64</offset>
+<use f='codebrowser/r_things.c' l='798' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='805' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='810' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='811' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='816' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='820' u='r' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='820' u='r' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='828' u='r' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='829' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='829' u='r' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='830' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='832' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='968' u='r' c='R_DrawMasked'/>
+<use f='codebrowser/r_things.c' l='970' u='r' c='R_DrawMasked'/>

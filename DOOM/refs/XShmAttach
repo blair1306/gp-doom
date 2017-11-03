@@ -1,0 +1,2 @@
+<dec f='include/X11/extensions/XShm.h' l='78' type='int XShmAttach(Display * , XShmSegmentInfo * )'/>
+<use f='codebrowser/i_video.c' l='891' u='c' c='I_InitGraphics'/>

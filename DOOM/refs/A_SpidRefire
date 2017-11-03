@@ -1,0 +1,18 @@
+<dec f='codebrowser/info.c' l='117' type='void A_SpidRefire()'/>
+<use f='codebrowser/info.c' l='754'/>
+<use f='codebrowser/info.c' l='754'/>
+<use f='codebrowser/info.c' l='754'/>
+<use f='codebrowser/info.c' l='754'/>
+<use f='codebrowser/info.c' l='786'/>
+<use f='codebrowser/info.c' l='786'/>
+<use f='codebrowser/info.c' l='786'/>
+<use f='codebrowser/info.c' l='786'/>
+<use f='codebrowser/info.c' l='754'/>
+<use f='codebrowser/info.c' l='754'/>
+<use f='codebrowser/info.c' l='754'/>
+<use f='codebrowser/info.c' l='754'/>
+<use f='codebrowser/info.c' l='786'/>
+<use f='codebrowser/info.c' l='786'/>
+<use f='codebrowser/info.c' l='786'/>
+<use f='codebrowser/info.c' l='786'/>
+<def f='codebrowser/p_enemy.c' l='882' ll='896' type='void A_SpidRefire(mobj_t * actor)'/>

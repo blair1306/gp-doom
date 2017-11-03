@@ -1,0 +1,11 @@
+<dec f='codebrowser/doomstat.h' l='155' type='int'/>
+<doc f='codebrowser/doomstat.h' l='153'>// This one is related to the 3-screen display mode.
+// ANG90 = left side, ANG270 = right</doc>
+<dec f='codebrowser/d_net.c' l='553' type='int'/>
+<doc f='codebrowser/d_net.c' l='549'>//
+// D_CheckNetGame
+// Works out player numbers among the net participants
+//</doc>
+<def f='codebrowser/r_main.c' l='52' type='int'/>
+<use f='codebrowser/r_main.c' l='837' u='r' c='R_SetupFrame'/>
+<use f='codebrowser/r_things.c' l='984' u='r' c='R_DrawMasked'/>

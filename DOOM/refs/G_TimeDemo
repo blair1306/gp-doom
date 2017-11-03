@@ -1,0 +1,6 @@
+<dec f='codebrowser/g_game.h' l='60' type='void G_TimeDemo(char * name)'/>
+<use f='codebrowser/d_main.c' l='1146' u='c' c='D_DoomMain'/>
+<def f='codebrowser/g_game.c' l='1625' ll='1634' type='void G_TimeDemo(char * name)'/>
+<doc f='codebrowser/g_game.c' l='1622'>//
+// G_TimeDemo 
+//</doc>

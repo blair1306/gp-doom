@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_local.h' l='107' type='void P_RespawnSpecials()'/>
+<def f='codebrowser/p_mobj.c' l='578' ll='631' type='void P_RespawnSpecials()'/>
+<doc f='codebrowser/p_mobj.c' l='575'>//
+// P_RespawnSpecials
+//</doc>
+<use f='codebrowser/p_tick.c' l='154' u='c' c='P_Ticker'/>

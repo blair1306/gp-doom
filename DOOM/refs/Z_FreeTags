@@ -1,0 +1,6 @@
+<dec f='codebrowser/z_zone.h' l='50' type='void Z_FreeTags(int lowtag, int hightag)'/>
+<use f='codebrowser/p_setup.c' l='618' u='c' c='P_SetupLevel'/>
+<def f='codebrowser/z_zone.c' l='296' ll='318' type='void Z_FreeTags(int lowtag, int hightag)'/>
+<doc f='codebrowser/z_zone.c' l='293'>//
+// Z_FreeTags
+//</doc>

@@ -1,0 +1,2 @@
+<def f='codebrowser/p_mobj.c' l='114' ll='241' type='void P_XYMovement(mobj_t * mo)'/>
+<use f='codebrowser/p_mobj.c' l='422' u='c' c='P_MobjThinker'/>

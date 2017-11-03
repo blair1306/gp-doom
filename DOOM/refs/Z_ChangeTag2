@@ -1,0 +1,45 @@
+<dec f='codebrowser/z_zone.h' l='54' type='void Z_ChangeTag2(void * ptr, int tag)'/>
+<use f='codebrowser/am_map.c' l='520' macro='1' u='c'/>
+<use f='codebrowser/g_game.c' l='1663' macro='1' u='c'/>
+<use f='codebrowser/r_data.c' l='288' macro='1' u='c'/>
+<use f='codebrowser/r_plane.c' l='451' macro='1' u='c'/>
+<use f='codebrowser/s_sound.c' l='698' macro='1' u='c'/>
+<use f='codebrowser/st_stuff.c' l='1215' macro='1' u='c'/>
+<use f='codebrowser/st_stuff.c' l='1216' macro='1' u='c'/>
+<use f='codebrowser/st_stuff.c' l='1219' macro='1' u='c'/>
+<use f='codebrowser/st_stuff.c' l='1222' macro='1' u='c'/>
+<use f='codebrowser/st_stuff.c' l='1226' macro='1' u='c'/>
+<use f='codebrowser/st_stuff.c' l='1230' macro='1' u='c'/>
+<use f='codebrowser/st_stuff.c' l='1232' macro='1' u='c'/>
+<use f='codebrowser/st_stuff.c' l='1233' macro='1' u='c'/>
+<use f='codebrowser/st_stuff.c' l='1236' macro='1' u='c'/>
+<use f='codebrowser/w_wad.c' l='496' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1713' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1716' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1721' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1725' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1726' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1728' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1731' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1739' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1746' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1747' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1748' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1749' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1750' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1751' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1752' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1753' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1754' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1755' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1756' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1757' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1759' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1760' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1761' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1766' macro='1' u='c'/>
+<use f='codebrowser/wi_stuff.c' l='1769' macro='1' u='c'/>
+<def f='codebrowser/z_zone.c' l='428' ll='444' type='void Z_ChangeTag2(void * ptr, int tag)'/>
+<doc f='codebrowser/z_zone.c' l='425'>//
+// Z_ChangeTag
+//</doc>

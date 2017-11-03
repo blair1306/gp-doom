@@ -1,0 +1,29 @@
+<dec f='codebrowser/w_wad.h' l='66' type='lumpinfo_t *'/>
+<use f='codebrowser/r_data.c' l='778' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='813' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_data.c' l='840' u='r' c='R_PrecacheLevel'/>
+<use f='codebrowser/r_things.c' l='219' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='221' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='222' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='225' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='231' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='233' u='r' c='R_InitSpriteDefs'/>
+<use f='codebrowser/r_things.c' l='234' u='r' c='R_InitSpriteDefs'/>
+<def f='codebrowser/w_wad.c' l='61' type='lumpinfo_t *'/>
+<use f='codebrowser/w_wad.c' l='207' u='w' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='207' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='209' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='212' u='r' c='W_AddFile'/>
+<use f='codebrowser/w_wad.c' l='261' u='r' c='W_Reload'/>
+<use f='codebrowser/w_wad.c' l='300' u='w' c='W_InitMultipleFiles'/>
+<use f='codebrowser/w_wad.c' l='377' u='r' c='W_CheckNumForName'/>
+<use f='codebrowser/w_wad.c' l='379' u='r' c='W_CheckNumForName'/>
+<use f='codebrowser/w_wad.c' l='384' u='r' c='W_CheckNumForName'/>
+<use f='codebrowser/w_wad.c' l='421' u='r' c='W_LumpLength'/>
+<use f='codebrowser/w_wad.c' l='443' u='r' c='W_ReadLump'/>
+<use f='codebrowser/w_wad.c' l='558' u='r' c='W_Profile'/>
+<doc f='codebrowser/w_wad.c' l='56'>//
+// GLOBALS
+//
+
+// Location of each lump on disk.</doc>

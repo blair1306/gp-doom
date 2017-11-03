@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_spec.c' l='144' type='line_t *[64]'/>
+<use f='codebrowser/p_spec.c' l='1116' u='r' c='P_UpdateSpecials'/>
+<def f='codebrowser/p_spec.c' l='1235' type='line_t *[64]'/>
+<use f='codebrowser/p_spec.c' l='1343' u='w' c='P_SpawnSpecials'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_spec.h' l='555' type='5'/>
+<doc f='codebrowser/p_spec.h' l='554'>// raise floor to shortest height texture around it</doc>
+<use f='codebrowser/p_enemy.c' l='1722' u='r' c='A_BossDeath'/>
+<use f='codebrowser/p_floor.c' l='372' c='EV_DoFloor'/>
+<use f='codebrowser/p_spec.c' l='630' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='901' u='r' c='P_CrossSpecialLine'/>

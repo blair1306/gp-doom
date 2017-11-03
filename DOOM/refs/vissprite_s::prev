@@ -1,0 +1,15 @@
+<dec f='codebrowser/r_defs.h' l='378' type='struct vissprite_s *'/>
+<offset>0</offset>
+<doc f='codebrowser/r_defs.h' l='377'>// Doubly linked list.</doc>
+<use f='codebrowser/r_things.c' l='798' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='806' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='809' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='812' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='816' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='828' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='828' u='r' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='829' u='r' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='831' u='w' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='831' u='r' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='832' u='r' c='R_SortVisSprites'/>
+<use f='codebrowser/r_things.c' l='833' u='w' c='R_SortVisSprites'/>

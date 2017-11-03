@@ -1,0 +1,7 @@
+<def f='codebrowser/p_user.c' l='77' ll='141' type='void P_CalcHeight(player_t * player)'/>
+<use f='codebrowser/p_user.c' l='198' u='c' c='P_DeathThink'/>
+<use f='codebrowser/p_user.c' l='272' u='c' c='P_PlayerThink'/>
+<doc f='codebrowser/p_user.c' l='73'>//
+// P_CalcHeight
+// Calculate the walking / running height adjustment
+//</doc>

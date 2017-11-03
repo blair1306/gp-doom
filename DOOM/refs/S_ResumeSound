@@ -1,0 +1,4 @@
+<dec f='codebrowser/s_sound.h' l='92' type='void S_ResumeSound()'/>
+<use f='codebrowser/g_game.c' l='711' u='c' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1375' u='c' c='G_InitNew'/>
+<def f='codebrowser/s_sound.c' l='506' ll='513' type='void S_ResumeSound()'/>

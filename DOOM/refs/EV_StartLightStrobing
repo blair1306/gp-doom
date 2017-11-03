@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_spec.h' l='192' type='void EV_StartLightStrobing(line_t * line)'/>
+<def f='codebrowser/p_lights.c' l='215' ll='229' type='void EV_StartLightStrobing(line_t * line)'/>
+<doc f='codebrowser/p_lights.c' l='212'>//
+// Start strobing lights (usually from a trigger)
+//</doc>
+<use f='codebrowser/p_spec.c' l='605' u='c' c='P_CrossSpecialLine'/>

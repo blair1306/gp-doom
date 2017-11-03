@@ -1,0 +1,3 @@
+<def f='codebrowser/r_segs.c' l='84' type='fixed_t'/>
+<use f='codebrowser/r_segs.c' l='326' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='703' u='w' c='R_StoreWallRange'/>

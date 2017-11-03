@@ -1,0 +1,777 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>hu_stuff.c source code [codebrowser/hu_stuff.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/hu_stuff.c'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='hu_stuff.c.html'>hu_stuff.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i  data-doc="rcsid">// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="4">4</th><td><i  data-doc="rcsid">// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="rcsid">// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="rcsid">// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="rcsid">// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="rcsid">// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="rcsid">// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="rcsid">// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="rcsid">// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="rcsid">// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="rcsid">// $Log:$</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="rcsid">// DESCRIPTION:  Heads-up displays</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="rcsid">//</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="rcsid">//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><em>static</em> <em>const</em> <em>char</em></td></tr>
+<tr><th id="24">24</th><td><dfn class="tu decl def" id="rcsid" title='rcsid' data-type='const char [51]' data-ref="rcsid">rcsid</dfn>[] = <q>"$Id: hu_stuff.c,v 1.4 1997/02/03 16:47:52 b1 Exp $"</q>;</td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="../include/ctype.h.html">&lt;ctype.h&gt;</a></u></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="doomdef.h.html">"doomdef.h"</a></u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#include <a href="z_zone.h.html">"z_zone.h"</a></u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><u>#include <a href="m_swap.h.html">"m_swap.h"</a></u></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="hu_stuff.h.html">"hu_stuff.h"</a></u></td></tr>
+<tr><th id="35">35</th><td><u>#include <a href="hu_lib.h.html">"hu_lib.h"</a></u></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="w_wad.h.html">"w_wad.h"</a></u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><u>#include <a href="s_sound.h.html">"s_sound.h"</a></u></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><u>#include <a href="doomstat.h.html">"doomstat.h"</a></u></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><i>// Data.</i></td></tr>
+<tr><th id="43">43</th><td><u>#include <a href="dstrings.h.html">"dstrings.h"</a></u></td></tr>
+<tr><th id="44">44</th><td><u>#include <a href="sounds.h.html">"sounds.h"</a></u></td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><i>//</i></td></tr>
+<tr><th id="47">47</th><td><i>// Locally used constants, shortcuts.</i></td></tr>
+<tr><th id="48">48</th><td><i>//</i></td></tr>
+<tr><th id="49">49</th><td><u>#define <dfn class="macro" id="_M/HU_TITLE" data-ref="_M/HU_TITLE">HU_TITLE</dfn>	(<a class="ref" href="#mapnames" title='mapnames' data-ref="mapnames">mapnames</a>[(<a class="ref" href="doomstat.h.html#gameepisode" title='gameepisode' data-ref="gameepisode">gameepisode</a>-1)*9+<a class="ref" href="doomstat.h.html#gamemap" title='gamemap' data-ref="gamemap">gamemap</a>-1])</u></td></tr>
+<tr><th id="50">50</th><td><u>#define <dfn class="macro" id="_M/HU_TITLE2" data-ref="_M/HU_TITLE2">HU_TITLE2</dfn>	(<a class="ref" href="#mapnames2" title='mapnames2' data-ref="mapnames2">mapnames2</a>[<a class="ref" href="doomstat.h.html#gamemap" title='gamemap' data-ref="gamemap">gamemap</a>-1])</u></td></tr>
+<tr><th id="51">51</th><td><u>#define <dfn class="macro" id="_M/HU_TITLEP" data-ref="_M/HU_TITLEP">HU_TITLEP</dfn>	(mapnamesp[gamemap-1])</u></td></tr>
+<tr><th id="52">52</th><td><u>#define <dfn class="macro" id="_M/HU_TITLET" data-ref="_M/HU_TITLET">HU_TITLET</dfn>	(mapnamest[gamemap-1])</u></td></tr>
+<tr><th id="53">53</th><td><u>#define <dfn class="macro" id="_M/HU_TITLEHEIGHT" data-ref="_M/HU_TITLEHEIGHT">HU_TITLEHEIGHT</dfn>	1</u></td></tr>
+<tr><th id="54">54</th><td><u>#define <dfn class="macro" id="_M/HU_TITLEX" data-ref="_M/HU_TITLEX">HU_TITLEX</dfn>	0</u></td></tr>
+<tr><th id="55">55</th><td><u>#define <dfn class="macro" id="_M/HU_TITLEY" data-ref="_M/HU_TITLEY">HU_TITLEY</dfn>	(167 - SHORT(<a class="ref" href="#hu_font" title='hu_font' data-ref="hu_font">hu_font</a>[0]-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::height" title='(anonymous struct)::height' data-ref="(anonymous)::height">height</a>))</u></td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><u>#define <dfn class="macro" id="_M/HU_INPUTTOGGLE" data-ref="_M/HU_INPUTTOGGLE">HU_INPUTTOGGLE</dfn>	't'</u></td></tr>
+<tr><th id="58">58</th><td><u>#define <dfn class="macro" id="_M/HU_INPUTX" data-ref="_M/HU_INPUTX">HU_INPUTX</dfn>	HU_MSGX</u></td></tr>
+<tr><th id="59">59</th><td><u>#define <dfn class="macro" id="_M/HU_INPUTY" data-ref="_M/HU_INPUTY">HU_INPUTY</dfn>	(HU_MSGY + HU_MSGHEIGHT*(SHORT(<a class="ref" href="#hu_font" title='hu_font' data-ref="hu_font">hu_font</a>[0]-&gt;<a class="ref" href="r_defs.h.html#(anonymous)::height" title='(anonymous struct)::height' data-ref="(anonymous)::height">height</a>) +1))</u></td></tr>
+<tr><th id="60">60</th><td><u>#define <dfn class="macro" id="_M/HU_INPUTWIDTH" data-ref="_M/HU_INPUTWIDTH">HU_INPUTWIDTH</dfn>	64</u></td></tr>
+<tr><th id="61">61</th><td><u>#define <dfn class="macro" id="_M/HU_INPUTHEIGHT" data-ref="_M/HU_INPUTHEIGHT">HU_INPUTHEIGHT</dfn>	1</u></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><em>char</em>*	<dfn class="decl def" id="chat_macros" title='chat_macros' data-ref="chat_macros">chat_macros</dfn>[] =</td></tr>
+<tr><th id="66">66</th><td>{</td></tr>
+<tr><th id="67">67</th><td>    <a class="macro" href="d_englsh.h.html#321" title="0" data-ref="_M/HUSTR_CHATMACRO0">HUSTR_CHATMACRO0</a>,</td></tr>
+<tr><th id="68">68</th><td>    <a class="macro" href="d_englsh.h.html#312" title="1" data-ref="_M/HUSTR_CHATMACRO1">HUSTR_CHATMACRO1</a>,</td></tr>
+<tr><th id="69">69</th><td>    <a class="macro" href="d_englsh.h.html#313" title="2" data-ref="_M/HUSTR_CHATMACRO2">HUSTR_CHATMACRO2</a>,</td></tr>
+<tr><th id="70">70</th><td>    <a class="macro" href="d_englsh.h.html#314" title="3" data-ref="_M/HUSTR_CHATMACRO3">HUSTR_CHATMACRO3</a>,</td></tr>
+<tr><th id="71">71</th><td>    <a class="macro" href="d_englsh.h.html#315" title="4" data-ref="_M/HUSTR_CHATMACRO4">HUSTR_CHATMACRO4</a>,</td></tr>
+<tr><th id="72">72</th><td>    <a class="macro" href="d_englsh.h.html#316" title="5" data-ref="_M/HUSTR_CHATMACRO5">HUSTR_CHATMACRO5</a>,</td></tr>
+<tr><th id="73">73</th><td>    <a class="macro" href="d_englsh.h.html#317" title="6" data-ref="_M/HUSTR_CHATMACRO6">HUSTR_CHATMACRO6</a>,</td></tr>
+<tr><th id="74">74</th><td>    <a class="macro" href="d_englsh.h.html#318" title="7" data-ref="_M/HUSTR_CHATMACRO7">HUSTR_CHATMACRO7</a>,</td></tr>
+<tr><th id="75">75</th><td>    <a class="macro" href="d_englsh.h.html#319" title="8" data-ref="_M/HUSTR_CHATMACRO8">HUSTR_CHATMACRO8</a>,</td></tr>
+<tr><th id="76">76</th><td>    <a class="macro" href="d_englsh.h.html#320" title="9" data-ref="_M/HUSTR_CHATMACRO9">HUSTR_CHATMACRO9</a></td></tr>
+<tr><th id="77">77</th><td>};</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><em>char</em>*	<dfn class="decl def" id="player_names" title='player_names' data-ref="player_names">player_names</dfn>[] =</td></tr>
+<tr><th id="80">80</th><td>{</td></tr>
+<tr><th id="81">81</th><td>    <a class="macro" href="d_englsh.h.html#334" title="&quot;Green: &quot;" data-ref="_M/HUSTR_PLRGREEN">HUSTR_PLRGREEN</a>,</td></tr>
+<tr><th id="82">82</th><td>    <a class="macro" href="d_englsh.h.html#335" title="&quot;Indigo: &quot;" data-ref="_M/HUSTR_PLRINDIGO">HUSTR_PLRINDIGO</a>,</td></tr>
+<tr><th id="83">83</th><td>    <a class="macro" href="d_englsh.h.html#336" title="&quot;Brown: &quot;" data-ref="_M/HUSTR_PLRBROWN">HUSTR_PLRBROWN</a>,</td></tr>
+<tr><th id="84">84</th><td>    <a class="macro" href="d_englsh.h.html#337" title="&quot;Red: &quot;" data-ref="_M/HUSTR_PLRRED">HUSTR_PLRRED</a></td></tr>
+<tr><th id="85">85</th><td>};</td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td><em>char</em>			<dfn class="decl def" id="chat_char" title='chat_char' data-ref="chat_char">chat_char</dfn>; <i>// remove later.</i></td></tr>
+<tr><th id="89">89</th><td><em>static</em> <a class="typedef" href="d_player.h.html#player_t" title='player_t' data-type='struct player_s' data-ref="player_t">player_t</a>*	<dfn class="tu decl def" id="plr" title='plr' data-type='player_t *' data-ref="plr">plr</dfn>;</td></tr>
+<tr><th id="90">90</th><td><a class="typedef" href="r_defs.h.html#patch_t" title='patch_t' data-type='struct patch_t' data-ref="patch_t">patch_t</a>*		<dfn class="decl def" id="hu_font" title='hu_font' data-ref="hu_font">hu_font</dfn>[<a class="macro" href="hu_stuff.h.html#34" title="(&apos;_&apos; - &apos;!&apos; + 1)" data-ref="_M/HU_FONTSIZE">HU_FONTSIZE</a>];</td></tr>
+<tr><th id="91">91</th><td><em>static</em> <a class="typedef" href="hu_lib.h.html#hu_textline_t" title='hu_textline_t' data-type='struct hu_textline_t' data-ref="hu_textline_t">hu_textline_t</a>	<dfn class="tu decl def" id="w_title" title='w_title' data-type='hu_textline_t' data-ref="w_title">w_title</dfn>;</td></tr>
+<tr><th id="92">92</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>			<dfn class="decl def" id="chat_on" title='chat_on' data-ref="chat_on">chat_on</dfn>;</td></tr>
+<tr><th id="93">93</th><td><em>static</em> <a class="typedef" href="hu_lib.h.html#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a>	<dfn class="tu decl def" id="w_chat" title='w_chat' data-type='hu_itext_t' data-ref="w_chat">w_chat</dfn>;</td></tr>
+<tr><th id="94">94</th><td><em>static</em> <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="tu decl def" id="always_off" title='always_off' data-type='boolean' data-ref="always_off">always_off</dfn> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="95">95</th><td><em>static</em> <em>char</em>		<dfn class="tu decl def" id="chat_dest" title='chat_dest' data-type='char [4]' data-ref="chat_dest">chat_dest</dfn>[<a class="macro" href="doomdef.h.html#119" title="4" data-ref="_M/MAXPLAYERS">MAXPLAYERS</a>];</td></tr>
+<tr><th id="96">96</th><td><em>static</em> <a class="typedef" href="hu_lib.h.html#hu_itext_t" title='hu_itext_t' data-type='struct hu_itext_t' data-ref="hu_itext_t">hu_itext_t</a> <dfn class="tu decl def" id="w_inputbuffer" title='w_inputbuffer' data-type='hu_itext_t [4]' data-ref="w_inputbuffer">w_inputbuffer</dfn>[<a class="macro" href="doomdef.h.html#119" title="4" data-ref="_M/MAXPLAYERS">MAXPLAYERS</a>];</td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td><em>static</em> <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="tu decl def" id="message_on" title='message_on' data-type='boolean' data-ref="message_on">message_on</dfn>;</td></tr>
+<tr><th id="99">99</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>			<dfn class="decl def" id="message_dontfuckwithme" title='message_dontfuckwithme' data-ref="message_dontfuckwithme">message_dontfuckwithme</dfn>;</td></tr>
+<tr><th id="100">100</th><td><em>static</em> <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="tu decl def" id="message_nottobefuckedwith" title='message_nottobefuckedwith' data-type='boolean' data-ref="message_nottobefuckedwith">message_nottobefuckedwith</dfn>;</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td><em>static</em> <a class="typedef" href="hu_lib.h.html#hu_stext_t" title='hu_stext_t' data-type='struct hu_stext_t' data-ref="hu_stext_t">hu_stext_t</a>	<dfn class="tu decl def" id="w_message" title='w_message' data-type='hu_stext_t' data-ref="w_message">w_message</dfn>;</td></tr>
+<tr><th id="103">103</th><td><em>static</em> <em>int</em>		<dfn class="tu decl def" id="message_counter" title='message_counter' data-type='int' data-ref="message_counter">message_counter</dfn>;</td></tr>
+<tr><th id="104">104</th><td></td></tr>
+<tr><th id="105">105</th><td><b>extern</b> <em>int</em>		<dfn class="decl" id="showMessages" title='showMessages' data-ref="showMessages">showMessages</dfn>;</td></tr>
+<tr><th id="106">106</th><td><b>extern</b> <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<a class="decl" href="doomstat.h.html#automapactive" title='automapactive' data-ref="automapactive" id="automapactive">automapactive</a>;</td></tr>
+<tr><th id="107">107</th><td></td></tr>
+<tr><th id="108">108</th><td><em>static</em> <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="tu decl def" id="headsupactive" title='headsupactive' data-type='boolean' data-ref="headsupactive">headsupactive</dfn> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="109">109</th><td></td></tr>
+<tr><th id="110">110</th><td><i>//</i></td></tr>
+<tr><th id="111">111</th><td><i>// Builtin map names.</i></td></tr>
+<tr><th id="112">112</th><td><i>// The actual names can be found in DStrings.h.</i></td></tr>
+<tr><th id="113">113</th><td><i>//</i></td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td><em>char</em>*	<dfn class="decl def" id="mapnames" title='mapnames' data-ref="mapnames">mapnames</dfn>[] =	<i>// DOOM shareware/registered/retail (Ultimate) names.</i></td></tr>
+<tr><th id="116">116</th><td>{</td></tr>
+<tr><th id="117">117</th><td></td></tr>
+<tr><th id="118">118</th><td>    <a class="macro" href="d_englsh.h.html#142" title="&quot;E1M1: Hangar&quot;" data-ref="_M/HUSTR_E1M1">HUSTR_E1M1</a>,</td></tr>
+<tr><th id="119">119</th><td>    <a class="macro" href="d_englsh.h.html#143" title="&quot;E1M2: Nuclear Plant&quot;" data-ref="_M/HUSTR_E1M2">HUSTR_E1M2</a>,</td></tr>
+<tr><th id="120">120</th><td>    <a class="macro" href="d_englsh.h.html#144" title="&quot;E1M3: Toxin Refinery&quot;" data-ref="_M/HUSTR_E1M3">HUSTR_E1M3</a>,</td></tr>
+<tr><th id="121">121</th><td>    <a class="macro" href="d_englsh.h.html#145" title="&quot;E1M4: Command Control&quot;" data-ref="_M/HUSTR_E1M4">HUSTR_E1M4</a>,</td></tr>
+<tr><th id="122">122</th><td>    <a class="macro" href="d_englsh.h.html#146" title="&quot;E1M5: Phobos Lab&quot;" data-ref="_M/HUSTR_E1M5">HUSTR_E1M5</a>,</td></tr>
+<tr><th id="123">123</th><td>    <a class="macro" href="d_englsh.h.html#147" title="&quot;E1M6: Central Processing&quot;" data-ref="_M/HUSTR_E1M6">HUSTR_E1M6</a>,</td></tr>
+<tr><th id="124">124</th><td>    <a class="macro" href="d_englsh.h.html#148" title="&quot;E1M7: Computer Station&quot;" data-ref="_M/HUSTR_E1M7">HUSTR_E1M7</a>,</td></tr>
+<tr><th id="125">125</th><td>    <a class="macro" href="d_englsh.h.html#149" title="&quot;E1M8: Phobos Anomaly&quot;" data-ref="_M/HUSTR_E1M8">HUSTR_E1M8</a>,</td></tr>
+<tr><th id="126">126</th><td>    <a class="macro" href="d_englsh.h.html#150" title="&quot;E1M9: Military Base&quot;" data-ref="_M/HUSTR_E1M9">HUSTR_E1M9</a>,</td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td>    <a class="macro" href="d_englsh.h.html#152" title="&quot;E2M1: Deimos Anomaly&quot;" data-ref="_M/HUSTR_E2M1">HUSTR_E2M1</a>,</td></tr>
+<tr><th id="129">129</th><td>    <a class="macro" href="d_englsh.h.html#153" title="&quot;E2M2: Containment Area&quot;" data-ref="_M/HUSTR_E2M2">HUSTR_E2M2</a>,</td></tr>
+<tr><th id="130">130</th><td>    <a class="macro" href="d_englsh.h.html#154" title="&quot;E2M3: Refinery&quot;" data-ref="_M/HUSTR_E2M3">HUSTR_E2M3</a>,</td></tr>
+<tr><th id="131">131</th><td>    <a class="macro" href="d_englsh.h.html#155" title="&quot;E2M4: Deimos Lab&quot;" data-ref="_M/HUSTR_E2M4">HUSTR_E2M4</a>,</td></tr>
+<tr><th id="132">132</th><td>    <a class="macro" href="d_englsh.h.html#156" title="&quot;E2M5: Command Center&quot;" data-ref="_M/HUSTR_E2M5">HUSTR_E2M5</a>,</td></tr>
+<tr><th id="133">133</th><td>    <a class="macro" href="d_englsh.h.html#157" title="&quot;E2M6: Halls of the Damned&quot;" data-ref="_M/HUSTR_E2M6">HUSTR_E2M6</a>,</td></tr>
+<tr><th id="134">134</th><td>    <a class="macro" href="d_englsh.h.html#158" title="&quot;E2M7: Spawning Vats&quot;" data-ref="_M/HUSTR_E2M7">HUSTR_E2M7</a>,</td></tr>
+<tr><th id="135">135</th><td>    <a class="macro" href="d_englsh.h.html#159" title="&quot;E2M8: Tower of Babel&quot;" data-ref="_M/HUSTR_E2M8">HUSTR_E2M8</a>,</td></tr>
+<tr><th id="136">136</th><td>    <a class="macro" href="d_englsh.h.html#160" title="&quot;E2M9: Fortress of Mystery&quot;" data-ref="_M/HUSTR_E2M9">HUSTR_E2M9</a>,</td></tr>
+<tr><th id="137">137</th><td></td></tr>
+<tr><th id="138">138</th><td>    <a class="macro" href="d_englsh.h.html#162" title="&quot;E3M1: Hell Keep&quot;" data-ref="_M/HUSTR_E3M1">HUSTR_E3M1</a>,</td></tr>
+<tr><th id="139">139</th><td>    <a class="macro" href="d_englsh.h.html#163" title="&quot;E3M2: Slough of Despair&quot;" data-ref="_M/HUSTR_E3M2">HUSTR_E3M2</a>,</td></tr>
+<tr><th id="140">140</th><td>    <a class="macro" href="d_englsh.h.html#164" title="&quot;E3M3: Pandemonium&quot;" data-ref="_M/HUSTR_E3M3">HUSTR_E3M3</a>,</td></tr>
+<tr><th id="141">141</th><td>    <a class="macro" href="d_englsh.h.html#165" title="&quot;E3M4: House of Pain&quot;" data-ref="_M/HUSTR_E3M4">HUSTR_E3M4</a>,</td></tr>
+<tr><th id="142">142</th><td>    <a class="macro" href="d_englsh.h.html#166" title="&quot;E3M5: Unholy Cathedral&quot;" data-ref="_M/HUSTR_E3M5">HUSTR_E3M5</a>,</td></tr>
+<tr><th id="143">143</th><td>    <a class="macro" href="d_englsh.h.html#167" title="&quot;E3M6: Mt. Erebus&quot;" data-ref="_M/HUSTR_E3M6">HUSTR_E3M6</a>,</td></tr>
+<tr><th id="144">144</th><td>    <a class="macro" href="d_englsh.h.html#168" title="&quot;E3M7: Limbo&quot;" data-ref="_M/HUSTR_E3M7">HUSTR_E3M7</a>,</td></tr>
+<tr><th id="145">145</th><td>    <a class="macro" href="d_englsh.h.html#169" title="&quot;E3M8: Dis&quot;" data-ref="_M/HUSTR_E3M8">HUSTR_E3M8</a>,</td></tr>
+<tr><th id="146">146</th><td>    <a class="macro" href="d_englsh.h.html#170" title="&quot;E3M9: Warrens&quot;" data-ref="_M/HUSTR_E3M9">HUSTR_E3M9</a>,</td></tr>
+<tr><th id="147">147</th><td></td></tr>
+<tr><th id="148">148</th><td>    <a class="macro" href="d_englsh.h.html#172" title="&quot;E4M1: Hell Beneath&quot;" data-ref="_M/HUSTR_E4M1">HUSTR_E4M1</a>,</td></tr>
+<tr><th id="149">149</th><td>    <a class="macro" href="d_englsh.h.html#173" title="&quot;E4M2: Perfect Hatred&quot;" data-ref="_M/HUSTR_E4M2">HUSTR_E4M2</a>,</td></tr>
+<tr><th id="150">150</th><td>    <a class="macro" href="d_englsh.h.html#174" title="&quot;E4M3: Sever The Wicked&quot;" data-ref="_M/HUSTR_E4M3">HUSTR_E4M3</a>,</td></tr>
+<tr><th id="151">151</th><td>    <a class="macro" href="d_englsh.h.html#175" title="&quot;E4M4: Unruly Evil&quot;" data-ref="_M/HUSTR_E4M4">HUSTR_E4M4</a>,</td></tr>
+<tr><th id="152">152</th><td>    <a class="macro" href="d_englsh.h.html#176" title="&quot;E4M5: They Will Repent&quot;" data-ref="_M/HUSTR_E4M5">HUSTR_E4M5</a>,</td></tr>
+<tr><th id="153">153</th><td>    <a class="macro" href="d_englsh.h.html#177" title="&quot;E4M6: Against Thee Wickedly&quot;" data-ref="_M/HUSTR_E4M6">HUSTR_E4M6</a>,</td></tr>
+<tr><th id="154">154</th><td>    <a class="macro" href="d_englsh.h.html#178" title="&quot;E4M7: And Hell Followed&quot;" data-ref="_M/HUSTR_E4M7">HUSTR_E4M7</a>,</td></tr>
+<tr><th id="155">155</th><td>    <a class="macro" href="d_englsh.h.html#179" title="&quot;E4M8: Unto The Cruel&quot;" data-ref="_M/HUSTR_E4M8">HUSTR_E4M8</a>,</td></tr>
+<tr><th id="156">156</th><td>    <a class="macro" href="d_englsh.h.html#180" title="&quot;E4M9: Fear&quot;" data-ref="_M/HUSTR_E4M9">HUSTR_E4M9</a>,</td></tr>
+<tr><th id="157">157</th><td></td></tr>
+<tr><th id="158">158</th><td>    <q>"NEWLEVEL"</q>,</td></tr>
+<tr><th id="159">159</th><td>    <q>"NEWLEVEL"</q>,</td></tr>
+<tr><th id="160">160</th><td>    <q>"NEWLEVEL"</q>,</td></tr>
+<tr><th id="161">161</th><td>    <q>"NEWLEVEL"</q>,</td></tr>
+<tr><th id="162">162</th><td>    <q>"NEWLEVEL"</q>,</td></tr>
+<tr><th id="163">163</th><td>    <q>"NEWLEVEL"</q>,</td></tr>
+<tr><th id="164">164</th><td>    <q>"NEWLEVEL"</q>,</td></tr>
+<tr><th id="165">165</th><td>    <q>"NEWLEVEL"</q>,</td></tr>
+<tr><th id="166">166</th><td>    <q>"NEWLEVEL"</q></td></tr>
+<tr><th id="167">167</th><td>};</td></tr>
+<tr><th id="168">168</th><td></td></tr>
+<tr><th id="169">169</th><td><em>char</em>*	<dfn class="decl def" id="mapnames2" title='mapnames2' data-ref="mapnames2">mapnames2</dfn>[] =	<i>// DOOM 2 map names.</i></td></tr>
+<tr><th id="170">170</th><td>{</td></tr>
+<tr><th id="171">171</th><td>    <a class="macro" href="d_englsh.h.html#182" title="&quot;level 1: entryway&quot;" data-ref="_M/HUSTR_1">HUSTR_1</a>,</td></tr>
+<tr><th id="172">172</th><td>    <a class="macro" href="d_englsh.h.html#183" title="&quot;level 2: underhalls&quot;" data-ref="_M/HUSTR_2">HUSTR_2</a>,</td></tr>
+<tr><th id="173">173</th><td>    <a class="macro" href="d_englsh.h.html#184" title="&quot;level 3: the gantlet&quot;" data-ref="_M/HUSTR_3">HUSTR_3</a>,</td></tr>
+<tr><th id="174">174</th><td>    <a class="macro" href="d_englsh.h.html#185" title="&quot;level 4: the focus&quot;" data-ref="_M/HUSTR_4">HUSTR_4</a>,</td></tr>
+<tr><th id="175">175</th><td>    <a class="macro" href="d_englsh.h.html#186" title="&quot;level 5: the waste tunnels&quot;" data-ref="_M/HUSTR_5">HUSTR_5</a>,</td></tr>
+<tr><th id="176">176</th><td>    <a class="macro" href="d_englsh.h.html#187" title="&quot;level 6: the crusher&quot;" data-ref="_M/HUSTR_6">HUSTR_6</a>,</td></tr>
+<tr><th id="177">177</th><td>    <a class="macro" href="d_englsh.h.html#188" title="&quot;level 7: dead simple&quot;" data-ref="_M/HUSTR_7">HUSTR_7</a>,</td></tr>
+<tr><th id="178">178</th><td>    <a class="macro" href="d_englsh.h.html#189" title="&quot;level 8: tricks and traps&quot;" data-ref="_M/HUSTR_8">HUSTR_8</a>,</td></tr>
+<tr><th id="179">179</th><td>    <a class="macro" href="d_englsh.h.html#190" title="&quot;level 9: the pit&quot;" data-ref="_M/HUSTR_9">HUSTR_9</a>,</td></tr>
+<tr><th id="180">180</th><td>    <a class="macro" href="d_englsh.h.html#191" title="&quot;level 10: refueling base&quot;" data-ref="_M/HUSTR_10">HUSTR_10</a>,</td></tr>
+<tr><th id="181">181</th><td>    <a class="macro" href="d_englsh.h.html#192" title="&quot;level 11: &apos;o&apos; of destruction!&quot;" data-ref="_M/HUSTR_11">HUSTR_11</a>,</td></tr>
+<tr><th id="182">182</th><td>	</td></tr>
+<tr><th id="183">183</th><td>    <a class="macro" href="d_englsh.h.html#194" title="&quot;level 12: the factory&quot;" data-ref="_M/HUSTR_12">HUSTR_12</a>,</td></tr>
+<tr><th id="184">184</th><td>    <a class="macro" href="d_englsh.h.html#195" title="&quot;level 13: downtown&quot;" data-ref="_M/HUSTR_13">HUSTR_13</a>,</td></tr>
+<tr><th id="185">185</th><td>    <a class="macro" href="d_englsh.h.html#196" title="&quot;level 14: the inmost dens&quot;" data-ref="_M/HUSTR_14">HUSTR_14</a>,</td></tr>
+<tr><th id="186">186</th><td>    <a class="macro" href="d_englsh.h.html#197" title="&quot;level 15: industrial zone&quot;" data-ref="_M/HUSTR_15">HUSTR_15</a>,</td></tr>
+<tr><th id="187">187</th><td>    <a class="macro" href="d_englsh.h.html#198" title="&quot;level 16: suburbs&quot;" data-ref="_M/HUSTR_16">HUSTR_16</a>,</td></tr>
+<tr><th id="188">188</th><td>    <a class="macro" href="d_englsh.h.html#199" title="&quot;level 17: tenements&quot;" data-ref="_M/HUSTR_17">HUSTR_17</a>,</td></tr>
+<tr><th id="189">189</th><td>    <a class="macro" href="d_englsh.h.html#200" title="&quot;level 18: the courtyard&quot;" data-ref="_M/HUSTR_18">HUSTR_18</a>,</td></tr>
+<tr><th id="190">190</th><td>    <a class="macro" href="d_englsh.h.html#201" title="&quot;level 19: the citadel&quot;" data-ref="_M/HUSTR_19">HUSTR_19</a>,</td></tr>
+<tr><th id="191">191</th><td>    <a class="macro" href="d_englsh.h.html#202" title="&quot;level 20: gotcha!&quot;" data-ref="_M/HUSTR_20">HUSTR_20</a>,</td></tr>
+<tr><th id="192">192</th><td>	</td></tr>
+<tr><th id="193">193</th><td>    <a class="macro" href="d_englsh.h.html#204" title="&quot;level 21: nirvana&quot;" data-ref="_M/HUSTR_21">HUSTR_21</a>,</td></tr>
+<tr><th id="194">194</th><td>    <a class="macro" href="d_englsh.h.html#205" title="&quot;level 22: the catacombs&quot;" data-ref="_M/HUSTR_22">HUSTR_22</a>,</td></tr>
+<tr><th id="195">195</th><td>    <a class="macro" href="d_englsh.h.html#206" title="&quot;level 23: barrels o&apos; fun&quot;" data-ref="_M/HUSTR_23">HUSTR_23</a>,</td></tr>
+<tr><th id="196">196</th><td>    <a class="macro" href="d_englsh.h.html#207" title="&quot;level 24: the chasm&quot;" data-ref="_M/HUSTR_24">HUSTR_24</a>,</td></tr>
+<tr><th id="197">197</th><td>    <a class="macro" href="d_englsh.h.html#208" title="&quot;level 25: bloodfalls&quot;" data-ref="_M/HUSTR_25">HUSTR_25</a>,</td></tr>
+<tr><th id="198">198</th><td>    <a class="macro" href="d_englsh.h.html#209" title="&quot;level 26: the abandoned mines&quot;" data-ref="_M/HUSTR_26">HUSTR_26</a>,</td></tr>
+<tr><th id="199">199</th><td>    <a class="macro" href="d_englsh.h.html#210" title="&quot;level 27: monster condo&quot;" data-ref="_M/HUSTR_27">HUSTR_27</a>,</td></tr>
+<tr><th id="200">200</th><td>    <a class="macro" href="d_englsh.h.html#211" title="&quot;level 28: the spirit world&quot;" data-ref="_M/HUSTR_28">HUSTR_28</a>,</td></tr>
+<tr><th id="201">201</th><td>    <a class="macro" href="d_englsh.h.html#212" title="&quot;level 29: the living end&quot;" data-ref="_M/HUSTR_29">HUSTR_29</a>,</td></tr>
+<tr><th id="202">202</th><td>    <a class="macro" href="d_englsh.h.html#213" title="&quot;level 30: icon of sin&quot;" data-ref="_M/HUSTR_30">HUSTR_30</a>,</td></tr>
+<tr><th id="203">203</th><td>    <a class="macro" href="d_englsh.h.html#215" title="&quot;level 31: wolfenstein&quot;" data-ref="_M/HUSTR_31">HUSTR_31</a>,</td></tr>
+<tr><th id="204">204</th><td>    <a class="macro" href="d_englsh.h.html#216" title="&quot;level 32: grosse&quot;" data-ref="_M/HUSTR_32">HUSTR_32</a></td></tr>
+<tr><th id="205">205</th><td>};</td></tr>
+<tr><th id="206">206</th><td></td></tr>
+<tr><th id="207">207</th><td></td></tr>
+<tr><th id="208">208</th><td><em>char</em>*	<dfn class="decl def" id="mapnamesp" title='mapnamesp' data-ref="mapnamesp">mapnamesp</dfn>[] =	<i>// Plutonia WAD map names.</i></td></tr>
+<tr><th id="209">209</th><td>{</td></tr>
+<tr><th id="210">210</th><td>    <a class="macro" href="d_englsh.h.html#218" title="&quot;level 1: congo&quot;" data-ref="_M/PHUSTR_1">PHUSTR_1</a>,</td></tr>
+<tr><th id="211">211</th><td>    <a class="macro" href="d_englsh.h.html#219" title="&quot;level 2: well of souls&quot;" data-ref="_M/PHUSTR_2">PHUSTR_2</a>,</td></tr>
+<tr><th id="212">212</th><td>    <a class="macro" href="d_englsh.h.html#220" title="&quot;level 3: aztec&quot;" data-ref="_M/PHUSTR_3">PHUSTR_3</a>,</td></tr>
+<tr><th id="213">213</th><td>    <a class="macro" href="d_englsh.h.html#221" title="&quot;level 4: caged&quot;" data-ref="_M/PHUSTR_4">PHUSTR_4</a>,</td></tr>
+<tr><th id="214">214</th><td>    <a class="macro" href="d_englsh.h.html#222" title="&quot;level 5: ghost town&quot;" data-ref="_M/PHUSTR_5">PHUSTR_5</a>,</td></tr>
+<tr><th id="215">215</th><td>    <a class="macro" href="d_englsh.h.html#223" title="&quot;level 6: baron&apos;s lair&quot;" data-ref="_M/PHUSTR_6">PHUSTR_6</a>,</td></tr>
+<tr><th id="216">216</th><td>    <a class="macro" href="d_englsh.h.html#224" title="&quot;level 7: caughtyard&quot;" data-ref="_M/PHUSTR_7">PHUSTR_7</a>,</td></tr>
+<tr><th id="217">217</th><td>    <a class="macro" href="d_englsh.h.html#225" title="&quot;level 8: realm&quot;" data-ref="_M/PHUSTR_8">PHUSTR_8</a>,</td></tr>
+<tr><th id="218">218</th><td>    <a class="macro" href="d_englsh.h.html#226" title="&quot;level 9: abattoire&quot;" data-ref="_M/PHUSTR_9">PHUSTR_9</a>,</td></tr>
+<tr><th id="219">219</th><td>    <a class="macro" href="d_englsh.h.html#227" title="&quot;level 10: onslaught&quot;" data-ref="_M/PHUSTR_10">PHUSTR_10</a>,</td></tr>
+<tr><th id="220">220</th><td>    <a class="macro" href="d_englsh.h.html#228" title="&quot;level 11: hunted&quot;" data-ref="_M/PHUSTR_11">PHUSTR_11</a>,</td></tr>
+<tr><th id="221">221</th><td>	</td></tr>
+<tr><th id="222">222</th><td>    <a class="macro" href="d_englsh.h.html#230" title="&quot;level 12: speed&quot;" data-ref="_M/PHUSTR_12">PHUSTR_12</a>,</td></tr>
+<tr><th id="223">223</th><td>    <a class="macro" href="d_englsh.h.html#231" title="&quot;level 13: the crypt&quot;" data-ref="_M/PHUSTR_13">PHUSTR_13</a>,</td></tr>
+<tr><th id="224">224</th><td>    <a class="macro" href="d_englsh.h.html#232" title="&quot;level 14: genesis&quot;" data-ref="_M/PHUSTR_14">PHUSTR_14</a>,</td></tr>
+<tr><th id="225">225</th><td>    <a class="macro" href="d_englsh.h.html#233" title="&quot;level 15: the twilight&quot;" data-ref="_M/PHUSTR_15">PHUSTR_15</a>,</td></tr>
+<tr><th id="226">226</th><td>    <a class="macro" href="d_englsh.h.html#234" title="&quot;level 16: the omen&quot;" data-ref="_M/PHUSTR_16">PHUSTR_16</a>,</td></tr>
+<tr><th id="227">227</th><td>    <a class="macro" href="d_englsh.h.html#235" title="&quot;level 17: compound&quot;" data-ref="_M/PHUSTR_17">PHUSTR_17</a>,</td></tr>
+<tr><th id="228">228</th><td>    <a class="macro" href="d_englsh.h.html#236" title="&quot;level 18: neurosphere&quot;" data-ref="_M/PHUSTR_18">PHUSTR_18</a>,</td></tr>
+<tr><th id="229">229</th><td>    <a class="macro" href="d_englsh.h.html#237" title="&quot;level 19: nme&quot;" data-ref="_M/PHUSTR_19">PHUSTR_19</a>,</td></tr>
+<tr><th id="230">230</th><td>    <a class="macro" href="d_englsh.h.html#238" title="&quot;level 20: the death domain&quot;" data-ref="_M/PHUSTR_20">PHUSTR_20</a>,</td></tr>
+<tr><th id="231">231</th><td>	</td></tr>
+<tr><th id="232">232</th><td>    <a class="macro" href="d_englsh.h.html#240" title="&quot;level 21: slayer&quot;" data-ref="_M/PHUSTR_21">PHUSTR_21</a>,</td></tr>
+<tr><th id="233">233</th><td>    <a class="macro" href="d_englsh.h.html#241" title="&quot;level 22: impossible mission&quot;" data-ref="_M/PHUSTR_22">PHUSTR_22</a>,</td></tr>
+<tr><th id="234">234</th><td>    <a class="macro" href="d_englsh.h.html#242" title="&quot;level 23: tombstone&quot;" data-ref="_M/PHUSTR_23">PHUSTR_23</a>,</td></tr>
+<tr><th id="235">235</th><td>    <a class="macro" href="d_englsh.h.html#243" title="&quot;level 24: the final frontier&quot;" data-ref="_M/PHUSTR_24">PHUSTR_24</a>,</td></tr>
+<tr><th id="236">236</th><td>    <a class="macro" href="d_englsh.h.html#244" title="&quot;level 25: the temple of darkness&quot;" data-ref="_M/PHUSTR_25">PHUSTR_25</a>,</td></tr>
+<tr><th id="237">237</th><td>    <a class="macro" href="d_englsh.h.html#245" title="&quot;level 26: bunker&quot;" data-ref="_M/PHUSTR_26">PHUSTR_26</a>,</td></tr>
+<tr><th id="238">238</th><td>    <a class="macro" href="d_englsh.h.html#246" title="&quot;level 27: anti-christ&quot;" data-ref="_M/PHUSTR_27">PHUSTR_27</a>,</td></tr>
+<tr><th id="239">239</th><td>    <a class="macro" href="d_englsh.h.html#247" title="&quot;level 28: the sewers&quot;" data-ref="_M/PHUSTR_28">PHUSTR_28</a>,</td></tr>
+<tr><th id="240">240</th><td>    <a class="macro" href="d_englsh.h.html#248" title="&quot;level 29: odyssey of noises&quot;" data-ref="_M/PHUSTR_29">PHUSTR_29</a>,</td></tr>
+<tr><th id="241">241</th><td>    <a class="macro" href="d_englsh.h.html#249" title="&quot;level 30: the gateway of hell&quot;" data-ref="_M/PHUSTR_30">PHUSTR_30</a>,</td></tr>
+<tr><th id="242">242</th><td>    <a class="macro" href="d_englsh.h.html#251" title="&quot;level 31: cyberden&quot;" data-ref="_M/PHUSTR_31">PHUSTR_31</a>,</td></tr>
+<tr><th id="243">243</th><td>    <a class="macro" href="d_englsh.h.html#252" title="&quot;level 32: go 2 it&quot;" data-ref="_M/PHUSTR_32">PHUSTR_32</a></td></tr>
+<tr><th id="244">244</th><td>};</td></tr>
+<tr><th id="245">245</th><td></td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td><em>char</em> *<dfn class="decl def" id="mapnamest" title='mapnamest' data-ref="mapnamest">mapnamest</dfn>[] =	<i>// TNT WAD map names.</i></td></tr>
+<tr><th id="248">248</th><td>{</td></tr>
+<tr><th id="249">249</th><td>    <a class="macro" href="d_englsh.h.html#254" title="&quot;level 1: system control&quot;" data-ref="_M/THUSTR_1">THUSTR_1</a>,</td></tr>
+<tr><th id="250">250</th><td>    <a class="macro" href="d_englsh.h.html#255" title="&quot;level 2: human bbq&quot;" data-ref="_M/THUSTR_2">THUSTR_2</a>,</td></tr>
+<tr><th id="251">251</th><td>    <a class="macro" href="d_englsh.h.html#256" title="&quot;level 3: power control&quot;" data-ref="_M/THUSTR_3">THUSTR_3</a>,</td></tr>
+<tr><th id="252">252</th><td>    <a class="macro" href="d_englsh.h.html#257" title="&quot;level 4: wormhole&quot;" data-ref="_M/THUSTR_4">THUSTR_4</a>,</td></tr>
+<tr><th id="253">253</th><td>    <a class="macro" href="d_englsh.h.html#258" title="&quot;level 5: hanger&quot;" data-ref="_M/THUSTR_5">THUSTR_5</a>,</td></tr>
+<tr><th id="254">254</th><td>    <a class="macro" href="d_englsh.h.html#259" title="&quot;level 6: open season&quot;" data-ref="_M/THUSTR_6">THUSTR_6</a>,</td></tr>
+<tr><th id="255">255</th><td>    <a class="macro" href="d_englsh.h.html#260" title="&quot;level 7: prison&quot;" data-ref="_M/THUSTR_7">THUSTR_7</a>,</td></tr>
+<tr><th id="256">256</th><td>    <a class="macro" href="d_englsh.h.html#261" title="&quot;level 8: metal&quot;" data-ref="_M/THUSTR_8">THUSTR_8</a>,</td></tr>
+<tr><th id="257">257</th><td>    <a class="macro" href="d_englsh.h.html#262" title="&quot;level 9: stronghold&quot;" data-ref="_M/THUSTR_9">THUSTR_9</a>,</td></tr>
+<tr><th id="258">258</th><td>    <a class="macro" href="d_englsh.h.html#263" title="&quot;level 10: redemption&quot;" data-ref="_M/THUSTR_10">THUSTR_10</a>,</td></tr>
+<tr><th id="259">259</th><td>    <a class="macro" href="d_englsh.h.html#264" title="&quot;level 11: storage facility&quot;" data-ref="_M/THUSTR_11">THUSTR_11</a>,</td></tr>
+<tr><th id="260">260</th><td>	</td></tr>
+<tr><th id="261">261</th><td>    <a class="macro" href="d_englsh.h.html#266" title="&quot;level 12: crater&quot;" data-ref="_M/THUSTR_12">THUSTR_12</a>,</td></tr>
+<tr><th id="262">262</th><td>    <a class="macro" href="d_englsh.h.html#267" title="&quot;level 13: nukage processing&quot;" data-ref="_M/THUSTR_13">THUSTR_13</a>,</td></tr>
+<tr><th id="263">263</th><td>    <a class="macro" href="d_englsh.h.html#268" title="&quot;level 14: steel works&quot;" data-ref="_M/THUSTR_14">THUSTR_14</a>,</td></tr>
+<tr><th id="264">264</th><td>    <a class="macro" href="d_englsh.h.html#269" title="&quot;level 15: dead zone&quot;" data-ref="_M/THUSTR_15">THUSTR_15</a>,</td></tr>
+<tr><th id="265">265</th><td>    <a class="macro" href="d_englsh.h.html#270" title="&quot;level 16: deepest reaches&quot;" data-ref="_M/THUSTR_16">THUSTR_16</a>,</td></tr>
+<tr><th id="266">266</th><td>    <a class="macro" href="d_englsh.h.html#271" title="&quot;level 17: processing area&quot;" data-ref="_M/THUSTR_17">THUSTR_17</a>,</td></tr>
+<tr><th id="267">267</th><td>    <a class="macro" href="d_englsh.h.html#272" title="&quot;level 18: mill&quot;" data-ref="_M/THUSTR_18">THUSTR_18</a>,</td></tr>
+<tr><th id="268">268</th><td>    <a class="macro" href="d_englsh.h.html#273" title="&quot;level 19: shipping/respawning&quot;" data-ref="_M/THUSTR_19">THUSTR_19</a>,</td></tr>
+<tr><th id="269">269</th><td>    <a class="macro" href="d_englsh.h.html#274" title="&quot;level 20: central processing&quot;" data-ref="_M/THUSTR_20">THUSTR_20</a>,</td></tr>
+<tr><th id="270">270</th><td>	</td></tr>
+<tr><th id="271">271</th><td>    <a class="macro" href="d_englsh.h.html#276" title="&quot;level 21: administration center&quot;" data-ref="_M/THUSTR_21">THUSTR_21</a>,</td></tr>
+<tr><th id="272">272</th><td>    <a class="macro" href="d_englsh.h.html#277" title="&quot;level 22: habitat&quot;" data-ref="_M/THUSTR_22">THUSTR_22</a>,</td></tr>
+<tr><th id="273">273</th><td>    <a class="macro" href="d_englsh.h.html#278" title="&quot;level 23: lunar mining project&quot;" data-ref="_M/THUSTR_23">THUSTR_23</a>,</td></tr>
+<tr><th id="274">274</th><td>    <a class="macro" href="d_englsh.h.html#279" title="&quot;level 24: quarry&quot;" data-ref="_M/THUSTR_24">THUSTR_24</a>,</td></tr>
+<tr><th id="275">275</th><td>    <a class="macro" href="d_englsh.h.html#280" title="&quot;level 25: baron&apos;s den&quot;" data-ref="_M/THUSTR_25">THUSTR_25</a>,</td></tr>
+<tr><th id="276">276</th><td>    <a class="macro" href="d_englsh.h.html#281" title="&quot;level 26: ballistyx&quot;" data-ref="_M/THUSTR_26">THUSTR_26</a>,</td></tr>
+<tr><th id="277">277</th><td>    <a class="macro" href="d_englsh.h.html#282" title="&quot;level 27: mount pain&quot;" data-ref="_M/THUSTR_27">THUSTR_27</a>,</td></tr>
+<tr><th id="278">278</th><td>    <a class="macro" href="d_englsh.h.html#283" title="&quot;level 28: heck&quot;" data-ref="_M/THUSTR_28">THUSTR_28</a>,</td></tr>
+<tr><th id="279">279</th><td>    <a class="macro" href="d_englsh.h.html#284" title="&quot;level 29: river styx&quot;" data-ref="_M/THUSTR_29">THUSTR_29</a>,</td></tr>
+<tr><th id="280">280</th><td>    <a class="macro" href="d_englsh.h.html#285" title="&quot;level 30: last call&quot;" data-ref="_M/THUSTR_30">THUSTR_30</a>,</td></tr>
+<tr><th id="281">281</th><td>    <a class="macro" href="d_englsh.h.html#287" title="&quot;level 31: pharaoh&quot;" data-ref="_M/THUSTR_31">THUSTR_31</a>,</td></tr>
+<tr><th id="282">282</th><td>    <a class="macro" href="d_englsh.h.html#288" title="&quot;level 32: caribbean&quot;" data-ref="_M/THUSTR_32">THUSTR_32</a></td></tr>
+<tr><th id="283">283</th><td>};</td></tr>
+<tr><th id="284">284</th><td></td></tr>
+<tr><th id="285">285</th><td></td></tr>
+<tr><th id="286">286</th><td><em>const</em> <em>char</em>*	<dfn class="decl def" id="shiftxform" title='shiftxform' data-ref="shiftxform">shiftxform</dfn>;</td></tr>
+<tr><th id="287">287</th><td></td></tr>
+<tr><th id="288">288</th><td><em>const</em> <em>char</em> <dfn class="decl def" id="french_shiftxform" title='french_shiftxform' data-ref="french_shiftxform">french_shiftxform</dfn>[] =</td></tr>
+<tr><th id="289">289</th><td>{</td></tr>
+<tr><th id="290">290</th><td>    <var>0</var>,</td></tr>
+<tr><th id="291">291</th><td>    <var>1</var>, <var>2</var>, <var>3</var>, <var>4</var>, <var>5</var>, <var>6</var>, <var>7</var>, <var>8</var>, <var>9</var>, <var>10</var>,</td></tr>
+<tr><th id="292">292</th><td>    <var>11</var>, <var>12</var>, <var>13</var>, <var>14</var>, <var>15</var>, <var>16</var>, <var>17</var>, <var>18</var>, <var>19</var>, <var>20</var>,</td></tr>
+<tr><th id="293">293</th><td>    <var>21</var>, <var>22</var>, <var>23</var>, <var>24</var>, <var>25</var>, <var>26</var>, <var>27</var>, <var>28</var>, <var>29</var>, <var>30</var>,</td></tr>
+<tr><th id="294">294</th><td>    <var>31</var>,</td></tr>
+<tr><th id="295">295</th><td>    <kbd>' '</kbd>, <kbd>'!'</kbd>, <kbd>'"'</kbd>, <kbd>'#'</kbd>, <kbd>'$'</kbd>, <kbd>'%'</kbd>, <kbd>'&amp;'</kbd>,</td></tr>
+<tr><th id="296">296</th><td>    <kbd>'"'</kbd>, <i>// shift-'</i></td></tr>
+<tr><th id="297">297</th><td>    <kbd>'('</kbd>, <kbd>')'</kbd>, <kbd>'*'</kbd>, <kbd>'+'</kbd>,</td></tr>
+<tr><th id="298">298</th><td>    <kbd>'?'</kbd>, <i>// shift-,</i></td></tr>
+<tr><th id="299">299</th><td>    <kbd>'_'</kbd>, <i>// shift--</i></td></tr>
+<tr><th id="300">300</th><td>    <kbd>'&gt;'</kbd>, <i>// shift-.</i></td></tr>
+<tr><th id="301">301</th><td>    <kbd>'?'</kbd>, <i>// shift-/</i></td></tr>
+<tr><th id="302">302</th><td>    <kbd>'0'</kbd>, <i>// shift-0</i></td></tr>
+<tr><th id="303">303</th><td>    <kbd>'1'</kbd>, <i>// shift-1</i></td></tr>
+<tr><th id="304">304</th><td>    <kbd>'2'</kbd>, <i>// shift-2</i></td></tr>
+<tr><th id="305">305</th><td>    <kbd>'3'</kbd>, <i>// shift-3</i></td></tr>
+<tr><th id="306">306</th><td>    <kbd>'4'</kbd>, <i>// shift-4</i></td></tr>
+<tr><th id="307">307</th><td>    <kbd>'5'</kbd>, <i>// shift-5</i></td></tr>
+<tr><th id="308">308</th><td>    <kbd>'6'</kbd>, <i>// shift-6</i></td></tr>
+<tr><th id="309">309</th><td>    <kbd>'7'</kbd>, <i>// shift-7</i></td></tr>
+<tr><th id="310">310</th><td>    <kbd>'8'</kbd>, <i>// shift-8</i></td></tr>
+<tr><th id="311">311</th><td>    <kbd>'9'</kbd>, <i>// shift-9</i></td></tr>
+<tr><th id="312">312</th><td>    <kbd>'/'</kbd>,</td></tr>
+<tr><th id="313">313</th><td>    <kbd>'.'</kbd>, <i>// shift-;</i></td></tr>
+<tr><th id="314">314</th><td>    <kbd>'&lt;'</kbd>,</td></tr>
+<tr><th id="315">315</th><td>    <kbd>'+'</kbd>, <i>// shift-=</i></td></tr>
+<tr><th id="316">316</th><td>    <kbd>'&gt;'</kbd>, <kbd>'?'</kbd>, <kbd>'@'</kbd>,</td></tr>
+<tr><th id="317">317</th><td>    <kbd>'A'</kbd>, <kbd>'B'</kbd>, <kbd>'C'</kbd>, <kbd>'D'</kbd>, <kbd>'E'</kbd>, <kbd>'F'</kbd>, <kbd>'G'</kbd>, <kbd>'H'</kbd>, <kbd>'I'</kbd>, <kbd>'J'</kbd>, <kbd>'K'</kbd>, <kbd>'L'</kbd>, <kbd>'M'</kbd>, <kbd>'N'</kbd>,</td></tr>
+<tr><th id="318">318</th><td>    <kbd>'O'</kbd>, <kbd>'P'</kbd>, <kbd>'Q'</kbd>, <kbd>'R'</kbd>, <kbd>'S'</kbd>, <kbd>'T'</kbd>, <kbd>'U'</kbd>, <kbd>'V'</kbd>, <kbd>'W'</kbd>, <kbd>'X'</kbd>, <kbd>'Y'</kbd>, <kbd>'Z'</kbd>,</td></tr>
+<tr><th id="319">319</th><td>    <kbd>'['</kbd>, <i>// shift-[</i></td></tr>
+<tr><th id="320">320</th><td>    <kbd>'!'</kbd>, <i>// shift-backslash - OH MY GOD DOES WATCOM SUCK</i></td></tr>
+<tr><th id="321">321</th><td>    <kbd>']'</kbd>, <i>// shift-]</i></td></tr>
+<tr><th id="322">322</th><td>    <kbd>'"'</kbd>, <kbd>'_'</kbd>,</td></tr>
+<tr><th id="323">323</th><td>    <kbd>'\''</kbd>, <i>// shift-`</i></td></tr>
+<tr><th id="324">324</th><td>    <kbd>'A'</kbd>, <kbd>'B'</kbd>, <kbd>'C'</kbd>, <kbd>'D'</kbd>, <kbd>'E'</kbd>, <kbd>'F'</kbd>, <kbd>'G'</kbd>, <kbd>'H'</kbd>, <kbd>'I'</kbd>, <kbd>'J'</kbd>, <kbd>'K'</kbd>, <kbd>'L'</kbd>, <kbd>'M'</kbd>, <kbd>'N'</kbd>,</td></tr>
+<tr><th id="325">325</th><td>    <kbd>'O'</kbd>, <kbd>'P'</kbd>, <kbd>'Q'</kbd>, <kbd>'R'</kbd>, <kbd>'S'</kbd>, <kbd>'T'</kbd>, <kbd>'U'</kbd>, <kbd>'V'</kbd>, <kbd>'W'</kbd>, <kbd>'X'</kbd>, <kbd>'Y'</kbd>, <kbd>'Z'</kbd>,</td></tr>
+<tr><th id="326">326</th><td>    <kbd>'{'</kbd>, <kbd>'|'</kbd>, <kbd>'}'</kbd>, <kbd>'~'</kbd>, <var>127</var></td></tr>
+<tr><th id="327">327</th><td></td></tr>
+<tr><th id="328">328</th><td>};</td></tr>
+<tr><th id="329">329</th><td></td></tr>
+<tr><th id="330">330</th><td><em>const</em> <em>char</em> <dfn class="decl def" id="english_shiftxform" title='english_shiftxform' data-ref="english_shiftxform">english_shiftxform</dfn>[] =</td></tr>
+<tr><th id="331">331</th><td>{</td></tr>
+<tr><th id="332">332</th><td></td></tr>
+<tr><th id="333">333</th><td>    <var>0</var>,</td></tr>
+<tr><th id="334">334</th><td>    <var>1</var>, <var>2</var>, <var>3</var>, <var>4</var>, <var>5</var>, <var>6</var>, <var>7</var>, <var>8</var>, <var>9</var>, <var>10</var>,</td></tr>
+<tr><th id="335">335</th><td>    <var>11</var>, <var>12</var>, <var>13</var>, <var>14</var>, <var>15</var>, <var>16</var>, <var>17</var>, <var>18</var>, <var>19</var>, <var>20</var>,</td></tr>
+<tr><th id="336">336</th><td>    <var>21</var>, <var>22</var>, <var>23</var>, <var>24</var>, <var>25</var>, <var>26</var>, <var>27</var>, <var>28</var>, <var>29</var>, <var>30</var>,</td></tr>
+<tr><th id="337">337</th><td>    <var>31</var>,</td></tr>
+<tr><th id="338">338</th><td>    <kbd>' '</kbd>, <kbd>'!'</kbd>, <kbd>'"'</kbd>, <kbd>'#'</kbd>, <kbd>'$'</kbd>, <kbd>'%'</kbd>, <kbd>'&amp;'</kbd>,</td></tr>
+<tr><th id="339">339</th><td>    <kbd>'"'</kbd>, <i>// shift-'</i></td></tr>
+<tr><th id="340">340</th><td>    <kbd>'('</kbd>, <kbd>')'</kbd>, <kbd>'*'</kbd>, <kbd>'+'</kbd>,</td></tr>
+<tr><th id="341">341</th><td>    <kbd>'&lt;'</kbd>, <i>// shift-,</i></td></tr>
+<tr><th id="342">342</th><td>    <kbd>'_'</kbd>, <i>// shift--</i></td></tr>
+<tr><th id="343">343</th><td>    <kbd>'&gt;'</kbd>, <i>// shift-.</i></td></tr>
+<tr><th id="344">344</th><td>    <kbd>'?'</kbd>, <i>// shift-/</i></td></tr>
+<tr><th id="345">345</th><td>    <kbd>')'</kbd>, <i>// shift-0</i></td></tr>
+<tr><th id="346">346</th><td>    <kbd>'!'</kbd>, <i>// shift-1</i></td></tr>
+<tr><th id="347">347</th><td>    <kbd>'@'</kbd>, <i>// shift-2</i></td></tr>
+<tr><th id="348">348</th><td>    <kbd>'#'</kbd>, <i>// shift-3</i></td></tr>
+<tr><th id="349">349</th><td>    <kbd>'$'</kbd>, <i>// shift-4</i></td></tr>
+<tr><th id="350">350</th><td>    <kbd>'%'</kbd>, <i>// shift-5</i></td></tr>
+<tr><th id="351">351</th><td>    <kbd>'^'</kbd>, <i>// shift-6</i></td></tr>
+<tr><th id="352">352</th><td>    <kbd>'&amp;'</kbd>, <i>// shift-7</i></td></tr>
+<tr><th id="353">353</th><td>    <kbd>'*'</kbd>, <i>// shift-8</i></td></tr>
+<tr><th id="354">354</th><td>    <kbd>'('</kbd>, <i>// shift-9</i></td></tr>
+<tr><th id="355">355</th><td>    <kbd>':'</kbd>,</td></tr>
+<tr><th id="356">356</th><td>    <kbd>':'</kbd>, <i>// shift-;</i></td></tr>
+<tr><th id="357">357</th><td>    <kbd>'&lt;'</kbd>,</td></tr>
+<tr><th id="358">358</th><td>    <kbd>'+'</kbd>, <i>// shift-=</i></td></tr>
+<tr><th id="359">359</th><td>    <kbd>'&gt;'</kbd>, <kbd>'?'</kbd>, <kbd>'@'</kbd>,</td></tr>
+<tr><th id="360">360</th><td>    <kbd>'A'</kbd>, <kbd>'B'</kbd>, <kbd>'C'</kbd>, <kbd>'D'</kbd>, <kbd>'E'</kbd>, <kbd>'F'</kbd>, <kbd>'G'</kbd>, <kbd>'H'</kbd>, <kbd>'I'</kbd>, <kbd>'J'</kbd>, <kbd>'K'</kbd>, <kbd>'L'</kbd>, <kbd>'M'</kbd>, <kbd>'N'</kbd>,</td></tr>
+<tr><th id="361">361</th><td>    <kbd>'O'</kbd>, <kbd>'P'</kbd>, <kbd>'Q'</kbd>, <kbd>'R'</kbd>, <kbd>'S'</kbd>, <kbd>'T'</kbd>, <kbd>'U'</kbd>, <kbd>'V'</kbd>, <kbd>'W'</kbd>, <kbd>'X'</kbd>, <kbd>'Y'</kbd>, <kbd>'Z'</kbd>,</td></tr>
+<tr><th id="362">362</th><td>    <kbd>'['</kbd>, <i>// shift-[</i></td></tr>
+<tr><th id="363">363</th><td>    <kbd>'!'</kbd>, <i>// shift-backslash - OH MY GOD DOES WATCOM SUCK</i></td></tr>
+<tr><th id="364">364</th><td>    <kbd>']'</kbd>, <i>// shift-]</i></td></tr>
+<tr><th id="365">365</th><td>    <kbd>'"'</kbd>, <kbd>'_'</kbd>,</td></tr>
+<tr><th id="366">366</th><td>    <kbd>'\''</kbd>, <i>// shift-`</i></td></tr>
+<tr><th id="367">367</th><td>    <kbd>'A'</kbd>, <kbd>'B'</kbd>, <kbd>'C'</kbd>, <kbd>'D'</kbd>, <kbd>'E'</kbd>, <kbd>'F'</kbd>, <kbd>'G'</kbd>, <kbd>'H'</kbd>, <kbd>'I'</kbd>, <kbd>'J'</kbd>, <kbd>'K'</kbd>, <kbd>'L'</kbd>, <kbd>'M'</kbd>, <kbd>'N'</kbd>,</td></tr>
+<tr><th id="368">368</th><td>    <kbd>'O'</kbd>, <kbd>'P'</kbd>, <kbd>'Q'</kbd>, <kbd>'R'</kbd>, <kbd>'S'</kbd>, <kbd>'T'</kbd>, <kbd>'U'</kbd>, <kbd>'V'</kbd>, <kbd>'W'</kbd>, <kbd>'X'</kbd>, <kbd>'Y'</kbd>, <kbd>'Z'</kbd>,</td></tr>
+<tr><th id="369">369</th><td>    <kbd>'{'</kbd>, <kbd>'|'</kbd>, <kbd>'}'</kbd>, <kbd>'~'</kbd>, <var>127</var></td></tr>
+<tr><th id="370">370</th><td>};</td></tr>
+<tr><th id="371">371</th><td></td></tr>
+<tr><th id="372">372</th><td><em>char</em> <dfn class="decl def" id="frenchKeyMap" title='frenchKeyMap' data-ref="frenchKeyMap">frenchKeyMap</dfn>[<var>128</var>]=</td></tr>
+<tr><th id="373">373</th><td>{</td></tr>
+<tr><th id="374">374</th><td>    <var>0</var>,</td></tr>
+<tr><th id="375">375</th><td>    <var>1</var>,<var>2</var>,<var>3</var>,<var>4</var>,<var>5</var>,<var>6</var>,<var>7</var>,<var>8</var>,<var>9</var>,<var>10</var>,</td></tr>
+<tr><th id="376">376</th><td>    <var>11</var>,<var>12</var>,<var>13</var>,<var>14</var>,<var>15</var>,<var>16</var>,<var>17</var>,<var>18</var>,<var>19</var>,<var>20</var>,</td></tr>
+<tr><th id="377">377</th><td>    <var>21</var>,<var>22</var>,<var>23</var>,<var>24</var>,<var>25</var>,<var>26</var>,<var>27</var>,<var>28</var>,<var>29</var>,<var>30</var>,</td></tr>
+<tr><th id="378">378</th><td>    <var>31</var>,</td></tr>
+<tr><th id="379">379</th><td>    <kbd>' '</kbd>,<kbd>'!'</kbd>,<kbd>'"'</kbd>,<kbd>'#'</kbd>,<kbd>'$'</kbd>,<kbd>'%'</kbd>,<kbd>'&amp;'</kbd>,<kbd>'%'</kbd>,<kbd>'('</kbd>,<kbd>')'</kbd>,<kbd>'*'</kbd>,<kbd>'+'</kbd>,<kbd>';'</kbd>,<kbd>'-'</kbd>,<kbd>':'</kbd>,<kbd>'!'</kbd>,</td></tr>
+<tr><th id="380">380</th><td>    <kbd>'0'</kbd>,<kbd>'1'</kbd>,<kbd>'2'</kbd>,<kbd>'3'</kbd>,<kbd>'4'</kbd>,<kbd>'5'</kbd>,<kbd>'6'</kbd>,<kbd>'7'</kbd>,<kbd>'8'</kbd>,<kbd>'9'</kbd>,<kbd>':'</kbd>,<kbd>'M'</kbd>,<kbd>'&lt;'</kbd>,<kbd>'='</kbd>,<kbd>'&gt;'</kbd>,<kbd>'?'</kbd>,</td></tr>
+<tr><th id="381">381</th><td>    <kbd>'@'</kbd>,<kbd>'Q'</kbd>,<kbd>'B'</kbd>,<kbd>'C'</kbd>,<kbd>'D'</kbd>,<kbd>'E'</kbd>,<kbd>'F'</kbd>,<kbd>'G'</kbd>,<kbd>'H'</kbd>,<kbd>'I'</kbd>,<kbd>'J'</kbd>,<kbd>'K'</kbd>,<kbd>'L'</kbd>,<kbd>','</kbd>,<kbd>'N'</kbd>,<kbd>'O'</kbd>,</td></tr>
+<tr><th id="382">382</th><td>    <kbd>'P'</kbd>,<kbd>'A'</kbd>,<kbd>'R'</kbd>,<kbd>'S'</kbd>,<kbd>'T'</kbd>,<kbd>'U'</kbd>,<kbd>'V'</kbd>,<kbd>'Z'</kbd>,<kbd>'X'</kbd>,<kbd>'Y'</kbd>,<kbd>'W'</kbd>,<kbd>'^'</kbd>,<kbd>'\\'</kbd>,<kbd>'$'</kbd>,<kbd>'^'</kbd>,<kbd>'_'</kbd>,</td></tr>
+<tr><th id="383">383</th><td>    <kbd>'@'</kbd>,<kbd>'Q'</kbd>,<kbd>'B'</kbd>,<kbd>'C'</kbd>,<kbd>'D'</kbd>,<kbd>'E'</kbd>,<kbd>'F'</kbd>,<kbd>'G'</kbd>,<kbd>'H'</kbd>,<kbd>'I'</kbd>,<kbd>'J'</kbd>,<kbd>'K'</kbd>,<kbd>'L'</kbd>,<kbd>','</kbd>,<kbd>'N'</kbd>,<kbd>'O'</kbd>,</td></tr>
+<tr><th id="384">384</th><td>    <kbd>'P'</kbd>,<kbd>'A'</kbd>,<kbd>'R'</kbd>,<kbd>'S'</kbd>,<kbd>'T'</kbd>,<kbd>'U'</kbd>,<kbd>'V'</kbd>,<kbd>'Z'</kbd>,<kbd>'X'</kbd>,<kbd>'Y'</kbd>,<kbd>'W'</kbd>,<kbd>'^'</kbd>,<kbd>'\\'</kbd>,<kbd>'$'</kbd>,<kbd>'^'</kbd>,<var>127</var></td></tr>
+<tr><th id="385">385</th><td>};</td></tr>
+<tr><th id="386">386</th><td></td></tr>
+<tr><th id="387">387</th><td><em>char</em> <dfn class="decl def" id="ForeignTranslation" title='ForeignTranslation' data-ref="ForeignTranslation">ForeignTranslation</dfn>(<em>unsigned</em> <em>char</em> <dfn class="local col1 decl" id="1ch" title='ch' data-type='unsigned char' data-ref="1ch">ch</dfn>)</td></tr>
+<tr><th id="388">388</th><td>{</td></tr>
+<tr><th id="389">389</th><td>    <b>return</b> <a class="local col1 ref" href="#1ch" title='ch' data-ref="1ch">ch</a> &lt; <var>128</var> ? <a class="ref" href="#frenchKeyMap" title='frenchKeyMap' data-ref="frenchKeyMap">frenchKeyMap</a>[<a class="local col1 ref" href="#1ch" title='ch' data-ref="1ch">ch</a>] : <a class="local col1 ref" href="#1ch" title='ch' data-ref="1ch">ch</a>;</td></tr>
+<tr><th id="390">390</th><td>}</td></tr>
+<tr><th id="391">391</th><td></td></tr>
+<tr><th id="392">392</th><td><em>void</em> <dfn class="decl def" id="HU_Init" title='HU_Init' data-ref="HU_Init">HU_Init</dfn>(<em>void</em>)</td></tr>
+<tr><th id="393">393</th><td>{</td></tr>
+<tr><th id="394">394</th><td></td></tr>
+<tr><th id="395">395</th><td>    <em>int</em>		<dfn class="local col2 decl" id="2i" title='i' data-type='int' data-ref="2i">i</dfn>;</td></tr>
+<tr><th id="396">396</th><td>    <em>int</em>		<dfn class="local col3 decl" id="3j" title='j' data-type='int' data-ref="3j">j</dfn>;</td></tr>
+<tr><th id="397">397</th><td>    <em>char</em>	<dfn class="local col4 decl" id="4buffer" title='buffer' data-type='char [9]' data-ref="4buffer">buffer</dfn>[<var>9</var>];</td></tr>
+<tr><th id="398">398</th><td></td></tr>
+<tr><th id="399">399</th><td>    <b>if</b> (<a class="enum" href="doomdef.h.html#french" title='french' data-ref="french">french</a>)</td></tr>
+<tr><th id="400">400</th><td>	<a class="ref" href="#shiftxform" title='shiftxform' data-ref="shiftxform">shiftxform</a> = <a class="ref" href="#french_shiftxform" title='french_shiftxform' data-ref="french_shiftxform">french_shiftxform</a>;</td></tr>
+<tr><th id="401">401</th><td>    <b>else</b></td></tr>
+<tr><th id="402">402</th><td>	<a class="ref" href="#shiftxform" title='shiftxform' data-ref="shiftxform">shiftxform</a> = <a class="ref" href="#english_shiftxform" title='english_shiftxform' data-ref="english_shiftxform">english_shiftxform</a>;</td></tr>
+<tr><th id="403">403</th><td></td></tr>
+<tr><th id="404">404</th><td>    <i>// load the heads-up font</i></td></tr>
+<tr><th id="405">405</th><td>    <a class="local col3 ref" href="#3j" title='j' data-ref="3j">j</a> = <a class="macro" href="hu_stuff.h.html#30" title="&apos;!&apos;" data-ref="_M/HU_FONTSTART">HU_FONTSTART</a>;</td></tr>
+<tr><th id="406">406</th><td>    <b>for</b> (<a class="local col2 ref" href="#2i" title='i' data-ref="2i">i</a>=<var>0</var>;<a class="local col2 ref" href="#2i" title='i' data-ref="2i">i</a>&lt;<a class="macro" href="hu_stuff.h.html#34" title="(&apos;_&apos; - &apos;!&apos; + 1)" data-ref="_M/HU_FONTSIZE">HU_FONTSIZE</a>;<a class="local col2 ref" href="#2i" title='i' data-ref="2i">i</a>++)</td></tr>
+<tr><th id="407">407</th><td>    {</td></tr>
+<tr><th id="408">408</th><td>	<a class="ref" href="../include/stdio.h.html#sprintf" title='sprintf' data-ref="sprintf">sprintf</a>(<a class="local col4 ref" href="#4buffer" title='buffer' data-ref="4buffer">buffer</a>, <q>"STCFN%.3d"</q>, <a class="local col3 ref" href="#3j" title='j' data-ref="3j">j</a>++);</td></tr>
+<tr><th id="409">409</th><td>	<a class="ref" href="#hu_font" title='hu_font' data-ref="hu_font">hu_font</a>[<a class="local col2 ref" href="#2i" title='i' data-ref="2i">i</a>] = (<a class="typedef" href="r_defs.h.html#patch_t" title='patch_t' data-type='struct patch_t' data-ref="patch_t">patch_t</a> *) <a class="ref" href="w_wad.h.html#W_CacheLumpName" title='W_CacheLumpName' data-ref="W_CacheLumpName">W_CacheLumpName</a>(<a class="local col4 ref" href="#4buffer" title='buffer' data-ref="4buffer">buffer</a>, <a class="macro" href="z_zone.h.html#36" title="1" data-ref="_M/PU_STATIC">PU_STATIC</a>);</td></tr>
+<tr><th id="410">410</th><td>    }</td></tr>
+<tr><th id="411">411</th><td></td></tr>
+<tr><th id="412">412</th><td>}</td></tr>
+<tr><th id="413">413</th><td></td></tr>
+<tr><th id="414">414</th><td><em>void</em> <dfn class="decl def" id="HU_Stop" title='HU_Stop' data-ref="HU_Stop">HU_Stop</dfn>(<em>void</em>)</td></tr>
+<tr><th id="415">415</th><td>{</td></tr>
+<tr><th id="416">416</th><td>    <a class="tu ref" href="#headsupactive" title='headsupactive' data-use='w' data-ref="headsupactive">headsupactive</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="417">417</th><td>}</td></tr>
+<tr><th id="418">418</th><td></td></tr>
+<tr><th id="419">419</th><td><em>void</em> <dfn class="decl def" id="HU_Start" title='HU_Start' data-ref="HU_Start">HU_Start</dfn>(<em>void</em>)</td></tr>
+<tr><th id="420">420</th><td>{</td></tr>
+<tr><th id="421">421</th><td></td></tr>
+<tr><th id="422">422</th><td>    <em>int</em>		<dfn class="local col5 decl" id="5i" title='i' data-type='int' data-ref="5i">i</dfn>;</td></tr>
+<tr><th id="423">423</th><td>    <em>char</em>*	<dfn class="local col6 decl" id="6s" title='s' data-type='char *' data-ref="6s">s</dfn>;</td></tr>
+<tr><th id="424">424</th><td></td></tr>
+<tr><th id="425">425</th><td>    <b>if</b> (<a class="tu ref" href="#headsupactive" title='headsupactive' data-use='r' data-ref="headsupactive">headsupactive</a>)</td></tr>
+<tr><th id="426">426</th><td>	<a class="ref" href="#HU_Stop" title='HU_Stop' data-ref="HU_Stop">HU_Stop</a>();</td></tr>
+<tr><th id="427">427</th><td></td></tr>
+<tr><th id="428">428</th><td>    <a class="tu ref" href="#plr" title='plr' data-use='w' data-ref="plr">plr</a> = &amp;<a class="ref" href="doomstat.h.html#players" title='players' data-ref="players">players</a>[<a class="ref" href="doomstat.h.html#consoleplayer" title='consoleplayer' data-ref="consoleplayer">consoleplayer</a>];</td></tr>
+<tr><th id="429">429</th><td>    <a class="tu ref" href="#message_on" title='message_on' data-use='w' data-ref="message_on">message_on</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="430">430</th><td>    <a class="ref" href="#message_dontfuckwithme" title='message_dontfuckwithme' data-ref="message_dontfuckwithme">message_dontfuckwithme</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="431">431</th><td>    <a class="tu ref" href="#message_nottobefuckedwith" title='message_nottobefuckedwith' data-use='w' data-ref="message_nottobefuckedwith">message_nottobefuckedwith</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="432">432</th><td>    <a class="ref" href="#chat_on" title='chat_on' data-ref="chat_on">chat_on</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="433">433</th><td></td></tr>
+<tr><th id="434">434</th><td>    <i>// create the message widget</i></td></tr>
+<tr><th id="435">435</th><td>    <a class="ref" href="hu_lib.h.html#HUlib_initSText" title='HUlib_initSText' data-ref="HUlib_initSText">HUlib_initSText</a>(&amp;<a class="tu ref" href="#w_message" title='w_message' data-use='a' data-ref="w_message">w_message</a>,</td></tr>
+<tr><th id="436">436</th><td>		    <a class="macro" href="hu_stuff.h.html#39" title="0" data-ref="_M/HU_MSGX">HU_MSGX</a>, <a class="macro" href="hu_stuff.h.html#40" title="0" data-ref="_M/HU_MSGY">HU_MSGY</a>, <a class="macro" href="hu_stuff.h.html#42" title="1" data-ref="_M/HU_MSGHEIGHT">HU_MSGHEIGHT</a>,</td></tr>
+<tr><th id="437">437</th><td>		    <a class="ref" href="#hu_font" title='hu_font' data-ref="hu_font">hu_font</a>,</td></tr>
+<tr><th id="438">438</th><td>		    <a class="macro" href="hu_stuff.h.html#30" title="&apos;!&apos;" data-ref="_M/HU_FONTSTART">HU_FONTSTART</a>, &amp;<a class="tu ref" href="#message_on" title='message_on' data-use='a' data-ref="message_on">message_on</a>);</td></tr>
+<tr><th id="439">439</th><td></td></tr>
+<tr><th id="440">440</th><td>    <i>// create the map title widget</i></td></tr>
+<tr><th id="441">441</th><td>    <a class="ref" href="hu_lib.h.html#HUlib_initTextLine" title='HUlib_initTextLine' data-ref="HUlib_initTextLine">HUlib_initTextLine</a>(&amp;<a class="tu ref" href="#w_title" title='w_title' data-use='a' data-ref="w_title">w_title</a>,</td></tr>
+<tr><th id="442">442</th><td>		       <a class="macro" href="#54" title="0" data-ref="_M/HU_TITLEX">HU_TITLEX</a>, <a class="macro" href="#55" title="(167 - (hu_font[0]-&gt;height))" data-ref="_M/HU_TITLEY">HU_TITLEY</a>,</td></tr>
+<tr><th id="443">443</th><td>		       <a class="ref" href="#hu_font" title='hu_font' data-ref="hu_font">hu_font</a>,</td></tr>
+<tr><th id="444">444</th><td>		       <a class="macro" href="hu_stuff.h.html#30" title="&apos;!&apos;" data-ref="_M/HU_FONTSTART">HU_FONTSTART</a>);</td></tr>
+<tr><th id="445">445</th><td>    </td></tr>
+<tr><th id="446">446</th><td>    <b>switch</b> ( <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> )</td></tr>
+<tr><th id="447">447</th><td>    {</td></tr>
+<tr><th id="448">448</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#shareware" title='shareware' data-ref="shareware">shareware</a>:</td></tr>
+<tr><th id="449">449</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#registered" title='registered' data-ref="registered">registered</a>:</td></tr>
+<tr><th id="450">450</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#retail" title='retail' data-ref="retail">retail</a>:</td></tr>
+<tr><th id="451">451</th><td>	<a class="local col6 ref" href="#6s" title='s' data-ref="6s">s</a> = <a class="macro" href="#49" title="(mapnames[(gameepisode-1)*9+gamemap-1])" data-ref="_M/HU_TITLE">HU_TITLE</a>;</td></tr>
+<tr><th id="452">452</th><td>	<b>break</b>;</td></tr>
+<tr><th id="453">453</th><td></td></tr>
+<tr><th id="454">454</th><td><i>/* FIXME</i></td></tr>
+<tr><th id="455">455</th><td><i>      case pack_plut:</i></td></tr>
+<tr><th id="456">456</th><td><i>	s = HU_TITLEP;</i></td></tr>
+<tr><th id="457">457</th><td><i>	break;</i></td></tr>
+<tr><th id="458">458</th><td><i>      case pack_tnt:</i></td></tr>
+<tr><th id="459">459</th><td><i>	s = HU_TITLET;</i></td></tr>
+<tr><th id="460">460</th><td><i>	break;</i></td></tr>
+<tr><th id="461">461</th><td><i>*/</i></td></tr>
+<tr><th id="462">462</th><td>	</td></tr>
+<tr><th id="463">463</th><td>      <b>case</b> <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a>:</td></tr>
+<tr><th id="464">464</th><td>      <b>default</b>:</td></tr>
+<tr><th id="465">465</th><td>	 <a class="local col6 ref" href="#6s" title='s' data-ref="6s">s</a> = <a class="macro" href="#50" title="(mapnames2[gamemap-1])" data-ref="_M/HU_TITLE2">HU_TITLE2</a>;</td></tr>
+<tr><th id="466">466</th><td>	 <b>break</b>;</td></tr>
+<tr><th id="467">467</th><td>    }</td></tr>
+<tr><th id="468">468</th><td>    </td></tr>
+<tr><th id="469">469</th><td>    <b>while</b> (*<a class="local col6 ref" href="#6s" title='s' data-ref="6s">s</a>)</td></tr>
+<tr><th id="470">470</th><td>	<a class="ref" href="hu_lib.h.html#HUlib_addCharToTextLine" title='HUlib_addCharToTextLine' data-ref="HUlib_addCharToTextLine">HUlib_addCharToTextLine</a>(&amp;<a class="tu ref" href="#w_title" title='w_title' data-use='a' data-ref="w_title">w_title</a>, *(<a class="local col6 ref" href="#6s" title='s' data-ref="6s">s</a>++));</td></tr>
+<tr><th id="471">471</th><td></td></tr>
+<tr><th id="472">472</th><td>    <i>// create the chat widget</i></td></tr>
+<tr><th id="473">473</th><td>    <a class="ref" href="hu_lib.h.html#HUlib_initIText" title='HUlib_initIText' data-ref="HUlib_initIText">HUlib_initIText</a>(&amp;<a class="tu ref" href="#w_chat" title='w_chat' data-use='a' data-ref="w_chat">w_chat</a>,</td></tr>
+<tr><th id="474">474</th><td>		    <a class="macro" href="#58" title="0" data-ref="_M/HU_INPUTX">HU_INPUTX</a>, <a class="macro" href="#59" title="(0 + 1*((hu_font[0]-&gt;height) +1))" data-ref="_M/HU_INPUTY">HU_INPUTY</a>,</td></tr>
+<tr><th id="475">475</th><td>		    <a class="ref" href="#hu_font" title='hu_font' data-ref="hu_font">hu_font</a>,</td></tr>
+<tr><th id="476">476</th><td>		    <a class="macro" href="hu_stuff.h.html#30" title="&apos;!&apos;" data-ref="_M/HU_FONTSTART">HU_FONTSTART</a>, &amp;<a class="ref" href="#chat_on" title='chat_on' data-ref="chat_on">chat_on</a>);</td></tr>
+<tr><th id="477">477</th><td></td></tr>
+<tr><th id="478">478</th><td>    <i>// create the inputbuffer widgets</i></td></tr>
+<tr><th id="479">479</th><td>    <b>for</b> (<a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a>=<var>0</var> ; <a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a>&lt;<a class="macro" href="doomdef.h.html#119" title="4" data-ref="_M/MAXPLAYERS">MAXPLAYERS</a> ; <a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a>++)</td></tr>
+<tr><th id="480">480</th><td>	<a class="ref" href="hu_lib.h.html#HUlib_initIText" title='HUlib_initIText' data-ref="HUlib_initIText">HUlib_initIText</a>(&amp;<a class="tu ref" href="#w_inputbuffer" title='w_inputbuffer' data-use='a' data-ref="w_inputbuffer">w_inputbuffer</a>[<a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a>], <var>0</var>, <var>0</var>, <var>0</var>, <var>0</var>, &amp;<a class="tu ref" href="#always_off" title='always_off' data-use='a' data-ref="always_off">always_off</a>);</td></tr>
+<tr><th id="481">481</th><td></td></tr>
+<tr><th id="482">482</th><td>    <a class="tu ref" href="#headsupactive" title='headsupactive' data-use='w' data-ref="headsupactive">headsupactive</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="483">483</th><td></td></tr>
+<tr><th id="484">484</th><td>}</td></tr>
+<tr><th id="485">485</th><td></td></tr>
+<tr><th id="486">486</th><td><em>void</em> <dfn class="decl def" id="HU_Drawer" title='HU_Drawer' data-ref="HU_Drawer">HU_Drawer</dfn>(<em>void</em>)</td></tr>
+<tr><th id="487">487</th><td>{</td></tr>
+<tr><th id="488">488</th><td></td></tr>
+<tr><th id="489">489</th><td>    <a class="ref" href="hu_lib.h.html#HUlib_drawSText" title='HUlib_drawSText' data-ref="HUlib_drawSText">HUlib_drawSText</a>(&amp;<a class="tu ref" href="#w_message" title='w_message' data-use='a' data-ref="w_message">w_message</a>);</td></tr>
+<tr><th id="490">490</th><td>    <a class="ref" href="hu_lib.h.html#HUlib_drawIText" title='HUlib_drawIText' data-ref="HUlib_drawIText">HUlib_drawIText</a>(&amp;<a class="tu ref" href="#w_chat" title='w_chat' data-use='a' data-ref="w_chat">w_chat</a>);</td></tr>
+<tr><th id="491">491</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#automapactive" title='automapactive' data-ref="automapactive">automapactive</a>)</td></tr>
+<tr><th id="492">492</th><td>	<a class="ref" href="hu_lib.h.html#HUlib_drawTextLine" title='HUlib_drawTextLine' data-ref="HUlib_drawTextLine">HUlib_drawTextLine</a>(&amp;<a class="tu ref" href="#w_title" title='w_title' data-use='a' data-ref="w_title">w_title</a>, <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>);</td></tr>
+<tr><th id="493">493</th><td></td></tr>
+<tr><th id="494">494</th><td>}</td></tr>
+<tr><th id="495">495</th><td></td></tr>
+<tr><th id="496">496</th><td><em>void</em> <dfn class="decl def" id="HU_Erase" title='HU_Erase' data-ref="HU_Erase">HU_Erase</dfn>(<em>void</em>)</td></tr>
+<tr><th id="497">497</th><td>{</td></tr>
+<tr><th id="498">498</th><td></td></tr>
+<tr><th id="499">499</th><td>    <a class="ref" href="hu_lib.h.html#HUlib_eraseSText" title='HUlib_eraseSText' data-ref="HUlib_eraseSText">HUlib_eraseSText</a>(&amp;<a class="tu ref" href="#w_message" title='w_message' data-use='a' data-ref="w_message">w_message</a>);</td></tr>
+<tr><th id="500">500</th><td>    <a class="ref" href="hu_lib.h.html#HUlib_eraseIText" title='HUlib_eraseIText' data-ref="HUlib_eraseIText">HUlib_eraseIText</a>(&amp;<a class="tu ref" href="#w_chat" title='w_chat' data-use='a' data-ref="w_chat">w_chat</a>);</td></tr>
+<tr><th id="501">501</th><td>    <a class="ref" href="hu_lib.h.html#HUlib_eraseTextLine" title='HUlib_eraseTextLine' data-ref="HUlib_eraseTextLine">HUlib_eraseTextLine</a>(&amp;<a class="tu ref" href="#w_title" title='w_title' data-use='a' data-ref="w_title">w_title</a>);</td></tr>
+<tr><th id="502">502</th><td></td></tr>
+<tr><th id="503">503</th><td>}</td></tr>
+<tr><th id="504">504</th><td></td></tr>
+<tr><th id="505">505</th><td><em>void</em> <dfn class="decl def" id="HU_Ticker" title='HU_Ticker' data-ref="HU_Ticker">HU_Ticker</dfn>(<em>void</em>)</td></tr>
+<tr><th id="506">506</th><td>{</td></tr>
+<tr><th id="507">507</th><td></td></tr>
+<tr><th id="508">508</th><td>    <em>int</em> <dfn class="local col7 decl" id="7i" title='i' data-type='int' data-ref="7i">i</dfn>, <dfn class="local col8 decl" id="8rc" title='rc' data-type='int' data-ref="8rc">rc</dfn>;</td></tr>
+<tr><th id="509">509</th><td>    <em>char</em> <dfn class="local col9 decl" id="9c" title='c' data-type='char' data-ref="9c">c</dfn>;</td></tr>
+<tr><th id="510">510</th><td></td></tr>
+<tr><th id="511">511</th><td>    <i>// tick down message counter if message is up</i></td></tr>
+<tr><th id="512">512</th><td>    <b>if</b> (<a class="tu ref" href="#message_counter" title='message_counter' data-use='r' data-ref="message_counter">message_counter</a> &amp;&amp; !--<a class="tu ref" href="#message_counter" title='message_counter' data-use='w' data-ref="message_counter">message_counter</a>)</td></tr>
+<tr><th id="513">513</th><td>    {</td></tr>
+<tr><th id="514">514</th><td>	<a class="tu ref" href="#message_on" title='message_on' data-use='w' data-ref="message_on">message_on</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="515">515</th><td>	<a class="tu ref" href="#message_nottobefuckedwith" title='message_nottobefuckedwith' data-use='w' data-ref="message_nottobefuckedwith">message_nottobefuckedwith</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="516">516</th><td>    }</td></tr>
+<tr><th id="517">517</th><td></td></tr>
+<tr><th id="518">518</th><td>    <b>if</b> (<a class="ref" href="#showMessages" title='showMessages' data-ref="showMessages">showMessages</a> || <a class="ref" href="#message_dontfuckwithme" title='message_dontfuckwithme' data-ref="message_dontfuckwithme">message_dontfuckwithme</a>)</td></tr>
+<tr><th id="519">519</th><td>    {</td></tr>
+<tr><th id="520">520</th><td></td></tr>
+<tr><th id="521">521</th><td>	<i>// display message if necessary</i></td></tr>
+<tr><th id="522">522</th><td>	<b>if</b> ((<a class="tu ref" href="#plr" title='plr' data-use='r' data-ref="plr">plr</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> &amp;&amp; !<a class="tu ref" href="#message_nottobefuckedwith" title='message_nottobefuckedwith' data-use='r' data-ref="message_nottobefuckedwith">message_nottobefuckedwith</a>)</td></tr>
+<tr><th id="523">523</th><td>	    || (<a class="tu ref" href="#plr" title='plr' data-use='r' data-ref="plr">plr</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> &amp;&amp; <a class="ref" href="#message_dontfuckwithme" title='message_dontfuckwithme' data-ref="message_dontfuckwithme">message_dontfuckwithme</a>))</td></tr>
+<tr><th id="524">524</th><td>	{</td></tr>
+<tr><th id="525">525</th><td>	    <a class="ref" href="hu_lib.h.html#HUlib_addMessageToSText" title='HUlib_addMessageToSText' data-ref="HUlib_addMessageToSText">HUlib_addMessageToSText</a>(&amp;<a class="tu ref" href="#w_message" title='w_message' data-use='a' data-ref="w_message">w_message</a>, <var>0</var>, <a class="tu ref" href="#plr" title='plr' data-use='r' data-ref="plr">plr</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a>);</td></tr>
+<tr><th id="526">526</th><td>	    <a class="tu ref" href="#plr" title='plr' data-use='r' data-ref="plr">plr</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <var>0</var>;</td></tr>
+<tr><th id="527">527</th><td>	    <a class="tu ref" href="#message_on" title='message_on' data-use='w' data-ref="message_on">message_on</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="528">528</th><td>	    <a class="tu ref" href="#message_counter" title='message_counter' data-use='w' data-ref="message_counter">message_counter</a> = <a class="macro" href="hu_stuff.h.html#44" title="(4*35)" data-ref="_M/HU_MSGTIMEOUT">HU_MSGTIMEOUT</a>;</td></tr>
+<tr><th id="529">529</th><td>	    <a class="tu ref" href="#message_nottobefuckedwith" title='message_nottobefuckedwith' data-use='w' data-ref="message_nottobefuckedwith">message_nottobefuckedwith</a> = <a class="ref" href="#message_dontfuckwithme" title='message_dontfuckwithme' data-ref="message_dontfuckwithme">message_dontfuckwithme</a>;</td></tr>
+<tr><th id="530">530</th><td>	    <a class="ref" href="#message_dontfuckwithme" title='message_dontfuckwithme' data-ref="message_dontfuckwithme">message_dontfuckwithme</a> = <var>0</var>;</td></tr>
+<tr><th id="531">531</th><td>	}</td></tr>
+<tr><th id="532">532</th><td></td></tr>
+<tr><th id="533">533</th><td>    } <i>// else message_on = false;</i></td></tr>
+<tr><th id="534">534</th><td></td></tr>
+<tr><th id="535">535</th><td>    <i>// check for incoming chat characters</i></td></tr>
+<tr><th id="536">536</th><td>    <b>if</b> (<a class="ref" href="doomstat.h.html#netgame" title='netgame' data-ref="netgame">netgame</a>)</td></tr>
+<tr><th id="537">537</th><td>    {</td></tr>
+<tr><th id="538">538</th><td>	<b>for</b> (<a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a>=<var>0</var> ; <a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a>&lt;<a class="macro" href="doomdef.h.html#119" title="4" data-ref="_M/MAXPLAYERS">MAXPLAYERS</a>; <a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a>++)</td></tr>
+<tr><th id="539">539</th><td>	{</td></tr>
+<tr><th id="540">540</th><td>	    <b>if</b> (!<a class="ref" href="doomstat.h.html#playeringame" title='playeringame' data-ref="playeringame">playeringame</a>[<a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a>])</td></tr>
+<tr><th id="541">541</th><td>		<b>continue</b>;</td></tr>
+<tr><th id="542">542</th><td>	    <b>if</b> (<a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a> != <a class="ref" href="doomstat.h.html#consoleplayer" title='consoleplayer' data-ref="consoleplayer">consoleplayer</a></td></tr>
+<tr><th id="543">543</th><td>		&amp;&amp; (<a class="local col9 ref" href="#9c" title='c' data-ref="9c">c</a> = <a class="ref" href="doomstat.h.html#players" title='players' data-ref="players">players</a>[<a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a>].<a class="ref" href="d_player.h.html#player_s::cmd" title='player_s::cmd' data-ref="player_s::cmd">cmd</a>.<a class="ref" href="d_ticcmd.h.html#(anonymous)::chatchar" title='(anonymous struct)::chatchar' data-ref="(anonymous)::chatchar">chatchar</a>))</td></tr>
+<tr><th id="544">544</th><td>	    {</td></tr>
+<tr><th id="545">545</th><td>		<b>if</b> (<a class="local col9 ref" href="#9c" title='c' data-ref="9c">c</a> &lt;= <a class="macro" href="hu_stuff.h.html#36" title="5" data-ref="_M/HU_BROADCAST">HU_BROADCAST</a>)</td></tr>
+<tr><th id="546">546</th><td>		    <a class="tu ref" href="#chat_dest" title='chat_dest' data-use='w' data-ref="chat_dest">chat_dest</a>[<a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a>] = <a class="local col9 ref" href="#9c" title='c' data-ref="9c">c</a>;</td></tr>
+<tr><th id="547">547</th><td>		<b>else</b></td></tr>
+<tr><th id="548">548</th><td>		{</td></tr>
+<tr><th id="549">549</th><td>		    <b>if</b> (<a class="local col9 ref" href="#9c" title='c' data-ref="9c">c</a> &gt;= <kbd>'a'</kbd> &amp;&amp; <a class="local col9 ref" href="#9c" title='c' data-ref="9c">c</a> &lt;= <kbd>'z'</kbd>)</td></tr>
+<tr><th id="550">550</th><td>			<a class="local col9 ref" href="#9c" title='c' data-ref="9c">c</a> = (<em>char</em>) <a class="ref" href="#shiftxform" title='shiftxform' data-ref="shiftxform">shiftxform</a>[(<em>unsigned</em> <em>char</em>) <a class="local col9 ref" href="#9c" title='c' data-ref="9c">c</a>];</td></tr>
+<tr><th id="551">551</th><td>		    <a class="local col8 ref" href="#8rc" title='rc' data-ref="8rc">rc</a> = <a class="ref" href="hu_lib.h.html#HUlib_keyInIText" title='HUlib_keyInIText' data-ref="HUlib_keyInIText">HUlib_keyInIText</a>(&amp;<a class="tu ref" href="#w_inputbuffer" title='w_inputbuffer' data-use='a' data-ref="w_inputbuffer">w_inputbuffer</a>[<a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a>], <a class="local col9 ref" href="#9c" title='c' data-ref="9c">c</a>);</td></tr>
+<tr><th id="552">552</th><td>		    <b>if</b> (<a class="local col8 ref" href="#8rc" title='rc' data-ref="8rc">rc</a> &amp;&amp; <a class="local col9 ref" href="#9c" title='c' data-ref="9c">c</a> == <a class="macro" href="doomdef.h.html#255" title="13" data-ref="_M/KEY_ENTER">KEY_ENTER</a>)</td></tr>
+<tr><th id="553">553</th><td>		    {</td></tr>
+<tr><th id="554">554</th><td>			<b>if</b> (<a class="tu ref" href="#w_inputbuffer" title='w_inputbuffer' data-use='m' data-ref="w_inputbuffer">w_inputbuffer</a>[<a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a>].<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>.<a class="ref" href="hu_lib.h.html#(anonymous)::len" title='(anonymous struct)::len' data-ref="(anonymous)::len">len</a></td></tr>
+<tr><th id="555">555</th><td>			    &amp;&amp; (<a class="tu ref" href="#chat_dest" title='chat_dest' data-use='r' data-ref="chat_dest">chat_dest</a>[<a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a>] == <a class="ref" href="doomstat.h.html#consoleplayer" title='consoleplayer' data-ref="consoleplayer">consoleplayer</a>+<var>1</var></td></tr>
+<tr><th id="556">556</th><td>				|| <a class="tu ref" href="#chat_dest" title='chat_dest' data-use='r' data-ref="chat_dest">chat_dest</a>[<a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a>] == <a class="macro" href="hu_stuff.h.html#36" title="5" data-ref="_M/HU_BROADCAST">HU_BROADCAST</a>))</td></tr>
+<tr><th id="557">557</th><td>			{</td></tr>
+<tr><th id="558">558</th><td>			    <a class="ref" href="hu_lib.h.html#HUlib_addMessageToSText" title='HUlib_addMessageToSText' data-ref="HUlib_addMessageToSText">HUlib_addMessageToSText</a>(&amp;<a class="tu ref" href="#w_message" title='w_message' data-use='a' data-ref="w_message">w_message</a>,</td></tr>
+<tr><th id="559">559</th><td>						    <a class="ref" href="#player_names" title='player_names' data-ref="player_names">player_names</a>[<a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a>],</td></tr>
+<tr><th id="560">560</th><td>						    <a class="tu ref" href="#w_inputbuffer" title='w_inputbuffer' data-use='m' data-ref="w_inputbuffer">w_inputbuffer</a>[<a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a>].<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>.<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>);</td></tr>
+<tr><th id="561">561</th><td>			    </td></tr>
+<tr><th id="562">562</th><td>			    <a class="tu ref" href="#message_nottobefuckedwith" title='message_nottobefuckedwith' data-use='w' data-ref="message_nottobefuckedwith">message_nottobefuckedwith</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="563">563</th><td>			    <a class="tu ref" href="#message_on" title='message_on' data-use='w' data-ref="message_on">message_on</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="564">564</th><td>			    <a class="tu ref" href="#message_counter" title='message_counter' data-use='w' data-ref="message_counter">message_counter</a> = <a class="macro" href="hu_stuff.h.html#44" title="(4*35)" data-ref="_M/HU_MSGTIMEOUT">HU_MSGTIMEOUT</a>;</td></tr>
+<tr><th id="565">565</th><td>			    <b>if</b> ( <a class="ref" href="doomstat.h.html#gamemode" title='gamemode' data-ref="gamemode">gamemode</a> == <a class="enum" href="doomdef.h.html#commercial" title='commercial' data-ref="commercial">commercial</a> )</td></tr>
+<tr><th id="566">566</th><td>			      <a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>(<var>0</var>, <a class="enum" href="sounds.h.html#sfx_radio" title='sfx_radio' data-ref="sfx_radio">sfx_radio</a>);</td></tr>
+<tr><th id="567">567</th><td>			    <b>else</b></td></tr>
+<tr><th id="568">568</th><td>			      <a class="ref" href="s_sound.h.html#S_StartSound" title='S_StartSound' data-ref="S_StartSound">S_StartSound</a>(<var>0</var>, <a class="enum" href="sounds.h.html#sfx_tink" title='sfx_tink' data-ref="sfx_tink">sfx_tink</a>);</td></tr>
+<tr><th id="569">569</th><td>			}</td></tr>
+<tr><th id="570">570</th><td>			<a class="ref" href="hu_lib.h.html#HUlib_resetIText" title='HUlib_resetIText' data-ref="HUlib_resetIText">HUlib_resetIText</a>(&amp;<a class="tu ref" href="#w_inputbuffer" title='w_inputbuffer' data-use='a' data-ref="w_inputbuffer">w_inputbuffer</a>[<a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a>]);</td></tr>
+<tr><th id="571">571</th><td>		    }</td></tr>
+<tr><th id="572">572</th><td>		}</td></tr>
+<tr><th id="573">573</th><td>		<a class="ref" href="doomstat.h.html#players" title='players' data-ref="players">players</a>[<a class="local col7 ref" href="#7i" title='i' data-ref="7i">i</a>].<a class="ref" href="d_player.h.html#player_s::cmd" title='player_s::cmd' data-ref="player_s::cmd">cmd</a>.<a class="ref" href="d_ticcmd.h.html#(anonymous)::chatchar" title='(anonymous struct)::chatchar' data-ref="(anonymous)::chatchar">chatchar</a> = <var>0</var>;</td></tr>
+<tr><th id="574">574</th><td>	    }</td></tr>
+<tr><th id="575">575</th><td>	}</td></tr>
+<tr><th id="576">576</th><td>    }</td></tr>
+<tr><th id="577">577</th><td></td></tr>
+<tr><th id="578">578</th><td>}</td></tr>
+<tr><th id="579">579</th><td></td></tr>
+<tr><th id="580">580</th><td><u>#define <dfn class="macro" id="_M/QUEUESIZE" data-ref="_M/QUEUESIZE">QUEUESIZE</dfn>		128</u></td></tr>
+<tr><th id="581">581</th><td></td></tr>
+<tr><th id="582">582</th><td><em>static</em> <em>char</em>	<dfn class="tu decl def" id="chatchars" title='chatchars' data-type='char [128]' data-ref="chatchars">chatchars</dfn>[<a class="macro" href="#580" title="128" data-ref="_M/QUEUESIZE">QUEUESIZE</a>];</td></tr>
+<tr><th id="583">583</th><td><em>static</em> <em>int</em>	<dfn class="tu decl def" id="head" title='head' data-type='int' data-ref="head">head</dfn> = <var>0</var>;</td></tr>
+<tr><th id="584">584</th><td><em>static</em> <em>int</em>	<dfn class="tu decl def" id="tail" title='tail' data-type='int' data-ref="tail">tail</dfn> = <var>0</var>;</td></tr>
+<tr><th id="585">585</th><td></td></tr>
+<tr><th id="586">586</th><td></td></tr>
+<tr><th id="587">587</th><td><em>void</em> <dfn class="decl def" id="HU_queueChatChar" title='HU_queueChatChar' data-ref="HU_queueChatChar">HU_queueChatChar</dfn>(<em>char</em> <dfn class="local col0 decl" id="10c" title='c' data-type='char' data-ref="10c">c</dfn>)</td></tr>
+<tr><th id="588">588</th><td>{</td></tr>
+<tr><th id="589">589</th><td>    <b>if</b> (((<a class="tu ref" href="#head" title='head' data-use='r' data-ref="head">head</a> + <var>1</var>) &amp; (<a class="macro" href="#580" title="128" data-ref="_M/QUEUESIZE">QUEUESIZE</a>-<var>1</var>)) == <a class="tu ref" href="#tail" title='tail' data-use='r' data-ref="tail">tail</a>)</td></tr>
+<tr><th id="590">590</th><td>    {</td></tr>
+<tr><th id="591">591</th><td>	<a class="tu ref" href="#plr" title='plr' data-use='r' data-ref="plr">plr</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <a class="macro" href="d_englsh.h.html#140" title="&quot;[Message unsent]&quot;" data-ref="_M/HUSTR_MSGU">HUSTR_MSGU</a>;</td></tr>
+<tr><th id="592">592</th><td>    }</td></tr>
+<tr><th id="593">593</th><td>    <b>else</b></td></tr>
+<tr><th id="594">594</th><td>    {</td></tr>
+<tr><th id="595">595</th><td>	<a class="tu ref" href="#chatchars" title='chatchars' data-use='w' data-ref="chatchars">chatchars</a>[<a class="tu ref" href="#head" title='head' data-use='r' data-ref="head">head</a>] = <a class="local col0 ref" href="#10c" title='c' data-ref="10c">c</a>;</td></tr>
+<tr><th id="596">596</th><td>	<a class="tu ref" href="#head" title='head' data-use='w' data-ref="head">head</a> = (<a class="tu ref" href="#head" title='head' data-use='r' data-ref="head">head</a> + <var>1</var>) &amp; (<a class="macro" href="#580" title="128" data-ref="_M/QUEUESIZE">QUEUESIZE</a>-<var>1</var>);</td></tr>
+<tr><th id="597">597</th><td>    }</td></tr>
+<tr><th id="598">598</th><td>}</td></tr>
+<tr><th id="599">599</th><td></td></tr>
+<tr><th id="600">600</th><td><em>char</em> <dfn class="decl def" id="HU_dequeueChatChar" title='HU_dequeueChatChar' data-ref="HU_dequeueChatChar">HU_dequeueChatChar</dfn>(<em>void</em>)</td></tr>
+<tr><th id="601">601</th><td>{</td></tr>
+<tr><th id="602">602</th><td>    <em>char</em> <dfn class="local col1 decl" id="11c" title='c' data-type='char' data-ref="11c">c</dfn>;</td></tr>
+<tr><th id="603">603</th><td></td></tr>
+<tr><th id="604">604</th><td>    <b>if</b> (<a class="tu ref" href="#head" title='head' data-use='r' data-ref="head">head</a> != <a class="tu ref" href="#tail" title='tail' data-use='r' data-ref="tail">tail</a>)</td></tr>
+<tr><th id="605">605</th><td>    {</td></tr>
+<tr><th id="606">606</th><td>	<a class="local col1 ref" href="#11c" title='c' data-ref="11c">c</a> = <a class="tu ref" href="#chatchars" title='chatchars' data-use='r' data-ref="chatchars">chatchars</a>[<a class="tu ref" href="#tail" title='tail' data-use='r' data-ref="tail">tail</a>];</td></tr>
+<tr><th id="607">607</th><td>	<a class="tu ref" href="#tail" title='tail' data-use='w' data-ref="tail">tail</a> = (<a class="tu ref" href="#tail" title='tail' data-use='r' data-ref="tail">tail</a> + <var>1</var>) &amp; (<a class="macro" href="#580" title="128" data-ref="_M/QUEUESIZE">QUEUESIZE</a>-<var>1</var>);</td></tr>
+<tr><th id="608">608</th><td>    }</td></tr>
+<tr><th id="609">609</th><td>    <b>else</b></td></tr>
+<tr><th id="610">610</th><td>    {</td></tr>
+<tr><th id="611">611</th><td>	<a class="local col1 ref" href="#11c" title='c' data-ref="11c">c</a> = <var>0</var>;</td></tr>
+<tr><th id="612">612</th><td>    }</td></tr>
+<tr><th id="613">613</th><td></td></tr>
+<tr><th id="614">614</th><td>    <b>return</b> <a class="local col1 ref" href="#11c" title='c' data-ref="11c">c</a>;</td></tr>
+<tr><th id="615">615</th><td>}</td></tr>
+<tr><th id="616">616</th><td></td></tr>
+<tr><th id="617">617</th><td><a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a> <dfn class="decl def" id="HU_Responder" title='HU_Responder' data-ref="HU_Responder">HU_Responder</dfn>(<a class="typedef" href="d_event.h.html#event_t" title='event_t' data-type='struct event_t' data-ref="event_t">event_t</a> *<dfn class="local col2 decl" id="12ev" title='ev' data-type='event_t *' data-ref="12ev">ev</dfn>)</td></tr>
+<tr><th id="618">618</th><td>{</td></tr>
+<tr><th id="619">619</th><td></td></tr>
+<tr><th id="620">620</th><td>    <em>static</em> <em>char</em>		<dfn class="local col3 decl" id="13lastmessage" title='lastmessage' data-type='char [81]' data-ref="13lastmessage">lastmessage</dfn>[<a class="macro" href="hu_lib.h.html#37" title="80" data-ref="_M/HU_MAXLINELENGTH">HU_MAXLINELENGTH</a>+<var>1</var>];</td></tr>
+<tr><th id="621">621</th><td>    <em>char</em>*		<dfn class="local col4 decl" id="14macromessage" title='macromessage' data-type='char *' data-ref="14macromessage">macromessage</dfn>;</td></tr>
+<tr><th id="622">622</th><td>    <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>		<dfn class="local col5 decl" id="15eatkey" title='eatkey' data-type='boolean' data-ref="15eatkey">eatkey</dfn> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="623">623</th><td>    <em>static</em> <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>	<dfn class="local col6 decl" id="16shiftdown" title='shiftdown' data-type='boolean' data-ref="16shiftdown">shiftdown</dfn> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="624">624</th><td>    <em>static</em> <a class="typedef" href="doomtype.h.html#boolean" title='boolean' data-type='enum boolean' data-ref="boolean">boolean</a>	<dfn class="local col7 decl" id="17altdown" title='altdown' data-type='boolean' data-ref="17altdown">altdown</dfn> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="625">625</th><td>    <em>unsigned</em> <em>char</em> 	<dfn class="local col8 decl" id="18c" title='c' data-type='unsigned char' data-ref="18c">c</dfn>;</td></tr>
+<tr><th id="626">626</th><td>    <em>int</em>			<dfn class="local col9 decl" id="19i" title='i' data-type='int' data-ref="19i">i</dfn>;</td></tr>
+<tr><th id="627">627</th><td>    <em>int</em>			<dfn class="local col0 decl" id="20numplayers" title='numplayers' data-type='int' data-ref="20numplayers">numplayers</dfn>;</td></tr>
+<tr><th id="628">628</th><td>    </td></tr>
+<tr><th id="629">629</th><td>    <em>static</em> <em>char</em>		<dfn class="local col1 decl" id="21destination_keys" title='destination_keys' data-type='char [4]' data-ref="21destination_keys">destination_keys</dfn>[<a class="macro" href="doomdef.h.html#119" title="4" data-ref="_M/MAXPLAYERS">MAXPLAYERS</a>] =</td></tr>
+<tr><th id="630">630</th><td>    {</td></tr>
+<tr><th id="631">631</th><td>	<a class="macro" href="d_englsh.h.html#339" title="&apos;g&apos;" data-ref="_M/HUSTR_KEYGREEN">HUSTR_KEYGREEN</a>,</td></tr>
+<tr><th id="632">632</th><td>	<a class="macro" href="d_englsh.h.html#340" title="&apos;i&apos;" data-ref="_M/HUSTR_KEYINDIGO">HUSTR_KEYINDIGO</a>,</td></tr>
+<tr><th id="633">633</th><td>	<a class="macro" href="d_englsh.h.html#341" title="&apos;b&apos;" data-ref="_M/HUSTR_KEYBROWN">HUSTR_KEYBROWN</a>,</td></tr>
+<tr><th id="634">634</th><td>	<a class="macro" href="d_englsh.h.html#342" title="&apos;r&apos;" data-ref="_M/HUSTR_KEYRED">HUSTR_KEYRED</a></td></tr>
+<tr><th id="635">635</th><td>    };</td></tr>
+<tr><th id="636">636</th><td>    </td></tr>
+<tr><th id="637">637</th><td>    <em>static</em> <em>int</em>		<dfn class="local col2 decl" id="22num_nobrainers" title='num_nobrainers' data-type='int' data-ref="22num_nobrainers">num_nobrainers</dfn> = <var>0</var>;</td></tr>
+<tr><th id="638">638</th><td></td></tr>
+<tr><th id="639">639</th><td>    <a class="local col0 ref" href="#20numplayers" title='numplayers' data-ref="20numplayers">numplayers</a> = <var>0</var>;</td></tr>
+<tr><th id="640">640</th><td>    <b>for</b> (<a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a>=<var>0</var> ; <a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a>&lt;<a class="macro" href="doomdef.h.html#119" title="4" data-ref="_M/MAXPLAYERS">MAXPLAYERS</a> ; <a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a>++)</td></tr>
+<tr><th id="641">641</th><td>	<a class="local col0 ref" href="#20numplayers" title='numplayers' data-ref="20numplayers">numplayers</a> += <a class="ref" href="doomstat.h.html#playeringame" title='playeringame' data-ref="playeringame">playeringame</a>[<a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a>];</td></tr>
+<tr><th id="642">642</th><td></td></tr>
+<tr><th id="643">643</th><td>    <b>if</b> (<a class="local col2 ref" href="#12ev" title='ev' data-ref="12ev">ev</a>-&gt;<a class="ref" href="d_event.h.html#(anonymous)::data1" title='(anonymous struct)::data1' data-ref="(anonymous)::data1">data1</a> == <a class="macro" href="doomdef.h.html#276" title="(0x80+0x36)" data-ref="_M/KEY_RSHIFT">KEY_RSHIFT</a>)</td></tr>
+<tr><th id="644">644</th><td>    {</td></tr>
+<tr><th id="645">645</th><td>	<a class="local col6 ref" href="#16shiftdown" title='shiftdown' data-ref="16shiftdown">shiftdown</a> = <a class="local col2 ref" href="#12ev" title='ev' data-ref="12ev">ev</a>-&gt;<a class="ref" href="d_event.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a> == <a class="enum" href="d_event.h.html#ev_keydown" title='ev_keydown' data-ref="ev_keydown">ev_keydown</a>;</td></tr>
+<tr><th id="646">646</th><td>	<b>return</b> <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="647">647</th><td>    }</td></tr>
+<tr><th id="648">648</th><td>    <b>else</b> <b>if</b> (<a class="local col2 ref" href="#12ev" title='ev' data-ref="12ev">ev</a>-&gt;<a class="ref" href="d_event.h.html#(anonymous)::data1" title='(anonymous struct)::data1' data-ref="(anonymous)::data1">data1</a> == <a class="macro" href="doomdef.h.html#278" title="(0x80+0x38)" data-ref="_M/KEY_RALT">KEY_RALT</a> || <a class="local col2 ref" href="#12ev" title='ev' data-ref="12ev">ev</a>-&gt;<a class="ref" href="d_event.h.html#(anonymous)::data1" title='(anonymous struct)::data1' data-ref="(anonymous)::data1">data1</a> == <a class="macro" href="doomdef.h.html#280" title="(0x80+0x38)" data-ref="_M/KEY_LALT">KEY_LALT</a>)</td></tr>
+<tr><th id="649">649</th><td>    {</td></tr>
+<tr><th id="650">650</th><td>	<a class="local col7 ref" href="#17altdown" title='altdown' data-ref="17altdown">altdown</a> = <a class="local col2 ref" href="#12ev" title='ev' data-ref="12ev">ev</a>-&gt;<a class="ref" href="d_event.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a> == <a class="enum" href="d_event.h.html#ev_keydown" title='ev_keydown' data-ref="ev_keydown">ev_keydown</a>;</td></tr>
+<tr><th id="651">651</th><td>	<b>return</b> <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="652">652</th><td>    }</td></tr>
+<tr><th id="653">653</th><td></td></tr>
+<tr><th id="654">654</th><td>    <b>if</b> (<a class="local col2 ref" href="#12ev" title='ev' data-ref="12ev">ev</a>-&gt;<a class="ref" href="d_event.h.html#(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</a> != <a class="enum" href="d_event.h.html#ev_keydown" title='ev_keydown' data-ref="ev_keydown">ev_keydown</a>)</td></tr>
+<tr><th id="655">655</th><td>	<b>return</b> <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="656">656</th><td></td></tr>
+<tr><th id="657">657</th><td>    <b>if</b> (!<a class="ref" href="#chat_on" title='chat_on' data-ref="chat_on">chat_on</a>)</td></tr>
+<tr><th id="658">658</th><td>    {</td></tr>
+<tr><th id="659">659</th><td>	<b>if</b> (<a class="local col2 ref" href="#12ev" title='ev' data-ref="12ev">ev</a>-&gt;<a class="ref" href="d_event.h.html#(anonymous)::data1" title='(anonymous struct)::data1' data-ref="(anonymous)::data1">data1</a> == <a class="macro" href="hu_stuff.h.html#38" title="13" data-ref="_M/HU_MSGREFRESH">HU_MSGREFRESH</a>)</td></tr>
+<tr><th id="660">660</th><td>	{</td></tr>
+<tr><th id="661">661</th><td>	    <a class="tu ref" href="#message_on" title='message_on' data-use='w' data-ref="message_on">message_on</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="662">662</th><td>	    <a class="tu ref" href="#message_counter" title='message_counter' data-use='w' data-ref="message_counter">message_counter</a> = <a class="macro" href="hu_stuff.h.html#44" title="(4*35)" data-ref="_M/HU_MSGTIMEOUT">HU_MSGTIMEOUT</a>;</td></tr>
+<tr><th id="663">663</th><td>	    <a class="local col5 ref" href="#15eatkey" title='eatkey' data-ref="15eatkey">eatkey</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="664">664</th><td>	}</td></tr>
+<tr><th id="665">665</th><td>	<b>else</b> <b>if</b> (<a class="ref" href="doomstat.h.html#netgame" title='netgame' data-ref="netgame">netgame</a> &amp;&amp; <a class="local col2 ref" href="#12ev" title='ev' data-ref="12ev">ev</a>-&gt;<a class="ref" href="d_event.h.html#(anonymous)::data1" title='(anonymous struct)::data1' data-ref="(anonymous)::data1">data1</a> == <a class="macro" href="#57" title="&apos;t&apos;" data-ref="_M/HU_INPUTTOGGLE">HU_INPUTTOGGLE</a>)</td></tr>
+<tr><th id="666">666</th><td>	{</td></tr>
+<tr><th id="667">667</th><td>	    <a class="local col5 ref" href="#15eatkey" title='eatkey' data-ref="15eatkey">eatkey</a> = <a class="ref" href="#chat_on" title='chat_on' data-ref="chat_on">chat_on</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="668">668</th><td>	    <a class="ref" href="hu_lib.h.html#HUlib_resetIText" title='HUlib_resetIText' data-ref="HUlib_resetIText">HUlib_resetIText</a>(&amp;<a class="tu ref" href="#w_chat" title='w_chat' data-use='a' data-ref="w_chat">w_chat</a>);</td></tr>
+<tr><th id="669">669</th><td>	    <a class="ref" href="#HU_queueChatChar" title='HU_queueChatChar' data-ref="HU_queueChatChar">HU_queueChatChar</a>(<a class="macro" href="hu_stuff.h.html#36" title="5" data-ref="_M/HU_BROADCAST">HU_BROADCAST</a>);</td></tr>
+<tr><th id="670">670</th><td>	}</td></tr>
+<tr><th id="671">671</th><td>	<b>else</b> <b>if</b> (<a class="ref" href="doomstat.h.html#netgame" title='netgame' data-ref="netgame">netgame</a> &amp;&amp; <a class="local col0 ref" href="#20numplayers" title='numplayers' data-ref="20numplayers">numplayers</a> &gt; <var>2</var>)</td></tr>
+<tr><th id="672">672</th><td>	{</td></tr>
+<tr><th id="673">673</th><td>	    <b>for</b> (<a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a>=<var>0</var>; <a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a>&lt;<a class="macro" href="doomdef.h.html#119" title="4" data-ref="_M/MAXPLAYERS">MAXPLAYERS</a> ; <a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a>++)</td></tr>
+<tr><th id="674">674</th><td>	    {</td></tr>
+<tr><th id="675">675</th><td>		<b>if</b> (<a class="local col2 ref" href="#12ev" title='ev' data-ref="12ev">ev</a>-&gt;<a class="ref" href="d_event.h.html#(anonymous)::data1" title='(anonymous struct)::data1' data-ref="(anonymous)::data1">data1</a> == <a class="local col1 ref" href="#21destination_keys" title='destination_keys' data-ref="21destination_keys">destination_keys</a>[<a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a>])</td></tr>
+<tr><th id="676">676</th><td>		{</td></tr>
+<tr><th id="677">677</th><td>		    <b>if</b> (<a class="ref" href="doomstat.h.html#playeringame" title='playeringame' data-ref="playeringame">playeringame</a>[<a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a>] &amp;&amp; <a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a>!=<a class="ref" href="doomstat.h.html#consoleplayer" title='consoleplayer' data-ref="consoleplayer">consoleplayer</a>)</td></tr>
+<tr><th id="678">678</th><td>		    {</td></tr>
+<tr><th id="679">679</th><td>			<a class="local col5 ref" href="#15eatkey" title='eatkey' data-ref="15eatkey">eatkey</a> = <a class="ref" href="#chat_on" title='chat_on' data-ref="chat_on">chat_on</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="680">680</th><td>			<a class="ref" href="hu_lib.h.html#HUlib_resetIText" title='HUlib_resetIText' data-ref="HUlib_resetIText">HUlib_resetIText</a>(&amp;<a class="tu ref" href="#w_chat" title='w_chat' data-use='a' data-ref="w_chat">w_chat</a>);</td></tr>
+<tr><th id="681">681</th><td>			<a class="ref" href="#HU_queueChatChar" title='HU_queueChatChar' data-ref="HU_queueChatChar">HU_queueChatChar</a>(<a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a>+<var>1</var>);</td></tr>
+<tr><th id="682">682</th><td>			<b>break</b>;</td></tr>
+<tr><th id="683">683</th><td>		    }</td></tr>
+<tr><th id="684">684</th><td>		    <b>else</b> <b>if</b> (<a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a> == <a class="ref" href="doomstat.h.html#consoleplayer" title='consoleplayer' data-ref="consoleplayer">consoleplayer</a>)</td></tr>
+<tr><th id="685">685</th><td>		    {</td></tr>
+<tr><th id="686">686</th><td>			<a class="local col2 ref" href="#22num_nobrainers" title='num_nobrainers' data-ref="22num_nobrainers">num_nobrainers</a>++;</td></tr>
+<tr><th id="687">687</th><td>			<b>if</b> (<a class="local col2 ref" href="#22num_nobrainers" title='num_nobrainers' data-ref="22num_nobrainers">num_nobrainers</a> &lt; <var>3</var>)</td></tr>
+<tr><th id="688">688</th><td>			    <a class="tu ref" href="#plr" title='plr' data-use='r' data-ref="plr">plr</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <a class="macro" href="d_englsh.h.html#323" title="&quot;You mumble to yourself&quot;" data-ref="_M/HUSTR_TALKTOSELF1">HUSTR_TALKTOSELF1</a>;</td></tr>
+<tr><th id="689">689</th><td>			<b>else</b> <b>if</b> (<a class="local col2 ref" href="#22num_nobrainers" title='num_nobrainers' data-ref="22num_nobrainers">num_nobrainers</a> &lt; <var>6</var>)</td></tr>
+<tr><th id="690">690</th><td>			    <a class="tu ref" href="#plr" title='plr' data-use='r' data-ref="plr">plr</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <a class="macro" href="d_englsh.h.html#324" title="&quot;Who&apos;s there?&quot;" data-ref="_M/HUSTR_TALKTOSELF2">HUSTR_TALKTOSELF2</a>;</td></tr>
+<tr><th id="691">691</th><td>			<b>else</b> <b>if</b> (<a class="local col2 ref" href="#22num_nobrainers" title='num_nobrainers' data-ref="22num_nobrainers">num_nobrainers</a> &lt; <var>9</var>)</td></tr>
+<tr><th id="692">692</th><td>			    <a class="tu ref" href="#plr" title='plr' data-use='r' data-ref="plr">plr</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <a class="macro" href="d_englsh.h.html#325" title="&quot;You scare yourself&quot;" data-ref="_M/HUSTR_TALKTOSELF3">HUSTR_TALKTOSELF3</a>;</td></tr>
+<tr><th id="693">693</th><td>			<b>else</b> <b>if</b> (<a class="local col2 ref" href="#22num_nobrainers" title='num_nobrainers' data-ref="22num_nobrainers">num_nobrainers</a> &lt; <var>32</var>)</td></tr>
+<tr><th id="694">694</th><td>			    <a class="tu ref" href="#plr" title='plr' data-use='r' data-ref="plr">plr</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <a class="macro" href="d_englsh.h.html#326" title="&quot;You start to rave&quot;" data-ref="_M/HUSTR_TALKTOSELF4">HUSTR_TALKTOSELF4</a>;</td></tr>
+<tr><th id="695">695</th><td>			<b>else</b></td></tr>
+<tr><th id="696">696</th><td>			    <a class="tu ref" href="#plr" title='plr' data-use='r' data-ref="plr">plr</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <a class="macro" href="d_englsh.h.html#327" title="&quot;You&apos;ve lost it...&quot;" data-ref="_M/HUSTR_TALKTOSELF5">HUSTR_TALKTOSELF5</a>;</td></tr>
+<tr><th id="697">697</th><td>		    }</td></tr>
+<tr><th id="698">698</th><td>		}</td></tr>
+<tr><th id="699">699</th><td>	    }</td></tr>
+<tr><th id="700">700</th><td>	}</td></tr>
+<tr><th id="701">701</th><td>    }</td></tr>
+<tr><th id="702">702</th><td>    <b>else</b></td></tr>
+<tr><th id="703">703</th><td>    {</td></tr>
+<tr><th id="704">704</th><td>	<a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a> = <a class="local col2 ref" href="#12ev" title='ev' data-ref="12ev">ev</a>-&gt;<a class="ref" href="d_event.h.html#(anonymous)::data1" title='(anonymous struct)::data1' data-ref="(anonymous)::data1">data1</a>;</td></tr>
+<tr><th id="705">705</th><td>	<i>// send a macro</i></td></tr>
+<tr><th id="706">706</th><td>	<b>if</b> (<a class="local col7 ref" href="#17altdown" title='altdown' data-ref="17altdown">altdown</a>)</td></tr>
+<tr><th id="707">707</th><td>	{</td></tr>
+<tr><th id="708">708</th><td>	    <a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a> = <a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a> - <kbd>'0'</kbd>;</td></tr>
+<tr><th id="709">709</th><td>	    <b>if</b> (<a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a> &gt; <var>9</var>)</td></tr>
+<tr><th id="710">710</th><td>		<b>return</b> <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="711">711</th><td>	    <i>// fprintf(stderr, "got here\n");</i></td></tr>
+<tr><th id="712">712</th><td>	    <a class="local col4 ref" href="#14macromessage" title='macromessage' data-ref="14macromessage">macromessage</a> = <a class="ref" href="#chat_macros" title='chat_macros' data-ref="chat_macros">chat_macros</a>[<a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a>];</td></tr>
+<tr><th id="713">713</th><td>	    </td></tr>
+<tr><th id="714">714</th><td>	    <i>// kill last message with a '\n'</i></td></tr>
+<tr><th id="715">715</th><td>	    <a class="ref" href="#HU_queueChatChar" title='HU_queueChatChar' data-ref="HU_queueChatChar">HU_queueChatChar</a>(<a class="macro" href="doomdef.h.html#255" title="13" data-ref="_M/KEY_ENTER">KEY_ENTER</a>); <i>// DEBUG!!!</i></td></tr>
+<tr><th id="716">716</th><td>	    </td></tr>
+<tr><th id="717">717</th><td>	    <i>// send the macro message</i></td></tr>
+<tr><th id="718">718</th><td>	    <b>while</b> (*<a class="local col4 ref" href="#14macromessage" title='macromessage' data-ref="14macromessage">macromessage</a>)</td></tr>
+<tr><th id="719">719</th><td>		<a class="ref" href="#HU_queueChatChar" title='HU_queueChatChar' data-ref="HU_queueChatChar">HU_queueChatChar</a>(*<a class="local col4 ref" href="#14macromessage" title='macromessage' data-ref="14macromessage">macromessage</a>++);</td></tr>
+<tr><th id="720">720</th><td>	    <a class="ref" href="#HU_queueChatChar" title='HU_queueChatChar' data-ref="HU_queueChatChar">HU_queueChatChar</a>(<a class="macro" href="doomdef.h.html#255" title="13" data-ref="_M/KEY_ENTER">KEY_ENTER</a>);</td></tr>
+<tr><th id="721">721</th><td>	    </td></tr>
+<tr><th id="722">722</th><td>	    <i>// leave chat mode and notify that it was sent</i></td></tr>
+<tr><th id="723">723</th><td>	    <a class="ref" href="#chat_on" title='chat_on' data-ref="chat_on">chat_on</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="724">724</th><td>	    <a class="ref" href="../include/string.h.html#strcpy" title='strcpy' data-ref="strcpy">strcpy</a>(<a class="local col3 ref" href="#13lastmessage" title='lastmessage' data-ref="13lastmessage">lastmessage</a>, <a class="ref" href="#chat_macros" title='chat_macros' data-ref="chat_macros">chat_macros</a>[<a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a>]);</td></tr>
+<tr><th id="725">725</th><td>	    <a class="tu ref" href="#plr" title='plr' data-use='r' data-ref="plr">plr</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <a class="local col3 ref" href="#13lastmessage" title='lastmessage' data-ref="13lastmessage">lastmessage</a>;</td></tr>
+<tr><th id="726">726</th><td>	    <a class="local col5 ref" href="#15eatkey" title='eatkey' data-ref="15eatkey">eatkey</a> = <a class="enum" href="doomtype.h.html#true" title='true' data-ref="true">true</a>;</td></tr>
+<tr><th id="727">727</th><td>	}</td></tr>
+<tr><th id="728">728</th><td>	<b>else</b></td></tr>
+<tr><th id="729">729</th><td>	{</td></tr>
+<tr><th id="730">730</th><td>	    <b>if</b> (<a class="enum" href="doomdef.h.html#french" title='french' data-ref="french">french</a>)</td></tr>
+<tr><th id="731">731</th><td>		<a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a> = <a class="ref" href="#ForeignTranslation" title='ForeignTranslation' data-ref="ForeignTranslation">ForeignTranslation</a>(<a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a>);</td></tr>
+<tr><th id="732">732</th><td>	    <b>if</b> (<a class="local col6 ref" href="#16shiftdown" title='shiftdown' data-ref="16shiftdown">shiftdown</a> || (<a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a> &gt;= <kbd>'a'</kbd> &amp;&amp; <a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a> &lt;= <kbd>'z'</kbd>))</td></tr>
+<tr><th id="733">733</th><td>		<a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a> = <a class="ref" href="#shiftxform" title='shiftxform' data-ref="shiftxform">shiftxform</a>[<a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a>];</td></tr>
+<tr><th id="734">734</th><td>	    <a class="local col5 ref" href="#15eatkey" title='eatkey' data-ref="15eatkey">eatkey</a> = <a class="ref" href="hu_lib.h.html#HUlib_keyInIText" title='HUlib_keyInIText' data-ref="HUlib_keyInIText">HUlib_keyInIText</a>(&amp;<a class="tu ref" href="#w_chat" title='w_chat' data-use='a' data-ref="w_chat">w_chat</a>, <a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a>);</td></tr>
+<tr><th id="735">735</th><td>	    <b>if</b> (<a class="local col5 ref" href="#15eatkey" title='eatkey' data-ref="15eatkey">eatkey</a>)</td></tr>
+<tr><th id="736">736</th><td>	    {</td></tr>
+<tr><th id="737">737</th><td>		<i>// static unsigned char buf[20]; // DEBUG</i></td></tr>
+<tr><th id="738">738</th><td>		<a class="ref" href="#HU_queueChatChar" title='HU_queueChatChar' data-ref="HU_queueChatChar">HU_queueChatChar</a>(<a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a>);</td></tr>
+<tr><th id="739">739</th><td>		</td></tr>
+<tr><th id="740">740</th><td>		<i>// sprintf(buf, "KEY: %d =&gt; %d", ev-&gt;data1, c);</i></td></tr>
+<tr><th id="741">741</th><td><i>		//      plr-&gt;message = buf;</i></td></tr>
+<tr><th id="742">742</th><td>	    }</td></tr>
+<tr><th id="743">743</th><td>	    <b>if</b> (<a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a> == <a class="macro" href="doomdef.h.html#255" title="13" data-ref="_M/KEY_ENTER">KEY_ENTER</a>)</td></tr>
+<tr><th id="744">744</th><td>	    {</td></tr>
+<tr><th id="745">745</th><td>		<a class="ref" href="#chat_on" title='chat_on' data-ref="chat_on">chat_on</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="746">746</th><td>		<b>if</b> (<a class="tu ref" href="#w_chat" title='w_chat' data-use='m' data-ref="w_chat">w_chat</a>.<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>.<a class="ref" href="hu_lib.h.html#(anonymous)::len" title='(anonymous struct)::len' data-ref="(anonymous)::len">len</a>)</td></tr>
+<tr><th id="747">747</th><td>		{</td></tr>
+<tr><th id="748">748</th><td>		    <a class="ref" href="../include/string.h.html#strcpy" title='strcpy' data-ref="strcpy">strcpy</a>(<a class="local col3 ref" href="#13lastmessage" title='lastmessage' data-ref="13lastmessage">lastmessage</a>, <a class="tu ref" href="#w_chat" title='w_chat' data-use='m' data-ref="w_chat">w_chat</a>.<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>.<a class="ref" href="hu_lib.h.html#(anonymous)::l" title='(anonymous struct)::l' data-ref="(anonymous)::l">l</a>);</td></tr>
+<tr><th id="749">749</th><td>		    <a class="tu ref" href="#plr" title='plr' data-use='r' data-ref="plr">plr</a>-&gt;<a class="ref" href="d_player.h.html#player_s::message" title='player_s::message' data-ref="player_s::message">message</a> = <a class="local col3 ref" href="#13lastmessage" title='lastmessage' data-ref="13lastmessage">lastmessage</a>;</td></tr>
+<tr><th id="750">750</th><td>		}</td></tr>
+<tr><th id="751">751</th><td>	    }</td></tr>
+<tr><th id="752">752</th><td>	    <b>else</b> <b>if</b> (<a class="local col8 ref" href="#18c" title='c' data-ref="18c">c</a> == <a class="macro" href="doomdef.h.html#254" title="27" data-ref="_M/KEY_ESCAPE">KEY_ESCAPE</a>)</td></tr>
+<tr><th id="753">753</th><td>		<a class="ref" href="#chat_on" title='chat_on' data-ref="chat_on">chat_on</a> = <a class="enum" href="doomtype.h.html#false" title='false' data-ref="false">false</a>;</td></tr>
+<tr><th id="754">754</th><td>	}</td></tr>
+<tr><th id="755">755</th><td>    }</td></tr>
+<tr><th id="756">756</th><td></td></tr>
+<tr><th id="757">757</th><td>    <b>return</b> <a class="local col5 ref" href="#15eatkey" title='eatkey' data-ref="15eatkey">eatkey</a>;</td></tr>
+<tr><th id="758">758</th><td></td></tr>
+<tr><th id="759">759</th><td>}</td></tr>
+<tr><th id="760">760</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

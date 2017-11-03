@@ -1,0 +1,6 @@
+<def f='codebrowser/g_game.c' l='106' type='boolean'/>
+<use f='codebrowser/g_game.c' l='432' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='434' u='w' c='G_BuildTiccmd'/>
+<use f='codebrowser/g_game.c' l='494' u='w' c='G_DoLoadLevel'/>
+<use f='codebrowser/g_game.c' l='1267' u='w' c='G_SaveGame'/>
+<doc f='codebrowser/g_game.c' l='106'>// send a save event next tic </doc>

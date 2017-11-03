@@ -1,0 +1,4 @@
+<dec f='include/X11/Xlib.h' l='294' type='unsigned long'/>
+<use f='codebrowser/i_video.c' l='805' u='w' c='I_InitGraphics'/>
+<offset>192</offset>
+<doc f='include/X11/Xlib.h' l='294'>/* border pixel value */</doc>

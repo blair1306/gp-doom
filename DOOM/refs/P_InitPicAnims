@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_spec.h' l='42' type='void P_InitPicAnims()'/>
+<doc f='codebrowser/p_spec.h' l='41'>// at game start</doc>
+<use f='codebrowser/p_setup.c' l='703' u='c' c='P_Init'/>
+<def f='codebrowser/p_spec.c' l='148' ll='187' type='void P_InitPicAnims()'/>

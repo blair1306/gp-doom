@@ -1,0 +1,7 @@
+<def f='codebrowser/r_data.c' l='411' ll='574' type='void R_InitTextures()'/>
+<use f='codebrowser/r_data.c' l='656' u='c' c='R_InitData'/>
+<doc f='codebrowser/r_data.c' l='406'>//
+// R_InitTextures
+// Initializes the texture list
+//  with the textures from the world map.
+//</doc>

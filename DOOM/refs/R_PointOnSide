@@ -1,0 +1,12 @@
+<dec f='codebrowser/r_main.h' l='110' type='int R_PointOnSide(fixed_t x, fixed_t y, node_t * node)'/>
+<doc f='codebrowser/r_main.h' l='107'>//
+// Utility functions.</doc>
+<use f='codebrowser/r_bsp.c' l='570' u='c' c='R_RenderBSPNode'/>
+<def f='codebrowser/r_main.c' l='161' ll='211' type='int R_PointOnSide(fixed_t x, fixed_t y, node_t * node)'/>
+<use f='codebrowser/r_main.c' l='818' u='c' c='R_PointInSubsector'/>
+<doc f='codebrowser/r_main.c' l='155'>//
+// R_PointOnSide
+// Traverse BSP (sub) tree,
+//  check point against partition plane.
+// Returns side 0 (front) or 1 (back).
+//</doc>

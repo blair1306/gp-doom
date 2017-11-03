@@ -1,0 +1,2 @@
+<def f='codebrowser/wi_stuff.c' l='1078' ll='1102' type='void WI_initNetgameStats()'/>
+<use f='codebrowser/wi_stuff.c' l='1847' u='c' c='WI_Start'/>

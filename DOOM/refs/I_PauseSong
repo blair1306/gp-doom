@@ -1,0 +1,4 @@
+<dec f='codebrowser/i_sound.h' l='98' type='void I_PauseSong(int handle)'/>
+<doc f='codebrowser/i_sound.h' l='97'>// PAUSE game handling.</doc>
+<def f='codebrowser/i_sound.c' l='849' ll='853' type='void I_PauseSong(int handle)'/>
+<use f='codebrowser/s_sound.c' l='501' u='c' c='S_PauseSound'/>

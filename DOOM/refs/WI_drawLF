@@ -1,0 +1,5 @@
+<def f='codebrowser/wi_stuff.c' l='421' ll='434' type='void WI_drawLF()'/>
+<use f='codebrowser/wi_stuff.c' l='998' u='c' c='WI_drawDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1273' u='c' c='WI_drawNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1448' u='c' c='WI_drawStats'/>
+<doc f='codebrowser/wi_stuff.c' l='420'>// Draws &quot;&lt;Levelname&gt; Finished!&quot;</doc>

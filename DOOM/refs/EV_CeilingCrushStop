@@ -1,0 +1,8 @@
+<dec f='codebrowser/p_spec.h' l='530' type='int EV_CeilingCrushStop(line_t * line)'/>
+<def f='codebrowser/p_ceilng.c' l='314' ll='335' type='int EV_CeilingCrushStop(line_t * line)'/>
+<doc f='codebrowser/p_ceilng.c' l='310'>//
+// EV_CeilingCrushStop
+// Stop a ceiling from crushing!
+//</doc>
+<use f='codebrowser/p_spec.c' l='702' u='c' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_spec.c' l='799' u='c' c='P_CrossSpecialLine'/>

@@ -1,0 +1,31 @@
+<dec f='codebrowser/p_mobj.h' l='239' type='fixed_t'/>
+<offset>864</offset>
+<use f='codebrowser/p_enemy.c' l='1151' u='w' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1153' u='w' c='PIT_VileCheck'/>
+<use f='codebrowser/p_enemy.c' l='1214' u='w' c='A_VileChase'/>
+<use f='codebrowser/p_enemy.c' l='1441' u='r' c='A_SkullAttack'/>
+<use f='codebrowser/p_inter.c' l='350' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='681' u='w' c='P_KillMobj'/>
+<use f='codebrowser/p_map.c' l='294' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='296' u='r' c='PIT_CheckThing'/>
+<use f='codebrowser/p_map.c' l='468' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='474' u='r' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='550' u='r' c='P_ThingHeightClip'/>
+<use f='codebrowser/p_map.c' l='551' u='r' c='P_ThingHeightClip'/>
+<use f='codebrowser/p_map.c' l='554' u='r' c='P_ThingHeightClip'/>
+<use f='codebrowser/p_map.c' l='658' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='661' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='872' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='984' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1036' u='r' c='P_AimLineAttack'/>
+<use f='codebrowser/p_map.c' l='1078' u='r' c='P_LineAttack'/>
+<use f='codebrowser/p_map.c' l='1274' u='w' c='PIT_ChangeSector'/>
+<use f='codebrowser/p_map.c' l='1305' u='r' c='PIT_ChangeSector'/>
+<use f='codebrowser/p_mobj.c' l='273' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='328' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='334' u='r' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='499' u='w' c='P_SpawnMobj'/>
+<use f='codebrowser/p_pspr.c' l='802' u='r' c='A_BFGSpray'/>
+<use f='codebrowser/p_sight.c' l='334' u='r' c='P_CheckSight'/>
+<use f='codebrowser/p_sight.c' l='334' u='r' c='P_CheckSight'/>
+<use f='codebrowser/p_sight.c' l='335' u='r' c='P_CheckSight'/>

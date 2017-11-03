@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_saveg.h' l='38' type='void P_ArchiveThinkers()'/>
+<use f='codebrowser/g_game.c' l='1304' u='c' c='G_DoSaveGame'/>
+<def f='codebrowser/p_saveg.c' l='232' ll='259' type='void P_ArchiveThinkers()'/>
+<doc f='codebrowser/p_saveg.c' l='229'>//
+// P_ArchiveThinkers
+//</doc>

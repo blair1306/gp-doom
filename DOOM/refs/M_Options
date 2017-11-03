@@ -1,0 +1,6 @@
+<dec f='codebrowser/m_menu.c' l='188' type='void M_Options(int choice)'/>
+<use f='codebrowser/m_menu.c' l='253'/>
+<use f='codebrowser/m_menu.c' l='253'/>
+<use f='codebrowser/m_menu.c' l='253'/>
+<use f='codebrowser/m_menu.c' l='253'/>
+<def f='codebrowser/m_menu.c' l='968' ll='971' type='void M_Options(int choice)'/>

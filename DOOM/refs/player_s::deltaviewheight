@@ -1,0 +1,14 @@
+<dec f='codebrowser/d_player.h' l='96' type='fixed_t'/>
+<offset>224</offset>
+<doc f='codebrowser/d_player.h' l='95'>// Bob/squat speed.</doc>
+<use f='codebrowser/p_mobj.c' l='256' u='w' c='P_ZMovement'/>
+<use f='codebrowser/p_mobj.c' l='306' u='w' c='P_ZMovement'/>
+<use f='codebrowser/p_user.c' l='115' u='r' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='120' u='w' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='126' u='r' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='127' u='w' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='130' u='r' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='132' u='w' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='133' u='r' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='134' u='w' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='196' u='w' c='P_DeathThink'/>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/d_player.h' l='98' type='fixed_t'/>
+<offset>256</offset>
+<doc f='codebrowser/d_player.h' l='97'>// bounded/scaled total momentum.</doc>
+<use f='codebrowser/p_pspr.c' l='121' u='r' c='P_CalcSwing'/>
+<use f='codebrowser/p_pspr.c' l='331' u='r' c='A_WeaponReady'/>
+<use f='codebrowser/p_pspr.c' l='333' u='r' c='A_WeaponReady'/>
+<use f='codebrowser/p_user.c' l='88' u='w' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='92' u='w' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='94' u='r' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='95' u='w' c='P_CalcHeight'/>
+<use f='codebrowser/p_user.c' l='109' u='r' c='P_CalcHeight'/>

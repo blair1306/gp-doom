@@ -1,0 +1,7 @@
+<def f='codebrowser/g_game.c' l='142' type='byte *'/>
+<use f='codebrowser/g_game.c' l='1210' u='a' c='G_DoLoadGame'/>
+<use f='codebrowser/g_game.c' l='1211' u='r' c='G_DoLoadGame'/>
+<use f='codebrowser/g_game.c' l='1245' u='r' c='G_DoLoadGame'/>
+<use f='codebrowser/g_game.c' l='1284' u='w' c='G_DoSaveGame'/>
+<use f='codebrowser/g_game.c' l='1309' u='r' c='G_DoSaveGame'/>
+<use f='codebrowser/g_game.c' l='1312' u='r' c='G_DoSaveGame'/>

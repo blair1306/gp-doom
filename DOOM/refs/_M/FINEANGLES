@@ -1,0 +1,14 @@
+<dec f='codebrowser/tables.h' l='50'/>
+<use f='codebrowser/tables.h' l='58' u='c'/>
+<use f='codebrowser/tables.h' l='65' u='c'/>
+<use f='codebrowser/r_state.h' l='114' u='c'/>
+<use f='codebrowser/p_pspr.c' l='123' u='c'/>
+<use f='codebrowser/p_pspr.c' l='126' u='c'/>
+<use f='codebrowser/p_pspr.c' l='126' u='c'/>
+<use f='codebrowser/p_pspr.c' l='332' u='c'/>
+<use f='codebrowser/p_user.c' l='108' u='c'/>
+<use f='codebrowser/r_main.c' l='98' u='c'/>
+<use f='codebrowser/r_main.c' l='113' u='c'/>
+<use f='codebrowser/r_main.c' l='558' u='c'/>
+<use f='codebrowser/r_main.c' l='560' u='c'/>
+<use f='codebrowser/r_main.c' l='591' u='c'/>

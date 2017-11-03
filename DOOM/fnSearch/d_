@@ -1,0 +1,14 @@
+D_AddFile|D_AddFile
+D_AdvanceDemo|D_AdvanceDemo
+D_Display|D_Display
+D_DoAdvanceDemo|D_DoAdvanceDemo
+D_DoomLoop|D_DoomLoop
+D_DoomMain|D_DoomMain
+D_PageDrawer|D_PageDrawer
+D_PageTicker|D_PageTicker
+D_PostEvent|D_PostEvent
+D_ProcessEvents|D_ProcessEvents
+D_StartTitle|D_StartTitle
+D_ArbitrateNetStart|D_ArbitrateNetStart
+D_CheckNetGame|D_CheckNetGame
+D_QuitNetGame|D_QuitNetGame

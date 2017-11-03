@@ -1,0 +1,3 @@
+<dec f='codebrowser/p_spec.h' l='201' type='void P_SpawnGlowingLight(sector_t * sector)'/>
+<def f='codebrowser/p_lights.c' l='341' ll='356' type='void P_SpawnGlowingLight(sector_t * sector)'/>
+<use f='codebrowser/p_spec.c' l='1301' u='c' c='P_SpawnSpecials'/>

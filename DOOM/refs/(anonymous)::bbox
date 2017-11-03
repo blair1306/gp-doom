@@ -1,0 +1,9 @@
+<dec f='codebrowser/doomdata.h' l='190' type='short [2][4]'/>
+<dec f='codebrowser/r_defs.h' l='274' type='fixed_t [2][4]'/>
+<offset>128</offset>
+<doc f='codebrowser/r_defs.h' l='273'>// Bounding box for each child.</doc>
+<doc f='codebrowser/doomdata.h' l='188'>// Bounding box for each child,
+  // clip against view frustum.</doc>
+<use f='codebrowser/p_setup.c' l='290' u='w' c='P_LoadNodes'/>
+<use f='codebrowser/p_setup.c' l='290' u='r' c='P_LoadNodes'/>
+<use f='codebrowser/r_bsp.c' l='576' u='r' c='R_RenderBSPNode'/>

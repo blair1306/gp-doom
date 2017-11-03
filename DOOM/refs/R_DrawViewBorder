@@ -1,0 +1,4 @@
+<dec f='codebrowser/r_draw.h' l='106' type='void R_DrawViewBorder()'/>
+<doc f='codebrowser/r_draw.h' l='105'>// If the view size is not full screen, draws a border around it.</doc>
+<use f='codebrowser/d_main.c' l='291' u='c' c='D_Display'/>
+<def f='codebrowser/r_draw.c' l='843' ll='875' type='void R_DrawViewBorder()'/>

@@ -1,0 +1,9 @@
+<def f='codebrowser/p_map.c' l='1093' type='mobj_t *'/>
+<use f='codebrowser/p_map.c' l='1104' u='r' c='PTR_UseTraverse'/>
+<use f='codebrowser/p_map.c' l='1114' u='r' c='PTR_UseTraverse'/>
+<use f='codebrowser/p_map.c' l='1114' u='r' c='PTR_UseTraverse'/>
+<use f='codebrowser/p_map.c' l='1119' u='r' c='PTR_UseTraverse'/>
+<use f='codebrowser/p_map.c' l='1138' u='w' c='P_UseLines'/>
+<doc f='codebrowser/p_map.c' l='1090'>//
+// USE LINES
+//</doc>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/sounds.h' l='200' type='21'/>
+<use f='codebrowser/p_doors.c' l='84' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='310' u='r' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='317' u='r' c='EV_DoDoor'/>

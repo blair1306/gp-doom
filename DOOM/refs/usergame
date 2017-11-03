@@ -1,0 +1,15 @@
+<dec f='codebrowser/doomstat.h' l='180' type='boolean'/>
+<doc f='codebrowser/doomstat.h' l='176'>// --------------------------------------
+// DEMO playback/recording related stuff.
+// No demo, there is a human player in charge?
+// Disable save/end game?</doc>
+<use f='codebrowser/d_main.c' l='458' u='w' c='D_DoAdvanceDemo'/>
+<use f='codebrowser/d_net.c' l='609' u='r' c='D_QuitNetGame'/>
+<def f='codebrowser/g_game.c' l='107' type='boolean'/>
+<use f='codebrowser/g_game.c' l='1443' u='w' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1535' u='w' c='G_RecordDemo'/>
+<use f='codebrowser/g_game.c' l='1618' u='w' c='G_DoPlayDemo'/>
+<doc f='codebrowser/g_game.c' l='107'>// ok to save / end game </doc>
+<use f='codebrowser/m_menu.c' l='661' u='r' c='M_SaveGame'/>
+<use f='codebrowser/m_menu.c' l='692' u='r' c='M_QuickSave'/>
+<use f='codebrowser/m_menu.c' l='1009' u='r' c='M_EndGame'/>

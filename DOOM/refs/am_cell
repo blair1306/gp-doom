@@ -1,0 +1,15 @@
+<dec f='codebrowser/doomdef.h' l='205' type='2'/>
+<doc f='codebrowser/doomdef.h' l='205'>// Plasma rifle, BFG.</doc>
+<use f='codebrowser/d_items.c' l='96'/>
+<use f='codebrowser/d_items.c' l='96'/>
+<use f='codebrowser/d_items.c' l='105'/>
+<use f='codebrowser/d_items.c' l='105'/>
+<use f='codebrowser/d_items.c' l='96'/>
+<use f='codebrowser/d_items.c' l='96'/>
+<use f='codebrowser/d_items.c' l='105'/>
+<use f='codebrowser/d_items.c' l='105'/>
+<use f='codebrowser/p_inter.c' l='140' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='566' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='572' u='r' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_pspr.c' l='186' u='r' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='221' u='r' c='P_CheckAmmo'/>

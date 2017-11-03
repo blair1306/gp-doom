@@ -1,0 +1,12 @@
+<dec f='codebrowser/d_player.h' l='144' type='int'/>
+<offset>1888</offset>
+<use f='codebrowser/g_game.c' l='791' u='w' c='G_PlayerFinishLevel'/>
+<use f='codebrowser/p_inter.c' l='184' u='w' c='P_GiveWeapon'/>
+<use f='codebrowser/p_inter.c' l='281' u='w' c='P_GiveCard'/>
+<use f='codebrowser/p_inter.c' l='658' u='w' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_mobj.c' l='680' u='w' c='P_SpawnPlayer'/>
+<use f='codebrowser/p_user.c' l='358' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='359' u='w' c='P_PlayerThink'/>
+<use f='codebrowser/st_stuff.c' l='774' u='r' c='ST_updateFaceWidget'/>
+<use f='codebrowser/st_stuff.c' l='1029' u='r' c='ST_doPaletteStuff'/>
+<use f='codebrowser/st_stuff.c' l='1031' u='r' c='ST_doPaletteStuff'/>

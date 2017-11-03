@@ -1,0 +1,15 @@
+<dec f='codebrowser/r_bsp.c' l='58' type='void R_StoreWallRange(int start, int stop)'/>
+<use f='codebrowser/r_bsp.c' l='123' u='c' c='R_ClipSolidWallSegment'/>
+<use f='codebrowser/r_bsp.c' l='138' u='c' c='R_ClipSolidWallSegment'/>
+<use f='codebrowser/r_bsp.c' l='151' u='c' c='R_ClipSolidWallSegment'/>
+<use f='codebrowser/r_bsp.c' l='164' u='c' c='R_ClipSolidWallSegment'/>
+<use f='codebrowser/r_bsp.c' l='214' u='c' c='R_ClipPassWallSegment'/>
+<use f='codebrowser/r_bsp.c' l='219' u='c' c='R_ClipPassWallSegment'/>
+<use f='codebrowser/r_bsp.c' l='229' u='c' c='R_ClipPassWallSegment'/>
+<use f='codebrowser/r_bsp.c' l='237' u='c' c='R_ClipPassWallSegment'/>
+<def f='codebrowser/r_segs.c' l='374' ll='745' type='void R_StoreWallRange(int start, int stop)'/>
+<doc f='codebrowser/r_segs.c' l='369'>//
+// R_StoreWallRange
+// A wall segment will be drawn
+//  between start and stop pixels (inclusive).
+//</doc>

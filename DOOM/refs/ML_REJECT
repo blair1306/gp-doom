@@ -1,0 +1,3 @@
+<dec f='codebrowser/doomdata.h' l='54' type='9'/>
+<doc f='codebrowser/doomdata.h' l='54'>// LUT, sector-sector visibility	</doc>
+<use f='codebrowser/p_setup.c' l='659' u='r' c='P_SetupLevel'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_mobj.h' l='210' type='thinker_t'/>
+<offset>0</offset>
+<doc f='codebrowser/p_mobj.h' l='209'>// List: thinker links.</doc>
+<use f='codebrowser/p_mobj.c' l='425' u='m' c='P_MobjThinker'/>
+<use f='codebrowser/p_mobj.c' l='434' u='m' c='P_MobjThinker'/>
+<use f='codebrowser/p_mobj.c' l='529' u='m' c='P_SpawnMobj'/>
+<use f='codebrowser/p_mobj.c' l='531' u='a' c='P_SpawnMobj'/>
+<use f='codebrowser/p_saveg.c' l='313' u='m' c='P_UnArchiveThinkers'/>
+<use f='codebrowser/p_saveg.c' l='314' u='a' c='P_UnArchiveThinkers'/>

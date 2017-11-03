@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_spec.h' l='157' type='int'/>
+<offset>352</offset>
+<use f='codebrowser/p_lights.c' l='168' u='r' c='T_StrobeFlash'/>
+<use f='codebrowser/p_lights.c' l='193' u='w' c='P_SpawnStrobeFlash'/>

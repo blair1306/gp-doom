@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_spec.h' l='231' type='int'/>
+<offset>96</offset>
+<use f='codebrowser/p_spec.c' l='1138' u='r' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_spec.c' l='1143' u='r' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_spec.c' l='1148' u='r' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_switch.c' l='182' u='w' c='P_StartButton'/>

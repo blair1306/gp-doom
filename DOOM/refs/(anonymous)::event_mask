@@ -1,0 +1,4 @@
+<dec f='include/X11/Xlib.h' l='301' type='long'/>
+<use f='codebrowser/i_video.c' l='798' u='w' c='I_InitGraphics'/>
+<offset>576</offset>
+<doc f='include/X11/Xlib.h' l='301'>/* set of events that should be saved */</doc>

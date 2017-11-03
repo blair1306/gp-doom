@@ -1,0 +1,6 @@
+<dec f='codebrowser/r_bsp.h' l='61' type='void R_ClearDrawSegs()'/>
+<def f='codebrowser/r_bsp.c' l='68' ll='71' type='void R_ClearDrawSegs()'/>
+<doc f='codebrowser/r_bsp.c' l='65'>//
+// R_ClearDrawSegs
+//</doc>
+<use f='codebrowser/r_main.c' l='876' u='c' c='R_RenderPlayerView'/>

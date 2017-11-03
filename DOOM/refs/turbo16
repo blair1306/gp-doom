@@ -1,0 +1,5 @@
+<dec f='codebrowser/p_spec.h' l='578' type='1'/>
+<doc f='codebrowser/p_spec.h' l='578'>// quickly build by 16</doc>
+<use f='codebrowser/p_floor.c' l='497' c='EV_BuildStairs'/>
+<use f='codebrowser/p_spec.c' l='738' u='r' c='P_CrossSpecialLine'/>
+<use f='codebrowser/p_switch.c' l='487' u='r' c='P_UseSpecialLine'/>

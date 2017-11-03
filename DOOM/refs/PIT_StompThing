@@ -1,0 +1,9 @@
+<def f='codebrowser/p_map.c' l='81' ll='108' type='boolean PIT_StompThing(mobj_t * thing)'/>
+<use f='codebrowser/p_map.c' l='162' u='r' c='P_TeleportMove'/>
+<doc f='codebrowser/p_map.c' l='74'>//
+// TELEPORT MOVE
+// 
+
+//
+// PIT_StompThing
+//</doc>

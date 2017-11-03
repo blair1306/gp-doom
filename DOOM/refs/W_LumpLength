@@ -1,0 +1,20 @@
+<dec f='codebrowser/w_wad.h' l='75' type='int W_LumpLength(int lump)'/>
+<use f='codebrowser/i_sound.c' l='219' u='c' c='getsfx'/>
+<use f='codebrowser/p_setup.c' l='131' u='c' c='P_LoadVertexes'/>
+<use f='codebrowser/p_setup.c' l='169' u='c' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='209' u='c' c='P_LoadSubsectors'/>
+<use f='codebrowser/p_setup.c' l='238' u='c' c='P_LoadSectors'/>
+<use f='codebrowser/p_setup.c' l='273' u='c' c='P_LoadNodes'/>
+<use f='codebrowser/p_setup.c' l='310' u='c' c='P_LoadThings'/>
+<use f='codebrowser/p_setup.c' l='366' u='c' c='P_LoadLineDefs'/>
+<use f='codebrowser/p_setup.c' l='445' u='c' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_setup.c' l='476' u='c' c='P_LoadBlockMap'/>
+<use f='codebrowser/r_data.c' l='465' u='c' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='472' u='c' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='640' u='c' c='R_InitColormaps'/>
+<def f='codebrowser/w_wad.c' l='416' ll='422' type='int W_LumpLength(int lump)'/>
+<use f='codebrowser/w_wad.c' l='490' u='c' c='W_CacheLumpNum'/>
+<doc f='codebrowser/w_wad.c' l='412'>//
+// W_LumpLength
+// Returns the buffer size needed to load the given lump.
+//</doc>

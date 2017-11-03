@@ -1,0 +1,32 @@
+<dec f='codebrowser/d_player.h' l='117' type='weapontype_t'/>
+<offset>960</offset>
+<doc f='codebrowser/d_player.h' l='116'>// Is wp_nochange if not changing.</doc>
+<use f='codebrowser/g_game.c' l='825' u='w' c='G_PlayerReborn'/>
+<use f='codebrowser/p_inter.c' l='125' u='w' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='127' u='w' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='136' u='w' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='145' u='w' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='153' u='w' c='P_GiveAmmo'/>
+<use f='codebrowser/p_inter.c' l='191' u='w' c='P_GiveWeapon'/>
+<use f='codebrowser/p_inter.c' l='216' u='w' c='P_GiveWeapon'/>
+<use f='codebrowser/p_inter.c' l='500' u='w' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_pspr.c' l='142' u='r' c='P_BringUpWeapon'/>
+<use f='codebrowser/p_pspr.c' l='143' u='w' c='P_BringUpWeapon'/>
+<use f='codebrowser/p_pspr.c' l='145' u='r' c='P_BringUpWeapon'/>
+<use f='codebrowser/p_pspr.c' l='148' u='r' c='P_BringUpWeapon'/>
+<use f='codebrowser/p_pspr.c' l='150' u='w' c='P_BringUpWeapon'/>
+<use f='codebrowser/p_pspr.c' l='189' u='w' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='195' u='w' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='200' u='w' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='205' u='w' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='209' u='w' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='213' u='w' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='218' u='w' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='224' u='w' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='229' u='w' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='232' u='r' c='P_CheckAmmo'/>
+<use f='codebrowser/p_pspr.c' l='304' u='r' c='A_WeaponReady'/>
+<use f='codebrowser/p_pspr.c' l='351' u='r' c='A_ReFire'/>
+<use f='codebrowser/p_pspr.c' l='413' u='r' c='A_Lower'/>
+<use f='codebrowser/p_pspr.c' l='840' u='w' c='P_SetupPsprites'/>
+<use f='codebrowser/p_user.c' l='316' u='w' c='P_PlayerThink'/>

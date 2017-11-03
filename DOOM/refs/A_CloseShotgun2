@@ -1,0 +1,10 @@
+<dec f='codebrowser/info.c' l='73' type='void A_CloseShotgun2()'/>
+<use f='codebrowser/info.c' l='179'/>
+<use f='codebrowser/info.c' l='179'/>
+<use f='codebrowser/info.c' l='179'/>
+<use f='codebrowser/info.c' l='179'/>
+<use f='codebrowser/info.c' l='179'/>
+<use f='codebrowser/info.c' l='179'/>
+<use f='codebrowser/info.c' l='179'/>
+<use f='codebrowser/info.c' l='179'/>
+<def f='codebrowser/p_enemy.c' l='1798' ll='1805' type='void A_CloseShotgun2(player_t * player, pspdef_t * psp)'/>

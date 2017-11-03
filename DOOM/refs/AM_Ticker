@@ -1,0 +1,7 @@
+<dec f='codebrowser/am_map.h' l='35' type='void AM_Ticker()'/>
+<def f='codebrowser/am_map.c' l='805' ll='827' type='void AM_Ticker()'/>
+<doc f='codebrowser/am_map.c' l='802'>//
+// Updates on Game Tick
+//</doc>
+<doc f='codebrowser/am_map.h' l='34'>// Called by main loop.</doc>
+<use f='codebrowser/g_game.c' l='732' u='c' c='G_Ticker'/>

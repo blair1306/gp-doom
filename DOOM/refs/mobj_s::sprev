@@ -1,0 +1,8 @@
+<dec f='codebrowser/p_mobj.h' l='219' type='struct mobj_s *'/>
+<offset>384</offset>
+<use f='codebrowser/p_maputl.c' l='357' u='w' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='357' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='359' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='360' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='414' u='w' c='P_SetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='418' u='w' c='P_SetThingPosition'/>

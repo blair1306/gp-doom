@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>doomdata.h source code [codebrowser/doomdata.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/doomdata.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='doomdata.h.html'>doomdata.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>// DESCRIPTION:</i></td></tr>
+<tr><th id="18">18</th><td><i>//  all external data is defined here</i></td></tr>
+<tr><th id="19">19</th><td><i>//  most of the data is loaded into different structures at run time</i></td></tr>
+<tr><th id="20">20</th><td><i>//  some internal structures shared by many modules are here</i></td></tr>
+<tr><th id="21">21</th><td><i>//</i></td></tr>
+<tr><th id="22">22</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><u>#<span data-ppcond="24">ifndef</span> <span class="macro" data-ref="_M/__DOOMDATA__">__DOOMDATA__</span></u></td></tr>
+<tr><th id="25">25</th><td><u>#define <dfn class="macro" id="_M/__DOOMDATA__" data-ref="_M/__DOOMDATA__">__DOOMDATA__</dfn></u></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><i>// The most basic types we use, portability.</i></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="doomtype.h.html">"doomtype.h"</a></u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><i>// Some global defines, that configure the game.</i></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="doomdef.h.html">"doomdef.h"</a></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><i>//</i></td></tr>
+<tr><th id="36">36</th><td><i>// Map level types.</i></td></tr>
+<tr><th id="37">37</th><td><i>// The following data structures define the persistent format</i></td></tr>
+<tr><th id="38">38</th><td><i>// used in the lumps of the WAD files.</i></td></tr>
+<tr><th id="39">39</th><td><i>//</i></td></tr>
+<tr><th id="40">40</th><td><i></i></td></tr>
+<tr><th id="41">41</th><td><i>// Lump order in a map WAD: each map needs a couple of lumps</i></td></tr>
+<tr><th id="42">42</th><td><i>// to provide a complete scene geometry description.</i></td></tr>
+<tr><th id="43">43</th><td><b>enum</b></td></tr>
+<tr><th id="44">44</th><td>{</td></tr>
+<tr><th id="45">45</th><td>  <dfn class="enum" id="ML_LABEL" title='ML_LABEL' data-ref="ML_LABEL">ML_LABEL</dfn>,		<i>// A separator, name, ExMx or MAPxx</i></td></tr>
+<tr><th id="46">46</th><td>  <dfn class="enum" id="ML_THINGS" title='ML_THINGS' data-ref="ML_THINGS">ML_THINGS</dfn>,		<i>// Monsters, items..</i></td></tr>
+<tr><th id="47">47</th><td>  <dfn class="enum" id="ML_LINEDEFS" title='ML_LINEDEFS' data-ref="ML_LINEDEFS">ML_LINEDEFS</dfn>,		<i>// LineDefs, from editing</i></td></tr>
+<tr><th id="48">48</th><td>  <dfn class="enum" id="ML_SIDEDEFS" title='ML_SIDEDEFS' data-ref="ML_SIDEDEFS">ML_SIDEDEFS</dfn>,		<i>// SideDefs, from editing</i></td></tr>
+<tr><th id="49">49</th><td>  <dfn class="enum" id="ML_VERTEXES" title='ML_VERTEXES' data-ref="ML_VERTEXES">ML_VERTEXES</dfn>,		<i>// Vertices, edited and BSP splits generated</i></td></tr>
+<tr><th id="50">50</th><td>  <dfn class="enum" id="ML_SEGS" title='ML_SEGS' data-ref="ML_SEGS">ML_SEGS</dfn>,		<i>// LineSegs, from LineDefs split by BSP</i></td></tr>
+<tr><th id="51">51</th><td>  <dfn class="enum" id="ML_SSECTORS" title='ML_SSECTORS' data-ref="ML_SSECTORS">ML_SSECTORS</dfn>,		<i>// SubSectors, list of LineSegs</i></td></tr>
+<tr><th id="52">52</th><td>  <dfn class="enum" id="ML_NODES" title='ML_NODES' data-ref="ML_NODES">ML_NODES</dfn>,		<i>// BSP nodes</i></td></tr>
+<tr><th id="53">53</th><td>  <dfn class="enum" id="ML_SECTORS" title='ML_SECTORS' data-ref="ML_SECTORS">ML_SECTORS</dfn>,		<i>// Sectors, from editing</i></td></tr>
+<tr><th id="54">54</th><td>  <dfn class="enum" id="ML_REJECT" title='ML_REJECT' data-ref="ML_REJECT">ML_REJECT</dfn>,		<i>// LUT, sector-sector visibility	</i></td></tr>
+<tr><th id="55">55</th><td>  <dfn class="enum" id="ML_BLOCKMAP" title='ML_BLOCKMAP' data-ref="ML_BLOCKMAP">ML_BLOCKMAP</dfn>		<i>// LUT, motion clipping, walls/grid element</i></td></tr>
+<tr><th id="56">56</th><td>};</td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td><i>// A single Vertex.</i></td></tr>
+<tr><th id="60">60</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="61">61</th><td>{</td></tr>
+<tr><th id="62">62</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</dfn>;</td></tr>
+<tr><th id="63">63</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</dfn>;</td></tr>
+<tr><th id="64">64</th><td>} <dfn class="typedef" id="mapvertex_t" title='mapvertex_t' data-type='struct mapvertex_t' data-ref="mapvertex_t">mapvertex_t</dfn>;</td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><i>// A SideDef, defining the visual appearance of a wall,</i></td></tr>
+<tr><th id="68">68</th><td><i>// by setting textures and offsets.</i></td></tr>
+<tr><th id="69">69</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="70">70</th><td>{</td></tr>
+<tr><th id="71">71</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::textureoffset" title='(anonymous struct)::textureoffset' data-ref="(anonymous)::textureoffset">textureoffset</dfn>;</td></tr>
+<tr><th id="72">72</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::rowoffset" title='(anonymous struct)::rowoffset' data-ref="(anonymous)::rowoffset">rowoffset</dfn>;</td></tr>
+<tr><th id="73">73</th><td>  <em>char</em>		<dfn class="decl" id="(anonymous)::toptexture" title='(anonymous struct)::toptexture' data-ref="(anonymous)::toptexture">toptexture</dfn>[<var>8</var>];</td></tr>
+<tr><th id="74">74</th><td>  <em>char</em>		<dfn class="decl" id="(anonymous)::bottomtexture" title='(anonymous struct)::bottomtexture' data-ref="(anonymous)::bottomtexture">bottomtexture</dfn>[<var>8</var>];</td></tr>
+<tr><th id="75">75</th><td>  <em>char</em>		<dfn class="decl" id="(anonymous)::midtexture" title='(anonymous struct)::midtexture' data-ref="(anonymous)::midtexture">midtexture</dfn>[<var>8</var>];</td></tr>
+<tr><th id="76">76</th><td>  <i>// Front sector, towards viewer.</i></td></tr>
+<tr><th id="77">77</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::sector" title='(anonymous struct)::sector' data-ref="(anonymous)::sector">sector</dfn>;</td></tr>
+<tr><th id="78">78</th><td>} <dfn class="typedef" id="mapsidedef_t" title='mapsidedef_t' data-type='struct mapsidedef_t' data-ref="mapsidedef_t">mapsidedef_t</dfn>;</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td><i>// A LineDef, as used for editing, and as input</i></td></tr>
+<tr><th id="83">83</th><td><i>// to the BSP builder.</i></td></tr>
+<tr><th id="84">84</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="85">85</th><td>{</td></tr>
+<tr><th id="86">86</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::v1" title='(anonymous struct)::v1' data-ref="(anonymous)::v1">v1</dfn>;</td></tr>
+<tr><th id="87">87</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::v2" title='(anonymous struct)::v2' data-ref="(anonymous)::v2">v2</dfn>;</td></tr>
+<tr><th id="88">88</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::flags" title='(anonymous struct)::flags' data-ref="(anonymous)::flags">flags</dfn>;</td></tr>
+<tr><th id="89">89</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::special" title='(anonymous struct)::special' data-ref="(anonymous)::special">special</dfn>;</td></tr>
+<tr><th id="90">90</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::tag" title='(anonymous struct)::tag' data-ref="(anonymous)::tag">tag</dfn>;</td></tr>
+<tr><th id="91">91</th><td>  <i>// sidenum[1] will be -1 if one sided</i></td></tr>
+<tr><th id="92">92</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::sidenum" title='(anonymous struct)::sidenum' data-ref="(anonymous)::sidenum">sidenum</dfn>[<var>2</var>];		</td></tr>
+<tr><th id="93">93</th><td>} <dfn class="typedef" id="maplinedef_t" title='maplinedef_t' data-type='struct maplinedef_t' data-ref="maplinedef_t">maplinedef_t</dfn>;</td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td><i>//</i></td></tr>
+<tr><th id="97">97</th><td><i>// LineDef attributes.</i></td></tr>
+<tr><th id="98">98</th><td><i>//</i></td></tr>
+<tr><th id="99">99</th><td><i></i></td></tr>
+<tr><th id="100">100</th><td><i>// Solid, is an obstacle.</i></td></tr>
+<tr><th id="101">101</th><td><u>#define <dfn class="macro" id="_M/ML_BLOCKING" data-ref="_M/ML_BLOCKING">ML_BLOCKING</dfn>		1</u></td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><i>// Blocks monsters only.</i></td></tr>
+<tr><th id="104">104</th><td><u>#define <dfn class="macro" id="_M/ML_BLOCKMONSTERS" data-ref="_M/ML_BLOCKMONSTERS">ML_BLOCKMONSTERS</dfn>	2</u></td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td><i>// Backside will not be present at all</i></td></tr>
+<tr><th id="107">107</th><td><i>//  if not two sided.</i></td></tr>
+<tr><th id="108">108</th><td><u>#define <dfn class="macro" id="_M/ML_TWOSIDED" data-ref="_M/ML_TWOSIDED">ML_TWOSIDED</dfn>		4</u></td></tr>
+<tr><th id="109">109</th><td></td></tr>
+<tr><th id="110">110</th><td><i>// If a texture is pegged, the texture will have</i></td></tr>
+<tr><th id="111">111</th><td><i>// the end exposed to air held constant at the</i></td></tr>
+<tr><th id="112">112</th><td><i>// top or bottom of the texture (stairs or pulled</i></td></tr>
+<tr><th id="113">113</th><td><i>// down things) and will move with a height change</i></td></tr>
+<tr><th id="114">114</th><td><i>// of one of the neighbor sectors.</i></td></tr>
+<tr><th id="115">115</th><td><i>// Unpegged textures allways have the first row of</i></td></tr>
+<tr><th id="116">116</th><td><i>// the texture at the top pixel of the line for both</i></td></tr>
+<tr><th id="117">117</th><td><i>// top and bottom textures (use next to windows).</i></td></tr>
+<tr><th id="118">118</th><td><i></i></td></tr>
+<tr><th id="119">119</th><td><i>// upper texture unpegged</i></td></tr>
+<tr><th id="120">120</th><td><u>#define <dfn class="macro" id="_M/ML_DONTPEGTOP" data-ref="_M/ML_DONTPEGTOP">ML_DONTPEGTOP</dfn>		8</u></td></tr>
+<tr><th id="121">121</th><td></td></tr>
+<tr><th id="122">122</th><td><i>// lower texture unpegged</i></td></tr>
+<tr><th id="123">123</th><td><u>#define <dfn class="macro" id="_M/ML_DONTPEGBOTTOM" data-ref="_M/ML_DONTPEGBOTTOM">ML_DONTPEGBOTTOM</dfn>	16</u>	</td></tr>
+<tr><th id="124">124</th><td></td></tr>
+<tr><th id="125">125</th><td><i>// In AutoMap: don't map as two sided: IT'S A SECRET!</i></td></tr>
+<tr><th id="126">126</th><td><u>#define <dfn class="macro" id="_M/ML_SECRET" data-ref="_M/ML_SECRET">ML_SECRET</dfn>		32</u></td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td><i>// Sound rendering: don't let sound cross two of these.</i></td></tr>
+<tr><th id="129">129</th><td><u>#define <dfn class="macro" id="_M/ML_SOUNDBLOCK" data-ref="_M/ML_SOUNDBLOCK">ML_SOUNDBLOCK</dfn>		64</u></td></tr>
+<tr><th id="130">130</th><td></td></tr>
+<tr><th id="131">131</th><td><i>// Don't draw on the automap at all.</i></td></tr>
+<tr><th id="132">132</th><td><u>#define <dfn class="macro" id="_M/ML_DONTDRAW" data-ref="_M/ML_DONTDRAW">ML_DONTDRAW</dfn>		128</u></td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td><i>// Set if already seen, thus drawn in automap.</i></td></tr>
+<tr><th id="135">135</th><td><u>#define <dfn class="macro" id="_M/ML_MAPPED" data-ref="_M/ML_MAPPED">ML_MAPPED</dfn>		256</u></td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td></td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td></td></tr>
+<tr><th id="140">140</th><td><i>// Sector definition, from editing.</i></td></tr>
+<tr><th id="141">141</th><td><b>typedef</b>	<b>struct</b></td></tr>
+<tr><th id="142">142</th><td>{</td></tr>
+<tr><th id="143">143</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::floorheight" title='(anonymous struct)::floorheight' data-ref="(anonymous)::floorheight">floorheight</dfn>;</td></tr>
+<tr><th id="144">144</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::ceilingheight" title='(anonymous struct)::ceilingheight' data-ref="(anonymous)::ceilingheight">ceilingheight</dfn>;</td></tr>
+<tr><th id="145">145</th><td>  <em>char</em>		<dfn class="decl" id="(anonymous)::floorpic" title='(anonymous struct)::floorpic' data-ref="(anonymous)::floorpic">floorpic</dfn>[<var>8</var>];</td></tr>
+<tr><th id="146">146</th><td>  <em>char</em>		<dfn class="decl" id="(anonymous)::ceilingpic" title='(anonymous struct)::ceilingpic' data-ref="(anonymous)::ceilingpic">ceilingpic</dfn>[<var>8</var>];</td></tr>
+<tr><th id="147">147</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::lightlevel" title='(anonymous struct)::lightlevel' data-ref="(anonymous)::lightlevel">lightlevel</dfn>;</td></tr>
+<tr><th id="148">148</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::special" title='(anonymous struct)::special' data-ref="(anonymous)::special">special</dfn>;</td></tr>
+<tr><th id="149">149</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::tag" title='(anonymous struct)::tag' data-ref="(anonymous)::tag">tag</dfn>;</td></tr>
+<tr><th id="150">150</th><td>} <dfn class="typedef" id="mapsector_t" title='mapsector_t' data-type='struct mapsector_t' data-ref="mapsector_t">mapsector_t</dfn>;</td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td><i>// SubSector, as generated by BSP.</i></td></tr>
+<tr><th id="153">153</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="154">154</th><td>{</td></tr>
+<tr><th id="155">155</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::numsegs" title='(anonymous struct)::numsegs' data-ref="(anonymous)::numsegs">numsegs</dfn>;</td></tr>
+<tr><th id="156">156</th><td>  <i>// Index of first one, segs are stored sequentially.</i></td></tr>
+<tr><th id="157">157</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::firstseg" title='(anonymous struct)::firstseg' data-ref="(anonymous)::firstseg">firstseg</dfn>;	</td></tr>
+<tr><th id="158">158</th><td>} <dfn class="typedef" id="mapsubsector_t" title='mapsubsector_t' data-type='struct mapsubsector_t' data-ref="mapsubsector_t">mapsubsector_t</dfn>;</td></tr>
+<tr><th id="159">159</th><td></td></tr>
+<tr><th id="160">160</th><td></td></tr>
+<tr><th id="161">161</th><td><i>// LineSeg, generated by splitting LineDefs</i></td></tr>
+<tr><th id="162">162</th><td><i>// using partition lines selected by BSP builder.</i></td></tr>
+<tr><th id="163">163</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="164">164</th><td>{</td></tr>
+<tr><th id="165">165</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::v1" title='(anonymous struct)::v1' data-ref="(anonymous)::v1">v1</dfn>;</td></tr>
+<tr><th id="166">166</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::v2" title='(anonymous struct)::v2' data-ref="(anonymous)::v2">v2</dfn>;</td></tr>
+<tr><th id="167">167</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::angle" title='(anonymous struct)::angle' data-ref="(anonymous)::angle">angle</dfn>;		</td></tr>
+<tr><th id="168">168</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::linedef" title='(anonymous struct)::linedef' data-ref="(anonymous)::linedef">linedef</dfn>;</td></tr>
+<tr><th id="169">169</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::side" title='(anonymous struct)::side' data-ref="(anonymous)::side">side</dfn>;</td></tr>
+<tr><th id="170">170</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::offset" title='(anonymous struct)::offset' data-ref="(anonymous)::offset">offset</dfn>;</td></tr>
+<tr><th id="171">171</th><td>} <dfn class="typedef" id="mapseg_t" title='mapseg_t' data-type='struct mapseg_t' data-ref="mapseg_t">mapseg_t</dfn>;</td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td></td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td><i>// BSP node structure.</i></td></tr>
+<tr><th id="176">176</th><td><i></i></td></tr>
+<tr><th id="177">177</th><td><i>// Indicate a leaf.</i></td></tr>
+<tr><th id="178">178</th><td><u>#define	<dfn class="macro" id="_M/NF_SUBSECTOR" data-ref="_M/NF_SUBSECTOR">NF_SUBSECTOR</dfn>	0x8000</u></td></tr>
+<tr><th id="179">179</th><td></td></tr>
+<tr><th id="180">180</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="181">181</th><td>{</td></tr>
+<tr><th id="182">182</th><td>  <i>// Partition line from (x,y) to x+dx,y+dy)</i></td></tr>
+<tr><th id="183">183</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</dfn>;</td></tr>
+<tr><th id="184">184</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</dfn>;</td></tr>
+<tr><th id="185">185</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::dx" title='(anonymous struct)::dx' data-ref="(anonymous)::dx">dx</dfn>;</td></tr>
+<tr><th id="186">186</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::dy" title='(anonymous struct)::dy' data-ref="(anonymous)::dy">dy</dfn>;</td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td>  <i>// Bounding box for each child,</i></td></tr>
+<tr><th id="189">189</th><td><i>  // clip against view frustum.</i></td></tr>
+<tr><th id="190">190</th><td>  <em>short</em>		<dfn class="decl" id="(anonymous)::bbox" title='(anonymous struct)::bbox' data-ref="(anonymous)::bbox">bbox</dfn>[<var>2</var>][<var>4</var>];</td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td>  <i>// If NF_SUBSECTOR its a subsector,</i></td></tr>
+<tr><th id="193">193</th><td><i>  // else it's a node of another subtree.</i></td></tr>
+<tr><th id="194">194</th><td>  <em>unsigned</em> <em>short</em>	<dfn class="decl" id="(anonymous)::children" title='(anonymous struct)::children' data-ref="(anonymous)::children">children</dfn>[<var>2</var>];</td></tr>
+<tr><th id="195">195</th><td></td></tr>
+<tr><th id="196">196</th><td>} <dfn class="typedef" id="mapnode_t" title='mapnode_t' data-type='struct mapnode_t' data-ref="mapnode_t">mapnode_t</dfn>;</td></tr>
+<tr><th id="197">197</th><td></td></tr>
+<tr><th id="198">198</th><td></td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td></td></tr>
+<tr><th id="201">201</th><td><i>// Thing definition, position, orientation and type,</i></td></tr>
+<tr><th id="202">202</th><td><i>// plus skill/visibility flags and attributes.</i></td></tr>
+<tr><th id="203">203</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="204">204</th><td>{</td></tr>
+<tr><th id="205">205</th><td>    <em>short</em>		<dfn class="decl" id="(anonymous)::x" title='(anonymous struct)::x' data-ref="(anonymous)::x">x</dfn>;</td></tr>
+<tr><th id="206">206</th><td>    <em>short</em>		<dfn class="decl" id="(anonymous)::y" title='(anonymous struct)::y' data-ref="(anonymous)::y">y</dfn>;</td></tr>
+<tr><th id="207">207</th><td>    <em>short</em>		<dfn class="decl" id="(anonymous)::angle" title='(anonymous struct)::angle' data-ref="(anonymous)::angle">angle</dfn>;</td></tr>
+<tr><th id="208">208</th><td>    <em>short</em>		<dfn class="decl" id="(anonymous)::type" title='(anonymous struct)::type' data-ref="(anonymous)::type">type</dfn>;</td></tr>
+<tr><th id="209">209</th><td>    <em>short</em>		<dfn class="decl" id="(anonymous)::options" title='(anonymous struct)::options' data-ref="(anonymous)::options">options</dfn>;</td></tr>
+<tr><th id="210">210</th><td>} <dfn class="typedef" id="mapthing_t" title='mapthing_t' data-type='struct mapthing_t' data-ref="mapthing_t">mapthing_t</dfn>;</td></tr>
+<tr><th id="211">211</th><td></td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td></td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td></td></tr>
+<tr><th id="216">216</th><td><u>#<span data-ppcond="24">endif</span>			// __DOOMDATA__</u></td></tr>
+<tr><th id="217">217</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="218">218</th><td><i>//</i></td></tr>
+<tr><th id="219">219</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="220">220</th><td><i>//</i></td></tr>
+<tr><th id="221">221</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="222">222</th><td></td></tr>
+<tr><th id="223">223</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='am_map.c.html'>codebrowser/am_map.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

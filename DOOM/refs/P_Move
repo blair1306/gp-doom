@@ -1,0 +1,3 @@
+<def f='codebrowser/p_enemy.c' l='272' ll='335' type='boolean P_Move(mobj_t * actor)'/>
+<use f='codebrowser/p_enemy.c' l='351' u='c' c='P_TryWalk'/>
+<use f='codebrowser/p_enemy.c' l='765' u='c' c='A_Chase'/>

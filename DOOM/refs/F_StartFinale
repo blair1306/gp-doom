@@ -1,0 +1,7 @@
+<dec f='codebrowser/f_finale.h' l='43' type='void F_StartFinale()'/>
+<def f='codebrowser/f_finale.c' l='96' ll='191' type='void F_StartFinale()'/>
+<doc f='codebrowser/f_finale.c' l='93'>//
+// F_StartFinale
+//</doc>
+<use f='codebrowser/g_game.c' l='640' u='c' c='G_Ticker'/>
+<use f='codebrowser/g_game.c' l='1166' u='c' c='G_WorldDone'/>

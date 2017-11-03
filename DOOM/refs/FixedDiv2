@@ -1,0 +1,3 @@
+<dec f='codebrowser/m_fixed.h' l='42' type='fixed_t FixedDiv2(fixed_t a, fixed_t b)'/>
+<use f='codebrowser/m_fixed.c' l='64' u='c' c='FixedDiv'/>
+<def f='codebrowser/m_fixed.c' l='69' ll='87' type='fixed_t FixedDiv2(fixed_t a, fixed_t b)'/>

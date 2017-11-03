@@ -1,0 +1,5 @@
+<def f='codebrowser/m_menu.c' l='170' type='short'/>
+<use f='codebrowser/m_menu.c' l='1836' u='w' c='M_Ticker'/>
+<use f='codebrowser/m_menu.c' l='1839' u='w' c='M_Ticker'/>
+<use f='codebrowser/m_menu.c' l='1853' u='w' c='M_Init'/>
+<doc f='codebrowser/m_menu.c' l='170'>// skull animation counter</doc>

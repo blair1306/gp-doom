@@ -1,0 +1,8 @@
+<dec f='codebrowser/p_mobj.h' l='259' type='int'/>
+<offset>1376</offset>
+<doc f='codebrowser/p_mobj.h' l='259'>// when 0, select a new dir</doc>
+<use f='codebrowser/p_enemy.c' l='356' u='w' c='P_TryWalk'/>
+<use f='codebrowser/p_enemy.c' l='739' u='r' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='764' u='w' c='A_Chase'/>
+<use f='codebrowser/p_mobj.c' l='459' u='w' c='P_MobjThinker'/>
+<use f='codebrowser/p_mobj.c' l='461' u='r' c='P_MobjThinker'/>

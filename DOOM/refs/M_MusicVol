@@ -1,0 +1,6 @@
+<dec f='codebrowser/m_menu.c' l='197' type='void M_MusicVol(int choice)'/>
+<use f='codebrowser/m_menu.c' l='435'/>
+<use f='codebrowser/m_menu.c' l='435'/>
+<use f='codebrowser/m_menu.c' l='435'/>
+<use f='codebrowser/m_menu.c' l='435'/>
+<def f='codebrowser/m_menu.c' l='833' ll='848' type='void M_MusicVol(int choice)'/>

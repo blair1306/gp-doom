@@ -1,0 +1,11 @@
+<dec f='codebrowser/r_defs.h' l='118' type='int [4]'/>
+<offset>256</offset>
+<doc f='codebrowser/r_defs.h' l='117'>// mapblock bounding box for height changes</doc>
+<use f='codebrowser/p_map.c' l='1332' u='r' c='P_ChangeSector'/>
+<use f='codebrowser/p_map.c' l='1332' u='r' c='P_ChangeSector'/>
+<use f='codebrowser/p_map.c' l='1333' u='r' c='P_ChangeSector'/>
+<use f='codebrowser/p_map.c' l='1333' u='r' c='P_ChangeSector'/>
+<use f='codebrowser/p_setup.c' l='562' u='w' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='566' u='w' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='570' u='w' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='574' u='w' c='P_GroupLines'/>

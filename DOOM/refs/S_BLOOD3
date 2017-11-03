@@ -1,0 +1,6 @@
+<dec f='codebrowser/info.h' l='268' type='92'/>
+<use f='codebrowser/info.c' l='227'/>
+<use f='codebrowser/info.c' l='227'/>
+<use f='codebrowser/info.c' l='227'/>
+<use f='codebrowser/info.c' l='227'/>
+<use f='codebrowser/p_mobj.c' l='858' u='r' c='P_SpawnBlood'/>

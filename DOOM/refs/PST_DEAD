@@ -1,0 +1,6 @@
+<dec f='codebrowser/d_player.h' l='58' type='1'/>
+<doc f='codebrowser/d_player.h' l='57'>// Dead on the ground, view follows killer.</doc>
+<use f='codebrowser/g_game.c' l='479' u='r' c='G_DoLoadLevel'/>
+<use f='codebrowser/p_inter.c' l='706' u='r' c='P_KillMobj'/>
+<use f='codebrowser/p_pspr.c' l='396' u='r' c='A_Lower'/>
+<use f='codebrowser/p_user.c' l='258' u='r' c='P_PlayerThink'/>

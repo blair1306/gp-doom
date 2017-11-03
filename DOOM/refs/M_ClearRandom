@@ -1,0 +1,4 @@
+<dec f='codebrowser/m_random.h' l='39' type='void M_ClearRandom()'/>
+<doc f='codebrowser/m_random.h' l='38'>// Fix randoms for demos.</doc>
+<use f='codebrowser/g_game.c' l='1414' u='c' c='G_InitNew'/>
+<def f='codebrowser/m_random.c' l='69' ll='72' type='void M_ClearRandom()'/>

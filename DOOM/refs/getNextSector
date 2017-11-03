@@ -1,0 +1,16 @@
+<dec f='codebrowser/p_spec.h' l='109' type='sector_t * getNextSector(line_t * line, sector_t * sec)'/>
+<use f='codebrowser/p_lights.c' l='255' u='c' c='EV_TurnTagLightsOff'/>
+<use f='codebrowser/p_lights.c' l='295' u='c' c='EV_LightTurnOn'/>
+<def f='codebrowser/p_spec.c' l='250' ll='262' type='sector_t * getNextSector(line_t * line, sector_t * sec)'/>
+<use f='codebrowser/p_spec.c' l='280' u='c' c='P_FindLowestFloorSurrounding'/>
+<use f='codebrowser/p_spec.c' l='307' u='c' c='P_FindHighestFloorSurrounding'/>
+<use f='codebrowser/p_spec.c' l='346' u='c' c='P_FindNextHighestFloor'/>
+<use f='codebrowser/p_spec.c' l='392' u='c' c='P_FindLowestCeilingSurrounding'/>
+<use f='codebrowser/p_spec.c' l='417' u='c' c='P_FindHighestCeilingSurrounding'/>
+<use f='codebrowser/p_spec.c' l='467' u='c' c='P_FindMinSurroundingLight'/>
+<use f='codebrowser/p_spec.c' l='1184' u='c' c='EV_DoDonut'/>
+<doc f='codebrowser/p_spec.c' l='245'>//
+// getNextSector()
+// Return sector_t * of sector next to current.
+// NULL if not two-sided line
+//</doc>

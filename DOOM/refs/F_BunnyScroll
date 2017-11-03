@@ -1,0 +1,5 @@
+<def f='codebrowser/f_finale.c' l='644' ll='694' type='void F_BunnyScroll()'/>
+<use f='codebrowser/f_finale.c' l='727' u='c' c='F_Drawer'/>
+<doc f='codebrowser/f_finale.c' l='641'>//
+// F_BunnyScroll
+//</doc>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/doomstat.h' l='220' type='mapthing_t [10]'/>
+<use f='codebrowser/g_game.c' l='902' u='r' c='G_DeathMatchSpawnPlayer'/>
+<use f='codebrowser/g_game.c' l='909' u='a' c='G_DeathMatchSpawnPlayer'/>
+<use f='codebrowser/g_game.c' l='911' u='m' c='G_DeathMatchSpawnPlayer'/>
+<use f='codebrowser/g_game.c' l='912' u='a' c='G_DeathMatchSpawnPlayer'/>
+<use f='codebrowser/p_mobj.c' l='720' u='a' c='P_SpawnMapThing'/>
+<def f='codebrowser/p_setup.c' l='111' type='mapthing_t [10]'/>
+<use f='codebrowser/p_setup.c' l='663' u='r' c='P_SetupLevel'/>

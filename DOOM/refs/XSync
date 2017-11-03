@@ -1,0 +1,2 @@
+<dec f='include/X11/Xlib.h' l='3409' type='int XSync(Display * , int )'/>
+<use f='codebrowser/i_video.c' l='517' u='c' c='I_FinishUpdate'/>

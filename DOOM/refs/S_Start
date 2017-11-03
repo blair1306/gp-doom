@@ -1,0 +1,13 @@
+<dec f='codebrowser/s_sound.h' l='51' type='void S_Start()'/>
+<doc f='codebrowser/s_sound.h' l='46'>//
+// Per level startup code.
+// Kills playing sounds at start of level,
+//  determines music if any, changes music.
+//</doc>
+<use f='codebrowser/p_setup.c' l='607' u='c' c='P_SetupLevel'/>
+<def f='codebrowser/s_sound.c' l='202' ll='248' type='void S_Start()'/>
+<doc f='codebrowser/s_sound.c' l='197'>//
+// Per level startup code.
+// Kills playing sounds at start of level,
+//  determines music if any, changes music.
+//</doc>

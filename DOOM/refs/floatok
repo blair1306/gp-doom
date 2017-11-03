@@ -1,0 +1,13 @@
+<dec f='codebrowser/p_local.h' l='203' type='boolean'/>
+<doc f='codebrowser/p_local.h' l='197'>//
+// P_MAP
+//
+
+// If &quot;floatok&quot; true, move would be ok
+// if within &quot;tmfloorz - tmceilingz&quot;.</doc>
+<use f='codebrowser/p_enemy.c' l='298' u='r' c='P_Move'/>
+<def f='codebrowser/p_map.c' l='55' type='boolean'/>
+<use f='codebrowser/p_map.c' l='462' u='w' c='P_TryMove'/>
+<use f='codebrowser/p_map.c' l='471' u='w' c='P_TryMove'/>
+<doc f='codebrowser/p_map.c' l='53'>// If &quot;floatok&quot; true, move would be ok
+// if within &quot;tmfloorz - tmceilingz&quot;.</doc>

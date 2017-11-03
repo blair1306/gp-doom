@@ -1,0 +1,41 @@
+<dec f='codebrowser/m_cheat.h' l='37' type='unsigned char *'/>
+<offset>64</offset>
+<use f='codebrowser/m_cheat.c' l='56' u='r' c='cht_CheckCheat'/>
+<use f='codebrowser/m_cheat.c' l='57' u='w' c='cht_CheckCheat'/>
+<use f='codebrowser/m_cheat.c' l='59' u='r' c='cht_CheckCheat'/>
+<use f='codebrowser/m_cheat.c' l='60' u='w' c='cht_CheckCheat'/>
+<use f='codebrowser/m_cheat.c' l='62' u='r' c='cht_CheckCheat'/>
+<use f='codebrowser/m_cheat.c' l='62' u='w' c='cht_CheckCheat'/>
+<use f='codebrowser/m_cheat.c' l='64' u='w' c='cht_CheckCheat'/>
+<use f='codebrowser/m_cheat.c' l='66' u='r' c='cht_CheckCheat'/>
+<use f='codebrowser/m_cheat.c' l='67' u='w' c='cht_CheckCheat'/>
+<use f='codebrowser/m_cheat.c' l='68' u='r' c='cht_CheckCheat'/>
+<use f='codebrowser/m_cheat.c' l='70' u='w' c='cht_CheckCheat'/>
+<dec f='codebrowser/st_lib.h' l='65' type='patch_t **'/>
+<dec f='codebrowser/st_lib.h' l='82' type='patch_t *'/>
+<dec f='codebrowser/st_lib.h' l='106' type='patch_t **'/>
+<dec f='codebrowser/st_lib.h' l='135' type='patch_t *'/>
+<use f='codebrowser/st_lib.c' l='81' u='w' c='STlib_initNum'/>
+<use f='codebrowser/st_lib.c' l='99' u='r' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='100' u='r' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='135' u='r' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='141' u='r' c='STlib_drawNum'/>
+<use f='codebrowser/st_lib.c' l='173' u='w' c='STlib_initPercent'/>
+<use f='codebrowser/st_lib.c' l='185' u='r' c='STlib_updatePercent'/>
+<use f='codebrowser/st_lib.c' l='206' u='w' c='STlib_initMultIcon'/>
+<use f='codebrowser/st_lib.c' l='227' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='228' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='229' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='230' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='237' u='r' c='STlib_updateMultIcon'/>
+<use f='codebrowser/st_lib.c' l='258' u='w' c='STlib_initBinIcon'/>
+<use f='codebrowser/st_lib.c' l='276' u='r' c='STlib_updateBinIcon'/>
+<use f='codebrowser/st_lib.c' l='277' u='r' c='STlib_updateBinIcon'/>
+<use f='codebrowser/st_lib.c' l='278' u='r' c='STlib_updateBinIcon'/>
+<use f='codebrowser/st_lib.c' l='279' u='r' c='STlib_updateBinIcon'/>
+<use f='codebrowser/st_lib.c' l='285' u='r' c='STlib_updateBinIcon'/>
+<offset>256</offset>
+<doc f='codebrowser/st_lib.h' l='64'>// list of patches for 0-9</doc>
+<doc f='codebrowser/st_lib.h' l='81'>// percent sign graphic</doc>
+<doc f='codebrowser/st_lib.h' l='105'>// list of icons</doc>
+<doc f='codebrowser/st_lib.h' l='135'>// icon</doc>

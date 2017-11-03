@@ -1,0 +1,8 @@
+<dec f='codebrowser/p_local.h' l='236' type='void P_RadiusAttack(mobj_t * spot, mobj_t * source, int damage)'/>
+<use f='codebrowser/p_enemy.c' l='1337' u='c' c='A_VileAttack'/>
+<use f='codebrowser/p_enemy.c' l='1600' u='c' c='A_Explode'/>
+<def f='codebrowser/p_map.c' l='1205' ll='1233' type='void P_RadiusAttack(mobj_t * spot, mobj_t * source, int damage)'/>
+<doc f='codebrowser/p_map.c' l='1201'>//
+// P_RadiusAttack
+// Source is the creature that caused the explosion at spot.
+//</doc>

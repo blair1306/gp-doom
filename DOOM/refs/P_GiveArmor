@@ -1,0 +1,9 @@
+<def f='codebrowser/p_inter.c' l='251' ll='266' type='boolean P_GiveArmor(player_t * player, int armortype)'/>
+<use f='codebrowser/p_inter.c' l='371' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='377' u='c' c='P_TouchSpecialThing'/>
+<use f='codebrowser/p_inter.c' l='414' u='c' c='P_TouchSpecialThing'/>
+<doc f='codebrowser/p_inter.c' l='246'>//
+// P_GiveArmor
+// Returns false if the armor is worse
+// than the current armor.
+//</doc>

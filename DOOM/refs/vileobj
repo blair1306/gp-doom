@@ -1,0 +1,2 @@
+<def f='codebrowser/p_enemy.c' l='1125' type='mobj_t *'/>
+<use f='codebrowser/p_enemy.c' l='1193' u='w' c='A_VileChase'/>

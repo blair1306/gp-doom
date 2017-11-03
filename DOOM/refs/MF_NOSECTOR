@@ -1,0 +1,16 @@
+<dec f='codebrowser/p_mobj.h' l='126' type='8'/>
+<doc f='codebrowser/p_mobj.h' l='125'>// Don&apos;t use the sector links (invisible but touchable).</doc>
+<use f='codebrowser/info.c' l='1806' u='r'/>
+<use f='codebrowser/info.c' l='1806' u='r'/>
+<use f='codebrowser/info.c' l='1832' u='r'/>
+<use f='codebrowser/info.c' l='1832' u='r'/>
+<use f='codebrowser/info.c' l='2196' u='r'/>
+<use f='codebrowser/info.c' l='2196' u='r'/>
+<use f='codebrowser/info.c' l='1806' u='r'/>
+<use f='codebrowser/info.c' l='1806' u='r'/>
+<use f='codebrowser/info.c' l='1832' u='r'/>
+<use f='codebrowser/info.c' l='1832' u='r'/>
+<use f='codebrowser/info.c' l='2196' u='r'/>
+<use f='codebrowser/info.c' l='2196' u='r'/>
+<use f='codebrowser/p_maputl.c' l='352' u='r' c='P_UnsetThingPosition'/>
+<use f='codebrowser/p_maputl.c' l='409' u='r' c='P_SetThingPosition'/>

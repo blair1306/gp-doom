@@ -1,0 +1,6 @@
+<dec f='codebrowser/p_spec.h' l='387' type='void P_SpawnDoorRaiseIn5Mins(sector_t * sec, int secnum)'/>
+<def f='codebrowser/p_doors.c' l='527' ll='550' type='void P_SpawnDoorRaiseIn5Mins(sector_t * sec, int secnum)'/>
+<doc f='codebrowser/p_doors.c' l='524'>//
+// Spawn a door that opens after 5 minutes
+//</doc>
+<use f='codebrowser/p_spec.c' l='1325' u='c' c='P_SpawnSpecials'/>

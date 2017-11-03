@@ -1,0 +1,8 @@
+<dec f='codebrowser/info.h' l='1321' type='int'/>
+<offset>448</offset>
+<use f='codebrowser/f_finale.c' l='516' u='r' c='F_CastResponder'/>
+<use f='codebrowser/f_finale.c' l='517' u='r' c='F_CastResponder'/>
+<use f='codebrowser/p_enemy.c' l='1539' u='r' c='A_Scream'/>
+<use f='codebrowser/p_enemy.c' l='1556' u='r' c='A_Scream'/>
+<use f='codebrowser/p_mobj.c' l='103' u='r' c='P_ExplodeMissile'/>
+<use f='codebrowser/p_mobj.c' l='104' u='r' c='P_ExplodeMissile'/>

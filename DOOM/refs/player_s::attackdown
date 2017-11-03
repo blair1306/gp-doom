@@ -1,0 +1,11 @@
+<dec f='codebrowser/d_player.h' l='124' type='int'/>
+<offset>1536</offset>
+<doc f='codebrowser/d_player.h' l='123'>// True if button down last tic.</doc>
+<use f='codebrowser/g_game.c' l='822' u='w' c='G_PlayerReborn'/>
+<use f='codebrowser/p_pspr.c' l='317' u='r' c='A_WeaponReady'/>
+<use f='codebrowser/p_pspr.c' l='321' u='w' c='A_WeaponReady'/>
+<use f='codebrowser/p_pspr.c' l='327' u='w' c='A_WeaponReady'/>
+<use f='codebrowser/st_stuff.c' l='880' u='r' c='ST_updateFaceWidget'/>
+<use f='codebrowser/wi_stuff.c' l='1482' u='r' c='WI_checkForAccelerate'/>
+<use f='codebrowser/wi_stuff.c' l='1484' u='w' c='WI_checkForAccelerate'/>
+<use f='codebrowser/wi_stuff.c' l='1487' u='w' c='WI_checkForAccelerate'/>

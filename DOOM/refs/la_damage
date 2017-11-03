@@ -1,0 +1,5 @@
+<def f='codebrowser/p_map.c' l='801' type='int'/>
+<use f='codebrowser/p_map.c' l='1008' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1010' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1011' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='1075' u='w' c='P_LineAttack'/>

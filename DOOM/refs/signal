@@ -1,0 +1,2 @@
+<dec f='include/signal.h' l='102' type='__sighandler_t signal(int __sig, __sighandler_t __handler)'/>
+<use f='codebrowser/i_video.c' l='716' u='c' c='I_InitGraphics'/>

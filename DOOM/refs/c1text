@@ -1,0 +1,3 @@
+<def f='codebrowser/f_finale.c' l='64' type='char *'/>
+<use f='codebrowser/f_finale.c' l='150' u='r' c='F_StartFinale'/>
+<use f='codebrowser/f_finale.c' l='184' u='r' c='F_StartFinale'/>

@@ -1,0 +1,10 @@
+<def f='codebrowser/g_game.c' l='131' type='byte *'/>
+<use f='codebrowser/g_game.c' l='1542' u='w' c='G_RecordDemo'/>
+<use f='codebrowser/g_game.c' l='1543' u='r' c='G_RecordDemo'/>
+<use f='codebrowser/g_game.c' l='1553' u='r' c='G_BeginRecording'/>
+<use f='codebrowser/g_game.c' l='1588' u='w' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1663' u='r' c='G_CheckDemoStatus'/>
+<use f='codebrowser/g_game.c' l='1663' u='r' c='G_CheckDemoStatus'/>
+<use f='codebrowser/g_game.c' l='1680' u='r' c='G_CheckDemoStatus'/>
+<use f='codebrowser/g_game.c' l='1680' u='r' c='G_CheckDemoStatus'/>
+<use f='codebrowser/g_game.c' l='1681' u='r' c='G_CheckDemoStatus'/>

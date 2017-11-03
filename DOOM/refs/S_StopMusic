@@ -1,0 +1,4 @@
+<dec f='codebrowser/s_sound.h' l='88' type='void S_StopMusic()'/>
+<doc f='codebrowser/s_sound.h' l='87'>// Stops the music fer sure.</doc>
+<use f='codebrowser/s_sound.c' l='669' u='c' c='S_ChangeMusic'/>
+<def f='codebrowser/s_sound.c' l='689' ll='703' type='void S_StopMusic()'/>

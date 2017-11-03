@@ -1,0 +1,5 @@
+<dec f='codebrowser/z_zone.h' l='52' type='void Z_FileDumpHeap(FILE * f)'/>
+<def f='codebrowser/z_zone.c' l='366' ll='392' type='void Z_FileDumpHeap(FILE * f)'/>
+<doc f='codebrowser/z_zone.c' l='363'>//
+// Z_FileDumpHeap
+//</doc>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/s_sound.h' l='100' type='void S_SetMusicVolume(int volume)'/>
+<use f='codebrowser/m_menu.c' l='847' u='c' c='M_MusicVol'/>
+<use f='codebrowser/s_sound.c' l='174' u='c' c='S_Init'/>
+<def f='codebrowser/s_sound.c' l='616' ll='627' type='void S_SetMusicVolume(int volume)'/>

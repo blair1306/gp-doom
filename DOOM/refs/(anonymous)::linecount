@@ -1,0 +1,18 @@
+<dec f='codebrowser/r_defs.h' l='132' type='int'/>
+<offset>896</offset>
+<use f='codebrowser/p_enemy.c' l='125' u='r' c='P_RecursiveSound'/>
+<use f='codebrowser/p_floor.c' l='380' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='411' u='r' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='514' u='r' c='EV_BuildStairs'/>
+<use f='codebrowser/p_lights.c' l='252' u='r' c='EV_TurnTagLightsOff'/>
+<use f='codebrowser/p_lights.c' l='292' u='r' c='EV_LightTurnOn'/>
+<use f='codebrowser/p_setup.c' l='526' u='w' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='530' u='w' c='P_GroupLines'/>
+<use f='codebrowser/p_setup.c' l='552' u='r' c='P_GroupLines'/>
+<use f='codebrowser/p_spec.c' l='277' u='r' c='P_FindLowestFloorSurrounding'/>
+<use f='codebrowser/p_spec.c' l='304' u='r' c='P_FindHighestFloorSurrounding'/>
+<use f='codebrowser/p_spec.c' l='343' u='r' c='P_FindNextHighestFloor'/>
+<use f='codebrowser/p_spec.c' l='389' u='r' c='P_FindLowestCeilingSurrounding'/>
+<use f='codebrowser/p_spec.c' l='414' u='r' c='P_FindHighestCeilingSurrounding'/>
+<use f='codebrowser/p_spec.c' l='464' u='r' c='P_FindMinSurroundingLight'/>
+<use f='codebrowser/p_spec.c' l='1185' u='r' c='EV_DoDonut'/>

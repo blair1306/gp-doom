@@ -1,0 +1,8 @@
+<dec f='codebrowser/r_state.h' l='130' type='visplane_t *'/>
+<use f='codebrowser/r_bsp.c' l='528' u='w' c='R_Subsector'/>
+<use f='codebrowser/r_bsp.c' l='533' u='w' c='R_Subsector'/>
+<def f='codebrowser/r_plane.c' l='56' type='visplane_t *'/>
+<use f='codebrowser/r_segs.c' l='238' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='239' u='r' c='R_RenderSegLoop'/>
+<use f='codebrowser/r_segs.c' l='709' u='w' c='R_StoreWallRange'/>
+<use f='codebrowser/r_segs.c' l='709' u='r' c='R_StoreWallRange'/>

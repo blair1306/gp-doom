@@ -1,0 +1,6 @@
+<def f='codebrowser/p_pspr.c' l='246' ll='257' type='void P_FireWeapon(player_t * player)'/>
+<use f='codebrowser/p_pspr.c' l='322' u='c' c='A_WeaponReady'/>
+<use f='codebrowser/p_pspr.c' l='355' u='c' c='A_ReFire'/>
+<doc f='codebrowser/p_pspr.c' l='243'>//
+// P_FireWeapon.
+//</doc>

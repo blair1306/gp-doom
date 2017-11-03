@@ -1,0 +1,14 @@
+<dec f='codebrowser/d_main.c' l='89' type='void D_DoomLoop()'/>
+<def f='codebrowser/d_main.c' l='354' ll='407' type='void D_DoomLoop()'/>
+<use f='codebrowser/d_main.c' l='1140' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1147' u='c' c='D_DoomMain'/>
+<use f='codebrowser/d_main.c' l='1170' u='c' c='D_DoomMain'/>
+<doc f='codebrowser/d_main.c' l='80'>//
+// D-DoomLoop()
+// Not a globally visible function,
+//  just included for source reference,
+//  called by D_DoomMain, never exits.
+// Manages timing and IO,
+//  calls all ?_Responder, ?_Ticker, and ?_Drawer,
+//  calls I_GetTime, I_StartFrame, and I_StartTic
+//</doc>

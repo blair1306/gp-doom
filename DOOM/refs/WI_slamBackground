@@ -1,0 +1,11 @@
+<def f='codebrowser/wi_stuff.c' l='406' ll='410' type='void WI_slamBackground()'/>
+<use f='codebrowser/wi_stuff.c' l='777' u='c' c='WI_drawShowNextLoc'/>
+<use f='codebrowser/wi_stuff.c' l='994' u='c' c='WI_drawDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1268' u='c' c='WI_drawNetgameStats'/>
+<use f='codebrowser/wi_stuff.c' l='1443' u='c' c='WI_drawStats'/>
+<doc f='codebrowser/wi_stuff.c' l='398'>//
+// CODE
+//
+
+// slam background
+// UNUSED static unsigned char *background=0;</doc>

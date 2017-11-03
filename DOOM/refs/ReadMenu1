@@ -1,0 +1,4 @@
+<def f='codebrowser/m_menu.c' l='383' ll='386' type='menuitem_t [1]'/>
+<use f='codebrowser/m_menu.c' l='392'/>
+<use f='codebrowser/m_menu.c' l='392'/>
+<use f='codebrowser/m_menu.c' l='1877' u='m' c='M_Init'/>

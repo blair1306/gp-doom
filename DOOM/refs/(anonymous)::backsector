@@ -1,0 +1,7 @@
+<dec f='codebrowser/r_defs.h' l='256' type='sector_t *'/>
+<offset>384</offset>
+<use f='codebrowser/p_setup.c' l='190' u='w' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='192' u='w' c='P_LoadSegs'/>
+<use f='codebrowser/p_sight.c' l='203' u='r' c='P_CrossSubsector'/>
+<use f='codebrowser/r_bsp.c' l='320' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_segs.c' l='119' u='r' c='R_RenderMaskedSegRange'/>

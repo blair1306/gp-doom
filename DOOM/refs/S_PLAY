@@ -1,0 +1,16 @@
+<dec f='codebrowser/info.h' l='325' type='149'/>
+<use f='codebrowser/info.c' l='290'/>
+<use f='codebrowser/info.c' l='290'/>
+<use f='codebrowser/info.c' l='293'/>
+<use f='codebrowser/info.c' l='293'/>
+<use f='codebrowser/info.c' l='290'/>
+<use f='codebrowser/info.c' l='290'/>
+<use f='codebrowser/info.c' l='293'/>
+<use f='codebrowser/info.c' l='293'/>
+<use f='codebrowser/info.c' l='1110'/>
+<use f='codebrowser/info.c' l='1110'/>
+<use f='codebrowser/info.c' l='1110'/>
+<use f='codebrowser/info.c' l='1110'/>
+<use f='codebrowser/p_mobj.c' l='231' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_pspr.c' l='293' u='r' c='A_WeaponReady'/>
+<use f='codebrowser/p_user.c' l='167' u='a' c='P_MovePlayer'/>

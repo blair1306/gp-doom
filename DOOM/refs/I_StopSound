@@ -1,0 +1,4 @@
+<dec f='codebrowser/i_sound.h' l='73' type='void I_StopSound(int handle)'/>
+<doc f='codebrowser/i_sound.h' l='72'>// Stops a sound channel.</doc>
+<def f='codebrowser/i_sound.c' l='506' ll='515' type='void I_StopSound(int handle)'/>
+<use f='codebrowser/s_sound.c' l='723' u='c' c='S_StopChannel'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/d_main.h' l='59' type='void D_PageTicker()'/>
+<def f='codebrowser/d_main.c' l='423' ll='427' type='void D_PageTicker()'/>
+<doc f='codebrowser/d_main.c' l='419'>//
+// D_PageTicker
+// Handles timing for warped projection
+//</doc>
+<doc f='codebrowser/d_main.h' l='56'>//
+// BASE LEVEL
+//</doc>
+<use f='codebrowser/g_game.c' l='745' u='c' c='G_Ticker'/>

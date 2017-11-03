@@ -1,0 +1,5 @@
+<dec f='codebrowser/d_event.h' l='85' type='4'/>
+<doc f='codebrowser/d_event.h' l='83'>// Flag, weapon change pending.
+    // If true, the next 3 bits hold weapon num.</doc>
+<use f='codebrowser/g_game.c' l='345' u='r' c='G_BuildTiccmd'/>
+<use f='codebrowser/p_user.c' l='283' u='r' c='P_PlayerThink'/>

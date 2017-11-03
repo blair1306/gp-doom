@@ -1,0 +1,10 @@
+<dec f='codebrowser/doomdata.h' l='71' type='short'/>
+<dec f='codebrowser/r_defs.h' l='147' type='fixed_t'/>
+<offset>0</offset>
+<doc f='codebrowser/r_defs.h' l='146'>// add this to the calculated texture column</doc>
+<use f='codebrowser/p_saveg.c' l='151' u='r' c='P_ArchiveWorld'/>
+<use f='codebrowser/p_saveg.c' l='203' u='w' c='P_UnArchiveWorld'/>
+<use f='codebrowser/p_setup.c' l='454' u='w' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_setup.c' l='454' u='r' c='P_LoadSideDefs'/>
+<use f='codebrowser/p_spec.c' l='1121' u='w' c='P_UpdateSpecials'/>
+<use f='codebrowser/r_segs.c' l='635' u='r' c='R_StoreWallRange'/>

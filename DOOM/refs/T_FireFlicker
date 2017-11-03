@@ -1,0 +1,9 @@
+<def f='codebrowser/p_lights.c' l='46' ll='61' type='void T_FireFlicker(fireflicker_t * flick)'/>
+<use f='codebrowser/p_lights.c' l='80' u='r' c='P_SpawnFireFlicker'/>
+<doc f='codebrowser/p_lights.c' l='39'>//
+// FIRELIGHT FLICKER
+//
+
+//
+// T_FireFlicker
+//</doc>

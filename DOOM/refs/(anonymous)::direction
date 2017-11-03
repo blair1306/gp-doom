@@ -1,0 +1,66 @@
+<dec f='codebrowser/p_spec.h' l='171' type='int'/>
+<dec f='codebrowser/p_spec.h' l='352' type='int'/>
+<dec f='codebrowser/p_spec.h' l='504' type='int'/>
+<dec f='codebrowser/p_spec.h' l='590' type='int'/>
+<offset>320</offset>
+<doc f='codebrowser/p_spec.h' l='351'>// 1 = up, 0 = waiting at top, -1 = down</doc>
+<doc f='codebrowser/p_spec.h' l='503'>// 1 = up, 0 = waiting, -1 = down</doc>
+<dec f='include/X11/Xlib.h' l='1038' type='unsigned int'/>
+<offset>128</offset>
+<doc f='include/X11/Xlib.h' l='1038'>/* hint about direction the font is painted */</doc>
+<use f='codebrowser/p_ceilng.c' l='56' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='66' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='95' u='w' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='110' u='r' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='133' u='w' c='T_MoveCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='216' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='229' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='235' u='w' c='EV_DoCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='299' u='r' c='P_ActivateInStasisCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='301' u='w' c='P_ActivateInStasisCeiling'/>
+<use f='codebrowser/p_ceilng.c' l='324' u='r' c='EV_CeilingCrushStop'/>
+<use f='codebrowser/p_ceilng.c' l='326' u='r' c='EV_CeilingCrushStop'/>
+<use f='codebrowser/p_ceilng.c' l='328' u='w' c='EV_CeilingCrushStop'/>
+<use f='codebrowser/p_doors.c' l='67' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='76' u='w' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='82' u='w' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='88' u='w' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='106' u='w' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='123' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='143' u='w' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='160' u='w' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='173' u='r' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='181' u='w' c='T_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='299' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='308' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='315' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='322' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='333' u='w' c='EV_DoDoor'/>
+<use f='codebrowser/p_doors.c' l='426' u='r' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='427' u='w' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='433' u='w' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='464' u='w' c='EV_VerticalDoor'/>
+<use f='codebrowser/p_doors.c' l='518' u='w' c='P_SpawnDoorCloseIn30'/>
+<use f='codebrowser/p_doors.c' l='543' u='w' c='P_SpawnDoorRaiseIn5Mins'/>
+<use f='codebrowser/p_floor.c' l='216' u='r' c='T_MoveFloor'/>
+<use f='codebrowser/p_floor.c' l='226' u='r' c='T_MoveFloor'/>
+<use f='codebrowser/p_floor.c' l='237' u='r' c='T_MoveFloor'/>
+<use f='codebrowser/p_floor.c' l='292' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='300' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='308' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='320' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='332' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='340' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='348' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='355' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='363' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='377' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='404' u='w' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='489' u='w' c='EV_BuildStairs'/>
+<use f='codebrowser/p_floor.c' l='544' u='w' c='EV_BuildStairs'/>
+<use f='codebrowser/p_lights.c' l='316' u='r' c='T_Glow'/>
+<use f='codebrowser/p_lights.c' l='324' u='w' c='T_Glow'/>
+<use f='codebrowser/p_lights.c' l='334' u='w' c='T_Glow'/>
+<use f='codebrowser/p_lights.c' l='353' u='w' c='P_SpawnGlowingLight'/>
+<use f='codebrowser/p_spec.c' l='1199' u='w' c='EV_DoDonut'/>
+<use f='codebrowser/p_spec.c' l='1213' u='w' c='EV_DoDonut'/>

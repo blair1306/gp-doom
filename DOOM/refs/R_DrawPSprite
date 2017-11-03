@@ -1,0 +1,5 @@
+<def f='codebrowser/r_things.c' l='646' ll='739' type='void R_DrawPSprite(pspdef_t * psp)'/>
+<use f='codebrowser/r_things.c' l='774' u='c' c='R_DrawPlayerSprites'/>
+<doc f='codebrowser/r_things.c' l='643'>//
+// R_DrawPSprite
+//</doc>

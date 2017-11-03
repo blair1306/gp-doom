@@ -1,0 +1,4 @@
+<dec f='codebrowser/wi_stuff.h' l='35' type='1'/>
+<use f='codebrowser/wi_stuff.c' l='754' u='r' c='WI_initShowNextLoc'/>
+<use f='codebrowser/wi_stuff.c' l='1527' c='WI_Ticker'/>
+<use f='codebrowser/wi_stuff.c' l='1785' c='WI_Drawer'/>

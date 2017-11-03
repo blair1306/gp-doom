@@ -1,0 +1,6 @@
+<dec f='codebrowser/m_cheat.h' l='36' type='unsigned char *'/>
+<offset>0</offset>
+<use f='codebrowser/m_cheat.c' l='57' u='r' c='cht_CheckCheat'/>
+<use f='codebrowser/m_cheat.c' l='64' u='r' c='cht_CheckCheat'/>
+<use f='codebrowser/m_cheat.c' l='70' u='r' c='cht_CheckCheat'/>
+<use f='codebrowser/m_cheat.c' l='85' u='r' c='cht_GetParam'/>

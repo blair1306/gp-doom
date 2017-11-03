@@ -1,0 +1,10 @@
+<dec f='codebrowser/info.c' l='70' type='void A_CheckReload()'/>
+<use f='codebrowser/info.c' l='174'/>
+<use f='codebrowser/info.c' l='174'/>
+<use f='codebrowser/info.c' l='174'/>
+<use f='codebrowser/info.c' l='174'/>
+<use f='codebrowser/info.c' l='174'/>
+<use f='codebrowser/info.c' l='174'/>
+<use f='codebrowser/info.c' l='174'/>
+<use f='codebrowser/info.c' l='174'/>
+<def f='codebrowser/p_pspr.c' l='365' ll='375' type='void A_CheckReload(player_t * player, pspdef_t * psp)'/>

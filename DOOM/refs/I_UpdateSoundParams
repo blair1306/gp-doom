@@ -1,0 +1,5 @@
+<dec f='codebrowser/i_sound.h' l='83' type='void I_UpdateSoundParams(int handle, int vol, int sep, int pitch)'/>
+<doc f='codebrowser/i_sound.h' l='80'>// Updates the volume, separation,
+//  and pitch of a sound channel.</doc>
+<def f='codebrowser/i_sound.c' l='675' ll='689' type='void I_UpdateSoundParams(int handle, int vol, int sep, int pitch)'/>
+<use f='codebrowser/s_sound.c' l='597' u='c' c='S_UpdateSounds'/>

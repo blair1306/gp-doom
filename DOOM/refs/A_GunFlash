@@ -1,0 +1,21 @@
+<dec f='codebrowser/info.c' l='75' type='void A_GunFlash()'/>
+<use f='codebrowser/info.c' l='196'/>
+<use f='codebrowser/info.c' l='196'/>
+<use f='codebrowser/info.c' l='196'/>
+<use f='codebrowser/info.c' l='196'/>
+<use f='codebrowser/info.c' l='221'/>
+<use f='codebrowser/info.c' l='221'/>
+<use f='codebrowser/info.c' l='221'/>
+<use f='codebrowser/info.c' l='221'/>
+<use f='codebrowser/info.c' l='196'/>
+<use f='codebrowser/info.c' l='196'/>
+<use f='codebrowser/info.c' l='196'/>
+<use f='codebrowser/info.c' l='196'/>
+<use f='codebrowser/info.c' l='221'/>
+<use f='codebrowser/info.c' l='221'/>
+<use f='codebrowser/info.c' l='221'/>
+<use f='codebrowser/info.c' l='221'/>
+<def f='codebrowser/p_pspr.c' l='448' ll='455' type='void A_GunFlash(player_t * player, pspdef_t * psp)'/>
+<doc f='codebrowser/p_pspr.c' l='445'>//
+// A_GunFlash
+//</doc>

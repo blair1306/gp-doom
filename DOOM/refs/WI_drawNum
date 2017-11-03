@@ -1,0 +1,12 @@
+<def f='codebrowser/wi_stuff.c' l='611' ll='666' type='int WI_drawNum(int x, int y, int n, int digits)'/>
+<use f='codebrowser/wi_stuff.c' l='678' u='c' c='WI_drawPercent'/>
+<use f='codebrowser/wi_stuff.c' l='707' u='c' c='WI_drawTime'/>
+<use f='codebrowser/wi_stuff.c' l='1064' u='c' c='WI_drawDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1068' u='c' c='WI_drawDeathmatchStats'/>
+<use f='codebrowser/wi_stuff.c' l='1309' u='c' c='WI_drawNetgameStats'/>
+<doc f='codebrowser/wi_stuff.c' l='604'>//
+// Draws a number.
+// If digits &gt; 0, then use that many digits minimum,
+//  otherwise only use as many as necessary.
+// Returns new x position.
+//</doc>

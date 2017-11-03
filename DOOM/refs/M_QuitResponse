@@ -1,0 +1,2 @@
+<def f='codebrowser/m_menu.c' l='1080' ll='1093' type='void M_QuitResponse(int ch)'/>
+<use f='codebrowser/m_menu.c' l='1107' u='r' c='M_QuitDOOM'/>

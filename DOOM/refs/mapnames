@@ -1,0 +1,9 @@
+<def f='codebrowser/hu_stuff.c' l='115' ll='167' type='char *[45]'/>
+<use f='codebrowser/hu_stuff.c' l='49' u='r' c='HU_Start'/>
+<doc f='codebrowser/hu_stuff.c' l='110'>//
+// Builtin map names.
+// The actual names can be found in DStrings.h.
+//</doc>
+<doc f='codebrowser/hu_stuff.c' l='115'>// DOOM shareware/registered/retail (Ultimate) names.</doc>
+<dec f='codebrowser/st_stuff.c' l='491' type='char *[]'/>
+<doc f='codebrowser/st_stuff.c' l='490'>// </doc>

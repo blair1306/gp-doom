@@ -1,0 +1,13 @@
+<dec f='codebrowser/p_spec.h' l='184' type='void T_StrobeFlash(strobe_t * flash)'/>
+<def f='codebrowser/p_lights.c' l='155' ll='171' type='void T_StrobeFlash(strobe_t * flash)'/>
+<use f='codebrowser/p_lights.c' l='195' u='r' c='P_SpawnStrobeFlash'/>
+<doc f='codebrowser/p_lights.c' l='147'>//
+// STROBE LIGHT FLASHING
+//
+
+
+//
+// T_StrobeFlash
+//</doc>
+<use f='codebrowser/p_saveg.c' l='443' u='r' c='P_ArchiveSpecials'/>
+<use f='codebrowser/p_saveg.c' l='564' u='r' c='P_UnArchiveSpecials'/>

@@ -1,0 +1,19 @@
+<dec f='codebrowser/doomstat.h' l='133' type='boolean'/>
+<doc f='codebrowser/doomstat.h' l='133'>// Menu overlayed?</doc>
+<use f='codebrowser/d_main.c' l='287' u='r' c='D_Display'/>
+<use f='codebrowser/d_main.c' l='297' u='r' c='D_Display'/>
+<def f='codebrowser/m_menu.c' l='126' type='boolean'/>
+<use f='codebrowser/m_menu.c' l='1233' u='r' c='M_StartMessage'/>
+<use f='codebrowser/m_menu.c' l='1238' u='w' c='M_StartMessage'/>
+<use f='codebrowser/m_menu.c' l='1246' u='w' c='M_StopMessage'/>
+<use f='codebrowser/m_menu.c' l='1501' u='w' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1506' u='w' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1519' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1609' u='r' c='M_Responder'/>
+<use f='codebrowser/m_menu.c' l='1726' u='r' c='M_StartControlPanel'/>
+<use f='codebrowser/m_menu.c' l='1729' u='w' c='M_StartControlPanel'/>
+<use f='codebrowser/m_menu.c' l='1781' u='r' c='M_Drawer'/>
+<use f='codebrowser/m_menu.c' l='1813' u='w' c='M_ClearMenus'/>
+<use f='codebrowser/m_menu.c' l='1850' u='w' c='M_Init'/>
+<use f='codebrowser/m_menu.c' l='1857' u='r' c='M_Init'/>
+<use f='codebrowser/p_tick.c' l='140' u='r' c='P_Ticker'/>

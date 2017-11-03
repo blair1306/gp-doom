@@ -1,0 +1,4 @@
+<dec f='codebrowser/info.h' l='1327' type='int'/>
+<offset>640</offset>
+<use f='codebrowser/p_enemy.c' l='771' u='r' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='774' u='r' c='A_Chase'/>

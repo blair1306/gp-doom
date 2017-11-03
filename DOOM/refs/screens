@@ -1,0 +1,35 @@
+<dec f='codebrowser/v_video.h' l='47' type='byte *[5]'/>
+<use f='codebrowser/am_map.c' l='464' u='r' c='AM_initVariables'/>
+<doc f='codebrowser/v_video.h' l='42'>// Screen 0 is the screen updated by I_Update screen.
+// Screen 1 is an extra buffer.</doc>
+<use f='codebrowser/f_finale.c' l='275' u='r' c='F_TextWrite'/>
+<use f='codebrowser/f_finale.c' l='622' u='r' c='F_DrawPatchCol'/>
+<use f='codebrowser/f_wipe.c' l='243' u='r' c='wipe_StartScreen'/>
+<use f='codebrowser/f_wipe.c' l='255' u='r' c='wipe_EndScreen'/>
+<use f='codebrowser/f_wipe.c' l='284' u='r' c='wipe_ScreenWipe'/>
+<use f='codebrowser/g_game.c' l='1284' u='r' c='G_DoSaveGame'/>
+<use f='codebrowser/i_video.c' l='370' u='r' c='I_FinishUpdate'/>
+<use f='codebrowser/i_video.c' l='372' u='r' c='I_FinishUpdate'/>
+<use f='codebrowser/i_video.c' l='386' u='r' c='I_FinishUpdate'/>
+<use f='codebrowser/i_video.c' l='428' u='r' c='I_FinishUpdate'/>
+<use f='codebrowser/i_video.c' l='480' u='r' c='I_FinishUpdate'/>
+<use f='codebrowser/i_video.c' l='529' u='r' c='I_ReadScreen'/>
+<use f='codebrowser/i_video.c' l='910' u='w' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='912' u='w' c='I_InitGraphics'/>
+<use f='codebrowser/m_misc.c' l='513' u='r' c='M_ScreenShot'/>
+<use f='codebrowser/r_draw.c' l='719' u='r' c='R_InitBuffer'/>
+<use f='codebrowser/r_draw.c' l='756' u='r' c='R_FillBackScreen'/>
+<use f='codebrowser/r_draw.c' l='827' u='r' c='R_VideoErase'/>
+<use f='codebrowser/r_draw.c' l='827' u='r' c='R_VideoErase'/>
+<use f='codebrowser/st_stuff.c' l='1470' u='w' c='ST_Init'/>
+<def f='codebrowser/v_video.c' l='44' type='byte *[5]'/>
+<use f='codebrowser/v_video.c' l='187' u='r' c='V_CopyRect'/>
+<use f='codebrowser/v_video.c' l='188' u='r' c='V_CopyRect'/>
+<use f='codebrowser/v_video.c' l='239' u='r' c='V_DrawPatch'/>
+<use f='codebrowser/v_video.c' l='304' u='r' c='V_DrawPatchFlipped'/>
+<use f='codebrowser/v_video.c' l='428' u='r' c='V_DrawBlock'/>
+<use f='codebrowser/v_video.c' l='466' u='r' c='V_GetBlock'/>
+<use f='codebrowser/v_video.c' l='492' u='w' c='V_Init'/>
+<doc f='codebrowser/v_video.c' l='43'>// Each screen is [SCREENWIDTH*SCREENHEIGHT]; </doc>
+<use f='codebrowser/wi_stuff.c' l='408' u='r' c='WI_slamBackground'/>
+<use f='codebrowser/wi_stuff.c' l='408' u='r' c='WI_slamBackground'/>

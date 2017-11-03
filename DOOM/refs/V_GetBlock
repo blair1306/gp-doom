@@ -1,0 +1,7 @@
+<dec f='codebrowser/v_video.h' l='98' type='void V_GetBlock(int x, int y, int scrn, int width, int height, byte * dest)'/>
+<doc f='codebrowser/v_video.h' l='96'>// Reads a linear block of pixels into the view buffer.</doc>
+<def f='codebrowser/v_video.c' l='444' ll='474' type='void V_GetBlock(int x, int y, int scrn, int width, int height, byte * dest)'/>
+<doc f='codebrowser/v_video.c' l='440'>//
+// V_GetBlock
+// Gets a linear block of pixels from the view buffer.
+//</doc>

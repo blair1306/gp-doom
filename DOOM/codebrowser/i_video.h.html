@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>i_video.h source code [codebrowser/i_video.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/i_video.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='i_video.h.html'>i_video.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>// DESCRIPTION:</i></td></tr>
+<tr><th id="18">18</th><td><i>//	System specific interface stuff.</i></td></tr>
+<tr><th id="19">19</th><td><i>//</i></td></tr>
+<tr><th id="20">20</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="23">ifndef</span> <span class="macro" data-ref="_M/__I_VIDEO__">__I_VIDEO__</span></u></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/__I_VIDEO__" data-ref="_M/__I_VIDEO__">__I_VIDEO__</dfn></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><u>#include <a href="doomtype.h.html">"doomtype.h"</a></u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#<span data-ppcond="29">ifdef</span> <span class="macro" data-ref="_M/__GNUG__">__GNUG__</span></u></td></tr>
+<tr><th id="30">30</th><td><u>#pragma interface</u></td></tr>
+<tr><th id="31">31</th><td><u>#<span data-ppcond="29">endif</span></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><i>// Called by D_DoomMain,</i></td></tr>
+<tr><th id="35">35</th><td><i>// determines the hardware configuration</i></td></tr>
+<tr><th id="36">36</th><td><i>// and sets up the video mode</i></td></tr>
+<tr><th id="37">37</th><td><em>void</em> <dfn class="decl" id="I_InitGraphics" title='I_InitGraphics' data-ref="I_InitGraphics">I_InitGraphics</dfn> (<em>void</em>);</td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><em>void</em> <dfn class="decl" id="I_ShutdownGraphics" title='I_ShutdownGraphics' data-ref="I_ShutdownGraphics">I_ShutdownGraphics</dfn>(<em>void</em>);</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><i>// Takes full 8 bit values.</i></td></tr>
+<tr><th id="43">43</th><td><em>void</em> <dfn class="decl" id="I_SetPalette" title='I_SetPalette' data-ref="I_SetPalette">I_SetPalette</dfn> (<a class="typedef" href="doomtype.h.html#byte" title='byte' data-type='unsigned char' data-ref="byte">byte</a>* <dfn class="local col5 decl" id="515palette" title='palette' data-type='byte *' data-ref="515palette">palette</dfn>);</td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><em>void</em> <dfn class="decl" id="I_UpdateNoBlit" title='I_UpdateNoBlit' data-ref="I_UpdateNoBlit">I_UpdateNoBlit</dfn> (<em>void</em>);</td></tr>
+<tr><th id="46">46</th><td><em>void</em> <dfn class="decl" id="I_FinishUpdate" title='I_FinishUpdate' data-ref="I_FinishUpdate">I_FinishUpdate</dfn> (<em>void</em>);</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><i>// Wait for vertical retrace or pause a bit.</i></td></tr>
+<tr><th id="49">49</th><td><em>void</em> <dfn class="decl" id="I_WaitVBL" title='I_WaitVBL' data-ref="I_WaitVBL">I_WaitVBL</dfn>(<em>int</em> <dfn class="local col6 decl" id="516count" title='count' data-type='int' data-ref="516count">count</dfn>);</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><em>void</em> <dfn class="decl" id="I_ReadScreen" title='I_ReadScreen' data-ref="I_ReadScreen">I_ReadScreen</dfn> (<a class="typedef" href="doomtype.h.html#byte" title='byte' data-type='unsigned char' data-ref="byte">byte</a>* <dfn class="local col7 decl" id="517scr" title='scr' data-type='byte *' data-ref="517scr">scr</dfn>);</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><em>void</em> <dfn class="decl" id="I_BeginRead" title='I_BeginRead' data-ref="I_BeginRead">I_BeginRead</dfn> (<em>void</em>);</td></tr>
+<tr><th id="54">54</th><td><em>void</em> <dfn class="decl" id="I_EndRead" title='I_EndRead' data-ref="I_EndRead">I_EndRead</dfn> (<em>void</em>);</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td><u>#<span data-ppcond="23">endif</span></u></td></tr>
+<tr><th id="59">59</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="60">60</th><td><i>//</i></td></tr>
+<tr><th id="61">61</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="62">62</th><td><i>//</i></td></tr>
+<tr><th id="63">63</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="64">64</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='d_main.c.html'>codebrowser/d_main.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

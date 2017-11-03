@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>sounds.h source code [codebrowser/sounds.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="sfxinfo_struct "/>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sounds.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='sounds.h.html'>sounds.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>// DESCRIPTION:</i></td></tr>
+<tr><th id="18">18</th><td><i>//	Created by the sound utility written by Dave Taylor.</i></td></tr>
+<tr><th id="19">19</th><td><i>//	Kept as a sample, DOOM2  sounds. Frozen.</i></td></tr>
+<tr><th id="20">20</th><td><i>//</i></td></tr>
+<tr><th id="21">21</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="23">ifndef</span> <span class="macro" data-ref="_M/__SOUNDS__">__SOUNDS__</span></u></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/__SOUNDS__" data-ref="_M/__SOUNDS__">__SOUNDS__</dfn></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><i>//</i></td></tr>
+<tr><th id="28">28</th><td><i>// SoundFX struct.</i></td></tr>
+<tr><th id="29">29</th><td><i>//</i></td></tr>
+<tr><th id="30">30</th><td><b>typedef</b> <b>struct</b> <a class="type" href="#sfxinfo_struct" title='sfxinfo_struct' data-ref="sfxinfo_struct">sfxinfo_struct</a>	<dfn class="typedef" id="sfxinfo_t" title='sfxinfo_t' data-type='struct sfxinfo_struct' data-ref="sfxinfo_t">sfxinfo_t</dfn>;</td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><b>struct</b> <dfn class="type def" id="sfxinfo_struct" title='sfxinfo_struct' data-ref="sfxinfo_struct">sfxinfo_struct</dfn></td></tr>
+<tr><th id="33">33</th><td>{</td></tr>
+<tr><th id="34">34</th><td>    <i>// up to 6-character name</i></td></tr>
+<tr><th id="35">35</th><td>    <em>char</em>*	<dfn class="decl" id="sfxinfo_struct::name" title='sfxinfo_struct::name' data-ref="sfxinfo_struct::name">name</dfn>;</td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td>    <i>// Sfx singularity (only one at a time)</i></td></tr>
+<tr><th id="38">38</th><td>    <em>int</em>		<dfn class="decl" id="sfxinfo_struct::singularity" title='sfxinfo_struct::singularity' data-ref="sfxinfo_struct::singularity">singularity</dfn>;</td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td>    <i>// Sfx priority</i></td></tr>
+<tr><th id="41">41</th><td>    <em>int</em>		<dfn class="decl" id="sfxinfo_struct::priority" title='sfxinfo_struct::priority' data-ref="sfxinfo_struct::priority">priority</dfn>;</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td>    <i>// referenced sound if a link</i></td></tr>
+<tr><th id="44">44</th><td>    <a class="typedef" href="#sfxinfo_t" title='sfxinfo_t' data-type='struct sfxinfo_struct' data-ref="sfxinfo_t">sfxinfo_t</a>*	<dfn class="decl" id="sfxinfo_struct::link" title='sfxinfo_struct::link' data-ref="sfxinfo_struct::link">link</dfn>;</td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td>    <i>// pitch if a link</i></td></tr>
+<tr><th id="47">47</th><td>    <em>int</em>		<dfn class="decl" id="sfxinfo_struct::pitch" title='sfxinfo_struct::pitch' data-ref="sfxinfo_struct::pitch">pitch</dfn>;</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td>    <i>// volume if a link</i></td></tr>
+<tr><th id="50">50</th><td>    <em>int</em>		<dfn class="decl" id="sfxinfo_struct::volume" title='sfxinfo_struct::volume' data-ref="sfxinfo_struct::volume">volume</dfn>;</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td>    <i>// sound data</i></td></tr>
+<tr><th id="53">53</th><td>    <em>void</em>*	<dfn class="decl" id="sfxinfo_struct::data" title='sfxinfo_struct::data' data-ref="sfxinfo_struct::data">data</dfn>;</td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td>    <i>// this is checked every second to see if sound</i></td></tr>
+<tr><th id="56">56</th><td><i>    // can be thrown out (if 0, then decrement, if -1,</i></td></tr>
+<tr><th id="57">57</th><td><i>    // then throw out, if &gt; 0, then it is in use)</i></td></tr>
+<tr><th id="58">58</th><td>    <em>int</em>		<dfn class="decl" id="sfxinfo_struct::usefulness" title='sfxinfo_struct::usefulness' data-ref="sfxinfo_struct::usefulness">usefulness</dfn>;</td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td>    <i>// lump number of sfx</i></td></tr>
+<tr><th id="61">61</th><td>    <em>int</em>		<dfn class="decl" id="sfxinfo_struct::lumpnum" title='sfxinfo_struct::lumpnum' data-ref="sfxinfo_struct::lumpnum">lumpnum</dfn>;		</td></tr>
+<tr><th id="62">62</th><td>};</td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><i>//</i></td></tr>
+<tr><th id="68">68</th><td><i>// MusicInfo struct.</i></td></tr>
+<tr><th id="69">69</th><td><i>//</i></td></tr>
+<tr><th id="70">70</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="71">71</th><td>{</td></tr>
+<tr><th id="72">72</th><td>    <i>// up to 6-character name</i></td></tr>
+<tr><th id="73">73</th><td>    <em>char</em>*	<dfn class="decl" id="(anonymous)::name" title='(anonymous struct)::name' data-ref="(anonymous)::name">name</dfn>;</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td>    <i>// lump number of music</i></td></tr>
+<tr><th id="76">76</th><td>    <em>int</em>		<dfn class="decl" id="(anonymous)::lumpnum" title='(anonymous struct)::lumpnum' data-ref="(anonymous)::lumpnum">lumpnum</dfn>;</td></tr>
+<tr><th id="77">77</th><td>    </td></tr>
+<tr><th id="78">78</th><td>    <i>// music data</i></td></tr>
+<tr><th id="79">79</th><td>    <em>void</em>*	<dfn class="decl" id="(anonymous)::data" title='(anonymous struct)::data' data-ref="(anonymous)::data">data</dfn>;</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td>    <i>// music handle once registered</i></td></tr>
+<tr><th id="82">82</th><td>    <em>int</em> <dfn class="decl" id="(anonymous)::handle" title='(anonymous struct)::handle' data-ref="(anonymous)::handle">handle</dfn>;</td></tr>
+<tr><th id="83">83</th><td>    </td></tr>
+<tr><th id="84">84</th><td>} <dfn class="typedef" id="musicinfo_t" title='musicinfo_t' data-type='struct musicinfo_t' data-ref="musicinfo_t">musicinfo_t</dfn>;</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td><i>// the complete set of sound effects</i></td></tr>
+<tr><th id="90">90</th><td><b>extern</b> <a class="typedef" href="#sfxinfo_t" title='sfxinfo_t' data-type='struct sfxinfo_struct' data-ref="sfxinfo_t">sfxinfo_t</a>	<dfn class="decl" id="S_sfx" title='S_sfx' data-ref="S_sfx">S_sfx</dfn>[];</td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td><i>// the complete set of music</i></td></tr>
+<tr><th id="93">93</th><td><b>extern</b> <a class="typedef" href="#musicinfo_t" title='musicinfo_t' data-type='struct musicinfo_t' data-ref="musicinfo_t">musicinfo_t</a>	<dfn class="decl" id="S_music" title='S_music' data-ref="S_music">S_music</dfn>[];</td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td><i>//</i></td></tr>
+<tr><th id="96">96</th><td><i>// Identifiers for all music in game.</i></td></tr>
+<tr><th id="97">97</th><td><i>//</i></td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><b>typedef</b> <b>enum</b></td></tr>
+<tr><th id="100">100</th><td>{</td></tr>
+<tr><th id="101">101</th><td>    <dfn class="enum" id="mus_None" title='mus_None' data-ref="mus_None">mus_None</dfn>,</td></tr>
+<tr><th id="102">102</th><td>    <dfn class="enum" id="mus_e1m1" title='mus_e1m1' data-ref="mus_e1m1">mus_e1m1</dfn>,</td></tr>
+<tr><th id="103">103</th><td>    <dfn class="enum" id="mus_e1m2" title='mus_e1m2' data-ref="mus_e1m2">mus_e1m2</dfn>,</td></tr>
+<tr><th id="104">104</th><td>    <dfn class="enum" id="mus_e1m3" title='mus_e1m3' data-ref="mus_e1m3">mus_e1m3</dfn>,</td></tr>
+<tr><th id="105">105</th><td>    <dfn class="enum" id="mus_e1m4" title='mus_e1m4' data-ref="mus_e1m4">mus_e1m4</dfn>,</td></tr>
+<tr><th id="106">106</th><td>    <dfn class="enum" id="mus_e1m5" title='mus_e1m5' data-ref="mus_e1m5">mus_e1m5</dfn>,</td></tr>
+<tr><th id="107">107</th><td>    <dfn class="enum" id="mus_e1m6" title='mus_e1m6' data-ref="mus_e1m6">mus_e1m6</dfn>,</td></tr>
+<tr><th id="108">108</th><td>    <dfn class="enum" id="mus_e1m7" title='mus_e1m7' data-ref="mus_e1m7">mus_e1m7</dfn>,</td></tr>
+<tr><th id="109">109</th><td>    <dfn class="enum" id="mus_e1m8" title='mus_e1m8' data-ref="mus_e1m8">mus_e1m8</dfn>,</td></tr>
+<tr><th id="110">110</th><td>    <dfn class="enum" id="mus_e1m9" title='mus_e1m9' data-ref="mus_e1m9">mus_e1m9</dfn>,</td></tr>
+<tr><th id="111">111</th><td>    <dfn class="enum" id="mus_e2m1" title='mus_e2m1' data-ref="mus_e2m1">mus_e2m1</dfn>,</td></tr>
+<tr><th id="112">112</th><td>    <dfn class="enum" id="mus_e2m2" title='mus_e2m2' data-ref="mus_e2m2">mus_e2m2</dfn>,</td></tr>
+<tr><th id="113">113</th><td>    <dfn class="enum" id="mus_e2m3" title='mus_e2m3' data-ref="mus_e2m3">mus_e2m3</dfn>,</td></tr>
+<tr><th id="114">114</th><td>    <dfn class="enum" id="mus_e2m4" title='mus_e2m4' data-ref="mus_e2m4">mus_e2m4</dfn>,</td></tr>
+<tr><th id="115">115</th><td>    <dfn class="enum" id="mus_e2m5" title='mus_e2m5' data-ref="mus_e2m5">mus_e2m5</dfn>,</td></tr>
+<tr><th id="116">116</th><td>    <dfn class="enum" id="mus_e2m6" title='mus_e2m6' data-ref="mus_e2m6">mus_e2m6</dfn>,</td></tr>
+<tr><th id="117">117</th><td>    <dfn class="enum" id="mus_e2m7" title='mus_e2m7' data-ref="mus_e2m7">mus_e2m7</dfn>,</td></tr>
+<tr><th id="118">118</th><td>    <dfn class="enum" id="mus_e2m8" title='mus_e2m8' data-ref="mus_e2m8">mus_e2m8</dfn>,</td></tr>
+<tr><th id="119">119</th><td>    <dfn class="enum" id="mus_e2m9" title='mus_e2m9' data-ref="mus_e2m9">mus_e2m9</dfn>,</td></tr>
+<tr><th id="120">120</th><td>    <dfn class="enum" id="mus_e3m1" title='mus_e3m1' data-ref="mus_e3m1">mus_e3m1</dfn>,</td></tr>
+<tr><th id="121">121</th><td>    <dfn class="enum" id="mus_e3m2" title='mus_e3m2' data-ref="mus_e3m2">mus_e3m2</dfn>,</td></tr>
+<tr><th id="122">122</th><td>    <dfn class="enum" id="mus_e3m3" title='mus_e3m3' data-ref="mus_e3m3">mus_e3m3</dfn>,</td></tr>
+<tr><th id="123">123</th><td>    <dfn class="enum" id="mus_e3m4" title='mus_e3m4' data-ref="mus_e3m4">mus_e3m4</dfn>,</td></tr>
+<tr><th id="124">124</th><td>    <dfn class="enum" id="mus_e3m5" title='mus_e3m5' data-ref="mus_e3m5">mus_e3m5</dfn>,</td></tr>
+<tr><th id="125">125</th><td>    <dfn class="enum" id="mus_e3m6" title='mus_e3m6' data-ref="mus_e3m6">mus_e3m6</dfn>,</td></tr>
+<tr><th id="126">126</th><td>    <dfn class="enum" id="mus_e3m7" title='mus_e3m7' data-ref="mus_e3m7">mus_e3m7</dfn>,</td></tr>
+<tr><th id="127">127</th><td>    <dfn class="enum" id="mus_e3m8" title='mus_e3m8' data-ref="mus_e3m8">mus_e3m8</dfn>,</td></tr>
+<tr><th id="128">128</th><td>    <dfn class="enum" id="mus_e3m9" title='mus_e3m9' data-ref="mus_e3m9">mus_e3m9</dfn>,</td></tr>
+<tr><th id="129">129</th><td>    <dfn class="enum" id="mus_inter" title='mus_inter' data-ref="mus_inter">mus_inter</dfn>,</td></tr>
+<tr><th id="130">130</th><td>    <dfn class="enum" id="mus_intro" title='mus_intro' data-ref="mus_intro">mus_intro</dfn>,</td></tr>
+<tr><th id="131">131</th><td>    <dfn class="enum" id="mus_bunny" title='mus_bunny' data-ref="mus_bunny">mus_bunny</dfn>,</td></tr>
+<tr><th id="132">132</th><td>    <dfn class="enum" id="mus_victor" title='mus_victor' data-ref="mus_victor">mus_victor</dfn>,</td></tr>
+<tr><th id="133">133</th><td>    <dfn class="enum" id="mus_introa" title='mus_introa' data-ref="mus_introa">mus_introa</dfn>,</td></tr>
+<tr><th id="134">134</th><td>    <dfn class="enum" id="mus_runnin" title='mus_runnin' data-ref="mus_runnin">mus_runnin</dfn>,</td></tr>
+<tr><th id="135">135</th><td>    <dfn class="enum" id="mus_stalks" title='mus_stalks' data-ref="mus_stalks">mus_stalks</dfn>,</td></tr>
+<tr><th id="136">136</th><td>    <dfn class="enum" id="mus_countd" title='mus_countd' data-ref="mus_countd">mus_countd</dfn>,</td></tr>
+<tr><th id="137">137</th><td>    <dfn class="enum" id="mus_betwee" title='mus_betwee' data-ref="mus_betwee">mus_betwee</dfn>,</td></tr>
+<tr><th id="138">138</th><td>    <dfn class="enum" id="mus_doom" title='mus_doom' data-ref="mus_doom">mus_doom</dfn>,</td></tr>
+<tr><th id="139">139</th><td>    <dfn class="enum" id="mus_the_da" title='mus_the_da' data-ref="mus_the_da">mus_the_da</dfn>,</td></tr>
+<tr><th id="140">140</th><td>    <dfn class="enum" id="mus_shawn" title='mus_shawn' data-ref="mus_shawn">mus_shawn</dfn>,</td></tr>
+<tr><th id="141">141</th><td>    <dfn class="enum" id="mus_ddtblu" title='mus_ddtblu' data-ref="mus_ddtblu">mus_ddtblu</dfn>,</td></tr>
+<tr><th id="142">142</th><td>    <dfn class="enum" id="mus_in_cit" title='mus_in_cit' data-ref="mus_in_cit">mus_in_cit</dfn>,</td></tr>
+<tr><th id="143">143</th><td>    <dfn class="enum" id="mus_dead" title='mus_dead' data-ref="mus_dead">mus_dead</dfn>,</td></tr>
+<tr><th id="144">144</th><td>    <dfn class="enum" id="mus_stlks2" title='mus_stlks2' data-ref="mus_stlks2">mus_stlks2</dfn>,</td></tr>
+<tr><th id="145">145</th><td>    <dfn class="enum" id="mus_theda2" title='mus_theda2' data-ref="mus_theda2">mus_theda2</dfn>,</td></tr>
+<tr><th id="146">146</th><td>    <dfn class="enum" id="mus_doom2" title='mus_doom2' data-ref="mus_doom2">mus_doom2</dfn>,</td></tr>
+<tr><th id="147">147</th><td>    <dfn class="enum" id="mus_ddtbl2" title='mus_ddtbl2' data-ref="mus_ddtbl2">mus_ddtbl2</dfn>,</td></tr>
+<tr><th id="148">148</th><td>    <dfn class="enum" id="mus_runni2" title='mus_runni2' data-ref="mus_runni2">mus_runni2</dfn>,</td></tr>
+<tr><th id="149">149</th><td>    <dfn class="enum" id="mus_dead2" title='mus_dead2' data-ref="mus_dead2">mus_dead2</dfn>,</td></tr>
+<tr><th id="150">150</th><td>    <dfn class="enum" id="mus_stlks3" title='mus_stlks3' data-ref="mus_stlks3">mus_stlks3</dfn>,</td></tr>
+<tr><th id="151">151</th><td>    <dfn class="enum" id="mus_romero" title='mus_romero' data-ref="mus_romero">mus_romero</dfn>,</td></tr>
+<tr><th id="152">152</th><td>    <dfn class="enum" id="mus_shawn2" title='mus_shawn2' data-ref="mus_shawn2">mus_shawn2</dfn>,</td></tr>
+<tr><th id="153">153</th><td>    <dfn class="enum" id="mus_messag" title='mus_messag' data-ref="mus_messag">mus_messag</dfn>,</td></tr>
+<tr><th id="154">154</th><td>    <dfn class="enum" id="mus_count2" title='mus_count2' data-ref="mus_count2">mus_count2</dfn>,</td></tr>
+<tr><th id="155">155</th><td>    <dfn class="enum" id="mus_ddtbl3" title='mus_ddtbl3' data-ref="mus_ddtbl3">mus_ddtbl3</dfn>,</td></tr>
+<tr><th id="156">156</th><td>    <dfn class="enum" id="mus_ampie" title='mus_ampie' data-ref="mus_ampie">mus_ampie</dfn>,</td></tr>
+<tr><th id="157">157</th><td>    <dfn class="enum" id="mus_theda3" title='mus_theda3' data-ref="mus_theda3">mus_theda3</dfn>,</td></tr>
+<tr><th id="158">158</th><td>    <dfn class="enum" id="mus_adrian" title='mus_adrian' data-ref="mus_adrian">mus_adrian</dfn>,</td></tr>
+<tr><th id="159">159</th><td>    <dfn class="enum" id="mus_messg2" title='mus_messg2' data-ref="mus_messg2">mus_messg2</dfn>,</td></tr>
+<tr><th id="160">160</th><td>    <dfn class="enum" id="mus_romer2" title='mus_romer2' data-ref="mus_romer2">mus_romer2</dfn>,</td></tr>
+<tr><th id="161">161</th><td>    <dfn class="enum" id="mus_tense" title='mus_tense' data-ref="mus_tense">mus_tense</dfn>,</td></tr>
+<tr><th id="162">162</th><td>    <dfn class="enum" id="mus_shawn3" title='mus_shawn3' data-ref="mus_shawn3">mus_shawn3</dfn>,</td></tr>
+<tr><th id="163">163</th><td>    <dfn class="enum" id="mus_openin" title='mus_openin' data-ref="mus_openin">mus_openin</dfn>,</td></tr>
+<tr><th id="164">164</th><td>    <dfn class="enum" id="mus_evil" title='mus_evil' data-ref="mus_evil">mus_evil</dfn>,</td></tr>
+<tr><th id="165">165</th><td>    <dfn class="enum" id="mus_ultima" title='mus_ultima' data-ref="mus_ultima">mus_ultima</dfn>,</td></tr>
+<tr><th id="166">166</th><td>    <dfn class="enum" id="mus_read_m" title='mus_read_m' data-ref="mus_read_m">mus_read_m</dfn>,</td></tr>
+<tr><th id="167">167</th><td>    <dfn class="enum" id="mus_dm2ttl" title='mus_dm2ttl' data-ref="mus_dm2ttl">mus_dm2ttl</dfn>,</td></tr>
+<tr><th id="168">168</th><td>    <dfn class="enum" id="mus_dm2int" title='mus_dm2int' data-ref="mus_dm2int">mus_dm2int</dfn>,</td></tr>
+<tr><th id="169">169</th><td>    <dfn class="enum" id="NUMMUSIC" title='NUMMUSIC' data-ref="NUMMUSIC">NUMMUSIC</dfn></td></tr>
+<tr><th id="170">170</th><td>} <dfn class="typedef" id="musicenum_t" title='musicenum_t' data-type='enum musicenum_t' data-ref="musicenum_t">musicenum_t</dfn>;</td></tr>
+<tr><th id="171">171</th><td></td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td><i>//</i></td></tr>
+<tr><th id="174">174</th><td><i>// Identifiers for all sfx in game.</i></td></tr>
+<tr><th id="175">175</th><td><i>//</i></td></tr>
+<tr><th id="176">176</th><td></td></tr>
+<tr><th id="177">177</th><td><b>typedef</b> <b>enum</b></td></tr>
+<tr><th id="178">178</th><td>{</td></tr>
+<tr><th id="179">179</th><td>    <dfn class="enum" id="sfx_None" title='sfx_None' data-ref="sfx_None">sfx_None</dfn>,</td></tr>
+<tr><th id="180">180</th><td>    <dfn class="enum" id="sfx_pistol" title='sfx_pistol' data-ref="sfx_pistol">sfx_pistol</dfn>,</td></tr>
+<tr><th id="181">181</th><td>    <dfn class="enum" id="sfx_shotgn" title='sfx_shotgn' data-ref="sfx_shotgn">sfx_shotgn</dfn>,</td></tr>
+<tr><th id="182">182</th><td>    <dfn class="enum" id="sfx_sgcock" title='sfx_sgcock' data-ref="sfx_sgcock">sfx_sgcock</dfn>,</td></tr>
+<tr><th id="183">183</th><td>    <dfn class="enum" id="sfx_dshtgn" title='sfx_dshtgn' data-ref="sfx_dshtgn">sfx_dshtgn</dfn>,</td></tr>
+<tr><th id="184">184</th><td>    <dfn class="enum" id="sfx_dbopn" title='sfx_dbopn' data-ref="sfx_dbopn">sfx_dbopn</dfn>,</td></tr>
+<tr><th id="185">185</th><td>    <dfn class="enum" id="sfx_dbcls" title='sfx_dbcls' data-ref="sfx_dbcls">sfx_dbcls</dfn>,</td></tr>
+<tr><th id="186">186</th><td>    <dfn class="enum" id="sfx_dbload" title='sfx_dbload' data-ref="sfx_dbload">sfx_dbload</dfn>,</td></tr>
+<tr><th id="187">187</th><td>    <dfn class="enum" id="sfx_plasma" title='sfx_plasma' data-ref="sfx_plasma">sfx_plasma</dfn>,</td></tr>
+<tr><th id="188">188</th><td>    <dfn class="enum" id="sfx_bfg" title='sfx_bfg' data-ref="sfx_bfg">sfx_bfg</dfn>,</td></tr>
+<tr><th id="189">189</th><td>    <dfn class="enum" id="sfx_sawup" title='sfx_sawup' data-ref="sfx_sawup">sfx_sawup</dfn>,</td></tr>
+<tr><th id="190">190</th><td>    <dfn class="enum" id="sfx_sawidl" title='sfx_sawidl' data-ref="sfx_sawidl">sfx_sawidl</dfn>,</td></tr>
+<tr><th id="191">191</th><td>    <dfn class="enum" id="sfx_sawful" title='sfx_sawful' data-ref="sfx_sawful">sfx_sawful</dfn>,</td></tr>
+<tr><th id="192">192</th><td>    <dfn class="enum" id="sfx_sawhit" title='sfx_sawhit' data-ref="sfx_sawhit">sfx_sawhit</dfn>,</td></tr>
+<tr><th id="193">193</th><td>    <dfn class="enum" id="sfx_rlaunc" title='sfx_rlaunc' data-ref="sfx_rlaunc">sfx_rlaunc</dfn>,</td></tr>
+<tr><th id="194">194</th><td>    <dfn class="enum" id="sfx_rxplod" title='sfx_rxplod' data-ref="sfx_rxplod">sfx_rxplod</dfn>,</td></tr>
+<tr><th id="195">195</th><td>    <dfn class="enum" id="sfx_firsht" title='sfx_firsht' data-ref="sfx_firsht">sfx_firsht</dfn>,</td></tr>
+<tr><th id="196">196</th><td>    <dfn class="enum" id="sfx_firxpl" title='sfx_firxpl' data-ref="sfx_firxpl">sfx_firxpl</dfn>,</td></tr>
+<tr><th id="197">197</th><td>    <dfn class="enum" id="sfx_pstart" title='sfx_pstart' data-ref="sfx_pstart">sfx_pstart</dfn>,</td></tr>
+<tr><th id="198">198</th><td>    <dfn class="enum" id="sfx_pstop" title='sfx_pstop' data-ref="sfx_pstop">sfx_pstop</dfn>,</td></tr>
+<tr><th id="199">199</th><td>    <dfn class="enum" id="sfx_doropn" title='sfx_doropn' data-ref="sfx_doropn">sfx_doropn</dfn>,</td></tr>
+<tr><th id="200">200</th><td>    <dfn class="enum" id="sfx_dorcls" title='sfx_dorcls' data-ref="sfx_dorcls">sfx_dorcls</dfn>,</td></tr>
+<tr><th id="201">201</th><td>    <dfn class="enum" id="sfx_stnmov" title='sfx_stnmov' data-ref="sfx_stnmov">sfx_stnmov</dfn>,</td></tr>
+<tr><th id="202">202</th><td>    <dfn class="enum" id="sfx_swtchn" title='sfx_swtchn' data-ref="sfx_swtchn">sfx_swtchn</dfn>,</td></tr>
+<tr><th id="203">203</th><td>    <dfn class="enum" id="sfx_swtchx" title='sfx_swtchx' data-ref="sfx_swtchx">sfx_swtchx</dfn>,</td></tr>
+<tr><th id="204">204</th><td>    <dfn class="enum" id="sfx_plpain" title='sfx_plpain' data-ref="sfx_plpain">sfx_plpain</dfn>,</td></tr>
+<tr><th id="205">205</th><td>    <dfn class="enum" id="sfx_dmpain" title='sfx_dmpain' data-ref="sfx_dmpain">sfx_dmpain</dfn>,</td></tr>
+<tr><th id="206">206</th><td>    <dfn class="enum" id="sfx_popain" title='sfx_popain' data-ref="sfx_popain">sfx_popain</dfn>,</td></tr>
+<tr><th id="207">207</th><td>    <dfn class="enum" id="sfx_vipain" title='sfx_vipain' data-ref="sfx_vipain">sfx_vipain</dfn>,</td></tr>
+<tr><th id="208">208</th><td>    <dfn class="enum" id="sfx_mnpain" title='sfx_mnpain' data-ref="sfx_mnpain">sfx_mnpain</dfn>,</td></tr>
+<tr><th id="209">209</th><td>    <dfn class="enum" id="sfx_pepain" title='sfx_pepain' data-ref="sfx_pepain">sfx_pepain</dfn>,</td></tr>
+<tr><th id="210">210</th><td>    <dfn class="enum" id="sfx_slop" title='sfx_slop' data-ref="sfx_slop">sfx_slop</dfn>,</td></tr>
+<tr><th id="211">211</th><td>    <dfn class="enum" id="sfx_itemup" title='sfx_itemup' data-ref="sfx_itemup">sfx_itemup</dfn>,</td></tr>
+<tr><th id="212">212</th><td>    <dfn class="enum" id="sfx_wpnup" title='sfx_wpnup' data-ref="sfx_wpnup">sfx_wpnup</dfn>,</td></tr>
+<tr><th id="213">213</th><td>    <dfn class="enum" id="sfx_oof" title='sfx_oof' data-ref="sfx_oof">sfx_oof</dfn>,</td></tr>
+<tr><th id="214">214</th><td>    <dfn class="enum" id="sfx_telept" title='sfx_telept' data-ref="sfx_telept">sfx_telept</dfn>,</td></tr>
+<tr><th id="215">215</th><td>    <dfn class="enum" id="sfx_posit1" title='sfx_posit1' data-ref="sfx_posit1">sfx_posit1</dfn>,</td></tr>
+<tr><th id="216">216</th><td>    <dfn class="enum" id="sfx_posit2" title='sfx_posit2' data-ref="sfx_posit2">sfx_posit2</dfn>,</td></tr>
+<tr><th id="217">217</th><td>    <dfn class="enum" id="sfx_posit3" title='sfx_posit3' data-ref="sfx_posit3">sfx_posit3</dfn>,</td></tr>
+<tr><th id="218">218</th><td>    <dfn class="enum" id="sfx_bgsit1" title='sfx_bgsit1' data-ref="sfx_bgsit1">sfx_bgsit1</dfn>,</td></tr>
+<tr><th id="219">219</th><td>    <dfn class="enum" id="sfx_bgsit2" title='sfx_bgsit2' data-ref="sfx_bgsit2">sfx_bgsit2</dfn>,</td></tr>
+<tr><th id="220">220</th><td>    <dfn class="enum" id="sfx_sgtsit" title='sfx_sgtsit' data-ref="sfx_sgtsit">sfx_sgtsit</dfn>,</td></tr>
+<tr><th id="221">221</th><td>    <dfn class="enum" id="sfx_cacsit" title='sfx_cacsit' data-ref="sfx_cacsit">sfx_cacsit</dfn>,</td></tr>
+<tr><th id="222">222</th><td>    <dfn class="enum" id="sfx_brssit" title='sfx_brssit' data-ref="sfx_brssit">sfx_brssit</dfn>,</td></tr>
+<tr><th id="223">223</th><td>    <dfn class="enum" id="sfx_cybsit" title='sfx_cybsit' data-ref="sfx_cybsit">sfx_cybsit</dfn>,</td></tr>
+<tr><th id="224">224</th><td>    <dfn class="enum" id="sfx_spisit" title='sfx_spisit' data-ref="sfx_spisit">sfx_spisit</dfn>,</td></tr>
+<tr><th id="225">225</th><td>    <dfn class="enum" id="sfx_bspsit" title='sfx_bspsit' data-ref="sfx_bspsit">sfx_bspsit</dfn>,</td></tr>
+<tr><th id="226">226</th><td>    <dfn class="enum" id="sfx_kntsit" title='sfx_kntsit' data-ref="sfx_kntsit">sfx_kntsit</dfn>,</td></tr>
+<tr><th id="227">227</th><td>    <dfn class="enum" id="sfx_vilsit" title='sfx_vilsit' data-ref="sfx_vilsit">sfx_vilsit</dfn>,</td></tr>
+<tr><th id="228">228</th><td>    <dfn class="enum" id="sfx_mansit" title='sfx_mansit' data-ref="sfx_mansit">sfx_mansit</dfn>,</td></tr>
+<tr><th id="229">229</th><td>    <dfn class="enum" id="sfx_pesit" title='sfx_pesit' data-ref="sfx_pesit">sfx_pesit</dfn>,</td></tr>
+<tr><th id="230">230</th><td>    <dfn class="enum" id="sfx_sklatk" title='sfx_sklatk' data-ref="sfx_sklatk">sfx_sklatk</dfn>,</td></tr>
+<tr><th id="231">231</th><td>    <dfn class="enum" id="sfx_sgtatk" title='sfx_sgtatk' data-ref="sfx_sgtatk">sfx_sgtatk</dfn>,</td></tr>
+<tr><th id="232">232</th><td>    <dfn class="enum" id="sfx_skepch" title='sfx_skepch' data-ref="sfx_skepch">sfx_skepch</dfn>,</td></tr>
+<tr><th id="233">233</th><td>    <dfn class="enum" id="sfx_vilatk" title='sfx_vilatk' data-ref="sfx_vilatk">sfx_vilatk</dfn>,</td></tr>
+<tr><th id="234">234</th><td>    <dfn class="enum" id="sfx_claw" title='sfx_claw' data-ref="sfx_claw">sfx_claw</dfn>,</td></tr>
+<tr><th id="235">235</th><td>    <dfn class="enum" id="sfx_skeswg" title='sfx_skeswg' data-ref="sfx_skeswg">sfx_skeswg</dfn>,</td></tr>
+<tr><th id="236">236</th><td>    <dfn class="enum" id="sfx_pldeth" title='sfx_pldeth' data-ref="sfx_pldeth">sfx_pldeth</dfn>,</td></tr>
+<tr><th id="237">237</th><td>    <dfn class="enum" id="sfx_pdiehi" title='sfx_pdiehi' data-ref="sfx_pdiehi">sfx_pdiehi</dfn>,</td></tr>
+<tr><th id="238">238</th><td>    <dfn class="enum" id="sfx_podth1" title='sfx_podth1' data-ref="sfx_podth1">sfx_podth1</dfn>,</td></tr>
+<tr><th id="239">239</th><td>    <dfn class="enum" id="sfx_podth2" title='sfx_podth2' data-ref="sfx_podth2">sfx_podth2</dfn>,</td></tr>
+<tr><th id="240">240</th><td>    <dfn class="enum" id="sfx_podth3" title='sfx_podth3' data-ref="sfx_podth3">sfx_podth3</dfn>,</td></tr>
+<tr><th id="241">241</th><td>    <dfn class="enum" id="sfx_bgdth1" title='sfx_bgdth1' data-ref="sfx_bgdth1">sfx_bgdth1</dfn>,</td></tr>
+<tr><th id="242">242</th><td>    <dfn class="enum" id="sfx_bgdth2" title='sfx_bgdth2' data-ref="sfx_bgdth2">sfx_bgdth2</dfn>,</td></tr>
+<tr><th id="243">243</th><td>    <dfn class="enum" id="sfx_sgtdth" title='sfx_sgtdth' data-ref="sfx_sgtdth">sfx_sgtdth</dfn>,</td></tr>
+<tr><th id="244">244</th><td>    <dfn class="enum" id="sfx_cacdth" title='sfx_cacdth' data-ref="sfx_cacdth">sfx_cacdth</dfn>,</td></tr>
+<tr><th id="245">245</th><td>    <dfn class="enum" id="sfx_skldth" title='sfx_skldth' data-ref="sfx_skldth">sfx_skldth</dfn>,</td></tr>
+<tr><th id="246">246</th><td>    <dfn class="enum" id="sfx_brsdth" title='sfx_brsdth' data-ref="sfx_brsdth">sfx_brsdth</dfn>,</td></tr>
+<tr><th id="247">247</th><td>    <dfn class="enum" id="sfx_cybdth" title='sfx_cybdth' data-ref="sfx_cybdth">sfx_cybdth</dfn>,</td></tr>
+<tr><th id="248">248</th><td>    <dfn class="enum" id="sfx_spidth" title='sfx_spidth' data-ref="sfx_spidth">sfx_spidth</dfn>,</td></tr>
+<tr><th id="249">249</th><td>    <dfn class="enum" id="sfx_bspdth" title='sfx_bspdth' data-ref="sfx_bspdth">sfx_bspdth</dfn>,</td></tr>
+<tr><th id="250">250</th><td>    <dfn class="enum" id="sfx_vildth" title='sfx_vildth' data-ref="sfx_vildth">sfx_vildth</dfn>,</td></tr>
+<tr><th id="251">251</th><td>    <dfn class="enum" id="sfx_kntdth" title='sfx_kntdth' data-ref="sfx_kntdth">sfx_kntdth</dfn>,</td></tr>
+<tr><th id="252">252</th><td>    <dfn class="enum" id="sfx_pedth" title='sfx_pedth' data-ref="sfx_pedth">sfx_pedth</dfn>,</td></tr>
+<tr><th id="253">253</th><td>    <dfn class="enum" id="sfx_skedth" title='sfx_skedth' data-ref="sfx_skedth">sfx_skedth</dfn>,</td></tr>
+<tr><th id="254">254</th><td>    <dfn class="enum" id="sfx_posact" title='sfx_posact' data-ref="sfx_posact">sfx_posact</dfn>,</td></tr>
+<tr><th id="255">255</th><td>    <dfn class="enum" id="sfx_bgact" title='sfx_bgact' data-ref="sfx_bgact">sfx_bgact</dfn>,</td></tr>
+<tr><th id="256">256</th><td>    <dfn class="enum" id="sfx_dmact" title='sfx_dmact' data-ref="sfx_dmact">sfx_dmact</dfn>,</td></tr>
+<tr><th id="257">257</th><td>    <dfn class="enum" id="sfx_bspact" title='sfx_bspact' data-ref="sfx_bspact">sfx_bspact</dfn>,</td></tr>
+<tr><th id="258">258</th><td>    <dfn class="enum" id="sfx_bspwlk" title='sfx_bspwlk' data-ref="sfx_bspwlk">sfx_bspwlk</dfn>,</td></tr>
+<tr><th id="259">259</th><td>    <dfn class="enum" id="sfx_vilact" title='sfx_vilact' data-ref="sfx_vilact">sfx_vilact</dfn>,</td></tr>
+<tr><th id="260">260</th><td>    <dfn class="enum" id="sfx_noway" title='sfx_noway' data-ref="sfx_noway">sfx_noway</dfn>,</td></tr>
+<tr><th id="261">261</th><td>    <dfn class="enum" id="sfx_barexp" title='sfx_barexp' data-ref="sfx_barexp">sfx_barexp</dfn>,</td></tr>
+<tr><th id="262">262</th><td>    <dfn class="enum" id="sfx_punch" title='sfx_punch' data-ref="sfx_punch">sfx_punch</dfn>,</td></tr>
+<tr><th id="263">263</th><td>    <dfn class="enum" id="sfx_hoof" title='sfx_hoof' data-ref="sfx_hoof">sfx_hoof</dfn>,</td></tr>
+<tr><th id="264">264</th><td>    <dfn class="enum" id="sfx_metal" title='sfx_metal' data-ref="sfx_metal">sfx_metal</dfn>,</td></tr>
+<tr><th id="265">265</th><td>    <dfn class="enum" id="sfx_chgun" title='sfx_chgun' data-ref="sfx_chgun">sfx_chgun</dfn>,</td></tr>
+<tr><th id="266">266</th><td>    <dfn class="enum" id="sfx_tink" title='sfx_tink' data-ref="sfx_tink">sfx_tink</dfn>,</td></tr>
+<tr><th id="267">267</th><td>    <dfn class="enum" id="sfx_bdopn" title='sfx_bdopn' data-ref="sfx_bdopn">sfx_bdopn</dfn>,</td></tr>
+<tr><th id="268">268</th><td>    <dfn class="enum" id="sfx_bdcls" title='sfx_bdcls' data-ref="sfx_bdcls">sfx_bdcls</dfn>,</td></tr>
+<tr><th id="269">269</th><td>    <dfn class="enum" id="sfx_itmbk" title='sfx_itmbk' data-ref="sfx_itmbk">sfx_itmbk</dfn>,</td></tr>
+<tr><th id="270">270</th><td>    <dfn class="enum" id="sfx_flame" title='sfx_flame' data-ref="sfx_flame">sfx_flame</dfn>,</td></tr>
+<tr><th id="271">271</th><td>    <dfn class="enum" id="sfx_flamst" title='sfx_flamst' data-ref="sfx_flamst">sfx_flamst</dfn>,</td></tr>
+<tr><th id="272">272</th><td>    <dfn class="enum" id="sfx_getpow" title='sfx_getpow' data-ref="sfx_getpow">sfx_getpow</dfn>,</td></tr>
+<tr><th id="273">273</th><td>    <dfn class="enum" id="sfx_bospit" title='sfx_bospit' data-ref="sfx_bospit">sfx_bospit</dfn>,</td></tr>
+<tr><th id="274">274</th><td>    <dfn class="enum" id="sfx_boscub" title='sfx_boscub' data-ref="sfx_boscub">sfx_boscub</dfn>,</td></tr>
+<tr><th id="275">275</th><td>    <dfn class="enum" id="sfx_bossit" title='sfx_bossit' data-ref="sfx_bossit">sfx_bossit</dfn>,</td></tr>
+<tr><th id="276">276</th><td>    <dfn class="enum" id="sfx_bospn" title='sfx_bospn' data-ref="sfx_bospn">sfx_bospn</dfn>,</td></tr>
+<tr><th id="277">277</th><td>    <dfn class="enum" id="sfx_bosdth" title='sfx_bosdth' data-ref="sfx_bosdth">sfx_bosdth</dfn>,</td></tr>
+<tr><th id="278">278</th><td>    <dfn class="enum" id="sfx_manatk" title='sfx_manatk' data-ref="sfx_manatk">sfx_manatk</dfn>,</td></tr>
+<tr><th id="279">279</th><td>    <dfn class="enum" id="sfx_mandth" title='sfx_mandth' data-ref="sfx_mandth">sfx_mandth</dfn>,</td></tr>
+<tr><th id="280">280</th><td>    <dfn class="enum" id="sfx_sssit" title='sfx_sssit' data-ref="sfx_sssit">sfx_sssit</dfn>,</td></tr>
+<tr><th id="281">281</th><td>    <dfn class="enum" id="sfx_ssdth" title='sfx_ssdth' data-ref="sfx_ssdth">sfx_ssdth</dfn>,</td></tr>
+<tr><th id="282">282</th><td>    <dfn class="enum" id="sfx_keenpn" title='sfx_keenpn' data-ref="sfx_keenpn">sfx_keenpn</dfn>,</td></tr>
+<tr><th id="283">283</th><td>    <dfn class="enum" id="sfx_keendt" title='sfx_keendt' data-ref="sfx_keendt">sfx_keendt</dfn>,</td></tr>
+<tr><th id="284">284</th><td>    <dfn class="enum" id="sfx_skeact" title='sfx_skeact' data-ref="sfx_skeact">sfx_skeact</dfn>,</td></tr>
+<tr><th id="285">285</th><td>    <dfn class="enum" id="sfx_skesit" title='sfx_skesit' data-ref="sfx_skesit">sfx_skesit</dfn>,</td></tr>
+<tr><th id="286">286</th><td>    <dfn class="enum" id="sfx_skeatk" title='sfx_skeatk' data-ref="sfx_skeatk">sfx_skeatk</dfn>,</td></tr>
+<tr><th id="287">287</th><td>    <dfn class="enum" id="sfx_radio" title='sfx_radio' data-ref="sfx_radio">sfx_radio</dfn>,</td></tr>
+<tr><th id="288">288</th><td>    <dfn class="enum" id="NUMSFX" title='NUMSFX' data-ref="NUMSFX">NUMSFX</dfn></td></tr>
+<tr><th id="289">289</th><td>} <dfn class="typedef" id="sfxenum_t" title='sfxenum_t' data-type='enum sfxenum_t' data-ref="sfxenum_t">sfxenum_t</dfn>;</td></tr>
+<tr><th id="290">290</th><td></td></tr>
+<tr><th id="291">291</th><td><u>#<span data-ppcond="23">endif</span></u></td></tr>
+<tr><th id="292">292</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="293">293</th><td><i>//</i></td></tr>
+<tr><th id="294">294</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="295">295</th><td><i>//</i></td></tr>
+<tr><th id="296">296</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="297">297</th><td></td></tr>
+<tr><th id="298">298</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='d_main.c.html'>codebrowser/d_main.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

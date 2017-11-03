@@ -1,0 +1,4 @@
+<dec f='codebrowser/p_local.h' l='102' type='int [128]'/>
+<def f='codebrowser/p_mobj.c' l='541' type='int [128]'/>
+<use f='codebrowser/p_mobj.c' l='554' u='w' c='P_RemoveMobj'/>
+<use f='codebrowser/p_mobj.c' l='599' u='r' c='P_RespawnSpecials'/>

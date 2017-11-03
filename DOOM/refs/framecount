@@ -1,0 +1,4 @@
+<def f='codebrowser/r_main.c' l='69' type='int'/>
+<use f='codebrowser/r_main.c' l='793' u='w' c='R_Init'/>
+<use f='codebrowser/r_main.c' l='861' u='w' c='R_SetupFrame'/>
+<doc f='codebrowser/r_main.c' l='68'>// just for profiling purposes</doc>

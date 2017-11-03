@@ -1,0 +1,6 @@
+<def f='codebrowser/am_map.c' l='389' ll='423' type='void AM_findMinMaxBoundaries()'/>
+<use f='codebrowser/am_map.c' l='547' u='c' c='AM_LevelInit'/>
+<doc f='codebrowser/am_map.c' l='385'>//
+// Determines bounding box of all vertices,
+// sets global variables controlling zoom range.
+//</doc>

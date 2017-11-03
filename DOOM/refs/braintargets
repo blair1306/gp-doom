@@ -1,0 +1,3 @@
+<def f='codebrowser/p_enemy.c' l='1809' type='mobj_t *[32]'/>
+<use f='codebrowser/p_enemy.c' l='1834' u='w' c='A_BrainAwake'/>
+<use f='codebrowser/p_enemy.c' l='1913' u='r' c='A_BrainSpit'/>

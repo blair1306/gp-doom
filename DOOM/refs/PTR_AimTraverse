@@ -1,0 +1,6 @@
+<def f='codebrowser/p_map.c' l='815' ll='893' type='boolean PTR_AimTraverse(intercept_t * in)'/>
+<use f='codebrowser/p_map.c' l='1048' u='r' c='P_AimLineAttack'/>
+<doc f='codebrowser/p_map.c' l='811'>//
+// PTR_AimTraverse
+// Sets linetaget and aimslope when a target is aimed at.
+//</doc>

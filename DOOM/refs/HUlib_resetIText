@@ -1,0 +1,7 @@
+<dec f='codebrowser/hu_lib.h' l='172' type='void HUlib_resetIText(hu_itext_t * it)'/>
+<def f='codebrowser/hu_lib.c' l='299' ll='303' type='void HUlib_resetIText(hu_itext_t * it)'/>
+<doc f='codebrowser/hu_lib.c' l='298'>// Resets left margin as well</doc>
+<doc f='codebrowser/hu_lib.h' l='171'>// resets line and left margin</doc>
+<use f='codebrowser/hu_stuff.c' l='570' u='c' c='HU_Ticker'/>
+<use f='codebrowser/hu_stuff.c' l='668' u='c' c='HU_Responder'/>
+<use f='codebrowser/hu_stuff.c' l='680' u='c' c='HU_Responder'/>

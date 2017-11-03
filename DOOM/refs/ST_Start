@@ -1,0 +1,4 @@
+<dec f='codebrowser/st_stuff.h' l='51' type='void ST_Start()'/>
+<doc f='codebrowser/st_stuff.h' l='50'>// Called when the console player is spawned on each level.</doc>
+<use f='codebrowser/p_mobj.c' l='696' u='c' c='P_SpawnPlayer'/>
+<def f='codebrowser/st_stuff.c' l='1444' ll='1454' type='void ST_Start()'/>

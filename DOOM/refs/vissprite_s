@@ -1,0 +1,20 @@
+<def f='codebrowser/r_defs.h' l='375' ll='409'/>
+<size>80</size>
+<doc f='codebrowser/r_defs.h' l='372'>// A vissprite_t is a thing
+//  that will be drawn during a refresh.
+// I.e. a sprite object that is partly visible.</doc>
+<mbr r='vissprite_s::prev' o='0' t='struct vissprite_s *'/>
+<mbr r='vissprite_s::next' o='64' t='struct vissprite_s *'/>
+<mbr r='vissprite_s::x1' o='128' t='int'/>
+<mbr r='vissprite_s::x2' o='160' t='int'/>
+<mbr r='vissprite_s::gx' o='192' t='fixed_t'/>
+<mbr r='vissprite_s::gy' o='224' t='fixed_t'/>
+<mbr r='vissprite_s::gz' o='256' t='fixed_t'/>
+<mbr r='vissprite_s::gzt' o='288' t='fixed_t'/>
+<mbr r='vissprite_s::startfrac' o='320' t='fixed_t'/>
+<mbr r='vissprite_s::scale' o='352' t='fixed_t'/>
+<mbr r='vissprite_s::xiscale' o='384' t='fixed_t'/>
+<mbr r='vissprite_s::texturemid' o='416' t='fixed_t'/>
+<mbr r='vissprite_s::patch' o='448' t='int'/>
+<mbr r='vissprite_s::colormap' o='512' t='lighttable_t *'/>
+<mbr r='vissprite_s::mobjflags' o='576' t='int'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/hu_lib.h' l='153' type='void HUlib_eraseSText(hu_stext_t * s)'/>
+<def f='codebrowser/hu_lib.c' l='254' ll='267' type='void HUlib_eraseSText(hu_stext_t * s)'/>
+<doc f='codebrowser/hu_lib.h' l='152'>// erases all stext lines</doc>
+<use f='codebrowser/hu_stuff.c' l='499' u='c' c='HU_Erase'/>

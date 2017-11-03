@@ -1,0 +1,6 @@
+<dec f='codebrowser/d_main.h' l='60' type='void D_PageDrawer()'/>
+<use f='codebrowser/d_main.c' l='259' u='c' c='D_Display'/>
+<def f='codebrowser/d_main.c' l='434' ll='437' type='void D_PageDrawer()'/>
+<doc f='codebrowser/d_main.c' l='431'>//
+// D_PageDrawer
+//</doc>

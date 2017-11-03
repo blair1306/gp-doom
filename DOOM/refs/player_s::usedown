@@ -1,0 +1,9 @@
+<dec f='codebrowser/d_player.h' l='125' type='int'/>
+<offset>1568</offset>
+<use f='codebrowser/g_game.c' l='822' u='w' c='G_PlayerReborn'/>
+<use f='codebrowser/p_user.c' l='324' u='r' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='327' u='w' c='P_PlayerThink'/>
+<use f='codebrowser/p_user.c' l='331' u='w' c='P_PlayerThink'/>
+<use f='codebrowser/wi_stuff.c' l='1490' u='r' c='WI_checkForAccelerate'/>
+<use f='codebrowser/wi_stuff.c' l='1492' u='w' c='WI_checkForAccelerate'/>
+<use f='codebrowser/wi_stuff.c' l='1495' u='w' c='WI_checkForAccelerate'/>

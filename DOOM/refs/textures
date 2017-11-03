@@ -1,0 +1,7 @@
+<def f='codebrowser/r_data.c' l='142' type='texture_t **'/>
+<use f='codebrowser/r_data.c' l='242' u='r' c='R_GenerateComposite'/>
+<use f='codebrowser/r_data.c' l='309' u='r' c='R_GenerateLookup'/>
+<use f='codebrowser/r_data.c' l='482' u='w' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='524' u='r' c='R_InitTextures'/>
+<use f='codebrowser/r_data.c' l='705' u='r' c='R_CheckTextureNumForName'/>
+<use f='codebrowser/r_data.c' l='808' u='r' c='R_PrecacheLevel'/>

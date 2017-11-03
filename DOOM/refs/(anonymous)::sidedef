@@ -1,0 +1,8 @@
+<dec f='codebrowser/r_defs.h' l='249' type='side_t *'/>
+<offset>192</offset>
+<use f='codebrowser/p_setup.c' l='187' u='w' c='P_LoadSegs'/>
+<use f='codebrowser/p_setup.c' l='517' u='r' c='P_GroupLines'/>
+<use f='codebrowser/r_bsp.c' l='344' u='r' c='R_AddLine'/>
+<use f='codebrowser/r_segs.c' l='120' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='156' u='r' c='R_RenderMaskedSegRange'/>
+<use f='codebrowser/r_segs.c' l='394' u='r' c='R_StoreWallRange'/>

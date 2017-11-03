@@ -1,0 +1,4 @@
+<dec f='codebrowser/d_englsh.h' l='334'/>
+<doc f='codebrowser/d_englsh.h' l='331'>// The following should NOT be changed unless it seems
+// just AWFULLY necessary</doc>
+<use f='codebrowser/hu_stuff.c' l='81' u='c'/>

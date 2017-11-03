@@ -1,0 +1,16 @@
+<def f='codebrowser/p_map.c' l='1250' type='boolean'/>
+<use f='codebrowser/p_map.c' l='1298' u='r' c='PIT_ChangeSector'/>
+<use f='codebrowser/p_map.c' l='1329' u='w' c='P_ChangeSector'/>
+<doc f='codebrowser/p_map.c' l='1237'>//
+// SECTOR HEIGHT CHANGING
+// After modifying a sectors floor or ceiling height,
+// call this routine to adjust the positions
+// of all things that touch the sector.
+//
+// If anything doesn&apos;t fit anymore, true will be returned.
+// If crunch is true, they will take damage
+//  as they are being crushed.
+// If Crunch is false, you should set the sector height back
+//  the way it was and call P_ChangeSector again
+//  to undo the changes.
+//</doc>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/r_plane.h' l='66' type='void R_DrawPlanes()'/>
+<use f='codebrowser/r_main.c' l='889' u='c' c='R_RenderPlayerView'/>
+<def f='codebrowser/r_plane.c' l='367' ll='453' type='void R_DrawPlanes()'/>
+<doc f='codebrowser/r_plane.c' l='363'>//
+// R_DrawPlanes
+// At the end of each frame.
+//</doc>

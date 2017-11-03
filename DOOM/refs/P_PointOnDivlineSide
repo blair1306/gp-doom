@@ -1,0 +1,10 @@
+<dec f='codebrowser/p_local.h' l='163' type='int P_PointOnDivlineSide(fixed_t x, fixed_t y, divline_t * line)'/>
+<def f='codebrowser/p_maputl.c' l='160' ll='203' type='int P_PointOnDivlineSide(fixed_t x, fixed_t y, divline_t * line)'/>
+<use f='codebrowser/p_maputl.c' l='575' u='c' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='576' u='c' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='652' u='c' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='653' u='c' c='PIT_AddThingIntercepts'/>
+<doc f='codebrowser/p_maputl.c' l='156'>//
+// P_PointOnDivlineSide
+// Returns 0 or 1.
+//</doc>

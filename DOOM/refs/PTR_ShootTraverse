@@ -1,0 +1,5 @@
+<def f='codebrowser/p_map.c' l='899' ll='1016' type='boolean PTR_ShootTraverse(intercept_t * in)'/>
+<use f='codebrowser/p_map.c' l='1085' u='r' c='P_LineAttack'/>
+<doc f='codebrowser/p_map.c' l='896'>//
+// PTR_ShootTraverse
+//</doc>

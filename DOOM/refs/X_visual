@@ -1,0 +1,6 @@
+<def f='codebrowser/i_video.c' l='65' type='Visual *'/>
+<use f='codebrowser/i_video.c' l='772' u='w' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='794' u='r' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='815' u='r' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='859' u='r' c='I_InitGraphics'/>
+<use f='codebrowser/i_video.c' l='898' u='r' c='I_InitGraphics'/>

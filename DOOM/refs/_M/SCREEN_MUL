@@ -1,0 +1,5 @@
+<dec f='codebrowser/doomdef.h' l='104'/>
+<doc f='codebrowser/doomdef.h' l='100'>// It is educational but futile to change this
+//  scaling e.g. to 2. Drawing of status bar,
+//  menues etc. is tied to the scale implied
+//  by the graphics.</doc>

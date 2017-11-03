@@ -1,0 +1,13 @@
+<dec f='codebrowser/p_local.h' l='157' type='intercept_t *'/>
+<def f='codebrowser/p_maputl.c' l='545' type='intercept_t *'/>
+<use f='codebrowser/p_maputl.c' l='603' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='604' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='605' u='r' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='606' u='w' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='668' u='r' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='669' u='r' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='670' u='r' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='671' u='w' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='692' u='r' c='P_TraverseIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='699' u='r' c='P_TraverseIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='775' u='w' c='P_PathTraverse'/>

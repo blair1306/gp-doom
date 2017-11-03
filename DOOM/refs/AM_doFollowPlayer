@@ -1,0 +1,5 @@
+<def f='codebrowser/am_map.c' l='760' ll='779' type='void AM_doFollowPlayer()'/>
+<use f='codebrowser/am_map.c' l='814' u='c' c='AM_Ticker'/>
+<doc f='codebrowser/am_map.c' l='757'>//
+//
+//</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/hu_lib.h' l='109' type='void HUlib_initTextLine(hu_textline_t * t, int x, int y, patch_t ** f, int sc)'/>
+<def f='codebrowser/hu_lib.c' l='53' ll='66' type='void HUlib_initTextLine(hu_textline_t * t, int x, int y, patch_t ** f, int sc)'/>
+<use f='codebrowser/hu_lib.c' l='194' u='c' c='HUlib_initSText'/>
+<use f='codebrowser/hu_lib.c' l='281' u='c' c='HUlib_initIText'/>
+<use f='codebrowser/hu_stuff.c' l='441' u='c' c='HU_Start'/>

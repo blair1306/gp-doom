@@ -1,0 +1,2 @@
+<def f='codebrowser/st_stuff.c' l='1201' ll='1205' type='void ST_loadData()'/>
+<use f='codebrowser/st_stuff.c' l='1469' u='c' c='ST_Init'/>

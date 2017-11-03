@@ -1,0 +1,5 @@
+<def f='codebrowser/r_things.c' l='842' ll='950' type='void R_DrawSprite(vissprite_t * spr)'/>
+<use f='codebrowser/r_things.c' l='973' u='c' c='R_DrawMasked'/>
+<doc f='codebrowser/r_things.c' l='839'>//
+// R_DrawSprite
+//</doc>

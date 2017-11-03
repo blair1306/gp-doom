@@ -1,0 +1,18 @@
+<dec f='codebrowser/info.c' l='63' type='void A_Punch()'/>
+<use f='codebrowser/info.c' l='142'/>
+<use f='codebrowser/info.c' l='142'/>
+<use f='codebrowser/info.c' l='142'/>
+<use f='codebrowser/info.c' l='142'/>
+<use f='codebrowser/info.c' l='142'/>
+<use f='codebrowser/info.c' l='142'/>
+<use f='codebrowser/info.c' l='142'/>
+<use f='codebrowser/info.c' l='142'/>
+<def f='codebrowser/p_pspr.c' l='467' ll='495' type='void A_Punch(player_t * player, pspdef_t * psp)'/>
+<doc f='codebrowser/p_pspr.c' l='459'>//
+// WEAPON ATTACKS
+//
+
+
+//
+// A_Punch
+//</doc>

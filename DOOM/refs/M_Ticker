@@ -1,0 +1,10 @@
+<dec f='codebrowser/m_menu.h' l='43' type='void M_Ticker()'/>
+<use f='codebrowser/d_main.c' l='382' u='c' c='D_DoomLoop'/>
+<doc f='codebrowser/m_menu.h' l='41'>// Called by main loop,
+// only used for menu (skull cursor) animation.</doc>
+<use f='codebrowser/d_net.c' l='730' u='c' c='TryRunTics'/>
+<use f='codebrowser/d_net.c' l='744' u='c' c='TryRunTics'/>
+<def f='codebrowser/m_menu.c' l='1834' ll='1841' type='void M_Ticker()'/>
+<doc f='codebrowser/m_menu.c' l='1831'>//
+// M_Ticker
+//</doc>

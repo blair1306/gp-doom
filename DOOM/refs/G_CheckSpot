@@ -1,0 +1,4 @@
+<def f='codebrowser/g_game.c' l='843' ll='889' type='boolean G_CheckSpot(int playernum, mapthing_t * mthing)'/>
+<use f='codebrowser/g_game.c' l='909' u='c' c='G_DeathMatchSpawnPlayer'/>
+<use f='codebrowser/g_game.c' l='947' u='c' c='G_DoReborn'/>
+<use f='codebrowser/g_game.c' l='956' u='c' c='G_DoReborn'/>

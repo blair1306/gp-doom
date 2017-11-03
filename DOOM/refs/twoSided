@@ -1,0 +1,9 @@
+<dec f='codebrowser/p_spec.h' l='71' type='int twoSided(int sector, int line)'/>
+<use f='codebrowser/p_floor.c' l='382' u='c' c='EV_DoFloor'/>
+<use f='codebrowser/p_floor.c' l='413' u='c' c='EV_DoFloor'/>
+<def f='codebrowser/p_spec.c' l='234' ll='240' type='int twoSided(int sector, int line)'/>
+<doc f='codebrowser/p_spec.c' l='229'>//
+// twoSided()
+// Given the sector number and the line number,
+//  it will tell you whether the line is two-sided or not.
+//</doc>

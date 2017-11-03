@@ -1,0 +1,6 @@
+<dec f='include/x86_64-linux-gnu/bits/fcntl-linux.h' l='43'/>
+<use f='codebrowser/m_menu.c' l='525' u='c'/>
+<use f='codebrowser/m_misc.c' l='148' u='c'/>
+<use f='codebrowser/w_wad.c' l='163' u='c'/>
+<use f='codebrowser/w_wad.c' l='249' u='c'/>
+<use f='codebrowser/w_wad.c' l='450' u='c'/>

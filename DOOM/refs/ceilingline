@@ -1,0 +1,10 @@
+<dec f='codebrowser/p_local.h' l='208' type='line_t *'/>
+<def f='codebrowser/p_map.c' l='63' type='line_t *'/>
+<use f='codebrowser/p_map.c' l='142' u='w' c='P_TeleportMove'/>
+<use f='codebrowser/p_map.c' l='230' u='w' c='PIT_CheckLine'/>
+<use f='codebrowser/p_map.c' l='400' u='w' c='P_CheckPosition'/>
+<doc f='codebrowser/p_map.c' l='61'>// keep track of the line that lowers the ceiling,
+// so missiles don&apos;t explode against sky hack walls</doc>
+<use f='codebrowser/p_mobj.c' l='176' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='177' u='r' c='P_XYMovement'/>
+<use f='codebrowser/p_mobj.c' l='178' u='r' c='P_XYMovement'/>

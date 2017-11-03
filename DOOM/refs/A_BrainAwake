@@ -1,0 +1,10 @@
+<dec f='codebrowser/info.c' l='128' type='void A_BrainAwake()'/>
+<use f='codebrowser/info.c' l='921'/>
+<use f='codebrowser/info.c' l='921'/>
+<use f='codebrowser/info.c' l='921'/>
+<use f='codebrowser/info.c' l='921'/>
+<use f='codebrowser/info.c' l='921'/>
+<use f='codebrowser/info.c' l='921'/>
+<use f='codebrowser/info.c' l='921'/>
+<use f='codebrowser/info.c' l='921'/>
+<def f='codebrowser/p_enemy.c' l='1813' ll='1840' type='void A_BrainAwake(mobj_t * mo)'/>

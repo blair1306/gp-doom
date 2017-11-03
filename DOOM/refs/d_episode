@@ -1,0 +1,3 @@
+<def f='codebrowser/g_game.c' l='1329' type='int'/>
+<use f='codebrowser/g_game.c' l='1339' u='w' c='G_DeferedInitNew'/>
+<use f='codebrowser/g_game.c' l='1356' u='r' c='G_DoNewGame'/>

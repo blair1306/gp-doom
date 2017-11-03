@@ -1,0 +1,13 @@
+<dec f='codebrowser/p_spec.h' l='33' type='boolean'/>
+<doc f='codebrowser/p_spec.h' l='30'>//
+// End-level timer (-TIMER option)
+//</doc>
+<def f='codebrowser/p_spec.c' l='1080' type='boolean'/>
+<use f='codebrowser/p_spec.c' l='1092' u='r' c='P_UpdateSpecials'/>
+<use f='codebrowser/p_spec.c' l='1251' u='w' c='P_SpawnSpecials'/>
+<use f='codebrowser/p_spec.c' l='1256' u='w' c='P_SpawnSpecials'/>
+<use f='codebrowser/p_spec.c' l='1265' u='w' c='P_SpawnSpecials'/>
+<doc f='codebrowser/p_spec.c' l='1076'>//
+// P_UpdateSpecials
+// Animate planes, scroll walls, etc.
+//</doc>

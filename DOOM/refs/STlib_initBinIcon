@@ -1,0 +1,4 @@
+<dec f='codebrowser/st_lib.h' l='208' type='void STlib_initBinIcon(st_binicon_t * b, int x, int y, patch_t * i, boolean * val, boolean * on)'/>
+<def f='codebrowser/st_lib.c' l='244' ll='259' type='void STlib_initBinIcon(st_binicon_t * b, int x, int y, patch_t * i, boolean * val, boolean * on)'/>
+<doc f='codebrowser/st_lib.h' l='205'>// Binary Icon widget routines</doc>
+<use f='codebrowser/st_stuff.c' l='1309' u='c' c='ST_createWidgets'/>

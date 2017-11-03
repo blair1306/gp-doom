@@ -1,0 +1,16 @@
+<dec f='codebrowser/p_local.h' l='146' type='fixed_t'/>
+<offset>0</offset>
+<doc f='codebrowser/p_local.h' l='146'>// along trace line</doc>
+<use f='codebrowser/p_map.c' l='673' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='677' u='r' c='PTR_SlideTraverse'/>
+<use f='codebrowser/p_map.c' l='840' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='871' u='r' c='PTR_AimTraverse'/>
+<use f='codebrowser/p_map.c' l='928' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='951' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='983' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_map.c' l='997' u='r' c='PTR_ShootTraverse'/>
+<use f='codebrowser/p_maputl.c' l='603' u='w' c='PIT_AddLineIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='668' u='w' c='PIT_AddThingIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='701' u='r' c='P_TraverseIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='703' u='r' c='P_TraverseIntercepts'/>
+<use f='codebrowser/p_maputl.c' l='726' u='w' c='P_TraverseIntercepts'/>

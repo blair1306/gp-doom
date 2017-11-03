@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>r_things.h source code [codebrowser/r_things.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/r_things.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>codebrowser</a>/<a href='r_things.h.html'>r_things.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>// Emacs style mode select   -*- C++ -*- </i></td></tr>
+<tr><th id="2">2</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="3">3</th><td><i>//</i></td></tr>
+<tr><th id="4">4</th><td><i>// $Id:$</i></td></tr>
+<tr><th id="5">5</th><td><i>//</i></td></tr>
+<tr><th id="6">6</th><td><i>// Copyright (C) 1993-1996 by id Software, Inc.</i></td></tr>
+<tr><th id="7">7</th><td><i>//</i></td></tr>
+<tr><th id="8">8</th><td><i>// This source is available for distribution and/or modification</i></td></tr>
+<tr><th id="9">9</th><td><i>// only under the terms of the DOOM Source Code License as</i></td></tr>
+<tr><th id="10">10</th><td><i>// published by id Software. All rights reserved.</i></td></tr>
+<tr><th id="11">11</th><td><i>//</i></td></tr>
+<tr><th id="12">12</th><td><i>// The source is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="13">13</th><td><i>// but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="14">14</th><td><i>// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License</i></td></tr>
+<tr><th id="15">15</th><td><i>// for more details.</i></td></tr>
+<tr><th id="16">16</th><td><i>//</i></td></tr>
+<tr><th id="17">17</th><td><i>// DESCRIPTION:</i></td></tr>
+<tr><th id="18">18</th><td><i>//	Rendering of moving objects, sprites.</i></td></tr>
+<tr><th id="19">19</th><td><i>//</i></td></tr>
+<tr><th id="20">20</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="23">ifndef</span> <span class="macro" data-ref="_M/__R_THINGS__">__R_THINGS__</span></u></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/__R_THINGS__" data-ref="_M/__R_THINGS__">__R_THINGS__</dfn></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><u>#<span data-ppcond="27">ifdef</span> <span class="macro" data-ref="_M/__GNUG__">__GNUG__</span></u></td></tr>
+<tr><th id="28">28</th><td><u>#pragma interface</u></td></tr>
+<tr><th id="29">29</th><td><u>#<span data-ppcond="27">endif</span></u></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><u>#define <dfn class="macro" id="_M/MAXVISSPRITES" data-ref="_M/MAXVISSPRITES">MAXVISSPRITES</dfn>  	128</u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><b>extern</b> <a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>	<dfn class="decl" id="vissprites" title='vissprites' data-ref="vissprites">vissprites</dfn>[<a class="macro" href="#31" title="128" data-ref="_M/MAXVISSPRITES">MAXVISSPRITES</a>];</td></tr>
+<tr><th id="34">34</th><td><b>extern</b> <a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>*	<dfn class="decl" id="vissprite_p" title='vissprite_p' data-ref="vissprite_p">vissprite_p</dfn>;</td></tr>
+<tr><th id="35">35</th><td><b>extern</b> <a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>	<dfn class="decl" id="vsprsortedhead" title='vsprsortedhead' data-ref="vsprsortedhead">vsprsortedhead</dfn>;</td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><i>// Constant arrays used for psprite clipping</i></td></tr>
+<tr><th id="38">38</th><td><i>//  and initializing clipping.</i></td></tr>
+<tr><th id="39">39</th><td><b>extern</b> <em>short</em>		<dfn class="decl" id="negonearray" title='negonearray' data-ref="negonearray">negonearray</dfn>[<a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>];</td></tr>
+<tr><th id="40">40</th><td><b>extern</b> <em>short</em>		<dfn class="decl" id="screenheightarray" title='screenheightarray' data-ref="screenheightarray">screenheightarray</dfn>[<a class="macro" href="doomdef.h.html#110" title="320" data-ref="_M/SCREENWIDTH">SCREENWIDTH</a>];</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><i>// vars for R_DrawMaskedColumn</i></td></tr>
+<tr><th id="43">43</th><td><b>extern</b> <em>short</em>*		<dfn class="decl" id="mfloorclip" title='mfloorclip' data-ref="mfloorclip">mfloorclip</dfn>;</td></tr>
+<tr><th id="44">44</th><td><b>extern</b> <em>short</em>*		<dfn class="decl" id="mceilingclip" title='mceilingclip' data-ref="mceilingclip">mceilingclip</dfn>;</td></tr>
+<tr><th id="45">45</th><td><b>extern</b> <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="decl" id="spryscale" title='spryscale' data-ref="spryscale">spryscale</dfn>;</td></tr>
+<tr><th id="46">46</th><td><b>extern</b> <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="decl" id="sprtopscreen" title='sprtopscreen' data-ref="sprtopscreen">sprtopscreen</dfn>;</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><b>extern</b> <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="decl" id="pspritescale" title='pspritescale' data-ref="pspritescale">pspritescale</dfn>;</td></tr>
+<tr><th id="49">49</th><td><b>extern</b> <a class="typedef" href="m_fixed.h.html#fixed_t" title='fixed_t' data-type='int' data-ref="fixed_t">fixed_t</a>		<dfn class="decl" id="pspriteiscale" title='pspriteiscale' data-ref="pspriteiscale">pspriteiscale</dfn>;</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td><em>void</em> <dfn class="decl" id="R_DrawMaskedColumn" title='R_DrawMaskedColumn' data-ref="R_DrawMaskedColumn">R_DrawMaskedColumn</dfn> (<a class="typedef" href="r_defs.h.html#column_t" title='column_t' data-type='post_t' data-ref="column_t">column_t</a>* <dfn class="local col8 decl" id="868column" title='column' data-type='column_t *' data-ref="868column">column</dfn>);</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><em>void</em> <dfn class="decl" id="R_SortVisSprites" title='R_SortVisSprites' data-ref="R_SortVisSprites">R_SortVisSprites</dfn> (<em>void</em>);</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><em>void</em> <dfn class="decl" id="R_AddSprites" title='R_AddSprites' data-ref="R_AddSprites">R_AddSprites</dfn> (<a class="typedef" href="r_defs.h.html#sector_t" title='sector_t' data-type='struct sector_t' data-ref="sector_t">sector_t</a>* <dfn class="local col9 decl" id="869sec" title='sec' data-type='sector_t *' data-ref="869sec">sec</dfn>);</td></tr>
+<tr><th id="58">58</th><td><em>void</em> <dfn class="decl" id="R_AddPSprites" title='R_AddPSprites' data-ref="R_AddPSprites">R_AddPSprites</dfn> (<em>void</em>);</td></tr>
+<tr><th id="59">59</th><td><em>void</em> <dfn class="decl" id="R_DrawSprites" title='R_DrawSprites' data-ref="R_DrawSprites">R_DrawSprites</dfn> (<em>void</em>);</td></tr>
+<tr><th id="60">60</th><td><em>void</em> <dfn class="decl" id="R_InitSprites" title='R_InitSprites' data-ref="R_InitSprites">R_InitSprites</dfn> (<em>char</em>** <dfn class="local col0 decl" id="870namelist" title='namelist' data-type='char **' data-ref="870namelist">namelist</dfn>);</td></tr>
+<tr><th id="61">61</th><td><em>void</em> <dfn class="decl" id="R_ClearSprites" title='R_ClearSprites' data-ref="R_ClearSprites">R_ClearSprites</dfn> (<em>void</em>);</td></tr>
+<tr><th id="62">62</th><td><em>void</em> <dfn class="decl" id="R_DrawMasked" title='R_DrawMasked' data-ref="R_DrawMasked">R_DrawMasked</dfn> (<em>void</em>);</td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td><em>void</em></td></tr>
+<tr><th id="65">65</th><td><dfn class="decl" id="R_ClipVisSprite" title='R_ClipVisSprite' data-ref="R_ClipVisSprite">R_ClipVisSprite</dfn></td></tr>
+<tr><th id="66">66</th><td>( <a class="typedef" href="r_defs.h.html#vissprite_t" title='vissprite_t' data-type='struct vissprite_s' data-ref="vissprite_t">vissprite_t</a>*		<dfn class="local col1 decl" id="871vis" title='vis' data-type='vissprite_t *' data-ref="871vis">vis</dfn>,</td></tr>
+<tr><th id="67">67</th><td>  <em>int</em>			<dfn class="local col2 decl" id="872xl" title='xl' data-type='int' data-ref="872xl">xl</dfn>,</td></tr>
+<tr><th id="68">68</th><td>  <em>int</em>			<dfn class="local col3 decl" id="873xh" title='xh' data-type='int' data-ref="873xh">xh</dfn> );</td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><u>#<span data-ppcond="23">endif</span></u></td></tr>
+<tr><th id="72">72</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="73">73</th><td><i>//</i></td></tr>
+<tr><th id="74">74</th><td><i>// $Log:$</i></td></tr>
+<tr><th id="75">75</th><td><i>//</i></td></tr>
+<tr><th id="76">76</th><td><i>//-----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="77">77</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='am_map.c.html'>codebrowser/am_map.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>77735c3</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

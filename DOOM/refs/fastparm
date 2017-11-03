@@ -1,0 +1,12 @@
+<dec f='codebrowser/doomstat.h' l='51' type='boolean'/>
+<doc f='codebrowser/doomstat.h' l='51'>// checkparm of -fast</doc>
+<def f='codebrowser/d_main.c' l='98' type='boolean'/>
+<use f='codebrowser/d_main.c' l='810' u='w' c='D_DoomMain'/>
+<doc f='codebrowser/d_main.c' l='98'>// checkparm of -fast</doc>
+<use f='codebrowser/g_game.c' l='1353' u='w' c='G_DoNewGame'/>
+<use f='codebrowser/g_game.c' l='1421' u='r' c='G_InitNew'/>
+<use f='codebrowser/g_game.c' l='1561' u='r' c='G_BeginRecording'/>
+<use f='codebrowser/g_game.c' l='1601' u='w' c='G_DoPlayDemo'/>
+<use f='codebrowser/g_game.c' l='1670' u='w' c='G_CheckDemoStatus'/>
+<use f='codebrowser/p_enemy.c' l='719' u='r' c='A_Chase'/>
+<use f='codebrowser/p_enemy.c' l='739' u='r' c='A_Chase'/>
